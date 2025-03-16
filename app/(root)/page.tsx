@@ -57,10 +57,10 @@ const Home = () => {
 {/* 
       <TestingCreateListingDB /> */}
 
-      {/* 
-      <FAQ />
 
-      <Footer /> */}
+      <FAQ />
+      <Footer /> 
+
     </>
   );
 };

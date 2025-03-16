@@ -122,7 +122,12 @@ const Hero = () => {
           rounded={"30px"}
           px={"8"}
           fontWeight={"500"}
-          onClick={() => setIsDialogOpen(true)}
+          onClick={() => {
+            const element = document.getElementById("get-started-button");
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
         >
           Get Started
           <Icon as={ArrowRight}> </Icon>
@@ -162,7 +167,76 @@ const Hero = () => {
         </DialogContent>
       </DialogRoot>
 
-      g
+      <HStack
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+        transition={"all 0.2s ease-in-out"}
+        zIndex={3}
+      >
+        <Box
+          bg={"#0A0F29"}
+          w={"90%"}
+          h={"100%"}
+          borderRadius={"30px"}
+          p={"50px"}
+          display={"flex"}
+          flexDir={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          boxShadow={"0px 10px 20px rgba(0, 0, 0, 0.1)"}
+        >
+          <Text
+            color={"white"}
+            fontWeight={"700"}
+            fontSize={"52px"}
+            fontFamily={"raleway"}
+            mb={"10px"}
+          >
+            Ready to transfrom your property management?
+          </Text>
+          <Text color={"white"} fontSize={"24px"} fontFamily={"raleway"}>
+            Get a full consulation, market analysis in under 24 hours for free
+          </Text>
+
+          <HStack
+            justify={"center"}
+            align={"center"}
+            w={"100%"}
+            transition={"all 0.2s ease-in-out"}
+            zIndex={3}
+            id="get-started-button"
+          >
+            <Box
+              mt={"50px"}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              gap={"15px"}
+              fontFamily={"raleway"}
+              transition={"all 0.2s ease-in-out"}
+              cursor={"pointer"}
+              _hover={{
+                transition: "all 0.2s ease-in-out",
+                scale: 1.1,
+                fontWeight: "700",
+                px: "80px",
+                bg: "white",
+              }}
+              p={4}
+              bg={"White"}
+              color={"black"}
+              rounded={"30px"}
+              px={"12"}
+              fontWeight={"500"}
+              onClick={() => setIsDialogOpen(true)}
+            >
+        Schedule a consultation
+              {/* <Icon as={ArrowRight}> </Icon> */}
+            </Box>
+          </HStack>
+        </Box>
+      </HStack>
     </>
   );
 };

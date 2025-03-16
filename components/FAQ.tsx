@@ -39,31 +39,39 @@ const FAQItem: React.FC<FAQItemProps> = ({
 const FAQ = () => {
   const faqs = [
     {
-      question: "What services does Crib offer?",
+      question: "What services does your Airbnb management offer?",
       answer:
-        "Crib provides comprehensive luxury property management services including property maintenance, tenant screening, rent collection, 24/7 emergency response, marketing, and financial reporting. We specialize in high-end residential and commercial properties.",
-      isOpen: true,
+        "We offer full-service Airbnb management, including property listing creation, guest communication, pricing optimization, cleaning services, and maintenance, ensuring a seamless hosting experience.",
     },
     {
-      question: "How do I get started with Crib?",
+      question: "How do you help maximize rental income?",
       answer:
-        "Getting started is simple. Schedule a consultation through our website or contact our team directly. We'll assess your property management needs, provide a detailed proposal, and create a customized management plan for your property.",
+        "Our team optimizes your property listings across platforms like Airbnb and Booking.com, adjusts pricing based on market demand, and ensures high occupancy rates, leading to a 40% average increase in rental income.",
     },
     {
-      question: "What areas do you service?",
+      question: "What types of properties do you manage?",
       answer:
-        "We currently service major metropolitan areas and luxury destinations across the country. Contact our team to verify if we operate in your specific location.",
+        "We manage a wide range of properties, from residential homes and vacation rentals to boutique apartments, focusing on short-term rentals in Adelaide and surrounding areas.",
     },
     {
-      question:
-        "What makes Crib different from other property management companies?",
+      question: "How does the linen and amenity service work?",
       answer:
-        "Crib stands out through our dedication to luxury service, attention to detail, and use of cutting-edge technology. We offer personalized solutions, have extensive experience in high-end property management, and maintain the highest standards of professionalism.",
+        "We provide high-quality linen and amenity services tailored to each booking. This includes premium bed linens, luxury toiletries, and additional towels, ensuring your guests have a comfortable stay.",
     },
     {
-      question: "What are your management fees?",
+      question: "How can I get started with your services?",
       answer:
-        "Our management fees vary based on the services required, property type, and location. We offer transparent pricing with no hidden fees. Contact us for a detailed quote tailored to your property.",
+        "Getting started is easy! Contact our team, schedule a property inspection, and we'll handle everything from listing creation to guest management and cleaning services.",
+    },
+    {
+      question: "What happens if there's an emergency at my property?",
+      answer:
+        "We offer 24/7 incidence management, ensuring that any emergencies or issues at your property are addressed immediately for your peace of mind.",
+    },
+    {
+      question: "Do you handle property marketing?",
+      answer:
+        "Yes, we provide professional marketing services to showcase your property. Our high-quality marketing materials increase your property's appeal and help attract more bookings.",
     },
   ];
 
@@ -85,7 +93,7 @@ const FAQ = () => {
               key={index}
               question={faq.question}
               answer={faq.answer}
-              isOpen={faq.isOpen}
+  
             />
           ))}
         </div>
