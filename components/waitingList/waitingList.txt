@@ -1,0 +1,284 @@
+"use client";
+
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  IconButton,
+  VStack,
+  HStack,
+  Tabs,
+  Icon,
+} from "@chakra-ui/react";
+
+import { isValidPhoneNumber } from "libphonenumber-js";
+import React, { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { PhoneInput } from "react-international-phone";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+
+import { createAccount } from "@/lib/actions/user.actions";
+import OtpModal from "@/components/OTPModal";
+import { FlipWords } from "../ui/flip-words";
+import { HeroScrollDemo } from "../customUI/ContainerScrollAnimation/HeroScrollDemo";
+import WaitingListAuth from "../waitingListAuth/WaitingListAuth";
+import { useUser } from "@/context/UserContext";
+import TempLogo from "../../public/svg/TempLogo.svg";
+import Image from "next/image";
+import { FlipText } from "@/components/magicui/flip-text";
+const WaitingList = () => {
+  const { user } = useUser();
+  const words = [
+    "Stress-Free",
+    "Effortless",
+    "Simple",
+    "Efficient",
+    "Professional",
+    "Effective",
+  ];
+  return (
+    <Box>
+      {/* <VStack w={"100%"} justify={"center"} align={"center"} mt={"20px"
+        
+      }>
+       
+        <Box
+          border={"1px solid lightgray"}
+          bg={"gray.50"}
+          p={2}
+          px={3}
+          rounded={"xl"}
+        >
+        Total Visits
+        </Box>
+        <Text>
+        10000
+        </Text>
+      </VStack> */}
+      <VStack
+        mt={"38px"}
+        justify={"center"}
+        align={"center"}
+        px={"10px"}
+        py={"15px"}
+        transition="transform, 0.3s ease-in-out"
+      >
+        <VStack
+          lineHeight={["45px", "50px", "65px", "75px", "75px", "80px"]}
+          letterSpacing={"0px"}
+          w={"100%"}
+          justify={"center"}
+          align={"center"}
+          mt={["0px", "0px", "35px", "35px", "45px", "45px"]}
+          gap={"0px"}
+        >
+          <Text
+            fontSize={["30px", "30px", "35px", "45px", "65px", "155px"]}
+            fontWeight={700}
+            textAlign={"center"}
+            bgClip="text" // Clip the background to the text
+            // className="animate__animated animate__fadeInDown"
+            // data-aos="fade-down"
+            color={"black"} // Adding white outline effect
+            bgGradient="linear(to-r, green, red)"
+            // textShadow={"0px 0px 5px white"}
+            as={"span"}
+          >
+            <HStack m={"0px"}>
+              <Box w={["30px", "30px", "35px", "45px", "65px", "155px"]}>
+                <Image src={TempLogo} alt="logo" />
+              </Box>
+              <Box fontFamily={"poppins"} fontWeight={500}>
+                <FlipText>CRIB.</FlipText>
+              </Box>
+            </HStack>
+          </Text>
+          {/* <Box
+            fontSize={["30px", "30px", "35px", "45px", "65px", "65px"]}
+            fontWeight={700}
+            textAlign={"center"}
+            bgClip="text" // Clip the background to the text
+            className="animate__animated animate__fadeInDown"
+            color={"black"} // Adding white outline effect
+            bgGradient="linear(to-r, green, red)"
+            // textShadow={"0px 0px 5px white"}
+          >
+           <FlipWords words={words} />
+          </Box> */}
+        </VStack>
+        {/* <Text
+          fontSize={["12px", "12px", "16px", "16px", "18px", "24px"]}
+          textAlign={"center"}
+          color={"black"}
+          fontWeight={300}
+          mt={["0px", "0px", "15px", "15px", "15px", "15px"]}
+          w={["80%", "60%", "50%", "50%", "50%", "30%"]}
+        >
+         Join the waiting list for unique stays, local adventures, and insider
+          tips all in one platform. 
+        </Text> */}
+      </VStack>
+      {/* <VStack
+        w={"100%"}
+        h={"100%"}
+        justify={"center"}
+        align={"center"}
+    
+      >
+        <Box
+          w={{
+            base: "300px",
+            sm: "500px",
+            md: "500px",
+            lg: "500px",
+            xl: "500px",
+          }}
+          h={"100%"}
+          display={"flex"}
+          justifyContent={"center"}
+          alignContent={"center"}
+        >  
+          <WaitingListAuth />
+        </Box>
+      </VStack> */}
+
+      {/* <HStack
+        justify={"center"}
+        align={"center"}
+        gap={"10px"}
+        w={"100%"}
+        mt={"200px"}
+      >
+        <Box
+          as="button"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="32px"
+          width={{
+            base: "115px",
+            sm: "115px",
+            md: "155px",
+            lg: "155px",
+            xl: "155px",
+          }}
+          height="120px"
+          border="1px solid"
+          borderColor={"gray.300"}
+          bg={"white"}
+          transition="all 0.3s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            bg: "blue.50",
+            borderColor: "blue.400",
+          }}
+          fontWeight={"normal"}
+        >
+          2
+        </Box>
+        <Box
+          as="button"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="32px"
+          width={{
+            base: "115px",
+            sm: "115px",
+            md: "155px",
+            lg: "155px",
+            xl: "155px",
+          }}
+          height="120px"
+          border="1px solid"
+          borderColor={"gray.300"}
+          bg={"white"}
+          transition="all 0.3s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            bg: "blue.50",
+            borderColor: "blue.400",
+          }}
+          fontWeight={"normal"}
+        ></Box>
+        <Box
+          as="button"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="32px"
+          width={{
+            base: "115px",
+            sm: "115px",
+            md: "155px",
+            lg: "155px",
+            xl: "155px",
+          }}
+          height="120px"
+          border="1px solid"
+          borderColor={"gray.300"}
+          bg={"white"}
+          transition="all 0.3s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            bg: "blue.50",
+            borderColor: "blue.400",
+          }}
+          fontWeight={"normal"}
+        ></Box>
+        <Box
+          as="button"
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          borderRadius="32px"
+          width={{
+            base: "115px",
+            sm: "115px",
+            md: "155px",
+            lg: "155px",
+            xl: "155px",
+          }}
+          height="120px"
+          border="1px solid"
+          borderColor={"gray.300"}
+          bg={"white"}
+          transition="all 0.3s ease-in-out"
+          _hover={{
+            transform: "scale(1.05)",
+            bg: "blue.50",
+            borderColor: "blue.400",
+          }}
+          fontWeight={"normal"}
+        ></Box>
+      </HStack> */}
+    </Box>
+  );
+};
+
+export default WaitingList;
