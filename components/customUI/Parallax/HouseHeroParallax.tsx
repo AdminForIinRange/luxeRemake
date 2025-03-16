@@ -96,6 +96,7 @@ const HouseHeroParallax = () => {
   return (
     <>
       {" "}
+      
       <HeroParallax products={products} />
     </>
   );

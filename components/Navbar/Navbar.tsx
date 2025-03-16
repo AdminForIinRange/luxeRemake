@@ -35,14 +35,27 @@ const Navbar = () => {
     <>
       <Box w={"100%"} p={4} fontFamily={"raleway"}>
         <HStack borderBottom={"1px solid #e0e0e0"} pb={"4"}>
-          <HStack
+          <Flex
+          direction={{
+            base: "column",
+            sm: "column",
+            md: "column",
+            lg: "row",
+            xl: "row",
+          }}
             w={"100%"}
             h={"100%"}
             justifyContent={"center"}
             align={"center"}
-            gap={"500px"}
+            gap={{
+              base: "25px",
+              sm: "25px",
+              md: "25px",
+              lg: "200px",
+              xl: "500px",
+            }}
           >
-            <HStack fontSize={"30px"} gap={"10px"}>
+            <HStack fontSize={"30px"} >
               <Box
                 w={"70px"}
                 h={"100%"}
@@ -84,7 +97,7 @@ const Navbar = () => {
                 transition={"all 0.2s ease-in-out"}
               >
                 {" "}
-                Search
+                About
               </Box>
               <Box
                 cursor={"pointer"}
@@ -94,7 +107,8 @@ const Navbar = () => {
                 }}
                 transition={"all 0.2s ease-in-out"}
               >
-                Profile
+                Services
+
               </Box>
               <Box
                 cursor={"pointer"}
@@ -104,44 +118,26 @@ const Navbar = () => {
                 }}
                 transition={"all 0.2s ease-in-out"}
               >
-                Sign Out
+                Pricing
+
+              </Box>
+              <Box
+                cursor={"pointer"}
+                _hover={{
+                  scale: 1.1,
+                  fontWeight: "700",
+                }}
+                transition={"all 0.2s ease-in-out"}
+              >
+                Contact
+
               </Box>
             </HStack>
-          </HStack>
+          </Flex>
         </HStack>
       </Box>
 
 
-      <Stack
-        mt={"200px"}
-        mb={{
-          xs: "500px",
-          sm: "500px",
-          md: "500px",
-          lg: "500px",
-          xl: "100px",
-        }}
-        textAlign={"center"}
-        width={"100%"}
-        flexDirection={"row"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        fontSize={{
-          xs: "34px",
-          sm: "40px",
-          md: "40px",
-          lg: "76px",
-          xl: "96px",
-        }}
-        fontWeight={{ xs: "400", sm: "400", md: "400", lg: "400", xl: "400" }}
-      >
-        <Box color={"#222222"} fontWeight={"600"} width={"70%"}>
-          Luxe Managements <br />
-          <Box fontWeight={"400"}>
-            Be <FlipWords words={words} />
-          </Box>
-        </Box>
-      </Stack>
     </>
   );
 };
