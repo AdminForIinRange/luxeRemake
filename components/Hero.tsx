@@ -175,7 +175,7 @@ const Hero = () => {
 
       {/* New Dialog Component */}
       <DialogRoot
-        size={"xl"}
+        size={"cover"}
         open={isDialogOpen}
         onOpenChange={(details) => setIsDialogOpen(details.open)}
       >

@@ -19,8 +19,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="light"
-      
-      style={{ scrollBehavior: "smooth" }}
+
       suppressHydrationWarning
     >
       <head>
@@ -46,7 +45,7 @@ export default function RootLayout({
       </head>
       <body
         className={`font-Montserrat antialiased`}
-        style={{ background: "#fff" }}
+        style={{ background: "#fff"}}
       >
         {/* Wrap with UserProvider */}{" "}
 

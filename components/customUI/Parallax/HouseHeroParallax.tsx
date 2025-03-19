@@ -197,7 +197,7 @@ const HouseHeroParallax = () => {
     <ParallaxProvider scrollAxis={"vertical"}>
       {chunkedProducts.map((chunk, index) => {
         // 2. Alternate direction based on index (even: left->right, odd: right->left)
-        const translateX = index % 2 === 0 ? [-20, 20] : [20, -20];
+        const translateX = index % 2 === 0 ? [-40, 40] : [40, -40];
 
         return (
           <Parallax key={index} translateX={translateX}>
@@ -212,7 +212,7 @@ const HouseHeroParallax = () => {
                 h={"500px"}
               >
                 {chunk.map((product, idx) => (
-                  <>
+               
                     <Box
                       bg={"gray.100"}
                       key={idx}
@@ -229,7 +229,7 @@ const HouseHeroParallax = () => {
                     >
                       {product.title}
                     </Box>
-                  </>
+               
                 ))}
               </Box>
             </VStack>
