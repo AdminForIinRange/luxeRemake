@@ -4,9 +4,11 @@ import { defineConfig, createSystem, defaultConfig } from "@chakra-ui/react";
 const config = defineConfig({
   globalCss: {
     html: {
-        
+      scrollBehavior: "auto !important", // Ensures Chakra does not override Lenis
+   
       colorPalette: "blue", // Replace "blue" with your preferred color palette
     },
+   
   },
 });
 

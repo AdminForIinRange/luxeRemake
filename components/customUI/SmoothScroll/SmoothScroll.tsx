@@ -13,58 +13,208 @@ import {
   MapPinHouse,
   SearchCheck,
 } from "lucide-react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 export default function SmoothScroll(): JSX.Element {
   return (
     <ReactLenis root>
       <main>
         <article>
-          <section className="  h-screen  w-full grid place-content-center sticky top-0">
-            {/*         
-          <LeftImgBox
-          textImgLayout="https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg"
-          textSubjectBadge="Client in Mind"
-          textMainTopicHeader="Enjoy Our Extensive Services"
-          objTextCard1={{
-            title: "24/7 Security Coverage",
-            icon: <Eye />,
-            content:
-              "Around-the-clock security monitoring to keep your property safe and secure at all times.",
-          }}
-          objTextCard2={{
-            title: "24/7 Incidence Management",
-            icon: <Binoculars />,
-            content:
-              "Immediate response to any issues or emergencies, ensuring peace of mind for you and your guests.",
-          }}
-          objTextCard3={{
-            title: "Professional Marketing",
-            icon: <MapPinHouse />,
-            content:
-              "High-quality marketing to showcase your property, enhancing its appeal and attracting more bookings.",
-          }}
-          objTextCard4={{
-            title: "Regular Property Inspections",
-            icon: <SearchCheck />,
-            content:
-              "Routine checks to ensure your property is maintained in top condition.",
-          }}
-        /> */}
-          </section>
+          <Box
+            bg="gray.100"
+            color="black"
+            display="grid"
+            placeContent="center"
+            h="100vh"
+            position="sticky"
+            top="0"
+            borderTopRadius="2xl"
+            overflow="hidden"
+          >
+            {" "}
+                  <HStack
+                    zIndex={3}
+                    px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+                    justify={"center"} // !!
+                    align={"center"}
+                    w={"100%"}
+                    h={"100%"}
+                  
+                  >
+                    <HStack
+                      justify={[
+                        "space-between",
+                        "space-between",
+                        "space-between",
+                        "space-between",
+                        "space-between",
+                        "space-between",
+                      ]}
+                      align={["center", "center", "start", "start", "start", "start"]}
+                      w={"100%"}
+                      h={"100%"}
+                      gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+                      wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+                    >
+                      <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+                        <Text
+                          w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+                          mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+                          fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+                          fontWeight={700}
+                          fontFamily={"Poppins"}
+                          bgClip="text"
+                          textAlign={["center", "center", "center", "left", "left", "left"]}
+                          color={"black"}
+                          bgGradient="linear(to-r, teal, blue)"
+                        >
+                          Maximize Your Rental Income
+                        </Text>
+                        <Text
+                          fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+                          mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+                          textAlign={["center", "center", "center", "left", "left", "left"]}
+                          fontFamily={"Poppins"}
+                          color={"black"}
+                          w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+                          fontWeight={300}
+                        >
+                          Optimize your income and ease your mind with our experienced
+                          Airbnb Management team. Learn More
+                        </Text>
+                        <HStack
+                          justify={[
+                            "center",
+                            "center",
+                            "center",
+                            "start",
+                            "start",
+                            "start",
+                          ]}
+                          align={"start"}
+                          w={"100%"}
+                          transition={"all 0.2s ease-in-out"}
+                          zIndex={3}
+                        >
+                          <Box
+                            mt={"50px"}
+                            display={"flex"}
+                            alignItems={"center"}
+                            justifyContent={["center"]}
+                            gap={"15px"}
+                            fontFamily={"raleway"}
+                            transition={"all 0.2s ease-in-out"}
+                            cursor={"pointer"}
+                            _hover={{
+                              transition: "all 0.2s ease-in-out",
+                              scale: 1.1,
+                              fontWeight: "700",
+                              px: "80px",
+                              bg: "black",
+                            }}
+                            p={4}
+                            bg={"black"}
+                            color={"white"}
+                            rounded={"30px"}
+                            px={"12"}
+                            fontWeight={"500"}
+                            onClick={() => setIsDialogOpen(true)}
+                          >
+                            Schedule a consultation
+                            {/* <Icon as={ArrowRight}> </Icon> */}
+                          </Box>
+                        </HStack>
+                      </Box>
+            
+                      <Box
+                        display="block"
+                        position="relative"
+                        h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+                        w={["100%", "100%", "100%", "650px", "650px", "650px"]}
+                        backdropFilter="blur(1.5px)"
+                        borderRadius="30px"
+                        bgPos="center"
+                        bgSize="cover"
+                        // Change this to any background you want
+                        // Change this to any background you want
+                        overflow="hidden"
+                      >
+                        {/* Horizontal line for crosshair */}
+                        <Box
+                          display="block"
+                          position="relative"
+                          h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+                          w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+                          backdropFilter="blur(1.5px)"
+                          borderRadius="30px"
+                          bgPos="center"
+                          bgSize="cover"
+                          bg="gray.200" // Change this to any background you want
+                          overflow="hidden"
+                          ml={["0px", "0px", "0px", "100px", "100px", "100px"]}
+                        ></Box>
+                        {/* Bottom-right label */}
+                        <Box
+                          zIndex={1}
+                          position="absolute"
+                          bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
+                          right={["20px", "20px", "20px", "190px", "280px", "300px"]}
+                          bg="white"
+                          borderRadius="md"
+                          p={[
+                            "10px 10px",
+                            "10px 10px",
+                            "10px 10px",
+                            "10px 10px",
+                            "10px 10px",
+                            "10px 10px",
+                          ]}
+                          boxShadow="md"
+                          fontWeight="semibold"
+                          textAlign={"left"}
+                        >
+                          <HStack>
+                            <Text
+                              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+                              fontWeight={"700"}
+                              color={"black"}
+                            >
+                              40%
+                            </Text>
+                            <Text
+                              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+                            >
+                              {" "}
+                              Average Revenue Increase
+                            </Text>
+                          </HStack>
+                        </Box>
+                      </Box>
+                    </HStack>
+                  </HStack>
+          </Box>
 
-          <section className="bg-gray-300 text-black grid place-content-center h-screen sticky top-0 rounded-tr-2xl rounded-tl-2xl overflow-hidden">
-            <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-            <h1 className="2xl:text-7xl text-4xl px-8 font-semibold text-center tracking-tight leading-[120%]">
-              If you don't like this then I'm sorry, <br /> create your own and
-              make it open source 💼
-            </h1>
-          </section>
-          <section className="text-white  h-screen  w-full bg-slate-950  grid place-content-center sticky top-0">
-            <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-            <h1 className="2xl:text-7xl text-5xl px-8 font-semibold text-center tracking-tight leading-[120%]">
-              Thanks To Scroll.
-              <br /> Now Scroll Up Again☝️🏿
-            </h1>
-          </section>
+          <Box
+            bg="gray.200"
+            color="black"
+            display="grid"
+            placeContent="center"
+            h="100vh"
+            position="sticky"
+            top="0"
+            borderTopRadius="2xl"
+            overflow="hidden"
+          ></Box>
+          <Box
+            bg="gray.300"
+            color="black"
+            display="grid"
+            placeContent="center"
+            h="100vh"
+            position="sticky"
+            top="0"
+            borderTopRadius="2xl"
+            overflow="hidden"
+          ></Box>
         </article>
       </main>
     </ReactLenis>

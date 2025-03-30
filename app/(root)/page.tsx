@@ -19,36 +19,40 @@ import RepeatAnimation from "@/components/customUI/RepeatAnimation/RepeatAnimati
 import SmoothScroll from "@/components/customUI/SmoothScroll/SmoothScroll";
 import { HeroScrollDemo } from "@/components/customUI/ContainerScrollAnimation/HeroScrollDemo";
 import { MacbookScrollDemo } from "@/components/customUI/MacbookScroll/MacbookScrollDemo";
-import { useUser } from "@/context/UserContext";
+// import { useUser } from "@/context/UserContext";
 import { getCurrentUser } from "@/lib/actions/user.actions";
 import TestingCreateListingDB from "@/components/TestingCreateListingDB";
 import { HStack, Text } from "@chakra-ui/react";
 import WaitingList from "@/components/waitingList/WaitingList";
+import ReactLenis from "lenis/react";
+
 
 const Home = () => {
-  const { user, setUser } = useUser();
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      // Fetch the current user only if not already set
-      if (!user) {
-        const currentUser = await getCurrentUser();
-        setUser(currentUser);
-      }
-      setLoading(false); // Mark loading as complete
+  // const { user, setUser } = useUser();
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     // Fetch the current user only if not already set
+  //     if (!user) {
+  //       const currentUser = await getCurrentUser();
+  //       setUser(currentUser);
+  //     }
+  //     setLoading(false); // Mark loading as complete
       
-    };
+  //   };
 
-    fetchUser();
-  }, [user, setUser]);
+  //   fetchUser();
+  // }, [user, setUser]);
 
-  if (loading) {
-    return <div>Loading...</div>; // Show a loading state while fetching user
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>; // Show a loading state while fetching user
+  // }
  
   return (
     <>
+    <ReactLenis root />
 
 {/* <WaitingList /> */}
 

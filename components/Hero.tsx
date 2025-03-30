@@ -18,7 +18,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { signOutUser } from "@/lib/actions/user.actions";
-import { useUser } from "@/context/UserContext";
+// import { useUser } from "@/context/UserContext";
 import Image from "next/image";
 
 import { FlipWords } from "@/components/ui/flip-words";
@@ -32,7 +32,13 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/chakra-snippets/dialog";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Link from "next/link";
+
+import SmoothScroll from "./customUI/SmoothScroll/SmoothScroll";
+import { useRouter } from "next/navigation";
 const Hero = () => {
+    const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   // const { user } = useUser();
 
@@ -82,13 +88,8 @@ const Hero = () => {
   ];
   return (
     <>
-
-
-
-
-
-    
-      <Stack  overflow={"hidden"}
+      <Stack
+        overflow={"hidden"}
         mt={{
           base: "25px",
           sm: "25px",
@@ -120,7 +121,7 @@ const Hero = () => {
       >
         <Box color={"#222222"} fontWeight={"600"} width={"70%"}>
           Luxe Managements <br />
-          <Box fontWeight={"400"}  >
+          <Box fontWeight={"400"}>
             Be <FlipWords words={words} />
           </Box>
         </Box>
@@ -166,10 +167,37 @@ const Hero = () => {
         </Box>
       </HStack>
 
-      <Box overflowX={"hidden"} >
+      <Box overflowX={"hidden"} mt={"350px"}>
+        <Box px={["4%", "4%", "6%", "6%", "6%", "10%"]} pb={"50px"}>
+          <Text
+            w={["100%", "100%", "80%", "80%", "80%", "80%"]}
+            mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+            fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+            fontWeight={700}
+            fontFamily={"Poppins"}
+            bgClip="text"
+            textAlign={["center", "center", "left", "left", "left", "left"]}
+            color={"black"}
+            bgGradient="linear(to-r, teal, blue)"
+          >
+            The Future of Real Estate
+          </Text>
+          <Text
+            fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+            mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+            textAlign={["center", "center", "left", "left", "left", "left"]}
+            fontFamily={"Poppins"}
+            color={"black"}
+            w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
+            fontWeight={300}
+          >
+            We're transforming the way people interact with real estate. With
+            our innovative platform,
+          </Text>
+        </Box>
+
         <HouseHeroParallax />
       </Box>
-      
 
       {/* Add New Pack Button */}
 
@@ -200,186 +228,197 @@ const Hero = () => {
         </DialogContent>
       </DialogRoot>
 
-
-
-
       <HStack
-
-zIndex={3}
-  px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-  justify={"center"} // !!
-  align={"center"}
-  w={"100%"}
-  h={"100%"}
-  mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
->
-  <HStack
-    justify={["center", "center", "center", "center", "center", "center"]}
-    align={["center", "center", "start", "start", "start", "start"]}
-    w={"100%"}
-    h={"100%"}
-    gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
-    wrap={["wrap", "wrap", "nowrap", "nowrap", "nowrap", "nowrap"]}
-  >
-    <Box w={["95%", "95%", "70%", "60%", "50%", "50%"]}>
-    
-
-      <Text
-        w={["100%", "100%", "80%", "80%", "80%", "80%"]}
-      
-        mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-        fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-        fontWeight={700}
-        fontFamily={"Poppins"}
-        bgClip="text"
-        textAlign={["center", "center", "left", "left", "left", "left"]}
-        color={"black"}
-        bgGradient="linear(to-r, teal, blue)"
-
+        zIndex={3}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        justify={"center"} // !!
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
       >
-        How We Can Get You Get Started
-      </Text>
-      <Text
-    
-        fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-        mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-        textAlign={["center", "center", "left", "left", "left", "left"]}
-        fontFamily={"Poppins"}
-        color={"black"}
-        w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
-        fontWeight={300}
-      >
-        Learn how we can help you get started with personalized guidance
-        and expert support every step of the way.
-      </Text>
- 
-    </Box>
-
-    <Box
-      mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
-      display={["block", "block", "block", "block", "block", "block"]}
-   
-      // border={"1px solid rgb(0, 0, 0,0.25)"}
-      h={["500px", "500px", "500px", "500px", "500px", "500px"]}
-      w={["100%", "100%", "100%", "450px", "550px", "550px"]}
-      backdropFilter="blur(1.5px)"
-      borderRadius={"30px"}
-      bgPos={"center"}
-      bgSize={"cover"}
-    >
-      {" "}
-      {GettingStartedSteps.slice(0, 4).map(
-        ({ id, title, description }, index) => (
-          <VStack key={id} w={"100%"} align={"center"} justify={"start"} >
+        <HStack
+          justify={["center", "center", "center", "center", "center", "center"]}
+          align={["center", "center", "start", "start", "start", "start"]}
+          w={"100%"}
+          h={"100%"}
+          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+          wrap={["wrap", "wrap", "nowrap", "nowrap", "nowrap", "nowrap"]}
+        >
+          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+            <Text
+              w={["100%", "100%", "80%", "80%", "80%", "80%"]}
+              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontWeight={700}
+              fontFamily={"Poppins"}
+              bgClip="text"
+              textAlign={["center", "center", "left", "left", "left", "left"]}
+              color={"black"}
+              bgGradient="linear(to-r, teal, blue)"
+            >
+              How We Can Get You Get Started
+            </Text>
+            <Text
+              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+              textAlign={["center", "center", "left", "left", "left", "left"]}
+              fontFamily={"Poppins"}
+              color={"black"}
+              w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
+              fontWeight={300}
+            >
+              Learn how we can help you get started with personalized guidance
+              and expert support every step of the way.
+            </Text>
             <HStack
-              w={"100%"}
-              h={"100%"}
               justify={"start"}
               align={"start"}
-              gap={2}
+              w={"100%"}
+              transition={"all 0.2s ease-in-out"}
+              zIndex={3}
             >
-              <VStack justify={"center"} gap={0}>
-                <Box
-                  w={"50px"}
-                  h={"50px"}
-                  borderRadius={"15px"}
-                  bg={"white"}
-                  border={"1px solid rgb(0, 0,0,0.25)"}
-                >
-                  <HStack
-                    w={"100%"}
-                    justify={"center"}
-                    h={"100%"}
-                    align={"center"}
-                  >
-                    <Text
-                      fontSize={[
-                        "14px",
-                        "18px",
-                        "16px",
-                        "16px",
-                        "18px",
-                        "18px",
-                      ]}
-                      fontWeight={500}
-                      fontFamily={"Poppins"}
-                      color={"black"}
-                    >
-                      {id}
-                    </Text>
-                  </HStack>
-                </Box>
-                {index < 3 && (
-                  <Box
-                    transition={"transform 0.3s ease"}
-                    zIndex={-1}
-                    w={"5px"}
-                    h={"70px"}
-                    bg={"#BFBFBF"}
-                  ></Box>
-                )}
-              </VStack>
-
-              <Box>
-                <Text
-            
-                  fontSize={[
-                    "12px",
-                    "16px",
-                    "14px",
-                    "14px",
-                    "16px",
-                    "16px",
-                  ]}
-                  fontWeight={500}
-                  textAlign={"left"}
-                  fontFamily={"Poppins"}
-                  color={"black"}
-                  w={"100%"} // !important
-                >
-                  {title}
-                </Text>
-                <Text
-                  fontSize={[
-                    "12px",
-                    "16px",
-                    "14px",
-                    "14px",
-                    "16px",
-                    "16px",
-                  ]}
-                  textAlign={"left"}
-                  fontFamily={"Poppins"}
-                  color={"black"}
-                  w={"100%"}
-                  fontWeight={300}
-                >
-                  {description}
-                </Text>
+              <Box
+                mt={"50px"}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+                gap={"15px"}
+                fontFamily={"raleway"}
+                transition={"all 0.2s ease-in-out"}
+                cursor={"pointer"}
+                _hover={{
+                  transition: "all 0.2s ease-in-out",
+                  scale: 1.1,
+                  fontWeight: "700",
+                  px: "80px",
+                  bg: "black",
+                }}
+                p={4}
+                bg={"black"}
+                color={"white"}
+                rounded={"30px"}
+                px={"12"}
+                fontWeight={"500"}
+                onClick={() => setIsDialogOpen(true)}
+              >
+                Schedule a consultation
+                {/* <Icon as={ArrowRight}> </Icon> */}
               </Box>
             </HStack>
-          </VStack>
-        ),
-      )}
-      {/* <Image src={collage} />   //!cool */}
-    </Box>
-  </HStack>
-</HStack>
+          </Box>
 
+          <Box
+            mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
+            display={["block", "block", "block", "block", "block", "block"]}
+            // border={"1px solid rgb(0, 0, 0,0.25)"}
+            h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+            w={["100%", "100%", "100%", "450px", "550px", "550px"]}
+            backdropFilter="blur(1.5px)"
+            borderRadius={"30px"}
+            bgPos={"center"}
+            bgSize={"cover"}
+          >
+            {" "}
+            {GettingStartedSteps.slice(0, 4).map(
+              ({ id, title, description }, index) => (
+                <VStack key={id} w={"100%"} align={"center"} justify={"start"}>
+                  <HStack
+                    w={"100%"}
+                    h={"100%"}
+                    justify={"start"}
+                    align={"start"}
+                    gap={2}
+                  >
+                    <VStack justify={"center"} gap={0}>
+                      <Box
+                        w={"50px"}
+                        h={"50px"}
+                        borderRadius={"15px"}
+                        bg={"white"}
+                        border={"1px solid rgb(0, 0,0,0.25)"}
+                      >
+                        <HStack
+                          w={"100%"}
+                          justify={"center"}
+                          h={"100%"}
+                          align={"center"}
+                        >
+                          <Text
+                            fontSize={[
+                              "14px",
+                              "18px",
+                              "16px",
+                              "16px",
+                              "18px",
+                              "18px",
+                            ]}
+                            fontWeight={500}
+                            fontFamily={"Poppins"}
+                            color={"black"}
+                          >
+                            {id}
+                          </Text>
+                        </HStack>
+                      </Box>
+                      {index < 3 && (
+                        <Box
+                          transition={"transform 0.3s ease"}
+                          zIndex={-1}
+                          w={"5px"}
+                          h={"100px"}
+                          bg={"#BFBFBF"}
+                        ></Box>
+                      )}
+                    </VStack>
 
-
-
-
-
-
-
-
-
-
-
-
+                    <Box>
+                      <Text
+                        fontSize={[
+                          "12px",
+                          "16px",
+                          "14px",
+                          "14px",
+                          "16px",
+                          "16px",
+                        ]}
+                        fontWeight={500}
+                        textAlign={"left"}
+                        fontFamily={"Poppins"}
+                        color={"black"}
+                        w={"100%"} // !important
+                      >
+                        {title}
+                      </Text>
+                      <Text
+                        fontSize={[
+                          "12px",
+                          "16px",
+                          "14px",
+                          "14px",
+                          "16px",
+                          "16px",
+                        ]}
+                        textAlign={"left"}
+                        fontFamily={"Poppins"}
+                        color={"black"}
+                        w={"100%"}
+                        fontWeight={300}
+                      >
+                        {description}
+                      </Text>
+                    </Box>
+                  </HStack>
+                </VStack>
+              ),
+            )}
+            {/* <Image src={collage} />   //!cool */}
+          </Box>
+        </HStack>
+      </HStack>
 
       <HStack
+        mt={["50px", "50px", "50px", "50px", "50px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}
@@ -419,7 +458,6 @@ zIndex={3}
             w={"100%"}
             transition={"all 0.2s ease-in-out"}
             zIndex={3}
-       
           >
             <Box
               mt={"50px"}
@@ -445,23 +483,541 @@ zIndex={3}
               fontWeight={"500"}
               onClick={() => setIsDialogOpen(true)}
             >
-        Schedule a consultation
+              Schedule a consultation
               {/* <Icon as={ArrowRight}> </Icon> */}
             </Box>
           </HStack>
         </Box>
       </HStack>
 
+      <VStack pb={"50px"}>
+        <Text
+          w={["100%", "100%", "80%", "80%", "80%", "80%"]}
+          mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+          fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+          fontWeight={700}
+          fontFamily={"Poppins"}
+          bgClip="text"
+          textAlign={[
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+          ]}
+          color={"black"}
+          bgGradient="linear(to-r, teal, blue)"
+        >
+          Our Services
+        </Text>
+        <Text
+          fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+          // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+          textAlign={[
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+          ]}
+          fontFamily={"Poppins"}
+          color={"black"}
+          w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
+          fontWeight={300}
+        >
+          We offer a full suite of services to help you manage your property
+          with ease.
+        </Text>
+      </VStack>
 
+      <HStack
+        zIndex={3}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        justify={"center"} // !!
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
+      >
+        <HStack
+          justify={[
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+          ]}
+          align={["center", "center", "start", "start", "start", "start"]}
+          w={"100%"}
+          h={"100%"}
+          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+          wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+        >
+          <Box w={["95%", "95%", "95%", "60%", "50%", "50%"]}>
+            <Text
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontWeight={700}
+              fontFamily={"Poppins"}
+              bgClip="text"
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              color={"black"}
+              bgGradient="linear(to-r, teal, blue)"
+            >
+              Maximize Your Rental Income
+            </Text>
+            <Text
+              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              fontFamily={"Poppins"}
+              color={"black"}
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              fontWeight={300}
+            >
+              Optimize your income and ease your mind with our experienced
+              Airbnb Management team. Learn More
+            </Text>
+            <HStack
+              justify={[
+                "center",
+                "center",
+                "center",
+                "start",
+                "start",
+                "start",
+              ]}
+              align={"start"}
+              w={"100%"}
+              transition={"all 0.2s ease-in-out"}
+              zIndex={3}
+            >
+              <Box
+                mt={"50px"}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={["center"]}
+                gap={"15px"}
+                fontFamily={"raleway"}
+                transition={"all 0.2s ease-in-out"}
+                cursor={"pointer"}
+                _hover={{
+                  transition: "all 0.2s ease-in-out",
+                  scale: 1.1,
+                  fontWeight: "700",
+                  px: "80px",
+                  bg: "black",
+                }}
+                p={4}
+                bg={"black"}
+                color={"white"}
+                rounded={"30px"}
+                px={"12"}
+                fontWeight={"500"}
+                onClick={() => router.push("/services")}
+              >
+                Schedule a consultation
+                {/* <Icon as={ArrowRight}> </Icon> */}
+              </Box>
+            </HStack>
+          </Box>
 
+          <Box
+            display="block"
+            position="relative"
+            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+            w={["100%", "100%", "100%", "650px", "650px", "650px"]}
+            backdropFilter="blur(1.5px)"
+            borderRadius="30px"
+            bgPos="center"
+            bgSize="cover"
+            // Change this to any background you want
+            // Change this to any background you want
+            overflow="hidden"
+          >
+            {/* Horizontal line for crosshair */}
+            <Box
+              display="block"
+              position="relative"
+              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              backdropFilter="blur(1.5px)"
+              borderRadius="30px"
+              bgPos="center"
+              bgSize="cover"
+              bg="gray.200" // Change this to any background you want
+              overflow="hidden"
+              ml={["0px", "0px", "0px", "100px", "100px", "100px"]}
+            ></Box>
+            {/* Bottom-right label */}
+            <Box
+              zIndex={1}
+              position="absolute"
+              bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
+              right={["20px", "20px", "20px", "190px", "280px", "300px"]}
+              bg="white"
+              borderRadius="md"
+              p={[
+                "10px 10px",
+                "10px 10px",
+                "10px 10px",
+                "15px 15px",
+                "15px 15px",
+                "15px 15px",
+              ]}
+              boxShadow="md"
+              fontWeight="semibold"
+              textAlign={"left"}
+            >
+              <HStack>
+                <Text
+                  fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+                  fontWeight={"700"}
+                  color={"black"}
+                >
+                  40%
+                </Text>
+                <Text
+                  fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+                  color={["black", "red", "orange", "blue", "green", "purple"]}
+                >
+                  {" "}
+                  Average Revenue Increase
+                </Text>
+              </HStack>
+            </Box>
+          </Box>
+        </HStack>
+      </HStack>
 
+      <HStack
+        zIndex={3}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        justify={"center"} // !!
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
+      >
+        <HStack
+          justify={[
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+          ]}
+          align={["center", "center", "start", "start", "start", "start"]}
+          w={"100%"}
+          h={"100%"}
+          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+          wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+        >
+          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+            <Text
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontWeight={700}
+              fontFamily={"Poppins"}
+              bgClip="text"
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              color={"black"}
+              bgGradient="linear(to-r, teal, blue)"
+            >
+              Maximize Your Rental Income
+            </Text>
+            <Text
+              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              fontFamily={"Poppins"}
+              color={"black"}
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              fontWeight={300}
+            >
+              Optimize your income and ease your mind with our experienced
+              Airbnb Management team. Learn More
+            </Text>
+            <HStack
+              justify={[
+                "center",
+                "center",
+                "center",
+                "start",
+                "start",
+                "start",
+              ]}
+              align={"start"}
+              w={"100%"}
+              transition={"all 0.2s ease-in-out"}
+              zIndex={3}
+            >
+              <Box
+                mt={"50px"}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={["center"]}
+                gap={"15px"}
+                fontFamily={"raleway"}
+                transition={"all 0.2s ease-in-out"}
+                cursor={"pointer"}
+                _hover={{
+                  transition: "all 0.2s ease-in-out",
+                  scale: 1.1,
+                  fontWeight: "700",
+                  px: "80px",
+                  bg: "black",
+                }}
+                p={4}
+                bg={"black"}
+                color={"white"}
+                rounded={"30px"}
+                px={"12"}
+                fontWeight={"500"}
+                onClick={() => router.push("/services")}
+              >
+                Schedule a consultation
+                {/* <Icon as={ArrowRight}> </Icon> */}
+              </Box>
+            </HStack>
+          </Box>
 
+          <Box
+            display="block"
+            position="relative"
+            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+            w={["100%", "100%", "100%", "650px", "650px", "650px"]}
+            backdropFilter="blur(1.5px)"
+            borderRadius="30px"
+            bgPos="center"
+            bgSize="cover"
+            // Change this to any background you want
+            // Change this to any background you want
+            overflow="hidden"
+          >
+            {/* Horizontal line for crosshair */}
+            <Box
+              display="block"
+              position="relative"
+              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              backdropFilter="blur(1.5px)"
+              borderRadius="30px"
+              bgPos="center"
+              bgSize="cover"
+              bg="gray.200" // Change this to any background you want
+              overflow="hidden"
+              ml={["0px", "0px", "0px", "100px", "100px", "100px"]}
+            ></Box>
+            {/* Bottom-right label */}
+            <Box
+              zIndex={1}
+              position="absolute"
+              bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
+              right={["20px", "20px", "20px", "190px", "280px", "300px"]}
+              bg="white"
+              borderRadius="md"
+              p={[
+                "10px 10px",
+                "10px 10px",
+                "10px 10px",
+                "15px 15px",
+                "15px 15px",
+                "15px 15px",
+              ]}
+              boxShadow="md"
+              fontWeight="semibold"
+              textAlign={"left"}
+            >
+              <HStack>
+                <Text
+                  fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+                  fontWeight={"700"}
+                  color={"black"}
+                >
+                  40%
+                </Text>
+                <Text
+                  fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+                >
+                  {" "}
+                  Average Revenue Increase
+                </Text>
+              </HStack>
+            </Box>
+          </Box>
+        </HStack>
+      </HStack>
 
-
-
+      <HStack
+        zIndex={3}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        justify={"center"} // !!
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
+      >
+        <HStack
+          justify={[
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+          ]}
+          align={["center", "center", "start", "start", "start", "start"]}
+          w={"100%"}
+          h={"100%"}
+          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+          wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+        >
+          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+            <Text
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontWeight={700}
+              fontFamily={"Poppins"}
+              bgClip="text"
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              color={"black"}
+              bgGradient="linear(to-r, teal, blue)"
+            >
+              Maximize Your Rental Income
+            </Text>
+            <Text
+              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              fontFamily={"Poppins"}
+              color={"black"}
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              fontWeight={300}
+            >
+              Optimize your income and ease your mind with our experienced
+              Airbnb Management team. Learn More
+            </Text>
+            <HStack
+              justify={[
+                "center",
+                "center",
+                "center",
+                "start",
+                "start",
+                "start",
+              ]}
+              align={"start"}
+              w={"100%"}
+              transition={"all 0.2s ease-in-out"}
+              zIndex={3}
+            >
+              <Box
     
+        
+                mt={"50px"}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={["center"]}
+                gap={"15px"}
+                fontFamily={"raleway"}
+                transition={"all 0.2s ease-in-out"}
+                cursor={"pointer"}
+                _hover={{
+                  transition: "all 0.2s ease-in-out",
+                  scale: 1.1,
+                  fontWeight: "700",
+                  px: "80px",
+                  bg: "black",
+                }}
+                p={4}
+                bg={"black"}
+                color={"white"}
+                rounded={"30px"}
+                px={"12"}
+                fontWeight={"500"}
+                onClick={() => router.push("/services")}
+             
+              >
+          Learn More
+                {/* <Icon as={ArrowRight}> </Icon> */}
+              </Box>
+            </HStack>
+          </Box>
 
-
+          <Box
+            display="block"
+            position="relative"
+            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+            w={["100%", "100%", "100%", "650px", "650px", "650px"]}
+            backdropFilter="blur(1.5px)"
+            borderRadius="30px"
+            bgPos="center"
+            bgSize="cover"
+            // Change this to any background you want
+            // Change this to any background you want
+            overflow="hidden"
+          >
+            {/* Horizontal line for crosshair */}
+            <Box
+              display="block"
+              position="relative"
+              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              backdropFilter="blur(1.5px)"
+              borderRadius="30px"
+              bgPos="center"
+              bgSize="cover"
+              bg="gray.200" // Change this to any background you want
+              overflow="hidden"
+              ml={["0px", "0px", "0px", "100px", "100px", "100px"]}
+            ></Box>
+            {/* Bottom-right label */}
+            <Box
+              zIndex={1}
+              position="absolute"
+              bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
+              right={["20px", "20px", "20px", "190px", "280px", "300px"]}
+              bg="white"
+              borderRadius="md"
+              p={[
+                "10px 10px",
+                "10px 10px",
+                "10px 10px",
+                "15px 15px",
+                "15px 15px",
+                "15px 15px",
+              ]}
+              boxShadow="md"
+              fontWeight="semibold"
+              textAlign={"left"}
+            >
+              <HStack>
+                <Text
+                  fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+                  fontWeight={"700"}
+                  color={"black"}
+                >
+                  40%
+                </Text>
+                <Text
+                  fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+                >
+                  {" "}
+                  Average Revenue Increase
+                </Text>
+              </HStack>
+            </Box>
+          </Box>
+        </HStack>
+      </HStack>
 
 
 

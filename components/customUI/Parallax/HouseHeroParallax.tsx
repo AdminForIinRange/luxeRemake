@@ -1,4 +1,5 @@
 import { Box, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 import React from "react";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
@@ -205,31 +206,37 @@ const HouseHeroParallax = () => {
               {/* 3. Display each chunk of 5 images in a grid */}
               <Box
                 justifyContent={"center"}
-                mt={"25px"}
                 gap={"25px"}
                 display={"flex"}
                 w={"5000px"}
                 h={"500px"}
+                // bg={"red"}
+                py={"25px"}
               >
                 {chunk.map((product, idx) => (
-               
-                    <Box
-                      bg={"gray.100"}
-                      key={idx}
-                      w={"100%"}
-                      h={"100%"}
-                      style={{
-                        backgroundImage: `url(${product.link})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-
-                        borderRadius: "30px",
-                      }}
-                    >
-                      {product.title}
-                    </Box>
-               
+                  <Box
+                    key={idx}
+                    style={{
+                      position: "relative",
+                      width: "500px",
+                      height: "450px",
+                      borderRadius: "30px",
+                      overflow: "hidden",
+                    }}
+                    _hover={{
+                      transform: "scale(1.05) translateY(-10px)",
+                      transition: "transform 0.5s",
+                    }}
+                    transition={"all 0.5s ease"}
+                  >
+                    <Image
+                      src={product.link}
+                      alt="Parallax Image"
+                      layout="fill"
+                      objectFit="cover"
+                      quality={100}
+                    />
+                  </Box>
                 ))}
               </Box>
             </VStack>

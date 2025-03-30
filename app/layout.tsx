@@ -19,6 +19,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="light"
+      style={{ scrollBehavior: "smooth" }}
 
       suppressHydrationWarning
     >
@@ -45,17 +46,17 @@ export default function RootLayout({
       </head>
       <body
         className={`font-Montserrat antialiased`}
-        style={{ background: "#fff"}}
+        style={{ background: "#fff", scrollBehavior: "smooth" }}
       >
         {/* Wrap with UserProvider */}{" "}
-
+{/* 
         <UserProvider>
-          <ListingCreationProvider>
+          <ListingCreationProvider> */}
    
               <ClientProvider>{children}</ClientProvider>
 
-          </ListingCreationProvider>
-        </UserProvider>
+          {/* </ListingCreationProvider>
+        </UserProvider> */}
 
       </body>
     </html>
