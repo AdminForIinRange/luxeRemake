@@ -38,7 +38,7 @@ import Link from "next/link";
 import SmoothScroll from "./customUI/SmoothScroll/SmoothScroll";
 import { useRouter } from "next/navigation";
 const Hero = () => {
-    const router = useRouter();
+  const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   // const { user } = useUser();
 
@@ -53,12 +53,12 @@ const Hero = () => {
   // };
 
   const words = [
-    "Stress-Free",
-    "Effortless",
+    "Calm",
+    "Easy",
     "Simple",
-    "Efficient",
-    "Professional",
-    "Effective",
+    "Fast",
+    "Pro",
+    "Sharp",
   ];
   const GettingStartedSteps = [
     {
@@ -110,16 +110,16 @@ const Hero = () => {
         justifyContent={"center"}
         alignItems={"center"}
         fontSize={{
-          base: "34px",
-          sm: "40px",
-          md: "50px",
+          base: "50px",
+          sm: "50px",
+          md: "60px",
           lg: "76px",
           xl: "96px",
         }}
         fontWeight={{ base: "400", sm: "400", md: "400", lg: "400", xl: "400" }}
         fontFamily={"raleway"}
       >
-        <Box color={"#222222"} fontWeight={"600"} width={"70%"}>
+        <Box color={"#222222"} fontWeight={"600"} width={"90%"}>
           Luxe Managements <br />
           <Box fontWeight={"400"}>
             Be <FlipWords words={words} />
@@ -227,6 +227,10 @@ const Hero = () => {
           <DialogCloseTrigger />
         </DialogContent>
       </DialogRoot>
+
+      <HStack justify={"center"} align={"center"} w={"100%"}>
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      </HStack>
 
       <HStack
         zIndex={3}
@@ -417,95 +421,21 @@ const Hero = () => {
         </HStack>
       </HStack>
 
-      <HStack
-        mt={["50px", "50px", "50px", "50px", "50px", "100px"]}
-        justify={"center"}
-        align={"center"}
-        w={"100%"}
-        transition={"all 0.2s ease-in-out"}
-        zIndex={3}
-        id="get-started-button"
-      >
-        <Box
-          bg={"#0A0F29"}
-          w={"90%"}
-          h={"100%"}
-          borderRadius={"30px"}
-          p={"50px"}
-          display={"flex"}
-          flexDir={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          boxShadow={"0px 10px 20px rgba(0, 0, 0, 0.1)"}
-          textAlign={"center"}
-        >
-          <Text
-            color={"white"}
-            fontWeight={"700"}
-            fontSize={"52px"}
-            fontFamily={"raleway"}
-            mb={"10px"}
-          >
-            Ready to transfrom your property management?
-          </Text>
-          <Text color={"white"} fontSize={"24px"} fontFamily={"raleway"}>
-            Get a full consulation, market analysis in under 24 hours for free
-          </Text>
-
-          <HStack
-            justify={"center"}
-            align={"center"}
-            w={"100%"}
-            transition={"all 0.2s ease-in-out"}
-            zIndex={3}
-          >
-            <Box
-              mt={"50px"}
-              display={"flex"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              gap={"15px"}
-              fontFamily={"raleway"}
-              transition={"all 0.2s ease-in-out"}
-              cursor={"pointer"}
-              _hover={{
-                transition: "all 0.2s ease-in-out",
-                scale: 1.1,
-                fontWeight: "700",
-                px: "80px",
-                bg: "white",
-              }}
-              p={4}
-              bg={"White"}
-              color={"black"}
-              rounded={"30px"}
-              px={"12"}
-              fontWeight={"500"}
-              onClick={() => setIsDialogOpen(true)}
-            >
-              Schedule a consultation
-              {/* <Icon as={ArrowRight}> </Icon> */}
-            </Box>
-          </HStack>
-        </Box>
+      <HStack mt={["50px", "50px", "50px", "50px", "50px", "50px"]} justify={"center"} align={"center"} w={"100%"}>
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-
-      <VStack pb={"50px"}>
+      <VStack
+        mt={["50px", "50px", "50px", "50px", "50px", "100px"]}
+        w={["100%", "100%", "100%", "100%", "100%", "100"]}
+        textAlign={["center", "center", "center", "center", "center", "center"]}
+        color={"black"}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+      >
         <Text
-          w={["100%", "100%", "80%", "80%", "80%", "80%"]}
-          mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
           fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
           fontWeight={700}
           fontFamily={"Poppins"}
           bgClip="text"
-          textAlign={[
-            "center",
-            "center",
-            "center",
-            "center",
-            "center",
-            "center",
-          ]}
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
         >
@@ -514,17 +444,9 @@ const Hero = () => {
         <Text
           fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-          textAlign={[
-            "center",
-            "center",
-            "center",
-            "center",
-            "center",
-            "center",
-          ]}
+
           fontFamily={"Poppins"}
           color={"black"}
-          w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
           fontWeight={300}
         >
           We offer a full suite of services to help you manage your property
@@ -561,7 +483,7 @@ const Hero = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-              fontWeight={700}
+              fontWeight={600}
               fontFamily={"Poppins"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
@@ -597,7 +519,7 @@ const Hero = () => {
               zIndex={3}
             >
               <Box
-                mt={"50px"}
+                my={"25px"}
                 display={"flex"}
                 alignItems={"center"}
                 justifyContent={["center"]}
@@ -620,7 +542,7 @@ const Hero = () => {
                 fontWeight={"500"}
                 onClick={() => router.push("/services")}
               >
-                Schedule a consultation
+                Learn More
                 {/* <Icon as={ArrowRight}> </Icon> */}
               </Box>
             </HStack>
@@ -655,168 +577,7 @@ const Hero = () => {
             ></Box>
             {/* Bottom-right label */}
             <Box
-              zIndex={1}
-              position="absolute"
-              bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
-              right={["20px", "20px", "20px", "190px", "280px", "300px"]}
-              bg="white"
-              borderRadius="md"
-              p={[
-                "10px 10px",
-                "10px 10px",
-                "10px 10px",
-                "15px 15px",
-                "15px 15px",
-                "15px 15px",
-              ]}
-              boxShadow="md"
-              fontWeight="semibold"
-              textAlign={"left"}
-            >
-              <HStack>
-                <Text
-                  fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-                  fontWeight={"700"}
-                  color={"black"}
-                >
-                  40%
-                </Text>
-                <Text
-                  fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                  color={["black", "red", "orange", "blue", "green", "purple"]}
-                >
-                  {" "}
-                  Average Revenue Increase
-                </Text>
-              </HStack>
-            </Box>
-          </Box>
-        </HStack>
-      </HStack>
-
-      <HStack
-        zIndex={3}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        justify={"center"} // !!
-        align={"center"}
-        w={"100%"}
-        h={"100%"}
-        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
-      >
-        <HStack
-          justify={[
-            "space-between",
-            "space-between",
-            "space-between",
-            "space-between",
-            "space-between",
-            "space-between",
-          ]}
-          align={["center", "center", "start", "start", "start", "start"]}
-          w={"100%"}
-          h={"100%"}
-          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
-          wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
-        >
-          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
-            <Text
-              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-              fontWeight={700}
-              fontFamily={"Poppins"}
-              bgClip="text"
-              textAlign={["center", "center", "center", "left", "left", "left"]}
-              color={"black"}
-              bgGradient="linear(to-r, teal, blue)"
-            >
-              Maximize Your Rental Income
-            </Text>
-            <Text
-              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-              mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-              textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Poppins"}
-              color={"black"}
-              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-              fontWeight={300}
-            >
-              Optimize your income and ease your mind with our experienced
-              Airbnb Management team. Learn More
-            </Text>
-            <HStack
-              justify={[
-                "center",
-                "center",
-                "center",
-                "start",
-                "start",
-                "start",
-              ]}
-              align={"start"}
-              w={"100%"}
-              transition={"all 0.2s ease-in-out"}
-              zIndex={3}
-            >
-              <Box
-                mt={"50px"}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={["center"]}
-                gap={"15px"}
-                fontFamily={"raleway"}
-                transition={"all 0.2s ease-in-out"}
-                cursor={"pointer"}
-                _hover={{
-                  transition: "all 0.2s ease-in-out",
-                  scale: 1.1,
-                  fontWeight: "700",
-                  px: "80px",
-                  bg: "black",
-                }}
-                p={4}
-                bg={"black"}
-                color={"white"}
-                rounded={"30px"}
-                px={"12"}
-                fontWeight={"500"}
-                onClick={() => router.push("/services")}
-              >
-                Schedule a consultation
-                {/* <Icon as={ArrowRight}> </Icon> */}
-              </Box>
-            </HStack>
-          </Box>
-
-          <Box
-            display="block"
-            position="relative"
-            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
-            w={["100%", "100%", "100%", "650px", "650px", "650px"]}
-            backdropFilter="blur(1.5px)"
-            borderRadius="30px"
-            bgPos="center"
-            bgSize="cover"
-            // Change this to any background you want
-            // Change this to any background you want
-            overflow="hidden"
-          >
-            {/* Horizontal line for crosshair */}
-            <Box
-              display="block"
-              position="relative"
-              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              backdropFilter="blur(1.5px)"
-              borderRadius="30px"
-              bgPos="center"
-              bgSize="cover"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
-              ml={["0px", "0px", "0px", "100px", "100px", "100px"]}
-            ></Box>
-            {/* Bottom-right label */}
-            <Box
+              fontFamily={"raleway"}
               zIndex={1}
               position="absolute"
               bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
@@ -884,7 +645,7 @@ const Hero = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-              fontWeight={700}
+              fontWeight={600}
               fontFamily={"Poppins"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
@@ -920,9 +681,7 @@ const Hero = () => {
               zIndex={3}
             >
               <Box
-    
-        
-                mt={"50px"}
+                my={"25px"}
                 display={"flex"}
                 alignItems={"center"}
                 justifyContent={["center"]}
@@ -944,9 +703,8 @@ const Hero = () => {
                 px={"12"}
                 fontWeight={"500"}
                 onClick={() => router.push("/services")}
-             
               >
-          Learn More
+                Learn More
                 {/* <Icon as={ArrowRight}> </Icon> */}
               </Box>
             </HStack>
@@ -998,6 +756,7 @@ const Hero = () => {
               boxShadow="md"
               fontWeight="semibold"
               textAlign={"left"}
+              fontFamily={"raleway"}
             >
               <HStack>
                 <Text
@@ -1019,8 +778,250 @@ const Hero = () => {
         </HStack>
       </HStack>
 
+      <HStack
+        zIndex={3}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        justify={"center"} // !!
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
+      >
+        <HStack
+          justify={[
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+          ]}
+          align={["center", "center", "start", "start", "start", "start"]}
+          w={"100%"}
+          h={"100%"}
+          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+          wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+        >
+          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+            <Text
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontWeight={600}
+              fontFamily={"Poppins"}
+              bgClip="text"
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              color={"black"}
+              bgGradient="linear(to-r, teal, blue)"
+            >
+              Maximize Your Rental Income
+            </Text>
+            <Text
+              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              fontFamily={"Poppins"}
+              color={"black"}
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              fontWeight={300}
+            >
+              Optimize your income and ease your mind with our experienced
+              Airbnb Management team. Learn More
+            </Text>
+            <HStack
+              justify={[
+                "center",
+                "center",
+                "center",
+                "start",
+                "start",
+                "start",
+              ]}
+              align={"start"}
+              w={"100%"}
+              transition={"all 0.2s ease-in-out"}
+              zIndex={3}
+            >
+              <Box
+                my={"25px"}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={["center"]}
+                gap={"15px"}
+                fontFamily={"raleway"}
+                transition={"all 0.2s ease-in-out"}
+                cursor={"pointer"}
+                _hover={{
+                  transition: "all 0.2s ease-in-out",
+                  scale: 1.1,
+                  fontWeight: "700",
+                  px: "80px",
+                  bg: "black",
+                }}
+                p={4}
+                bg={"black"}
+                color={"white"}
+                rounded={"30px"}
+                px={"12"}
+                fontWeight={"500"}
+                onClick={() => router.push("/services")}
+              >
+                Learn More
+                {/* <Icon as={ArrowRight}> </Icon> */}
+              </Box>
+            </HStack>
+          </Box>
 
+          <Box
+            display="block"
+            position="relative"
+            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+            w={["100%", "100%", "100%", "650px", "650px", "650px"]}
+            backdropFilter="blur(1.5px)"
+            borderRadius="30px"
+            bgPos="center"
+            bgSize="cover"
+            // Change this to any background you want
+            // Change this to any background you want
+            overflow="hidden"
+          >
+            {/* Horizontal line for crosshair */}
+            <Box
+              display="block"
+              position="relative"
+              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              backdropFilter="blur(1.5px)"
+              borderRadius="30px"
+              bgPos="center"
+              bgSize="cover"
+              bg="gray.200" // Change this to any background you want
+              overflow="hidden"
+              ml={["0px", "0px", "0px", "100px", "100px", "100px"]}
+            ></Box>
+            {/* Bottom-right label */}
+            <Box
+              zIndex={1}
+              position="absolute"
+              bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
+              right={["20px", "20px", "20px", "190px", "280px", "300px"]}
+              bg="white"
+              borderRadius="md"
+              p={[
+                "10px 10px",
+                "10px 10px",
+                "10px 10px",
+                "15px 15px",
+                "15px 15px",
+                "15px 15px",
+              ]}
+              boxShadow="md"
+              fontWeight="semibold"
+              textAlign={"left"}
+              fontFamily={"raleway"}
+            >
+              <HStack>
+                <Text
+                  fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+                  fontWeight={"700"}
+                  color={"black"}
+                >
+                  40%
+                </Text>
+                <Text
+                  fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+                >
+                  {" "}
+                  Average Revenue Increase
+                </Text>
+              </HStack>
+            </Box>
+          </Box>
+        </HStack>
+      </HStack>
+      <HStack justify={"center"} align={"center"} w={"100%"}>
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      </HStack>
+      <HStack
+        my={["50px", "50px", "50px", "50px", "50px", "100px"]}
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+        transition={"all 0.2s ease-in-out"}
+        zIndex={3}
+        id="get-started-button"
+      >
+        <Box
+          bg={"#0A0F29"}
+          w={"90%"}
+          h={"100%"}
+          borderRadius={"30px"}
+          p={"25px"}
+          py={"35px"}
+          display={"flex"}
+          flexDir={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          boxShadow={"0px 10px 20px rgba(0, 0, 0, 0.1)"}
+          textAlign={"center"}
+        >
+          <Text
+            color={"white"}
+            fontWeight={"700"}
+            fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+            fontFamily={"raleway"}
+            mb={"10px"}
+          >
+            Ready to transfrom your property management?
+          </Text>
+          <Text
+            color={"white"}
+            fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+            fontFamily={"raleway"}
+          >
+            Get a full consulation, market analysis in under 24 hours for free
+          </Text>
 
+          <HStack
+            justify={"center"}
+            align={"center"}
+            w={"100%"}
+            transition={"all 0.2s ease-in-out"}
+            zIndex={3}
+          >
+            <Box
+              my={"25px"}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              gap={"15px"}
+              fontFamily={"raleway"}
+              transition={"all 0.2s ease-in-out"}
+              cursor={"pointer"}
+              _hover={{
+                transition: "all 0.2s ease-in-out",
+                scale: 1.1,
+                fontWeight: "700",
+                px: "80px",
+                bg: "white",
+              }}
+              p={4}
+              bg={"White"}
+              color={"black"}
+              rounded={"30px"}
+              px={"12"}
+              fontWeight={"500"}
+              onClick={() => setIsDialogOpen(true)}
+            >
+              Schedule a consultation
+              {/* <Icon as={ArrowRight}> </Icon> */}
+            </Box>
+          </HStack>
+        </Box>
+      </HStack>
+      <HStack  justify={"center"} align={"center"} w={"100%"}>
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      </HStack>
     </>
   );
 };

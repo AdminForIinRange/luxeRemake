@@ -7,8 +7,9 @@ import { useUser } from "@/context/UserContext";
 import Image from "next/image";
 import luxeLogo from "../../public/png/LuxeLogo.png";
 import { FlipWords } from "@/components/ui/flip-words";
-
+import { useRouter } from "next/navigation";
 const Navbar = () => {
+  const router = useRouter();
   // const { user } = useUser();
 
   // const [loading, setLoading] = useState(true);
@@ -20,7 +21,6 @@ const Navbar = () => {
   //     console.error("Error signing out:", error);
   //   }
   // };
-
 
   const words = [
     "Stress-Free",
@@ -36,13 +36,13 @@ const Navbar = () => {
       <Box w={"100%"} p={4} fontFamily={"raleway"}>
         <HStack borderBottom={"1px solid #e0e0e0"} pb={"4"}>
           <Flex
-          direction={{
-            base: "column",
-            sm: "column",
-            md: "column",
-            lg: "row",
-            xl: "row",
-          }}
+            direction={{
+              base: "column",
+              sm: "column",
+              md: "column",
+              lg: "row",
+              xl: "row",
+            }}
             w={"100%"}
             h={"100%"}
             justifyContent={"center"}
@@ -55,7 +55,7 @@ const Navbar = () => {
               xl: "500px",
             }}
           >
-            <HStack fontSize={"30px"} >
+            <HStack fontSize={"30px"}>
               <Box
                 w={"70px"}
                 h={"100%"}
@@ -65,10 +65,15 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
+                onClick={() => router.push("/")}
               >
                 <Image src={luxeLogo} alt="logo" />
               </Box>
-              <Text fontFamily={"raleway"} fontWeight={"700"}>
+              <Text
+                fontFamily={"raleway"}
+                fontWeight={"700"}
+                onClick={() => router.push("/")}
+              >
                 Luxe Management
               </Text>
             </HStack>
@@ -85,6 +90,7 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
+                onClick={() => router.push("/Home")}
               >
                 Home
               </Box>
@@ -95,6 +101,7 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
+                onClick={() => router.push("/About")}
               >
                 {" "}
                 About
@@ -106,9 +113,9 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
+                onClick={() => router.push("/services")}
               >
                 Services
-
               </Box>
               <Box
                 cursor={"pointer"}
@@ -117,9 +124,9 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
+                onClick={() => router.push("/Pricing")}
               >
                 Pricing
-
               </Box>
               <Box
                 cursor={"pointer"}
@@ -128,16 +135,14 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
+                onClick={() => router.push("/Contact")}
               >
                 Contact
-
               </Box>
             </HStack>
           </Flex>
         </HStack>
       </Box>
-
-
     </>
   );
 };

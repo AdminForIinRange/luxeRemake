@@ -20,14 +20,16 @@ const items = [
 const Footer = () => {
   return (
     <>
-
+      <HStack my={"50px"}  justify={"center"} align={"center"} w={"100%"}>
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      </HStack>
 
       <footer className="bg-white dark:bg-gray-900">
         <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <a
-                href="https://LuxeManagements.com/"
+                href="#"
                 className="flex items-center"
               >
                 <HStack fontSize={"30px"}>
@@ -57,7 +59,7 @@ const Footer = () => {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <a
-                      href="https://LuxeManagements.com/"
+                      href="#"
                       className="hover:underline"
                     >
                       Luxe Managements
@@ -65,10 +67,10 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="https://tailwindcss.com/"
+                      href="#"
                       className="hover:underline"
                     >
-                      Tailwind CSS
+                      IDK 
                     </a>
                   </li>
                 </ul>
@@ -80,18 +82,18 @@ const Footer = () => {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <a
-                      href="https://github.com/themesberg/Luxe Managements"
+                      href="#"
                       className="hover:underline "
                     >
-                      Github
+                      IDK
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://discord.gg/4eeurUVvTy"
+                      href="#"
                       className="hover:underline"
                     >
-                      Discord
+                      IDK
                     </a>
                   </li>
                 </ul>
@@ -120,7 +122,7 @@ const Footer = () => {
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2023{" "}
               <a
-                href="https://LuxeManagements.com/"
+                href="#"
                 className="hover:underline"
               >
                 Luxe Managements™

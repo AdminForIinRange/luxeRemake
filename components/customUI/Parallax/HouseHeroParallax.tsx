@@ -208,18 +208,19 @@ const HouseHeroParallax = () => {
                 justifyContent={"center"}
                 gap={"25px"}
                 display={"flex"}
-                w={"5000px"}
-                h={"500px"}
+                w={["5000px", "5000px", "5000px", "5000px", "5000px", "5000px"]}
+                h={["280px", "280px", "380px", "500px", "500px", "500px"]}
                 // bg={"red"}
                 py={"25px"}
               >
                 {chunk.map((product, idx) => (
                   <Box
                     key={idx}
+                    w={["200px", "500px", "500px", "500px", "500px", "500px"]}
+                    h={["250px", "250px", "350px", "450px", "450px", "450px"]}
                     style={{
                       position: "relative",
-                      width: "500px",
-                      height: "450px",
+
                       borderRadius: "30px",
                       overflow: "hidden",
                     }}

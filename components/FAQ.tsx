@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion, Box, Span , Text} from "@chakra-ui/react";
+import { Accordion, Box, HStack, Span, Text, VStack } from "@chakra-ui/react";
 
 const faqs = [
   {
@@ -41,18 +41,37 @@ const faqs = [
 const FAQ = () => {
   return (
     <>
-
-<Text
-     
-        fontSize={["24px", "24px", "24px", "30px", "36px"]}
-        fontWeight="bold"
-        mb="8px"
-        textAlign={"center"}
+      <VStack
+        my={["50px", "50px", "50px", "50px", "50px", "50px"]}
+        w={["100%", "100%", "100%", "100%", "100%", "100"]}
+        textAlign={["center", "center", "center", "center", "center", "center"]}
+        color={"black"}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
-     FAQ
-      </Text> 
+        <Text
+          fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+          fontWeight={700}
+          fontFamily={"Poppins"}
+          bgClip="text"
+          color={"black"}
+          bgGradient="linear(to-r, teal, blue)"
+        >
+          FAQs
+        </Text>
+        <Text
+          fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+          // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+
+          fontFamily={"Poppins"}
+          color={"black"}
+          fontWeight={300}
+        >
+          Discover the answers to common questions about our Airbnb management
+          services, Feel free to reach out!
+        </Text>
+      </VStack>
       <Accordion.Root
-      fontFamily={"raleway"}
+        fontFamily={"raleway"}
         collapsible
         defaultValue={["b"]}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
@@ -65,10 +84,11 @@ const FAQ = () => {
               justifyContent={"start"}
               textAlign={"start"}
               py="4"
-        
               _hover={{ bg: "gray.50" }}
             >
-              <Span flex="1" fontWeight={"600"}  fontSize={"18px"} >{item.question}</Span>
+              <Span flex="1" fontWeight={"600"} fontSize={"18px"}>
+                {item.question}
+              </Span>
               <Accordion.ItemIndicator />
             </Accordion.ItemTrigger>
 
