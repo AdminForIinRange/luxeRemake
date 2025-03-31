@@ -452,8 +452,13 @@ const Hero = () => {
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
         <Text
-          fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-          fontWeight={700}
+              fontSize={{
+                base: "40px",
+                sm: "40px",
+                md: "40px",
+                lg: "60px",
+                xl: "60px",
+              }}    fontWeight={700}
           fontFamily={"Raleway"}
           bgClip="text"
           color={"black"}
@@ -462,7 +467,8 @@ const Hero = () => {
           Our Services
         </Text>
         <Text
-          fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+                  w={["90%", "90%", "90%", "50%", "50%", "50%"]}
+      fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
           fontFamily={"Raleway"}

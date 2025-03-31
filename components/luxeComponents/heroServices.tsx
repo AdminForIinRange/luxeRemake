@@ -305,7 +305,7 @@ const HeroServices = () => {
              
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
        
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
