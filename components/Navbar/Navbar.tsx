@@ -55,7 +55,20 @@ const Navbar = () => {
               xl: "500px",
             }}
           >
-            <HStack fontSize={"30px"}>
+            <Stack
+            justify={"center"}
+              align={"center"}
+              fontSize={"30px"}
+              direction={{
+                base: "column",
+                sm: "column",
+                md: "row",
+                lg: "row",
+                xl: "row",
+              }}
+              w={"100%"}
+              h={"100%"}
+            >
               <Box
                 w={"70px"}
                 h={"100%"}
@@ -76,10 +89,11 @@ const Navbar = () => {
               >
                 Luxe Management
               </Text>
-            </HStack>
+            </Stack>
+
             <HStack
-              fontSize={"16px"}
-              gap={"36px"}
+              fontSize={["14px", "14px", "16px", "16px", "16px", "20px"]}
+              gap={["26px", "26px", "36px", "36px", "36px", "100px"]}
               fontWeight={"500"}
               transition={"all 0.2s ease-in-out"}
             >
@@ -90,7 +104,7 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
-                onClick={() => router.push("/Home")}
+                onClick={() => router.push("/")}
               >
                 Home
               </Box>
@@ -101,7 +115,7 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
-                onClick={() => router.push("/About")}
+                onClick={() => router.push("/about")}
               >
                 {" "}
                 About
@@ -124,7 +138,7 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
-                onClick={() => router.push("/Pricing")}
+                onClick={() => router.push("/pricing")}
               >
                 Pricing
               </Box>
@@ -135,7 +149,7 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
-                onClick={() => router.push("/Contact")}
+                onClick={() => router.push("/contact")}
               >
                 Contact
               </Box>

@@ -28,7 +28,7 @@ import {
   DialogTrigger,
 } from "@/components/chakra-snippets/dialog";
 
-const Services = () => {
+const About = () => {
   const serviceItems = [
     {
       img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
@@ -76,112 +76,37 @@ const Services = () => {
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
         <Text
-     fontSize={{
-        base: "40px",
-        sm: "40px",
-        md: "40px",
-        lg: "60px",
-        xl: "60px",
-      }}
+        
+          fontSize={{
+            base: "40px",
+            sm: "40px",
+            md: "40px",
+            lg: "60px",
+            xl: "60px",
+          }}
           fontWeight={700}
           fontFamily={"Poppins"}
           bgClip="text"
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
         >
-          Our Services
+          About Us
         </Text>
         <Text
-         w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-         fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
+          w={["90%", "90%", "90%", "50%", "50%", "50%"]}
+          fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
           fontFamily={"Poppins"}
           color={"black"}
           fontWeight={300}
         >
-          We offer a full suite of services to help you manage your property
+          We offer a full suite of About to help you manage your property
           with ease.
         </Text>
       </VStack>
 
-      <HStack
-        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-        w={"100%"}
-        h={"100%"}
-        justify={"start"}
-        align={"center"}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "wrap"]}
-        fontFamily={"raleway"}
-        gap={"25px"}
-      >
-        {/* {uploadedFiles.length > 0 ? ( */}
-        {serviceItems.map(({ img, title, logo, link, subheading }) => (
-          <VStack key={title}>
-            <Box
-              backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(${img})`}
-              backgroundSize="cover"
-              backgroundPosition="center"
-              backgroundRepeat="no-repeat"
-              transition={"all 0.3s"}
-              w={"450px"}
-              h={"300px"}
-              borderRadius={"16px"}
-              _hover={{
-                transform: "scale(1.01)",
-              }}
-              cursor={"pointer"}
-              p={"30px"}
-              display={"flex"}
-            >
-              <VStack
-                color={"white"}
-                mt={"20px"}
-                w={"100%"}
-                h={"100%"}
-                display={"flex"}
-                justifyContent={"end"}
-                alignItems={"end"}
-              >
-                <VStack w={"100%"} h={"100%"} justify={"Start"} align={"Start"}>
-                  <HStack w={"100%"} h={"100%"} justify={"start"} align={"end"}>
-                    {logo}
-                  </HStack>
-                  <Text
-                    color={"white"}
-                    fontSize={["26px", "26px", "26px", "26px", "26px", "26px"]}
-                    fontFamily={"Poppins"}
-                    fontWeight={700}
-                  >
-                    {title}
-                  </Text>
-                </VStack>
-              </VStack>
-            </Box>
-            <Box fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}>
-              <Text w={"450px"} h={"50px"} mt={"10px"}>
-                {subheading}
-              </Text>
-              <HStack
-                cursor={"pointer"}
-                w={"450px"}
-                align={"start"}
-                justify={"start"}
-                fontWeight={500}
-                mt={"5px"}
-                _hover={{ transform: "translateX(5px)" }}
-                transition={"all 0.3s"}
-                onClick={() => router.push(`/${link}`)}
-              >
-                <Text>Explore service</Text>
-
-                <ChevronRight />
-              </HStack>
-            </Box>
-          </VStack>
-        ))}
-      </HStack>
+ 
 
       <HStack
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
@@ -299,4 +224,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default About;
