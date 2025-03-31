@@ -16,7 +16,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { ChevronRight, Home, HomeIcon, House } from "lucide-react";
+import { Camera, ChevronRight, Home, HomeIcon, House, Sofa, Sparkle, VenetianMask } from "lucide-react";
 import { IconLeft } from "react-day-picker";
 import { IconArrowRightFromArc } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
@@ -26,7 +26,7 @@ import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultati
 const Services = () => {
   const serviceItems = [
     {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+      img: "https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg",
       title: "Property Management",
       logo: <HomeIcon />,
       link: "services/property-management",
@@ -34,9 +34,9 @@ const Services = () => {
         "Comprehensive management service including all our offerings.",
     },
     {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+      img: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
       title: "Cleaning & Linen",
-      logo: <HomeIcon />,
+      logo: <Sparkle />,
       link: "Explore service",
       subheading:
         "Ensure a pristine, hotel-quality experience for every guest.",
@@ -44,15 +44,15 @@ const Services = () => {
     {
       img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
       title: "Furnishing & Styling",
-      logo: <HomeIcon />,
+      logo: <Sofa />,
       link: "Explore service",
       subheading:
         "Transform your space into a stunning, Instagram-worthy retreat.",
     },
     {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+      img: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
       title: "Photography",
-      logo: <HomeIcon />,
+      logo: <Camera />,
       link: "Explore service",
       subheading:
         "Capture your property's best features with professional photography.",
@@ -103,7 +103,7 @@ const Services = () => {
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
         w={"100%"}
         h={"100%"}
-        justify={"start"}
+        justify={"center"}
         align={"center"}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "wrap"]}
@@ -119,8 +119,8 @@ const Services = () => {
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               transition={"all 0.3s"}
-              w={"450px"}
-              h={"300px"}
+              w={"550px"}
+              h={"400px"}
               borderRadius={"16px"}
               _hover={{
                 transform: "scale(1.01)",
@@ -128,6 +128,7 @@ const Services = () => {
               cursor={"pointer"}
               p={"30px"}
               display={"flex"}
+              onClick={() => router.push(`/${link}`)}
             >
               <VStack
                 color={"white"}
@@ -153,13 +154,14 @@ const Services = () => {
                 </VStack>
               </VStack>
             </Box>
-            <Box fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}>
-              <Text w={"450px"} h={"50px"} mt={"10px"}>
+            <Box fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}              w={"550px"}
+              >
+              <Text mt={"10px"}>
                 {subheading}
               </Text>
               <HStack
                 cursor={"pointer"}
-                w={"450px"}
+               
                 align={"start"}
                 justify={"start"}
                 fontWeight={500}
