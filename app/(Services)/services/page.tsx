@@ -16,7 +16,16 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Camera, ChevronRight, Home, HomeIcon, House, Sofa, Sparkle, VenetianMask } from "lucide-react";
+import {
+  Camera,
+  ChevronRight,
+  Home,
+  HomeIcon,
+  House,
+  Sofa,
+  Sparkle,
+  VenetianMask,
+} from "lucide-react";
 import { IconLeft } from "react-day-picker";
 import { IconArrowRightFromArc } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
@@ -119,7 +128,7 @@ const Services = () => {
               backgroundPosition="center"
               backgroundRepeat="no-repeat"
               transition={"all 0.3s"}
-              w={"550px"}
+              w={["350px", "350px", "350px", "550px", "550px", "550px"]}
               h={"400px"}
               borderRadius={"16px"}
               _hover={{
@@ -154,14 +163,13 @@ const Services = () => {
                 </VStack>
               </VStack>
             </Box>
-            <Box fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}              w={"550px"}
-              >
-              <Text mt={"10px"}>
-                {subheading}
-              </Text>
+            <Box
+              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              w={["350px", "350px", "350px", "550px", "550px", "550px"]}
+            >
+              <Text mt={"10px"}>{subheading}</Text>
               <HStack
                 cursor={"pointer"}
-               
                 align={"start"}
                 justify={"start"}
                 fontWeight={500}
@@ -178,8 +186,6 @@ const Services = () => {
           </VStack>
         ))}
       </HStack>
-
-     
 
       <HStack
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
