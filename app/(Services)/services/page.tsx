@@ -29,7 +29,7 @@ const Services = () => {
       img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
       title: "Property Management",
       logo: <HomeIcon />,
-      link: "Explore service",
+      link: "services/property-management",
       subheading:
         "Comprehensive management service including all our offerings.",
     },

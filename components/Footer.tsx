@@ -67,7 +67,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="#"
+                      href={`mailto:luxemanagements.info@gmail.com?subject=I'm%20interested%20in%20your%20services.`}
                       className="hover:underline"
                     >
                      luxemanagements.info
@@ -82,20 +82,13 @@ const Footer = () => {
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <a
-                      href="#"
+                      href="https://www.instagram.com/luxemanagements/"
                       className="hover:underline "
                     >
                     Instagram
                     </a>
                   </li>
-                  <li>
-                    <a
-                      href="#"
-                      className="hover:underline"
-                    >
-                      Airbnb
-                    </a>
-                  </li>
+                
                 </ul>
               </div>
               <div>

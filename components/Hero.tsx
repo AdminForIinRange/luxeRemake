@@ -337,11 +337,12 @@ const Hero = () => {
             borderRadius={"30px"}
             bgPos={"center"}
             bgSize={"cover"}
+            data-aos="fade-up"
           >
             {" "}
             {GettingStartedSteps.slice(0, 4).map(
               ({ id, title, description }, index) => (
-                <VStack key={id} w={"100%"} align={"center"} justify={"start"} data-aos="fade-up" >
+                <VStack key={id} w={"100%"} align={"center"} justify={"start"}  >
                   <HStack
                     w={"100%"}
                     h={"100%"}
@@ -356,6 +357,7 @@ const Hero = () => {
                         borderRadius={"15px"}
                         bg={"white"}
                         border={"1px solid rgb(0, 0,0,0.25)"}
+            
                       >
                         <HStack
                           w={"100%"}
@@ -387,6 +389,7 @@ const Hero = () => {
                           w={"5px"}
                           h={"100px"}
                           bg={"#BFBFBF"}
+         
                         ></Box>
                       )}
                     </VStack>
@@ -481,7 +484,7 @@ const Hero = () => {
       </VStack>
 
       <HeroServices />
-      <HStack justify={"center"} align={"center"} w={"100%"}>
+      <HStack justify={"center"} align={"center"} w={"100%"} id="get-started-button">
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <ScheduleConsultation />
