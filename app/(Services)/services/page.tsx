@@ -289,7 +289,7 @@ const Services = () => {
               border: "none",
               borderRadius: "10px",
             }}
-            src="https://calendly.com/bhattaraianjesh123"
+            src="https://calendly.com/luxemanagements-info"
           ></iframe>
 
           <DialogCloseTrigger />
