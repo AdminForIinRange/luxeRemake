@@ -111,7 +111,7 @@ const HeroServices = () => {
             position="relative"
             h={["500px", "500px", "500px", "500px", "500px", "600px"]}
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-            backdropFilter="blur(1.5px)"
+
             borderRadius="30px"
             bgPos="center"
             bgSize="cover"
@@ -123,14 +123,19 @@ const HeroServices = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              backdropFilter="blur(1.5px)"
-              borderRadius="30px"
-              bgPos="center"
-              bgSize="cover"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
+                     position="relative"
+                     h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+                     w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+               
+                     borderRadius="30px"
+                    
+                     bg="gray.200" // Change this to any background you want
+                     overflow="hidden"
+                     backgroundImage={` url(https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg)`}
+              
+                     backgroundRepeat="no-repeat"
+                     backgroundPosition="center"
+                     backgroundSize="100% 100%"
             ></Box>
             {/* Bottom-right label */}
             <Box
@@ -280,7 +285,7 @@ const HeroServices = () => {
             position="relative"
             h={["500px", "500px", "500px", "500px", "500px", "600px"]}
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-            backdropFilter="blur(1.5px)"
+  
             borderRadius="30px"
             bgPos="center"
             bgSize="cover"
@@ -295,12 +300,17 @@ const HeroServices = () => {
               position="relative"
               h={["500px", "500px", "500px", "500px", "500px", "500px"]}
               w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              backdropFilter="blur(1.5px)"
+        
               borderRadius="30px"
-              bgPos="center"
-              bgSize="cover"
+             
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
+              backgroundImage={` url(https://images.pexels.com/photos/2462015/pexels-photo-2462015.jpeg)`}
+       
+              backgroundRepeat="no-repeat"
+              backgroundPosition="center"
+              backgroundSize="100% 100%"
+
             ></Box>
             {/* Bottom-right label */}
 
@@ -339,13 +349,14 @@ const HeroServices = () => {
                     fontWeight={"700"}
                     color={"black"}
                   >
-                    40%
+                   35%
+                 
                   </Text>
                   <Text
                     fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
                   >
                     {" "}
-                    Average Revenue Increase
+                    Higher Profit Margins
                   </Text>
                 </HStack>
               </Box>
@@ -518,7 +529,7 @@ const HeroServices = () => {
             position="relative"
             h={["500px", "500px", "500px", "500px", "500px", "600px"]}
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-            backdropFilter="blur(1.5px)"
+
             borderRadius="30px"
             bgPos="center"
             bgSize="cover"
@@ -530,14 +541,19 @@ const HeroServices = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              backdropFilter="blur(1.5px)"
-              borderRadius="30px"
-              bgPos="center"
-              bgSize="cover"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
+                    position="relative"
+                    h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+                    w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              
+                    borderRadius="30px"
+                   
+                    bg="gray.200" // Change this to any background you want
+                    overflow="hidden"
+                    backgroundImage={` url(https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg)`}
+             
+                    backgroundRepeat="no-repeat"
+                    backgroundPosition="center"
+                    backgroundSize="100% 100%"
             ></Box>
             {/* Bottom-right label */}
             <Box
@@ -579,13 +595,14 @@ const HeroServices = () => {
                     fontWeight={"700"}
                     color={"black"}
                   >
-                    40%
+                   25%
+            
                   </Text>
                   <Text
                     fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
                   >
                     {" "}
-                    Average Revenue Increase
+                    Reduced Operating Expenses
                   </Text>
                 </HStack>
               </Box>
