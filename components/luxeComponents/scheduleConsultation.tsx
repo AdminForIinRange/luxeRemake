@@ -26,9 +26,7 @@ const ScheduleConsultation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   return (
     <>
-      <HStack justify={"center"} align={"center"} w={"100%"}>
-        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
-      </HStack>
+ 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
         justify={"center"}
