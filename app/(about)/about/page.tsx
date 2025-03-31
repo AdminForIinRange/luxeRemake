@@ -27,6 +27,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/chakra-snippets/dialog";
+import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 
 const About = () => {
   const serviceItems = [
@@ -236,16 +237,6 @@ const About = () => {
           </Box>
         </HStack>
       </HStack>
-
-      <HStack
-        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-        justify={"center"}
-        align={"center"}
-        w={"100%"}
-      >
-        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
-      </HStack>
-
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
         justify={"center"}
@@ -261,7 +252,8 @@ const About = () => {
           h={"100%"}
           borderRadius={"30px"}
           p={"25px"}
-          py={"35px"}
+          py={"65px"}
+
           display={"flex"}
           flexDir={"column"}
           alignItems={"center"}
@@ -276,79 +268,158 @@ const About = () => {
             fontFamily={"raleway"}
             mb={"10px"}
           >
-            Ready to transfrom your property management?
+            Our Mission
           </Text>
           <Text
+            w={["90%", "90%", "90%", "50%", "50%", "50%"]}
             color={"white"}
             fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
             fontFamily={"raleway"}
           >
-            Get a full consulation, market analysis in under 24 hours for free
+            At Luxe Managements, our mission is to elevate the short-term rental
+            experience for both property owners and guests. We strive to
+            maximize returns for owners while ensuring each guest enjoys a
+            five-star stay.
           </Text>
 
           <HStack
             justify={"center"}
-            align={"center"}
+            align={"start"}
             w={"100%"}
             transition={"all 0.2s ease-in-out"}
             zIndex={3}
+            gap={["25px", "25px", "25px", "25px", "25px", "25px"]}
+            wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+            mt={"50px"}
+            color={"white"}
+            fontFamily={"raleway"}
           >
-            <Box
-              my={"25px"}
-              display={"flex"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              gap={"15px"}
-              fontFamily={"raleway"}
-              transition={"all 0.2s ease-in-out"}
-              cursor={"pointer"}
-              _hover={{
-                transition: "all 0.2s ease-in-out",
-                scale: 1.1,
-                fontWeight: "700",
-                px: "80px",
-                bg: "white",
-              }}
-              p={4}
-              bg={"White"}
-              color={"black"}
-              rounded={"30px"}
-              px={"12"}
-              fontWeight={"500"}
-              onClick={() => setIsDialogOpen(true)}
-            >
-              Schedule a consultation
-              {/* <Icon as={ArrowRight}> </Icon> */}
+            {" "}
+            <Box p={4} rounded={"15px"} w={"250px"} bg={"#23273F"} h={"150px"}>
+              <Text fontSize={"24px"} fontWeight={"700"}>
+                Excellence
+              </Text>
+              <Text pt={"5px"}>
+                Delivering unparalleled service quality in every interaction
+              </Text>
+            </Box>
+            <Box p={4} rounded={"15px"} w={"250px"} bg={"#23273F"} h={"150px"}>
+              <Text fontSize={"24px"} fontWeight={"700"}>
+                Innovation
+              </Text>
+              <Text pt={"5px"}>
+                Leveraging cutting-edge technology to streamline operations
+              </Text>
+            </Box>
+            <Box p={4} rounded={"15px"} w={"250px"} bg={"#23273F"} h={"150px"}>
+              {" "}
+              <Text fontSize={"24px"} fontWeight={"700"}>
+                Integrity
+              </Text>
+              <Text pt={"5px"}>
+                Building trust through transparency and ethical practices
+              </Text>
             </Box>
           </HStack>
         </Box>
       </HStack>
 
-      <DialogRoot
-        size={"cover"}
-        open={isDialogOpen}
-        onOpenChange={(details) => setIsDialogOpen(details.open)}
+      <HStack
+        zIndex={3}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        justify={"center"} // !!
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+        my={["50px", "50px", "50px", "50px", "50px", "50px"]}
       >
-        <DialogContent
-          p={0}
-          bg={"white"}
-          color={"white"}
-          rounded={"10px"}
-          borderRadius={"10px"}
+        <VStack
+          justify={"center"}
+          align={["center", "center", "center", "center", "center", "center"]}
+          w={"100%"}
+          h={"100%"}
+          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+          wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
         >
-          <iframe
-            style={{
-              width: "100%",
-              height: "800px",
-              border: "none",
-              borderRadius: "10px",
-            }}
-            src="https://calendly.com/luxemanagements-info"
-          ></iframe>
+          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+            <Text
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontWeight={600}
+              fontFamily={"Poppins"}
+              bgClip="text"
+              textAlign={[
+                "center",
+                "center",
+                "center",
+                "center",
+                "center",
+                "center",
+              ]}
+              color={"black"}
+              bgGradient="linear(to-r, teal, blue)"
+            >
+            Meet Our Team
+            </Text>
+          </Box>
+          <HStack
+            justify={"center"}
+            align={"start"}
+            w={"100%"}
+            transition={"all 0.2s ease-in-out"}
+            zIndex={3}
+            gap={["25px", "25px", "25px", "25px", "25px", "25px"]}
+            wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+            mt={"50px"}
+            color={"white"}
+            fontFamily={"raleway"}
+          >
+            <VStack color={"black"} justify={"center"} align={"center"}>
+              <Box
+                p={4}
+                rounded={"full"}
+                w={"350px"}
+                bg={"#23273F"}
+                h={"350px"}
+              ></Box>
+              <Text fontWeight={"bold"} fontSize={"24px"}>
+                Jane Doe
+              </Text>
+              <Text fontSize={"16px"}>CEO & Co-founder</Text>
+            </VStack>
 
-          <DialogCloseTrigger />
-        </DialogContent>
-      </DialogRoot>
+            <VStack color={"black"} justify={"center"} align={"center"}>
+              <Box
+                p={4}
+                rounded={"full"}
+                w={"350px"}
+                bg={"#23273F"}
+                h={"350px"}
+              ></Box>
+              <Text fontWeight={"bold"} fontSize={"24px"}>
+                Jane Doe
+              </Text>
+              <Text fontSize={"16px"}>CEO & Co-founder</Text>
+            </VStack>
+            <VStack color={"black"} justify={"center"} align={"center"}>
+              <Box
+                p={4}
+                rounded={"full"}
+                w={"350px"}
+                bg={"#23273F"}
+                h={"350px"}
+              ></Box>
+              <Text fontWeight={"bold"} fontSize={"24px"}>
+                Jane Doe
+              </Text>
+              <Text fontSize={"16px"}>CEO & Co-founder</Text>
+            </VStack>
+          </HStack>
+        </VStack>
+      </HStack>
+
+      <ScheduleConsultation />
     </>
   );
 };
