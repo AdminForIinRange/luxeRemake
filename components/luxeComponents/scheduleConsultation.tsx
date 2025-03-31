@@ -27,7 +27,7 @@ const ScheduleConsultation = () => {
   return (
     <>
  
-      <HStack
+      <HStack data-aos="fade-up"
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
         justify={"center"}
         align={"center"}

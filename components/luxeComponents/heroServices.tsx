@@ -20,7 +20,7 @@ const HeroServices = () => {
   const router = useRouter();
   return (
     <>
-      <HStack
+      <HStack data-aos="fade-up"
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
@@ -192,7 +192,7 @@ const HeroServices = () => {
         </HStack>
       </HStack>
 
-      <HStack
+      <HStack data-aos="fade-up"
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
@@ -439,7 +439,7 @@ const HeroServices = () => {
 
 
 
-       <HStack
+       <HStack data-aos="fade-up"
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!

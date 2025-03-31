@@ -171,7 +171,7 @@ const Hero = () => {
         </Box>
       </HStack>
 
-      <Box overflowX={"hidden"} mt={"350px"}>
+      <Box overflowX={"hidden"} mt={"350px"}   >
         <Box
           px={["4%", "4%", "6%", "6%", "6%", "10%"]}
           pb={"50px"}
@@ -257,8 +257,8 @@ const Hero = () => {
           gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
           wrap={["wrap", "wrap", "nowrap", "nowrap", "nowrap", "nowrap"]}
         >
-          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
-            <Text
+          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]} >
+            <Text   data-aos="fade-up"
               w={["100%", "100%", "80%", "80%", "80%", "80%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
@@ -271,7 +271,7 @@ const Hero = () => {
             >
               How We Can Get You Get Started
             </Text>
-            <Text
+            <Text   data-aos="fade-up"
               fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
@@ -283,7 +283,7 @@ const Hero = () => {
               Learn how we can help you get started with personalized guidance
               and expert support every step of the way.
             </Text>
-            <HStack
+            <HStack   data-aos="fade-up"
               justify={[
                 "center",
                 "center",
@@ -341,7 +341,7 @@ const Hero = () => {
             {" "}
             {GettingStartedSteps.slice(0, 4).map(
               ({ id, title, description }, index) => (
-                <VStack key={id} w={"100%"} align={"center"} justify={"start"}>
+                <VStack key={id} w={"100%"} align={"center"} justify={"start"} data-aos="fade-up" >
                   <HStack
                     w={"100%"}
                     h={"100%"}
@@ -349,7 +349,7 @@ const Hero = () => {
                     align={"start"}
                     gap={2}
                   >
-                    <VStack justify={"center"} gap={0}>
+                    <VStack justify={"center"} gap={0} >
                       <Box
                         w={"50px"}
                         h={"50px"}
@@ -451,7 +451,7 @@ const Hero = () => {
         color={"black"}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
-        <Text
+        <Text data-aos="fade-up"
               fontSize={{
                 base: "40px",
                 sm: "40px",
@@ -466,7 +466,7 @@ const Hero = () => {
         >
           Our Services
         </Text>
-        <Text
+        <Text data-aos="fade-up"
                   w={["90%", "90%", "90%", "50%", "50%", "50%"]}
       fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
