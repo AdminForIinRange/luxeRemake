@@ -76,7 +76,6 @@ const About = () => {
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
         <Text
-        
           fontSize={{
             base: "40px",
             sm: "40px",
@@ -90,7 +89,7 @@ const About = () => {
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
         >
-          About Us
+          About Luxe
         </Text>
         <Text
           w={["90%", "90%", "90%", "50%", "50%", "50%"]}
@@ -101,12 +100,142 @@ const About = () => {
           color={"black"}
           fontWeight={300}
         >
-          We offer a full suite of About to help you manage your property
-          with ease.
+          Redefining luxury in short-term rentals
         </Text>
       </VStack>
 
- 
+      <HStack
+        zIndex={3}
+        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+        justify={"center"} // !!
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
+      >
+        <HStack
+          justify={[
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+            "space-between",
+          ]}
+          align={["center", "center", "start", "start", "start", "start"]}
+          w={"100%"}
+          h={"100%"}
+          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+          wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+        >
+          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+            <Text
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontWeight={600}
+              fontFamily={"Poppins"}
+              bgClip="text"
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              color={"black"}
+              bgGradient="linear(to-r, teal, blue)"
+            >
+              Our Story
+            </Text>
+            <Text
+              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+              textAlign={["center", "center", "center", "left", "left", "left"]}
+              fontFamily={"Poppins"}
+              color={"black"}
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              fontWeight={300}
+            >
+              Founded in 2015, Luxe Managements began with a vision to
+              revolutionize the short-term rental industry. Our founders,
+              experienced in both real estate and hospitality, saw an
+              opportunity to bridge the gap between property owners and guests,
+              creating exceptional experiences for both. <br></br> <br></br>{" "}
+              Over the years, we've grown from managing a handful of properties
+              to becoming a leader in the industry, known for our attention to
+              detail, innovative technology, and commitment to excellence. Our
+              Journey
+            </Text>
+            <HStack
+              justify={[
+                "center",
+                "center",
+                "center",
+                "start",
+                "start",
+                "start",
+              ]}
+              align={"start"}
+              w={"100%"}
+              transition={"all 0.2s ease-in-out"}
+              zIndex={3}
+            >
+              <Box
+                my={"25px"}
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={["center"]}
+                gap={"15px"}
+                fontFamily={"raleway"}
+                transition={"all 0.2s ease-in-out"}
+                cursor={"pointer"}
+                _hover={{
+                  transition: "all 0.2s ease-in-out",
+                  scale: 1.1,
+                  fontWeight: "700",
+                  px: "80px",
+                  bg: "black",
+                }}
+                p={4}
+                bg={"black"}
+                color={"white"}
+                rounded={"30px"}
+                px={"12"}
+                fontWeight={"500"}
+                onClick={() => router.push("/about/journey")}
+              >
+                Our Journey
+                {/* <Icon as={ArrowRight}> </Icon> */}
+              </Box>
+            </HStack>
+          </Box>
+
+          <Box
+            display="block"
+            position="relative"
+            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+            w={["100%", "100%", "100%", "650px", "650px", "650px"]}
+            backdropFilter="blur(1.5px)"
+            borderRadius="30px"
+            bgPos="center"
+            bgSize="cover"
+            // Change this to any background you want
+            // Change this to any background you want
+            overflow="hidden"
+          >
+            {/* Horizontal line for crosshair */}
+            <Box
+              display="block"
+              position="relative"
+              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              backdropFilter="blur(1.5px)"
+              borderRadius="30px"
+              bgPos="center"
+              bgSize="cover"
+              bg="gray.200" // Change this to any background you want
+              overflow="hidden"
+              ml={["0px", "0px", "0px", "100px", "100px", "100px"]}
+            ></Box>
+            {/* Bottom-right label */}
+          </Box>
+        </HStack>
+      </HStack>
 
       <HStack
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
