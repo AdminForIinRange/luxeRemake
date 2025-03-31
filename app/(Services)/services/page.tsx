@@ -20,13 +20,7 @@ import { ChevronRight, Home, HomeIcon, House } from "lucide-react";
 import { IconLeft } from "react-day-picker";
 import { IconArrowRightFromArc } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
-import {
-  DialogContent,
-  DialogHeader,
-  DialogRoot,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/chakra-snippets/dialog";
+
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 
 const Services = () => {
@@ -65,7 +59,6 @@ const Services = () => {
     },
   ];
 
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
   return (
     <>
@@ -77,13 +70,13 @@ const Services = () => {
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
         <Text
-     fontSize={{
-        base: "40px",
-        sm: "40px",
-        md: "40px",
-        lg: "60px",
-        xl: "60px",
-      }}
+          fontSize={{
+            base: "40px",
+            sm: "40px",
+            md: "40px",
+            lg: "60px",
+            xl: "60px",
+          }}
           fontWeight={700}
           fontFamily={"Raleway"}
           bgClip="text"
@@ -93,8 +86,8 @@ const Services = () => {
           Our Services
         </Text>
         <Text
-         w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-         fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
+          w={["90%", "90%", "90%", "50%", "50%", "50%"]}
+          fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
           fontFamily={"raleway"}
@@ -184,6 +177,8 @@ const Services = () => {
         ))}
       </HStack>
 
+     
+
       <HStack
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
@@ -192,8 +187,7 @@ const Services = () => {
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-<ScheduleConsultation />
-
+      <ScheduleConsultation />
     </>
   );
 };

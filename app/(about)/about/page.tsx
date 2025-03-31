@@ -30,40 +30,7 @@ import {
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 
 const About = () => {
-  const serviceItems = [
-    {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
-      title: "Property Management",
-      logo: <HomeIcon />,
-      link: "Explore service",
-      subheading:
-        "Comprehensive management service including all our offerings.",
-    },
-    {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
-      title: "Cleaning & Linen",
-      logo: <HomeIcon />,
-      link: "Explore service",
-      subheading:
-        "Ensure a pristine, hotel-quality experience for every guest.",
-    },
-    {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
-      title: "Furnishing & Styling",
-      logo: <HomeIcon />,
-      link: "Explore service",
-      subheading:
-        "Transform your space into a stunning, Instagram-worthy retreat.",
-    },
-    {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
-      title: "Photography",
-      logo: <HomeIcon />,
-      link: "Explore service",
-      subheading:
-        "Capture your property's best features with professional photography.",
-    },
-  ];
+ 
 
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();

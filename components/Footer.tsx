@@ -70,7 +70,7 @@ const Footer = () => {
                       href="#"
                       className="hover:underline"
                     >
-                      IDK 
+                     luxemanagements.info
                     </a>
                   </li>
                 </ul>
@@ -85,7 +85,7 @@ const Footer = () => {
                       href="#"
                       className="hover:underline "
                     >
-                      IDK
+                    Instagram
                     </a>
                   </li>
                   <li>
@@ -93,7 +93,7 @@ const Footer = () => {
                       href="#"
                       className="hover:underline"
                     >
-                      IDK
+                      Airbnb
                     </a>
                   </li>
                 </ul>

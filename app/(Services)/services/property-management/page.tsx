@@ -15,7 +15,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { Cog, PersonStandingIcon, TrendingUp } from "lucide-react";
+import { Check, Cog, PersonStandingIcon, TrendingUp } from "lucide-react";
 const PropertyManagement = () => {
   return (
     <>
@@ -204,9 +204,190 @@ const PropertyManagement = () => {
             All-Inclusive Services
           </Text>
         </Box>
+      </HStack>
 
+      <HStack
+        fontFamily={"raleway"}
+        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+      >
+        <HStack justify={"center"} align={"start"} w={"100%"} gap={"100px"}    flexWrap={["wrap", ""]}>
+          <Box
+            w={"500px"}
+            h={"100%"}
+            textAlign={["start", "start", "start", "start", "start", "start"]}
+          >
+            <Text fontSize={"24px"} fontWeight={"700"}>
+              Innovative Technology
+            </Text>
+            <Text pt={"15px"}>
+              Advanced systems and tools that streamline operations and enhance
+              guest satisfaction.
+            </Text>
+            <HStack
+              align={["start", "start", "start", "start", "start", "start"]}
+              justify={["start", "start", "start", "start", "start", "start"]}
+              w={"100%"}
+              gap={"10px"}
+              mt={"20px"}
+            >
+              <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
+                <Check size={20} />{" "}
+              </Box>
+              <Text>24/7 Guest Communication</Text>
+            </HStack>
+            <HStack
+              align={["start", "start", "start", "start", "start", "start"]}
+              justify={["start", "start", "start", "start", "start", "start"]}
+              w={"100%"}
+              gap={"10px"}
+              mt={"20px"}
+            >
+              <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
+                <Check size={20} />{" "}
+              </Box>
+              <Text>24/7 Guest Communication</Text>
+            </HStack>
+            <HStack
+              align={["start", "start", "start", "start", "start", "start"]}
+              justify={["start", "start", "start", "start", "start", "start"]}
+              w={"100%"}
+              gap={"10px"}
+              mt={"20px"}
+            >
+              <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
+                <Check size={20} />{" "}
+              </Box>
+              <Text>24/7 Guest Communication</Text>
+            </HStack>
+            <HStack
+              align={["start", "start", "start", "start", "start", "start"]}
+              justify={["start", "start", "start", "start", "start", "start"]}
+              w={"100%"}
+              gap={"10px"}
+              mt={"20px"}
+            >
+              <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
+                <Check size={20} />{" "}
+              </Box>
+              <Text>24/7 Guest Communication</Text>
+            </HStack>
+          </Box>
+          <Box
+            backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg)`}
+            backgroundSize="cover"
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+            transition={"all 0.3s"}
+            w={["90%", "90%", "500px", "500px", "500px", "500px"]}
+            h={"500px"}
+            borderRadius={"16px"}
+            _hover={{
+              transform: "scale(1.01)",
+            }}
+            cursor={"pointer"}
+            p={"30px"}
+            display={"flex"}
+          ></Box>
+        </HStack>
+      </HStack>
 
-        
+      <HStack
+        fontFamily={"raleway"}
+        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+        h={"100%"}
+      >
+        <HStack
+          justify={"center"}
+          align={"start"}
+          w={"100%"}
+          gap={"100px"}
+          flexWrap={"wrap"}
+        >
+          <Box
+            backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg)`}
+            backgroundSize="cover"
+            backgroundPosition="center"
+            backgroundRepeat="no-repeat"
+            transition={"all 0.3s"}
+            w={["90%", "90%", "500px", "500px", "500px", "500px"]}
+            h={"500px"}
+            borderRadius={"16px"}
+            _hover={{
+              transform: "scale(1.01)",
+            }}
+            cursor={"pointer"}
+            p={"30px"}
+            display={"flex"}
+          ></Box>
+          <Box
+            w={"500px"}
+            h={"100%"}
+            textAlign={["start", "start", "start", "start", "start", "start"]}
+          >
+            <Text fontSize={"24px"} fontWeight={"700"}>
+              Innovative Technology
+            </Text>
+            <Text pt={"15px"}>
+              Advanced systems and tools that streamline operations and enhance
+              guest satisfaction.
+            </Text>
+            <HStack
+              align={["start", "start", "start", "start", "start", "start"]}
+              justify={["start", "start", "start", "start", "start", "start"]}
+              w={"100%"}
+              gap={"10px"}
+              mt={"20px"}
+            >
+              <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
+                <Check size={20} />{" "}
+              </Box>
+              <Text>24/7 Guest Communication</Text>
+            </HStack>
+            <HStack
+              align={["start", "start", "start", "start", "start", "start"]}
+              justify={["start", "start", "start", "start", "start", "start"]}
+              w={"100%"}
+              gap={"10px"}
+              mt={"20px"}
+            >
+              <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
+                <Check size={20} />{" "}
+              </Box>
+              <Text>24/7 Guest Communication</Text>
+            </HStack>
+            <HStack
+              align={["start", "start", "start", "start", "start", "start"]}
+              justify={["start", "start", "start", "start", "start", "start"]}
+              w={"100%"}
+              gap={"10px"}
+              mt={"20px"}
+            >
+              <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
+                <Check size={20} />{" "}
+              </Box>
+              <Text>24/7 Guest Communication</Text>
+            </HStack>
+            <HStack
+              align={["start", "start", "start", "start", "start", "start"]}
+              justify={["start", "start", "start", "start", "start", "start"]}
+              w={"100%"}
+              gap={"10px"}
+              mt={"20px"}
+            >
+              <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
+                <Check size={20} />{" "}
+              </Box>
+              <Text>24/7 Guest Communication</Text>
+            </HStack>
+          </Box>
+        </HStack>
       </HStack>
     </>
   );
