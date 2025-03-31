@@ -52,14 +52,7 @@ const Hero = () => {
   //   }
   // };
 
-  const words = [
-    "Calm",
-    "Easy",
-    "Simple",
-    "Fast",
-    "Pro",
-    "Sharp",
-  ];
+  const words = ["Calm", "Easy", "Simple", "Fast", "Pro", "Sharp"];
   const GettingStartedSteps = [
     {
       id: 1,
@@ -276,7 +269,14 @@ const Hero = () => {
               and expert support every step of the way.
             </Text>
             <HStack
-              justify={"start"}
+              justify={[
+                "center",
+                "center",
+                "center",
+                "start",
+                "start",
+                "start",
+              ]}
               align={"start"}
               w={"100%"}
               transition={"all 0.2s ease-in-out"}
@@ -421,7 +421,12 @@ const Hero = () => {
         </HStack>
       </HStack>
 
-      <HStack mt={["50px", "50px", "50px", "50px", "50px", "50px"]} justify={"center"} align={"center"} w={"100%"}>
+      <HStack
+        mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+      >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <VStack
@@ -1019,7 +1024,7 @@ const Hero = () => {
           </HStack>
         </Box>
       </HStack>
-      <HStack  justify={"center"} align={"center"} w={"100%"}>
+      <HStack justify={"center"} align={"center"} w={"100%"}>
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
     </>
