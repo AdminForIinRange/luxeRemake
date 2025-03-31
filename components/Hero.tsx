@@ -181,7 +181,7 @@ const Hero = () => {
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
             fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
             fontWeight={700}
-            fontFamily={"Poppins"}
+            fontFamily={"Raleway"}
             bgClip="text"
             textAlign={["center", "center", "left", "left", "left", "left"]}
             color={"black"}
@@ -193,7 +193,7 @@ const Hero = () => {
             fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
             mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
             textAlign={["center", "center", "left", "left", "left", "left"]}
-            fontFamily={"Poppins"}
+            fontFamily={"Raleway"}
             color={"black"}
             w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
             fontWeight={300}
@@ -262,7 +262,7 @@ const Hero = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
               fontWeight={700}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               bgClip="text"
               textAlign={["center", "center", "left", "left", "left", "left"]}
               color={"black"}
@@ -274,7 +274,7 @@ const Hero = () => {
               fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               color={"black"}
               w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
               fontWeight={300}
@@ -372,7 +372,7 @@ const Hero = () => {
                               "18px",
                             ]}
                             fontWeight={500}
-                            fontFamily={"Poppins"}
+                            fontFamily={"Raleway"}
                             color={"black"}
                           >
                             {id}
@@ -402,7 +402,7 @@ const Hero = () => {
                         ]}
                         fontWeight={500}
                         textAlign={"left"}
-                        fontFamily={"Poppins"}
+                        fontFamily={"Raleway"}
                         color={"black"}
                         w={"100%"} // !important
                       >
@@ -418,7 +418,7 @@ const Hero = () => {
                           "16px",
                         ]}
                         textAlign={"left"}
-                        fontFamily={"Poppins"}
+                        fontFamily={"Raleway"}
                         color={"black"}
                         w={"100%"}
                         fontWeight={300}
@@ -453,7 +453,7 @@ const Hero = () => {
         <Text
           fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
           fontWeight={700}
-          fontFamily={"Poppins"}
+          fontFamily={"Raleway"}
           bgClip="text"
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
@@ -464,7 +464,7 @@ const Hero = () => {
           fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
-          fontFamily={"Poppins"}
+          fontFamily={"Raleway"}
           color={"black"}
           fontWeight={300}
         >
@@ -503,7 +503,7 @@ const Hero = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
               fontWeight={600}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -515,7 +515,7 @@ const Hero = () => {
               fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -665,7 +665,7 @@ const Hero = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
               fontWeight={600}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -677,7 +677,7 @@ const Hero = () => {
               fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -827,7 +827,7 @@ const Hero = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
               fontWeight={600}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -839,7 +839,7 @@ const Hero = () => {
               fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}

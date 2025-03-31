@@ -51,7 +51,7 @@ const FAQ = () => {
         <Text
           fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
           fontWeight={700}
-          fontFamily={"Poppins"}
+          fontFamily={"Raleway"}
           bgClip="text"
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
@@ -62,7 +62,7 @@ const FAQ = () => {
           fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
-          fontFamily={"Poppins"}
+          fontFamily={"Raleway"}
           color={"black"}
           fontWeight={300}
         >

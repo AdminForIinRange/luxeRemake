@@ -85,7 +85,7 @@ const Services = () => {
         xl: "60px",
       }}
           fontWeight={700}
-          fontFamily={"Poppins"}
+          fontFamily={"Raleway"}
           bgClip="text"
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
@@ -97,7 +97,7 @@ const Services = () => {
          fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
-          fontFamily={"Poppins"}
+          fontFamily={"raleway"}
           color={"black"}
           fontWeight={300}
         >
@@ -152,7 +152,7 @@ const Services = () => {
                   <Text
                     color={"white"}
                     fontSize={["26px", "26px", "26px", "26px", "26px", "26px"]}
-                    fontFamily={"Poppins"}
+                    fontFamily={"Raleway"}
                     fontWeight={700}
                   >
                     {title}

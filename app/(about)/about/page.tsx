@@ -85,7 +85,7 @@ const About = () => {
             xl: "60px",
           }}
           fontWeight={700}
-          fontFamily={"Poppins"}
+          fontFamily={"Raleway"}
           bgClip="text"
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
@@ -97,7 +97,7 @@ const About = () => {
           fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
-          fontFamily={"Poppins"}
+          fontFamily={"Raleway"}
           color={"black"}
           fontWeight={300}
         >
@@ -135,7 +135,7 @@ const About = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
               fontWeight={600}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -147,7 +147,7 @@ const About = () => {
               fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -299,7 +299,7 @@ const About = () => {
               <Text fontSize={"24px"} fontWeight={"700"}>
                 Excellence
               </Text>
-              <Text pt={"5px"}>
+              <Text pt={"15px"}>
                 Delivering unparalleled service quality in every interaction
               </Text>
             </Box>
@@ -307,7 +307,7 @@ const About = () => {
               <Text fontSize={"24px"} fontWeight={"700"}>
                 Innovation
               </Text>
-              <Text pt={"5px"}>
+              <Text pt={"15px"}>
                 Leveraging cutting-edge technology to streamline operations
               </Text>
             </Box>
@@ -316,7 +316,7 @@ const About = () => {
               <Text fontSize={"24px"} fontWeight={"700"}>
                 Integrity
               </Text>
-              <Text pt={"5px"}>
+              <Text pt={"15px"}>
                 Building trust through transparency and ethical practices
               </Text>
             </Box>
@@ -347,7 +347,7 @@ const About = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
               fontWeight={600}
-              fontFamily={"Poppins"}
+              fontFamily={"Raleway"}
               bgClip="text"
               textAlign={[
                 "center",
