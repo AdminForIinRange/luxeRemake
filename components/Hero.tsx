@@ -34,7 +34,8 @@ import {
 } from "@/components/chakra-snippets/dialog";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 import SmoothScroll from "./customUI/SmoothScroll/SmoothScroll";
 import { useRouter } from "next/navigation";
 const Hero = () => {
@@ -51,6 +52,14 @@ const Hero = () => {
   //     console.error("Error signing out:", error);
   //   }
   // };
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
 
   const words = ["Calm", "Easy", "Simple", "Fast", "Pro", "Sharp"];
   const GettingStartedSteps = [
@@ -161,7 +170,11 @@ const Hero = () => {
       </HStack>
 
       <Box overflowX={"hidden"} mt={"350px"}>
-        <Box px={["4%", "4%", "6%", "6%", "6%", "10%"]} pb={"50px"}>
+        <Box
+          px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+          pb={"50px"}
+          data-aos="fade-up"
+        >
           <Text
             w={["100%", "100%", "80%", "80%", "80%", "80%"]}
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
@@ -657,7 +670,7 @@ const Hero = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-              Maximize Your Rental Income
+              Professional Property Management
             </Text>
             <Text
               fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
@@ -668,8 +681,8 @@ const Hero = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Optimize your income and ease your mind with our experienced
-              Airbnb Management team. Learn More
+              Experience stress-free property management with our dedicated team
+              of professionals.
             </Text>
             <HStack
               justify={[
@@ -769,13 +782,13 @@ const Hero = () => {
                   fontWeight={"700"}
                   color={"black"}
                 >
-                  40%
+                  24/7
                 </Text>
                 <Text
                   fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
                 >
                   {" "}
-                  Average Revenue Increase
+                  Support & Monitoring
                 </Text>
               </HStack>
             </Box>
@@ -819,7 +832,7 @@ const Hero = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-              Maximize Your Rental Income
+              Comprehensive Guest Services
             </Text>
             <Text
               fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
@@ -830,8 +843,8 @@ const Hero = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Optimize your income and ease your mind with our experienced
-              Airbnb Management team. Learn More
+              From seamless check-ins to personalized experiences, we ensure
+              guest satisfaction at every step.
             </Text>
             <HStack
               justify={[
@@ -931,13 +944,13 @@ const Hero = () => {
                   fontWeight={"700"}
                   color={"black"}
                 >
-                  40%
+                  98%
                 </Text>
                 <Text
                   fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
                 >
                   {" "}
-                  Average Revenue Increase
+                  Guest Satisfaction Rate
                 </Text>
               </HStack>
             </Box>
