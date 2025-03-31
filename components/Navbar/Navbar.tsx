@@ -66,7 +66,7 @@ const Navbar = () => {
                 lg: "row",
                 xl: "row",
               }}
-              w={"100%"}
+             
               h={"100%"}
             >
               <Box
@@ -93,7 +93,7 @@ const Navbar = () => {
 
             <HStack
               fontSize={["14px", "14px", "16px", "16px", "16px", "20px"]}
-              gap={["26px", "26px", "36px", "36px", "36px", "100px"]}
+              gap={["26px", "26px", "36px", "36px", "36px", "36px"]}
               fontWeight={"500"}
               transition={"all 0.2s ease-in-out"}
             >

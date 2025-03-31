@@ -986,7 +986,7 @@ const Hero = () => {
           <Text
             color={"white"}
             fontWeight={"700"}
-            fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+            fontSize={["24px", "24px", "24px", "35px", "35px", "40px"]}
             fontFamily={"raleway"}
             mb={"10px"}
           >
