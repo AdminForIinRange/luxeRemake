@@ -44,7 +44,7 @@ const FAQ = () => {
     <>
    <TitleSubheading title={"FAQ"} subheading={"Frequently Asked Questions"} />
       <Accordion.Root
-      
+      mt={"50px"}
         fontFamily={"raleway"}
         collapsible
         defaultValue={["b"]}
