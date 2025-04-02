@@ -78,9 +78,12 @@ const Testimonials = () => {
 
   return (
     <>
+         <HStack my={"50px"} justify={"center"} align={"center"} w={"100%"}>
+            <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+          </HStack>
       <HStack
         fontFamily={"Raleway"}
-        mt={["220px", "220px", "155px", "155px", "155px", "155px"]}
+      
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
         align={"center"}
@@ -185,7 +188,7 @@ const Testimonials = () => {
             display={["block", "block", "block", "block", "block", "block"]}
             data-aos="fade-right" // chnage dir
             // border={"1px solid rgb(0, 0, 0,0.25)"}
-            h={["280px", "650px", "650px", "650px", "650px", "650px"]}
+            h={["280px", "280px", "280px", "320px", "320px", "320px"]}
             w={["100%", "100%", "650px", "650px", "650px", "650px"]}
             backdropFilter="blur(1.5px)"
             borderRadius={"30px"}
@@ -223,7 +226,7 @@ const Testimonials = () => {
                 h={"100%"}
                 borderTop={"1px solid rgb(0, 0, 0,0.25)"}
                 justify={"left"}
-                align={"center"}
+                align={"start"}
                 gap={["240px", "10px", "10px", "10px", "10px", "10px"]}
               >
                 <HStack>
@@ -306,6 +309,7 @@ const Testimonials = () => {
           </Box>
         </HStack>
       </HStack>
+      
     </>
   );
 };
