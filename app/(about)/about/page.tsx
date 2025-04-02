@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Stack,
@@ -28,49 +28,25 @@ import {
   DialogTrigger,
 } from "@/components/chakra-snippets/dialog";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
-
+import TitleSubheading from "@/components/luxeComponents/Text/titleSubheading";
+import Aos from "aos";
+import "aos/dist/aos.css";
 const About = () => {
- 
-
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
   return (
     <>
-      <VStack
-        mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
-        w={["100%", "100%", "100%", "100%", "100%", "100"]}
-        textAlign={["center", "center", "center", "center", "center", "center"]}
-        color={"black"}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-      >
-        <Text
-          fontSize={{
-            base: "40px",
-            sm: "40px",
-            md: "40px",
-            lg: "60px",
-            xl: "60px",
-          }}
-          fontWeight={700}
-          fontFamily={"Raleway"}
-          bgClip="text"
-          color={"black"}
-          bgGradient="linear(to-r, teal, blue)"
-        >
-          About Luxe
-        </Text>
-        <Text
-          w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-          fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-          // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-
-          fontFamily={"Raleway"}
-          color={"black"}
-          fontWeight={300}
-        >
-          Redefining luxury in short-term rentals
-        </Text>
-      </VStack>
+      <TitleSubheading
+        title={"About Luxe"}
+        subheading={"Redefining luxury in short-term rentals"}
+      />
 
       <HStack
         zIndex={3}
@@ -98,16 +74,16 @@ const About = () => {
         >
           <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
             <Text
-       data-aos="fade-up"
-       w={["100%", "100%", "80%", "80%", "80%", "80%"]}
-       mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-       fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
-       fontWeight={700}
-       fontFamily={"Raleway"}
-       bgClip="text"
-       textAlign={["center", "center", "left", "left", "left", "left"]}
-       color={"black"}
-       bgGradient="linear(to-r, teal, blue)"
+              data-aos="fade-up"
+              w={["100%", "100%", "80%", "80%", "80%", "80%"]}
+              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+              fontWeight={700}
+              fontFamily={"Raleway"}
+              bgClip="text"
+              textAlign={["center", "center", "left", "left", "left", "left"]}
+              color={"black"}
+              bgGradient="linear(to-r, teal, blue)"
             >
               Our Story
             </Text>
@@ -221,7 +197,6 @@ const About = () => {
           borderRadius={"30px"}
           p={"25px"}
           py={"65px"}
-
           display={"flex"}
           flexDir={"column"}
           alignItems={"center"}
@@ -264,27 +239,45 @@ const About = () => {
           >
             {" "}
             <Box p={4} rounded={"15px"} w={"285px"} bg={"#23273F"} h={"200px"}>
-              <Text   fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]} fontWeight={"700"}>
+              <Text
+                fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]}
+                fontWeight={"700"}
+              >
                 Excellence
               </Text>
-              <Text  fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]} pt={"15px"}>
+              <Text
+                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                pt={"15px"}
+              >
                 Delivering unparalleled service quality in every interaction
               </Text>
             </Box>
             <Box p={4} rounded={"15px"} w={"285px"} bg={"#23273F"} h={"200px"}>
-              <Text fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]} fontWeight={"700"}>
+              <Text
+                fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]}
+                fontWeight={"700"}
+              >
                 Innovation
               </Text>
-              <Text   fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]} pt={"15px"}>
+              <Text
+                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                pt={"15px"}
+              >
                 Leveraging cutting-edge technology to streamline operations
               </Text>
             </Box>
             <Box p={4} rounded={"15px"} w={"285px"} bg={"#23273F"} h={"200px"}>
               {" "}
-              <Text fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]}  fontWeight={"700"}>
+              <Text
+                fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]}
+                fontWeight={"700"}
+              >
                 Integrity
               </Text>
-              <Text  fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]} pt={"15px"}>
+              <Text
+                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                pt={"15px"}
+              >
                 Building trust through transparency and ethical practices
               </Text>
             </Box>
@@ -328,7 +321,7 @@ const About = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-            Meet Our Team
+              Meet Our Team
             </Text>
           </Box>
           <HStack
@@ -386,7 +379,7 @@ const About = () => {
           </HStack>
         </VStack>
       </HStack>
-     <HStack justify={"center"} align={"center"} w={"100%"}>
+      <HStack justify={"center"} align={"center"} w={"100%"}>
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <ScheduleConsultation />

@@ -34,7 +34,7 @@ const Testimonials = () => {
       rating: 6,
     },
     {
-      text: "  Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free. I will definitely be working with them again in the future!",
+      text: "  Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free. ",
 
       name: "Kent Dodds",
       src: "https://bit.ly/kent-c-dodds",
@@ -231,6 +231,7 @@ const Testimonials = () => {
               >
                 <HStack>
                   <Avatar.Root
+                     my={"10px"}
                     //  style={{ backgroundImage: `url(${reviews[currentSlide].src})` }}
                     bgPos={"center"}
                     bgSize={"cover"}

@@ -149,6 +149,17 @@ const Navbar = () => {
                   fontWeight: "700",
                 }}
                 transition={"all 0.2s ease-in-out"}
+                onClick={() => router.push("/gallery")}
+              >
+                Gallery
+              </Box>
+              <Box
+                cursor={"pointer"}
+                _hover={{
+                  scale: 1.1,
+                  fontWeight: "700",
+                }}
+                transition={"all 0.2s ease-in-out"}
                 onClick={() => router.push("/contact")}
               >
                 Contact
