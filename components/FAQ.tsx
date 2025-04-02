@@ -60,14 +60,14 @@ const FAQ = () => {
               py="4"
               _hover={{ bg: "gray.50" }}
             >
-              <Span flex="1" fontWeight={"600"} fontSize={"18px"}>
+              <Span flex="1" fontWeight={"600"}  fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}>
                 {item.question}
               </Span>
               <Accordion.ItemIndicator />
             </Accordion.ItemTrigger>
 
             <Accordion.ItemContent>
-              <Accordion.ItemBody>{item.answer}</Accordion.ItemBody>
+              <Accordion.ItemBody  fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]} >{item.answer}</Accordion.ItemBody>
             </Accordion.ItemContent>
             <Box
               _hover={{ bg: "gray.50" }}
