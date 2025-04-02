@@ -40,6 +40,7 @@ import SmoothScroll from "./customUI/SmoothScroll/SmoothScroll";
 import { useRouter } from "next/navigation";
 import ScheduleConsultation from "./luxeComponents/scheduleConsultation";
 import HeroServices from "./luxeComponents/heroServices";
+import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 const Hero = () => {
   const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -171,7 +172,7 @@ const Hero = () => {
         </Box>
       </HStack>
 
-      <Box overflowX={"hidden"} mt={"350px"}   >
+      <Box overflowX={"hidden"} mt={"350px"}>
         <Box
           px={["4%", "4%", "6%", "6%", "6%", "10%"]}
           pb={"50px"}
@@ -180,7 +181,7 @@ const Hero = () => {
           <Text
             w={["100%", "100%", "80%", "80%", "80%", "80%"]}
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-            fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+            fontSize={["35px", "35px", "35px", "35px", "35px", "40px"]}
             fontWeight={700}
             fontFamily={"Raleway"}
             bgClip="text"
@@ -191,7 +192,7 @@ const Hero = () => {
             The Future of Real Estate
           </Text>
           <Text
-            fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+            fontSize={["16px", "16px", "16px", "14px", "16px", "16px"]}
             mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
             textAlign={["center", "center", "left", "left", "left", "left"]}
             fontFamily={"Raleway"}
@@ -257,8 +258,9 @@ const Hero = () => {
           gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
           wrap={["wrap", "wrap", "nowrap", "nowrap", "nowrap", "nowrap"]}
         >
-          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]} >
-            <Text   data-aos="fade-up"
+          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+            <Text
+              data-aos="fade-up"
               w={["100%", "100%", "80%", "80%", "80%", "80%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
@@ -271,8 +273,9 @@ const Hero = () => {
             >
               How We Can Get You Get Started
             </Text>
-            <Text   data-aos="fade-up"
-              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+            <Text
+              data-aos="fade-up"
+              fontSize={["16px", "16px", "16px", "14px", "16px", "16px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -283,7 +286,8 @@ const Hero = () => {
               Learn how we can help you get started with personalized guidance
               and expert support every step of the way.
             </Text>
-            <HStack   data-aos="fade-up"
+            <HStack
+              data-aos="fade-up"
               justify={[
                 "center",
                 "center",
@@ -342,7 +346,7 @@ const Hero = () => {
             {" "}
             {GettingStartedSteps.slice(0, 4).map(
               ({ id, title, description }, index) => (
-                <VStack key={id} w={"100%"} align={"center"} justify={"start"}  >
+                <VStack key={id} w={"100%"} align={"center"} justify={"start"}>
                   <HStack
                     w={"100%"}
                     h={"100%"}
@@ -350,14 +354,13 @@ const Hero = () => {
                     align={"start"}
                     gap={2}
                   >
-                    <VStack justify={"center"} gap={0} >
+                    <VStack justify={"center"} gap={0}>
                       <Box
                         w={"50px"}
                         h={"50px"}
                         borderRadius={"15px"}
                         bg={"white"}
                         border={"1px solid rgb(0, 0,0,0.25)"}
-            
                       >
                         <HStack
                           w={"100%"}
@@ -389,7 +392,6 @@ const Hero = () => {
                           w={"5px"}
                           h={"100px"}
                           bg={"#BFBFBF"}
-         
                         ></Box>
                       )}
                     </VStack>
@@ -447,51 +449,21 @@ const Hero = () => {
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-      <VStack
-        mt={["50px", "50px", "50px", "50px", "50px", "100px"]}
-        w={["100%", "100%", "100%", "100%", "100%", "100"]}
-        textAlign={["center", "center", "center", "center", "center", "center"]}
-        color={"black"}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-      >
-        <Text data-aos="fade-up"
-              fontSize={{
-                base: "40px",
-                sm: "40px",
-                md: "40px",
-                lg: "60px",
-                xl: "60px",
-              }}    fontWeight={700}
-          fontFamily={"Raleway"}
-          bgClip="text"
-          color={"black"}
-          bgGradient="linear(to-r, teal, blue)"
-        >
-          Our Services
-        </Text>
-        <Text data-aos="fade-up"
-                  w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-      fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-          // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-
-          fontFamily={"Raleway"}
-          color={"black"}
-          fontWeight={300}
-        >
-          We offer a full suite of services to help you manage your property
-          with ease.
-        </Text>
-      </VStack>
+      <TitleSubheading title={"Our Services"} subheading={"We offer a full suite of services to help you manage your property with ease."} />
 
       <HeroServices />
-      <HStack justify={"center"} align={"center"} w={"100%"} id="get-started-button">
+      <HStack
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+        id="get-started-button"
+      >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <ScheduleConsultation />
       <HStack justify={"center"} align={"center"} w={"100%"}>
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-
     </>
   );
 };
