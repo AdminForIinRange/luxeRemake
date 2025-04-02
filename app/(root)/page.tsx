@@ -32,7 +32,7 @@ import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultati
 const Home = () => {
 
   // const { user, setUser } = useUser();
-  // const [loading, setLoading] = useState(true);
+
 
   // useEffect(() => {
   //   const fetchUser = async () => {
@@ -48,9 +48,7 @@ const Home = () => {
   //   fetchUser();
   // }, [user, setUser]);
 
-  // if (loading) {
-  //   return <div>Loading...</div>; // Show a loading state while fetching user
-  // }
+ 
  
   return (
     <>
@@ -58,7 +56,7 @@ const Home = () => {
 
 {/* <WaitingList /> */}
 
-      <Navbar />
+
       <Hero />
 {/* 
       <TestingCreateListingDB /> */}
@@ -78,7 +76,7 @@ const Home = () => {
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <FAQ />
-      <Footer /> 
+    
 
     </>
   );

@@ -6,6 +6,8 @@ import { UserProvider } from "@/context/UserContext"; // Import your context pro
 import { ListingCreationProvider } from "@/context/ListingCreationContext";
 import { Provider } from "@/components/chakra-snippets/provider";
 import ClientProvider from "@/components/chakra-snippets/ClientProvider";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata = {
   title: "Luxe Management",
@@ -52,8 +54,11 @@ export default function RootLayout({
 {/* 
         <UserProvider>
           <ListingCreationProvider> */}
-   
+          <Suspense fallback={<Loading />}>
+
               <ClientProvider>{children}</ClientProvider>
+          </Suspense>
+   
 
           {/* </ListingCreationProvider>
         </UserProvider> */}

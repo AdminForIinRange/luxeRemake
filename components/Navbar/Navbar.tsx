@@ -56,7 +56,7 @@ const Navbar = () => {
             }}
           >
             <Stack
-            justify={"center"}
+              justify={"center"}
               align={"center"}
               fontSize={"30px"}
               direction={{
@@ -66,27 +66,26 @@ const Navbar = () => {
                 lg: "row",
                 xl: "row",
               }}
-             
               h={"100%"}
+              _hover={{
+                scale: 1.05,
+                fontWeight: "700",
+              }}
+              transition={"all 0.2s ease-in-out"}
+              cursor={"pointer"}
+              onClick={() => router.push("/")}
+              gap={"0px"}
             >
               <Box
                 w={"70px"}
                 h={"100%"}
                 cursor={"pointer"}
-                _hover={{
-                  scale: 1.1,
-                  fontWeight: "700",
-                }}
                 transition={"all 0.2s ease-in-out"}
                 onClick={() => router.push("/")}
               >
                 <Image src={luxeLogo} alt="logo" />
               </Box>
-              <Text
-                fontFamily={"raleway"}
-                fontWeight={"700"}
-                onClick={() => router.push("/")}
-              >
+              <Text fontFamily={"raleway"} fontWeight={"700"}>
                 Luxe Management
               </Text>
             </Stack>

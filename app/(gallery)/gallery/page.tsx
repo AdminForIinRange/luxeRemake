@@ -41,9 +41,7 @@ const Gallery = () => {
     });
   }, []);
 
-  const [clickedImage, setClickedImage] = useState<{
-      size: number | `${number}` | undefined; img: string 
-} | null>(null);
+  const [clickedImage, setClickedImage] = useState<string | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   const galleryItems = [
@@ -134,11 +132,11 @@ const Gallery = () => {
         gap={"25px"}
       >
         {/* {uploadedFiles.length > 0 ? ( */}
-        {galleryItems.map(({ img, title, subheading }, index) => (
+        {galleryItems.map(({ img }, index) => (
           <VStack key={index}>
             <Box
               onClick={() => {
-                setClickedImage(galleryItems[index]);
+                setClickedImage(img);
                 setModalOpen(true);
               }}
               backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(${img})`}
@@ -225,7 +223,7 @@ const Gallery = () => {
               borderRadius="30px"
    
               overflow="hidden"
-              backgroundImage={` url(${clickedImage.img})`}
+              backgroundImage={` url(${clickedImage})`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
               backgroundSize="contain"

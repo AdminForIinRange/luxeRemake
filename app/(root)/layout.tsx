@@ -10,6 +10,9 @@
 
 import React from "react";
 import "../globals.css";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer";
+
 // import { getCurrentUser, signOutUser } from "@/lib/actions/user.actions";
 
 // import { redirect } from "next/navigation";
@@ -24,7 +27,13 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
 
   // if (!currentUser) return redirect("/sign-in");
 
-  return <div>{children}</div>;
+  return (
+    <>
+      <Navbar />
+    {children}
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;
