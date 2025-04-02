@@ -248,7 +248,7 @@ const Hero = () => {
         align={"center"}
         w={"100%"}
         h={"100%"}
-        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
+        my={["155px", "155px", "155px", "155px", "155px", "155px"]}
       >
         <HStack
           justify={["center", "center", "center", "center", "center", "center"]}
