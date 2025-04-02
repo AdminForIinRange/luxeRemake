@@ -1,14 +1,13 @@
 import "animate.css";
 import "./globals.css";
 
-
 import { UserProvider } from "@/context/UserContext"; // Import your context provider
 import { ListingCreationProvider } from "@/context/ListingCreationContext";
 import { Provider } from "@/components/chakra-snippets/provider";
 import ClientProvider from "@/components/chakra-snippets/ClientProvider";
 import { Suspense } from "react";
 import Loading from "./loading";
-
+import { Analytics } from "@vercel/analytics/react";
 export const metadata = {
   title: "Luxe Management",
   description: "Luxe Management",
@@ -22,7 +21,6 @@ export default function RootLayout({
       lang="en"
       data-theme="light"
       style={{ scrollBehavior: "smooth" }}
-
       suppressHydrationWarning
     >
       <head>
@@ -50,19 +48,16 @@ export default function RootLayout({
         className={`font-Montserrat antialiased`}
         style={{ background: "#fff", scrollBehavior: "smooth" }}
       >
+        <Analytics />
         {/* Wrap with UserProvider */}{" "}
-{/* 
+        {/* 
         <UserProvider>
           <ListingCreationProvider> */}
-          <Suspense fallback={<Loading />}>
-
-              <ClientProvider>{children}</ClientProvider>
-          </Suspense>
-   
-
-          {/* </ListingCreationProvider>
+        <Suspense fallback={<Loading />}>
+          <ClientProvider>{children}</ClientProvider>
+        </Suspense>
+        {/* </ListingCreationProvider>
         </UserProvider> */}
-
       </body>
     </html>
   );
