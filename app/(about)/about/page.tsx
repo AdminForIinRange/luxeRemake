@@ -98,25 +98,26 @@ const About = () => {
         >
           <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
             <Text
-              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-              fontWeight={600}
-              fontFamily={"Raleway"}
-              bgClip="text"
-              textAlign={["center", "center", "center", "left", "left", "left"]}
-              color={"black"}
-              bgGradient="linear(to-r, teal, blue)"
+       data-aos="fade-up"
+       w={["100%", "100%", "80%", "80%", "80%", "80%"]}
+       mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+       fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+       fontWeight={700}
+       fontFamily={"Raleway"}
+       bgClip="text"
+       textAlign={["center", "center", "left", "left", "left", "left"]}
+       color={"black"}
+       bgGradient="linear(to-r, teal, blue)"
             >
               Our Story
             </Text>
             <Text
-              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-              textAlign={["center", "center", "center", "left", "left", "left"]}
+              textAlign={["center", "center", "left", "left", "left", "left"]}
               fontFamily={"Raleway"}
               color={"black"}
-              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
               fontWeight={300}
             >
               Founded in 2015, Luxe Managements began with a vision to
@@ -231,7 +232,7 @@ const About = () => {
           <Text
             color={"white"}
             fontWeight={"700"}
-            fontSize={["24px", "24px", "24px", "35px", "35px", "40px"]}
+            fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
             fontFamily={"raleway"}
             mb={"10px"}
           >
@@ -240,7 +241,7 @@ const About = () => {
           <Text
             w={["90%", "90%", "90%", "50%", "50%", "50%"]}
             color={"white"}
-            fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+            fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
             fontFamily={"raleway"}
           >
             At Luxe Managements, our mission is to elevate the short-term rental
@@ -262,28 +263,28 @@ const About = () => {
             fontFamily={"raleway"}
           >
             {" "}
-            <Box p={4} rounded={"15px"} w={"250px"} bg={"#23273F"} h={"150px"}>
-              <Text fontSize={"24px"} fontWeight={"700"}>
+            <Box p={4} rounded={"15px"} w={"285px"} bg={"#23273F"} h={"200px"}>
+              <Text   fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]} fontWeight={"700"}>
                 Excellence
               </Text>
-              <Text pt={"15px"}>
+              <Text  fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]} pt={"15px"}>
                 Delivering unparalleled service quality in every interaction
               </Text>
             </Box>
-            <Box p={4} rounded={"15px"} w={"250px"} bg={"#23273F"} h={"150px"}>
-              <Text fontSize={"24px"} fontWeight={"700"}>
+            <Box p={4} rounded={"15px"} w={"285px"} bg={"#23273F"} h={"200px"}>
+              <Text fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]} fontWeight={"700"}>
                 Innovation
               </Text>
-              <Text pt={"15px"}>
+              <Text   fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]} pt={"15px"}>
                 Leveraging cutting-edge technology to streamline operations
               </Text>
             </Box>
-            <Box p={4} rounded={"15px"} w={"250px"} bg={"#23273F"} h={"150px"}>
+            <Box p={4} rounded={"15px"} w={"285px"} bg={"#23273F"} h={"200px"}>
               {" "}
-              <Text fontSize={"24px"} fontWeight={"700"}>
+              <Text fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]}  fontWeight={"700"}>
                 Integrity
               </Text>
-              <Text pt={"15px"}>
+              <Text  fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]} pt={"15px"}>
                 Building trust through transparency and ethical practices
               </Text>
             </Box>
