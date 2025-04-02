@@ -25,6 +25,7 @@ import TestingCreateListingDB from "@/components/TestingCreateListingDB";
 import { HStack, Text } from "@chakra-ui/react";
 import WaitingList from "@/components/waitingList/WaitingList";
 import ReactLenis from "lenis/react";
+import Testimonials from "@/components/testimonials";
 
 
 const Home = () => {
@@ -61,7 +62,7 @@ const Home = () => {
 {/* 
       <TestingCreateListingDB /> */}
 
-
+<Testimonials />
       <FAQ />
       <Footer /> 
 
