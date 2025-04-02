@@ -25,6 +25,7 @@ const TitleSubheading = ({
   return (
     <>
       <VStack
+      data-aos="fade-up"
         mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
         w={["100%", "100%", "100%", "100%", "100%", "100"]}
         textAlign={["center", "center", "center", "center", "center", "center"]}

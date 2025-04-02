@@ -181,7 +181,7 @@ const Hero = () => {
           <Text
             w={["100%", "100%", "80%", "80%", "80%", "80%"]}
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-            fontSize={["35px", "35px", "35px", "35px", "35px", "40px"]}
+            fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
             fontWeight={700}
             fontFamily={"Raleway"}
             bgClip="text"
@@ -192,7 +192,7 @@ const Hero = () => {
             The Future of Real Estate
           </Text>
           <Text
-            fontSize={["16px", "16px", "16px", "14px", "16px", "16px"]}
+                     fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
             mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
             textAlign={["center", "center", "left", "left", "left", "left"]}
             fontFamily={"Raleway"}
@@ -263,7 +263,7 @@ const Hero = () => {
               data-aos="fade-up"
               w={["100%", "100%", "80%", "80%", "80%", "80%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
               fontWeight={700}
               fontFamily={"Raleway"}
               bgClip="text"
@@ -274,8 +274,7 @@ const Hero = () => {
               How We Can Get You Get Started
             </Text>
             <Text
-              data-aos="fade-up"
-              fontSize={["16px", "16px", "16px", "14px", "16px", "16px"]}
+              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -378,7 +377,7 @@ const Hero = () => {
                               "18px",
                             ]}
                             fontWeight={500}
-                            fontFamily={"Raleway"}
+                        
                             color={"black"}
                           >
                             {id}
@@ -399,12 +398,12 @@ const Hero = () => {
                     <Box>
                       <Text
                         fontSize={[
-                          "12px",
-                          "16px",
                           "14px",
                           "14px",
                           "16px",
                           "16px",
+                          "18px",
+                          "18px",
                         ]}
                         fontWeight={500}
                         textAlign={"left"}
@@ -415,14 +414,14 @@ const Hero = () => {
                         {title}
                       </Text>
                       <Text
-                        fontSize={[
-                          "12px",
-                          "16px",
-                          "14px",
-                          "14px",
-                          "16px",
-                          "16px",
-                        ]}
+                      fontSize={[
+                        "13px",
+                        "13px",
+                        "15px",
+                        "15px",
+                        "17px",
+                        "17px",
+                      ]}
                         textAlign={"left"}
                         fontFamily={"Raleway"}
                         color={"black"}

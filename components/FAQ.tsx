@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion, Box, HStack, Span, Text, VStack } from "@chakra-ui/react";
+import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 
 const faqs = [
   {
@@ -41,36 +42,9 @@ const faqs = [
 const FAQ = () => {
   return (
     <>
-      <VStack
-        my={["50px", "50px", "50px", "50px", "50px", "50px"]}
-        w={["100%", "100%", "100%", "100%", "100%", "100"]}
-        textAlign={["center", "center", "center", "center", "center", "center"]}
-        color={"black"}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-      >
-        <Text
-          fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-          fontWeight={700}
-          fontFamily={"Raleway"}
-          bgClip="text"
-          color={"black"}
-          bgGradient="linear(to-r, teal, blue)"
-        >
-          FAQs
-        </Text>
-        <Text
-          fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-          // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-
-          fontFamily={"Raleway"}
-          color={"black"}
-          fontWeight={300}
-        >
-          Discover the answers to common questions about our Airbnb management
-          services, Feel free to reach out!
-        </Text>
-      </VStack>
+   <TitleSubheading title={"FAQ"} subheading={"Frequently Asked Questions"} />
       <Accordion.Root
+      
         fontFamily={"raleway"}
         collapsible
         defaultValue={["b"]}

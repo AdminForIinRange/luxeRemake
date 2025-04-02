@@ -20,7 +20,8 @@ const HeroServices = () => {
   const router = useRouter();
   return (
     <>
-      <HStack data-aos="fade-up"
+      <HStack
+        data-aos="fade-up"
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
@@ -41,7 +42,7 @@ const HeroServices = () => {
             <Text
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
               fontWeight={600}
               fontFamily={"Raleway"}
               bgClip="text"
@@ -52,7 +53,7 @@ const HeroServices = () => {
               Maximize Your Rental Income
             </Text>
             <Text
-              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -109,9 +110,8 @@ const HeroServices = () => {
 
           <Box
             position="relative"
-            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+            h={["350px", "350px", "350px", "500px", "500px", "600px"]}
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-
             borderRadius="30px"
             bgPos="center"
             bgSize="cover"
@@ -123,19 +123,16 @@ const HeroServices = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-                     position="relative"
-                     h={["500px", "500px", "500px", "500px", "500px", "500px"]}
-                     w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-               
-                     borderRadius="30px"
-                    
-                     bg="gray.200" // Change this to any background you want
-                     overflow="hidden"
-                     backgroundImage={` url(https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg)`}
-              
-                     backgroundRepeat="no-repeat"
-                     backgroundPosition="center"
-                     backgroundSize="100% 100%"
+              position="relative"
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              borderRadius="30px"
+              bg="gray.200" // Change this to any background you want
+              overflow="hidden"
+              backgroundImage={` url(https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg)`}
+              backgroundRepeat="no-repeat"
+              backgroundPosition="center"
+              backgroundSize="100% 100%"
             ></Box>
             {/* Bottom-right label */}
             <Box
@@ -192,7 +189,8 @@ const HeroServices = () => {
         </HStack>
       </HStack>
 
-      <HStack data-aos="fade-up"
+      <HStack
+        data-aos="fade-up"
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
@@ -216,7 +214,7 @@ const HeroServices = () => {
             <Text
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
               fontWeight={600}
               fontFamily={"Raleway"}
               bgClip="text"
@@ -224,10 +222,10 @@ const HeroServices = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-        Professional Property Management
+              Professional Property Management
             </Text>
             <Text
-              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+             fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -235,7 +233,8 @@ const HeroServices = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-         Experience stress-free property management with our dedicated team of professionals.
+              Experience stress-free property management with our dedicated team
+              of professionals.
             </Text>
             <HStack
               justify={[
@@ -283,9 +282,8 @@ const HeroServices = () => {
 
           <Box
             position="relative"
-            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+            h={["350px", "350px", "350px",  "500px", "500px", "600px"]}
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-  
             borderRadius="30px"
             bgPos="center"
             bgSize="cover"
@@ -298,19 +296,15 @@ const HeroServices = () => {
             {/* Horizontal line for crosshair */}
             <Box
               position="relative"
-              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+              h={["350px", "350px", "350px",  "500px", "500px", "500px"]}
               w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-        
               borderRadius="30px"
-             
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
               backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
-       
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
               backgroundSize="100% 100%"
-
             ></Box>
             {/* Bottom-right label */}
 
@@ -349,8 +343,7 @@ const HeroServices = () => {
                     fontWeight={"700"}
                     color={"black"}
                   >
-                   35%
-                 
+                    35%
                   </Text>
                   <Text
                     fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
@@ -369,7 +362,7 @@ const HeroServices = () => {
             <Text
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
               fontWeight={600}
               fontFamily={"Raleway"}
               bgClip="text"
@@ -377,10 +370,10 @@ const HeroServices = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-       Professional Property Management
+              Professional Property Management
             </Text>
             <Text
-              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -388,7 +381,8 @@ const HeroServices = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-            Experience stress-free property management with our dedicated team of professionals.
+              Experience stress-free property management with our dedicated team
+              of professionals.
             </Text>
             <HStack
               justify={[
@@ -436,10 +430,8 @@ const HeroServices = () => {
         </HStack>
       </HStack>
 
-
-
-
-       <HStack data-aos="fade-up"
+      <HStack
+        data-aos="fade-up"
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
@@ -460,7 +452,7 @@ const HeroServices = () => {
             <Text
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
               fontWeight={600}
               fontFamily={"Raleway"}
               bgClip="text"
@@ -468,10 +460,10 @@ const HeroServices = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-         Comprehensive Guest Services
+              Comprehensive Guest Services
             </Text>
             <Text
-              fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+    fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -479,7 +471,8 @@ const HeroServices = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              From seamless check-ins to personalized experiences, we ensure guest satisfaction at every step.
+              From seamless check-ins to personalized experiences, we ensure
+              guest satisfaction at every step.
             </Text>
             <HStack
               justify={[
@@ -527,9 +520,8 @@ const HeroServices = () => {
 
           <Box
             position="relative"
-            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
+              h={["350px", "350px", "350px",  "500px", "500px", "600px"]}
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-
             borderRadius="30px"
             bgPos="center"
             bgSize="cover"
@@ -541,19 +533,16 @@ const HeroServices = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-                    position="relative"
-                    h={["500px", "500px", "500px", "500px", "500px", "500px"]}
-                    w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              
-                    borderRadius="30px"
-                   
-                    bg="gray.200" // Change this to any background you want
-                    overflow="hidden"
-                    backgroundImage={` url(https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg)`}
-             
-                    backgroundRepeat="no-repeat"
-                    backgroundPosition="center"
-                    backgroundSize="100% 100%"
+              position="relative"
+                h={["350px", "350px", "350px",  "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              borderRadius="30px"
+              bg="gray.200" // Change this to any background you want
+              overflow="hidden"
+              backgroundImage={` url(https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg)`}
+              backgroundRepeat="no-repeat"
+              backgroundPosition="center"
+              backgroundSize="100% 100%"
             ></Box>
             {/* Bottom-right label */}
             <Box
@@ -595,8 +584,7 @@ const HeroServices = () => {
                     fontWeight={"700"}
                     color={"black"}
                   >
-                   25%
-            
+                    25%
                   </Text>
                   <Text
                     fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
