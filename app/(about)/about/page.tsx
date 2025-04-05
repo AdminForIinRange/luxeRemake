@@ -14,6 +14,7 @@ import {
   DialogFooter,
   Input,
   Text,
+  Avatar,
   VStack,
 } from "@chakra-ui/react";
 import { ChevronRight, Home, HomeIcon, House } from "lucide-react";
@@ -31,6 +32,7 @@ import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultati
 import TitleSubheading from "@/components/luxeComponents/Text/titleSubheading";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { FaAngleLeft, FaAngleRight, FaStar } from "react-icons/fa";
 const About = () => {
   useEffect(() => {
     Aos.init({
@@ -41,6 +43,45 @@ const About = () => {
   }, []);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
+
+  const [members, setmembers] = useState([
+    { 
+      "name": "Habibur Rahman", 
+      "role": "CEO & Co-founder",
+      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    },
+    { 
+      "name": "Matthew Zaniewski", 
+      "role": "Operation Director",
+      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    },
+    { 
+      "name": "Anjesh Bhattarai", 
+      "role": "Lead Software Engineer",
+      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    },
+    { 
+      "name": "Zadeed Bhuiyan", 
+      "role": "Executive Partner",
+      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    },
+    { 
+      "name": "Aryan Dangwal", 
+      "role": "Executive Partner",
+      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    }
+  ]);
+
+  const [currentSlide, setCurrentSlide] = useState(2);
+
+  const nextSlide = () => {
+    setCurrentSlide(currentSlide === members.length - 1 ? 0 : currentSlide + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(currentSlide === 0 ? members.length - 1 : currentSlide - 1);
+  };
+
   return (
     <>
       <TitleSubheading
@@ -286,9 +327,7 @@ const About = () => {
         </Box>
       </HStack>
 
-
-
-      <HStack 
+      <HStack
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
@@ -296,7 +335,7 @@ const About = () => {
         w={"100%"}
         h={"100%"}
         my={["50px", "50px", "50px", "50px", "50px", "50px"]}
-      > 
+      >
         <VStack
           justify={"center"}
           align={["center", "center", "center", "center", "center", "center"]}
@@ -327,88 +366,116 @@ const About = () => {
               Meet Our Team
             </Text>
           </Box>
-          <HStack
-            justify={"center"}
-            align={"start"}
-            w={"100%"}
-            transition={"all 0.2s ease-in-out"}
-            zIndex={3}
-            gap={["25px", "25px", "25px", "25px", "25px", "25px"]}
-            wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
-            mt={"50px"}
-            color={"white"}
-            fontFamily={"raleway"}
-            flexWrap={"wrap"}
-          >
-            <VStack color={"black"} justify={"center"} align={"center"}>
-              <Box
-                p={4}
-                rounded={"full"}
-                w={"350px"}
-                bg={"#23273F"}
-                h={"350px"}
-              ></Box>
-              <Text fontWeight={"bold"} fontSize={"24px"}>
-                Habibur Rahman
-              </Text>
-              <Text fontSize={"16px"}>CEO & Co-founder</Text>
-            </VStack>
 
-            <VStack color={"black"} justify={"center"} align={"center"}>
-              <Box
-                p={4}
-                rounded={"full"}
-                w={"350px"}
-                bg={"#23273F"}
-                h={"350px"}
-              ></Box>
-              <Text fontWeight={"bold"} fontSize={"24px"}>
-                Matthew Zaniewski
-              </Text>
-              <Text fontSize={"16px"}>Operation Director</Text>
+            <VStack w={["95%", "95%", "70%", "60%", "50%", "100%"]}>
+              <HStack
+                w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+                justify={[
+                  "center",
+                  "center",
+                  "center",
+                  "center",
+                  "center",
+                  "center",
+                ]}
+                align={"center"}
+                gap={"100px"}
+              >
+                <HStack
+                  as={"button"}
+                  mt={["25px", "25px", "50px", "25px", "25px", "25px"]}
+                  w={["225px", "225px", "170px", "170px", "200px", "125px"]}
+                  h={["50px", "50px", "50px", "50px", "50px", "125px"]}
+                  transition={"transform 0.3s ease"}
+                  _hover={{
+                    transform: "translateX(-10px)",
+                  }}
+                  justify={"center"}
+                  align={"center"}
+                  borderRadius={"100px"}
+                  border={"1px solid rgb(0, 0,0,0.25)"}
+                  color={"black"}
+                  onClick={() => {
+                    prevSlide();
+                  }}
+                >
+                  <Text cursor={"pointer"} fontSize={"40px"}>
+                    <FaAngleRight
+                      style={{ transform: "rotate(180deg)" }}
+                      color="black"
+                    />
+                  </Text>
+                </HStack>
+
+                <Box
+                  border={"1px solid rgb(0, 0,0,0.25)"}
+                  mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
+                  display={[
+                    "block",
+                    "block",
+                    "block",
+                    "block",
+                    "block",
+                    "block",
+                  ]}
+                  // data-aos="fade-right" // chnage dir
+                  // border={"1px solid rgb(0, 0, 0,0.25)"}
+                  h={["280px", "280px", "280px", "320px", "320px", "500px"]}
+                  w={["100%", "100%", "650px", "650px", "650px", "500px"]}
+                  borderRadius={"full"}
+                  bgPos={"center"}
+                  bgSize={"cover"}
+                  backgroundImage={` url(${
+                    members[currentSlide].src
+                  })`}
+                  backgroundSize="cover"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                ></Box>
+
+                <HStack
+                  as={"button"}
+                  mt={["25px", "25px", "50px", "25px", "25px", "25px"]}
+                  w={["225px", "225px", "170px", "170px", "200px", "125px"]}
+                  h={["50px", "50px", "50px", "50px", "50px", "125px"]}
+                  transition={"transform 0.3s ease"}
+                  _hover={{
+                    transform: "translateX(10px)",
+                  }}
+                  justify={"center"}
+                  align={"center"}
+                  borderRadius={"100px"}
+                  bg={"white"}
+                  color={"black"}
+                  border={"1px solid rgb(0, 0,0,0.25)"}
+                  onClick={() => {
+                    nextSlide();
+                  }}
+                >
+                  <Text cursor={"pointer"} fontSize={"40px"}>
+                    <FaAngleRight color="black" />
+                  </Text>
+                </HStack>
+
+            
+
+              </HStack>
+              <Text fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]}
+                fontWeight={"700"}>
+                {members[currentSlide].name} 
+                
+                </Text>
+
+                <Text   fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+              >
+                 {members[currentSlide].role}
+                </Text>
             </VStack>
-            <VStack color={"black"} justify={"center"} align={"center"}>
-              <Box
-                p={4}
-                rounded={"full"}
-                w={"350px"}
-                bg={"#23273F"}
-                h={"350px"}
-              ></Box>
-              <Text fontWeight={"bold"} fontSize={"24px"}>
-                Anjesh Bhattarai
-              </Text>
-              <Text fontSize={"16px"}>Lead Software Engineer</Text>
-            </VStack>
-            <VStack color={"black"} justify={"center"} align={"center"}>
-              <Box
-                p={4}
-                rounded={"full"}
-                w={"350px"}
-                bg={"#23273F"}
-                h={"350px"}
-              ></Box>
-              <Text fontWeight={"bold"} fontSize={"24px"}>
-                Zadeed Hossain
-              </Text>
-              <Text fontSize={"16px"}>Executive Partner</Text>
-            </VStack>
-            <VStack color={"black"} justify={"center"} align={"center"}>
-              <Box
-                p={4}
-                rounded={"full"}
-                w={"350px"}
-                bg={"#23273F"}
-                h={"350px"}
-              ></Box>
-              <Text fontWeight={"bold"} fontSize={"24px"}>
-                Aryan Dangwal
-              </Text>
-              <Text fontSize={"16px"}>Executive Partner</Text>
-            </VStack>
-          </HStack>
+            {/* <Image src={collage} width={500} /> */}
+       
         </VStack>
       </HStack>
+
       <HStack justify={"center"} align={"center"} w={"100%"}>
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
