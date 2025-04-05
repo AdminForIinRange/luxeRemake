@@ -163,7 +163,7 @@ const Navbar = () => {
               >
                 Contact
               </Box>
-              <Box
+              {/* <Box
                 cursor={"pointer"}
                 _hover={{
                   scale: 1.1,
@@ -173,7 +173,7 @@ const Navbar = () => {
                 onClick={() => router.push("/contact")}
               >
                 Article
-              </Box>
+              </Box> */}
             </HStack>
           </Flex>
         </HStack>
