@@ -72,7 +72,7 @@ const About = () => {
     }
   ]);
 
-  const [currentSlide, setCurrentSlide] = useState(2);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === members.length - 1 ? 0 : currentSlide + 1);
