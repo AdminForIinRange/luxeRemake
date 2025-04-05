@@ -64,7 +64,15 @@ const Hero = () => {
     });
   }, []);
 
-  const words = ["Calm", "Easy", "Simple", "Fast", "Pro", "Sharp"];
+  const words = [
+    "Effortless ",
+    "Stress-free",
+    "Efficient",
+    "Simple",
+    "Effective",
+    "Easy",
+  ];
+  // redce font size for moible
   const GettingStartedSteps = [
     {
       id: 1,
@@ -127,7 +135,7 @@ const Hero = () => {
         <Box color={"#222222"} fontWeight={"600"} width={"90%"}>
           Luxe Managements <br />
           <Box fontWeight={"400"}>
-            Be <FlipWords words={words} />
+            Made <FlipWords words={words} />
           </Box>
         </Box>
       </Stack>
@@ -192,7 +200,7 @@ const Hero = () => {
             The Future of Real Estate
           </Text>
           <Text
-                     fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+            fontSize={["18px", "18px", "24px", "24px", "24px", "24px"]}
             mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
             textAlign={["center", "center", "left", "left", "left", "left"]}
             fontFamily={"Raleway"}
@@ -200,8 +208,8 @@ const Hero = () => {
             w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
             fontWeight={300}
           >
-            We're transforming the way people interact with real estate. With
-            our innovative platform,
+            We're transforming the way people interact with real estate. Check
+            out some of our stuff.
           </Text>
         </Box>
 
@@ -324,7 +332,7 @@ const Hero = () => {
                 fontWeight={"500"}
                 onClick={() => setIsDialogOpen(true)}
               >
-                Schedule a consultation
+                Get in Touch
                 {/* <Icon as={ArrowRight}> </Icon> */}
               </Box>
             </HStack>
@@ -377,7 +385,6 @@ const Hero = () => {
                               "18px",
                             ]}
                             fontWeight={500}
-                        
                             color={"black"}
                           >
                             {id}
@@ -414,14 +421,14 @@ const Hero = () => {
                         {title}
                       </Text>
                       <Text
-                      fontSize={[
-                        "13px",
-                        "13px",
-                        "15px",
-                        "15px",
-                        "17px",
-                        "17px",
-                      ]}
+                        fontSize={[
+                          "13px",
+                          "13px",
+                          "15px",
+                          "15px",
+                          "17px",
+                          "17px",
+                        ]}
                         textAlign={"left"}
                         fontFamily={"Raleway"}
                         color={"black"}
@@ -448,10 +455,14 @@ const Hero = () => {
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-      <TitleSubheading title={"Our Services"} subheading={"We offer a full suite of services to help you manage your property with ease."} />
+      <TitleSubheading
+        title={"Our Services"}
+        subheading={
+          "We offer a full suite of services to help you manage your property with ease."
+        }
+      />
 
       <HeroServices />
-   
     </>
   );
 };

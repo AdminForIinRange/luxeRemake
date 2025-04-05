@@ -96,15 +96,16 @@ const About = () => {
               w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
               fontWeight={300}
             >
-              Founded in 2015, Luxe Managements began with a vision to
-              revolutionize the short-term rental industry. Our founders,
-              experienced in both real estate and hospitality, saw an
-              opportunity to bridge the gap between property owners and guests,
-              creating exceptional experiences for both. <br></br> <br></br>{" "}
-              Over the years, we've grown from managing a handful of properties
-              to becoming a leader in the industry, known for our attention to
-              detail, innovative technology, and commitment to excellence. Our
-              Journey
+              Luxe Managements launched in 2022 with a clear mission: to
+              redefine short-term rental management through innovation, quality,
+              and care. We saw the gaps — inconsistent service, underperforming
+              listings, and generic guest experiences — and built a smarter,
+              more elevated alternative. <br></br>
+              <br></br>From data-driven pricing to five-star cleaning and 24/7
+              guest support, every detail is designed to maximise returns and
+              create unforgettable stays. Today, Luxe is the go-to choice for
+              property owners across Adelaide who want hassle-free hosting and
+              hotel-quality results.
             </Text>
             <HStack
               justify={[
@@ -285,7 +286,9 @@ const About = () => {
         </Box>
       </HStack>
 
-      <HStack
+
+
+      <HStack 
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
@@ -293,7 +296,7 @@ const About = () => {
         w={"100%"}
         h={"100%"}
         my={["50px", "50px", "50px", "50px", "50px", "50px"]}
-      >
+      > 
         <VStack
           justify={"center"}
           align={["center", "center", "center", "center", "center", "center"]}
@@ -335,6 +338,7 @@ const About = () => {
             mt={"50px"}
             color={"white"}
             fontFamily={"raleway"}
+            flexWrap={"wrap"}
           >
             <VStack color={"black"} justify={"center"} align={"center"}>
               <Box
@@ -345,7 +349,7 @@ const About = () => {
                 h={"350px"}
               ></Box>
               <Text fontWeight={"bold"} fontSize={"24px"}>
-                Jane Doe
+                Habibur Rahman
               </Text>
               <Text fontSize={"16px"}>CEO & Co-founder</Text>
             </VStack>
@@ -359,9 +363,9 @@ const About = () => {
                 h={"350px"}
               ></Box>
               <Text fontWeight={"bold"} fontSize={"24px"}>
-                Jane Doe
+                Matthew Zaniewski
               </Text>
-              <Text fontSize={"16px"}>CEO & Co-founder</Text>
+              <Text fontSize={"16px"}>Operation Director</Text>
             </VStack>
             <VStack color={"black"} justify={"center"} align={"center"}>
               <Box
@@ -372,9 +376,35 @@ const About = () => {
                 h={"350px"}
               ></Box>
               <Text fontWeight={"bold"} fontSize={"24px"}>
-                Jane Doe
+                Anjesh Bhattarai
               </Text>
-              <Text fontSize={"16px"}>CEO & Co-founder</Text>
+              <Text fontSize={"16px"}>Lead Software Engineer</Text>
+            </VStack>
+            <VStack color={"black"} justify={"center"} align={"center"}>
+              <Box
+                p={4}
+                rounded={"full"}
+                w={"350px"}
+                bg={"#23273F"}
+                h={"350px"}
+              ></Box>
+              <Text fontWeight={"bold"} fontSize={"24px"}>
+                Zadeed Hossain
+              </Text>
+              <Text fontSize={"16px"}>Executive Partner</Text>
+            </VStack>
+            <VStack color={"black"} justify={"center"} align={"center"}>
+              <Box
+                p={4}
+                rounded={"full"}
+                w={"350px"}
+                bg={"#23273F"}
+                h={"350px"}
+              ></Box>
+              <Text fontWeight={"bold"} fontSize={"24px"}>
+                Aryan Dangwal
+              </Text>
+              <Text fontSize={"16px"}>Executive Partner</Text>
             </VStack>
           </HStack>
         </VStack>

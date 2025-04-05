@@ -62,7 +62,7 @@ const HeroServices = () => {
               fontWeight={300}
             >
               Optimize your income and ease your mind with our experienced
-              Airbnb Management team. Learn More
+              Airbnb Management team.
             </Text>
             <HStack
               justify={[

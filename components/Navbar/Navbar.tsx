@@ -163,6 +163,17 @@ const Navbar = () => {
               >
                 Contact
               </Box>
+              <Box
+                cursor={"pointer"}
+                _hover={{
+                  scale: 1.1,
+                  fontWeight: "700",
+                }}
+                transition={"all 0.2s ease-in-out"}
+                onClick={() => router.push("/contact")}
+              >
+                Article
+              </Box>
             </HStack>
           </Flex>
         </HStack>

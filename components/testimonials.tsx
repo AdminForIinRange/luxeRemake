@@ -31,7 +31,7 @@ const Testimonials = () => {
 
       name: "Dan Abrahmov",
       src: "https://bit.ly/dan-abramov",
-      rating: 6,
+      rating: 5,
     },
     {
       text: "  Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free. ",
@@ -43,7 +43,7 @@ const Testimonials = () => {
     {
       text: " Fantastic service! They took the time to understand exactly what I was looking for and found the perfect match. I couldn’t be happier!",
 
-      rating: 6,
+      rating: 5,
       name: "Segun Adebayo",
       src: "https://bit.ly/sage-adebayo",
     },
