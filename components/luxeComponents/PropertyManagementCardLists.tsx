@@ -128,9 +128,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -149,9 +148,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -170,9 +168,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -191,9 +188,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -356,9 +352,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -377,9 +372,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -398,9 +392,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -419,9 +412,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -546,9 +538,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -567,9 +558,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -588,9 +578,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -609,9 +598,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -677,9 +665,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -698,9 +685,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -719,9 +705,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -740,9 +725,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -890,9 +874,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -911,9 +894,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -932,9 +914,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -953,9 +934,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -1080,9 +1060,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -1101,9 +1080,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -1122,9 +1100,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
@@ -1143,9 +1120,8 @@ const PropertyManagementCardLists = () => {
               justify={["start", "start", "start", "start", "start", "start"]}
               w={"100%"}
               gap={"10px"}
-              mt={"20px"}
               borderBottom={"1px solid #e0e0e0"}
-              pb={"10px"}
+              py={"20px"}
             >
               <Box p={2} bg={"gray.200"} borderRadius={"50%"}>
                 <Check size={20} />{" "}
