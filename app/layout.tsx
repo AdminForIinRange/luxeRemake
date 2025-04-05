@@ -10,7 +10,9 @@ import Loading from "./loading";
 import { Analytics } from "@vercel/analytics/react";
 export const metadata = {
   title: "Luxe Management",
-  description: "Luxe Management",
+
+  description:
+    "We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience. Our offerings include property listing creation, guest communication, pricing optimization, cleaning, and maintenance—everything you need for success. We expertly manage your property listings on top platforms like Airbnb and Booking.com, fine-tune pricing to match market demand, and ensure high occupancy rates, resulting in an average 40% boost in rental income. From residential homes and vacation rentals to boutique apartments, we specialize in short-term rentals across Adelaide and its surrounding areas. Getting started is simple: just reach out to our team, schedule a property inspection, and we'll take care of everything from crafting your listing to managing guests and overseeing cleaning services. Plus, we offer professional marketing to elevate your property's appeal, using high-quality materials that help drive more bookings.",
 };
 
 export default function RootLayout({
