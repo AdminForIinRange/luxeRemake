@@ -48,26 +48,31 @@ const About = () => {
     {
       name: "Habibur Rahman",
       role: "CEO & Co-founder",
+      desc: "I told my computer I needed a break, and it said 'No problem, I'll crash for you!'",
       src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
     {
       name: "Matthew Zaniewski",
       role: "Operation Director",
+      desc: "I'm reading a book about anti-gravity. It's impossible to put down.",
       src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
     {
       name: "Anjesh Bhattarai",
       role: "Lead Software Engineer",
+      desc: "I'm not arguing, I'm just explaining why I'm right. There's a difference.",
       src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
     {
       name: "Zadeed Bhuiyan",
       role: "Executive Partner",
+      desc: "I'm not lazy, I'm just on energy-saving mode.",
       src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
     {
       name: "Aryan Dangwal",
       role: "Executive Partner",
+      desc: "Why don't scientists trust atoms? Because they make up everything!",
       src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
   ]);
@@ -449,11 +454,10 @@ const About = () => {
                 </Text>
               </HStack>
             </HStack>
-            <HStack mt={["25px", "25px", "50px", "25px", "25px", "25px"]} >
+            <HStack mt={["25px", "25px", "50px", "25px", "25px", "25px"]}>
               <HStack
                 display={["flex", "flex", "flex", "none", "none", "none"]}
                 as={"button"}
-              
                 w={["50px", "50px", "50px", "170px", "200px", "125px"]}
                 h={["50px", "50px", "50px", "50px", "50px", "125px"]}
                 transition={"transform 0.3s ease"}
@@ -486,15 +490,22 @@ const About = () => {
                 </Text>
 
                 <Text
+                  fontWeight={"500"}
                   fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 >
                   {members[currentSlide].role}
+                </Text>
+                <Text
+                  textAlign={"center"}
+                  w={["80%", "80%", "80%", "80%", "80%", "80%"]}
+                  fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                >
+                  " {members[currentSlide].desc} "
                 </Text>
               </VStack>
               <HStack
                 display={["flex", "flex", "flex", "none", "none", "none"]}
                 as={"button"}
-               
                 w={["50px", "50px", "50px", "170px", "200px", "125px"]}
                 h={["50px", "50px", "50px", "50px", "50px", "125px"]}
                 transition={"transform 0.3s ease"}

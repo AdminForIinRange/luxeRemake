@@ -41,7 +41,43 @@ import { useRouter } from "next/navigation";
 import ScheduleConsultation from "./luxeComponents/scheduleConsultation";
 import HeroServices from "./luxeComponents/heroServices";
 import TitleSubheading from "./luxeComponents/Text/titleSubheading";
+
+import {
+  SliderBtnGroup,
+  ProgressSlider,
+  SliderBtn,
+  SliderContent,
+  SliderWrapper,
+} from "@/components/core/progress-slider";
+
+import { imgPreview } from "@/components/website/constant";
 const Hero = () => {
+  const items = [
+    {
+      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+      title: "Bridge",
+      desc: "A breathtaking view of a city illuminated by countless lights, showcasing the vibrant and bustling nightlife.",
+      sliderName: "bridge",
+    },
+    {
+      img: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+      title: "Mountains View",
+      desc: "A serene lake reflecting the surrounding mountains and trees, creating a mirror-like surface.",
+      sliderName: "mountains",
+    },
+    {
+      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+      title: "Autumn",
+      desc: "A picturesque path winding through a dense forest adorned with vibrant autumn foliage.",
+      sliderName: "autumn",
+    },
+    {
+      img: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
+      title: "Foggy",
+      sliderName: "foggy",
+      desc: "A stunning foggy view over the foresh, with the sun casting a golden glow across the forest. ",
+    },
+  ];
   const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   // const { user } = useUser();
@@ -463,6 +499,83 @@ const Hero = () => {
       />
 
       <HeroServices />
+      {/* GALLERY SECTION */}
+      <HStack
+        id="gallery-section"
+        w="100%"
+        justify="center"
+        align="center"
+        mt="100px" // Adjust spacing as desired
+      >
+        <Box
+          w="90%"
+          bg="white"
+          borderRadius="md"
+          p={["20px", "30px"]}
+          boxShadow="sm"
+          textAlign="center"
+        >
+          {/* Title & Subtitle */}
+          <Text
+            fontSize={["2xl", "3xl", "4xl"]}
+            fontWeight="bold"
+            fontFamily="Raleway"
+            mb="10px"
+          >
+            Check Out Our Gallery
+          </Text>
+          <Text
+            fontSize={["md", "lg"]}
+            color="gray.600"
+            fontFamily="Raleway"
+            mb="30px"
+          >
+            A glimpse into some of our most stunning properties and interiors.
+          </Text>
+
+          {/* Images Container */}
+          <HStack
+            spacing={["10px", "20px", "40px"]}
+            justify="center"
+            align="center"
+            flexWrap="wrap"
+          >
+            {/* Image 1: Rotated 45° */}
+            <ProgressSlider vertical={false} activeSlider="bridge">
+        <SliderContent>
+          {items.map((item, index) => (
+            <SliderWrapper key={index} value={item?.sliderName}>
+              <Image
+                className="rounded-xl 2xl:h-[500px] h-[350px] object-cover"
+                src={item.img}
+                width={1900}
+                height={1080}
+                alt={item.desc}
+              />
+            </SliderWrapper>
+          ))}
+        </SliderContent>
+
+        <SliderBtnGroup className="absolute bottom-0 h-fit dark:text-white text-black dark:bg-black/40 bg-white/40  backdrop-blur-md overflow-hidden grid grid-cols-2 md:grid-cols-4  rounded-md">
+          {items.map((item, index) => (
+            <SliderBtn
+              key={index}
+              value={item?.sliderName}
+              className="text-left  p-3 border-r"
+              progressBarClass="dark:bg-black bg-white h-full"
+            >
+              <h2 className="relative px-4 rounded-full w-fit dark:bg-white dark:text-black text-white bg-gray-900 mb-2">
+                {item.title}
+              </h2>
+              <p className="text-sm font-medium  line-clamp-2">{item.desc}</p>
+            </SliderBtn>
+          ))}
+        </SliderBtnGroup>
+      </ProgressSlider>
+          </HStack>
+        </Box>
+      </HStack>
+     
     </>
   );
 };
