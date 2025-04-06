@@ -1,177 +1,226 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Box, Stack, Text, Flex, Group, HStack } from "@chakra-ui/react";
-import { signOutUser } from "@/lib/actions/user.actions";
-import { useUser } from "@/context/UserContext";
+import React, { useState, useRef } from "react";
+import {
+  Box,
+  Stack,
+  Text,
+  Flex,
+  HStack,
+} from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import luxeLogo from "../../public/png/LuxeLogo.png";
-import { FlipWords } from "@/components/ui/flip-words";
-import { useRouter } from "next/navigation";
+
 const Navbar = () => {
   const router = useRouter();
-  // const { user } = useUser();
 
-  // const [loading, setLoading] = useState(true);
+  // Track which dropdown is open
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const timeoutRef = useRef<any>(null);
 
-  // const handleSignOut = async () => {
-  //   try {
-  //     await signOutUser();
-  //   } catch (error) {
-  //     console.error("Error signing out:", error);
-  //   }
-  // };
+  const handleEnter = (name: string) => {
+    clearTimeout(timeoutRef.current);
+    setActiveDropdown(name);
+  };
 
+  const handleLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300);
+  };
+
+  // Reusable Dropdown
+  const Dropdown = ({ items }: { items: { label: string; link: string }[] }) => (
+    <Box
+      borderRadius="4px"
+      position="absolute"
+      top="100%"
+      left="50%"
+      transform="translateX(-50%)"
+      bg="white"
+      border="1px solid #e0e0e0"
+      mt="2"
+      w="150px"
+      zIndex={10}
+      opacity={activeDropdown ? 1 : 0}
+      h={activeDropdown ? "auto" : "0px"}
+      overflow="hidden"
+      transition="all 0.3s ease-in-out"
+      pointerEvents={activeDropdown ? "auto" : "none"}
+      onMouseEnter={() => clearTimeout(timeoutRef.current)}
+      onMouseLeave={handleLeave}
+    >
+      <Stack>
+        {items.map((item, index) => (
+          <Box
+            key={index}
+            p="2"
+            cursor="pointer"
+            _hover={{ bg: "#f0f0f0" }}
+            fontSize="14px"
+            onClick={() => router.push(item.link)}
+          >
+            <Text>{item.label}</Text>
+          </Box>
+        ))}
+      </Stack>
+    </Box>
+  );
 
   return (
-    <>
-      <Box w={"100%"} p={4} fontFamily={"raleway"}>
-        <HStack borderBottom={"1px solid #e0e0e0"} pb={"4"}>
-          <Flex
-            direction={{
-              base: "column",
-              sm: "column",
-              md: "column",
-              lg: "row",
-              xl: "row",
-            }}
-            w={"100%"}
-            h={"100%"}
-            justifyContent={"center"}
-            align={"center"}
-            gap={{
-              base: "25px",
-              sm: "25px",
-              md: "25px",
-              lg: "200px",
-              xl: "500px",
-            }}
+    <Box w="100%" p={4} fontFamily="raleway">
+      <HStack borderBottom="1px solid #e0e0e0" pb={4}>
+        <Flex
+          direction={{ base: "column", lg: "row" }}
+          w="100%"
+          justify="center"
+          align="center"
+          gap={{ base: "25px", lg: "200px", xl: "500px" }}
+        >
+          {/* Logo */}
+          <Stack
+            justify="center"
+            align="center"
+            direction={{ base: "column", md: "row" }}
+            cursor="pointer"
+            onClick={() => router.push("/")}
+            gap="0px"
           >
-            <Stack
-              justify={"center"}
-              align={"center"}
-              fontSize={"30px"}
-              direction={{
-                base: "column",
-                sm: "column",
-                md: "row",
-                lg: "row",
-                xl: "row",
-              }}
-              h={"100%"}
-              _hover={{
-                scale: 1.05,
-                fontWeight: "700",
-              }}
-              transition={"all 0.2s ease-in-out"}
-              cursor={"pointer"}
-              onClick={() => router.push("/")}
-              gap={"0px"}
-            >
-              <Box
-                w={"70px"}
-                h={"100%"}
-                cursor={"pointer"}
-                transition={"all 0.2s ease-in-out"}
-                onClick={() => router.push("/")}
-              >
-                <Image src={luxeLogo} alt="logo" />
-              </Box>
-              <Text        fontSize={["20px", "20px", "20px", "20px", "20px", "20px"]}  fontFamily={"raleway"} fontWeight={"700"}>
-                Luxe Management
-              </Text>
-            </Stack>
+            <Box w="70px" h="100%" onClick={() => router.push("/")}>
+              <Image src={luxeLogo} alt="logo" />
+            </Box>
+            <Text fontSize="20px" fontWeight="700">
+              Luxe Management
+            </Text>
+          </Stack>
 
-            <HStack
-              fontSize={["14px", "14px", "16px", "16px", "16px", "20px"]}
-              gap={["26px", "26px", "36px", "36px", "36px", "36px"]}
-              fontWeight={"500"}
-              transition={"all 0.2s ease-in-out"}
-          
+          {/* Nav Items */}
+          <HStack fontSize="16px" gap={["16px", "16px", "16px", "36px", "36px"]} fontWeight="500">
+            {/* About */}
+            <Box
+              position="relative"
+              onMouseEnter={() => handleEnter("about")}
+              onMouseLeave={handleLeave}
             >
-              {/* <Box
-                cursor={"pointer"}
-                _hover={{
-                  scale: 1.1,
-                  fontWeight: "700",
-                }}
-                transition={"all 0.2s ease-in-out"}
-                onClick={() => router.push("/")}
-              >
-                Home
-              </Box> */}
-              <Box
-                cursor={"pointer"}
-                _hover={{
-                  scale: 1.1,
-                  fontWeight: "700",
-                }}
-                transition={"all 0.2s ease-in-out"}
+              <Box  fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                cursor="pointer"
+                _hover={{ scale: 1.1, fontWeight: "700" }}
+                transition="all 0.2s ease-in-out"
                 onClick={() => router.push("/about")}
               >
-                {" "}
                 About
               </Box>
-              <Box
-                cursor={"pointer"}
-                _hover={{
-                  scale: 1.1,
-                  fontWeight: "700",
-                }}
-                transition={"all 0.2s ease-in-out"}
+              {activeDropdown === "about" && (
+                <Dropdown
+                  items={[
+                    { label: "Our Story", link: "/about#story" },
+                    { label: "Team", link: "/about#team" },
+                  ]}
+                />
+              )}
+            </Box>
+
+            {/* Services */}
+            <Box
+              position="relative"
+              onMouseEnter={() => handleEnter("services")}
+              onMouseLeave={handleLeave}
+            >
+              <Box fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                cursor="pointer"
+                _hover={{ scale: 1.1, fontWeight: "700" }}
+                transition="all 0.2s ease-in-out"
                 onClick={() => router.push("/services")}
               >
                 Services
               </Box>
-              <Box
-                cursor={"pointer"}
-                _hover={{
-                  scale: 1.1,
-                  fontWeight: "700",
-                }}
-                transition={"all 0.2s ease-in-out"}
+              {activeDropdown === "services" && (
+                <Dropdown
+                  items={[
+                    { label: "Cleaning", link: "/services/cleaning" },
+                    { label: "Managements", link: "/services/managements" },
+                    { label: "Consulting", link: "/services/consulting" },
+                  ]}
+                />
+              )}
+            </Box>
+
+            {/* Pricing */}
+            <Box
+              position="relative"
+              onMouseEnter={() => handleEnter("pricing")}
+              onMouseLeave={handleLeave}
+            >
+              <Box fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                cursor="pointer"
+                _hover={{ scale: 1.1, fontWeight: "700" }}
+                transition="all 0.2s ease-in-out"
                 onClick={() => router.push("/pricing")}
               >
                 Pricing
               </Box>
-              <Box
-                cursor={"pointer"}
-                _hover={{
-                  scale: 1.1,
-                  fontWeight: "700",
-                }}
-                transition={"all 0.2s ease-in-out"}
+              {activeDropdown === "pricing" && (
+                <Dropdown
+                  items={[
+                    { label: "Basic", link: "/pricing#basic" },
+                    { label: "Premium", link: "/pricing#premium" },
+                  ]}
+                />
+              )}
+            </Box>
+
+            {/* Gallery */}
+            <Box
+              position="relative"
+              onMouseEnter={() => handleEnter("gallery")}
+              onMouseLeave={handleLeave}
+            >
+              <Box fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                cursor="pointer"
+                _hover={{ scale: 1.1, fontWeight: "700" }}
+                transition="all 0.2s ease-in-out"
                 onClick={() => router.push("/gallery")}
               >
                 Gallery
               </Box>
-              <Box
-                cursor={"pointer"}
-                _hover={{
-                  scale: 1.1,
-                  fontWeight: "700",
-                }}
-                transition={"all 0.2s ease-in-out"}
+              {activeDropdown === "gallery" && (
+                <Dropdown
+                  items={[
+                    { label: "Photos", link: "/gallery#photos" },
+                    { label: "Videos", link: "/gallery#videos" },
+                  ]}
+                />
+              )}
+            </Box>
+
+            {/* Contact */}
+            <Box
+              position="relative"
+              onMouseEnter={() => handleEnter("contact")}
+              onMouseLeave={handleLeave}
+            >
+              <Box fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                cursor="pointer"
+                _hover={{ scale: 1.1, fontWeight: "700" }}
+                transition="all 0.2s ease-in-out"
                 onClick={() => router.push("/contact")}
               >
                 Contact
               </Box>
-              {/* <Box
-                cursor={"pointer"}
-                _hover={{
-                  scale: 1.1,
-                  fontWeight: "700",
-                }}
-                transition={"all 0.2s ease-in-out"}
-                onClick={() => router.push("/contact")}
-              >
-                Article
-              </Box> */}
-            </HStack>
-          </Flex>
-        </HStack>
-      </Box>
-    </>
+              {activeDropdown === "contact" && (
+                <Dropdown
+                  items={[
+                    { label: "Support", link: "/contact#support" },
+                    { label: "Request a Quote", link: "/contact#quote" },
+                  ]}
+                />
+              )}
+            </Box>
+          </HStack>
+        </Flex>
+      </HStack>
+    </Box>
   );
 };
 
