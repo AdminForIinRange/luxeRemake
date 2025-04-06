@@ -43,7 +43,7 @@ const PropertyManagement = () => {
         "We craft compelling listings and implement strategic marketing to maximize visibility and occupancy rates.",
       features: [
         "Professional photography and copywriting",
-        "SEO-optimized descriptions",
+        "Optimized descriptions",
         "Multi-platform presence",
         "Dynamic pricing algorithm",
       ],
@@ -114,7 +114,7 @@ const PropertyManagement = () => {
         >
           <VStack
             color={"white"}
-            mt={"20px"}
+            mt={"10px"}
             w={"100%"}
             h={"100%"}
             display={"flex"}
@@ -122,7 +122,7 @@ const PropertyManagement = () => {
             alignItems={"start"}
             p={"32px"}
           >
-            <VStack justify={"center"} align={"START"} w={"100%"} h={"100%"}>
+            <VStack justify={"end"} align={"start"} w={"100%"} h={"100%"}>
               <Text
                 fontSize={{
                   base: "40px",

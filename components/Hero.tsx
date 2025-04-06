@@ -123,9 +123,9 @@ const Hero = () => {
         justifyContent={"center"}
         alignItems={"center"}
         fontSize={{
-          base: "50px",
-          sm: "50px",
-          md: "60px",
+          base: "40px",
+          sm: "40px",
+          md: "50px",
           lg: "76px",
           xl: "96px",
         }}

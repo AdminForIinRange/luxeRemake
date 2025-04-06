@@ -45,31 +45,31 @@ const About = () => {
   const router = useRouter();
 
   const [members, setmembers] = useState([
-    { 
-      "name": "Habibur Rahman", 
-      "role": "CEO & Co-founder",
-      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    {
+      name: "Habibur Rahman",
+      role: "CEO & Co-founder",
+      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
-    { 
-      "name": "Matthew Zaniewski", 
-      "role": "Operation Director",
-      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    {
+      name: "Matthew Zaniewski",
+      role: "Operation Director",
+      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
-    { 
-      "name": "Anjesh Bhattarai", 
-      "role": "Lead Software Engineer",
-      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    {
+      name: "Anjesh Bhattarai",
+      role: "Lead Software Engineer",
+      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
-    { 
-      "name": "Zadeed Bhuiyan", 
-      "role": "Executive Partner",
-      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
+    {
+      name: "Zadeed Bhuiyan",
+      role: "Executive Partner",
+      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
-    { 
-      "name": "Aryan Dangwal", 
-      "role": "Executive Partner",
-      "src": `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`
-    }
+    {
+      name: "Aryan Dangwal",
+      role: "Executive Partner",
+      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
+    },
   ]);
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -129,7 +129,7 @@ const About = () => {
               Our Story
             </Text>
             <Text
-              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+              fontSize={["16px", "16px", "16px", "16px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -258,7 +258,7 @@ const About = () => {
           <Text
             w={["90%", "90%", "90%", "50%", "50%", "50%"]}
             color={"white"}
-            fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+            fontSize={["16px", "16px", "16px", "16px", "18px", "18px"]}
             fontFamily={"raleway"}
           >
             At Luxe Managements, our mission is to elevate the short-term rental
@@ -367,112 +367,157 @@ const About = () => {
             </Text>
           </Box>
 
-            <VStack w={["95%", "95%", "70%", "60%", "50%", "100%"]}>
+          <VStack>
+            <HStack
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              justify={[
+                "center",
+                "center",
+                "center",
+                "center",
+                "center",
+                "center",
+              ]}
+              align={"center"}
+              gap={["0", "0", "0", "50px", "50px", "100px"]}
+            >
               <HStack
-                w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-                justify={[
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                ]}
+                display={["none", "none", "none", "flex", "flex", "flex"]}
+                as={"button"}
+                mt={["25px", "25px", "50px", "25px", "25px", "25px"]}
+                w={["50px", "50px", "50px", "100px", "100px", "100px"]}
+                h={["50px", "50px", "50px", "100px", "100px", "100px"]}
+                transition={"transform 0.3s ease"}
+                _hover={{
+                  transform: "translateX(-10px)",
+                }}
+                justify={"center"}
                 align={"center"}
-                gap={"100px"}
+                borderRadius={"100px"}
+                border={"1px solid rgb(0, 0,0,0.25)"}
+                color={"black"}
+                onClick={() => {
+                  prevSlide();
+                }}
               >
-                <HStack
-                  as={"button"}
-                  mt={["25px", "25px", "50px", "25px", "25px", "25px"]}
-                  w={["225px", "225px", "170px", "170px", "200px", "125px"]}
-                  h={["50px", "50px", "50px", "50px", "50px", "125px"]}
-                  transition={"transform 0.3s ease"}
-                  _hover={{
-                    transform: "translateX(-10px)",
-                  }}
-                  justify={"center"}
-                  align={"center"}
-                  borderRadius={"100px"}
-                  border={"1px solid rgb(0, 0,0,0.25)"}
-                  color={"black"}
-                  onClick={() => {
-                    prevSlide();
-                  }}
-                >
-                  <Text cursor={"pointer"} fontSize={"40px"}>
-                    <FaAngleRight
-                      style={{ transform: "rotate(180deg)" }}
-                      color="black"
-                    />
-                  </Text>
-                </HStack>
-
-                <Box
-                  border={"1px solid rgb(0, 0,0,0.25)"}
-                  mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
-                  display={[
-                    "block",
-                    "block",
-                    "block",
-                    "block",
-                    "block",
-                    "block",
-                  ]}
-                  // data-aos="fade-right" // chnage dir
-                  // border={"1px solid rgb(0, 0, 0,0.25)"}
-                  h={["280px", "280px", "280px", "320px", "320px", "500px"]}
-                  w={["100%", "100%", "650px", "650px", "650px", "500px"]}
-                  borderRadius={"full"}
-                  bgPos={"center"}
-                  bgSize={"cover"}
-                  backgroundImage={` url(${
-                    members[currentSlide].src
-                  })`}
-                  backgroundSize="cover"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                ></Box>
-
-                <HStack
-                  as={"button"}
-                  mt={["25px", "25px", "50px", "25px", "25px", "25px"]}
-                  w={["225px", "225px", "170px", "170px", "200px", "125px"]}
-                  h={["50px", "50px", "50px", "50px", "50px", "125px"]}
-                  transition={"transform 0.3s ease"}
-                  _hover={{
-                    transform: "translateX(10px)",
-                  }}
-                  justify={"center"}
-                  align={"center"}
-                  borderRadius={"100px"}
-                  bg={"white"}
-                  color={"black"}
-                  border={"1px solid rgb(0, 0,0,0.25)"}
-                  onClick={() => {
-                    nextSlide();
-                  }}
-                >
-                  <Text cursor={"pointer"} fontSize={"40px"}>
-                    <FaAngleRight color="black" />
-                  </Text>
-                </HStack>
-
-            
-
+                <Text cursor={"pointer"} fontSize={"40px"}>
+                  <FaAngleRight
+                    style={{ transform: "rotate(180deg)" }}
+                    color="black"
+                  />
+                </Text>
               </HStack>
-              <Text fontSize={["24px", "24px", "24px", "30px", "30px", "30px"]}
-                fontWeight={"700"}>
-                {members[currentSlide].name} 
-                
+              <Box
+                border={"1px solid rgb(0, 0,0,0.25)"}
+                mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
+                display={["block", "block", "block", "block", "block", "block"]}
+                // data-aos="fade-right" // chnage dir
+                // border={"1px solid rgb(0, 0, 0,0.25)"}
+                h={["300px", "300px", "300px", "500px", "500px", "500px"]}
+                w={["300px", "300px", "300px", "500px", "500px", "500px"]}
+                borderRadius={"full"}
+                bgPos={"center"}
+                bgSize={"cover"}
+                backgroundImage={` url(${members[currentSlide].src})`}
+                backgroundSize="cover"
+                backgroundPosition="center"
+                backgroundRepeat="no-repeat"
+              ></Box>
+
+              <HStack
+                display={["none", "none", "none", "flex", "flex", "flex"]}
+                as={"button"}
+                mt={["25px", "25px", "50px", "25px", "25px", "25px"]}
+                w={["50px", "50px", "50px", "100px", "100px", "100px"]}
+                h={["50px", "50px", "50px", "100px", "100px", "100px"]}
+                transition={"transform 0.3s ease"}
+                _hover={{
+                  transform: "translateX(10px)",
+                }}
+                justify={"center"}
+                align={"center"}
+                borderRadius={"100px"}
+                bg={"white"}
+                color={"black"}
+                border={"1px solid rgb(0, 0,0,0.25)"}
+                onClick={() => {
+                  nextSlide();
+                }}
+              >
+                <Text cursor={"pointer"} fontSize={"40px"}>
+                  <FaAngleRight color="black" />
+                </Text>
+              </HStack>
+            </HStack>
+            <HStack mt={["25px", "25px", "50px", "25px", "25px", "25px"]} >
+              <HStack
+                display={["flex", "flex", "flex", "none", "none", "none"]}
+                as={"button"}
+              
+                w={["50px", "50px", "50px", "170px", "200px", "125px"]}
+                h={["50px", "50px", "50px", "50px", "50px", "125px"]}
+                transition={"transform 0.3s ease"}
+                _hover={{
+                  transform: "translateX(-10px)",
+                }}
+                justify={"center"}
+                align={"center"}
+                borderRadius={"100px"}
+                border={"1px solid rgb(0, 0,0,0.25)"}
+                color={"black"}
+                onClick={() => {
+                  prevSlide();
+                }}
+              >
+                <Text cursor={"pointer"} fontSize={"40px"}>
+                  <FaAngleRight
+                    style={{ transform: "rotate(180deg)" }}
+                    color="black"
+                  />
+                </Text>
+              </HStack>
+
+              <VStack w={["245px", "245px", "245px", "100%", "100%", "100%"]}>
+                <Text
+                  fontSize={["20px", "20px", "20px", "30px", "30px", "30px"]}
+                  fontWeight={"700"}
+                >
+                  {members[currentSlide].name}
                 </Text>
 
-                <Text   fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
-              >
-                 {members[currentSlide].role}
+                <Text
+                  fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                >
+                  {members[currentSlide].role}
                 </Text>
-            </VStack>
-            {/* <Image src={collage} width={500} /> */}
-       
+              </VStack>
+              <HStack
+                display={["flex", "flex", "flex", "none", "none", "none"]}
+                as={"button"}
+               
+                w={["50px", "50px", "50px", "170px", "200px", "125px"]}
+                h={["50px", "50px", "50px", "50px", "50px", "125px"]}
+                transition={"transform 0.3s ease"}
+                _hover={{
+                  transform: "translateX(10px)",
+                }}
+                justify={"center"}
+                align={"center"}
+                borderRadius={"100px"}
+                bg={"white"}
+                color={"black"}
+                border={"1px solid rgb(0, 0,0,0.25)"}
+                onClick={() => {
+                  nextSlide();
+                }}
+              >
+                <Text cursor={"pointer"} fontSize={"40px"}>
+                  <FaAngleRight color="black" />
+                </Text>
+              </HStack>
+            </HStack>
+          </VStack>
+          {/* <Image src={collage} width={500} /> */}
         </VStack>
       </HStack>
 

@@ -22,14 +22,6 @@ const Navbar = () => {
   //   }
   // };
 
-  const words = [
-    "Stress-Free",
-    "Effortless",
-    "Simple",
-    "Efficient",
-    "Professional",
-    "Effective",
-  ];
 
   return (
     <>
@@ -85,7 +77,7 @@ const Navbar = () => {
               >
                 <Image src={luxeLogo} alt="logo" />
               </Box>
-              <Text fontFamily={"raleway"} fontWeight={"700"}>
+              <Text        fontSize={["20px", "20px", "20px", "20px", "20px", "20px"]}  fontFamily={"raleway"} fontWeight={"700"}>
                 Luxe Management
               </Text>
             </Stack>
@@ -95,8 +87,9 @@ const Navbar = () => {
               gap={["26px", "26px", "36px", "36px", "36px", "36px"]}
               fontWeight={"500"}
               transition={"all 0.2s ease-in-out"}
+          
             >
-              <Box
+              {/* <Box
                 cursor={"pointer"}
                 _hover={{
                   scale: 1.1,
@@ -106,7 +99,7 @@ const Navbar = () => {
                 onClick={() => router.push("/")}
               >
                 Home
-              </Box>
+              </Box> */}
               <Box
                 cursor={"pointer"}
                 _hover={{
