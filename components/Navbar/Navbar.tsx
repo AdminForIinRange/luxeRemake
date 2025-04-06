@@ -121,6 +121,24 @@ const Navbar = () => {
               )}
             </Box>
 
+
+            <Box
+              position="relative"
+           
+            >
+              <Box  fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                cursor="pointer"
+                _hover={{ scale: 1.1, fontWeight: "700" }}
+                transition="all 0.2s ease-in-out"
+                onClick={() => router.push("/news")}
+              >
+                News
+              </Box>
+             
+            </Box>
+
+
+
             {/* Services */}
             <Box
               position="relative"
@@ -145,6 +163,7 @@ const Navbar = () => {
                 />
               )}
             </Box>
+            
 
             {/* Pricing */}
             <Box

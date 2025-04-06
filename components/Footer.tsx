@@ -47,11 +47,7 @@ const Footer = () => {
                     Luxe Managements
                   </Text>
                 </Box>
-                <Box>
-                  <Text as="a" href="mailto:luxemanagements.info@gmail.com?subject=I'm%20interested%20in%20your%20services." fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
-                    luxemanagements.info
-                  </Text>
-                </Box>
+             
               </Stack>
             </Box>
 
