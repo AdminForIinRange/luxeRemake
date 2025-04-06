@@ -9,124 +9,95 @@ import {
   Accordion,
   Span,
 } from "@chakra-ui/react";
-// import { InstagramLogoIcon } from "@radix-ui/react-icons";
 import LuxeLogo from "@/public/png/LuxeLogo.png";
 import Image from "next/image";
-const items = [
-  { value: "a", title: "First Item", text: "Some value 1..." },
-  { value: "b", title: "Second Item", text: "Some value 2..." },
-  { value: "c", title: "Third Item", text: "Some value 3..." },
-];
+
 const Footer = () => {
   return (
     <>
-      <HStack my={"50px"}  justify={"center"} align={"center"} w={"100%"}>
-        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      <HStack my={{ base: "20px", md: "50px" }} justify="center" align="center" w="100%">
+        <Box w="90%" borderTop="1px solid #e0e0e0" />
       </HStack>
 
-      <footer className="bg-white dark:bg-gray-900">
-        <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-          <div className="md:flex md:justify-between">
-            <div className="mb-6 md:mb-0">
-              <a
-                href="#"
-                className="flex items-center"
-              >
-                <HStack fontSize={"30px"}>
-                  <Box
-                    w={"70px"}
-                    h={"100%"}
-                    cursor={"pointer"}
-                    _hover={{
-                      scale: 1.1,
-                      fontWeight: "700",
-                    }}
-                    transition={"all 0.2s ease-in-out"}
-                  >
-                    <Image src={LuxeLogo} alt="logo" />
-                  </Box>
-                  <Text fontFamily={"raleway"} fontWeight={"700"}>
-                    Luxe Management
+      <Box  bg="white" _dark={{ bg: "gray.900" }} w="100%"  px={["4%", "4%", "6%", "6%", "6%", "10%"]} py={{ base: "20px", md: "40px" }}>
+        <Flex direction={{ base: "column", md: "row" }} justify="space-between" gap={{ base: 6, md: 12 }}>
+
+          {/* Logo and Brand */}
+          <Box mb={{ base: "20px", md: "0" }}>
+            <HStack spacing="12px">
+              <Box w={{ base: "40px", md: "70px" }} h="auto">
+                <Image src={LuxeLogo} alt="logo" />
+              </Box>
+              <Text fontSize={{ base: "12px", md: "16px" }} fontWeight="700" fontFamily="raleway">
+                Luxe Management
+              </Text>
+            </HStack>
+          </Box>
+
+          {/* Links */}
+          <Flex direction={{ base: "column", md: "row" }} gap={{ base: 6, md: 12 }}>
+            {/* Resources */}
+            <Box>
+              <Text fontSize={{ base: "10px", md: "14px" }} fontWeight="600" textTransform="uppercase" mb="8px">
+                Resources
+              </Text>
+              <Stack spacing="6px">
+                <Box>
+                  <Text fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
+                    Luxe Managements
                   </Text>
-                </HStack>
-              </a>
-            </div>
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Resources
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a
-                      href="#"
-                      className="hover:underline"
-                    >
-                      Luxe Managements
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href={`mailto:luxemanagements.info@gmail.com?subject=I'm%20interested%20in%20your%20services.`}
-                      className="hover:underline"
-                    >
-                     luxemanagements.info
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Follow us
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a
-                      href="https://www.instagram.com/luxemanagements/"
-                      className="hover:underline "
-                    >
+                </Box>
+                <Box>
+                  <Text as="a" href="mailto:luxemanagements.info@gmail.com?subject=I'm%20interested%20in%20your%20services." fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
+                    luxemanagements.info
+                  </Text>
+                </Box>
+              </Stack>
+            </Box>
+
+            {/* Follow Us */}
+            <Box>
+              <Text fontSize={{ base: "10px", md: "14px" }} fontWeight="600" textTransform="uppercase" mb="8px">
+                Follow Us
+              </Text>
+              <Stack spacing="6px">
+                <Box>
+                  <Text as="a" href="https://www.instagram.com/luxemanagements/" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
                     Instagram
-                    </a>
-                  </li>
-                
-                </ul>
-              </div>
-              <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                  Legal
-                </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Privacy Policy
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Terms &amp; Conditions
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-          <div className="sm:flex sm:items-center sm:justify-between">
-            <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-              © 2023{" "}
-              <a
-                href="#"
-                className="hover:underline"
-              >
-                Luxe Managements™
-              </a>
-              . All Rights Reserved.
-            </span>
-            
-           
-          </div>
-        </div>
-      </footer>
+                  </Text>
+                </Box>
+              </Stack>
+            </Box>
+
+            {/* Legal */}
+            <Box>
+              <Text fontSize={{ base: "10px", md: "14px" }} fontWeight="600" textTransform="uppercase" mb="8px">
+                Legal
+              </Text>
+              <Stack spacing="6px">
+                <Box>
+                  <Text as="a" href="#" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
+                    Privacy Policy
+                  </Text>
+                </Box>
+                <Box>
+                  <Text as="a" href="#" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
+                    Terms & Conditions
+                  </Text>
+                </Box>
+              </Stack>
+            </Box>
+          </Flex>
+        </Flex>
+
+        <Box mt={{ base: "20px", md: "40px" }} borderTop="1px solid #e0e0e0" pt={{ base: "12px", md: "20px" }}>
+          <Flex justify={{ base: "center", md: "space-between" }} align="center">
+            <Text fontSize={{ base: "10px", md: "12px" }} color="gray.500" _dark={{ color: "gray.400" }}>
+              © 2023 <Text as="span" textDecor="underline">Luxe Managements™</Text>. All Rights Reserved.
+            </Text>
+          </Flex>
+        </Box>
+      </Box>
     </>
   );
 };
