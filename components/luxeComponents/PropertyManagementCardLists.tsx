@@ -1130,7 +1130,17 @@ const PropertyManagementCardLists = () => {
             </HStack>
           </Box>
         </HStack>
+        
       </HStack>
+
+
+
+
+
+
+
+
+      
     </>
   );
 };
