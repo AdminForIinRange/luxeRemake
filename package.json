@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write \"**/*.{ts,tsx,json,md}\"",
-      "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.5.1",
@@ -47,7 +47,11 @@
     "clsx": "^2.1.1",
     "cobe": "^0.6.3",
     "date-fns": "^3.6.0",
-    "framer-motion": "^11.15.0",
+    "embla-carousel": "^8.6.0",
+    "embla-carousel-autoplay": "^8.6.0",
+    "embla-carousel-class-names": "^8.6.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^11.18.2",
     "input-otp": "^1.2.5",
     "lenis": "^1.1.18",
     "libphonenumber-js": "^1.11.17",
