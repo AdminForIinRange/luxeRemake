@@ -501,7 +501,7 @@ const PropertyManagement = () => {
             color={"black"}
             bgGradient="linear(to-r, teal, blue)"
           >
-            All Inclisive Services
+            All Inclusive Services
           </Text>
         </Box>
       </HStack>
