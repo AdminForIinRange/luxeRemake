@@ -89,7 +89,7 @@ const Photography = () => {
                 bgGradient="linear(to-r, teal, blue)"
                 lineHeight={1}
               >
-                Furnishing &<br></br>Styling
+                Photography
               </Text>
               <Text
                 w={["90%", "90%", "90%", "50%", "50%", "50%"]}
@@ -98,8 +98,8 @@ const Photography = () => {
 
                 fontWeight={300}
               >
-                Transform your property into a stunning, magazine-worthy retreat
-                with our expert design services.
+                Showcase your property with stunning professional photography
+                that captures its unique essence.
               </Text>
             </VStack>
           </VStack>
@@ -235,7 +235,7 @@ const Photography = () => {
                       fontFamily={"Raleway"}
                       fontWeight={700}
                     >
-          First Impressions
+                      First Impressions
                     </Text>
                   </VStack>
                 </VStack>
@@ -246,7 +246,8 @@ const Photography = () => {
                 pt={"15px"}
               >
                 <Text textAlign={"start"}>
-                Stunning photos create a powerful first impression, compelling potential guests to book your property.
+                  Stunning photos create a powerful first impression, compelling
+                  potential guests to book your property.
                 </Text>
               </Box>
             </VStack>
@@ -306,7 +307,7 @@ const Photography = () => {
                       fontFamily={"Raleway"}
                       fontWeight={700}
                     >
-                  Feature Showcase
+                      Feature Showcase
                     </Text>
                   </VStack>
                 </VStack>
@@ -317,7 +318,8 @@ const Photography = () => {
                 pt={"15px"}
               >
                 <Text textAlign={"start"}>
-                We expertly highlight your property's unique features and amenities, setting it apart from competitors.
+                  We expertly highlight your property's unique features and
+                  amenities, setting it apart from competitors.
                 </Text>
               </Box>
             </VStack>
@@ -377,7 +379,7 @@ const Photography = () => {
                       fontFamily={"Raleway"}
                       fontWeight={700}
                     >
-                     Booking Catalyst
+                      Booking Catalyst
                     </Text>
                   </VStack>
                 </VStack>
@@ -388,7 +390,8 @@ const Photography = () => {
                 pt={"15px"}
               >
                 <Text textAlign={"start"}>
-                Professional imagery leads to increased views, higher booking rates, and enhanced revenue.
+                  Professional imagery leads to increased views, higher booking
+                  rates, and enhanced revenue.
                 </Text>
               </Box>
             </VStack>
@@ -403,7 +406,6 @@ const Photography = () => {
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-    
 
       <VStack
         data-aos="fade-up"
@@ -455,8 +457,9 @@ const Photography = () => {
             w={["100%", "100%", "100%", "100%", "100%", "100%"]}
             fontWeight={300}
           >
-            Showcase your property with Luxe Management's professional photography
-            services, capturing its unique essence to create a lasting impression.
+            Showcase your property with Luxe Management's professional
+            photography services, capturing its unique essence to create a
+            lasting impression.
           </Text>
         </Box>
 
@@ -474,13 +477,9 @@ const Photography = () => {
           justifyContent={"end"}
         >
           {/* Horizontal line for crosshair */}
-        
-      <ImageCompareSlider   />
 
+          <ImageCompareSlider />
         </Box>
-
-
-
       </VStack>
       <PhotographyCardLists />
 
@@ -493,15 +492,6 @@ const Photography = () => {
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <ScheduleConsultation />
-
-
-
-
-
-
-
-
-
     </>
   );
 };

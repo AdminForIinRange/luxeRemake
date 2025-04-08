@@ -21,13 +21,11 @@ import { Check } from "lucide-react";
 const PhotographyCardLists = () => {
   const router = useRouter();
 
-
-  
   const leftImg = [
     {
       title: "Photography Package",
       description:
-        "Our comprehensive photography service is designed to showcase your property in its most flattering light, capturing the unique essence and ambiance of your space. Using state-of-the-art equipment and creative expertise, we produce visually engaging images that elevate your property's appeal.",
+        "Our comprehensive photography service is designed to showcase your property in its most flattering light, capturing the unique essence and ambiance of your space.  ",
       features: [
         "High-resolution interior and exterior photography capturing intricate details",
         "Aerial drone imagery for dramatic, expansive property views",
@@ -38,7 +36,7 @@ const PhotographyCardLists = () => {
     {
       title: "Virtual Tours & Lifestyle Photography",
       description:
-        "We bring your property to life through immersive 360° virtual tours and engaging lifestyle photography. Our approach captures authentic living moments and highlights the unique story behind your space, forging an emotional connection with potential guests.",
+        "We bring your property to life through immersive 360° virtual tours and engaging lifestyle photography. Our approach captures authentic living moments and highlights the unique story behind your space, ",
       features: [
         "Immersive 360° virtual tours for interactive exploration",
         "Lifestyle shots that tell an authentic story of your property",
@@ -52,7 +50,7 @@ const PhotographyCardLists = () => {
     {
       title: "Visual Post-Production",
       description:
-        "Our expert post-production team meticulously enhances every image to perfection. With professional editing, precise color correction, and tailored optimization, we ensure your visuals are impactful and ready for flawless display across all digital platforms.",
+        "Our expert post-production team meticulously enhances every image to perfection. With professional editing, precise color correction, and tailored optimization,  ",
       features: [
         "Professional editing and color correction to ensure flawless visuals",
         "Optimized images for seamless display on multiple platforms and devices",
@@ -241,56 +239,6 @@ const PhotographyCardLists = () => {
               backgroundSize="100% 100%"
             ></Box>
             {/* Bottom-right label */}
-            <Box
-              p={"4"}
-              position={"absolute"}
-              display={"flex"}
-              w={"100%"}
-              h={"100%"}
-              justifyContent={[
-                "start",
-                "start",
-                "start",
-                "start",
-                "start",
-                "start",
-              ]}
-              alignItems={["start", "start", "start", "center", "center"]}
-            >
-              <Box
-                fontFamily={"raleway"}
-                zIndex={1}
-                bg="white"
-                borderRadius="md"
-                p={[
-                  "10px 10px",
-                  "10px 10px",
-                  "10px 10px",
-                  "15px 15px",
-                  "15px 15px",
-                  "15px 15px",
-                ]}
-                boxShadow="md"
-                fontWeight="semibold"
-                textAlign={"left"}
-              >
-                <HStack>
-                  <Text
-                    fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-                    fontWeight={"700"}
-                    color={"black"}
-                  >
-                    40%
-                  </Text>
-                  <Text
-                    fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                  >
-                    {" "}
-                    Average Revenue Increase
-                  </Text>
-                </HStack>
-              </Box>
-            </Box>
           </Box>
         </HStack>
       </HStack>
@@ -451,53 +399,6 @@ const PhotographyCardLists = () => {
               backgroundSize="100% 100%"
             ></Box>
             {/* Bottom-right label */}
-
-            <Box
-              p={"4"}
-              position={"absolute"}
-              display={"flex"}
-              w={"100%"}
-              h={"100%"}
-              justifyContent={["start", "start", "start", "end", "end", "end"]}
-              alignItems={["start", "start", "start", "center", "center"]}
-            >
-              {" "}
-              <Box
-                fontFamily={"raleway"}
-                zIndex={1}
-                bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
-                right={["0px", "0px", "0px", "10px", "10px", "10px"]}
-                bg="white"
-                borderRadius="md"
-                p={[
-                  "10px 10px",
-                  "10px 10px",
-                  "10px 10px",
-                  "15px 15px",
-                  "15px 15px",
-                  "15px 15px",
-                ]}
-                boxShadow="md"
-                fontWeight="semibold"
-                textAlign={"left"}
-              >
-                <HStack>
-                  <Text
-                    fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-                    fontWeight={"700"}
-                    color={"black"}
-                  >
-                    35%
-                  </Text>
-                  <Text
-                    fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                  >
-                    {" "}
-                    Higher Profit Margins
-                  </Text>
-                </HStack>
-              </Box>
-            </Box>
           </Box>
           <Box
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
@@ -764,56 +665,6 @@ const PhotographyCardLists = () => {
               backgroundSize="100% 100%"
             ></Box>
             {/* Bottom-right label */}
-            <Box
-              p={"4"}
-              position={"absolute"}
-              display={"flex"}
-              w={"100%"}
-              h={"100%"}
-              justifyContent={[
-                "start",
-                "start",
-                "start",
-                "start",
-                "start",
-                "start",
-              ]}
-              alignItems={["start", "start", "start", "center", "center"]}
-            >
-              <Box
-                fontFamily={"raleway"}
-                zIndex={1}
-                bg="white"
-                borderRadius="md"
-                p={[
-                  "10px 10px",
-                  "10px 10px",
-                  "10px 10px",
-                  "15px 15px",
-                  "15px 15px",
-                  "15px 15px",
-                ]}
-                boxShadow="md"
-                fontWeight="semibold"
-                textAlign={"left"}
-              >
-                <HStack>
-                  <Text
-                    fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-                    fontWeight={"700"}
-                    color={"black"}
-                  >
-                    25%
-                  </Text>
-                  <Text
-                    fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                  >
-                    {" "}
-                    Reduced Operating Expenses
-                  </Text>
-                </HStack>
-              </Box>
-            </Box>
           </Box>
         </HStack>
       </HStack>
@@ -973,53 +824,6 @@ const PhotographyCardLists = () => {
               backgroundSize="100% 100%"
             ></Box>
             {/* Bottom-right label */}
-
-            <Box
-              p={"4"}
-              position={"absolute"}
-              display={"flex"}
-              w={"100%"}
-              h={"100%"}
-              justifyContent={["start", "start", "start", "end", "end", "end"]}
-              alignItems={["start", "start", "start", "center", "center"]}
-            >
-              {" "}
-              <Box
-                fontFamily={"raleway"}
-                zIndex={1}
-                bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
-                right={["0px", "0px", "0px", "10px", "10px", "10px"]}
-                bg="white"
-                borderRadius="md"
-                p={[
-                  "10px 10px",
-                  "10px 10px",
-                  "10px 10px",
-                  "15px 15px",
-                  "15px 15px",
-                  "15px 15px",
-                ]}
-                boxShadow="md"
-                fontWeight="semibold"
-                textAlign={"left"}
-              >
-                <HStack>
-                  <Text
-                    fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
-                    fontWeight={"700"}
-                    color={"black"}
-                  >
-                    35%
-                  </Text>
-                  <Text
-                    fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                  >
-                    {" "}
-                    Higher Profit Margins
-                  </Text>
-                </HStack>
-              </Box>
-            </Box>
           </Box>
           <Box
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
@@ -1132,17 +936,7 @@ const PhotographyCardLists = () => {
             </HStack>
           </Box>
         </HStack>
-        
       </HStack>
-
-
-
-
-
-
-
-
-      
     </>
   );
 };
