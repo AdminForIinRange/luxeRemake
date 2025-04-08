@@ -163,7 +163,7 @@ const Photography = () => {
                 color={"black"}
                 bgGradient="linear(to-r, teal, blue)"
               >
-                The Luxe Distinction
+              Visual Excellence
               </Text>
             </Box>
           </HStack>
