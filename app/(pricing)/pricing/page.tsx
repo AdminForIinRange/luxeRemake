@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { Box, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Grid, HStack, Text, VStack } from "@chakra-ui/react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import TitleSubheading from "@/components/luxeComponents/Text/titleSubheading";
@@ -444,178 +444,331 @@ const Pricing = () => {
       </HStack>
 
       {/* Three Additional Boxes Underneath */}
-      <HStack
-        w="100%"
-        justify="center"
-        align="stretch"
-        wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
-        spacing={[4, 4, 6]}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        mb="80px"
-        gap={["20px", "20px", "20px", "50px", "50px", "50px"]}
-        data-aos="fade-up"
-      >
-        {/* 1) Styling & Photography */}
-        <Box
-          border="1px solid #e0e0e0"
-          transition="all 0.3s ease"
-          w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-       h="350px"
-          borderRadius="16px"
-          bgGradient="linear(to-r, teal.100, blue.100)"
-          cursor="pointer"
-          p="30px"
-          display="flex"
-          _hover={{
-            transform: "scale(1.03)",
-            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
-            borderColor: "#ccc",
-          }}
-        >
-          <VStack>
-            <Text
-          fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-              fontWeight="700"
-              fontFamily="Raleway"
-              color="black"
-              mb="10px"
-            >
-              Styling & Photography
-            </Text>
-            <Text fontSize="md" fontWeight="bold" color="gray.800" mb="2">
-              $250{" "}
-              <Text as="span" fontWeight="normal">
-                Small Properties
-              </Text>
-            </Text>
-            <Text fontSize="md" fontWeight="bold" color="gray.800" mb="4">
-              $350{" "}
-              <Text as="span" fontWeight="normal">
-                Larger Properties
-              </Text>
-            </Text>
-            <Text fontSize="sm" color="gray.600" mb="4">
-              Elevate your property’s visual appeal with expert styling and
-              magazine-quality professional photography that captures your
-              space’s unique character.
-            </Text>
-            <Text
-    
-              as="a"
-              fontSize="sm"
-              fontWeight="600"
-              color="black"
-              cursor="pointer"
-            >
-              Learn more &rarr;
-            </Text>
-          </VStack>
-        </Box>
+      <Box py="5%" minH="100vh" px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
+        {/* Page Header */}
+        <VStack textAlign="center" mb="60px">
+          <Text
+            w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+            mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
+            fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+            fontWeight={600}
+            fontFamily={"Raleway"}
+            bgClip="text"
+            textAlign={[
+              "center",
+              "center",
+              "center",
+              "center",
+              "center",
+              "center",
+            ]}
+            color={"black"}
+            bgGradient="linear(to-r, teal, blue)"
+          >
+            Premium Property Services
+          </Text>
+          <Text
+            fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
 
-        {/* 2) Furnishing & Setup */}
-        <Box
-          border="1px solid #e0e0e0"
-          transition="all 0.3s ease"
-          w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-            h="350px"
-          borderRadius="16px"
-          bgGradient="linear(to-r, teal.100, blue.100)"
-          cursor="pointer"
-          p="30px"
-          display="flex"
-          _hover={{
-            transform: "scale(1.03)",
-            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
-            borderColor: "#ccc",
-          }}
-        >
-          <VStack>
-            <Text
-                     fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-              fontWeight="700"
-              fontFamily="Raleway"
-              color="black"
-              mb="10px"
-            >
-              Furnishing & Setup
-            </Text>
-            <Text fontSize="md" fontWeight="bold" color="gray.800" mb="4">
-              8% of Total Item Value
-            </Text>
-            <Text fontSize="sm" color="gray.600" mb="4">
-              Transform your space with our curated furnishing services. We
-              source, deliver, and artfully arrange premium furnishings that
-              embody the Luxe aesthetic and elevate your property’s appeal.
-            </Text>
-            <Text
-              as="a"
-              fontSize="sm"
-              fontWeight="600"
-              color="black"
-              cursor="pointer"
-            >
-              Learn more &rarr;
-            </Text>
-          </VStack>
-        </Box>
+            textAlign={[
+              "center",
+              "center",
+              "center",
+              "center",
+              "center",
+              "center",
+            ]}
+            fontFamily={"Raleway"}
+            color={"black"}
+            w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+            fontWeight={300}
+          >
+            Elevate your property with our professional services tailored to
+            maximize appeal and value
+          </Text>
+        </VStack>
 
-        {/* 3) Premium Cleaning */}
-        <Box
-          border="1px solid #e0e0e0"
-          transition="all 0.3s ease"
-          w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-          h="350px"
-          borderRadius="16px"
-          bgGradient="linear(to-r, teal.100, blue.100)"
-          cursor="pointer"
-          p="30px"
-          display="flex"
-          _hover={{
-            transform: "scale(1.03)",
-            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
-            borderColor: "#ccc",
-          }}
+        {/* Cards Container using Grid */}
+        <Grid
+          templateColumns={["1fr", "1fr", "repeat(3, 1fr)"]}
+          gap="40px"
+          maxW="1200px"
+          mx="auto"
         >
-          <VStack>
-            <Text
-              fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-              fontWeight="700"
-              fontFamily="Raleway"
-              color="black"
-              mb="10px"
-              
-            >
-              Premium Cleaning
-            </Text>
-            <Text fontSize="md" fontWeight="bold" color="gray.800" mb="2">
-              $90–$350{" "}
-              <Text as="span" fontWeight="normal">
-                Per Service
+          {/* Card 1: Styling & Photography */}
+          <Box
+            bg="white"
+            borderRadius="16px"
+            overflow="hidden"
+            boxShadow="0 10px 30px rgba(0,0,0,0.1)"
+            transition="all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)"
+            _hover={{
+              transform: "translateY(-10px)",
+              boxShadow: "0 15px 60px rgba(0,0,0,0.15)",
+            }}
+          >
+            {/* Card Header with Gradient & Badge */}
+            <Box p="25px 30px" position="relative" color="black">
+              <Text
+                fontSize="1.8rem"
+                fontWeight="700"
+                color="black"
+                mb="5px"
+                letterSpacing="-0.5px"
+                fontFamily="Raleway, sans-serif"
+              >
+                Styling & Photography
               </Text>
-            </Text>
-            <Text fontSize="md" fontWeight="bold" color="black" mb="4">
-              30% Off{" "}
-              <Text as="span" fontWeight="normal">
-                With Management
+              <Text color="black" fontSize="0.95rem" fontWeight="500">
+                Capture your property's best angles
               </Text>
-            </Text>
-            <Text fontSize="sm" color="gray.600" mb="4">
-              Experience our meticulous turnover service with premium linen
-              change and comprehensive quality inspections that ensure your
-              property always presents its absolute best.
-            </Text>
-            <Text
-              as="a"
-              fontSize="sm"
-              fontWeight="600"
+            </Box>
+
+            {/* Card Body */}
+            <Box p="30px" display="flex" flexDirection="column" flex="1">
+              {/* Pricing Section */}
+              <VStack spacing="12px" align="stretch" mb="25px">
+                <Flex
+                  justify="space-between"
+                  pb="12px"
+                  borderBottom="1px solid #e9ecef"
+                >
+                  <Text fontWeight="500" color="#6c757d" fontSize="0.95rem">
+                    Small Properties
+                  </Text>
+                  <Text fontWeight="700" color="#212529" fontSize="1.1rem">
+                    $250
+                  </Text>
+                </Flex>
+                <Flex justify="space-between">
+                  <Text fontWeight="500" color="#6c757d" fontSize="0.95rem">
+                    Larger Properties
+                  </Text>
+                  <Text fontWeight="700" color="#212529" fontSize="1.1rem">
+                    $350
+                  </Text>
+                </Flex>
+              </VStack>
+
+              {/* Feature List */}
+              <VStack as="ul" align="start" spacing="10px" mb="30px" pl="0">
+                {[
+                  "Professional photographer",
+                  "Expert styling consultation",
+                  "High-resolution images",
+                  "24-hour turnaround",
+                ].map((feature) => (
+                  <Text
+                    as="li"
+                    key={feature}
+                    listStyleType="none"
+                    pl="25px"
+                    position="relative"
+                    color="#6c757d"
+                    fontSize="0.9rem"
+                    _before={{
+                      content: '"✓"',
+                      position: "absolute",
+                      left: 0,
+
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {feature}
+                  </Text>
+                ))}
+              </VStack>
+
+              <Text
+                color="#6c757d"
+                fontSize="0.95rem"
+                lineHeight="1.7"
+                flex="1"
+              >
+                Elevate your property's visual appeal with expert styling and
+                magazine-quality professional photography that captures your
+                space's unique character.
+              </Text>
+            </Box>
+
+            {/* Card Footer */}
+          </Box>
+
+          {/* Card 2: Furnishing & Setup */}
+          <Box
+            as="article"
+            bg="white"
+            borderRadius="16px"
+            overflow="hidden"
+            boxShadow="0 10px 30px rgba(0,0,0,0.1)"
+            transition="all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)"
+            _hover={{
+              transform: "translateY(-10px)",
+              boxShadow: "0 15px 60px rgba(0,0,0,0.15)",
+            }}
+          >
+            <Box p="25px 30px" color="black">
+              <Text
+                fontSize="1.8rem"
+                fontWeight="700"
+                mb="5px"
+                letterSpacing="-0.5px"
+                fontFamily="Raleway, sans-serif"
+              >
+                Furnishing & Setup
+              </Text>
+              <Text fontSize="0.95rem" fontWeight="500">
+                Transform empty spaces into homes
+              </Text>
+            </Box>
+
+            <Box p="30px" display="flex" flexDirection="column" flex="1">
+              <VStack spacing="12px" align="stretch" mb="25px">
+                <Flex justify="space-between">
+                  <Text fontWeight="500" color="#6c757d" fontSize="0.95rem">
+                    Total Item Value
+                  </Text>
+                  <Text fontWeight="700" color="#212529" fontSize="1.1rem">
+                    8%
+                  </Text>
+                </Flex>
+              </VStack>
+
+              <VStack as="ul" align="start" spacing="10px" mb="30px" pl="0">
+                {[
+                  "Curated furniture selection",
+                  "Professional installation",
+                  "Designer consultation",
+                  "Flexible rental options",
+                ].map((feature) => (
+                  <Text
+                    as="li"
+                    key={feature}
+                    listStyleType="none"
+                    pl="25px"
+                    position="relative"
+                    color="#6c757d"
+                    fontSize="0.9rem"
+                    _before={{
+                      content: '"✓"',
+                      position: "absolute",
+                      left: 0,
+
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {feature}
+                  </Text>
+                ))}
+              </VStack>
+
+              <Text
+                color="#6c757d"
+                fontSize="0.95rem"
+                lineHeight="1.7"
+                flex="1"
+              >
+                Transform your space with our curated furnishing services. We
+                source, deliver, and artfully arrange premium furnishings that
+                embody the Luxe aesthetic and elevate your property's appeal.
+              </Text>
+            </Box>
+          </Box>
+
+          {/* Card 3: Premium Cleaning */}
+          <Box
+            as="article"
+            bg="white"
+            borderRadius="16px"
+            overflow="hidden"
+            boxShadow="0 10px 30px rgba(0,0,0,0.1)"
+            transition="all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)"
+            _hover={{
+              transform: "translateY(-10px)",
+              boxShadow: "0 15px 60px rgba(0,0,0,0.15)",
+            }}
+          >
+            <Box
+              p="25px 30px"
+              bgGradient="linear(135deg, #4895ef, #3a0ca3)"
               color="black"
-              cursor="pointer"
             >
-              Learn more &rarr;
-            </Text>
-          </VStack>
-        </Box>
-      </HStack>
+              <Text
+                fontSize="1.8rem"
+                fontWeight="700"
+                mb="5px"
+                letterSpacing="-0.5px"
+                fontFamily="Raleway, sans-serif"
+              >
+                Premium Cleaning
+              </Text>
+              <Text fontSize="0.95rem" fontWeight="500">
+                Immaculate spaces, every time
+              </Text>
+            </Box>
+
+            <Box p="30px" display="flex" flexDirection="column" flex="1">
+              <VStack spacing="12px" align="stretch" mb="25px">
+                <Flex justify="space-between">
+                  <Text fontWeight="500" color="#6c757d" fontSize="0.95rem">
+                    Per Service
+                  </Text>
+                  <Text fontWeight="700" color="#212529" fontSize="1.1rem">
+                    $90–$350
+                  </Text>
+                </Flex>
+                <Flex justify="space-between">
+                  <Text fontWeight="500" color="#6c757d" fontSize="0.95rem">
+                    With Management
+                  </Text>
+                  <Text fontWeight="700" color="#212529" fontSize="1.1rem">
+                    30% Off
+                  </Text>
+                </Flex>
+              </VStack>
+
+              <VStack as="ul" align="start" spacing="10px" mb="30px" pl="0">
+                {[
+                  "Deep cleaning services",
+                  "Premium linen change",
+                  "Quality inspection",
+                  "Eco-friendly products",
+                ].map((feature) => (
+                  <Text
+                    as="li"
+                    key={feature}
+                    listStyleType="none"
+                    pl="25px"
+                    position="relative"
+                    color="#6c757d"
+                    fontSize="0.9rem"
+                    _before={{
+                      content: '"✓"',
+                      position: "absolute",
+                      left: 0,
+
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {feature}
+                  </Text>
+                ))}
+              </VStack>
+
+              <Text
+                color="#6c757d"
+                fontSize="0.95rem"
+                lineHeight="1.7"
+                flex="1"
+              >
+                Experience our meticulous turnover service with premium linen
+                change and comprehensive quality inspections that ensure your
+                property always presents its absolute best.
+              </Text>
+            </Box>
+          </Box>
+        </Grid>
+      </Box>
     </>
   );
 };
