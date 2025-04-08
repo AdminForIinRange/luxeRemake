@@ -88,15 +88,15 @@ const PropertyManagement = () => {
 
   const servicesBoxes = [
     {
-      header: "40%",
+      header: "40%+",
       title: "  Average Revenue Increase",
     },
     {
-      header: "95%",
-      title: "  Occupancy Rate",
+      header: "75%+",
+      title: "Average Occupancy Increase",
     },
     {
-      header: "4.6/5",
+      header: "4.98/5",
       title: "  Star Rating",
     },
   ];
@@ -463,49 +463,6 @@ const PropertyManagement = () => {
         </Box>
       </HStack>
 
-      <HStack
-        my={["50px", "50px", "50px", "50px", "50px", "100px"]}
-        justify={"center"}
-        align={"center"}
-        w={"100%"}
-        transition={"all 0.2s ease-in-out"}
-        zIndex={3}
-        id="get-started-button"
-      >
-        <Box
-          w={"90%"}
-          h={"100%"}
-          borderRadius={"30px"}
-          p={"25px"}
-          display={"flex"}
-          flexDir={"column"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          textAlign={"center"}
-        >
-          <Text
-            w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-            mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-            fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
-            fontWeight={600}
-            fontFamily={"Raleway"}
-            bgClip="text"
-            textAlign={[
-              "center",
-              "center",
-              "center",
-              "center",
-              "center",
-              "center",
-            ]}
-            color={"black"}
-            bgGradient="linear(to-r, teal, blue)"
-          >
-            All Inclusive Services
-          </Text>
-        </Box>
-      </HStack>
-
       <VStack
         data-aos="fade-up"
         zIndex={3}
@@ -538,7 +495,7 @@ const PropertyManagement = () => {
             color={"black"}
             bgGradient="linear(to-r, teal, blue)"
           >
-            Transform Your Investment
+            All Inclusive Services
           </Text>
           <Text
             fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
@@ -556,10 +513,10 @@ const PropertyManagement = () => {
             w={["100%", "100%", "100%", "100%", "100%", "100%"]}
             fontWeight={300}
           >
-            Elevate your property's performance and reputation with Luxe
-            Managements' comprehensive approach. We combine meticulous attention
-            to detail with market expertise to create a distinguished
-            destination.
+            At Luxe, we do more than manage—we elevate. From premium cleaning
+            and linen services to expert styling, guest communication, emergency
+            support, and everything in between, we handle it all with unmatched
+            attention to detail.
           </Text>
         </Box>
 
@@ -575,6 +532,7 @@ const PropertyManagement = () => {
           overflow="hidden"
           display={"flex"}
           justifyContent={"end"}
+          mb={"15px"}
         >
           {/* Horizontal line for crosshair */}
           <Box
@@ -643,61 +601,55 @@ const PropertyManagement = () => {
         </Box>
 
         <HStack
-  justify="space-between"
-  align={["center", "center", "start", "start", "start", "start"]}
-  w="100%"
-  h="100%"
-  gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
-  wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
->
-  {servicesBoxes.map(({ header, title }, index) => (
-    <Box
-      key={index}
-      border="1px solid #e0e0e0"
-      transition="all 0.3s ease"
-      w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-      h="150px"
-      borderRadius="16px"
-      bgGradient="linear(to-r, teal.100, blue.100)"
-      cursor="pointer"
-      p="30px"
-      display="flex"
-      _hover={{
-        transform: "scale(1.03)",
-        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
-        borderColor: "#ccc",
-      }}
-    >
-      <VStack
-        w="100%"
-        h="100%"
-        justify="center"
-        align="center"
-      >
-        <Text
-          textAlign="center"
-          color="gray.800"
-          fontSize={["24px", "26px", "26px", "28px", "28px", "28px"]}
-          fontFamily="Raleway"
-          fontWeight="700"
-          mb={1}
+          justify="space-between"
+          align={["center", "center", "start", "start", "start", "start"]}
+          w="100%"
+          h="100%"
+          gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
+          wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
         >
-          {header}
-        </Text>
-        <Text
-          textAlign="center"
-          color="gray.600"
-          fontSize={["16px", "18px", "18px", "20px", "20px", "20px"]}
-          fontFamily="Raleway"
-          fontWeight="500"
-        >
-          {title}
-        </Text>
-      </VStack>
-    </Box>
-  ))}
-</HStack>
-
+          {servicesBoxes.map(({ header, title }, index) => (
+            <Box
+              key={index}
+              border="1px solid #e0e0e0"
+              transition="all 0.3s ease"
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+              h="150px"
+              borderRadius="16px"
+              bgGradient="linear(to-r, teal.100, blue.100)"
+              cursor="pointer"
+              p="30px"
+              display="flex"
+              _hover={{
+                transform: "scale(1.03)",
+                boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.1)",
+                borderColor: "#ccc",
+              }}
+            >
+              <VStack w="100%" h="100%" justify="center" align="center">
+                <Text
+                  textAlign="center"
+                  color="gray.800"
+                  fontSize={["24px", "26px", "26px", "28px", "28px", "28px"]}
+                  fontFamily="Raleway"
+                  fontWeight="700"
+                  mb={1}
+                >
+                  {header}
+                </Text>
+                <Text
+                  textAlign="center"
+                  color="gray.600"
+                  fontSize={["16px", "18px", "18px", "20px", "20px", "20px"]}
+                  fontFamily="Raleway"
+                  fontWeight="500"
+                >
+                  {title}
+                </Text>
+              </VStack>
+            </Box>
+          ))}
+        </HStack>
       </VStack>
 
       <PropertyManagementCardLists />
