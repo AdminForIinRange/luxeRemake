@@ -73,21 +73,21 @@ const FurnishingStylingCardLists = () => {
   const GettingStartedSteps = [
     {
       id: 1,
-      title: "Get Started",
+      title: "Get In Touch",
       description:
-        'Click "Get In Touch" with our team to discuss your property.',
+        'Connect with us to discuss your goals and vision.',
     },
     {
       id: 2,
-      title: "Meet Your Local Hosting Partner",
+      title: "Onsite Design Consultation",
       description:
-        "Meet at your property for an inspection. We'll gather details and start our partnership.",
+        "Your local Luxe partner will visit the property, assess the space, and tailor a styling plan.",
     },
     {
       id: 3,
-      title: "Onboarding and Listing Creation",
+      title: "Furnish, Style & Shoot",
       description:
-        "We handle photos and listing creation. Your property will shine on Airbnb and Booking.com.",
+        "We handle everything—from delivery and setup to photography and listing optimisation.",
     },
     {
       id: 4,

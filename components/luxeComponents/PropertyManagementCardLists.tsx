@@ -443,10 +443,10 @@ const PropertyManagementCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/5667613/pexels-photo-5667613.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
 
@@ -756,10 +756,10 @@ const PropertyManagementCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/6195131/pexels-photo-6195131.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
             <Box
@@ -965,10 +965,10 @@ const PropertyManagementCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/669621/pexels-photo-669621.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
 

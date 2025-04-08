@@ -43,7 +43,7 @@ const Services = () => {
         "Comprehensive management service including all our offerings.",
     },
     {
-      img: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+      img: "https://images.pexels.com/photos/4239031/pexels-photo-4239031.jpeg",
       title: "Cleaning & Linen",
       logo: <Sparkle />,
       link: "services/cleaning-and-linen",
@@ -51,7 +51,7 @@ const Services = () => {
         "Ensure a pristine, hotel-quality experience for every guest.",
     },
     {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+      img: "https://images.pexels.com/photos/5570226/pexels-photo-5570226.jpeg",
       title: "Furnishing & Styling",
       logo: <Sofa />,
       link: "services/furnishing-and-styling",
@@ -117,7 +117,7 @@ const Services = () => {
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "wrap"]}
         fontFamily={"raleway"}
-        gap={"25px"}
+        gap={"36px"}
       >
         {/* {uploadedFiles.length > 0 ? ( */}
         {serviceItems.map(({ img, title, logo, link, subheading }) => (

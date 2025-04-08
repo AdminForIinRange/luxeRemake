@@ -234,10 +234,10 @@ const CleaningLinenCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg)`}
+              backgroundImage={`  url(https://images.pexels.com/photos/6474494/pexels-photo-6474494.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
             <Box
@@ -444,10 +444,10 @@ const CleaningLinenCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/31472229/pexels-photo-31472229.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
 
@@ -757,10 +757,10 @@ const CleaningLinenCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
             <Box
@@ -966,10 +966,10 @@ const CleaningLinenCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/8293667/pexels-photo-8293667.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
 
