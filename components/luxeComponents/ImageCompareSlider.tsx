@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Box } from "@chakra-ui/react";
-
+import badImg from "@/public/images/houseImg/badhouse.png";
+import goodImg from "@/public/images/houseImg/goodHouse.png";
 const ImageCompareSlider = () => {
   // Define the image URLs as plain strings.
-  const leftImage = "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg";
-  const rightImage = "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg";
+  const leftImage = goodImg.src;  // Use .src to get the URL
+  const rightImage = badImg.src;
+  
 
   const containerRef = useRef(null);
   const [sliderX, setSliderX] = useState(0);
@@ -87,9 +89,10 @@ const ImageCompareSlider = () => {
         objectFit="cover"
         draggable={false}
         style={{
-          clipPath: `inset(0 ${containerWidth - sliderX}px 0 0)`,
+          clipPath: `inset(0 ${containerWidth - sliderX - 5}px 0 0)`,
           userSelect: "none",
           pointerEvents: "none",
+          filter: "blur(1px)",
         }}
       />
 
@@ -102,7 +105,7 @@ const ImageCompareSlider = () => {
         bg="rgba(255, 255, 255, 0.8)"
         px="3"
         py="1"
-        borderRadius="md"
+        borderRadius="20px"
         fontSize="sm"
         fontWeight="bold"
       >
@@ -116,7 +119,7 @@ const ImageCompareSlider = () => {
         bg="rgba(255, 255, 255, 0.8)"
         px="3"
         py="1"
-        borderRadius="md"
+  borderRadius="20px"
         fontSize="sm"
         fontWeight="bold"
       >

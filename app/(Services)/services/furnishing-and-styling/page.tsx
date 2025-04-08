@@ -181,7 +181,7 @@ const FurnishingAndStyling = () => {
 
             <VStack>
               <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg)`}
+                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg)`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
@@ -218,9 +218,7 @@ const FurnishingAndStyling = () => {
                       align={"end"}
                     >
                       {" "}
-                      <PersonStandingIcon size={50} />{" "}
-                    </HStack>
-                    <Text
+                      <Text
                       textAlign={"start"}
                       color={"white"}
                       fontSize={[
@@ -236,6 +234,8 @@ const FurnishingAndStyling = () => {
                     >
                       Tailored Design
                     </Text>
+                    </HStack>
+           
                   </VStack>
                 </VStack>
               </Box>
@@ -253,7 +253,7 @@ const FurnishingAndStyling = () => {
 
             <VStack>
               <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg)`}
+                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg)`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
@@ -290,9 +290,7 @@ const FurnishingAndStyling = () => {
                       align={"end"}
                     >
                       {" "}
-                      <Cog size={50} />{" "}
-                    </HStack>
-                    <Text
+                      <Text
                       textAlign={"start"}
                       color={"white"}
                       fontSize={[
@@ -308,6 +306,8 @@ const FurnishingAndStyling = () => {
                     >
                       Quality Furnishings
                     </Text>
+                    </HStack>
+                   
                   </VStack>
                 </VStack>
               </Box>
@@ -325,7 +325,7 @@ const FurnishingAndStyling = () => {
 
             <VStack>
               <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg)`}
+                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/7607460/pexels-photo-7607460.jpeg)`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
@@ -362,9 +362,7 @@ const FurnishingAndStyling = () => {
                       align={"end"}
                     >
                       {" "}
-                      <TrendingUp size={50} />{" "}
-                    </HStack>
-                    <Text
+                      <Text
                       textAlign={"start"}
                       color={"white"}
                       fontSize={[
@@ -380,6 +378,8 @@ const FurnishingAndStyling = () => {
                     >
                       Attention to Detail
                     </Text>
+                    </HStack>
+                   
                   </VStack>
                 </VStack>
               </Box>

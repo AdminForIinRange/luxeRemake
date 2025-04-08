@@ -111,14 +111,7 @@ const Navbar = () => {
               >
                 About
               </Box>
-              {activeDropdown === "about" && (
-                <Dropdown
-                  items={[
-                    { label: "Our Story", link: "/about#story" },
-                    { label: "Team", link: "/about#team" },
-                  ]}
-                />
-              )}
+            
             </Box>
 
 
@@ -156,9 +149,10 @@ const Navbar = () => {
               {activeDropdown === "services" && (
                 <Dropdown
                   items={[
-                    { label: "Cleaning", link: "/services/cleaning" },
-                    { label: "Managements", link: "/services/managements" },
-                    { label: "Consulting", link: "/services/consulting" },
+                    { label: "Cleaning", link: "/services/property-management" },
+                    { label: "cleaning & linen", link: "/services/cleaning-and-linen" },
+                    { label: "furnishing & styling", link: "/services/furnishing-and-styling" },
+                    { label: "Cleaning", link: "/services/photography" }
                   ]}
                 />
               )}
@@ -179,14 +173,7 @@ const Navbar = () => {
               >
                 Pricing
               </Box>
-              {activeDropdown === "pricing" && (
-                <Dropdown
-                  items={[
-                    { label: "Basic", link: "/pricing#basic" },
-                    { label: "Premium", link: "/pricing#premium" },
-                  ]}
-                />
-              )}
+             
             </Box>
 
             {/* Gallery */}
@@ -203,14 +190,7 @@ const Navbar = () => {
               >
                 Gallery
               </Box>
-              {activeDropdown === "gallery" && (
-                <Dropdown
-                  items={[
-                    { label: "Photos", link: "/gallery#photos" },
-                    { label: "Videos", link: "/gallery#videos" },
-                  ]}
-                />
-              )}
+            
             </Box>
 
             {/* Contact */}
@@ -227,14 +207,7 @@ const Navbar = () => {
               >
                 Contact
               </Box>
-              {activeDropdown === "contact" && (
-                <Dropdown
-                  items={[
-                    { label: "Support", link: "/contact#support" },
-                    { label: "Request a Quote", link: "/contact#quote" },
-                  ]}
-                />
-              )}
+             
             </Box>
           </HStack>
         </Flex>

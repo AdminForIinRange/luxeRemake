@@ -75,38 +75,33 @@ const FurnishingStylingCardLists = () => {
       id: 1,
       title: "Get In Touch",
       description:
-        'Connect with us to discuss your goals and vision.',
+        'Connect with our team to discuss your goals, vision, and expectations for the space',
     },
     {
       id: 2,
       title: "Onsite Design Consultation",
       description:
-        "Your local Luxe partner will visit the property, assess the space, and tailor a styling plan.",
+        "Your local Luxe partner visits the property to assess layout, lighting, and style potential.",
     },
     {
       id: 3,
-      title: "Furnish, Style & Shoot",
+      title: "Budget & Scope Alignment",
       description:
-        "We handle everything—from delivery and setup to photography and listing optimisation.",
+        "We collaborate with you to define the ideal budget and scale of transformation.",
     },
     {
       id: 4,
-      title: "Enjoy Hassle-Free Management",
+      title: "Design Proposal",
       description:
-        "Relax while we manage everything. Bookings, pricing, guest management, and cleaning are all covered.",
+        "Receive a tailored styling plan with curated furniture, décor selections, and layout concepts.",
     },
     {
       id: 5,
-      title: "Onboarding and Listing Creation",
+      title: "Furnish, Style & Shoot",
       description:
-        "We handle photos and listing creation. Your property will shine on Airbnb and Booking.com.",
+        "We manage everything—purchasing, delivery and installation",
     },
-    {
-      id: 6,
-      title: "Enjoy Hassle-Free Management",
-      description:
-        "Relax while we manage everything. Bookings, pricing, guest management, and cleaning are all covered.",
-    },
+   
   ];
 
   return (
@@ -214,7 +209,7 @@ const FurnishingStylingCardLists = () => {
             data-aos="fade-up"
           >
             {" "}
-            {GettingStartedSteps.slice(0, 6).map(
+            {GettingStartedSteps.slice(0, 5).map(
               ({ id, title, description }, index) => (
                 <VStack key={id} w={"100%"} align={"center"} justify={"start"}>
                   <HStack
@@ -254,7 +249,7 @@ const FurnishingStylingCardLists = () => {
                           </Text>
                         </HStack>
                       </Box>
-                      {index < 5 && (
+                      {index < 4 && (
                         <Box
                           transition={"transform 0.3s ease"}
                           zIndex={-1}

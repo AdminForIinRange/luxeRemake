@@ -818,10 +818,10 @@ const PhotographyCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/8408537/pexels-photo-8408537.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
           </Box>
