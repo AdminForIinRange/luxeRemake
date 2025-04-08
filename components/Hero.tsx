@@ -569,7 +569,7 @@ const Hero = () => {
                 rounded={"30px"}
                 px={"12"}
                 fontWeight={"500"}
-                onClick={() => setIsDialogOpen(true)}
+                onClick={() => router.push("/gallery")}
               >
               Go to Gallery
                 {/* <Icon as={ArrowRight}> </Icon> */}

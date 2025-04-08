@@ -46,7 +46,7 @@ const Services = () => {
       img: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
       title: "Cleaning & Linen",
       logo: <Sparkle />,
-      link: "Explore service",
+      link: "services/cleaning-and-linen",
       subheading:
         "Ensure a pristine, hotel-quality experience for every guest.",
     },
@@ -54,7 +54,7 @@ const Services = () => {
       img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
       title: "Furnishing & Styling",
       logo: <Sofa />,
-      link: "Explore service",
+      link: "services/furnishing-and-styling",
       subheading:
         "Transform your space into a stunning, Instagram-worthy retreat.",
     },
@@ -62,7 +62,7 @@ const Services = () => {
       img: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
       title: "Photography",
       logo: <Camera />,
-      link: "Explore service",
+      link: "services/photography",
       subheading:
         "Capture your property's best features with professional photography.",
     },
