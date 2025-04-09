@@ -19,6 +19,7 @@ import {
   DialogCloseTrigger,
   DialogRoot,
 } from "@/components/chakra-snippets/dialog";
+import DefaultSlider from "@/components/carousel/DefaultSlider";
 
 const Gallery = () => {
   useEffect(() => {
@@ -26,7 +27,17 @@ const Gallery = () => {
   }, []);
 
   // STATES FOR THE GALLERY & MODAL
-  const [clickedImage, setClickedImage] = useState<string | null>(null);
+  const [clickedImage, setClickedImage] = useState<
+    | {
+        img: string;
+        title: string;
+        subheading: string;
+        categories: string[];
+        brand: string;
+        carasoleImg?: { img1: string; img2: string; img3: string }[];
+      }
+    | null
+  >(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   // STATES FOR FILTER & SEARCH (lifted from v0 FilterSearch)
@@ -50,7 +61,7 @@ const Gallery = () => {
     setSelectedCategories((prev) =>
       prev.includes(category)
         ? prev.filter((c) => c !== category)
-        : [...prev, category]
+        : [...prev, category],
     );
   };
 
@@ -62,7 +73,6 @@ const Gallery = () => {
 
   // Toggle expand/collapse for the categories list
 
-
   // Gallery items (sample data)
   const galleryItems = [
     {
@@ -72,6 +82,12 @@ const Gallery = () => {
         "Comprehensive management service including all our offerings.",
       categories: ["Property Management"],
       brand: "BrandX",
+      carasoleImg : [{
+        img1: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
+        img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        img3: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+   
+      }]
     },
     {
       img: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
@@ -80,6 +96,12 @@ const Gallery = () => {
         "Ensure a pristine, hotel-quality experience for every guest.",
       categories: ["Cleaning", "Linen"],
       brand: "BrandA",
+      carasoleImg : [{
+        img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+   
+      }]
     },
     {
       img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
@@ -88,6 +110,12 @@ const Gallery = () => {
         "Transform your space into a stunning, Instagram-worthy retreat.",
       categories: ["Furnishing", "Styling", "Interior"],
       brand: "BrandB",
+      carasoleImg : [{
+        img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+   
+      }]
     },
     {
       img: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
@@ -96,6 +124,12 @@ const Gallery = () => {
         "Capture your property's best features with professional photography.",
       categories: ["Photography"],
       brand: "BrandX",
+      carasoleImg : [{
+        img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+   
+      }]
     },
     // Add more items as needed...
   ];
@@ -150,7 +184,6 @@ const Gallery = () => {
               alignItems="center"
             >
               Filter & Search
-            
             </Flex>
             <Box position="relative" mb="16px">
               <Input
@@ -341,14 +374,14 @@ const Gallery = () => {
           flexWrap="wrap"
           gap={["25px", "25px", "25px", "25px", "25px", "25px"]}
         >
-          {filteredGalleryItems.map(({ img }, index) => (
+          {filteredGalleryItems.map((item, index) => (
             <VStack key={index}>
               <Box
                 onClick={() => {
-                  setClickedImage(img);
+                  setClickedImage(item);
                   setModalOpen(true);
                 }}
-                backgroundImage={` url(${img})`}
+                backgroundImage={`url(${item.img})`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
@@ -384,24 +417,17 @@ const Gallery = () => {
         onOpenChange={(details) => setModalOpen(details.open)}
       >
         <DialogContent
-          p="10"
           bg="white"
           color="white"
           rounded="10px"
+        p={[4]}
           borderRadius="10px"
         >
           <HStack justify="center" align="center" w="100%" h="100%">
             {clickedImage && (
-              <Box
-                w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-                h="100%"
-                borderRadius="30px"
-                overflow="hidden"
-                backgroundImage={`url(${clickedImage})`}
-                backgroundRepeat="no-repeat"
-                backgroundPosition="center"
-                backgroundSize="contain"
-              />
+           <Box w={"100%"}>
+           <DefaultSlider items={clickedImage.carasoleImg?.[0]} />
+         </Box>
             )}
           </HStack>
           <DialogCloseTrigger
