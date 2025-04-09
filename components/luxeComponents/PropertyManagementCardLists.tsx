@@ -239,7 +239,7 @@ const PropertyManagementCardLists = () => {
               backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
-            <Box
+            {/* <Box
               p={"4"}
               position={"absolute"}
               display={"flex"}
@@ -288,7 +288,7 @@ const PropertyManagementCardLists = () => {
                   </Text>
                 </HStack>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
         </HStack>
       </HStack>
@@ -450,7 +450,7 @@ const PropertyManagementCardLists = () => {
             ></Box>
             {/* Bottom-right label */}
 
-            <Box
+            {/* <Box
               p={"4"}
               position={"absolute"}
               display={"flex"}
@@ -495,7 +495,7 @@ const PropertyManagementCardLists = () => {
                   </Text>
                 </HStack>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
           <Box
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
@@ -762,7 +762,7 @@ const PropertyManagementCardLists = () => {
               backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
-            <Box
+            {/* <Box
               p={"4"}
               position={"absolute"}
               display={"flex"}
@@ -811,7 +811,7 @@ const PropertyManagementCardLists = () => {
                   </Text>
                 </HStack>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
         </HStack>
       </HStack>
@@ -972,7 +972,7 @@ const PropertyManagementCardLists = () => {
             ></Box>
             {/* Bottom-right label */}
 
-            <Box
+            {/* <Box
               p={"4"}
               position={"absolute"}
               display={"flex"}
@@ -1017,7 +1017,7 @@ const PropertyManagementCardLists = () => {
                   </Text>
                 </HStack>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
           <Box
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}

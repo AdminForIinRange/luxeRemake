@@ -240,7 +240,7 @@ const CleaningLinenCardLists = () => {
               backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
-            <Box
+            {/* <Box
               p={"4"}
               position={"absolute"}
               display={"flex"}
@@ -289,7 +289,7 @@ const CleaningLinenCardLists = () => {
                   </Text>
                 </HStack>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
         </HStack>
       </HStack>
@@ -451,7 +451,7 @@ const CleaningLinenCardLists = () => {
             ></Box>
             {/* Bottom-right label */}
 
-            <Box
+            {/* <Box
               p={"4"}
               position={"absolute"}
               display={"flex"}
@@ -496,7 +496,7 @@ const CleaningLinenCardLists = () => {
                   </Text>
                 </HStack>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
           <Box
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
@@ -763,7 +763,7 @@ const CleaningLinenCardLists = () => {
               backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
-            <Box
+            {/* <Box
               p={"4"}
               position={"absolute"}
               display={"flex"}
@@ -812,7 +812,7 @@ const CleaningLinenCardLists = () => {
                   </Text>
                 </HStack>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
         </HStack>
       </HStack>
@@ -973,7 +973,7 @@ const CleaningLinenCardLists = () => {
             ></Box>
             {/* Bottom-right label */}
 
-            <Box
+            {/* <Box
               p={"4"}
               position={"absolute"}
               display={"flex"}
@@ -1018,7 +1018,7 @@ const CleaningLinenCardLists = () => {
                   </Text>
                 </HStack>
               </Box>
-            </Box>
+            </Box> */}
           </Box>
           <Box
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}

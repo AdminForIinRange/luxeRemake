@@ -112,7 +112,7 @@ const PropertyManagement = () => {
         alignItems={"center"}
       >
         <Box
-          backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg)`}
+          backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/23224995/pexels-photo-23224995.jpeg)`}
           backgroundSize="cover"
           backgroundPosition="center"
           backgroundRepeat="no-repeat"

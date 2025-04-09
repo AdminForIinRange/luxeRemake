@@ -38,7 +38,7 @@ const PhotographyCardLists = () => {
       description:
         "We bring your property to life through immersive 360° virtual tours and engaging lifestyle photography. Our approach captures authentic living moments and highlights the unique story behind your space, ",
       features: [
-        "Immersive 360° virtual tours for interactive exploration",
+        "Virtual tours for interactive exploration",
         "Lifestyle shots that tell an authentic story of your property",
         "Candid moments capturing natural interactions",
         "Dynamic shots showcasing property in varied lighting conditions",
@@ -233,10 +233,10 @@ const PhotographyCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/776908/pexels-photo-776908.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
           </Box>
@@ -393,10 +393,10 @@ const PhotographyCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/1336858/pexels-photo-1336858.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
           </Box>
@@ -659,10 +659,10 @@ const PhotographyCardLists = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg)`}
+              backgroundImage={` url(https://images.pexels.com/photos/9125753/pexels-photo-9125753.jpeg)`}
               backgroundRepeat="no-repeat"
               backgroundPosition="center"
-              backgroundSize="100% 100%"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
           </Box>
