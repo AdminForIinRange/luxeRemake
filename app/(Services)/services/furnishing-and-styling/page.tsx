@@ -28,6 +28,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import FurnishingStylingCardLists from "@/components/luxeComponents/FurnishingStylingCardLists";
+import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
 const FurnishingAndStyling = () => {
   useEffect(() => {
     Aos.init({
@@ -166,236 +167,36 @@ const FurnishingAndStyling = () => {
               </Text>
             </Box>
           </HStack>
-          <HStack
-            mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-            w={"100%"}
-            h={"100%"}
-            justify={"center"}
-            align={"center"}
-            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-            flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "wrap"]}
-            fontFamily={"raleway"}
-            gap={"25px"}
-          >
-            {/* {uploadedFiles.length > 0 ? ( */}
+       
 
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Tailored Design
-                    </Text>
-                    </HStack>
-           
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  We create a unique style that reflects your property's
-                  character and appeals to your target guests.
-                </Text>
-              </Box>
-            </VStack>
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Quality Furnishings
-                    </Text>
-                    </HStack>
-                   
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  We source and install high-quality, durable furniture that
-                  looks great and stands up to frequent use.
-                </Text>
-              </Box>
-            </VStack>
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/7607460/pexels-photo-7607460.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Attention to Detail
-                    </Text>
-                    </HStack>
-                   
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  From artwork to throw pillows, we perfect every detail to
-                  create a cohesive, inviting space.
-                </Text>
-              </Box>
-            </VStack>
-          </HStack>
+            <ServicesThreeCards
+        cardsData={[
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
+            title: "Tailored Design",
+            description:
+              "We create a unique style that reflects your property's character and appeals to your target guests.",
+          },
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+            title: "Quality Furnishings",
+            description:
+              "We source and install high-quality, durable furniture that looks great and stands up to frequent use.",
+          },
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/7607460/pexels-photo-7607460.jpeg",
+            title: "Attention to Detail",
+            description:
+              "From artwork to throw pillows, we perfect every detail to a cohesive, inviting space.",
+          },
+        ]}
+      />
+       
         </Box>
+        
       </HStack>
       <HStack
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}

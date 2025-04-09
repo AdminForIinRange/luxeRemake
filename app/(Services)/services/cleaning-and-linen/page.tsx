@@ -28,6 +28,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import CleaningLinenCardLists from "@/components/luxeComponents/CleaningLinenCardLists";
+import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
 const CleaningAndLinen = () => {
   useEffect(() => {
     Aos.init({
@@ -188,235 +189,32 @@ const CleaningAndLinen = () => {
               </Text>
             </Box>
           </HStack>
-          <HStack
-            mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-            w={"100%"}
-            h={"100%"}
-            justify={"center"}
-            align={"center"}
-            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-            flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "wrap"]}
-            fontFamily={"raleway"}
-            gap={"25px"}
-          >
-            {/* {uploadedFiles.length > 0 ? ( */}
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/8467975/pexels-photo-8467975.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <PersonStandingIcon size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Premium Products
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  We use only the finest, eco-friendly cleaning products to
-                  protect your property and the environment.
-                </Text>
-              </Box>
-            </VStack>
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/4239142/pexels-photo-4239142.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <Cog size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Expert Team
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  Our highly trained professionals bring years of experience in
-                  luxury property care.
-                </Text>
-              </Box>
-            </VStack>
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/4239130/pexels-photo-4239130.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <TrendingUp size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Impeccable Detail
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  We meticulously clean every corner, ensuring no detail is
-                  overlooked.
-                </Text>
-              </Box>
-            </VStack>
-          </HStack>
+      
+          <ServicesThreeCards
+        cardsData={[
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/8467975/pexels-photo-8467975.jpeg",
+            title: "Premium Products",
+            description:
+              "We use only the finest, eco-friendly cleaning products to protect your property and the environment.",
+          },
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/4239142/pexels-photo-4239142.jpeg",
+            title: "        Expert Team",
+            description:
+              "Our highly trained professionals bring years of experience in luxury property care.",
+          },
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/4239130/pexels-photo-4239130.jpeg",
+            title: "  Impeccable Detail",
+            description:
+              "We meticulously clean every corner, ensuring no detail is overlooked.",
+          },
+        ]}
+      />
         </Box>
       </HStack>
 

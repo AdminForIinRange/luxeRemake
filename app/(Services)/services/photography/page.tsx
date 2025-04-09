@@ -29,6 +29,7 @@ import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import PhotographyCardLists from "@/components/luxeComponents/PhotographyCardLists";
 import ImageCompareSlider from "@/components/luxeComponents/ImageCompareSlider";
+import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
 const Photography = () => {
   useEffect(() => {
     Aos.init({
@@ -167,236 +168,36 @@ const Photography = () => {
               </Text>
             </Box>
           </HStack>
-          <HStack
-            mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-            w={"100%"}
-            h={"100%"}
-            justify={"center"}
-            align={"center"}
-            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-            flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "wrap"]}
-            fontFamily={"raleway"}
-            gap={"25px"}
-          >
-            {/* {uploadedFiles.length > 0 ? ( */}
+          <ServicesThreeCards
+            cardsData={[
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg",
+                title: "First Impressions",
+                description:
+                  "Stunning photos create a powerful first impression, compelling potential guests to book your property.",
+              },
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg",
+                title: "Feature Showcase",
+                description:
+                  "We expertly highlight your property's unique features and amenities, setting it apart from competitors.",
+              },
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg",
+                title: "Booking Catalyst",
+                description:
+                  "Professional imagery leads to increased views, higher booking rates, and enhanced revenue.",
+              },
 
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <PersonStandingIcon size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      First Impressions
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  Stunning photos create a powerful first impression, compelling
-                  potential guests to book your property.
-                </Text>
-              </Box>
-            </VStack>
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <Cog size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Feature Showcase
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  We expertly highlight your property's unique features and
-                  amenities, setting it apart from competitors.
-                </Text>
-              </Box>
-            </VStack>
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <TrendingUp size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Booking Catalyst
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  Professional imagery leads to increased views, higher booking
-                  rates, and enhanced revenue.
-                </Text>
-              </Box>
-            </VStack>
-          </HStack>
+              
+            ]}
+          />
         </Box>
+
+     
       </HStack>
       <HStack
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}

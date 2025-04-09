@@ -27,6 +27,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import PropertyManagementCardLists from "@/components/luxeComponents/PropertyManagementCardLists";
+import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
 const PropertyManagement = () => {
   useEffect(() => {
     Aos.init({
@@ -231,237 +232,35 @@ const PropertyManagement = () => {
               </Text>
             </Box>
           </HStack>
-          <HStack
-            mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-            w={"100%"}
-            h={"100%"}
-            justify={"center"}
-            align={"center"}
-            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-            flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "wrap"]}
-            fontFamily={"raleway"}
-            gap={"25px"}
-          >
-            {/* {uploadedFiles.length > 0 ? ( */}
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <PersonStandingIcon size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Bespoke Service
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  Tailored management solutions designed specifically for your
-                  unique property and investment goals.
-                </Text>
-              </Box>
-            </VStack>
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <Cog size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Innovative Technology
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  Advanced systems and tools that streamline operations and
-                  enhance guest satisfaction.
-                </Text>
-              </Box>
-            </VStack>
-
-            <VStack>
-              <Box
-                backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg)`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition={"all 0.3s"}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                h={"300px"}
-                borderRadius={"16px"}
-                _hover={{
-                  transform: "scale(1.01)",
-                }}
-                cursor={"pointer"}
-                p={"30px"}
-                display={"flex"}
-              >
-                <VStack
-                  color={"white"}
-                  mt={"20px"}
-                  w={"100%"}
-                  h={"100%"}
-                  display={"flex"}
-                  justifyContent={"end"}
-                  alignItems={"end"}
-                >
-                  <VStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"Start"}
-                    align={"Start"}
-                  >
-                    <HStack
-                      w={"100%"}
-                      h={"100%"}
-                      justify={"start"}
-                      align={"end"}
-                    >
-                      {" "}
-                      <TrendingUp size={50} />{" "}
-                    </HStack>
-                    <Text
-                      textAlign={"start"}
-                      color={"white"}
-                      fontSize={[
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                        "26px",
-                      ]}
-                      fontFamily={"Raleway"}
-                      fontWeight={700}
-                    >
-                      Revenue Maximization
-                    </Text>
-                  </VStack>
-                </VStack>
-              </Box>
-              <Box
-                fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-                w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-                pt={"15px"}
-              >
-                <Text textAlign={"start"}>
-                  Dynamic pricing and targeted marketing strategies that
-                  optimize your property's earning potential.
-                </Text>
-              </Box>
-            </VStack>
-          </HStack>
+         
+      <ServicesThreeCards
+        cardsData={[
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg",
+            title: "Bespoke Service",
+            description:
+              "  Tailored management solutions designed specifically for your unique property and investment goals.",
+          },
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
+            title: "Innovative Technology",
+            description:
+              "Advanced systems and tools that streamline operations and enhance guest satisfaction.",
+          },
+          {
+            imgUrl:
+              "https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg",
+            title: "Revenue Maximization",
+            description:
+              "Dynamic pricing and targeted marketing strategies that optimize your property's earning potential.",
+          },
+        ]}
+      />
         </Box>
       </HStack>
+
 
       <VStack
         data-aos="fade-up"
