@@ -30,6 +30,7 @@ import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultati
 import PhotographyCardLists from "@/components/luxeComponents/PhotographyCardLists";
 import ImageCompareSlider from "@/components/luxeComponents/ImageCompareSlider";
 import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
+import TopHeader from "@/components/luxeComponents/topHeader";
 const Photography = () => {
   useEffect(() => {
     Aos.init({
@@ -41,71 +42,17 @@ const Photography = () => {
 
   return (
     <>
-      <Box
-        w={"100%"}
-        h={"100%"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Box
-          backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg)`}
-          backgroundSize="cover"
-          backgroundPosition="center"
-          backgroundRepeat="no-repeat"
-          transition={"all 0.3s"}
-          w={"95%"}
-          h={"600px"}
-          borderRadius={"16px"}
-          _hover={{
-            transform: "scale(1.01)",
-          }}
-          cursor={"pointer"}
-          p={"30px"}
-          display={"flex"}
-          fontFamily={"raleway"}
-        >
-          <VStack
-            color={"white"}
-            mt={"10px"}
-            w={"100%"}
-            h={"100%"}
-            display={"flex"}
-            justifyContent={"start"}
-            alignItems={"start"}
-            p={"32px"}
-          >
-            <VStack justify={"end"} align={"start"} w={"100%"} h={"100%"}>
-              <Text
-                fontSize={{
-                  base: "40px",
-                  sm: "40px",
-                  md: "40px",
-                  lg: "60px",
-                  xl: "80px",
-                }}
-                fontWeight={700}
-                bgClip="text"
-                color={"white"}
-                bgGradient="linear(to-r, teal, blue)"
-                lineHeight={1}
-              >
-                Photography
-              </Text>
-              <Text
-                w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-                fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-                // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
+<TopHeader
+  imgUrl={"https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg"}
+  wordOne={"Photography"}
+  wordTwo={""}
+  description={"Showcase your property with stunning professional photography that captures its unique essence."}
+  and={false}
+/>
 
-                fontWeight={300}
-              >
-                Showcase your property with stunning professional photography
-                that captures its unique essence.
-              </Text>
-            </VStack>
-          </VStack>
-        </Box>
-      </Box>
+
+
+
 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}

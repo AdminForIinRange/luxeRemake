@@ -28,6 +28,7 @@ import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import PropertyManagementCardLists from "@/components/luxeComponents/PropertyManagementCardLists";
 import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
+import TopHeader from "@/components/luxeComponents/topHeader";
 const PropertyManagement = () => {
   useEffect(() => {
     Aos.init({
@@ -37,55 +38,7 @@ const PropertyManagement = () => {
     });
   }, []);
 
-  const leftImg = [
-    {
-      title: "Listing & Marketing",
-      description:
-        "We craft compelling listings and implement strategic marketing to maximize visibility and occupancy rates.",
-      features: [
-        "Professional photography and copywriting",
-        "Optimized descriptions",
-        "Multi-platform presence",
-        "Dynamic pricing algorithm",
-      ],
-    },
-    {
-      title: "Property Care",
-      description:
-        "We maintain your property in impeccable condition, preserving its value and appeal.",
-      features: [
-        "Professional cleaning after each stay",
-        "Preventative maintenance",
-        "Rapid response for repairs",
-        "Inventory and supply management",
-      ],
-    },
-  ];
 
-  const rightImg = [
-    {
-      title: "Guest Experience",
-      description:
-        "We create memorable experiences for your guests, ensuring satisfaction and stellar reviews.",
-      features: [
-        "24/7 concierge support",
-        "Curated welcome packages",
-        "Personalized local recommendations",
-        "Immediate issue resolution",
-      ],
-    },
-    {
-      title: "Financial Intelligence",
-      description:
-        "We provide comprehensive financial management and transparent reporting.",
-      features: [
-        "Detailed monthly statements",
-        "Revenue optimization strategies",
-        "Tax-ready documentation",
-        "Performance analytics",
-      ],
-    },
-  ];
 
   const servicesBoxes = [
     {
@@ -104,72 +57,18 @@ const PropertyManagement = () => {
 
   return (
     <>
-      <Box
-        w={"100%"}
-        h={"100%"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Box
-          backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/23224995/pexels-photo-23224995.jpeg)`}
-          backgroundSize="cover"
-          backgroundPosition="center"
-          backgroundRepeat="no-repeat"
-          transition={"all 0.3s"}
-          w={"95%"}
-          h={"600px"}
-          borderRadius={"16px"}
-          _hover={{
-            transform: "scale(1.01)",
-          }}
-          cursor={"pointer"}
-          p={"30px"}
-          display={"flex"}
-          fontFamily={"raleway"}
-        >
-          <VStack
-            color={"white"}
-            mt={"10px"}
-            w={"100%"}
-            h={"100%"}
-            display={"flex"}
-            justifyContent={"start"}
-            alignItems={"start"}
-            p={"32px"}
-          >
-            <VStack justify={"end"} align={"start"} w={"100%"} h={"100%"}>
-              <Text
-                fontSize={{
-                  base: "40px",
-                  sm: "40px",
-                  md: "40px",
-                  lg: "60px",
-                  xl: "80px",
-                }}
-                fontWeight={700}
-                bgClip="text"
-                color={"white"}
-                bgGradient="linear(to-r, teal, blue)"
-                lineHeight={1}
-              >
-                Property <br></br> Management
-              </Text>
-              <Text
-                w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-                fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-                // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
-                fontWeight={300}
-              >
-                Elevate your investment with our comprehensive suite of premium
-                services designed to maximize returns and enhance guest
-                experiences.
-              </Text>
-            </VStack>
-          </VStack>
-        </Box>
-      </Box>
+
+      <TopHeader
+        imgUrl="https://images.pexels.com/photos/23224995/pexels-photo-23224995.jpeg"
+        wordOne="Property"
+        wordTwo="Management"
+        description="Elevate your investment with our comprehensive suite of premium services designed to maximize returns and enhance guest experiences."
+        and={false}
+      />
+
+
+
 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}

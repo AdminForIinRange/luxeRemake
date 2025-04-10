@@ -149,7 +149,7 @@ const Navbar = () => {
                 <Dropdown
                   items={[
                     {
-                      label: "Cleaning",
+                      label: "property management",
                       link: "/services/property-management",
                     },
                     {
@@ -160,7 +160,7 @@ const Navbar = () => {
                       label: "furnishing & styling",
                       link: "/services/furnishing-and-styling",
                     },
-                    { label: "Cleaning", link: "/services/photography" },
+                    { label: "photography", link: "/services/photography" },
                   ]}
                 />
               )}

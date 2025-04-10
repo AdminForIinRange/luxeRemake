@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Box,
-  HStack,
-  VStack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, HStack, VStack, Text } from "@chakra-ui/react";
 
 interface CardData {
   imgUrl: string;
@@ -19,21 +14,22 @@ const ServicesThreeCards = ({ cardsData }: { cardsData: CardData[] }) => {
       w={"100%"}
       h={"100%"}
       justify={"center"}
-      align={"center"}
+      align={"start"}
       px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-      flexWrap={["wrap", "wrap", "wrap", "wrap", "wrap", "wrap"]}
+      flexWrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
       fontFamily={"raleway"}
-      gap={"25px"}
+      gap={["20px", "20px", "20px", "20px", "20px", "20px"]}
+
     >
       {cardsData.map((card, index) => (
-        <VStack key={index}>
+        <VStack key={index} w={"100%"}>
           <Box
             backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(${card.imgUrl})`}
             backgroundSize="cover"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             transition={"all 0.3s"}
-            w={["100%", "250px", "250px", "400px", "400px", "400px"]}
+            w={["100%", "100%", "100%", "100%", "100%", "100%"]}
             h={"300px"}
             borderRadius={"16px"}
             _hover={{
@@ -42,6 +38,7 @@ const ServicesThreeCards = ({ cardsData }: { cardsData: CardData[] }) => {
             cursor={"pointer"}
             p={"30px"}
             display={"flex"}
+  
           >
             <VStack
               color={"white"}
@@ -52,29 +49,12 @@ const ServicesThreeCards = ({ cardsData }: { cardsData: CardData[] }) => {
               justifyContent={"end"}
               alignItems={"end"}
             >
-              <VStack
-                w={"100%"}
-                h={"100%"}
-                justify={"Start"}
-                align={"Start"}
-              >
-                <HStack
-                  w={"100%"}
-                  h={"100%"}
-                  justify={"start"}
-                  align={"end"}
-                >
+              <VStack w={"100%"} h={"100%"} justify={"Start"} align={"Start"}>
+                <HStack w={"100%"} h={"100%"} justify={"start"} align={"end"}>
                   <Text
                     textAlign={"start"}
                     color={"white"}
-                    fontSize={[
-                      "26px",
-                      "26px",
-                      "26px",
-                      "26px",
-                      "26px",
-                      "26px",
-                    ]}
+                    fontSize={["26px", "26px", "26px", "26px", "26px", "26px"]}
                     fontFamily={"Raleway"}
                     fontWeight={700}
                   >
@@ -85,13 +65,12 @@ const ServicesThreeCards = ({ cardsData }: { cardsData: CardData[] }) => {
             </VStack>
           </Box>
           <Box
-            fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
-            w={["100%", "250px", "250px", "400px", "400px", "400px"]}
-            pt={"15px"}
+            fontSize={["16px", "16px", "16px", "16px", "16px", "16px"]}
+            w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+            pt={"5px"}
+            mb={"10px"}
           >
-            <Text textAlign={"start"}>
-              {card.description}
-            </Text>
+            <Text textAlign={"start"}>{card.description}</Text>
           </Box>
         </VStack>
       ))}

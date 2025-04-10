@@ -29,6 +29,8 @@ import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import FurnishingStylingCardLists from "@/components/luxeComponents/FurnishingStylingCardLists";
 import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
+import TopHeader from "@/components/luxeComponents/topHeader";
+
 const FurnishingAndStyling = () => {
   useEffect(() => {
     Aos.init({
@@ -40,71 +42,17 @@ const FurnishingAndStyling = () => {
 
   return (
     <>
-      <Box
-        w={"100%"}
-        h={"100%"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Box
-          backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/6782574/pexels-photo-6782574.jpeg)`}
-          backgroundSize="cover"
-          backgroundPosition="center"
-          backgroundRepeat="no-repeat"
-          transition={"all 0.3s"}
-          w={"95%"}
-          h={"600px"}
-          borderRadius={"16px"}
-          _hover={{
-            transform: "scale(1.01)",
-          }}
-          cursor={"pointer"}
-          p={"30px"}
-          display={"flex"}
-          fontFamily={"raleway"}
-        >
-          <VStack
-            color={"white"}
-            mt={"10px"}
-            w={"100%"}
-            h={"100%"}
-            display={"flex"}
-            justifyContent={"start"}
-            alignItems={"start"}
-            p={"32px"}
-          >
-            <VStack justify={"end"} align={"start"} w={"100%"} h={"100%"}>
-              <Text
-                fontSize={{
-                  base: "40px",
-                  sm: "40px",
-                  md: "40px",
-                  lg: "60px",
-                  xl: "80px",
-                }}
-                fontWeight={700}
-                bgClip="text"
-                color={"white"}
-                bgGradient="linear(to-r, teal, blue)"
-                lineHeight={1}
-              >
-                Furnishing &<br></br>Styling
-              </Text>
-              <Text
-                w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-                fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-                // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-
-                fontWeight={300}
-              >
-                Transform your property into a stunning, magazine-worthy retreat
-                with our expert design services.
-              </Text>
-            </VStack>
-          </VStack>
-        </Box>
-      </Box>
+      <TopHeader
+        imgUrl={
+          "https://images.pexels.com/photos/6782574/pexels-photo-6782574.jpeg"
+        }
+        wordOne={"Furnishing"}
+        wordTwo={"Styling"}
+        and={true}
+        description={
+          "Transform your property into a stunning, magazine-worthy retreat with our expert design services."
+        }
+      />
 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
@@ -167,36 +115,33 @@ const FurnishingAndStyling = () => {
               </Text>
             </Box>
           </HStack>
-       
 
-            <ServicesThreeCards
-        cardsData={[
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
-            title: "Tailored Design",
-            description:
-              "We create a unique style that reflects your property's character and appeals to your target guests.",
-          },
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-            title: "Quality Furnishings",
-            description:
-              "We source and install high-quality, durable furniture that looks great and stands up to frequent use.",
-          },
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/7607460/pexels-photo-7607460.jpeg",
-            title: "Attention to Detail",
-            description:
-              "From artwork to throw pillows, we perfect every detail to a cohesive, inviting space.",
-          },
-        ]}
-      />
-       
+          <ServicesThreeCards
+            cardsData={[
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/1109541/pexels-photo-1109541.jpeg",
+                title: "Tailored Design",
+                description:
+                  "We create a unique style that reflects your property's character and appeals to your target guests.",
+              },
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+                title: "Quality Furnishings",
+                description:
+                  "We source and install high-quality, durable furniture that looks great and stands up to frequent use.",
+              },
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/7607460/pexels-photo-7607460.jpeg",
+                title: "Attention to Detail",
+                description:
+                  "From artwork to throw pillows, we perfect every detail to a cohesive, inviting space.",
+              },
+            ]}
+          />
         </Box>
-        
       </HStack>
       <HStack
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
@@ -206,7 +151,6 @@ const FurnishingAndStyling = () => {
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-    
 
       <FurnishingStylingCardLists />
 

@@ -29,6 +29,7 @@ import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import CleaningLinenCardLists from "@/components/luxeComponents/CleaningLinenCardLists";
 import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
+import TopHeader from "@/components/luxeComponents/topHeader";
 const CleaningAndLinen = () => {
   useEffect(() => {
     Aos.init({
@@ -40,71 +41,14 @@ const CleaningAndLinen = () => {
 
   return (
     <>
-      <Box
-        w={"100%"}
-        h={"100%"}
-        display={"flex"}
-        justifyContent={"center"}
-        alignItems={"center"}
-      >
-        <Box
-          backgroundImage={`linear-gradient(to top,rgb(39,44,66), transparent), url(https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg)`}
-          backgroundSize="cover"
-          backgroundPosition="center"
-          backgroundRepeat="no-repeat"
-          transition={"all 0.3s"}
-          w={"95%"}
-          h={"600px"}
-          borderRadius={"16px"}
-          _hover={{
-            transform: "scale(1.01)",
-          }}
-          cursor={"pointer"}
-          p={"30px"}
-          display={"flex"}
-          fontFamily={"raleway"}
-        >
-          <VStack
-            color={"white"}
-            mt={"10px"}
-            w={"100%"}
-            h={"100%"}
-            display={"flex"}
-            justifyContent={"start"}
-            alignItems={"start"}
-            p={"32px"}
-          >
-            <VStack justify={"end"} align={"start"} w={"100%"} h={"100%"}>
-              <Text
-                fontSize={{
-                  base: "40px",
-                  sm: "40px",
-                  md: "40px",
-                  lg: "60px",
-                  xl: "80px",
-                }}
-                fontWeight={700}
-                bgClip="text"
-                color={"white"}
-                bgGradient="linear(to-r, teal, blue)"
-                lineHeight={1}
-              >
-                Cleaning &<br></br>Linen
-              </Text>
-              <Text
-                w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-                fontSize={["16px", "16px", "16px", "26px", "26px", "26px"]}
-                // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
-                fontWeight={300}
-              >
-                Elevate your space with our meticulous cleaning process and
-                premium linen service.
-              </Text>
-            </VStack>
-          </VStack>
-        </Box>
-      </Box>
+<TopHeader
+  imgUrl="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg"
+  wordOne="Cleaning"
+  wordTwo="Linen"
+  description="Elevate your space with our meticulous cleaning process and premium linen service."
+  and={true}
+/>
 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
