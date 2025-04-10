@@ -95,54 +95,48 @@ const About = () => {
       />
 
       <HStack
+        data-aos="fade-up"
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"} // !!
         align={"center"}
         w={"100%"}
         h={"100%"}
-        mt={["155px", "155px", "155px", "155px", "155px", "155px"]}
+        my={["50px", "50px", "50px", "50px", "50px", "100px"]}
       >
         <HStack
-          justify={[
-            "space-between",
-            "space-between",
-            "space-between",
-            "space-between",
-            "space-between",
-            "space-between",
-          ]}
+          justify={"center"}
           align={["center", "center", "start", "start", "start", "start"]}
           w={"100%"}
           h={"100%"}
-          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
+          gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
           wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
         >
-          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
+          <Box w={["95%", "95%", "95%", "600px", "600px", "600px"]}>
             <Text
-              data-aos="fade-up"
-              w={["100%", "100%", "80%", "80%", "80%", "80%"]}
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
-              fontWeight={700}
+              fontWeight={600}
               fontFamily={"Raleway"}
               bgClip="text"
-              textAlign={["center", "center", "left", "left", "left", "left"]}
+              textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
               Our Story
             </Text>
             <Text
-              fontSize={["16px", "16px", "16px", "16px", "18px", "18px"]}
+              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-              textAlign={["center", "center", "left", "left", "left", "left"]}
+              textAlign={["center", "center", "center", "left", "left", "left"]}
               fontFamily={"Raleway"}
               color={"black"}
-              w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
+              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Luxe Managements launched in 2022 with a clear mission: to
+          
+          Luxe Managements launched in 2022 with a clear mission: to
               redefine short-term rental management through innovation, quality,
               and care. We saw the gaps — inconsistent service, underperforming
               listings, and generic guest experiences — and built a smarter,
@@ -198,36 +192,88 @@ const About = () => {
           </Box>
 
           <Box
-            display="block"
             position="relative"
-            h={["500px", "500px", "500px", "500px", "500px", "600px"]}
-            w={["100%", "100%", "100%", "650px", "650px", "650px"]}
-            backdropFilter="blur(1.5px)"
+            h={["350px", "350px", "350px", "500px", "500px", "600px"]}
+            w={["95%", "95%", "95%", "600px", "600px", "600px"]}
             borderRadius="30px"
             bgPos="center"
             bgSize="cover"
             // Change this to any background you want
             // Change this to any background you want
             overflow="hidden"
+            display={"flex"}
+            justifyContent={"end"}
           >
             {/* Horizontal line for crosshair */}
             <Box
-              display="block"
               position="relative"
-              h={["500px", "500px", "500px", "500px", "500px", "500px"]}
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
               w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              backdropFilter="blur(1.5px)"
               borderRadius="30px"
-              bgPos="center"
-              bgSize="cover"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              ml={["0px", "0px", "0px", "100px", "100px", "100px"]}
+              backgroundImage={` url(https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg)`}
+              backgroundRepeat="no-repeat"
+              backgroundPosition="center"
+              backgroundSize="cover"
             ></Box>
             {/* Bottom-right label */}
+            {/* <Box
+              p={"4"}
+              position={"absolute"}
+              display={"flex"}
+              w={"100%"}
+              h={"100%"}
+              justifyContent={[
+                "start",
+                "start",
+                "start",
+                "start",
+                "start",
+                "start",
+              ]}
+              alignItems={["start", "start", "start", "center", "center"]}
+            >
+              <Box
+                fontFamily={"raleway"}
+                zIndex={1}
+                bg="white"
+                borderRadius="md"
+                p={[
+                  "10px 10px",
+                  "10px 10px",
+                  "10px 10px",
+                  "15px 15px",
+                  "15px 15px",
+                  "15px 15px",
+                ]}
+                boxShadow="md"
+                fontWeight="semibold"
+                textAlign={"left"}
+              >
+                <HStack>
+                  <Text
+                    fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
+                    fontWeight={"700"}
+                    color={"black"}
+                  >
+                    40%
+                  </Text>
+                  <Text
+                    fontSize={["12px", "16px", "14px", "14px", "16px", "16px"]}
+                  >
+                    {" "}
+                    Average Revenue Increase
+                  </Text>
+                </HStack>
+              </Box>
+            </Box> */}
           </Box>
         </HStack>
       </HStack>
+
+
+
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
         justify={"center"}
