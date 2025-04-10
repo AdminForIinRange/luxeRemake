@@ -501,6 +501,16 @@ const Hero = () => {
 
       <HeroServices />
       {/* GALLERY SECTION */}
+
+      <HStack
+        mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+      >
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      </HStack>
+
       <HStack
         id="gallery-section"
         w="100%"
@@ -513,7 +523,6 @@ const Hero = () => {
           bg="white"
           borderRadius="md"
           p={["20px", "30px"]}
-          boxShadow="sm"
           textAlign="center"
         >
           {/* Title & Subtitle */}
@@ -525,57 +534,54 @@ const Hero = () => {
           >
             Check Out Our Gallery
           </Text>
-          <Text
-            fontSize={["md", "lg"]}
-            color="gray.600"
-            fontFamily="Raleway"
-     >
+          <Text fontSize={["md", "lg"]} color="gray.600" fontFamily="Raleway">
             A glimpse into some of our most stunning properties and interiors.
           </Text>
           <HStack
-              data-aos="fade-up"
-              justify={[
-                "center",
-                "center",
-                "center",
-                "center",
-                "center",
-                "center",
-              ]}
-              align={"start"}
-              w={"100%"}
+            data-aos="fade-up"
+            justify={[
+              "center",
+              "center",
+              "center",
+              "center",
+              "center",
+              "center",
+            ]}
+            align={"start"}
+            w={"100%"}
+            transition={"all 0.2s ease-in-out"}
+            zIndex={3}
+          >
+            <Box
+              my={"40px"}
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              gap={"15px"}
+              fontFamily={"raleway"}
               transition={"all 0.2s ease-in-out"}
-              zIndex={3}
+              cursor={"pointer"}
+              _hover={{
+                transition: "all 0.2s ease-in-out",
+                scale: 1.1,
+                fontWeight: "700",
+                px: "80px",
+                bg: "black",
+              }}
+              p={4}
+              bg={"black"}
+              color={"white"}
+              rounded={"30px"}
+              px={"12"}
+              fontWeight={"500"}
+              onClick={() => router.push("/gallery")}
             >
-              <Box
-                my={"40px"}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={"center"}
-                gap={"15px"}
-                fontFamily={"raleway"}
-                transition={"all 0.2s ease-in-out"}
-                cursor={"pointer"}
-                _hover={{
-                  transition: "all 0.2s ease-in-out",
-                  scale: 1.1,
-                  fontWeight: "700",
-                  px: "80px",
-                  bg: "black",
-                }}
-                p={4}
-                bg={"black"}
-                color={"white"}
-                rounded={"30px"}
-                px={"12"}
-                fontWeight={"500"}
-                onClick={() => router.push("/gallery")}
-              >
               Go to Gallery
-                {/* <Icon as={ArrowRight}> </Icon> */}
-              </Box>
-            </HStack>
+              {/* <Icon as={ArrowRight}> </Icon> */}
+            </Box>
+          </HStack>
           {/* Images Container */}
+
           <HStack
             spacing={["10px", "20px", "40px"]}
             justify="center"
@@ -587,7 +593,6 @@ const Hero = () => {
           </HStack>
         </Box>
       </HStack>
-
     </>
   );
 };
