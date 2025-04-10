@@ -1,13 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import {
-  Box,
-  Stack,
-  Text,
-  Flex,
-  HStack,
-} from "@chakra-ui/react";
+import { Box, Stack, Text, Flex, HStack } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import luxeLogo from "../../public/png/LuxeLogo.png";
@@ -31,7 +25,11 @@ const Navbar = () => {
   };
 
   // Reusable Dropdown
-  const Dropdown = ({ items }: { items: { label: string; link: string }[] }) => (
+  const Dropdown = ({
+    items,
+  }: {
+    items: { label: string; link: string }[];
+  }) => (
     <Box
       borderRadius="4px"
       position="absolute"
@@ -96,14 +94,21 @@ const Navbar = () => {
           </Stack>
 
           {/* Nav Items */}
-          <HStack fontSize="16px" gap={["16px", "16px", "16px", "36px", "36px"]} fontWeight="500">
+          <HStack
+            fontSize="16px"
+            gap={["16px", "16px", "16px", "36px", "36px"]}
+            fontWeight="500"
+            flexWrap={"wrap"}
+            justify={"center"}
+          >
             {/* About */}
             <Box
               position="relative"
               onMouseEnter={() => handleEnter("about")}
               onMouseLeave={handleLeave}
             >
-              <Box  fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+              <Box
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -111,15 +116,11 @@ const Navbar = () => {
               >
                 About
               </Box>
-            
             </Box>
 
-
-            <Box
-              position="relative"
-           
-            >
-              <Box  fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+            <Box position="relative">
+              <Box
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -127,10 +128,7 @@ const Navbar = () => {
               >
                 News
               </Box>
-             
             </Box>
-
-
 
             {/* Services */}
             <Box
@@ -138,7 +136,8 @@ const Navbar = () => {
               onMouseEnter={() => handleEnter("services")}
               onMouseLeave={handleLeave}
             >
-              <Box fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+              <Box
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -149,15 +148,23 @@ const Navbar = () => {
               {activeDropdown === "services" && (
                 <Dropdown
                   items={[
-                    { label: "Cleaning", link: "/services/property-management" },
-                    { label: "cleaning & linen", link: "/services/cleaning-and-linen" },
-                    { label: "furnishing & styling", link: "/services/furnishing-and-styling" },
-                    { label: "Cleaning", link: "/services/photography" }
+                    {
+                      label: "Cleaning",
+                      link: "/services/property-management",
+                    },
+                    {
+                      label: "cleaning & linen",
+                      link: "/services/cleaning-and-linen",
+                    },
+                    {
+                      label: "furnishing & styling",
+                      link: "/services/furnishing-and-styling",
+                    },
+                    { label: "Cleaning", link: "/services/photography" },
                   ]}
                 />
               )}
             </Box>
-            
 
             {/* Pricing */}
             <Box
@@ -165,7 +172,8 @@ const Navbar = () => {
               onMouseEnter={() => handleEnter("pricing")}
               onMouseLeave={handleLeave}
             >
-              <Box fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+              <Box
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -173,7 +181,6 @@ const Navbar = () => {
               >
                 Pricing
               </Box>
-             
             </Box>
 
             {/* Gallery */}
@@ -182,7 +189,8 @@ const Navbar = () => {
               onMouseEnter={() => handleEnter("gallery")}
               onMouseLeave={handleLeave}
             >
-              <Box fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+              <Box
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -190,7 +198,6 @@ const Navbar = () => {
               >
                 Gallery
               </Box>
-            
             </Box>
 
             {/* Contact */}
@@ -199,7 +206,8 @@ const Navbar = () => {
               onMouseEnter={() => handleEnter("contact")}
               onMouseLeave={handleLeave}
             >
-              <Box fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+              <Box
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -207,7 +215,6 @@ const Navbar = () => {
               >
                 Contact
               </Box>
-             
             </Box>
           </HStack>
         </Flex>
