@@ -21,7 +21,7 @@ function DefaultSlider({ items }: { items: any }) {
       <SliderContainer className="w-full gap-[26px]">
         {imageUrls.map((url: string, index: number) => (
           <Slider key={index} className="w-full gap-[16px]">
-            <HStack justify={"center"} align={"center"}>
+            <HStack justify={"center"} align={"center"} h={"100%"} w={"100%"}>
 
             <Box
               backgroundImage={`url(${url})`}
@@ -30,7 +30,7 @@ function DefaultSlider({ items }: { items: any }) {
               backgroundRepeat="no-repeat"
               transition="all 0.3s"
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-              h={["500px", "500px", "550px", "600px", "650px", "650px"]}
+              h={["650px", "650px", "650px", "650px", "650px", "650px"]}
               borderRadius={"16px"}
             ></Box>
             </HStack>

@@ -27,17 +27,14 @@ const Gallery = () => {
   }, []);
 
   // STATES FOR THE GALLERY & MODAL
-  const [clickedImage, setClickedImage] = useState<
-    | {
-        img: string;
-        title: string;
-        subheading: string;
-        categories: string[];
-        brand: string;
-        carasoleImg?: { img1: string; img2: string; img3: string }[];
-      }
-    | null
-  >(null);
+  const [clickedImage, setClickedImage] = useState<{
+    img: string;
+    title: string;
+    subheading: string;
+    categories: string[];
+    brand: string;
+    carasoleImg?: { img1: string; img2: string; img3: string }[];
+  } | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   // STATES FOR FILTER & SEARCH (lifted from v0 FilterSearch)
@@ -82,12 +79,13 @@ const Gallery = () => {
         "Comprehensive management service including all our offerings.",
       categories: ["Property Management"],
       brand: "BrandX",
-      carasoleImg : [{
-        img1: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
-        img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        img3: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
-   
-      }]
+      carasoleImg: [
+        {
+          img1: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
+          img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+          img3: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+        },
+      ],
     },
     {
       img: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
@@ -96,12 +94,13 @@ const Gallery = () => {
         "Ensure a pristine, hotel-quality experience for every guest.",
       categories: ["Cleaning", "Linen"],
       brand: "BrandA",
-      carasoleImg : [{
-        img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-   
-      }]
+      carasoleImg: [
+        {
+          img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+          img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+          img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        },
+      ],
     },
     {
       img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
@@ -110,12 +109,13 @@ const Gallery = () => {
         "Transform your space into a stunning, Instagram-worthy retreat.",
       categories: ["Furnishing", "Styling", "Interior"],
       brand: "BrandB",
-      carasoleImg : [{
-        img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-   
-      }]
+      carasoleImg: [
+        {
+          img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+          img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+          img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        },
+      ],
     },
     {
       img: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
@@ -124,12 +124,13 @@ const Gallery = () => {
         "Capture your property's best features with professional photography.",
       categories: ["Photography"],
       brand: "BrandX",
-      carasoleImg : [{
-        img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-   
-      }]
+      carasoleImg: [
+        {
+          img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+          img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+          img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
+        },
+      ],
     },
     // Add more items as needed...
   ];
@@ -165,205 +166,8 @@ const Gallery = () => {
         flexWrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
       >
         {/* LEFT SIDEBAR: Integrated Filter & Search (v0 style) */}
-        <Box
-          w={["100%", "520px", "800px", "300px", "350px", "350px"]}
-          bg="white"
-          borderRadius="8px"
-          boxShadow="0 2px 10px rgba(0, 0, 0, 0.08)"
-          overflow="hidden"
-          fontFamily="system-ui, -apple-system, sans-serif"
-        >
-          <Box p="20px" borderBottom="1px solid #f0f0f0">
-            <Flex
-              as="h2"
-              m="0 0 16px 0"
-              fontSize="18px"
-              fontWeight="600"
-              color="#333333"
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              Filter & Search
-            </Flex>
-            <Box position="relative" mb="16px">
-              <Input
-                type="text"
-                placeholder="Search by keyword..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                w="100%"
-                p="12px 16px 12px 40px"
-                borderRadius="6px"
-                border="1px solid #e0e0e0"
-                fontSize="14px"
-                boxSizing="border-box"
-                _focus={{
-                  borderColor: "#4a90e2",
-                  boxShadow: "0 0 0 3px rgba(74, 144, 226, 0.1)",
-                }}
-              />
-              <Box
-                position="absolute"
-                left="14px"
-                top="50%"
-                transform="translateY(-50%)"
-                pointerEvents="none"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                    stroke="#999999"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </Box>
-              {searchTerm && (
-                <Button
-                  onClick={() => setSearchTerm("")}
-                  position="absolute"
-                  right="10px"
-                  top="50%"
-                  transform="translateY(-50%)"
-                  bg="none"
-                  border="none"
-                  cursor="pointer"
-                  color="#999"
-                  fontSize="18px"
-                  p="4px"
-                  _hover={{ bg: "none" }}
-                  _active={{ bg: "none" }}
-                >
-                  ×
-                </Button>
-              )}
-            </Box>
-            {selectedCategories.length > 0 && (
-              <HStack wrap="wrap" spacing="8px" mb="16px">
-                {selectedCategories.map((category) => (
-                  <Box
-                    key={category}
-                    display="inline-flex"
-                    alignItems="center"
-                    bg="#f0f7ff"
-                    color="#4a90e2"
-                    px="10px"
-                    py="4px"
-                    borderRadius="16px"
-                    fontSize="12px"
-                    fontWeight="500"
-                  >
-                    {category}
-                    <Button
-                      onClick={() => toggleCategory(category)}
-                      bg="none"
-                      border="none"
-                      cursor="pointer"
-                      ml="4px"
-                      color="#4a90e2"
-                      fontSize="14px"
-                      display="flex"
-                      alignItems="center"
-                      justifyContent="center"
-                      minW="16px"
-                      h="16px"
-                      p="0"
-                      _hover={{ bg: "none" }}
-                      _active={{ bg: "none" }}
-                    >
-                      ×
-                    </Button>
-                  </Box>
-                ))}
-                <Button
-                  onClick={clearFilters}
-                  bg="none"
-                  border="none"
-                  cursor="pointer"
-                  fontSize="12px"
-                  color="#666"
-                  textDecoration="underline"
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Clear all
-                </Button>
-              </HStack>
-            )}
-          </Box>
-          {isExpanded && (
-            <Box px="20px" pb="20px">
-              <Text
-                as="h3"
-                mt="20px"
-                mb="12px"
-                fontSize="16px"
-                fontWeight="600"
-                color="#333333"
-              >
-                Categories
-              </Text>
-              <VStack align="start" spacing="10px">
-                {categories.map((category) => {
-                  const isSelected = selectedCategories.includes(category);
-                  return (
-                    <Box
-                      key={category}
-                      onClick={() => toggleCategory(category)}
-                      cursor="pointer"
-                      display="flex"
-                      alignItems="center"
-                      fontSize="14px"
-                      color={isSelected ? "#4a90e2" : "#555"}
-                      transition="color 0.2s"
-                      _hover={{ color: "#4a90e2" }}
-                    >
-                      <Box
-                        w="18px"
-                        h="18px"
-                        border={`1px solid ${
-                          isSelected ? "#4a90e2" : "#d0d0d0"
-                        }`}
-                        borderRadius="4px"
-                        mr="10px"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        bg={isSelected ? "#4a90e2" : "transparent"}
-                        transition="background-color 0.2s, border-color 0.2s"
-                      >
-                        {isSelected && (
-                          <svg
-                            width="12"
-                            height="12"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M5 12L10 17L19 8"
-                              stroke="white"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                            />
-                          </svg>
-                        )}
-                      </Box>
-                      {category}
-                    </Box>
-                  );
-                })}
-              </VStack>
-            </Box>
-          )}
-        </Box>
+     
+      
 
         {/* RIGHT COLUMN: Gallery Grid */}
         <HStack
@@ -412,7 +216,7 @@ const Gallery = () => {
 
       {/* Modal Dialog for Clicked Image */}
       <DialogRoot
-        size="cover"
+        size="full"
         open={modalOpen}
         onOpenChange={(details) => setModalOpen(details.open)}
       >
@@ -420,14 +224,16 @@ const Gallery = () => {
           bg="white"
           color="white"
           rounded="10px"
-        p={[4]}
+        
+          w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+          h={["100%", "100%", "100%", "100%", "100%", "100%"]}
           borderRadius="10px"
         >
           <HStack justify="center" align="center" w="100%" h="100%">
             {clickedImage && (
-           <Box w={"100%"}>
-           <DefaultSlider items={clickedImage.carasoleImg?.[0]} />
-         </Box>
+              <Box  w={["100%", "100%", "100%", "100%", "100%", "100%"]} >
+                <DefaultSlider items={clickedImage.carasoleImg?.[0]} />
+              </Box>
             )}
           </HStack>
           <DialogCloseTrigger
