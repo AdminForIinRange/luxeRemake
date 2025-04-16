@@ -8,20 +8,17 @@ export function getAppwriteConfig() {
   const endpointUrl = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
   const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT;
   const databaseId = process.env.NEXT_PUBLIC_APPWRITE_DATABASE;
-  const usersCollectionId = process.env.NEXT_PUBLIC_APPWRITE_USERS_COLLECTION;
-  const listingsCollectionId = process.env.NEXT_PUBLIC_APPWRITE_LISTINGS_COLLECTION;
-  const realUsersCollectionId = process.env.NEXT_PUBLIC_APPWRITE_REAL_USERS_COLLECTION;
-  const bucketId = process.env.NEXT_PUBLIC_APPWRITE_BUCKET;
-  const secretKey = process.env.NEXT_APPWRITE_KEY;
+  const articlesCollectionId = process.env.NEXT_PUBLIC_APPWRITE_ARTICLE_COLLECTION;
+  const apiKey = process.env.NEXT_PUBLIC_APPWRITE_API_KEY;
+
 
   if (
     !endpointUrl ||
     !projectId ||
     !databaseId ||
-    !usersCollectionId ||
-    !listingsCollectionId ||
-    !bucketId ||
-    !secretKey
+    !articlesCollectionId ||
+    !apiKey
+
   ) {
     throw new Error("One or more required Appwrite environment variables are missing.");
   }
@@ -30,10 +27,8 @@ export function getAppwriteConfig() {
     endpointUrl,
     projectId,
     databaseId,
-    usersCollectionId,
-    listingsCollectionId,
-    realUsersCollectionId,
-    bucketId,
-    secretKey,
+    articlesCollectionId,
+    apiKey
+
   };
 }
