@@ -27,12 +27,14 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
     >
       <Box
         as="img"
-        src={
-          article.pexelImgLink ||
-          // Optionally, you can check for a second image
-          article.pexelImgLink2 ||
-          "https://via.placeholder.com/400x200"
-        }
+        backgroundImage={
+                   
+          `url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`
+      }
+      backgroundSize="cover"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      transition="all 0.3s"
         alt={article.articleTitle}
         w="100%"
         h="200px"

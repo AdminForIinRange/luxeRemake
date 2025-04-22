@@ -314,7 +314,7 @@ const Create = () => {
                   <input
                     name="pexelImgLink2"
                     type="text"
-                    placeholder="Enter second image URL from Pexels (optional)"
+                    placeholder="Enter second image URL from Pexels"
                     style={{
                       width: "100%",
                       padding: "8px",
@@ -330,7 +330,7 @@ const Create = () => {
                     type="submit"
                     colorScheme="blue"
                     width="100%"
-                    isLoading={loading}
+                    loading={loading}
                   >
                     {loading ? "Creating..." : "Create Article"}
                   </Button>

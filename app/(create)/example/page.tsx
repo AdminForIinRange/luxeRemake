@@ -84,10 +84,9 @@ export default async function ArticlePage({ params }: Props) {
                   <Box
                     flex="1"
                     backgroundImage={
-                      article.pexelImgLink
-                        ? `url(${article.pexelImgLink})`
-                        : `url(https://via.placeholder.com/640x360)`
-                    }
+                   
+                      `url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`
+                  }
                     backgroundSize="cover"
                     backgroundPosition="center"
                     backgroundRepeat="no-repeat"
@@ -159,10 +158,9 @@ export default async function ArticlePage({ params }: Props) {
                 <Stack direction={["column", "column", "row"]} gap="8" align="center">
                   <Box
                     flex="1"
-                    backgroundImage={
-                      article.pexelImgLink2
-                        ? `url(${article.pexelImgLink2})`
-                        : `url(https://via.placeholder.com/640x360)`
+                   backgroundImage={
+                   
+                        `url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`
                     }
                     backgroundSize="cover"
                     backgroundPosition="center"
