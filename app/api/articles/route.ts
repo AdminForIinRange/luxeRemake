@@ -42,58 +42,51 @@ const faqs = [
 ];
 
 export async function POST(request: NextRequest) {
-  try {
-    const { topic } = await request.json();
-    if (!topic) {
-      return NextResponse.json({ error: "Missing topic." }, { status: 400 });
+    try {
+      const { topic } = await request.json();
+      if (!topic) {
+        return NextResponse.json({ error: 'Missing topic.' }, { status: 400 });
+      }
+  
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
+      const prompt = `
+  You are the Luxe Management article generation assistant. Write an article about "${topic}" with this exact structure:
+  
+  Title:
+  A concise, engaging headline.
+  
+  Introduction:
+  Why this matters to holiday-home hosts.
+  
+  Body paragraph 1:
+  Key insight or practical advice.
+  
+  Body paragraph 2:
+  Another key insight or next step.
+  
+  Body paragraph 3:
+  One more useful tip.
+  
+  Conclusion:
+  Summarize the main takeaways.
+  
+  How Luxe Management helps:
+  Explain how our services tie into the advice above, referencing our FAQs.
+      `.trim();
+  
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.0-flash',
+        contents: prompt,
+        temperature: 0.7,
+        maxOutputTokens: 700,
+      });
+  
+      return NextResponse.json({ article: response.text });
+    } catch (error: any) {
+      console.error('Article generation error:', error);
+      return NextResponse.json(
+        { error: 'Failed to generate article.', details: error.message },
+        { status: 500 }
+      );
     }
-
-    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
-
-    // Build our prompt: preface with system instructions + FAQs, then user topic
-    const prompt = `
-You are the Luxe Management article generation assistant. Your sole task is to write new articles for our short-term rental property management business. Use a professional, yet warm and authoritative tone consistent with our brand.
-
-Here are our company FAQs to guide your content and ensure accuracy of our services:
-${faqs.map(f => `Q: ${f.question}\nA: ${f.answer}`).join("\n\n")}
-
-When writing an article about "${topic}", follow this exact structure:
-
-Title:
-A concise, engaging headline.
-
-Introduction:
-A brief overview of why the topic matters to holiday home hosts.
-
-Body paragraph 1:
-Key insight or practical advice—formatted as a full paragraph.
-
-Body paragraph 2:
-Another key insight or next step—also a full paragraph.
-
-Conclusion:
-A summary that reinforces the main takeaways.
-
-How Luxe Management helps:
-Explain how Luxe Management’s services align with the advice given, referencing our FAQs where relevant.
-
-
-Begin now.
-    `.trim();
-
-    const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
-      contents: prompt,
-      temperature: 0.7,
-      maxOutputTokens: 700,
-    });
-
-    return NextResponse.json({ article: response.text });
-  } catch (error: any) {
-    console.error("Article generation error:", error);
-    return NextResponse.json(
-      { error: "Failed to generate article.", details: error.message },
-      { status: 500 }
-    );
   }
-}
