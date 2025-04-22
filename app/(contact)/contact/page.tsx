@@ -44,7 +44,7 @@ const Contact = () => {
             Contact Information
           </Text>
 
-          <Stack spacing={"20px"} fontSize={"16px"} fontFamily={"Raleway"}>
+          <Stack gap={"20px"} fontSize={"16px"} fontFamily={"Raleway"}>
             <Text fontWeight={500} color={"#333"}>
               Email: <span style={{ fontWeight: 400 }}>contact@luxemanagements.com</span>
             </Text>

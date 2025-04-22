@@ -23,7 +23,7 @@ export default function Article() {
                 fontSize={["2rem", "2.5rem", "3.25rem"]}
                 fontWeight="800"
                 lineHeight="1.1"
-                letterSpacing="-0.02em"
+                lettergap="-0.02em"
               >
                 Luxury Property Management: Elevating Your Rental Experience
               </Text>

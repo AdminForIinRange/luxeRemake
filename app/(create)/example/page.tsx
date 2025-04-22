@@ -28,7 +28,7 @@ export default async function ArticlePage({ params }: Props) {
                 fontSize={["2rem", "2.5rem", "3.25rem"]}
                 fontWeight="800"
                 lineHeight="1.1"
-                letterSpacing="-0.02em"
+                lettergap="-0.02em"
               >
                 {article.articleTitle}
               </Text>

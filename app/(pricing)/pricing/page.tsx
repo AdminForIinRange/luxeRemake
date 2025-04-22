@@ -408,7 +408,7 @@ const Pricing = () => {
                   textAlign="left"
                   zIndex={1}
                 >
-                  <HStack spacing="5px">
+                  <HStack gap="5px">
                     <Text
                       fontSize={[
                         "30px",
@@ -514,7 +514,7 @@ const Pricing = () => {
                 fontWeight="700"
                 color="black"
                 mb="5px"
-                letterSpacing="-0.5px"
+                lettergap="-0.5px"
                 fontFamily="Raleway, sans-serif"
               >
                 Styling & Photography
@@ -527,7 +527,7 @@ const Pricing = () => {
             {/* Card Body */}
             <Box p="30px" display="flex" flexDirection="column" flex="1">
               {/* Pricing Section */}
-              <VStack spacing="12px" align="stretch" mb="25px">
+              <VStack gap="12px" align="stretch" mb="25px">
                 <Flex
                   justify="space-between"
                   pb="12px"
@@ -551,7 +551,7 @@ const Pricing = () => {
               </VStack>
 
               {/* Feature List */}
-              <VStack as="ul" align="start" spacing="10px" mb="30px" pl="0">
+              <VStack as="ul" align="start" gap="10px" mb="30px" pl="0">
                 {[
                   "Professional photographer",
                   "Expert styling consultation",
@@ -612,7 +612,7 @@ const Pricing = () => {
                 fontSize="1.8rem"
                 fontWeight="700"
                 mb="5px"
-                letterSpacing="-0.5px"
+                lettergap="-0.5px"
                 fontFamily="Raleway, sans-serif"
               >
                 Furnishing & Setup
@@ -623,7 +623,7 @@ const Pricing = () => {
             </Box>
 
             <Box p="30px" display="flex" flexDirection="column" flex="1">
-              <VStack spacing="12px" align="stretch" mb="25px">
+              <VStack gap="12px" align="stretch" mb="25px">
                 <Flex justify="space-between">
                   <Text fontWeight="500" color="#6c757d" fontSize="0.95rem">
                     Total Item Value
@@ -634,7 +634,7 @@ const Pricing = () => {
                 </Flex>
               </VStack>
 
-              <VStack as="ul" align="start" spacing="10px" mb="30px" pl="0">
+              <VStack as="ul" align="start" gap="10px" mb="30px" pl="0">
                 {[
                   "Curated furniture selection",
                   "Professional installation",
@@ -697,7 +697,7 @@ const Pricing = () => {
                 fontSize="1.8rem"
                 fontWeight="700"
                 mb="5px"
-                letterSpacing="-0.5px"
+                lettergap="-0.5px"
                 fontFamily="Raleway, sans-serif"
               >
                 Premium Cleaning
@@ -708,7 +708,7 @@ const Pricing = () => {
             </Box>
 
             <Box p="30px" display="flex" flexDirection="column" flex="1">
-              <VStack spacing="12px" align="stretch" mb="25px">
+              <VStack gap="12px" align="stretch" mb="25px">
                 <Flex justify="space-between">
                   <Text fontWeight="500" color="#6c757d" fontSize="0.95rem">
                     Per Service
@@ -727,7 +727,7 @@ const Pricing = () => {
                 </Flex>
               </VStack>
 
-              <VStack as="ul" align="start" spacing="10px" mb="30px" pl="0">
+              <VStack as="ul" align="start" gap="10px" mb="30px" pl="0">
                 {[
                   "Deep cleaning services",
                   "Premium linen change",

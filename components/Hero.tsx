@@ -583,7 +583,7 @@ const Hero = () => {
           {/* Images Container */}
 
           <HStack
-            spacing={["10px", "20px", "40px"]}
+            gap={["10px", "20px", "40px"]}
             justify="center"
             align="center"
             flexWrap="wrap"

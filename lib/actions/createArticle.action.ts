@@ -11,6 +11,19 @@ export interface CreateArticleResponse {
   error?: string;
 }
 
+// Helper to pick a random date in 2023–2024 and format it as "April 11, 2025"
+function getRandomDateString(): string {
+  const start = new Date(2023, 0, 1).getTime();      // Jan 1, 2023
+  const end   = new Date(2024, 11, 31).getTime();    // Dec 31, 2024
+  const randomTs = start + Math.random() * (end - start);
+  const d = new Date(randomTs);
+  return d.toLocaleDateString("en-US", {
+    month: "long",
+    day:   "numeric",
+    year:  "numeric",
+  });
+}
+
 export const createArticle = async (
   formData: FormData
 ): Promise<CreateArticleResponse> => {
@@ -21,42 +34,43 @@ export const createArticle = async (
 
   const databases = new Databases(client);
 
-  // Retrieve form values using the new schema keys (defaulting to empty strings)
-  const articleTitle = formData.get("articleTitle")?.toString() || "";
-  const introductionSubheading = formData.get("introductionSubheading")?.toString() || "";
-  const introductionContent = formData.get("introductionContent")?.toString() || "";
-  const contentOneSubheadingTitle = formData.get("contentOneSubheadingTitle")?.toString() || "";
-  const contentTwoSubheadingTitle = formData.get("contentTwoSubheadingTitle")?.toString() || "";
-  const contentOneParagraph = formData.get("contentOneParagraph")?.toString() || "";
-  const conclusionSubheading = formData.get("conclusionSubheading")?.toString() || "";
-  const conclusionParagraph = formData.get("conclusionParagraph")?.toString() || "";
-  const extraSubheading = formData.get("extraSubheading")?.toString() || "";
-  const extraContentParagraph = formData.get("extraContentParagraph")?.toString() || "";
-
-
-  const pexelImgLink = formData.get("pexelImgLink")?.toString() || "";
-  const pexelImgLink2 = formData.get("pexelImgLink2")?.toString() || "";
+  // Retrieve form values
+  const articleTitle                = formData.get("articleTitle")?.toString() || "";
+  const introductionSubheading      = formData.get("introductionSubheading")?.toString() || "";
+  const introductionContent         = formData.get("introductionContent")?.toString() || "";
+  const contentOneSubheadingTitle   = formData.get("contentOneSubheadingTitle")?.toString() || "";
+  const contentOneParagraph         = formData.get("contentOneParagraph")?.toString() || "";
+  const contentTwoSubheadingTitle   = formData.get("contentTwoSubheadingTitle")?.toString() || "";
+  const contentTwoParagraph         = formData.get("contentTwoParagraph")?.toString() || "";
   const contentThreeSubheadingTitle = formData.get("contentThreeSubheadingTitle")?.toString() || "";
-  const contentThreeParagraph = formData.get("contentThreeParagraph")?.toString() || "";
-  const contentTwoParagraph = formData.get("contentTwoParagraph")?.toString() || "";
+  const contentThreeParagraph       = formData.get("contentThreeParagraph")?.toString() || "";
+  const conclusionSubheading        = formData.get("conclusionSubheading")?.toString() || "";
+  const conclusionParagraph         = formData.get("conclusionParagraph")?.toString() || "";
+  const extraSubheading             = formData.get("extraSubheading")?.toString() || "";
+  const extraContentParagraph       = formData.get("extraContentParagraph")?.toString() || "";
+  const pexelImgLink                = formData.get("pexelImgLink")?.toString() || "";
+  const pexelImgLink2               = formData.get("pexelImgLink2")?.toString() || "";
 
-  // Build the document with user inputs using the updated keys
+  // Build the document, including our new random-date string
   const articleDoc = {
     articleTitle,
     introductionSubheading,
     introductionContent,
     contentOneSubheadingTitle,
-    contentTwoSubheadingTitle,
     contentOneParagraph,
+    contentTwoSubheadingTitle,
+    contentTwoParagraph,
+    contentThreeSubheadingTitle,
+    contentThreeParagraph,
     conclusionSubheading,
     conclusionParagraph,
     extraSubheading,
     extraContentParagraph,
-    pexelImgLink, // Pexels image link 1
-    pexelImgLink2, // Pexels image link 2
-    contentThreeSubheadingTitle,
-    contentThreeParagraph,
-    contentTwoParagraph,
+    pexelImgLink,
+    pexelImgLink2,
+
+    // NEW: set a formatted, random date string
+    date: getRandomDateString(),
   };
 
   try {

@@ -33,18 +33,7 @@ export default async function NewsPage() {
             Discover how our innovative approach to property management and
             real estate investments can elevate your portfolio to new heights.
           </Text>
-          <Box
-            as="button"
-            bg={"#0A0F29"}
-            color="white"
-            px="20px"
-            py="10px"
-            borderRadius="md"
-            fontWeight="semibold"
-            _hover={{ bg: "blue.900" }}
-          >
-            Get Started
-          </Box>
+    
         </Box>
         <Box flex="1">
           <Box

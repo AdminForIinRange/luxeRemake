@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Logo and Brand */}
           <Box mb={{ base: "20px", md: "0" }}>
-            <HStack spacing="12px">
+            <HStack gap="12px">
               <Box w={{ base: "40px", md: "70px" }} h="auto">
                 <Image src={LuxeLogo} alt="logo" />
               </Box>
@@ -41,7 +41,7 @@ const Footer = () => {
               <Text fontSize={{ base: "10px", md: "14px" }} fontWeight="600" textTransform="uppercase" mb="8px">
                 Resources
               </Text>
-              <Stack spacing="6px">
+              <Stack gap="6px">
                 <Box>
                   <Text fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
                     Luxe Managements
@@ -56,7 +56,7 @@ const Footer = () => {
               <Text fontSize={{ base: "10px", md: "14px" }} fontWeight="600" textTransform="uppercase" mb="8px">
                 Follow Us
               </Text>
-              <Stack spacing="6px">
+              <Stack gap="6px">
                 <Box>
                   <Text as="a" href="https://www.instagram.com/luxemanagements/" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
                     Instagram
@@ -70,7 +70,7 @@ const Footer = () => {
               <Text fontSize={{ base: "10px", md: "14px" }} fontWeight="600" textTransform="uppercase" mb="8px">
                 Legal
               </Text>
-              <Stack spacing="6px">
+              <Stack gap="6px">
                 <Box>
                   <Text as="a" href="#" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
                     Privacy Policy

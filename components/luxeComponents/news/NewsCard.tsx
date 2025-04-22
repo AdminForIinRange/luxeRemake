@@ -27,25 +27,21 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
     >
       <Box
         as="img"
-        backgroundImage={
-                   
-          `url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`
-      }
-      backgroundSize="cover"
-      backgroundPosition="center"
-      backgroundRepeat="no-repeat"
-      transition="all 0.3s"
-        alt={article.articleTitle}
+        backgroundImage={`url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`}
+        backgroundSize="cover"
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        transition="all 0.3s"
         w="100%"
         h="200px"
         objectFit="cover"
       />
-      <Stack spacing="10px" p="20px">
+      <Stack gap="10px" p="20px">
         <Text fontSize="lg" fontWeight="semibold">
           {article.articleTitle}
         </Text>
         <Text fontSize="sm" color="gray.500">
-          {article.date || "Unknown Date"}
+          {article.date }
         </Text>
         <Text fontSize="sm" color="gray.700">
           {article.excerpt ||
@@ -58,9 +54,9 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
             <Text fontSize="sm" fontWeight="bold" mb="5px">
               Submissions:
             </Text>
-            <Stack spacing="5px">
+            <Stack gap="5px">
               {article.submissions.map((submission, sIndex) => (
-                <HStack key={sIndex} spacing="5px" align="start">
+                <HStack key={sIndex} gap="5px" align="start">
                   <Text fontWeight="bold" fontSize="sm">
                     {submission.author}:
                   </Text>

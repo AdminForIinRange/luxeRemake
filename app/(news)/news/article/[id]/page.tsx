@@ -1,16 +1,19 @@
-// app/article/[id]/page.tsx
+// app/(news)/news/article/[id]/page.tsx
 import { getArticle } from "@/lib/actions/getArticle.action";
 import { Article } from "@/lib/types/article";
 import { Box, Stack, HStack, VStack, Text } from "@chakra-ui/react";
 import { CalendarIcon, UserIcon, ClockIcon } from "lucide-react";
 
 type Props = {
-  params: { id: string };
+  // params is now a Promise
+  params: Promise<{ id: string }>;
 };
 
 export default async function ArticlePage({ params }: Props) {
-  const articleRes = await getArticle(params.id);
+  // await params before using its properties
+  const { id } = await params;
 
+  const articleRes = await getArticle(id);
   if (!articleRes.success || !articleRes.data) {
     return <div>Article not found.</div>;
   }
@@ -28,7 +31,7 @@ export default async function ArticlePage({ params }: Props) {
                 fontSize={["2rem", "2.5rem", "3.25rem"]}
                 fontWeight="800"
                 lineHeight="1.1"
-                letterSpacing="-0.02em"
+                lettergap="-0.02em"
               >
                 {article.articleTitle}
               </Text>
@@ -112,23 +115,7 @@ export default async function ArticlePage({ params }: Props) {
                     boxShadow="lg"
                     position="relative"
                   >
-                    <Box
-                      position="absolute"
-                      bottom="0"
-                      left="0"
-                      right="0"
-                      bg="rgba(0,0,0,0.6)"
-                      p="3"
-                    >
-                      <Text
-                        fontSize="sm"
-                        color="white"
-                        fontStyle="italic"
-                        textAlign="center"
-                      >
-                        {article.articleTitle} image
-                      </Text>
-                    </Box>
+                
                   </Box>
                 </Stack>
               </Box>
@@ -203,7 +190,7 @@ export default async function ArticlePage({ params }: Props) {
                 </Stack>
               </Box>
 
-              {/* Content Three Section (if provided) */}
+              {/* Content Three Section */}
               {article.contentThreeSubheadingTitle &&
                 article.contentThreeParagraph && (
                   <Box id="content-three" mb="16" scrollMarginTop="5rem">
