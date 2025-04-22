@@ -57,68 +57,82 @@ const Create = () => {
     }
   }
 
- async function generateRandomArticle() {
-  setAiLoading(true);
-  try {
-    // 1) pick topic
-    const topic = sampleTopics[Math.floor(Math.random() * sampleTopics.length)];
+  async function generateRandomArticle() {
+    setAiLoading(true);
+    try {
+      // pick a random topic
+      const topic =
+        sampleTopics[Math.floor(Math.random() * sampleTopics.length)];
+    // example: generate just the Introduction
+const resp = await fetch("/api/articles", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    topic, 
+    section: "Introduction"
+  }),
+});
 
-    // 2) fetch entire article
-    const resp = await fetch("/api/articles", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ topic }),
-    });
-    const { article: text } = await resp.json();
 
-    // 3) helper to pull out any section
-    const getSection = (label: string) => {
-      const re = new RegExp(
-        `${label}:\\s*([\\s\\S]*?)(?=\\n[A-Z][^\\n]+?:|$)`,
-        "i"
+      const { article: text } = await resp.json();
+
+      // helper to extract sections
+      const getSection = (label: string) => {
+        const re = new RegExp(
+          `${label}:\\s*([\\s\\S]*?)(?=\\n[A-Z][a-z]+:|$)`,
+          "i",
+        );
+        const m = text.match(re);
+        return m ? m[1].trim() : "";
+      };
+
+      // fill in each field
+      if (titleRef.current) titleRef.current.value = getSection("Title");
+      if (introContentRef.current) {
+        const intro = getSection("Introduction");
+        // split Introduction into subheading + content if you like:
+        if (introSubRef.current) introSubRef.current.value = "Introduction";
+        introContentRef.current.value = intro;
+      }
+      if (c1TitleRef.current) c1TitleRef.current.value = "Insight 1";
+      if (c1ParaRef.current)
+        c1ParaRef.current.value = getSection("Body paragraph 1");
+      if (c2TitleRef.current) c2TitleRef.current.value = "Insight 2";
+      if (c2ParaRef.current)
+        c2ParaRef.current.value = getSection("Body paragraph 2");
+      if (conclSubRef.current) conclSubRef.current.value = "Conclusion";
+      if (conclParaRef.current)
+        conclParaRef.current.value = getSection("Conclusion");
+      if (extraSubRef.current)
+        extraSubRef.current.value = "How Luxe Management helps";
+      if (extraParaRef.current)
+        extraParaRef.current.value = getSection("How Luxe Management helps");
+
+      // pull out the JSON array of Pexels URLs at the end
+      const urlsMatch = text.match(
+        /\[(https?:\/\/[^]+\.(?:jpg|jpeg|png)[^\]]*)\]/,
       );
-      const m = text.match(re);
-      return m ? m[1].trim() : "";
-    };
-
-    // 4) fill in each field
-    if (titleRef.current)       titleRef.current.value = getSection("Title");
-    if (introSubRef.current)    introSubRef.current.value = "Introduction";
-    if (introContentRef.current) introContentRef.current.value = getSection("Introduction");
-
-    if (c1TitleRef.current)     c1TitleRef.current.value = "Insight 1";
-    if (c1ParaRef.current)      c1ParaRef.current.value = getSection("Body paragraph 1");
-
-    if (c2TitleRef.current)     c2TitleRef.current.value = "Insight 2";
-    if (c2ParaRef.current)      c2ParaRef.current.value = getSection("Body paragraph 2");
-
-    if (c3TitleRef.current)     c3TitleRef.current.value = "Insight 3";
-    if (c3ParaRef.current)      c3ParaRef.current.value = getSection("Body paragraph 3");
-
-    if (conclSubRef.current)    conclSubRef.current.value = "Conclusion";
-    if (conclParaRef.current)   conclParaRef.current.value = getSection("Conclusion");
-
-    if (extraSubRef.current)    extraSubRef.current.value = "How Luxe Management helps";
-    if (extraParaRef.current)   extraParaRef.current.value = getSection("How Luxe Management helps");
-
-    // 5) your Pexels‑URL extraction can stay the same…
-    const urlsMatch = text.match(/\[(https?:\/\/[^\]]+\.(?:jpg|jpeg|png)[^\]]*)\]/);
-    if (urlsMatch) {
-      try {
-        const urls = JSON.parse(urlsMatch[0]);
-        const extractId = (u: string) => (u.match(/-(\d+)(?:\/)?$/)?.[1] ?? "");
-        if (pexelImgLinkRef.current)  pexelImgLinkRef.current.value = extractId(urls[0]);
-        if (pexelImgLink2Ref.current) pexelImgLink2Ref.current.value = extractId(urls[1]);
-      } catch {}
+      if (urlsMatch) {
+        try {
+          const urls = JSON.parse(urlsMatch[0]);
+          // extract just the numeric ID from the Pexels page link
+          const extractId = (u: string) => {
+            const m = u.match(/-(\d+)(?:\/)?$/);
+            return m ? m[1] : "";
+          };
+          if (pexelImgLinkRef.current)
+            pexelImgLinkRef.current.value = extractId(urls[0]);
+          if (pexelImgLink2Ref.current)
+            pexelImgLink2Ref.current.value = extractId(urls[1]);
+        } catch {}
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Failed to generate AI article.");
+    } finally {
+      setAiLoading(false);
     }
-
-  } catch (e) {
-    console.error(e);
-    alert("Failed to generate AI article.");
-  } finally {
-    setAiLoading(false);
   }
-}
 
   return (
     <Box minH="100vh" py={["8", "12", "16"]}>
