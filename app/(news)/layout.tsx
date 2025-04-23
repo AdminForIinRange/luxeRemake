@@ -1,21 +1,16 @@
-import React, from "react";
-import Image from "next/image";
-import Navbar from "@/components/Navbar/Navbar";
+// app/news/layout.tsx
+
+import React from "react";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-
-const Layout = ({ children }: { children: React.ReactNode }) => {
-
-
+export const dynamic = "force-dynamic";   // <-- every child route under /news
+export default function NewsLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-    
       <Navbar />
-      <div>{children}</div>
-      
+      <main>{children}</main>
       <Footer />
     </>
   );
-};
-
-export default Layout;
+}

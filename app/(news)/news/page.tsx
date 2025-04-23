@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import { Box, Stack, Text, Flex } from "@chakra-ui/react";
 import { getAllArticles } from "@/lib/actions/getAllArticles.action";
