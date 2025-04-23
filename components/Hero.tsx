@@ -17,7 +17,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { signOutUser } from "@/lib/actions/user.actions";
+// import { signOutUser } from "@/lib/actions/user.actions";
 // import { useUser } from "@/context/UserContext";
 import Image from "next/image";
 

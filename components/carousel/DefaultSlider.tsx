@@ -1,4 +1,6 @@
-import React, { ReactNode } from "react";
+"use client";
+
+import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import Carousel, {
   Slider,
@@ -7,49 +9,57 @@ import Carousel, {
   SliderNextButton,
   SliderPrevButton,
 } from "@/components/core/carousel";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Box, HStack } from "@chakra-ui/react";
 
-function DefaultSlider({ items }: { items: any }) {
-    const OPTIONS: EmblaOptionsType = { loop: false };
-  
-    const imageUrls = Object.values(items) as string[]; // turns {img1, img2, ...} into array
-  return (
-    <>
-      <Carousel options={OPTIONS}>
-      <SliderContainer className="w-full gap-[26px]">
-        {imageUrls.map((url: string, index: number) => (
-          <Slider key={index} className="w-full gap-[16px]">
-            <HStack justify={"center"} align={"center"} h={"100%"} w={"100%"}>
+interface DefaultSliderProps {
+  items: Record<string, StaticImageData>;
+}
 
-            <Box
-              backgroundImage={`url(${url})`}
-              backgroundSize="contain"
-              backgroundPosition="center"
-              backgroundRepeat="no-repeat"
-              transition="all 0.3s"
-              w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-              h={["650px", "650px", "650px", "650px", "650px", "650px"]}
-              borderRadius={"16px"}
-            ></Box>
+const DefaultSlider: React.FC<DefaultSliderProps> = ({ items }) => {
+  const OPTIONS: EmblaOptionsType = { loop: false };
+  const imageDatas = Object.values(items) as StaticImageData[];
+
+  return (
+    <Carousel options={OPTIONS}>
+      <SliderContainer className="w-full gap-[26px]">
+        {imageDatas.map((imgData, idx) => (
+          <Slider key={idx} className="w-full gap-[16px]">
+            <HStack justify="center" align="center" w="100%" h="100%">
+              <Box
+                position="relative"
+                w="100%"
+                h="650px"
+                borderRadius="16px"
+                overflow="hidden"
+              >
+                <Image
+                  src={imgData}
+                  alt={`Slide ${idx + 1}`}
+                  fill
+                  style={{ objectFit: "contain" }}
+                  priority={idx === 0}  // optionally prioritize the first image
+                />
+              </Box>
             </HStack>
           </Slider>
         ))}
       </SliderContainer>
 
-      <SliderPrevButton className="absolute top-[50%] p-2 border-2 rounded-full left-4 bg-white/25 dark:bg-black/25 dark:border-white backdrop-blur-sm text-primary disabled:opacity-20">
+      <SliderPrevButton className="absolute top-[50%] left-4 p-2 border-2 rounded-full bg-white/25 backdrop-blur-sm dark:bg-black/25 dark:border-white text-primary disabled:opacity-20">
         <ChevronLeft className="w-8 h-8" />
       </SliderPrevButton>
-      <SliderNextButton className="absolute right-4 p-2 border-2 rounded-full top-[50%] bg-white/25 dark:bg-black/25 dark:border-white backdrop-blur-sm text-primary disabled:opacity-20">
+
+      <SliderNextButton className="absolute top-[50%] right-4 p-2 border-2 rounded-full bg-white/25 backdrop-blur-sm dark:bg-black/25 dark:border-white text-primary disabled:opacity-20">
         <ChevronRight className="w-8 h-8" />
       </SliderNextButton>
+
       <div className="flex justify-center py-2">
         <SliderDotButton />
       </div>
     </Carousel>
-    </>
   );
-}
+};
 
 export default DefaultSlider;

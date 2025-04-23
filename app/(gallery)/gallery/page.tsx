@@ -84,7 +84,7 @@ const Gallery = () => {
   // Gallery items (sample data)
   const galleryItems = [
     {
-      img: houseOneImg1,
+      img: houseOneImg10,
       title: "Property Management",
       subheading:
         "Comprehensive management service including all our offerings.",
@@ -92,6 +92,7 @@ const Gallery = () => {
       brand: "BrandX",
       carasoleImg: [
         {
+          img1:houseOneImg10,
           img2:houseOneImg2,
           img3:houseOneImg3,
           img4:houseOneImg4,
@@ -100,7 +101,7 @@ const Gallery = () => {
           img7:houseOneImg7,
           img8:houseOneImg8,
           img9:houseOneImg9,
-          img10:houseOneImg10,
+          img10:houseOneImg1,
         },
       ],
     },
@@ -152,39 +153,41 @@ const Gallery = () => {
           flexWrap="wrap"
           gap={["25px", "25px", "25px", "25px", "25px", "25px"]}
         >
-          {filteredGalleryItems.map((item, index) => (
-            <VStack key={index}>
-              <Box
-                onClick={() => {
-                  setClickedImage(item);
-                  setModalOpen(true);
-                }}
-                backgroundImage={`${item.img})`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition="all 0.3s"
-                w={["250px", "250px", "250px", "300px", "350px", "350px"]}
-                h={["250px", "250px", "250px", "300px", "350px", "350px"]}
-                borderRadius="16px"
-                _hover={{ transform: "scale(1.01)" }}
-                cursor="pointer"
-                p="30px"
-                display="flex"
-              >
-                <VStack
-                  color="white"
-                  mt="20px"
-                  w="100%"
-                  h="100%"
-                  justifyContent="end"
-                  alignItems="end"
-                >
-                  {/* Optional overlay text */}
-                </VStack>
-              </Box>
-            </VStack>
-          ))}
+{filteredGalleryItems.map((item, index) => (
+  <VStack key={index}>
+    <Box
+      onClick={() => {
+        setClickedImage(item);
+        setModalOpen(true);
+      }}
+      /* ★ HERE ★ */
+      backgroundImage={`url(${item.img.src})`}
+      backgroundSize="cover"
+      backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      transition="all 0.3s"
+      w={["250px", "300px", "350px"]}
+      h={["250px", "300px", "350px"]}
+      borderRadius="16px"
+      _hover={{ transform: "scale(1.01)" }}
+      cursor="pointer"
+      display="flex"
+      p="30px"
+    >
+      <VStack
+        color="white"
+        mt="20px"
+        w="100%"
+        h="100%"
+        justifyContent="end"
+        alignItems="end"
+      >
+        {/* overlay text, etc. */}
+      </VStack>
+    </Box>
+  </VStack>
+))}
+
         </HStack>
       </HStack>
 

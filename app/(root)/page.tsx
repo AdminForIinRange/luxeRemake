@@ -19,8 +19,8 @@ import RepeatAnimation from "@/components/customUI/RepeatAnimation/RepeatAnimati
 import SmoothScroll from "@/components/customUI/SmoothScroll/SmoothScroll";
 import { HeroScrollDemo } from "@/components/customUI/ContainerScrollAnimation/HeroScrollDemo";
 import { MacbookScrollDemo } from "@/components/customUI/MacbookScroll/MacbookScrollDemo";
-// import { useUser } from "@/context/UserContext";
-import { getCurrentUser } from "@/lib/actions/user.actions";
+// // import { useUser } from "@/context/UserContext";
+// import { getCurrentUser } from "@/lib/actions/user.actions";
 import TestingCreateListingDB from "@/components/TestingCreateListingDB";
 import { Box, HStack, Text } from "@chakra-ui/react";
 import WaitingList from "@/components/waitingList/WaitingList";
