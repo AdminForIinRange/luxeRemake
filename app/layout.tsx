@@ -8,6 +8,7 @@ import ClientProvider from "@/components/chakra-snippets/ClientProvider";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export const metadata = {
   title: "Luxe Management",
 
@@ -51,6 +52,7 @@ export default function RootLayout({
         style={{ background: "#fff", scrollBehavior: "smooth" }}
       >
         <Analytics />
+        <SpeedInsights />
         {/* Wrap with UserProvider */}{" "}
         {/* 
         <UserProvider>
