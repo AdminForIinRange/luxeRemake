@@ -1,7 +1,7 @@
 // app/news/layout.tsx
 
 import React from "react";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 
 export const dynamic = "force-dynamic";   // <-- every child route under /news
