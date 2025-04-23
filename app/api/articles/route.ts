@@ -1,45 +1,9 @@
+/* eslint-disable no-irregular-whitespace */
 // /app/api/articles/route.ts
 
 import { NextResponse, NextRequest } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
-const faqs = [
-  {
-    question: "What services does your Airbnb management offer?",
-    answer:
-      "At Luxe Managements, we offer end-to-end Airbnb and short-stay property management. From creating standout listings and handling all guest communication, to dynamic pricing, professional cleaning, hotel-quality linen, and round-the-clock maintenance — we take care of everything so you can enjoy stress-free passive income. Our service is tailored to deliver a seamless, high-end hosting experience.",
-  },
-  {
-    question: "How do you help maximize rental income?",
-    answer:
-      "We use real-time market data and advanced pricing tools to ensure your property is always listed at the optimal rate. Combined with high-converting listings, professional photography, and multi-platform exposure across Airbnb, Booking.com, and more, our strategies regularly boost income by up to 40%. Higher occupancy, better reviews, and premium nightly rates—that’s the Luxe difference.",
-  },
-  {
-    question: "What types of properties do you manage?",
-    answer:
-      "Luxe specializes in managing a diverse portfolio of short-term rental properties, including stylish city apartments, family homes, luxury holiday stays, and boutique accommodations. Whether you’re in Adelaide or surrounding regions, we tailor our service to suit your property type and investment goals.",
-  },
-  {
-    question: "How does the linen and amenity service work?",
-    answer:
-      "We provide premium linen and amenity packages for every guest stay. Think crisp white sheets, plush towels, high-thread-count bedding, and luxury toiletries — all refreshed and professionally laundered between bookings. Our goal is to elevate the guest experience to five-star hotel standards, every time.",
-  },
-  {
-    question: "How can I get started with your services?",
-    answer:
-      "Getting started with Luxe is simple. Book a free consultation with our team — we’ll inspect your property, provide income projections, and walk you through the onboarding process. From there, we handle everything: staging, photography, listings, guest communication, and ongoing operations. You relax — we do the work.",
-  },
-  {
-    question: "What happens if there's an emergency at my property?",
-    answer:
-      "We offer 24/7 incident response and property oversight. Whether it’s a late-night lockout or a maintenance issue, our local team is on-call and ready to act immediately. With Luxe, your property is always protected — and your guests are always looked after.",
-  },
-  {
-    question: "Do you handle property marketing?",
-    answer:
-      "Absolutely. First impressions matter, and our in-house marketing team ensures your property stands out with professional photography, compelling copywriting, and strategic placement across high-traffic platforms. We showcase your home’s best features to attract premium bookings and enhance long-term visibility.",
-  },
-];
 
 export async function POST(request: NextRequest) {
     try {
@@ -50,29 +14,50 @@ export async function POST(request: NextRequest) {
   
       const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
       const prompt = `
-  You are the Luxe Management article generation assistant. Write an article about "${topic}" with this exact structure:
-  
-  Title:
-  A concise, engaging headline.
-  
-  Introduction:
-  Why this matters to holiday-home hosts.
-  
-  Body paragraph 1:
-  Key insight or practical advice.
-  
-  Body paragraph 2:
-  Another key insight or next step.
-  
-  Body paragraph 3:
-  One more useful tip.
-  
-  Conclusion:
-  Summarize the main takeaways.
-  
-  How Luxe Management helps:
-  Explain how our services tie into the advice above, referencing our FAQs.
+      You are the Luxe Management article generation assistant.  You have at your disposal a library of high-quality reference articles that cover every facet of holiday-home hosting, including:
+      
+        • Getting Started: “Diving In: Your Comprehensive Guide to Getting Started with Holiday Home Hosting”  
+        • Space Preparation: “Crafting the Perfect Welcome: Setting Up Your Holiday Home for Guest Success”  
+        • Legal & Regulatory: “Navigating the Legal Landscape: Essential Regulatory Considerations for Holiday Home Hosting”  
+        • Listing Creation: “Creating a Compelling Listing: Descriptions, Photos & Pricing”  
+        • Booking Process: “Mastering the Booking Process: Platforms, Calendars & Inquiries”  
+        • Guest Communication: “Providing Excellent Customer Service from Pre-Arrival to Post-Departure”  
+        • Check-In/Out: “Streamlining Check-in and Check-out: Smooth Arrival & Departure”  
+        • Cleaning & Maintenance: “Cleaning and Maintenance Best Practices: Consistent Cleanliness & Upkeep”  
+        • Pricing & Revenue: “Pricing Strategies and Maximizing Revenue: Dynamic Pricing, Seasonality & Add-On Income”  
+        • Issue Management: “Dealing with Guest Issues and Emergencies: Protocols & Communication”  
+        • Reviews & Reputation: “Building Positive Reviews and Reputation: Feedback & Encouragement Strategies”  
+        • Advanced Topics: Break-even analysis; demand-based pricing; neighborhood pricing trends; platform pricing tools; discounts & promotions; stay-length restrictions; package deals; performance tracking; value-added bundles; market forecasting; professional photography; SEO & keyword optimization; USPs; video tours; content updates; international translations; inventory & damage reporting; preventative maintenance; eco-friendly cleaning; turnover optimization; and more.
+      
+      When you write the new article on “\${topic}”, **synthesize fresh insights** from these themes without copying any single reference verbatim.  Follow _this exact structure_:
+      
+      Title:  
+       A concise, engaging headline that includes the core keyword.
+      
+      Introduction:  
+       Explain why “\${topic}” matters to holiday-home hosts, setting context and hooking the reader.
+      
+      Body paragraph 1:  
+       Deliver the first key insight or practical step—grounded in one or more of the reference themes.
+      
+      Body paragraph 2:  
+       Present a second actionable tip or deeper dive—drawing on related best practices.
+      
+      Body paragraph 3:  
+       Offer one more useful recommendation or next step—linking back to the broader hosting journey.
+      
+      Conclusion:  
+       Summarize the main takeaways and encourage the host to act.
+      
+      How Luxe Management helps:  
+       A brief, persuasive paragraph highlighting how our end-to-end services support hosts in implementing the advice above (e.g., listing creation, guest communications, cleaning protocols, pricing optimization, legal compliance, etc.).
+      
+      **Tone & Style**  
+      • Clear, professional, friendly—mirroring the reference articles’ approachable expertise.  
+      • Original phrasing and examples—do not replicate any single sentence from the sources.  
+      • About 700–800 words in total.  
       `.trim();
+
   
       const response = await ai.models.generateContent({
         model: 'gemini-2.0-flash',

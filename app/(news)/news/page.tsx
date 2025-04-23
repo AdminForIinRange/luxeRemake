@@ -1,14 +1,38 @@
+"use client";
 
-
-import React from "react";
-import { Box, Stack, Text, Flex } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Box, Stack, Text, Flex, Button, Spinner } from "@chakra-ui/react";
 import { getAllArticles } from "@/lib/actions/getAllArticles.action";
 import NewsCard from "@/components/luxeComponents/news/NewsCard";
+import { Article } from "@/lib/types/article";
 
-export default async function NewsPage() {
-  // Fetch all articles from Appwrite.
-  const articlesRes = await getAllArticles();
-  const articles = articlesRes.success && articlesRes.data ? articlesRes.data : [];
+const NewsPage = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [offset, setOffset] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [totalCount, setTotalCount] = useState(0);
+
+  const LIMIT = 6;
+
+  const fetchArticles = async () => {
+    setLoading(true);
+    const res = await getAllArticles(LIMIT, offset);
+    if (res.success && res.data) {
+      setArticles((prev) => {
+        const existingIds = new Set(prev.map((a) => a.$id));
+        const newUnique = res.data.filter((a) => !existingIds.has(a.$id));
+        return [...prev, ...newUnique];
+      });
+      setOffset((prev) => prev + LIMIT);
+      setTotalCount(res.total); // 👈 Store total article count
+    }
+    
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchArticles(); // Load initial articles
+  }, []);
 
   return (
     <Box w="100%" maxW="1200px" mx="auto" px={["20px", "40px"]} py="40px">
@@ -32,10 +56,9 @@ export default async function NewsPage() {
             The Power of Modern Real Estate
           </Text>
           <Text fontSize={["md", "lg"]} color="gray.600" mb="20px">
-            Discover how our innovative approach to property management and
-            real estate investments can elevate your portfolio to new heights.
+            Discover how our innovative approach to property management and real
+            estate investments can elevate your portfolio to new heights.
           </Text>
-    
         </Box>
         <Box flex="1">
           <Box
@@ -59,11 +82,27 @@ export default async function NewsPage() {
         Our Recent Articles
       </Text>
 
+      <Text fontSize="md" color="gray.600" textAlign="center" mb="30px">
+  Showing {articles.length} of {totalCount} article{totalCount !== 1 ? "s" : ""}
+</Text>
       <Stack direction="row" wrap="wrap" justify="space-between" gap="20px">
         {articles.map((article) => (
           <NewsCard key={article.$id} article={article} />
         ))}
       </Stack>
+
+      {/* Load More Button */}
+      <Box mt="40px" textAlign="center">
+        {loading ? (
+          <Spinner />
+        ) : (
+          <Button onClick={fetchArticles} colorScheme="blue">
+            Load More
+          </Button>
+        )}
+      </Box>
     </Box>
   );
-}
+};
+
+export default NewsPage;
