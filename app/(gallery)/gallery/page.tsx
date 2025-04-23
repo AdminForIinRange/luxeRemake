@@ -21,6 +21,17 @@ import {
 } from "@/components/chakra-snippets/dialog";
 import DefaultSlider from "@/components/carousel/DefaultSlider";
 
+import houseOneImg1 from "@/public/images/dalts/houseOne/WEB/1.jpg"
+import houseOneImg2 from "@/public/images/dalts/houseOne/WEB/2.jpg"
+import houseOneImg3 from "@/public/images/dalts/houseOne/WEB/3.jpg"
+import houseOneImg4 from "@/public/images/dalts/houseOne/WEB/4.jpg"
+import houseOneImg5 from "@/public/images/dalts/houseOne/WEB/5.jpg"
+import houseOneImg6 from "@/public/images/dalts/houseOne/WEB/6.jpg"
+import houseOneImg7 from "@/public/images/dalts/houseOne/WEB/7.jpg"
+import houseOneImg8 from "@/public/images/dalts/houseOne/WEB/8.jpg"
+import houseOneImg9 from "@/public/images/dalts/houseOne/WEB/9.jpg"
+import houseOneImg10 from "@/public/images/dalts/houseOne/WEB/10.jpg"
+
 const Gallery = () => {
   useEffect(() => {
     Aos.init({ duration: 1000, once: false, mirror: true });
@@ -73,7 +84,7 @@ const Gallery = () => {
   // Gallery items (sample data)
   const galleryItems = [
     {
-      img: "https://images.pexels.com/photos/3184416/pexels-photo-3184416.jpeg",
+      img: houseOneImg1,
       title: "Property Management",
       subheading:
         "Comprehensive management service including all our offerings.",
@@ -81,57 +92,20 @@ const Gallery = () => {
       brand: "BrandX",
       carasoleImg: [
         {
-          img1: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
-          img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-          img3: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
+          img2:houseOneImg2,
+          img3:houseOneImg3,
+          img4:houseOneImg4,
+          img5:houseOneImg5,
+          img6:houseOneImg6,
+          img7:houseOneImg7,
+          img8:houseOneImg8,
+          img9:houseOneImg9,
+          img10:houseOneImg10,
         },
       ],
     },
-    {
-      img: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-      title: "Cleaning & Linen",
-      subheading:
-        "Ensure a pristine, hotel-quality experience for every guest.",
-      categories: ["Cleaning", "Linen"],
-      brand: "BrandA",
-      carasoleImg: [
-        {
-          img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-          img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-          img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        },
-      ],
-    },
-    {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
-      title: "Furnishing & Styling",
-      subheading:
-        "Transform your space into a stunning, Instagram-worthy retreat.",
-      categories: ["Furnishing", "Styling", "Interior"],
-      brand: "BrandB",
-      carasoleImg: [
-        {
-          img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-          img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-          img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        },
-      ],
-    },
-    {
-      img: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
-      title: "Photography",
-      subheading:
-        "Capture your property's best features with professional photography.",
-      categories: ["Photography"],
-      brand: "BrandX",
-      carasoleImg: [
-        {
-          img1: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-          img2: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-          img3: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-        },
-      ],
-    },
+ 
+  
     // Add more items as needed...
   ];
 
@@ -185,7 +159,7 @@ const Gallery = () => {
                   setClickedImage(item);
                   setModalOpen(true);
                 }}
-                backgroundImage={`url(${item.img})`}
+                backgroundImage={`${item.img})`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
