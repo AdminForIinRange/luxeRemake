@@ -1,6 +1,6 @@
 module.exports = {
-    siteUrl: 'https://www.luxemanagements.com',
-    generateRobotsTxt: true, // (optional) generate robots.txt automatically
-    sitemapSize: 7000,
-  };
-  
+  siteUrl: 'https://www.luxemanagements.com',
+  generateRobotsTxt: true,
+  "postbuild": "next-sitemap"
+
+};
