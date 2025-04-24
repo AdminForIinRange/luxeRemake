@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write \"**/*.{ts,tsx,json,md}\"",
-    "postbuild": "next-sitemap.config.ts",
+    "postbuild": "next-sitemap.config",
     "check:deps": "depcheck",
     "check:files": "unimported --entry src/index.js",
     "check:orphans": "madge --orphans src",
