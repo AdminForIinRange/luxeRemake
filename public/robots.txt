@@ -1,9 +1,5 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
 Host: https://www.luxemanagements.com
-
-# Sitemaps
 Sitemap: https://www.luxemanagements.com/sitemap.xml
