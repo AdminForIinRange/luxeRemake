@@ -1,19 +1,11 @@
 import React from "react";
 import {
   Box,
-  Stack,
-  Flex,
-  Group,
+
   HStack,
-  Icon,
-  Button,
-  DialogActionTrigger,
-  DialogBody,
-  DialogCloseTrigger,
-  DialogFooter,
-  Input,
+
   Text,
-  VStack,
+
 } from "@chakra-ui/react";
 
 import { Check } from "lucide-react";

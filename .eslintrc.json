@@ -4,48 +4,41 @@
     "next/typescript",
     "standard",
     "plugin:tailwindcss/recommended",
-    "plugin:import/recommended",
+    "plugin:import/recommended",    // for import/no-unused-modules
     "plugin:import/typescript",
     "prettier"
   ],
   "plugins": [
-    "import",
-    "unused-imports"
+    "import"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
   },
   "rules": {
+    // keep any overrides you really need:
     "react/no-unescaped-entities": 0,
 
-    // turn off the built‐ins:
-    "no-unused-vars": "off",
-    "no-undef": "off",
+    // turn off every other “unused” rule:
+    "no-unused-vars":       "off",
+    "no-undef":             "off",
 
-    // eslint-plugin-unused-imports:
-    "unused-imports/no-unused-imports": "error",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        "vars": "all",
-        "varsIgnorePattern": "^_",
-        "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
-    ],
-
-    // eslint-plugin-import:
+    // ---------------------------------------------------------
+    // orphan-file checker: scan only `app/` (add more if needed)
+    // ---------------------------------------------------------
     "import/no-unused-modules": [
       "warn",
-      { "unusedExports": true }
+      {
+        "unusedExports": true,
+        "src": ["app"]     // ← point this at your code dirs
+      }
     ]
   },
   "settings": {
     "tailwindcss": {
       "groupByResponsive": true,
-      "prependCustom": true,
-      "officialSorting": true
+      "prependCustom":      true,
+      "officialSorting":    true
     },
     "import/resolver": {
       "typescript": {}

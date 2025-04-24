@@ -1,0 +1,15 @@
+{
+    "aliases": {
+      "@": "./"
+    },
+    "extensions": ["ts", "tsx"],
+    "excludeRegExp": [
+      "page\\.tsx$",
+      "layout\\.tsx$",
+      "loading\\.tsx$",
+      "not-found\\.tsx$",
+      "error\\.tsx$",
+      "route\\.ts$"
+    ]
+  }
+  

@@ -1,28 +1,18 @@
 "use client";
 import {
   Box,
-  Stack,
-  Flex,
-  Group,
+
   HStack,
-  Icon,
-  Button,
-  DialogActionTrigger,
-  DialogBody,
-  DialogCloseTrigger,
-  DialogFooter,
-  Input,
+
   Text,
-  Spacer,
+
   VStack,
   Avatar,
-  AvatarGroup,
+
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { GoDotFill } from "react-icons/go";
-import { GoTriangleRight } from "react-icons/go";
-import { HiArrowLongRight } from "react-icons/hi2";
-import { FaAngleLeft, FaAngleRight, FaStar } from "react-icons/fa";
+
+import { FaAngleRight, FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([
