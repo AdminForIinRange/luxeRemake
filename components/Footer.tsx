@@ -4,10 +4,9 @@ import {
   Stack,
   Text,
   Flex,
-  Group,
+
   HStack,
-  Accordion,
-  Span,
+
 } from "@chakra-ui/react";
 import LuxeLogo from "@/public/png/LuxeLogo.png";
 import Image from "next/image";

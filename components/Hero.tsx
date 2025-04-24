@@ -14,7 +14,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 
-import Image from "next/image";
+
 
 import { FlipWords } from "@/components/ui/flip-words";
 import { ArrowRight } from "lucide-react";
@@ -39,32 +39,7 @@ import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 
 import ThumnailSlider from "./carousel/ThumnailSlider";
 const Hero = () => {
-  const items = [
-    {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
-      title: "Bridge",
-      desc: "A breathtaking view of a city illuminated by countless lights, showcasing the vibrant and bustling nightlife.",
-      sliderName: "bridge",
-    },
-    {
-      img: "https://images.pexels.com/photos/3049121/pexels-photo-3049121.jpeg",
-      title: "Mountains View",
-      desc: "A serene lake reflecting the surrounding mountains and trees, creating a mirror-like surface.",
-      sliderName: "mountains",
-    },
-    {
-      img: "https://images.pexels.com/photos/1546166/pexels-photo-1546166.jpeg",
-      title: "Autumn",
-      desc: "A picturesque path winding through a dense forest adorned with vibrant autumn foliage.",
-      sliderName: "autumn",
-    },
-    {
-      img: "https://images.pexels.com/photos/30670960/pexels-photo-30670960.jpeg",
-      title: "Foggy",
-      sliderName: "foggy",
-      desc: "A stunning foggy view over the foresh, with the sun casting a golden glow across the forest. ",
-    },
-  ];
+  
   const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   // const { user } = useUser();

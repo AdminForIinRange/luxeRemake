@@ -2,37 +2,21 @@
 import React, { useState, useEffect } from "react";
 import {
   Box,
-  Stack,
-  Flex,
-  Group,
+
   HStack,
-  Icon,
-  Button,
-  DialogActionTrigger,
-  DialogBody,
-  DialogCloseTrigger,
-  DialogFooter,
-  Input,
+
   Text,
-  Avatar,
+
   VStack,
 } from "@chakra-ui/react";
-import { ChevronRight, Home, HomeIcon, House } from "lucide-react";
-import { IconLeft } from "react-day-picker";
-import { IconArrowRightFromArc } from "@tabler/icons-react";
+
 import { useRouter } from "next/navigation";
-import {
-  DialogContent,
-  DialogHeader,
-  DialogRoot,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/chakra-snippets/dialog";
+
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import TitleSubheading from "@/components/luxeComponents/Text/titleSubheading";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { FaAngleLeft, FaAngleRight, FaStar } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 const About = () => {
   useEffect(() => {
     Aos.init({

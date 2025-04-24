@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Box, Stack, HStack, Text, IconButton, Icon } from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
+import { Box, Stack, HStack, Text, Icon } from "@chakra-ui/react";
+
 
 import { useRouter } from "next/navigation";
 import { Article } from "@/lib/types/article";

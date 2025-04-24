@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion, Box, HStack, Span, Text, VStack } from "@chakra-ui/react";
+import { Accordion, Box, Span } from "@chakra-ui/react";
 import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 
 const faqs = [

@@ -7,7 +7,7 @@ import Hero from "@/components/Hero";
 
 import FAQ from "@/components/FAQ";
 
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, HStack } from "@chakra-ui/react";
 
 import ReactLenis from "lenis/react";
 import Testimonials from "@/components/testimonials";

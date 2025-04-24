@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "app/(create)/create-listing"
-  ],
+, "next-sitemap.config.js"  ],
   "exclude": ["node_modules"]
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import AboutJourneyCardLists from "@/components/luxeComponents/AboutJourneyCardLists";

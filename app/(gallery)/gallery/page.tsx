@@ -3,11 +3,9 @@
 import React, { useEffect, useState } from "react";
 import {
   Box,
-  Button,
-  Flex,
+
   HStack,
-  Input,
-  Text,
+
   VStack,
 } from "@chakra-ui/react";
 import TitleSubheading from "@/components/luxeComponents/Text/titleSubheading";

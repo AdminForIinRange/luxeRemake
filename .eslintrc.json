@@ -4,7 +4,7 @@
     "next/typescript",
     "standard",
     "plugin:tailwindcss/recommended",
-    "plugin:import/recommended",    // for import/no-unused-modules
+    "plugin:import/recommended",
     "plugin:import/typescript",
     "prettier"
   ],
@@ -16,29 +16,29 @@
     "project": "./tsconfig.json"
   },
   "rules": {
-    // keep any overrides you really need:
     "react/no-unescaped-entities": 0,
+    "no-unused-vars": "off",
+    "no-undef": "off",
 
-    // turn off every other “unused” rule:
-    "no-unused-vars":       "off",
-    "no-undef":             "off",
-
-    // ---------------------------------------------------------
-    // orphan-file checker: scan only `app/` (add more if needed)
-    // ---------------------------------------------------------
+    // Orphan-file checker: scan app, components, lib, and hooks
     "import/no-unused-modules": [
       "warn",
       {
         "unusedExports": true,
-        "src": ["app"]     // ← point this at your code dirs
+        "src": [
+          "app",
+          "components",
+          "lib",
+          "hooks"
+        ]
       }
     ]
   },
   "settings": {
     "tailwindcss": {
       "groupByResponsive": true,
-      "prependCustom":      true,
-      "officialSorting":    true
+      "prependCustom": true,
+      "officialSorting": true
     },
     "import/resolver": {
       "typescript": {}

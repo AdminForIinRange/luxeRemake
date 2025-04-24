@@ -1,26 +1,19 @@
 import {
   Box,
-  Stack,
-  Flex,
-  Group,
+ 
   HStack,
-  Icon,
-  Button,
-  DialogActionTrigger,
-  DialogBody,
+
   DialogCloseTrigger,
-  DialogFooter,
-  Input,
+ 
   Text,
-  VStack,
+ 
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import {
   DialogContent,
-  DialogHeader,
+
   DialogRoot,
-  DialogTitle,
-  DialogTrigger,
+
 } from "@/components/chakra-snippets/dialog";
 const ScheduleConsultation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);

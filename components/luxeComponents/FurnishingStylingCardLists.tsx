@@ -1,74 +1,16 @@
 import React from "react";
 import {
   Box,
-  Stack,
-  Flex,
-  Group,
+
   HStack,
-  Icon,
-  Button,
-  DialogActionTrigger,
-  DialogBody,
-  DialogCloseTrigger,
-  DialogFooter,
-  Input,
+
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
-import { Check } from "lucide-react";
+
 const FurnishingStylingCardLists = () => {
-  const router = useRouter();
 
-  const leftImg = [
-    {
-      title: "Listing & Marketing",
-      description:
-        "We craft compelling listings and implement strategic marketing to maximize visibility and occupancy rates.",
-      features: [
-        "Professional photography and copywriting",
-        "SEO-optimized descriptions",
-        "Multi-platform presence",
-        "Dynamic pricing algorithm",
-      ],
-    },
-    {
-      title: "Property Care",
-      description:
-        "We maintain your property in impeccable condition, preserving its value and appeal.",
-      features: [
-        "Professional cleaning after each stay",
-        "Preventative maintenance",
-        "Rapid response for repairs",
-        "Inventory and supply management",
-      ],
-    },
-  ];
-
-  const rightImg = [
-    {
-      title: "Guest Experience",
-      description:
-        "We create memorable experiences for your guests, ensuring satisfaction and stellar reviews.",
-      features: [
-        "24/7 concierge support",
-        "Curated welcome packages",
-        "Personalized local recommendations",
-        "Immediate issue resolution",
-      ],
-    },
-    {
-      title: "Financial Intelligence",
-      description:
-        "We provide comprehensive financial management and transparent reporting.",
-      features: [
-        "Detailed monthly statements",
-        "Revenue optimization strategies",
-        "Tax-ready documentation",
-        "Performance analytics",
-      ],
-    },
-  ];
 
   const GettingStartedSteps = [
     {

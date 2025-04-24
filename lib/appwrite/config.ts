@@ -1,5 +1,4 @@
 // lib/appwrite/config.ts
-import { getEnvVariable } from "@/lib/getEnvVariable";
 
 // lib/appwrite/config.ts
 
