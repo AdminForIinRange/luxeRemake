@@ -1,29 +1,14 @@
 "use client";
 
-import { calsans } from "@/fonts/calsans";
+import React from "react";
 
-import { twMerge } from "tailwind-merge";
-import { TracingBeam } from "../../components/ui/tracing-beam";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import onePieceOFbackground from "../../public/svg/onePieceOFbackground.svg";
-import Navbar from "@/components/Navbar/Navbar";
 
 import Hero from "@/components/Hero";
-import AboutHeader from "@/components/AboutUs/AboutHeader";
-import Footer from "@/components/Footer";
+
 import FAQ from "@/components/FAQ";
-import { AnimatedTestimonialsDemo } from "@/components/Testimonials/AnimatedTestimonialsDemo";
-import StickyScroll from "@/components/customUI/StickyScroll/StickyScroll";
-import RepeatAnimation from "@/components/customUI/RepeatAnimation/RepeatAnimation";
-import SmoothScroll from "@/components/customUI/SmoothScroll/SmoothScroll";
-import { HeroScrollDemo } from "@/components/customUI/ContainerScrollAnimation/HeroScrollDemo";
-import { MacbookScrollDemo } from "@/components/customUI/MacbookScroll/MacbookScrollDemo";
-// // import { useUser } from "@/context/UserContext";
-// import { getCurrentUser } from "@/lib/actions/user.actions";
-import TestingCreateListingDB from "@/components/TestingCreateListingDB";
+
 import { Box, HStack, Text } from "@chakra-ui/react";
-import WaitingList from "@/components/waitingList/WaitingList";
+
 import ReactLenis from "lenis/react";
 import Testimonials from "@/components/testimonials";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";

@@ -1,9 +1,7 @@
 import "animate.css";
 import "./globals.css";
 
-import { UserProvider } from "@/context/UserContext"; // Import your context provider
-import { ListingCreationProvider } from "@/context/ListingCreationContext";
-import { Provider } from "@/components/chakra-snippets/provider";
+
 import ClientProvider from "@/components/chakra-snippets/ClientProvider";
 import { Suspense } from "react";
 import Loading from "./loading";

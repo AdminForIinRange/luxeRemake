@@ -1,6 +1,6 @@
 // app/(news)/news/article/[id]/page.tsx
 import { getArticle } from "@/lib/actions/getArticle.action";
-import { Article } from "@/lib/types/article";
+import { Article } from "../../../lib/types/article";
 import { Box, Stack, HStack, VStack, Text } from "@chakra-ui/react";
 import { CalendarIcon, UserIcon, ClockIcon } from "lucide-react";
 
@@ -31,7 +31,7 @@ export default async function ArticlePage({ params }: Props) {
                 fontSize={["2rem", "2.5rem", "3.25rem"]}
                 fontWeight="800"
                 lineHeight="1.1"
-                lettergap="-0.02em"
+                letterSpacing="-0.02em"
               >
                 {article.articleTitle}
               </Text>

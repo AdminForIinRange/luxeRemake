@@ -5,6 +5,7 @@ import { Box, Stack, Text, Flex, Button, Spinner } from "@chakra-ui/react";
 import { getAllArticles } from "@/lib/actions/getAllArticles.action";
 import NewsCard from "@/components/luxeComponents/news/NewsCard";
 import { Article } from "@/lib/types/article";
+import Image from "next/image";
 
 const NewsPage = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -60,16 +61,19 @@ const NewsPage = () => {
             estate investments can elevate your portfolio to new heights.
           </Text>
         </Box>
-        <Box flex="1">
-          <Box
-            as="img"
+        <Box flex="1" borderRadius={"md"}    objectFit="cover"     maxH="400px"> 
+          <Image
             src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
             alt="Hero Real Estate"
-            borderRadius="md"
-            w="100%"
-            maxH="400px"
-            objectFit="cover"
+            height={720}
+            width={1400}
+          
+            draggable={false}
+           
+        
+           
           />
+        
         </Box>
       </Flex>
 

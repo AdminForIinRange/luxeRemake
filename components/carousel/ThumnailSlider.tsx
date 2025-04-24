@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import Carousel, {
   Slider,

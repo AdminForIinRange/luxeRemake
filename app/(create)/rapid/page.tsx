@@ -25,7 +25,7 @@ export default function Rapid() {
   });
   const [loading, setLoading] = useState(false);
 
-  function parseFullArticle(text) {
+  function parseFullArticle(text: string) {
     const result = {
       articleTitle: "",
       introductionSubheading: "",
@@ -109,20 +109,20 @@ export default function Rapid() {
     return result;
   }
 
-  const handleFullArticleChange = (e) => {
+  const handleFullArticleChange = (e: { target: { value: any; }; }) => {
     setFormValues((prev) => ({ ...prev, fullArticle: e.target.value }));
   };
 
   const handleAutoFill = () => {
     const parsed = parseFullArticle(formValues.fullArticle);
-    setFormValues(parsed);
+    setFormValues((prev) => ({ ...prev, ...parsed }));
   };
 
-  const handleChange = (field) => (e) => {
+  const handleChange = (field: string) => (e: { target: { value: any; }; }) => {
     setFormValues((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     setLoading(true);
     try {
@@ -167,7 +167,7 @@ export default function Rapid() {
       <Box mx="auto" maxW="900px" px={["4", "6", "8"]} py={["8", "12", "16"]}>
         <Box bg="white" borderRadius="xl" overflow="hidden">
           <Box p={["8", "10", "12"]} color="#0a2342">
-            <VStack align="start" spacing={6}>
+            <VStack align="start" gap={6}>
               <Text as="h1" fontSize={["2rem", "2.5rem", "3.25rem"]} fontWeight="800">
                 Rapid Create Your Article
               </Text>
@@ -197,11 +197,11 @@ export default function Rapid() {
 
           <Box p={["6", "8", "10"]}>
             <form onSubmit={handleSubmit}>
-              <VStack spacing={6} align="stretch">
+              <VStack gap={6} align="stretch">
                 {/* Article Title */}
                 <Box>\n                  <Text mb={2}>Article Title</Text>
                   <input
-                    value={formValues.articleTitel}  // corrected spelling? Actually formValues.articleTitle
+                    value={formValues.articleTitle}  // corrected spelling? Actually formValues.articleTitle
                     onChange={handleChange("articleTitle")}
                     placeholder="Article Title"
                     style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
@@ -342,7 +342,7 @@ export default function Rapid() {
                 </Box>
 
                 <Box>
-                  <Button type="submit" colorScheme="blue" width="100%" isLoading={loading}>
+                  <Button type="submit" colorScheme="blue" width="100%" loading={loading}>
                     {loading ? "Creating..." : "Create Article"}
                   </Button>
                 </Box>

@@ -4,7 +4,13 @@
     "next/typescript",
     "standard",
     "plugin:tailwindcss/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "prettier"
+  ],
+  "plugins": [
+    "import",
+    "unused-imports"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -12,9 +18,15 @@
   },
   "rules": {
     "react/no-unescaped-entities": 0,
-    //remove ----------------------
-    "no-unused-vars": [
-      "error",
+
+    // turn off the built‐ins:
+    "no-unused-vars": "off",
+    "no-undef": "off",
+
+    // eslint-plugin-unused-imports:
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
       {
         "vars": "all",
         "varsIgnorePattern": "^_",
@@ -22,15 +34,21 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    //remove ----------------------
-    "no-undef": "off"
-    // "@typescript-eslint/no-explicit-any": ["error", { "fixToUnknown": true }]
+
+    // eslint-plugin-import:
+    "import/no-unused-modules": [
+      "warn",
+      { "unusedExports": true }
+    ]
   },
   "settings": {
     "tailwindcss": {
       "groupByResponsive": true,
       "prependCustom": true,
       "officialSorting": true
+    },
+    "import/resolver": {
+      "typescript": {}
     }
   }
 }

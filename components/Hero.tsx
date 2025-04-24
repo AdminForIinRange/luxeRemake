@@ -4,53 +4,39 @@ import React, { useEffect, useState } from "react";
 import {
   Box,
   Stack,
-  Flex,
-  Group,
+
   HStack,
   Icon,
-  Button,
-  DialogActionTrigger,
-  DialogBody,
+
   DialogCloseTrigger,
-  DialogFooter,
-  Input,
+
   Text,
   VStack,
 } from "@chakra-ui/react";
-// import { signOutUser } from "@/lib/actions/user.actions";
-// import { useUser } from "@/context/UserContext";
+
 import Image from "next/image";
 
 import { FlipWords } from "@/components/ui/flip-words";
 import { ArrowRight } from "lucide-react";
 import HouseHeroParallax from "./customUI/Parallax/HouseHeroParallax";
-// import {} from "@chakra-ui/react";
+
 import {
   DialogContent,
-  DialogHeader,
+
   DialogRoot,
-  DialogTitle,
-  DialogTrigger,
+
 } from "@/components/chakra-snippets/dialog";
-import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
-import Link from "next/link";
+
+
 import Aos from "aos";
 import "aos/dist/aos.css";
-import SmoothScroll from "./customUI/SmoothScroll/SmoothScroll";
+
 import { useRouter } from "next/navigation";
-import ScheduleConsultation from "./luxeComponents/scheduleConsultation";
+
 import HeroServices from "./luxeComponents/heroServices";
 import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 
-import {
-  SliderBtnGroup,
-  ProgressSlider,
-  SliderBtn,
-  SliderContent,
-  SliderWrapper,
-} from "@/components/core/progress-slider";
 
-import { imgPreview } from "@/components/website/constant";
 import ThumnailSlider from "./carousel/ThumnailSlider";
 const Hero = () => {
   const items = [
