@@ -8,35 +8,70 @@ import Carousel, {
 import Image from "next/image";
 import { Box, HStack } from "@chakra-ui/react";
 
+import houseOneImg1 from "@/public/images/dalts/houseOne/WEB/1.jpg";
+import houseOneImg2 from "@/public/images/dalts/houseOne/WEB/2.jpg";
+import houseOneImg3 from "@/public/images/dalts/houseOne/WEB/3.jpg";
+import houseOneImg4 from "@/public/images/dalts/houseOne/WEB/4.jpg";
+import houseOneImg5 from "@/public/images/dalts/houseOne/WEB/5.jpg";
+import houseOneImg6 from "@/public/images/dalts/houseOne/WEB/6.jpg";
+import houseOneImg7 from "@/public/images/dalts/houseOne/WEB/7.jpg";
+import houseOneImg8 from "@/public/images/dalts/houseOne/WEB/8.jpg";
+import houseOneImg9 from "@/public/images/dalts/houseOne/WEB/9.jpg";
+import houseOneImg10 from "@/public/images/dalts/houseOne/WEB/10.jpg";
+
+import houseTwoImg1 from "@/public/images/dalts/houseTwo/WEB/1.jpg";
+import houseTwoImg2 from "@/public/images/dalts/houseTwo/WEB/2.jpg";
+import houseTwoImg3 from "@/public/images/dalts/houseTwo/WEB/3.jpg";
+import houseTwoImg4 from "@/public/images/dalts/houseTwo/WEB/4.jpg";
+import houseTwoImg5 from "@/public/images/dalts/houseTwo/WEB/5.jpg";
+import houseTwoImg6 from "@/public/images/dalts/houseTwo/WEB/6.jpg";
+import houseTwoImg7 from "@/public/images/dalts/houseTwo/WEB/7.jpg";
+import houseTwoImg8 from "@/public/images/dalts/houseTwo/WEB/8.jpg";
+import houseTwoImg9 from "@/public/images/dalts/houseTwo/WEB/9.jpg";
+import houseTwoImg10 from "@/public/images/dalts/houseTwo/WEB/10.jpg";
+
+import houseThreeImg1 from "@/public/images/dalts/houseThree/WEB/1.jpg";
+import houseThreeImg2 from "@/public/images/dalts/houseThree/WEB/2.jpg";
+import houseThreeImg3 from "@/public/images/dalts/houseThree/WEB/3.jpg";
+import houseThreeImg4 from "@/public/images/dalts/houseThree/WEB/4.jpg";
+import houseThreeImg5 from "@/public/images/dalts/houseThree/WEB/5.jpg";
+import houseThreeImg6 from "@/public/images/dalts/houseThree/WEB/6.jpg";
+import houseThreeImg7 from "@/public/images/dalts/houseThree/WEB/7.jpg";
+import houseThreeImg8 from "@/public/images/dalts/houseThree/WEB/8.jpg";
+import houseThreeImg9 from "@/public/images/dalts/houseThree/WEB/9.jpg";
+import houseThreeImg10 from "@/public/images/dalts/houseThree/WEB/10.jpg";
+
+import houseFourImg1 from "@/public/images/dalts/houseFour/WEB/1.jpg";
+import houseFourImg2 from "@/public/images/dalts/houseFour/WEB/2.jpg";
+import houseFourImg3 from "@/public/images/dalts/houseFour/WEB/3.jpg";
+import houseFourImg4 from "@/public/images/dalts/houseFour/WEB/4.jpg";
+import houseFourImg5 from "@/public/images/dalts/houseFour/WEB/5.jpg";
+import houseFourImg6 from "@/public/images/dalts/houseFour/WEB/6.jpg";
+import houseFourImg7 from "@/public/images/dalts/houseFour/WEB/7.jpg";
+import houseFourImg8 from "@/public/images/dalts/houseFour/WEB/8.jpg";
+import houseFourImg9 from "@/public/images/dalts/houseFour/WEB/9.jpg";
+import houseFourImg10 from "@/public/images/dalts/houseFour/WEB/10.jpg";
+
 function ThumnailSlider() {
   const imgPreview = {
-    img1: "https://images.unsplash.com/photo-1709949908058-a08659bfa922?q=80&w=1200&auto=format",
-    img2: "https://images.unsplash.com/photo-1548192746-dd526f154ed9?q=80&w=1200&auto=format",
-    img3: "https://images.unsplash.com/photo-1693581176773-a5f2362209e6?q=80&w=1200&auto=format",
-    img4: "https://images.unsplash.com/photo-1584043204475-8cc101d6c77a?q=80&w=1200&auto=format",
-    img5: "https://images.unsplash.com/photo-1709949908058-a08659bfa922?q=80&w=1200&auto=format",
-    img6: "https://images.unsplash.com/photo-1518599904199-0ca897819ddb?q=80&w=1200&auto=format",
-    img7: "https://images.unsplash.com/photo-1706049379414-437ec3a54e93?q=80&w=1200&auto=format",
-    img8: "https://images.unsplash.com/photo-1709949908219-fd9046282019?q=80&w=1200&auto=format",
-    img9: "https://images.unsplash.com/photo-1508873881324-c92a3fc536ba?q=80&w=1200&auto=format",
-    img10:
-      "https://images.unsplash.com/photo-1462989856370-729a9c1e2c91?q=80&w=1200&auto=format",
-    img11:
-      "https://images.unsplash.com/photo-1475727946784-2890c8fdb9c8?q=80&w=1200&auto=format",
-    img12:
-      "https://images.unsplash.com/photo-1546942113-a6c43b63104a?q=80&w=1200&auto=format",
-    img13:
-      "https://images.unsplash.com/photo-1462989856370-729a9c1e2c91?q=80&w=1200&auto=format",
-    img14:
-      "https://images.unsplash.com/photo-1462989856370-729a9c1e2c91?q=80&w=1200&auto=format",
-    img15:
-      "https://images.unsplash.com/photo-1532423622396-10a3f979251a?q=80&w=1200&auto=format",
-    img16:
-      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format",
-    img17:
-      "https://images.unsplash.com/photo-1496861083958-175bb1bd5702?q=80&w=1200&auto=format",
-    img18:
-      "https://images.unsplash.com/photo-1469212044023-0e55b4b9745a?q=80&w=1200&auto=format",
+    img1: houseOneImg10,
+    img2: houseOneImg2,
+    img3: houseOneImg3,
+    img4: houseOneImg1,
+    img5: houseTwoImg1,
+    img6: houseTwoImg2,
+    img7: houseTwoImg3,
+    img8: houseTwoImg4,
+    img9: houseThreeImg1,
+    img10: houseThreeImg2,
+    img11: houseThreeImg3,
+    img12: houseThreeImg4,
+    img13: houseFourImg1,
+    img14: houseFourImg2,
+    img15: houseFourImg3,
+    img16: houseFourImg4,
+    img17: houseFourImg7,
+    img18: houseFourImg10,
   };
   const OPTIONS: EmblaOptionsType = { loop: false };
   return (

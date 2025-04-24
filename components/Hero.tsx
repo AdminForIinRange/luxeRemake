@@ -4,29 +4,18 @@ import React, { useEffect, useState } from "react";
 import {
   Box,
   Stack,
-
   HStack,
   Icon,
-
   DialogCloseTrigger,
-
   Text,
   VStack,
 } from "@chakra-ui/react";
-
-
 
 import { FlipWords } from "@/components/ui/flip-words";
 import { ArrowRight } from "lucide-react";
 import HouseHeroParallax from "./customUI/Parallax/HouseHeroParallax";
 
-import {
-  DialogContent,
-
-  DialogRoot,
-
-} from "@/components/chakra-snippets/dialog";
-
+import { DialogContent, DialogRoot } from "@/components/chakra-snippets/dialog";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -36,10 +25,8 @@ import { useRouter } from "next/navigation";
 import HeroServices from "./luxeComponents/heroServices";
 import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 
-
 import ThumnailSlider from "./carousel/ThumnailSlider";
 const Hero = () => {
-  
   const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   // const { user } = useUser();
@@ -55,11 +42,7 @@ const Hero = () => {
   // };
 
   useEffect(() => {
-    Aos.init({
-      duration: 1000,
-      once: false,
-      mirror: true,
-    });
+    Aos.init({ duration: 1000, once: false, mirror: true });
   }, []);
 
   const words = [
@@ -101,20 +84,8 @@ const Hero = () => {
     <>
       <Stack
         overflow={"hidden"}
-        mt={{
-          base: "25px",
-          sm: "25px",
-          md: "25px",
-          lg: "100px",
-          xl: "100px",
-        }}
-        mb={{
-          base: "25px",
-          sm: "25px",
-          md: "25px",
-          lg: "25px",
-          xl: "25px",
-        }}
+        mt={{ base: "25px", sm: "25px", md: "25px", lg: "100px", xl: "100px" }}
+        mb={{ base: "25px", sm: "25px", md: "25px", lg: "25px", xl: "25px" }}
         textAlign={"center"}
         width={"100%"}
         flexDirection={"row"}

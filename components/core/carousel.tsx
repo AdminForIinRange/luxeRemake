@@ -587,7 +587,7 @@ export const ThumsSlider: React.FC = () => {
             onClick={() => onThumbClick(index)}
           >
             <motion.img
-              src={slide}
+              src={slide.src}
               className='w-full h-full object-cover rounded-sm'
               width={400}
               height={400}
