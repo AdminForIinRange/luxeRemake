@@ -13,54 +13,85 @@ const AboutJourneyCardLists = () => {
   const journey = [
     {
       id: 1,
-      title: "2015 The Beginning",
+      title: "Early 2023",
       description:
-        "Luxe Managements is founded with a vision to revolutionize short-term rentals. Our first property, a charming apartment in downtown, sets the standard for our future endeavors.",
+        "Founder Habibur started his own Airbnb, experiencing firsthand the frustrations and hidden costs of hosting. Unable to find an affordable, effective management solution, he identified a major gap in the market—and Luxe Managements was born.",
+      icon: <Check />,
+      number: null,
+      imgTagNumber: null,
+      imgTagNumberText: "Created Luxe Managements",
+    },
+    {
+      id: 2,
+      title: "December 2023 – Official Launch",
+      description:
+        "Luxe Managements officially opened and secured its first client, beginning the journey toward a better, smarter hosting experience.",
       icon: <Check />,
       number: "1 Property Managed",
       imgTagNumber: "1",
       imgTagNumberText: "Property Managed",
     },
     {
-      id: 2,
-      title: "2017 Rapid Growth",
+      id: 3,
+      title: "February 2024 – Innovation in Operations",
       description:
-        "Our portfolio expands to over 100 properties across multiple cities. We introduce our signature 'Luxe Touch' service, ensuring every guest experiences unparalleled luxury.",
+        "After recognizing inefficiencies in cleaning and turnover management, Luxe developed a proprietary amenity and bedding system, cutting maintenance costs by over 50%.",
       icon: <Check />,
-      number: "100+ Properties Managed",
-      imgTagNumber: "100+",
-      imgTagNumberText: "Property Managed",
+      number: null,
+      imgTagNumber: null,
+      imgTagNumberText: "Reduced maintenance costs",
     },
     {
-      id: 3,
-      title: "2019 Tech Innovation",
+      id: 4,
+      title: "April 2024 – Elevating Property Presentation",
       description:
-        "Launch of our proprietary property management software, 'LuxeConnect', setting new industry standards for efficiency and guest satisfaction.",
+        "Luxe built an in-house system for styling, photography, and furnishing, delivering higher-quality, cost-effective setups compared to external providers.",
+      icon: <Check />,
+      number: null,
+      imgTagNumber: null,
+      imgTagNumberText: "In-house styling system",
+    },
+    {
+      id: 5,
+      title: "June 2024 – Proven Guest Excellence",
+      description:
+        "Through the introduction of a leading guest satisfaction system, Luxe achieved an average review score of 4.98 stars and hosted over 1,000 nights across their portfolio.",
       icon: <Check />,
       number: "98% Guest Satisfaction Rate",
       imgTagNumber: "98%",
       imgTagNumberText: "Guest Satisfaction Rate",
     },
     {
-      id: 4,
-      title: "2021 Global Expansion",
+      id: 6,
+      title: "Mid-2024 – Full Independence",
       description:
-        "Luxe Managements goes international, opening offices in major cities worldwide. Our unique blend of local expertise and global standards sets us apart in new markets.",
+        "Luxe became fully independent of third-party vendors, offering clients a 100% bespoke, better-quality, and more affordable management solution.",
       icon: <Check />,
-      number: "10 Countries Served",
-      imgTagNumber: "10",
-      imgTagNumberText: "Countries Served",
+      number: null,
+      imgTagNumber: null,
+      imgTagNumberText: "Reduced third-party costs",
     },
     {
-      id: 5,
-      title: "2023 Industry Leader",
+      id: 7,
+      title: "September 2024 – Expansion Beyond Adelaide",
       description:
-        "Recognized as the top luxury short-term rental management company globally. We launch our sustainability initiative, 'Luxe Green', promoting eco-friendly practices in all our properties.",
+        "Luxe expanded services to suburbs outside Adelaide, bringing its premium offering to more homeowners.",
       icon: <Check />,
       number: "#1 In Luxury Rentals",
-      imgTagNumber: "#1",
-      imgTagNumberText: "In Luxury Rentals",
+      imgTagNumber: null,
+      imgTagNumberText: "Expanding suburbs",
     },
+    {
+      id: 8,
+      title: "December 2025 – Interstate Growth",
+      description:
+        "Luxe officially expanded to cities outside South Australia, setting the foundation for a national presence.",
+      icon: <Check />,
+      number: "#1 In Luxury Rentals",
+      imgTagNumber: null,
+      imgTagNumberText: "Growing interstate",
+    },
+
   ];
   return (
     <>
@@ -152,7 +183,7 @@ const AboutJourneyCardLists = () => {
                 backgroundSize="cover"
               ></Box>
               {/* Bottom-right label */}
-              <Box
+              {/* <Box
                 p={"4"}
                 position={"absolute"}
                 display={"flex"}
@@ -185,7 +216,7 @@ const AboutJourneyCardLists = () => {
                   fontWeight="semibold"
                   textAlign={"left"}
                 >
-                  <HStack>
+                  <HStack >
                     <Text
                       fontSize={[
                         "30px",
@@ -215,7 +246,7 @@ const AboutJourneyCardLists = () => {
                     </Text>
                   </HStack>
                 </Box>
-              </Box>
+              </Box> */}
             </Box>
           </HStack>
         </HStack>
