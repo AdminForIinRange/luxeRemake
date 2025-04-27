@@ -1,12 +1,19 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { Box, Stack, Text, Flex, HStack } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import {
+  Box,
+  Stack,
+  Text,
+  Flex,
+  HStack,
+  DialogCloseTrigger,
+} from "@chakra-ui/react";
 import TitleSubheading from "@/components/luxeComponents/Text/titleSubheading";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
-
+import { DialogContent, DialogRoot } from "@/components/chakra-snippets/dialog";
 const Contact = () => {
   useEffect(() => {
     Aos.init({
@@ -15,7 +22,7 @@ const Contact = () => {
       mirror: true,
     });
   }, []);
-
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   return (
     <>
       <TitleSubheading
@@ -29,7 +36,7 @@ const Contact = () => {
         align={"start"}
         px={{ base: "6%", md: "10%" }}
         py={{ base: "40px", md: "80px" }}
-        gap={"60px"}
+        gap={"30px"}
         data-aos="fade-up"
       >
         {/* Contact Info */}
@@ -46,58 +53,127 @@ const Contact = () => {
 
           <Stack gap={"20px"} fontSize={"16px"} fontFamily={"Raleway"}>
             <Text fontWeight={500} color={"#333"}>
-              Email: <span style={{ fontWeight: 400 }}>contact@luxemanagements.com</span>
+              Email:{" "}
+              <span style={{ fontWeight: 400 }}>
+                luxemanagements.info@gmail.com
+              </span>
             </Text>
             <Text fontWeight={500} color={"#333"}>
               Phone: <span style={{ fontWeight: 400 }}>(123) 456-7890</span>
             </Text>
             <Text fontWeight={500} color={"#333"}>
-              Location: <span style={{ fontWeight: 400 }}>Toronto, ON</span>
+              Location: <span style={{ fontWeight: 400 }}>South Australia</span>
             </Text>
           </Stack>
         </Box>
 
         {/* Contact Placeholder */}
-        <Box
-          w={{ base: "100%", md: "50%" }}
-          h={"320px"}
-          borderRadius={"20px"}
-          bg={"rgba(255, 255, 255, 0.65)"}
-          backdropFilter="blur(10px)"
-          border={"1px solid rgba(255, 255, 255, 0.3)"}
-          boxShadow={"0 8px 30px rgba(0,0,0,0.08)"}
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          textAlign={"center"}
-          px={"30px"}
-          data-aos="fade-up"
-        >
-          <Text
-            fontSize={{ base: "15px", md: "17px" }}
-            fontFamily={"Raleway"}
-            fontWeight={400}
-            color={"#444"}
-            lineHeight={"1.7"}
+        <Box w={"100%"} h={"100%"} borderRadius={"20px"} data-aos="fade-up">
+          <HStack
+            justify={"center"}
+            align={"center"}
+            w={"100%"}
+            transition={"all 0.2s ease-in-out"}
+            zIndex={3}
+            id="get-started-button"
           >
-            Our contact form is on the way. In the meantime, please use
-            the contact details provided to reach out. We look forward to
-            speaking with you!
-          </Text>
+            <Box
+              bg={"#0A0F29"}
+              w={"90%"}
+              h={"100%"}
+              borderRadius={"30px"}
+              p={"25px"}
+              py={"35px"}
+              display={"flex"}
+              flexDir={"column"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              textAlign={"center"}
+            >
+              <Text
+                color={"white"}
+                fontWeight={"700"}
+                fontSize={["40px", "40px", "40px", "40px", "40px", "40px"]}
+                fontFamily={"raleway"}
+                mb={"10px"}
+              >
+                Ready to transfrom your property management?
+              </Text>
+              <Text
+                color={"white"}
+                fontSize={["18px", "18px", "18px", "18px6px", "18px", "18px"]}
+                fontFamily={"raleway"}
+              >
+                Get a full consulation, market analysis in under 24 hours for
+                free
+              </Text>
+
+              <HStack
+                justify={"center"}
+                align={"center"}
+                w={"100%"}
+                transition={"all 0.2s ease-in-out"}
+                zIndex={3}
+              >
+                <Box
+                  my={"25px"}
+                  display={"flex"}
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  gap={"15px"}
+                  fontFamily={"raleway"}
+                  transition={"all 0.2s ease-in-out"}
+                  cursor={"pointer"}
+                  _hover={{
+                    transition: "all 0.2s ease-in-out",
+                    scale: 1.1,
+                    fontWeight: "700",
+                    px: "80px",
+                    bg: "white",
+                  }}
+                  p={4}
+                  bg={"White"}
+                  color={"black"}
+                  rounded={"30px"}
+                  px={"12"}
+                  fontWeight={"500"}
+                  onClick={() => setIsDialogOpen(true)}
+                >
+                  Schedule a consultation
+                  {/* <Icon as={ArrowRight}> </Icon> */}
+                </Box>
+              </HStack>
+            </Box>
+          </HStack>
+
+          <DialogRoot
+            size={"cover"}
+            open={isDialogOpen}
+            onOpenChange={(details) => setIsDialogOpen(details.open)}
+          >
+            <DialogContent
+              p={0}
+              bg={"white"}
+              color={"white"}
+              rounded={"10px"}
+              borderRadius={"10px"}
+            >
+              <iframe
+                style={{
+                  width: "100%",
+                  height: "800px",
+                  border: "none",
+                  borderRadius: "10px",
+                }}
+                src="https://calendly.com/luxemanagements-info"
+              ></iframe>
+
+              <DialogCloseTrigger />
+            </DialogContent>
+          </DialogRoot>
         </Box>
       </Flex>
-      <HStack
-        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-        justify={"center"}
-        align={"center"}
-        w={"100%"}
-      >
-        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
-      </HStack>
-      <ScheduleConsultation />
-
-
-
+   
     </>
   );
 };
