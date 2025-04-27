@@ -42,7 +42,7 @@ const Footer = () => {
               </Text>
               <Stack gap="6px">
                 <Box>
-                  <Text fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
+                  <Text as="a" href="https://www.instagram.com/luxemanagements/" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
                     Luxe Managements
                   </Text>
                 </Box>
@@ -71,12 +71,12 @@ const Footer = () => {
               </Text>
               <Stack gap="6px">
                 <Box>
-                  <Text as="a" href="#" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
+                  <Text as="a" href="https://abr.business.gov.au/ABN/View?id=83943962982" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
                     Privacy Policy
                   </Text>
                 </Box>
                 <Box>
-                  <Text as="a" href="#" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
+                  <Text as="a" href="https://abr.business.gov.au/ABN/View?id=83943962982" fontSize={{ base: "10px", md: "13px" }} color="gray.600" _dark={{ color: "gray.400" }}>
                     Terms & Conditions
                   </Text>
                 </Box>
