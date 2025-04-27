@@ -33,20 +33,21 @@ const Contact = () => {
       <Flex
         direction={{ base: "column", md: "row" }}
         justify={"center"}
-        align={"start"}
+        align={"center"}
         px={{ base: "6%", md: "10%" }}
         py={{ base: "40px", md: "80px" }}
         gap={"30px"}
         data-aos="fade-up"
       >
         {/* Contact Info */}
-        <Box w={{ base: "100%", md: "40%" }}>
+        <Box w={{ base: "100%", md: "40%" }}            textAlign={["center", "center", "left"]}>
           <Text
             fontSize={{ base: "26px", md: "34px" }}
             fontWeight={700}
             fontFamily={"Raleway"}
             color={"#0A0F29"}
-            mb={"24px"}
+            mb={"24px"}      
+ 
           >
             Contact Information
           </Text>
@@ -93,15 +94,16 @@ const Contact = () => {
               <Text
                 color={"white"}
                 fontWeight={"700"}
-                fontSize={["40px", "40px", "40px", "40px", "40px", "40px"]}
+                fontSize={["30px", "30px", "30px", "40px", "40px", "40px"]}
                 fontFamily={"raleway"}
                 mb={"10px"}
+                textAlign={"center"}
               >
                 Ready to transfrom your property management?
               </Text>
               <Text
                 color={"white"}
-                fontSize={["18px", "18px", "18px", "18px6px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 fontFamily={"raleway"}
               >
                 Get a full consulation, market analysis in under 24 hours for
