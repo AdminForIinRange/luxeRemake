@@ -20,14 +20,14 @@ const Testimonials = () => {
       text: "I highly recommend. They was attentive to our needs and worked tirelessly to find us a client for our holiday house property. We couldn't be happier with our new place!",
 
       name: "Dan Abrahmov",
-      src: "https://bit.ly/dan-abramov",
+      src: null,
       rating: 5,
     },
     {
       text: "  Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free. ",
 
       name: "Kent Dodds",
-      src: "https://bit.ly/kent-c-dodds",
+      src: null,
       rating: 6,
     },
     {
@@ -35,14 +35,14 @@ const Testimonials = () => {
 
       rating: 5,
       name: "Segun Adebayo",
-      src: "https://bit.ly/sage-adebayo",
+      src: null,
     },
     {
       text: " Great experience from start to finish. They kept us informed and made sure we got the best deal possible. I would recommend them to anyone!",
 
       rating: 5,
       name: "Christian Nwamba",
-      src: "https://bit.ly/code-beast",
+      src: null,
     },
     {
       text: " Very responsive and professional. They helped us find a great property in a short amount of time. Definitely recommend their services!",
@@ -230,7 +230,7 @@ const Testimonials = () => {
                     borderRadius={"100px"}
                     bg={"gray"}
                   >
-                    <Avatar.Image src={reviews[currentSlide].src} />
+                    {/* <Avatar.Image src={reviews[currentSlide].src} /> */}
                   </Avatar.Root>
                   <HStack>
                     <Text
