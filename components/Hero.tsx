@@ -152,7 +152,7 @@ const Hero = () => {
           <Text
             w={["100%", "100%", "80%", "80%", "80%", "80%"]}
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-            fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+            fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
             fontWeight={700}
             fontFamily={"Raleway"}
             bgClip="text"

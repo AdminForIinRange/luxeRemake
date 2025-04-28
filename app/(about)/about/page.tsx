@@ -284,7 +284,7 @@ const About = () => {
           <Text
             color={"white"}
             fontWeight={"700"}
-            fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+            fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
             fontFamily={"raleway"}
             mb={"10px"}
           >

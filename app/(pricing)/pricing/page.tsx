@@ -101,7 +101,7 @@ const Pricing = () => {
           <Text
             color="black"
             fontWeight="700"
-            fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+            fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
             fontFamily="Raleway"
             mb="10px"
           >
@@ -450,7 +450,7 @@ const Pricing = () => {
           <Text
             w={["100%", "100%", "100%", "100%", "100%", "100%"]}
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-            fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+            fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
             fontWeight={600}
             fontFamily={"Raleway"}
             bgClip="text"
