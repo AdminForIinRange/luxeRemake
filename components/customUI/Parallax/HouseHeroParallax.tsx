@@ -40,7 +40,7 @@ const products = [
 ];
 
 // custom Pexels loader (resize & compress)
-const pexelsLoader = ({ src, width, quality }) =>
+const pexelsLoader = ({ src, width, quality }: { src: string; width: number; quality?: number }) =>
   `${src}?auto=compress&cs=tinysrgb&w=${width}&q=${quality || 75}`;
 
 export default function HouseHeroParallax() {
@@ -76,6 +76,7 @@ export default function HouseHeroParallax() {
                   transition="all 0.5s ease"
                 >
                   <Image
+                  
                     loader={pexelsLoader}
                     src={product.link}
                     alt={product.title || ""}

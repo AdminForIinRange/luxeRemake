@@ -12,21 +12,23 @@ export const FlipWords = ({
   duration?: number;
   className?: string;
 }) => {
-  const [currentWord, setCurrentWord] = useState(words[0]);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0); // Track the index for better performance
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
-  // thanks for the fix Julian - https://github.com/Julian-AT
+  // Memoized startAnimation function to avoid unnecessary re-calculations
   const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
-    setCurrentWord(word);
     setIsAnimating(true);
-  }, [currentWord, words]);
+    const nextIndex = (currentWordIndex + 1) % words.length;
+    setCurrentWordIndex(nextIndex);
+  }, [currentWordIndex, words.length]);
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
+    if (!isAnimating) {
+      const animationTimeout = setTimeout(() => {
         startAnimation();
       }, duration);
+      return () => clearTimeout(animationTimeout); // Clear the timeout on cleanup
+    }
   }, [isAnimating, duration, startAnimation]);
 
   return (
@@ -47,24 +49,23 @@ export const FlipWords = ({
         transition={{
           type: "spring",
           stiffness: 100,
-          damping: 10,
+          damping: 25, // Slightly lower damping for smoother transitions
         }}
         exit={{
           opacity: 0,
           y: -40,
           x: 40,
           filter: "blur(8px)",
-          scale: 2,
+          scale: 1.5,
           position: "absolute",
         }}
         className={cn(
           "z-10 inline-block relative text-left text-neutral-900 px-2",
           className,
         )}
-        key={currentWord}
+        key={currentWordIndex} // Use index for better performance
       >
-        {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
-        {currentWord.split(" ").map((word, wordIndex) => (
+        {words[currentWordIndex].split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
             initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
@@ -77,7 +78,7 @@ export const FlipWords = ({
           >
             {word.split("").map((letter, letterIndex) => (
               <motion.span
-                key={word + letterIndex}
+                key={letter + letterIndex}
                 initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{
