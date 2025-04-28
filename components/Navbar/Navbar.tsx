@@ -99,8 +99,9 @@ const Navbar = () => {
             fontSize="16px"
             gap={["12px", "12px", "12px", "36px", "36px", "36px"]}
             fontWeight="500"
- wrap={"nowrap"}
+            wrap={["wrap", "nowrap", "nowrap", "nowrap", "nowrap", "nowrap"]}
             justify={"center"}
+            
           >
             {/* About */}
             <Box
