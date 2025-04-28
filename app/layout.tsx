@@ -7,7 +7,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Luxe Management",
-  description: "We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience...",
+  description: "We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience and maximize your rental income.",
 };
 
 // Lazy-load ClientProvider to optimize performance
@@ -24,7 +24,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light" style={{ scrollBehavior: "smooth" }} suppressHydrationWarning>
       <head>
-        {/* No need for preconnect or link for Google Fonts anymore */}
+        {/* Preload fonts */}
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" as="style" />
       </head>
       <body className={`${raleway.className} antialiased`} style={{ background: "#fff", scrollBehavior: "smooth" }}>
         <Analytics />

@@ -1,4 +1,4 @@
-@import 'react-international-phone/style.css';
+
 
 @tailwind base;
 @tailwind components;
@@ -34,7 +34,10 @@
     @apply border-border;
   }
   body {
-    @apply font-raleway antialiased bg-background text-foreground; /* Apply font-raleway */
+    body {
+      @apply font-raleway antialiased bg-background text-foreground;
+    }
+    
   }
 }
 
