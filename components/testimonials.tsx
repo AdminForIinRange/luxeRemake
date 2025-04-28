@@ -1,56 +1,41 @@
 "use client";
-import {
-  Box,
-
-  HStack,
-
-  Text,
-
-  VStack,
-  Avatar,
-
-} from "@chakra-ui/react";
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
-
 import { FaAngleRight, FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
   const [reviews, setReviews] = useState([
     {
-      text: "I highly recommend. They was attentive to our needs and worked tirelessly to find us a client for our holiday house property. We couldn't be happier with our new place!",
-
+      text: "I highly recommend. They were attentive to our needs and worked tirelessly to find us a client for our holiday house property. We couldn't be happier with our new place!",
       name: "Dan Abrahmov",
       src: null,
       rating: 5,
     },
     {
-      text: "  Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free. ",
-
+      text: "Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free.",
       name: "Kent Dodds",
       src: null,
       rating: 6,
     },
     {
-      text: " Fantastic service! They took the time to understand exactly what I was looking for and found the perfect match. I couldn’t be happier!",
-
+      text: "Fantastic service! They took the time to understand exactly what I was looking for and found the perfect match. I couldn’t be happier!",
       rating: 5,
       name: "Segun Adebayo",
       src: null,
     },
     {
-      text: " Great experience from start to finish. They kept us informed and made sure we got the best deal possible. I would recommend them to anyone!",
-
+      text: "Great experience from start to finish. They kept us informed and made sure we got the best deal possible. I would recommend them to anyone!",
       rating: 5,
       name: "Christian Nwamba",
       src: null,
     },
     {
-      text: " Very responsive and professional. They helped us find a great property in a short amount of time. Definitely recommend their services!",
+      text: "Very responsive and professional. They helped us find a great property in a short amount of time. Definitely recommend their services!",
       name: "Sophia M.",
       rating: 6,
     },
     {
-      text: "  They were patient and helped us every step of the way. We appreciated their attention to detail and ability to handle any challenge that came up.",
+      text: "They were patient and helped us every step of the way. We appreciated their attention to detail and ability to handle any challenge that came up.",
       name: "Michael T.",
       rating: 5,
     },
@@ -68,14 +53,13 @@ const Testimonials = () => {
 
   return (
     <>
-         <HStack my={"50px"} justify={"center"} align={"center"} w={"100%"}>
-            <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
-          </HStack>
+      <HStack my={"50px"} justify={"center"} align={"center"} w={"100%"}>
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      </HStack>
       <HStack
         fontFamily={"Raleway"}
-      
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        justify={"center"} // !!
+        justify={"center"}
         align={"center"}
         w={"100%"}
         h={"100%"}
@@ -109,7 +93,7 @@ const Testimonials = () => {
               textAlign={["center", "center", "left", "left", "left", "left"]}
               fontFamily={"Raleway"}
               color={"black"}
-              w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
+              w={["100%", "100%", "80%", "80%", "80%", "80%"]}
               fontWeight={300}
             >
               Check out our numerous positive reviews from satisfied clients.
@@ -170,14 +154,12 @@ const Testimonials = () => {
               </HStack>
             </HStack>
           </Box>
-          {/* <Image src={collage} width={500} /> */}
 
           <Box
             border={"1px solid rgb(0, 0,0,0.25)"}
             mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
             display={["block", "block", "block", "block", "block", "block"]}
-            data-aos="fade-right" // chnage dir
-            // border={"1px solid rgb(0, 0, 0,0.25)"}
+            data-aos="fade-right"
             h={["280px", "280px", "280px", "320px", "320px", "320px"]}
             w={["100%", "100%", "650px", "650px", "650px", "650px"]}
             backdropFilter="blur(1.5px)"
@@ -210,7 +192,7 @@ const Testimonials = () => {
               </Text>
 
               <VStack
-              my={"10px"}
+                my={"10px"}
                 py={"10px"}
                 w={"100%"}
                 h={"100%"}
@@ -220,87 +202,20 @@ const Testimonials = () => {
                 gap={["240px", "10px", "10px", "10px", "10px", "10px"]}
               >
                 <HStack>
-                  <Avatar.Root
-                     my={"10px"}
-                    //  style={{ backgroundImage: `url(${reviews[currentSlide].src})` }}
-                    bgPos={"center"}
-                    bgSize={"cover"}
-                    w={["50px", "50px", "50px", "50px", "50px", "50px"]}
-                    h={["50px", "50px", "50px", "50px", "50px", "50px"]}
-                    borderRadius={"100px"}
-                    bg={"gray"}
+                  <Text
+                    fontWeight={600}
+                    fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
                   >
-                    {/* <Avatar.Image src={reviews[currentSlide].src} /> */}
-                  </Avatar.Root>
-                  <HStack>
-                    <Text
-                      fontWeight={600}
-                      fontSize={[
-                        "18px",
-                        "18px",
-                        "18px",
-                        "18px",
-                        "18px",
-                        "18px",
-                      ]}
-                    >
-                      {reviews[currentSlide].name}
-                    </Text>
-                  </HStack>
-                  <HStack></HStack>
-                  <Text fontSize={"25px"}>
-                    <FaStar
-                      color={
-                        reviews[currentSlide].rating > 0
-                          ? "#FFC700"
-                          : "#D4D4D4  "
-                      }
-                    />
-                  </Text>
-                  <Text fontSize={"25px"}>
-                    <FaStar
-                      color={
-                        reviews[currentSlide].rating > 2
-                          ? "#FFC700"
-                          : "#D4D4D4  "
-                      }
-                    />
-                  </Text>
-                  <Text fontSize={"25px"}>
-                    <FaStar
-                      color={
-                        reviews[currentSlide].rating > 3
-                          ? "#FFC700"
-                          : "#D4D4D4  "
-                      }
-                    />
-                  </Text>
-                  <Text fontSize={"25px"}>
-                    <FaStar
-                      color={
-                        reviews[currentSlide].rating > 4
-                          ? "#FFC700"
-                          : "#D4D4D4  "
-                      }
-                    />
-                  </Text>
-                  <Text fontSize={"25px"}>
-                    <FaStar
-                      color={
-                        reviews[currentSlide].rating > 5
-                          ? "#FFC700"
-                          : "#D4D4D4  "
-                      }
-                    />
+                    {reviews[currentSlide].name}
                   </Text>
                 </HStack>
+
+               
               </VStack>
-            </VStack>{" "}
-            {/* <Image src={collage} />   //!cool */}
+            </VStack>
           </Box>
         </HStack>
       </HStack>
-      
     </>
   );
 };

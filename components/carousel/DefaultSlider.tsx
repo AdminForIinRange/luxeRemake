@@ -55,7 +55,7 @@ const DefaultSlider: React.FC<DefaultSliderProps> = ({ items }) => {
         <ChevronRight className="w-8 h-8" />
       </SliderNextButton>
 
-      <div className="flex justify-center py-2">
+      <div className="flex justify-center py-8 mb-[50px]">
         <SliderDotButton />
       </div>
     </Carousel>

@@ -41,7 +41,7 @@ const ScheduleConsultation = () => {
           <Text
             color={"white"}
             fontWeight={"700"}
-            fontSize={["40px", "40px", "40px", "60px", "60px", "60px"]}
+            fontSize={["30px", "30px", "30px", "60px", "60px", "60px"]}
             fontFamily={"raleway"}
             mb={"10px"}
           >
@@ -49,7 +49,7 @@ const ScheduleConsultation = () => {
           </Text>
           <Text
             color={"white"}
-            fontSize={["18px", "18px", "18px", "26px", "26px", "26px"]}
+            fontSize={["14px", "14px", "14px", "26px", "26px", "26px"]}
             fontFamily={"raleway"}
           >
             Get a full consultation, market analysis in under 24 hours for free

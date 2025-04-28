@@ -339,7 +339,7 @@ const Pricing = () => {
                 border="1px solid #e0e0e0"
                 transition="all 0.3s ease"
                 w="100%"
-                h="150px"
+                h={["200px", "200px", "200px", "150px", "150px", "150px"]}
                 borderRadius="16px"
                 bgGradient="linear(to-r, teal.100, blue.100)"
                 p="30px"

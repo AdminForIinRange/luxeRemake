@@ -294,7 +294,7 @@ const Gallery = () => {
         >
           <HStack justify="center" align="center" w="100%" h="100%">
             {clickedImage && (
-              <Box w={["100%", "100%", "100%", "100%", "100%", "100%"]}>
+              <Box w={["95%", "95%", "95%", "100%", "100%", "100%"]}>
                 <DefaultSlider items={clickedImage.carasoleImg?.[0]} />
               </Box>
             )}
