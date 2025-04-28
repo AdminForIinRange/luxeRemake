@@ -1,13 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Stack,
   HStack,
   Icon,
-  DialogCloseTrigger,
+
   Text,
 
 } from "@chakra-ui/react";
@@ -15,7 +15,6 @@ import {
 import { FlipWords } from "@/components/ui/flip-words";
 import { ArrowRight } from "lucide-react";
 
-import { DialogContent, DialogRoot } from "@/components/chakra-snippets/dialog";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -27,8 +26,6 @@ const HouseHeroParallax = dynamic(
 );
 
 const Hero = () => {
-
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
     Aos.init({ duration: 1000, once: false, mirror: true });
@@ -150,33 +147,9 @@ const Hero = () => {
       {/* Add New Pack Button */}
 
       {/* New Dialog Component */}
-      <DialogRoot
-        size={"cover"}
-        open={isDialogOpen}
-        onOpenChange={(details) => setIsDialogOpen(details.open)}
-      >
-        <DialogContent
-          p={0}
-          bg={"white"}
-          color={"white"}
-          rounded={"10px"}
-          borderRadius={"10px"}
-        >
-          <iframe
-            loading="lazy"
-            style={{
-              width: "100%",
-              height: "800px",
-              border: "none",
-              borderRadius: "10px",
-            }}
-            src="https://calendly.com/luxemanagements-info"
-          ></iframe>
-
-          <DialogCloseTrigger />
-        </DialogContent>
-      </DialogRoot>
-
+     
+ 
+   
       <HStack justify={"center"} align={"center"} w={"100%"}>
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>

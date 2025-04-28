@@ -1,19 +1,17 @@
 "use client";
 
-import React from "react";
-
+import React, { Suspense } from "react";
 import Hero from "@/components/Hero";
-
 import FAQ from "@/components/FAQ";
-
 import { Box, HStack } from "@chakra-ui/react";
-
 import ReactLenis from "lenis/react";
 import Testimonials from "@/components/testimonials";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import HowWeCanGetYouStarted from "@/components/luxeComponents/HowWeCanGetYouStarted";
 import OurServices from "@/components/luxeComponents/OurServices";
-import GalleryHeroSection from "@/components/luxeComponents/GalleryHeroSection";
+
+// Lazy load the GalleryHeroSection component
+const GalleryHeroSection = React.lazy(() => import("@/components/luxeComponents/GalleryHeroSection"));
 
 const Home = () => {
   return (
@@ -26,11 +24,19 @@ const Home = () => {
         }}
       />
 
+      {/* Render Hero and other components normally */}
       <Hero />
       <HowWeCanGetYouStarted />
       <OurServices />
-      <GalleryHeroSection />
+
+      {/* Use Suspense to lazy-load GalleryHeroSection */}
+      <Suspense fallback={<div>Loading gallery...</div>}>
+        <GalleryHeroSection />
+      </Suspense>
+
       <Testimonials />
+
+      {/* Horizontal dividers for spacing */}
       <HStack
         justify={"center"}
         align={"center"}
@@ -40,10 +46,14 @@ const Home = () => {
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
+
       <ScheduleConsultation />
+
+      {/* Horizontal dividers for spacing */}
       <HStack justify={"center"} align={"center"} w={"100%"}>
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
+
       <FAQ />
     </>
   );
