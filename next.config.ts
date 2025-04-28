@@ -2,30 +2,28 @@ import type { NextConfig } from "next";
 import { GenerateSW } from 'workbox-webpack-plugin'; // Import Workbox for service worker integration
 
 const nextConfig: NextConfig = {
-  // TypeScript configuration: Ignore build errors in TypeScript files
+  // TypeScript and ESLint configurations
   typescript: {
-    ignoreBuildErrors: true, // Useful during development, but you may want to turn this off in production
+    ignoreBuildErrors: true, // Allows build to continue even with TypeScript errors (useful during development)
   },
 
-  // ESLint configuration: Ignore ESLint errors during builds
   eslint: {
-    ignoreDuringBuilds: true, // Disables ESLint warnings/errors in production builds (recommended if you don't want to stop the build)
+    ignoreDuringBuilds: true, // Disables ESLint warnings/errors in production builds
   },
 
   // Experimental features section
   experimental: {
-    // Optimizes package imports for Chakra UI to reduce the final bundle size
-    optimizePackageImports: ["@chakra-ui/react"], 
+    optimizePackageImports: ["@chakra-ui/react"], // Optimizes Chakra UI imports to reduce bundle size
     serverActions: {
-      bodySizeLimit: "100MB", // Increase the limit for server actions, allows larger payloads for API calls
+      bodySizeLimit: "100MB", // Allows larger payloads in server actions (useful for large file uploads)
     },
   },
 
-  // Image Optimization settings: Configures allowed remote image domains for optimization
+  // Image Optimization settings
   images: {
     remotePatterns: [
       {
-        protocol: "https", // Enable images over HTTPS
+        protocol: "https",
         hostname: "cdn.pixabay.com", // Allow images from Pixabay CDN
       },
       {
@@ -67,18 +65,18 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        // Apply cache headers to all static assets in the '_next/static/*' folder
-        source: '/_next/static/*', 
+        // Apply cache headers to all assets in the static folder
+        source: '/_next/static/(.*)', // Corrected pattern for static assets
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable', // Cache assets for 1 year and mark as immutable (won’t change)
+            value: 'public, max-age=31536000, immutable', // Cache assets for 1 year and mark as immutable
           },
         ],
       },
       {
-        // Apply cache headers for images
-        source: '/images/*', 
+        // Apply cache headers to images
+        source: '/images/(.*)', // Corrected pattern for images
         headers: [
           {
             key: 'Cache-Control',
@@ -89,28 +87,28 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Workbox for Service Worker Integration (for offline caching and better performance on repeat visits)
+  // Workbox for Service Worker Integration (for offline caching)
   webpack(config) {
     config.plugins.push(
       new GenerateSW({
-        clientsClaim: true, // Ensure the service worker takes control as soon as possible
-        skipWaiting: true, // Skip waiting phase and activate service worker immediately
+        clientsClaim: true, // Ensure the service worker takes control immediately
+        skipWaiting: true, // Skip the waiting phase and activate the service worker immediately
         runtimeCaching: [
           {
             // Cache JavaScript, CSS, and HTML files using CacheFirst strategy
             urlPattern: /\.(?:js|css|html)$/,
-            handler: 'CacheFirst', // Try to fetch from the cache first
+            handler: 'CacheFirst',
             options: {
               cacheName: 'static-assets', // Cache name for static assets
               expiration: {
-                maxEntries: 100, // Maximum number of assets to cache
+                maxEntries: 100, // Maximum number of static assets to cache
               },
             },
           },
           {
             // Cache image files using CacheFirst strategy
             urlPattern: /\/images\//,
-            handler: 'CacheFirst', // Cache images first
+            handler: 'CacheFirst',
             options: {
               cacheName: 'image-cache', // Cache name for image assets
               expiration: {
@@ -125,10 +123,8 @@ const nextConfig: NextConfig = {
     return config;
   },
 
-  // HTTP/2 and HTTP/3 are automatically handled by platforms like Vercel for better performance.
-  // Ensure that HTTP/2/3 is enabled on your hosting platform to take advantage of multiplexing, 
-  // reducing latency and improving resource loading times.
-
+  // HTTP/2 and HTTP/3 are automatically supported by platforms like Vercel
+  // If you are hosting on custom servers, ensure HTTP/2 and HTTP/3 are enabled for better performance.
 };
 
 export default nextConfig;
