@@ -197,18 +197,20 @@ const Testimonials = () => {
                 w={"100%"}
                 h={"100%"}
                 borderTop={"1px solid rgb(0, 0, 0,0.25)"}
-                justify={"left"}
-                align={"start"}
+                justify={"center"}
+                align={"center"}
                 gap={["240px", "10px", "10px", "10px", "10px", "10px"]}
               >
-                <HStack>
+         
                   <Text
+               
+       
                     fontWeight={600}
                     fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
                   >
                     {reviews[currentSlide].name}
                   </Text>
-                </HStack>
+       
 
                
               </VStack>
