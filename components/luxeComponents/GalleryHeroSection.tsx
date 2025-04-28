@@ -33,7 +33,7 @@ const GalleryHeroSection = () => {
           />
           <HStack id="gallery-section" w="100%" justify="center" align="center">
             <Box
-              w="90%"
+              w="100%"
               bg="white"
               borderRadius="md"
               p={["20px", "30px"]}

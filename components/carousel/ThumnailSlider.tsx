@@ -101,7 +101,7 @@ function ThumnailSlider() {
   ImageWithLazyLoading.displayName = "ImageWithLazyLoading";
 
   return (
-    <Box w="100%" bg="gray.100" p="24px" borderRadius="32px">
+    <Box w="100%" bg="gray.100" p={["8px", "8px", "8px", "24px", "24px", "24px"]} borderRadius="32px">
       <Carousel options={OPTIONS} className="relative" isAutoPlay={true}>
         <SliderContainer className="gap-2">
           {Object.keys(imgPreview).map((key, index) => (
