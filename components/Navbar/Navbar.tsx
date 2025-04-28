@@ -97,9 +97,9 @@ const Navbar = () => {
           {/* Nav Items */}
           <HStack
             fontSize="16px"
-            gap={["16px", "16px", "16px", "36px", "36px"]}
+            gap={["12px", "12px", "12px", "36px", "36px", "36px"]}
             fontWeight="500"
-            flexWrap={"wrap"}
+ wrap={"nowrap"}
             justify={"center"}
           >
             {/* About */}
