@@ -100,7 +100,7 @@ const About = () => {
             <Text
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+              fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
               fontFamily={"Raleway"}
               bgClip="text"
@@ -111,7 +111,7 @@ const About = () => {
               Our Story
             </Text>
             <Text
-              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+              fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -323,7 +323,7 @@ const About = () => {
                 Excellence
               </Text>
               <Text
-                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 pt={"15px"}
               >
                 Delivering unparalleled service quality in every interaction
@@ -337,7 +337,7 @@ const About = () => {
                 Innovation
               </Text>
               <Text
-                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 pt={"15px"}
               >
                 Leveraging cutting-edge technology to streamline operations
@@ -352,7 +352,7 @@ const About = () => {
                 Integrity
               </Text>
               <Text
-                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 pt={"15px"}
               >
                 Building trust through transparency and ethical practices

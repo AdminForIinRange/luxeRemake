@@ -20,19 +20,22 @@ import { DialogContent, DialogRoot } from "@/components/chakra-snippets/dialog";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-
 import { useRouter } from "next/navigation";
 
 import HeroServices from "./luxeComponents/heroServices";
 import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 
-const ThumnailSlider = dynamic(() => import("./carousel/ThumnailSlider"), { ssr: false });
-const HouseHeroParallax = dynamic(() => import("./customUI/Parallax/HouseHeroParallax"), { ssr: false });
+const ThumnailSlider = dynamic(() => import("./carousel/ThumnailSlider"), {
+  ssr: false,
+});
+const HouseHeroParallax = dynamic(
+  () => import("./customUI/Parallax/HouseHeroParallax"),
+  { ssr: false },
+);
 
 const Hero = () => {
   const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-
 
   useEffect(() => {
     Aos.init({ duration: 1000, once: false, mirror: true });
@@ -109,33 +112,32 @@ const Hero = () => {
         transition={"all 0.2s ease-in-out"}
         zIndex={3}
       >
-   <Box
-  display="flex"
-  alignItems="center"
-  justifyContent="center"
-  gap="15px"
-  fontFamily="raleway"
-  cursor="pointer"
-  _hover={{
-    scale: 1.1,
-    fontWeight: "700",
-    px: "80px",
-    bg: "#0A0F29",
-  }}
-  p={4}
-  bg="#0A0F29"
-  color="white"
-  rounded="30px"
-  px="8"
-  fontWeight="500"
-  onClick={() => {
-    const element = document.getElementById("get-started-button");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
->
-
+        <Box
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          gap="15px"
+          fontFamily="raleway"
+          cursor="pointer"
+          _hover={{
+            scale: 1.1,
+            fontWeight: "700",
+            px: "80px",
+            bg: "#0A0F29",
+          }}
+          p={4}
+          bg="#0A0F29"
+          color="white"
+          rounded="30px"
+          px="8"
+          fontWeight="500"
+          onClick={() => {
+            const element = document.getElementById("get-started-button");
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+        >
           Get Started
           <Icon as={ArrowRight}> </Icon>
         </Box>
@@ -193,7 +195,7 @@ const Hero = () => {
           borderRadius={"10px"}
         >
           <iframe
-           loading="lazy"
+            loading="lazy"
             style={{
               width: "100%",
               height: "800px",
@@ -233,7 +235,7 @@ const Hero = () => {
               data-aos="fade-up"
               w={["100%", "100%", "80%", "80%", "80%", "80%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+              fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={700}
               fontFamily={"Raleway"}
               bgClip="text"
@@ -244,7 +246,7 @@ const Hero = () => {
               How We Can Get You Get Started
             </Text>
             <Text
-              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+              fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -310,12 +312,17 @@ const Hero = () => {
             borderRadius={"30px"}
             bgPos={"center"}
             bgSize={"cover"}
-    
           >
             {" "}
             {GettingStartedSteps.slice(0, 4).map(
               ({ id, title, description }, index) => (
-                <VStack         data-aos="fade-up" key={id} w={"100%"} align={"center"} justify={"start"}>
+                <VStack
+                  data-aos="fade-up"
+                  key={id}
+                  w={"100%"}
+                  align={"center"}
+                  justify={"start"}
+                >
                   <HStack
                     w={"100%"}
                     h={"100%"}
@@ -435,14 +442,19 @@ const Hero = () => {
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-
+      <TitleSubheading
+        title={"Gallery"}
+        subheading={"Take a look at some of our work."}
+      />
       <HStack
         id="gallery-section"
         w="100%"
         justify="center"
         align="center"
-        mt="100px" // Adjust spacing as desired
+       
       >
+
+        
         <Box
           w="90%"
           bg="white"
@@ -451,17 +463,7 @@ const Hero = () => {
           textAlign="center"
         >
           {/* Title & Subtitle */}
-          <Text
-            fontSize={["2xl", "3xl", "4xl"]}
-            fontWeight="bold"
-            fontFamily="Raleway"
-            mb="10px"
-          >
-            Check Out Our Gallery
-          </Text>
-          <Text fontSize={["md", "lg"]} color="gray.600" fontFamily="Raleway">
-            A glimpse into some of our most stunning properties and interiors.
-          </Text>
+         
           <HStack
             data-aos="fade-up"
             justify={[

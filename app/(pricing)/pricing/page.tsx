@@ -245,7 +245,7 @@ const Pricing = () => {
             <Box w={["95%", "95%", "95%", "600px", "600px", "600px"]}>
               <Text
                 mt="15px"
-                fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+                fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
                 fontWeight="600"
                 fontFamily="Raleway"
                 textAlign={[
@@ -314,7 +314,7 @@ const Pricing = () => {
               </Text>
               <Text
                 mt="20px"
-                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 textAlign={[
                   "center",
                   "center",

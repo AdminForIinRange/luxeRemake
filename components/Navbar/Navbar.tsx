@@ -108,7 +108,7 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -120,7 +120,7 @@ const Navbar = () => {
 
             <Box position="relative">
               <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+              fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -137,7 +137,7 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -173,7 +173,7 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+               fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -190,7 +190,7 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+               fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
@@ -207,7 +207,7 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
+                fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"

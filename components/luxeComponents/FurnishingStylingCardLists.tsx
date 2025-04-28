@@ -70,7 +70,7 @@ const FurnishingStylingCardLists = () => {
               data-aos="fade-up"
               w={["100%", "100%", "80%", "80%", "80%", "80%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+              fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={700}
               fontFamily={"Raleway"}
               bgClip="text"
@@ -82,7 +82,7 @@ const FurnishingStylingCardLists = () => {
             </Text>
             <Text
                data-aos="fade-up"
-              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+              fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
               fontFamily={"Raleway"}

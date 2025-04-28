@@ -67,7 +67,7 @@ const FAQ = () => {
                 ml={"10px"}
                 flex="1"
                 fontWeight={"600"}
-                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               >
                 {item.question}
               </Span>
@@ -77,7 +77,7 @@ const FAQ = () => {
             <Accordion.ItemContent>
               <Accordion.ItemBody
                 ml={"10px"}
-                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               >
                 {item.answer}
               </Accordion.ItemBody>

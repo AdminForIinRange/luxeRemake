@@ -119,11 +119,12 @@ function ThumnailSlider() {
   const ImageWithLazyLoading = React.memo(({ src, alt, width, height }) => {
     const imgRef = useRef(null);
     const isVisible = useIntersectionObserver(imgRef, "200px");
-    
+    const placeholder = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy533w1";
+
     return (
       <div ref={imgRef}>
         <Image
-          src={isVisible ? src : "/placeholder.jpg"} // Use placeholder until image is visible
+          src={isVisible ? src : placeholder} // Use placeholder until image is visible
           alt={alt}
           width={width}
           height={height}

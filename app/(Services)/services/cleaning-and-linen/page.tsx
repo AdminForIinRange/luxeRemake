@@ -78,7 +78,7 @@ const CleaningAndLinen = () => {
               <Text
                 w={["100%", "100%", "100%", "100%", "100%", "100%"]}
                 mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-                fontSize={["35px", "35px", "35px", "50px", "50px", "50px"]}
+                fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
                 fontWeight={600}
                 fontFamily={"Raleway"}
                 bgClip="text"
@@ -97,7 +97,7 @@ const CleaningAndLinen = () => {
               </Text>
 
               <Text
-                fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
                 mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
                 textAlign={[
                   "center",
