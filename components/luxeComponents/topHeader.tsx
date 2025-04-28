@@ -31,7 +31,7 @@ const TopHeader = ({ imgUrl, wordOne, wordTwo, description, and }: TopHeaderProp
           backgroundRepeat="no-repeat"
           transition={"all 0.3s"}
           w={"95%"}
-          h={["400px", "400px", "400px", "400px", "600px", "600px"]}
+          h={["300px", "300px", "300px", "300px", "500px", "500px"]}
           borderRadius={"16px"}
           _hover={{
             transform: "scale(1.01)",
