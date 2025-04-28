@@ -161,6 +161,7 @@ const Contact = () => {
               borderRadius={"10px"}
             >
               <iframe
+              loading="lazy"
                 style={{
                   width: "100%",
                   height: "800px",

@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  Box,
-
-  HStack,
-
-  Text,
-
-} from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+
 const HeroServices = () => {
   const router = useRouter();
   return (
@@ -121,11 +116,16 @@ const HeroServices = () => {
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="100% 100%"
-            ></Box>
+            >
+              {" "}
+              <Image
+                src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg"
+                alt="Property"
+                layout="fill"
+                objectFit="cover"
+                quality={75} // Adjust quality for performance
+              />
+            </Box>
             {/* Bottom-right label */}
             <Box
               p={"4"}
@@ -217,7 +217,7 @@ const HeroServices = () => {
               Professional Property Management
             </Text>
             <Text
-             fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -274,7 +274,7 @@ const HeroServices = () => {
 
           <Box
             position="relative"
-            h={["350px", "350px", "350px",  "500px", "500px", "600px"]}
+            h={["350px", "350px", "350px", "500px", "500px", "600px"]}
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
             borderRadius="30px"
             bgPos="center"
@@ -288,16 +288,20 @@ const HeroServices = () => {
             {/* Horizontal line for crosshair */}
             <Box
               position="relative"
-              h={["350px", "350px", "350px",  "500px", "500px", "500px"]}
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
               w={["100%", "100%", "100%", "550px", "550px", "550px"]}
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="100% 100%"
-            ></Box>
+            >
+              <Image
+                src="https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg"
+                alt="Property"
+                layout="fill"
+                objectFit="cover"
+                quality={75} // Adjust quality for performance
+              />
+            </Box>
             {/* Bottom-right label */}
 
             <Box
@@ -455,7 +459,7 @@ const HeroServices = () => {
               Comprehensive Guest Services
             </Text>
             <Text
-    fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
+              fontSize={["18px", "18px", "18px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
               fontFamily={"Raleway"}
@@ -512,7 +516,7 @@ const HeroServices = () => {
 
           <Box
             position="relative"
-              h={["350px", "350px", "350px",  "500px", "500px", "600px"]}
+            h={["350px", "350px", "350px", "500px", "500px", "600px"]}
             w={["95%", "95%", "95%", "600px", "600px", "600px"]}
             borderRadius="30px"
             bgPos="center"
@@ -526,16 +530,20 @@ const HeroServices = () => {
             {/* Horizontal line for crosshair */}
             <Box
               position="relative"
-                h={["350px", "350px", "350px",  "500px", "500px", "500px"]}
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
               w={["100%", "100%", "100%", "550px", "550px", "550px"]}
               borderRadius="30px"
               bg="gray.200" // Change this to any background you want
               overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="100% 100%"
-            ></Box>
+            >
+              <Image
+                src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg"
+                alt="Property"
+                layout="fill"
+                objectFit="cover"
+                quality={75} // Adjust quality for performance
+              />
+            </Box>
             {/* Bottom-right label */}
             <Box
               p={"4"}

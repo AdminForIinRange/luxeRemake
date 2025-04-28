@@ -181,7 +181,10 @@ const AboutJourneyCardLists = () => {
                 backgroundRepeat="no-repeat"
                 backgroundPosition="center"
                 backgroundSize="cover"
-              ></Box>
+              >
+
+                
+              </Box>
               {/* Bottom-right label */}
               {/* <Box
                 p={"4"}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import Carousel, {
   Slider,
@@ -51,9 +51,28 @@ import houseFourImg7 from "@/public/images/dalts/houseFour/WEB/7.jpg";
 import houseFourImg8 from "@/public/images/dalts/houseFour/WEB/8.jpg";
 import houseFourImg9 from "@/public/images/dalts/houseFour/WEB/9.jpg";
 import houseFourImg10 from "@/public/images/dalts/houseFour/WEB/10.jpg";
-
+type ImgPreview = {
+  img1: StaticImageData;
+  img2: StaticImageData;
+  img3: StaticImageData;
+  img4: StaticImageData;
+  img5: StaticImageData;
+  img6: StaticImageData;
+  img7: StaticImageData;
+  img8: StaticImageData;
+  img9: StaticImageData;
+  img10: StaticImageData;
+  img11: StaticImageData;
+  img12: StaticImageData;
+  img13: StaticImageData;
+  img14: StaticImageData;
+  img15: StaticImageData;
+  img16: StaticImageData;
+  img17: StaticImageData;
+  img18: StaticImageData;
+};
 function ThumnailSlider() {
-  const imgPreview = {
+  const imgPreview: ImgPreview = {
     img1: houseOneImg10,
     img2: houseOneImg2,
     img3: houseOneImg3,
@@ -73,235 +92,89 @@ function ThumnailSlider() {
     img17: houseFourImg7,
     img18: houseFourImg10,
   };
+
   const OPTIONS: EmblaOptionsType = { loop: false };
+
+  // Function to load images lazily with IntersectionObserver
+  const useIntersectionObserver = (ref, rootMargin = "0px") => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect(); // Stop observing once image is loaded
+          }
+        },
+        { rootMargin }
+      );
+      if (ref.current) observer.observe(ref.current);
+      return () => observer.disconnect();
+    }, [ref]);
+    
+    return isVisible;
+  };
+
+  const ImageWithLazyLoading = React.memo(({ src, alt, width, height }) => {
+    const imgRef = useRef(null);
+    const isVisible = useIntersectionObserver(imgRef, "200px");
+    
+    return (
+      <div ref={imgRef}>
+        <Image
+          src={isVisible ? src : "/placeholder.jpg"} // Use placeholder until image is visible
+          alt={alt}
+          width={width}
+          height={height}
+          loading="lazy"
+          style={{
+            backgroundPosition: "bottom",
+            height: "100%",
+            width: "100%",
+            objectFit: "contain",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            borderRadius: "30px",
+          }}
+        />
+      </div>
+    );
+  });
+
+  // Set the display name for debugging purposes
+  ImageWithLazyLoading.displayName = 'ImageWithLazyLoading';
+
   return (
-    <>
-      <Box
-        className=" 2xl:w-[100%] bg-background sm:w-[100%] w-[100%] mx-auto"
-        bg={"gray.100"}
-        p={"24px"}
-        borderRadius={"32px"}
-      >
-        <Carousel options={OPTIONS} className=" relative" isAutoPlay={true}>
-          <SliderContainer className="gap-2">
+    <Box
+      className="2xl:w-[100%] bg-background sm:w-[100%] w-[100%] mx-auto"
+      bg={"gray.100"}
+      p={"24px"}
+      borderRadius={"32px"}
+    >
+      <Carousel options={OPTIONS} className="relative" isAutoPlay={true}>
+        <SliderContainer className="gap-2">
+          {Object.keys(imgPreview).map((key, index) => (
+            // TypeScript will now allow this because we defined the keys in ImgPreview
             <Slider
+              key={index}
               className="xl:h-[500px] sm:h-[500px] h-[500px] w-full"
-              thumnailSrc={imgPreview.img1}
+              thumnailSrc={imgPreview[key as keyof ImgPreview]} // Ensure key is valid
             >
               <HStack justify={"center"} align={"center"} h={"100%"} w={"100%"}>
-                <Image
-                  src={imgPreview.img1}
+                <ImageWithLazyLoading
+                  src={imgPreview[key as keyof ImgPreview]}
+                  alt={`image ${key}`}
                   width={1400}
-                  height={100}
-                  alt="image"
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "contain",
-                    backgroundSize: "cover",
-
-                    backgroundPosition: "bottom",
-                    backgroundRepeat: "no-repeat",
-
-                    borderRadius: "30px",
-                  }}
+                  height={800}
                 />
-              </HStack>{" "}
+              </HStack>
             </Slider>
-            <Slider
-              className="xl:h-[500px] sm:h-[500px] h-[500px] w-full"
-              thumnailSrc={imgPreview.img2}
-            >
-              <Image
-                src={imgPreview.img2}
-                width={1400}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-            <Slider
-              className="xl:h-[500px] sm:h-[500px] h-[500px] w-full"
-              thumnailSrc={imgPreview.img3}
-            >
-              <Image
-                src={imgPreview.img3}
-                width={1400}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-            <Slider
-              className="xl:h-[500px] sm:h-[500px] h-[500px] w-full"
-              thumnailSrc={imgPreview.img4}
-            >
-              <Image
-                src={imgPreview.img4}
-                width={1400}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-            <Slider
-              className="xl:h-[500px] sm:h-[500px] h-[500px] w-full"
-              thumnailSrc={imgPreview.img5}
-            >
-              <Image
-                src={imgPreview.img5}
-                width={1400}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-            <Slider
-              className="xl:h-[500px] sm:h-[500px] h-[500px] w-full"
-              thumnailSrc={imgPreview.img6}
-            >
-              <Image
-                src={imgPreview.img6}
-                width={1400}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-            <Slider
-              className="xl:h-[500px] sm:h-[500px] h-[500px] w-full"
-              thumnailSrc={imgPreview.img7}
-            >
-              <Image
-                src={imgPreview.img7}
-                width={1200}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-            <Slider
-              className="xl:h-[500px] sm:h-[500px] h-[500px] w-full"
-              thumnailSrc={imgPreview.img8}
-            >
-              <Image
-                src={imgPreview.img8}
-                width={1200}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-            <Slider
-              className=" xl:h-[400px] sm:h-[350px] h-[300px] w-full"
-              thumnailSrc={imgPreview.img9}
-            >
-              <Image
-                src={imgPreview.img9}
-                width={1200}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-            <Slider
-              className=" xl:h-[400px] sm:h-[350px] h-[300px] w-full"
-              thumnailSrc={imgPreview.img10}
-            >
-              <Image
-                src={imgPreview.img10}
-                width={1200}
-                height={800}
-                alt="image"
-                style={{
-                  backgroundPosition: "bottom",
-                  height: "100%",
-                  width: "100%",
-                  objectFit: "contain",
-                  backgroundSize: "cover",
-
-                  backgroundRepeat: "no-repeat",
-                  borderRadius: "30px",
-                }}
-              />
-            </Slider>
-          </SliderContainer>
-          <ThumsSlider />
-        </Carousel>
-      </Box>
-    </>
+          ))}
+        </SliderContainer>
+        <ThumsSlider />
+      </Carousel>
+    </Box>
   );
 }
 

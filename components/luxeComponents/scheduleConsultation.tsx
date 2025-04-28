@@ -1,25 +1,20 @@
 import {
   Box,
- 
   HStack,
-
-  DialogCloseTrigger,
- 
   Text,
- 
 } from "@chakra-ui/react";
-import React, { useState } from "react";
 import {
   DialogContent,
-
+  DialogCloseTrigger,
   DialogRoot,
-
 } from "@/components/chakra-snippets/dialog";
+import React, { useState } from "react";
+
 const ScheduleConsultation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <>
- 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
         justify={"center"}
@@ -50,14 +45,14 @@ const ScheduleConsultation = () => {
             fontFamily={"raleway"}
             mb={"10px"}
           >
-            Ready to transfrom your property management?
+            Ready to transform your property management?
           </Text>
           <Text
             color={"white"}
             fontSize={["18px", "18px", "18px", "26px", "26px", "26px"]}
             fontFamily={"raleway"}
           >
-            Get a full consulation, market analysis in under 24 hours for free
+            Get a full consultation, market analysis in under 24 hours for free
           </Text>
 
           <HStack
@@ -92,39 +87,51 @@ const ScheduleConsultation = () => {
               onClick={() => setIsDialogOpen(true)}
             >
               Schedule a consultation
-              {/* <Icon as={ArrowRight}> </Icon> */}
             </Box>
           </HStack>
         </Box>
       </HStack>
 
-  
-
       <DialogRoot
         size={"cover"}
         open={isDialogOpen}
-        onOpenChange={(details) => setIsDialogOpen(details.open)}
+        onOpenChange={({ open }) => setIsDialogOpen(open)}
       >
         <DialogContent
           p={0}
           bg={"white"}
           color={"white"}
           rounded={"10px"}
-          borderRadius={"10px"}
         >
           <iframe
-            style={{
-              width: "100%",
-              height: "800px",
-              border: "none",
-              borderRadius: "10px",
-            }}
+            loading="lazy"
+            className="calendly-frame"
             src="https://calendly.com/luxemanagements-info"
           ></iframe>
 
-          <DialogCloseTrigger />
+          <DialogCloseTrigger
+            rounded="full"
+            color="black"
+            w="40px"
+            h="40px"
+            border="1px black solid"
+            position="absolute"
+            top="10px"
+            right="10px"
+            onClick={() => setIsDialogOpen(false)}
+            _focus={{ outline: "none" }}
+          />
         </DialogContent>
       </DialogRoot>
+
+      <style jsx>{`
+        .calendly-frame {
+          width: 100%;
+          height: 800px;
+          border: none;
+          border-radius: 10px;
+        }
+      `}</style>
     </>
   );
 };

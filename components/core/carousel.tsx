@@ -573,7 +573,7 @@ export const ThumsSlider: React.FC = () => {
   // console.log(slidesrArr);
 
   return (
-    <div className='overflow-hidden mt-2' ref={emblaThumbsRef}>
+    <div className='overflow-hidden mt-2 p-5' ref={emblaThumbsRef}>
       <div className='flex flex-row gap-2'>
         {slidesrArr.map((slide, index) => (
           <div

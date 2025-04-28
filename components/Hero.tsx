@@ -1,5 +1,6 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import {
   Box,
@@ -13,33 +14,25 @@ import {
 
 import { FlipWords } from "@/components/ui/flip-words";
 import { ArrowRight } from "lucide-react";
-import HouseHeroParallax from "./customUI/Parallax/HouseHeroParallax";
 
 import { DialogContent, DialogRoot } from "@/components/chakra-snippets/dialog";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
 
+
 import { useRouter } from "next/navigation";
 
 import HeroServices from "./luxeComponents/heroServices";
 import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 
-import ThumnailSlider from "./carousel/ThumnailSlider";
+const ThumnailSlider = dynamic(() => import("./carousel/ThumnailSlider"), { ssr: false });
+const HouseHeroParallax = dynamic(() => import("./customUI/Parallax/HouseHeroParallax"), { ssr: false });
+
 const Hero = () => {
   const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  // const { user } = useUser();
 
-  // const [loading, setLoading] = useState(true);
-
-  // const handleSignOut = async () => {
-  //   try {
-  //     await signOutUser();
-  //   } catch (error) {
-  //     console.error("Error signing out:", error);
-  //   }
-  // };
 
   useEffect(() => {
     Aos.init({ duration: 1000, once: false, mirror: true });
@@ -116,34 +109,33 @@ const Hero = () => {
         transition={"all 0.2s ease-in-out"}
         zIndex={3}
       >
-        <Box
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          gap={"15px"}
-          fontFamily={"raleway"}
-          transition={"all 0.2s ease-in-out"}
-          cursor={"pointer"}
-          _hover={{
-            transition: "all 0.2s ease-in-out",
-            scale: 1.1,
-            fontWeight: "700",
-            px: "80px",
-            bg: "#0A0F29",
-          }}
-          p={4}
-          bg={"#0A0F29"}
-          color={"white"}
-          rounded={"30px"}
-          px={"8"}
-          fontWeight={"500"}
-          onClick={() => {
-            const element = document.getElementById("get-started-button");
-            if (element) {
-              element.scrollIntoView({ behavior: "smooth" });
-            }
-          }}
-        >
+   <Box
+  display="flex"
+  alignItems="center"
+  justifyContent="center"
+  gap="15px"
+  fontFamily="raleway"
+  cursor="pointer"
+  _hover={{
+    scale: 1.1,
+    fontWeight: "700",
+    px: "80px",
+    bg: "#0A0F29",
+  }}
+  p={4}
+  bg="#0A0F29"
+  color="white"
+  rounded="30px"
+  px="8"
+  fontWeight="500"
+  onClick={() => {
+    const element = document.getElementById("get-started-button");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+
           Get Started
           <Icon as={ArrowRight}> </Icon>
         </Box>
@@ -201,6 +193,7 @@ const Hero = () => {
           borderRadius={"10px"}
         >
           <iframe
+           loading="lazy"
             style={{
               width: "100%",
               height: "800px",
