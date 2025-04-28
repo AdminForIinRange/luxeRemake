@@ -223,12 +223,13 @@ const Pricing = () => {
         <HStack
           w="100%"
           borderRadius="30px"
-          p="50px"
+          p={["25px", "25px", "25px", "50px", "50px", "50px"]}
           display="flex"
           flexDir="column"
           alignItems="center"
           justifyContent="center"
-          boxShadow="0px 10px 20px rgba(0, 0, 0, 0.1)"
+          border={"1px solid #e0e0e0"}
+    
           textAlign="center"
           bg="white"
           transition="all 0.3s ease"
@@ -444,9 +445,9 @@ const Pricing = () => {
       </HStack>
 
       {/* Three Additional Boxes Underneath */}
-      <Box py="5%" minH="100vh" px={["4%", "4%", "6%", "6%", "6%", "10%"]}>
+      <Box py="5%" minH="100vh" px={["4%", "4%", "6%", "6%", "6%", "10%"]} >
         {/* Page Header */}
-        <VStack textAlign="center" mb="60px">
+        <VStack textAlign="center" mb="60px" >
           <Text
             w={["100%", "100%", "100%", "100%", "100%", "100%"]}
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
@@ -493,19 +494,20 @@ const Pricing = () => {
           templateColumns={["1fr", "1fr", "repeat(3, 1fr)"]}
           gap="40px"
           maxW="1200px"
-          mx="auto"
+          mx="auto" 
         >
           {/* Card 1: Styling & Photography */}
           <Box
             bg="white"
             borderRadius="16px"
             overflow="hidden"
-            boxShadow="0 10px 30px rgba(0,0,0,0.1)"
+   
             transition="all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)"
             _hover={{
               transform: "translateY(-10px)",
               boxShadow: "0 15px 60px rgba(0,0,0,0.15)",
             }}
+            border={"1px solid #e0e0e0"}
           >
             {/* Card Header with Gradient & Badge */}
             <Box p="25px 30px" position="relative" color="black">
@@ -600,12 +602,13 @@ const Pricing = () => {
             bg="white"
             borderRadius="16px"
             overflow="hidden"
-            boxShadow="0 10px 30px rgba(0,0,0,0.1)"
+           
             transition="all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)"
             _hover={{
               transform: "translateY(-10px)",
               boxShadow: "0 15px 60px rgba(0,0,0,0.15)",
             }}
+            border={"1px solid #e0e0e0"}
           >
             <Box p="25px 30px" color="black">
               <Text
@@ -681,7 +684,7 @@ const Pricing = () => {
             bg="white"
             borderRadius="16px"
             overflow="hidden"
-            boxShadow="0 10px 30px rgba(0,0,0,0.1)"
+            border={"1px solid #e0e0e0"}
             transition="all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)"
             _hover={{
               transform: "translateY(-10px)",
