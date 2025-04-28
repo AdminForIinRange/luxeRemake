@@ -31,13 +31,13 @@ const About = () => {
   const [members, setmembers] = useState([
     {
       name: "Habibur Rahman",
-      role: "CEO & Co-founder",
+      role: "Founder & CEO",
       desc: "I told my computer I needed a break, and it said 'No problem, I'll crash for you!'",
       src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },
     {
       name: "Matthew Zaniewski",
-      role: "Operation Director",
+      role: "Operations Director",
       desc: "I'm reading a book about anti-gravity. It's impossible to put down.",
       src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
     },

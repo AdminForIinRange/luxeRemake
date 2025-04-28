@@ -92,7 +92,7 @@ const Pricing = () => {
           flexDir="column"
           alignItems="center"
           justifyContent="center"
-          boxShadow="0px 10px 20px rgba(0, 0, 0, 0.1)"
+          border="1px solid #e0e0e0"
           textAlign="center"
           bg="white"
           transition="all 0.3s ease"
