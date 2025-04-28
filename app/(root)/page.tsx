@@ -2,7 +2,6 @@
 
 import React from "react";
 
-
 import Hero from "@/components/Hero";
 
 import FAQ from "@/components/FAQ";
@@ -12,42 +11,27 @@ import { Box, HStack } from "@chakra-ui/react";
 import ReactLenis from "lenis/react";
 import Testimonials from "@/components/testimonials";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
-
+import HowWeCanGetYouStarted from "@/components/luxeComponents/HowWeCanGetYouStarted";
+import OurServices from "@/components/luxeComponents/OurServices";
+import GalleryHeroSection from "@/components/luxeComponents/GalleryHeroSection";
 
 const Home = () => {
-
-  // const { user, setUser } = useUser();
-
-
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     // Fetch the current user only if not already set
-  //     if (!user) {
-  //       const currentUser = await getCurrentUser();
-  //       setUser(currentUser);
-  //     }
-  //     setLoading(false); // Mark loading as complete
-      
-  //   };
-
-  //   fetchUser();
-  // }, [user, setUser]);
-
- 
- 
   return (
     <>
-    <ReactLenis root />
-
-{/* <WaitingList /> */}
-
+      <ReactLenis
+        root
+        options={{
+          duration: 1.2,
+          touchMultiplier: 2,
+        }}
+      />
 
       <Hero />
-{/* 
-      <TestingCreateListingDB /> */}
-
-<Testimonials />
-   <HStack
+      <HowWeCanGetYouStarted />
+      <OurServices />
+      <GalleryHeroSection />
+      <Testimonials />
+      <HStack
         justify={"center"}
         align={"center"}
         w={"100%"}
@@ -61,8 +45,6 @@ const Home = () => {
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <FAQ />
-    
-
     </>
   );
 };

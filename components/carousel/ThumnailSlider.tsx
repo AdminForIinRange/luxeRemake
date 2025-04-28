@@ -73,22 +73,20 @@ type ImgPreview = {
 };
 function ThumnailSlider() {
   const imgPreview: ImgPreview = {
+
+    
     img1: houseOneImg10,
     img2: houseOneImg2,
-    img3: houseOneImg3,
-    img4: houseOneImg1,
+ 
     img5: houseTwoImg1,
     img6: houseTwoImg2,
-    img7: houseTwoImg3,
-    img8: houseTwoImg4,
+
     img9: houseThreeImg1,
     img10: houseThreeImg2,
-    img11: houseThreeImg3,
-    img12: houseThreeImg4,
+
     img13: houseFourImg1,
     img14: houseFourImg2,
-    img15: houseFourImg3,
-    img16: houseFourImg4,
+
     img17: houseFourImg7,
     img18: houseFourImg10,
   };

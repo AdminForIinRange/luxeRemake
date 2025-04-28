@@ -1,35 +1,19 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback, memo } from "react";
 import { Box, Stack, Text, Flex, HStack } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import luxeLogo from "../../public/png/LuxeLogo.png";
+import luxeLogo from "@/public/png/LuxeLogo.png";
 
 const Navbar = () => {
   const router = useRouter();
 
-  // Track which dropdown is open
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const timeoutRef = useRef<any>(null);
 
-  const handleEnter = (name: string) => {
-    clearTimeout(timeoutRef.current);
-    setActiveDropdown(name);
-  };
-
-  const handleLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 300);
-  };
-
-  // Reusable Dropdown
-  const Dropdown = ({
-    items,
-  }: {
-    items: { label: string; link: string }[];
-  }) => (
+  
+  const Dropdown = memo(({ items }: { items: { label: string; link: string }[] }) => (
     <Box
       borderRadius="4px"
       position="absolute"
@@ -47,7 +31,7 @@ const Navbar = () => {
       transition="all 0.3s ease-in-out"
       pointerEvents={activeDropdown ? "auto" : "none"}
       onMouseEnter={() => clearTimeout(timeoutRef.current)}
-      onMouseLeave={handleLeave}
+      onMouseLeave={() => setTimeout(() => setActiveDropdown(null), 300)}
     >
       <Stack>
         {items.map((item, index) => (
@@ -64,7 +48,24 @@ const Navbar = () => {
         ))}
       </Stack>
     </Box>
-  );
+  ));
+  Dropdown.displayName = "Dropdown";
+
+  // Use useCallback to avoid creating a new function on every render
+  const handleEnter = useCallback((name: string) => {
+    clearTimeout(timeoutRef.current);
+    setActiveDropdown(name);
+  }, []);
+
+  const handleLeave = useCallback(() => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300);
+  }, []);
+
+  const handleNavigate = useCallback((path: string) => {
+    router.push(path);
+  }, [router]);
 
   return (
     <Box w="100%" p={4} fontFamily="raleway">
@@ -82,11 +83,11 @@ const Navbar = () => {
             align="center"
             direction={{ base: "column", md: "row" }}
             cursor="pointer"
-            onClick={() => router.push("/")}
+            onClick={() => handleNavigate("/")}
             gap="0px"
           >
-            <Box w="70px" h="100%" onClick={() => router.push("/")}>
-              <Image src={luxeLogo} alt="logo" />
+            <Box w="70px" h="100%">
+              <Image src={luxeLogo} alt="Luxe Management Logo" priority />
             </Box>
             <Text fontSize="20px" fontWeight="700">
               Luxe Management
@@ -108,59 +109,51 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-                fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
-                onClick={() => router.push("/about")}
+                onClick={() => handleNavigate("/about")}
               >
                 About
               </Box>
             </Box>
 
+            {/* News */}
             <Box position="relative">
               <Box
-              fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
-                onClick={() => router.push("/news")}
+                onClick={() => handleNavigate("/news")}
               >
                 News
               </Box>
             </Box>
 
-            {/* Services */}
+            {/* Services Dropdown */}
             <Box
               position="relative"
               onMouseEnter={() => handleEnter("services")}
               onMouseLeave={handleLeave}
             >
               <Box
-                fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
-                onClick={() => router.push("/services")}
+                onClick={() => handleNavigate("/services")}
               >
                 Services
               </Box>
               {activeDropdown === "services" && (
                 <Dropdown
                   items={[
-                    {
-                      label: "property management",
-                      link: "/services/property-management",
-                    },
-                    {
-                      label: "cleaning & linen",
-                      link: "/services/cleaning-and-linen",
-                    },
-                    {
-                      label: "furnishing & styling",
-                      link: "/services/furnishing-and-styling",
-                    },
-                    { label: "photography", link: "/services/photography" },
+                    { label: "Property Management", link: "/services/property-management" },
+                    { label: "Cleaning & Linen", link: "/services/cleaning-and-linen" },
+                    { label: "Furnishing & Styling", link: "/services/furnishing-and-styling" },
+                    { label: "Photography", link: "/services/photography" },
                   ]}
                 />
               )}
@@ -173,11 +166,11 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-               fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
-                onClick={() => router.push("/pricing")}
+                onClick={() => handleNavigate("/pricing")}
               >
                 Pricing
               </Box>
@@ -190,11 +183,11 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-               fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
-                onClick={() => router.push("/gallery")}
+                onClick={() => handleNavigate("/gallery")}
               >
                 Gallery
               </Box>
@@ -207,11 +200,11 @@ const Navbar = () => {
               onMouseLeave={handleLeave}
             >
               <Box
-                fontSize={["14px", "14px", "16px", "18px", "18px", "18px"]}
+                fontSize={["16px", "16px", "16px", "18px", "18px"]}
                 cursor="pointer"
                 _hover={{ scale: 1.1, fontWeight: "700" }}
                 transition="all 0.2s ease-in-out"
-                onClick={() => router.push("/contact")}
+                onClick={() => handleNavigate("/contact")}
               >
                 Contact
               </Box>
