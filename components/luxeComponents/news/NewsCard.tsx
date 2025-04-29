@@ -6,7 +6,7 @@ import { Box, Stack, HStack, Text, Icon } from "@chakra-ui/react";
 
 import { useRouter } from "next/navigation";
 import { Article } from "@/lib/types/article";
-import { deleteArticle } from "@/lib/actions/deleetArticle.action";
+// import { deleteArticle } from "@/lib/actions/deleetArticle.action";
 import { X } from "lucide-react";
 
 type NewsCardProps = {
@@ -20,18 +20,18 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
     router.push(`/news/article/${article.$id}`);
   };
 
-  const handleDelete = async (e: React.MouseEvent) => {
-    e.stopPropagation(); // prevent routing when clicking delete
-    const confirmed = confirm("Are you sure you want to delete this article?");
-    if (!confirmed) return;
+  // const handleDelete = async (e: React.MouseEvent) => {
+  //   e.stopPropagation(); // prevent routing when clicking delete
+  //   const confirmed = confirm("Are you sure you want to delete this article?");
+  //   if (!confirmed) return;
 
-    const res = await deleteArticle(article.$id);
-    if (res.success) {
-      router.refresh(); // Refresh the page to reflect changes
-    } else {
-      alert(res.error);
-    }
-  };
+  //   const res = await deleteArticle(article.$id);
+  //   if (res.success) {
+  //     router.refresh(); // Refresh the page to reflect changes
+  //   } else {
+  //     alert(res.error);
+  //   }
+  // };
 
   return (
     <Box
@@ -51,7 +51,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
         position="absolute"
         top="10px"
         right="10px"
-        onClick={handleDelete}
+        // onClick={handleDelete}
         zIndex="1"
         backgroundColor="red.500"
         color="white"
