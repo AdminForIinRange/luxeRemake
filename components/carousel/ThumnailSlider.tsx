@@ -78,6 +78,7 @@ function ThumnailSlider() {
     return (
       <div ref={imgRef}>
         <Image
+   
           src={isVisible ? src : placeholder} // Use placeholder until image is visible
           alt={alt}
           width={width}
@@ -90,7 +91,7 @@ function ThumnailSlider() {
             objectFit: "contain",
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
-            borderRadius: "30px",
+            borderRadius: "40px",
           }}
         />
       </div>
@@ -101,17 +102,19 @@ function ThumnailSlider() {
   ImageWithLazyLoading.displayName = "ImageWithLazyLoading";
 
   return (
-    <Box w="100%" bg="gray.100" p={["8px", "8px", "8px", "24px", "24px", "24px"]} borderRadius="32px">
+    <Box w="100%" bg="gray.100" p={["8px", "8px", "8px", "24px", "24px", "24px"]} borderRadius="16px">
       <Carousel options={OPTIONS} className="relative" isAutoPlay={true}>
         <SliderContainer className="gap-2">
           {Object.keys(imgPreview).map((key, index) => (
             <Slider
               key={index}
-              className="xl:h-[500px] sm:h-[500px] h-[200px] w-full"
+              className="xl:h-[500px] sm:h-[500px] h-[200px] w-full rounded-2xl"
+              style={{borderRadius: "40px"}}
               thumnailSrc={imgPreview[key as keyof ImgPreview]}
             >
               <HStack justify="center" align="center" h="100%" w="100%">
                 <ImageWithLazyLoading
+            
                   src={imgPreview[key as keyof ImgPreview]}
                   alt={`image ${key}`}
                   width={1400}
