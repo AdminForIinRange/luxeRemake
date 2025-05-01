@@ -56,11 +56,11 @@ const Contact = () => {
             <Text fontWeight={500} color={"#333"}>
               Email:{" "}
               <span style={{ fontWeight: 400 }}>
-                luxemanagements.info@gmail.com
+              luxemanagements.info@gmail.com 
               </span>
             </Text>
             <Text fontWeight={500} color={"#333"}>
-              Phone: <span style={{ fontWeight: 400 }}>(123) 456-7890</span>
+              Phone: <span style={{ fontWeight: 400 }}>+61 406 631 461</span>
             </Text>
             <Text fontWeight={500} color={"#333"}>
               Location: <span style={{ fontWeight: 400 }}>South Australia</span>
