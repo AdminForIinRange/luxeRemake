@@ -57,6 +57,27 @@ import houseFourImg8 from "@/public/images/dalts/houseFour/WEB/8.jpg";
 import houseFourImg9 from "@/public/images/dalts/houseFour/WEB/9.jpg";
 import houseFourImg10 from "@/public/images/dalts/houseFour/WEB/10.jpg";
 
+import houseFiveImg1 from "@/public/images/dalts/houseFive/WEB/1.jpg";
+import houseFiveImg2 from "@/public/images/dalts/houseFive/WEB/2.jpg";
+import houseFiveImg3 from "@/public/images/dalts/houseFive/WEB/3.jpg";
+import houseFiveImg4 from "@/public/images/dalts/houseFive/WEB/4.jpg";
+import houseFiveImg5 from "@/public/images/dalts/houseFive/WEB/5.jpg";
+import houseFiveImg6 from "@/public/images/dalts/houseFive/WEB/6.jpg";
+import houseFiveImg7 from "@/public/images/dalts/houseFive/WEB/7.jpg";
+import houseFiveImg8 from "@/public/images/dalts/houseFive/WEB/8.jpg";
+import houseFiveImg9 from "@/public/images/dalts/houseFive/WEB/9.jpg";
+import houseFiveImg10 from "@/public/images/dalts/houseFive/WEB/10.jpg";
+
+import houseSixImg1 from "@/public/images/dalts/houseSix/WEB/1.jpg";
+import houseSixImg2 from "@/public/images/dalts/houseSix/WEB/2.jpg";
+import houseSixImg3 from "@/public/images/dalts/houseSix/WEB/3.jpg";
+import houseSixImg4 from "@/public/images/dalts/houseSix/WEB/4.jpg";
+import houseSixImg5 from "@/public/images/dalts/houseSix/WEB/5.jpg";
+import houseSixImg6 from "@/public/images/dalts/houseSix/WEB/6.jpg";
+import houseSixImg7 from "@/public/images/dalts/houseSix/WEB/7.jpg";
+import houseSixImg8 from "@/public/images/dalts/houseSix/WEB/8.jpg";
+import houseSixImg9 from "@/public/images/dalts/houseSix/WEB/9.jpg";
+
 const Gallery = () => {
   useEffect(() => {
     Aos.init({ duration: 1000, once: false, mirror: true });
@@ -197,6 +218,52 @@ const Gallery = () => {
         },
       ],
     },
+
+    {
+      img: houseFiveImg1,
+      title: "Property Management",
+      subheading:
+        "Comprehensive management service including all our offerings.",
+      categories: ["Property Management"],
+      brand: "BrandX",
+      carasoleImg: [
+        {
+          img1: houseFiveImg1,
+          img2: houseFiveImg2,
+          img3: houseFiveImg3,
+          img4: houseFiveImg4,
+          img5: houseFiveImg5,
+          img6: houseFiveImg6,
+          img7: houseFiveImg7,
+          img8: houseFiveImg8,
+          img9: houseFiveImg9,
+          img10: houseFiveImg10,
+        },
+      ],
+    },
+
+    {
+      img: houseSixImg1,
+      title: "Property Management",
+      subheading:
+        "Comprehensive management service including all our offerings.",
+      categories: ["Property Management"],
+      brand: "BrandX",
+      carasoleImg: [
+        {
+          img1: houseSixImg1,
+          img2: houseSixImg2,
+          img3: houseSixImg3,
+          img4: houseSixImg4,
+          img5: houseSixImg5,
+          img6: houseSixImg6,
+          img7: houseSixImg7,
+          img8: houseSixImg8,
+          img9: houseSixImg9,
+          img10: houseSixImg9,
+        },
+      ],
+    },
     // Add more items as needed...
   ];
 
@@ -248,7 +315,7 @@ const Gallery = () => {
                   setClickedImage(item);
                   setModalOpen(true);
                 }}
-                /* ★ HERE ★ */
+      
                 backgroundImage={`url(${item.img.src})`}
                 backgroundSize="cover"
                 backgroundPosition="center"
