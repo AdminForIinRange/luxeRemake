@@ -177,7 +177,7 @@ const AboutJourneyCardLists = () => {
                 borderRadius="30px"
                 bg="gray.200" // Change this to any background you want
                 overflow="hidden"
-                backgroundImage={` url(https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg)`}
+                // backgroundImage={` url(https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg)`}
                 backgroundRepeat="no-repeat"
                 backgroundPosition="center"
                 backgroundSize="cover"

@@ -11,12 +11,14 @@ import {
 } from "@chakra-ui/react";
 
 import { useRouter } from "next/navigation";
+import blankProfile from "@/public/png/blank-profile.png";
 
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import TitleSubheading from "@/components/luxeComponents/Text/titleSubheading";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { FaAngleRight } from "react-icons/fa";
+import Image from "next/image";
 const About = () => {
   useEffect(() => {
     Aos.init({
@@ -27,13 +29,12 @@ const About = () => {
   }, []);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
-
   const [members, setmembers] = useState([
     {
       name: "Habibur Rahman",
       role: "Founder & CEO",
       desc: "I told my computer I needed a break, and it said 'No problem, I'll crash for you!'",
-      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
+      src: ` https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg`,
     },
     {
       name: "Matthew Zaniewski",
@@ -453,11 +454,14 @@ const About = () => {
                 borderRadius={"full"}
                 bgPos={"center"}
                 bgSize={"cover"}
-                backgroundImage={` url(${members[currentSlide].src})`}
+                // backgroundImage={`${blankProfile.src}`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
-              ></Box>
+              >
+
+           
+              </Box>
 
               <HStack
                 display={["none", "none", "none", "flex", "flex", "flex"]}

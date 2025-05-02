@@ -32,11 +32,11 @@ const Journey = () => {
 
   return (
     <>
-      <TracingBeam className="px-6">
+    
         <Box w={"100%"}>
           <AboutJourneyCardLists />{" "}
         </Box>
-      </TracingBeam>
+      
     </>
   );
 };
