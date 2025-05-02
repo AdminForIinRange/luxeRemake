@@ -20,6 +20,7 @@ const AboutJourneyCardLists = () => {
       number: null,
       imgTagNumber: null,
       imgTagNumberText: "Created Luxe Managements",
+      img:"https://images.pexels.com/photos/5077042/pexels-photo-5077042.jpeg",
     },
     {
       id: 2,
@@ -30,6 +31,7 @@ const AboutJourneyCardLists = () => {
       number: "1 Property Managed",
       imgTagNumber: "1",
       imgTagNumberText: "Property Managed",
+      img:"https://images.pexels.com/photos/261679/pexels-photo-261679.jpeg",
     },
     {
       id: 3,
@@ -40,6 +42,7 @@ const AboutJourneyCardLists = () => {
       number: null,
       imgTagNumber: null,
       imgTagNumberText: "Reduced maintenance costs",
+      img:"https://images.pexels.com/photos/5816299/pexels-photo-5816299.jpeg",
     },
     {
       id: 4,
@@ -50,6 +53,7 @@ const AboutJourneyCardLists = () => {
       number: null,
       imgTagNumber: null,
       imgTagNumberText: "In-house styling system",
+      img:"https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
     },
     {
       id: 5,
@@ -60,6 +64,7 @@ const AboutJourneyCardLists = () => {
       number: "98% Guest Satisfaction Rate",
       imgTagNumber: "98%",
       imgTagNumberText: "Guest Satisfaction Rate",
+      img:"https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
     },
     {
       id: 6,
@@ -70,6 +75,7 @@ const AboutJourneyCardLists = () => {
       number: null,
       imgTagNumber: null,
       imgTagNumberText: "Reduced third-party costs",
+      img:"https://images.pexels.com/photos/4108797/pexels-photo-4108797.jpeg",
     },
     {
       id: 7,
@@ -80,6 +86,7 @@ const AboutJourneyCardLists = () => {
       number: "#1 In Luxury Rentals",
       imgTagNumber: null,
       imgTagNumberText: "Expanding suburbs",
+      img:"https://images.pexels.com/photos/31457993/pexels-photo-31457993.jpeg",
     },
     {
       id: 8,
@@ -90,6 +97,7 @@ const AboutJourneyCardLists = () => {
       number: "#1 In Luxury Rentals",
       imgTagNumber: null,
       imgTagNumberText: "Growing interstate",
+      img:"https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg",
     },
 
   ];
@@ -177,7 +185,7 @@ const AboutJourneyCardLists = () => {
                 borderRadius="30px"
                 bg="gray.200" // Change this to any background you want
                 overflow="hidden"
-                // backgroundImage={` url(https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg)`}
+                backgroundImage={` url(${item.img})`}
                 backgroundRepeat="no-repeat"
                 backgroundPosition="center"
                 backgroundSize="cover"
