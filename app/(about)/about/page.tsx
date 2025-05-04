@@ -28,6 +28,7 @@ import Mat from "@/public/images/compnayPFP/Mat.png"
 
 import Habibi from "../../../public/images/compnayPFP/Habibi.jpeg"
 
+
 import Zazeed from "@/public/images/compnayPFP/Zazeed.jpeg"
 const About = () => {
   useEffect(() => {
