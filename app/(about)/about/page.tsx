@@ -24,9 +24,9 @@ import Anjesh from "@/public/images/compnayPFP/Anjesh.jpeg"
 
 import Aryan from "@/public/images/compnayPFP/Aryan.jpeg"
 
-import Mat from "@/public/images/compnayPFP/Mat.jpeg"
+import Mat from "@/public/images/compnayPFP/Mat.png"
 
-import Habibi from "@/public/images/compnayPFP/Aryan.jpeg"
+import Habibi from "@/public/images/compnayPFP/Aryan.png"
 
 import Zazeed from "@/public/images/compnayPFP/Zazeed.jpeg"
 const About = () => {
