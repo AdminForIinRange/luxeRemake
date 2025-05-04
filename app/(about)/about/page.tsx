@@ -53,7 +53,7 @@ const About = () => {
     {
       name: "Matthew Zaniewski",
       role: "Operations Director",
-      desc: "Oversees operations and ensures organizational efficiency.",
+      desc: "Oversees operations and ensures workflow efficiency.",
       src: Mat.src,
     },
     {
