@@ -19,6 +19,12 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { FaAngleRight } from "react-icons/fa";
 import Image from "next/image";
+
+import Anjesh from "@/public/images/compnayPFP/Anjesh.jpeg"
+
+import Aryan from "@/public/images/compnayPFP/Aryan.jpeg"
+
+import Zazeed from "@/public/images/compnayPFP/Zazeed.jpeg"
 const About = () => {
   useEffect(() => {
     Aos.init({
@@ -29,12 +35,16 @@ const About = () => {
   }, []);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const router = useRouter();
+
+
+
   const [members, setmembers] = useState([
     {
       name: "Habibur Rahman",
       role: "Founder & CEO",
       desc: "I told my computer I needed a break, and it said 'No problem, I'll crash for you!'",
-      src: ` https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg`,
+      src: ` https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg
+      `,
     },
     {
       name: "Matthew Zaniewski",
@@ -46,19 +56,19 @@ const About = () => {
       name: "Anjesh Bhattarai",
       role: "Lead Software Engineer",
       desc: "I'm not arguing, I'm just explaining why I'm right. There's a difference.",
-      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
+      src: Anjesh.src,
     },
     {
       name: "Zadeed Bhuiyan",
       role: "Executive Partner",
       desc: "I'm not lazy, I'm just on energy-saving mode.",
-      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
+      src: Zazeed.src,
     },
     {
       name: "Aryan Dangwal",
       role: "Executive Partner",
       desc: "Why don't scientists trust atoms? Because they make up everything!",
-      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
+      src: Aryan.src,
     },
   ]);
 
@@ -444,7 +454,7 @@ const About = () => {
                 </Text>
               </HStack>
               <Box
-                border={"1px solid rgb(0, 0,0,0.25)"}
+                // border={"1px solid rgb(0, 0,0,0.25)"}
                 mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
                 display={["block", "block", "block", "block", "block", "block"]}
                 // data-aos="fade-right" // chnage dir
@@ -454,7 +464,7 @@ const About = () => {
                 borderRadius={"full"}
                 bgPos={"center"}
                 bgSize={"cover"}
-                // backgroundImage={`${blankProfile.src}`}
+                backgroundImage={`url(${members[currentSlide].src})`}
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
