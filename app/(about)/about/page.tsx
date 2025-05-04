@@ -53,7 +53,7 @@ const About = () => {
     {
       name: "Matthew Zaniewski",
       role: "Operations Director",
-      desc: "Oversees daily operations and ensures organizational efficiency.",
+      desc: "Oversees operations and ensures organizational efficiency.",
       src: Mat.src,
     },
     {
@@ -65,13 +65,13 @@ const About = () => {
     {
       name: "Zadeed Bhuiyan",
       role: "Executive Partner",
-      desc: "Manages analytics and strategic initiatives.",
+      desc: "Handles daily operations to support organizational efficiency.",
       src: Zazeed.src,
     },
     {
       name: "Aryan Dangwal",
       role: "Executive Partner",
-      desc: "Focuses on analytics, business insights, and company strategy.",
+      desc: "Handles daily operations to support organizational efficiency.",
       src: Aryan.src,
     },
   ]);
@@ -86,6 +86,8 @@ const About = () => {
   const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? members.length - 1 : currentSlide - 1);
   };
+
+  
 
   return (
     <>
