@@ -43,39 +43,39 @@ const About = () => {
 
 
 
-  const [members, setmembers] = useState([
+  const [members, setMembers] = useState([
     {
       name: "Habibur Rahman",
       role: "Founder & CEO",
-      desc: "I told my computer I needed a break, and it said 'No problem, I'll crash for you!'",
+      desc: "Leads the company’s vision, strategy, and growth.",
       src: Habibi.src,
-      
     },
     {
       name: "Matthew Zaniewski",
       role: "Operations Director",
-      desc: "I'm reading a book about anti-gravity. It's impossible to put down.",
+      desc: "Oversees daily operations and ensures organizational efficiency.",
       src: Mat.src,
     },
     {
       name: "Anjesh Bhattarai",
       role: "Lead Software Engineer",
-      desc: "I'm not arguing, I'm just explaining why I'm right. There's a difference.",
+      desc: "Heads software architecture and product development.",
       src: Anjesh.src,
     },
     {
       name: "Zadeed Bhuiyan",
       role: "Executive Partner",
-      desc: "I'm not lazy, I'm just on energy-saving mode.",
+      desc: "Manages analytics and strategic initiatives.",
       src: Zazeed.src,
     },
     {
       name: "Aryan Dangwal",
       role: "Executive Partner",
-      desc: "Why don't scientists trust atoms? Because they make up everything!",
+      desc: "Focuses on analytics, business insights, and company strategy.",
       src: Aryan.src,
     },
   ]);
+  
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
