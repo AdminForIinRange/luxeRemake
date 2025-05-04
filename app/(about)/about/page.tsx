@@ -24,6 +24,10 @@ import Anjesh from "@/public/images/compnayPFP/Anjesh.jpeg"
 
 import Aryan from "@/public/images/compnayPFP/Aryan.jpeg"
 
+import Mat from "@/public/images/compnayPFP/Mat.jpeg"
+
+import Habibi from "@/public/images/compnayPFP/Aryan.jpeg"
+
 import Zazeed from "@/public/images/compnayPFP/Zazeed.jpeg"
 const About = () => {
   useEffect(() => {
@@ -43,14 +47,14 @@ const About = () => {
       name: "Habibur Rahman",
       role: "Founder & CEO",
       desc: "I told my computer I needed a break, and it said 'No problem, I'll crash for you!'",
-      src: ` https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg
-      `,
+      src: Habibi.src,
+      
     },
     {
       name: "Matthew Zaniewski",
       role: "Operations Director",
       desc: "I'm reading a book about anti-gravity. It's impossible to put down.",
-      src: `https://picsum.photos/512/512?random=${Math.floor(Math.random() * 100)}&topic=work`,
+      src: Mat.src,
     },
     {
       name: "Anjesh Bhattarai",
