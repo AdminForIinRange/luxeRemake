@@ -47,31 +47,31 @@ const About = () => {
     {
       name: "Habibur Rahman",
       role: "Founder & CEO",
-      desc: "Leads the company’s vision, strategy, and growth.",
+     
       src: Habibi.src,
     },
     {
       name: "Matthew Zaniewski",
       role: "Operations Director",
-      desc: "Oversees operations and ensures workflow efficiency.",
+
       src: Mat.src,
     },
     {
       name: "Anjesh Bhattarai",
       role: "Lead Software Engineer",
-      desc: "Heads software architecture and product development.",
+
       src: Anjesh.src,
     },
     {
       name: "Zadeed Bhuiyan",
       role: "Executive Partner",
-      desc: "Handles daily operations to support organizational efficiency.",
+  
       src: Zazeed.src,
     },
     {
       name: "Aryan Dangwal",
       role: "Executive Partner",
-      desc: "Handles daily operations to support organizational efficiency.",
+     
       src: Aryan.src,
     },
   ]);
