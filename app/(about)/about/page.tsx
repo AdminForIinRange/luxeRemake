@@ -546,13 +546,7 @@ const About = () => {
                 >
                   {members[currentSlide].role}
                 </Text>
-                <Text
-                  textAlign={"center"}
-                  w={["80%", "80%", "80%", "80%", "80%", "80%"]}
-                  fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
-                >
-                  " {members[currentSlide].desc} "
-                </Text>
+     
               </VStack>
               <HStack
                 display={["flex", "flex", "flex", "none", "none", "none"]}
