@@ -87,7 +87,7 @@ const CleaningAndLinen = () => {
           {
             mainTitle: "Redefining Cleanliness",
             mainDescription:
-              "Elevate your property's performance and reputation with Luxe Managements' comprehensive approach. We combine meticulous attention to detail with market expertise to create a distinguished destination.",
+              "From sparkling floors to spotless surfaces, we take pride in leaving your space feeling refreshed and revitalized.",
           },
         ]}
       />

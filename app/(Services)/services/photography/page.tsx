@@ -68,7 +68,7 @@ const Photography = () => {
   {
     mainTitle: "Visual Excellence",
     mainDescription:
-      "Elevate your property's performance and reputation with Luxe Managements' comprehensive approach. We combine meticulous attention to detail with market expertise to create a distinguished destination.",
+      "Our photography services ensure that your property stands out from the crowd. We use high-quality equipment and expert techniques to capture the unique essence of your property, showcasing its best features and amenities in a visually stunning way."
   },
 ]}
             cardsData={[

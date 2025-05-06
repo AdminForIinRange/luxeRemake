@@ -164,7 +164,7 @@ CardDataHeader={[
   {
     mainTitle: "The Luxe Distinction",
     mainDescription:
-      "Elevate your property's performance and reputation with Luxe Managements' comprehensive approach. We combine meticulous attention to detail with market expertise to create a distinguished destination.",
+      "Experience the Luxe distinction: expertly curated spaces that captivate guests and exceed their expectations. ",
   },
 ]}
 
