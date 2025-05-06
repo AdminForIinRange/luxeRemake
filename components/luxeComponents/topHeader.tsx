@@ -50,7 +50,7 @@ const TopHeader = ({
 
       {/* Main container */}
       <Box
-        backgroundImage={`linear-gradient(135deg, rgba(0,0,0,0.72), rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.4)), url(${imgUrl})`}
+        backgroundImage={`linear-gradient(135deg, rgba(0,0,0,0.52), rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.1)), url(${imgUrl})`}
         backgroundSize="cover"
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
