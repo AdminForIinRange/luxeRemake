@@ -228,7 +228,7 @@ const About = () => {
                 px={4}
                 borderRadius="lg"
                 transition="all 0.3s ease"
-                _hover={{ transform: "translateY(-5px)", boxShadow: "md" }}
+               
               >
                 <Text
                   fontSize={{ base: "4xl", md: "5xl" }}

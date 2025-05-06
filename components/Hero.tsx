@@ -63,10 +63,11 @@ const Hero = () => {
         justify={"center"}
         align={"center"}
         w={"100%"}
-        transition={"all 0.2s ease-in-out"}
+
         zIndex={3}
       >
         <Box
+                transition={"all 0.2s ease-in-out"}
           display="flex"
           alignItems="center"
           justifyContent="center"

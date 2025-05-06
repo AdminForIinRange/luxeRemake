@@ -19,7 +19,7 @@ const Pricing = () => {
     <Box bg="white">
       {/* Header Section */}
       <Box
-        maxWidth="1200px"
+        maxWidth="1400px"
         mx="auto"
         px={["24px", "40px"]}
         pt={["60px", "80px", "100px"]}
