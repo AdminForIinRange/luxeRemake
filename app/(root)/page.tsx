@@ -9,6 +9,7 @@ import Testimonials from "@/components/testimonials";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 import HowWeCanGetYouStarted from "@/components/luxeComponents/HowWeCanGetYouStarted";
 import OurServices from "@/components/luxeComponents/OurServices";
+import CaluProperty from "@/components/luxeComponents/CaluProperty";
 
 // Lazy load the GalleryHeroSection component
 const GalleryHeroSection = React.lazy(
@@ -28,6 +29,11 @@ const Home = () => {
 
       {/* Render Hero and other components normally */}
       <Hero />
+
+
+      <CaluProperty />
+
+
       <HowWeCanGetYouStarted />
       <OurServices />
 
@@ -35,6 +41,7 @@ const Home = () => {
       <Suspense fallback={<div>Loading gallery...</div>}>
         <GalleryHeroSection />
       </Suspense>
+
 
       <Testimonials />
 
