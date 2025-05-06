@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Accordion, Box, Span } from "@chakra-ui/react";
 import TitleSubheading from "./luxeComponents/Text/titleSubheading";
 
@@ -39,7 +39,51 @@ const faqs = [
       "Absolutely. First impressions matter, and our in-house marketing team ensures your property stands out with professional photography, compelling copywriting, and strategic placement across high-traffic platforms. We showcase your home’s best features to attract premium bookings and enhance long-term visibility.",
   },
 ];
-const FAQ = () => {
+
+
+const pricingFaqs = [
+  {
+    question: "How does your pricing model work?",
+    answer:
+      "We charge 18% of booking profit — calculated as total revenue minus platform fees, cleaning, and utilities. This means we only succeed when you do. There are no hidden fees or lock-in contracts — just performance-based pricing designed to maximize your income.",
+  },
+  {
+    question: "What’s included in the 18% management fee?",
+    answer:
+      "Our 18% fee covers full-service management: expert listing creation, dynamic pricing, 24/7 guest communication, professional photography, styling advice, review optimization, and ongoing maintenance coordination. It’s a hands-off solution designed to elevate your earnings and guest experience.",
+  },
+  {
+    question: "How much can I expect to earn?",
+    answer:
+      "Properties managed by Luxe see an average revenue increase of 40% through better pricing, occupancy, and reviews. Every property is different — we offer a custom income projection during your free consultation to give you a clear idea of your earning potential.",
+  },
+  {
+    question: "Are there any upfront costs?",
+    answer:
+      "If your property needs photography, styling, or furnishing, we offer premium services at competitive rates. Photography starts at $250, while furnishing is calculated at 8% of the total item value. All costs are discussed transparently before any commitments.",
+  },
+  {
+    question: "Can I choose a different management plan?",
+    answer:
+      "Yes — we offer tiered plans (Essential, Standard, Premium) with varying levels of service and pricing, starting as low as 12%. Each plan offers different levels of support, marketing, and discounts, so you can choose what fits your goals and budget.",
+  },
+  {
+    question: "Do I have to pay for cleaning services?",
+    answer:
+      "Guests cover the basic cleaning fee as part of their booking. For owners, we offer premium cleaning (including linen and quality checks) with a 30% discount for managed properties. This ensures your space is spotless and always guest-ready.",
+  },
+  {
+    question: "How do I get a custom quote?",
+    answer:
+      "Simple — book a free consultation with our team. We’ll assess your property, walk you through potential earnings, and provide a tailored quote based on your specific needs and the level of service you’re after.",
+  },
+];
+
+
+const FAQ = ({ type }: { type: string }) => {
+  const isPricing = type === "pricing";
+  const selectedFaqs = isPricing ? pricingFaqs : faqs;
+
   return (
     <>
       <TitleSubheading
@@ -53,7 +97,7 @@ const FAQ = () => {
         defaultValue={["b"]}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
-        {faqs.map((item, index) => (
+        {selectedFaqs.map((item, index) => (
           <Accordion.Item key={index} value={item.question}>
             <Accordion.ItemTrigger
               display="flex"
