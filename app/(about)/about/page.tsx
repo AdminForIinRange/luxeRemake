@@ -96,13 +96,9 @@ const About = () => {
           gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
           wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
         >
+           
           <Box w={["95%", "95%", "95%", "600px", "600px", "600px"]}>
-          <Box 
-                width="80px" 
-                height="4px" 
-                bg="gray.900" 
-                mb={6}
-              />
+        
             <Text
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
