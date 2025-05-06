@@ -56,16 +56,16 @@ const LuxeAiAssistance = () => {
       bottom="24px"
       right="24px"
       bg="white"
-      borderRadius="xl"
+      borderRadius={open ? "20px" : "100px"}
       boxShadow="0 8px 30px rgba(0, 0, 0, 0.12)"
       width={open ? "380px" : "80px"}
-      height={open ? "580px" : "68px"}
+      height={open ? "580px" : "80px"}
       transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
       display="flex"
       flexDirection="column"
       overflow="hidden"
       zIndex={9999}
-      border="1px solid rgba(230, 230, 230, 0.7)"
+      border="1px solid #e6e6e6"
     >
       {/* Chat Icon (Closed State) */}
       {!open && (
