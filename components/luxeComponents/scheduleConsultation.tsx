@@ -38,26 +38,7 @@ const ScheduleConsultation = () => {
           overflow="hidden"
         >
           {/* Background accent elements for visual interest */}
-          <Box
-            position="absolute"
-            top="-100px"
-            right="-100px"
-            width="200px"
-            height="200px"
-            borderRadius="full"
-            bg="rgba(255, 255, 255, 0.03)"
-            zIndex={0}
-          />
-          <Box
-            position="absolute"
-            bottom="-80px"
-            left="-80px"
-            width="160px"
-            height="160px"
-            borderRadius="full"
-            bg="rgba(255, 255, 255, 0.02)"
-            zIndex={0}
-          />
+     
 
           {/* Content container */}
           <Box width="100%" maxWidth="1000px" zIndex={1} textAlign="center">
