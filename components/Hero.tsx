@@ -33,7 +33,7 @@ const Hero = () => {
 
   return (
     <>
-      <LuxeAiAssistance />
+   
       <Stack
         overflow={"hidden"}
         mt={{ base: "25px", sm: "25px", md: "25px", lg: "100px", xl: "100px" }}

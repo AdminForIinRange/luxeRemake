@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import LuxeAiAssistance from "@/components/luxeComponents/LuxeAiAssistance";
 
 export const metadata = {
   title: "Luxe Management",
@@ -47,7 +48,9 @@ export default function RootLayout({ children }) {
         <Analytics />
         <SpeedInsights />
         <Suspense fallback={<Loading />}>
-          <ClientProviderWithFallback>{children}</ClientProviderWithFallback>
+          <ClientProviderWithFallback>
+          <LuxeAiAssistance />
+            {children}</ClientProviderWithFallback>
         </Suspense>
       </body>
     </html>
