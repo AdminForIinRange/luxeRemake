@@ -261,7 +261,7 @@ const Navbar = () => {
       <Box
         w="100%"
         py="8px"
-        bg="rgba(255, 255, 255, 0.9)"
+
         backdropFilter="blur(10px)"
         borderBottom="1px solid #F0F0F0"
         display={{ base: "none", md: "block" }}
@@ -301,7 +301,7 @@ const Navbar = () => {
       </Box>
 
       {/* Main Navigation */}
-      <Box w="100%" py="10px" borderBottom="1px solid #F0F0F0" transition="all 0.3s ease">
+      <Box  w="100%" py="10px" borderBottom="1px solid #F0F0F0" transition="all 0.3s ease">
         <Box
           display="flex"
           justifyContent="space-between"
