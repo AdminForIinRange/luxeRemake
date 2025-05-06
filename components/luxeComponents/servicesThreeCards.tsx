@@ -25,7 +25,7 @@ const ServicesThreeCards = ({
       mt={["80px", "90px", "90px", "0px", "0px", "0px"]}
       w="100%"
       px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-      fontFamily="raleway"
+      fontFamily="sans"
       position="relative"
     >
       {/* Section Header */}

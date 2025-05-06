@@ -51,7 +51,7 @@ const Hero = () => {
           xl: "96px",
         }}
         fontWeight={{ base: "400", sm: "400", md: "400", lg: "400", xl: "400" }}
-        fontFamily={"raleway"}
+        fontFamily={"sans"}
       >
         <Box color={"#222222"} fontWeight={"600"} width={"90%"}>
           Luxe Managements <br />
@@ -74,7 +74,7 @@ const Hero = () => {
           alignItems="center"
           justifyContent="center"
           gap="15px"
-          fontFamily="raleway"
+          fontFamily="sans"
           cursor="pointer"
           _hover={{
             scale: 1.1,
@@ -111,7 +111,7 @@ const Hero = () => {
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
             fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
             fontWeight={700}
-            fontFamily={"Raleway"}
+            fontFamily={"sans"}
             bgClip="text"
             textAlign={["center", "center", "left", "left", "left", "left"]}
             color={"black"}
@@ -123,7 +123,7 @@ const Hero = () => {
             fontSize={["18px", "18px", "24px", "24px", "24px", "24px"]}
             mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
             textAlign={["center", "center", "left", "left", "left", "left"]}
-            fontFamily={"Raleway"}
+            fontFamily={"sans"}
             color={"black"}
             w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
             fontWeight={300}

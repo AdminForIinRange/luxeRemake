@@ -58,7 +58,7 @@ const GalleryHeroSection = () => {
               alignItems={"center"}
               justifyContent={"center"}
               gap={"15px"}
-              fontFamily={"raleway"}
+              fontFamily={"sans"}
               transition={"all 0.2s ease-in-out"}
               cursor={"pointer"}
               _hover={{

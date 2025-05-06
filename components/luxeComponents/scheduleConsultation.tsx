@@ -66,7 +66,7 @@ const ScheduleConsultation = () => {
               color="white"
               fontWeight="700"
               fontSize={["28px", "32px", "40px", "48px", "56px"]}
-              fontFamily="raleway"
+              fontFamily="sans"
               lineHeight={["1.2", "1.1"]}
               letterSpacing="-0.02em"
               mb={["16px", "20px"]}
@@ -78,7 +78,7 @@ const ScheduleConsultation = () => {
             <Text
               color="rgba(255, 255, 255, 0.9)"
               fontSize={["14px", "16px", "18px", "20px", "22px"]}
-              fontFamily="raleway"
+              fontFamily="sans"
               maxWidth="800px"
               mx="auto"
               lineHeight="1.5"
@@ -102,7 +102,7 @@ const ScheduleConsultation = () => {
                 py={["12px", "14px", "16px"]}
                 px={["24px", "32px", "40px"]}
                 borderRadius="full"
-                fontFamily="raleway"
+                fontFamily="sans"
                 fontSize={["14px", "15px", "16px"]}
                 fontWeight={isHovered ? "600" : "500"}
                 display="flex"
@@ -154,7 +154,7 @@ const ScheduleConsultation = () => {
                   <Text
                     color="rgba(255, 255, 255, 0.8)"
                     fontSize={["12px", "13px", "14px"]}
-                    fontFamily="raleway"
+                    fontFamily="sans"
                   >
                     {benefit}
                   </Text>
@@ -189,7 +189,7 @@ const ScheduleConsultation = () => {
                 color="white"
                 fontWeight="600"
                 fontSize="20px"
-                fontFamily="raleway"
+                fontFamily="sans"
               >
                 Schedule Your Free Consultation
               </Text>

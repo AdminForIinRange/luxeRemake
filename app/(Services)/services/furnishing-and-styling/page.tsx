@@ -231,7 +231,7 @@ const FurnishingAndStyling = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -277,7 +277,7 @@ const FurnishingAndStyling = () => {
                 alignItems={"center"}
                 justifyContent={["center"]}
                 gap={"15px"}
-                fontFamily={"raleway"}
+                fontFamily={"sans"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{

@@ -1,4 +1,4 @@
-import { Raleway } from "next/font/google"; // Import the Raleway font from next/font
+import { sans } from "next/font/google"; // Import the sans font from next/font
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Loading from "./loading";
@@ -18,12 +18,8 @@ const ClientProviderWithFallback = dynamic(
   { loading: () => <Loading /> },
 );
 
-// Load the Raleway font with specific weights (optimized)
-const raleway = Raleway({
-  subsets: ["latin"], // Only load Latin subset for smaller file size
-  weights: ["400", "500", "600", "700"], // Load only necessary font weights
-  display: "swap", // To prevent FOUT (Flash of Unstyled Text)
-});
+// Load the sans font with specific weights (optimized)
+
 
 export default function RootLayout({ children }) {
   return (
@@ -37,12 +33,12 @@ export default function RootLayout({ children }) {
         {/* Preload fonts */}
         <link
           rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=sans:wght@400;500;600;700&display=swap"
           as="style"
         />
       </head>
       <body
-        className={`${raleway.className} antialiased`}
+        className={` antialiased`}
         style={{ background: "#fff", scrollBehavior: "smooth" }}
       >
         <Analytics />

@@ -39,7 +39,7 @@ const TopHeader = ({
           cursor={"pointer"}
           p={"30px"}
           display={"flex"}
-          fontFamily={"raleway"}
+          fontFamily={"sans"}
         >
           <VStack
             color={"white"}

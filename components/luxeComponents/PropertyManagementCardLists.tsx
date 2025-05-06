@@ -79,7 +79,7 @@ const PropertyManagementCardLists = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -91,7 +91,7 @@ const PropertyManagementCardLists = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -239,7 +239,7 @@ const PropertyManagementCardLists = () => {
               alignItems={["start", "start", "start", "center", "center"]}
             >
               <Box
-                fontFamily={"raleway"}
+                fontFamily={"sans"}
                 zIndex={1}
                 bg="white"
                 borderRadius="md"
@@ -303,7 +303,7 @@ const PropertyManagementCardLists = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -315,7 +315,7 @@ const PropertyManagementCardLists = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -444,7 +444,7 @@ const PropertyManagementCardLists = () => {
             >
               {" "}
               <Box
-                fontFamily={"raleway"}
+                fontFamily={"sans"}
                 zIndex={1}
                 bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
                 right={["0px", "0px", "0px", "10px", "10px", "10px"]}
@@ -489,7 +489,7 @@ const PropertyManagementCardLists = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -501,7 +501,7 @@ const PropertyManagementCardLists = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -617,7 +617,7 @@ const PropertyManagementCardLists = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -629,7 +629,7 @@ const PropertyManagementCardLists = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -762,7 +762,7 @@ const PropertyManagementCardLists = () => {
               alignItems={["start", "start", "start", "center", "center"]}
             >
               <Box
-                fontFamily={"raleway"}
+                fontFamily={"sans"}
                 zIndex={1}
                 bg="white"
                 borderRadius="md"
@@ -825,7 +825,7 @@ const PropertyManagementCardLists = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -837,7 +837,7 @@ const PropertyManagementCardLists = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -966,7 +966,7 @@ const PropertyManagementCardLists = () => {
             >
               {" "}
               <Box
-                fontFamily={"raleway"}
+                fontFamily={"sans"}
                 zIndex={1}
                 bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
                 right={["0px", "0px", "0px", "10px", "10px", "10px"]}
@@ -1011,7 +1011,7 @@ const PropertyManagementCardLists = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -1023,7 +1023,7 @@ const PropertyManagementCardLists = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}

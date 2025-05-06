@@ -82,7 +82,7 @@ const Testimonials = () => {
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <HStack
-        fontFamily={"Raleway"}
+        fontFamily={"sans"}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
         justify={"center"}
         align={"center"}
@@ -104,7 +104,7 @@ const Testimonials = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={700}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "left", "left", "left", "left"]}
               color={"black"}
@@ -116,7 +116,7 @@ const Testimonials = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "80%", "80%", "80%", "80%"]}
               fontWeight={300}
@@ -224,7 +224,7 @@ const Testimonials = () => {
                 fontSize={{ base: "18px", md: "20px" }}
                 lineHeight="1.6"
                 color="rgba(0,0,0,0.8)"
-                fontFamily="Raleway"
+                fontFamily="sans"
                 fontStyle="italic"
                 position="relative"
                 zIndex="1"
@@ -265,14 +265,14 @@ const Testimonials = () => {
                   fontSize={{ base: "16px", md: "18px" }}
                   fontWeight="700"
                   color="black"
-                  fontFamily="Raleway"
+                  fontFamily="sans"
                 >
                   {reviews[currentSlide].name}
                 </Text>
                 <Text
                   fontSize={{ base: "14px", md: "15px" }}
                   color="rgba(0,0,0,0.6)"
-                  fontFamily="Raleway"
+                  fontFamily="sans"
                 >
                   Verified Customer
                 </Text>

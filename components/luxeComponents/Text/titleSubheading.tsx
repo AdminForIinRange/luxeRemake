@@ -20,7 +20,7 @@ const TitleSubheading = ({
         <Text
           fontSize={["40px", "40px", "40px", "60px", "60px", "60px"]}
           fontWeight={700}
-          fontFamily={"Raleway"}
+          fontFamily={"sans"}
           bgClip="text"
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
@@ -32,7 +32,7 @@ const TitleSubheading = ({
           fontSize={["18px", "18px", "18px", "26px", "26px", "26px"]}
           // mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
 
-          fontFamily={"raleway"}
+          fontFamily={"sans"}
           color={"black"}
           fontWeight={300}
         >

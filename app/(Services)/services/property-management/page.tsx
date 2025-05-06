@@ -123,7 +123,7 @@ const PropertyManagement = () => {
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
             fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
             fontWeight={600}
-            fontFamily={"Raleway"}
+            fontFamily={"sans"}
             bgClip="text"
             textAlign={[
               "center",
@@ -149,7 +149,7 @@ const PropertyManagement = () => {
               "center",
               "center",
             ]}
-            fontFamily={"Raleway"}
+            fontFamily={"sans"}
             color={"black"}
             w={["100%", "100%", "100%", "100%", "100%", "100%"]}
             fontWeight={300}
@@ -206,7 +206,7 @@ const PropertyManagement = () => {
             alignItems={["start", "start", "start", "center", "center"]}
           >
             <Box
-              fontFamily={"raleway"}
+              fontFamily={"sans"}
               zIndex={1}
               bg="white"
               borderRadius="md"
@@ -272,7 +272,7 @@ const PropertyManagement = () => {
                   textAlign="center"
                   color="gray.800"
                   fontSize={["24px", "26px", "26px", "28px", "28px", "28px"]}
-                  fontFamily="Raleway"
+                  fontFamily="sans"
                   fontWeight="700"
                   mb={1}
                 >
@@ -282,7 +282,7 @@ const PropertyManagement = () => {
                   textAlign="center"
                   color="gray.600"
                   fontSize={["16px", "18px", "18px", "20px", "20px", "20px"]}
-                  fontFamily="Raleway"
+                  fontFamily="sans"
                   fontWeight="500"
                 >
                   {title}

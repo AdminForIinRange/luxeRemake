@@ -35,7 +35,7 @@
   }
   body {
     body {
-      @apply font-raleway antialiased bg-background text-foreground;
+      @apply font-sans antialiased bg-background text-foreground;
     }
     
   }

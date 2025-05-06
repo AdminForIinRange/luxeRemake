@@ -142,7 +142,7 @@ const AboutJourneyCardLists = () => {
         <Text
           fontSize={["40px", "48px", "56px", "64px"]}
           fontWeight="800"
-          fontFamily="Raleway"
+          fontFamily="sans"
           color="black"
           lineHeight="1.1"
           marginBottom="40px"
@@ -153,7 +153,7 @@ const AboutJourneyCardLists = () => {
         <Text
           fontSize={["18px", "20px", "22px"]}
           lineHeight="1.8"
-          fontFamily="Raleway"
+          fontFamily="sans"
           color="#555"
           fontWeight="400"
           maxWidth="900px"
@@ -267,7 +267,7 @@ const AboutJourneyCardLists = () => {
                 <Text
                   fontSize={["32px", "36px", "40px"]}
                   fontWeight="700"
-                  fontFamily="Raleway"
+                  fontFamily="sans"
                   color="black"
                   lineHeight="1.2"
                   marginBottom="16px"
@@ -279,7 +279,7 @@ const AboutJourneyCardLists = () => {
                 <Text
                   fontSize={["20px", "22px", "24px"]}
                   fontWeight="500"
-                  fontFamily="Raleway"
+                  fontFamily="sans"
                   color="#555"
                   marginBottom="30px"
                 >
@@ -290,7 +290,7 @@ const AboutJourneyCardLists = () => {
                 <Text
                   fontSize={["16px", "17px", "18px"]}
                   lineHeight="1.8"
-                  fontFamily="Raleway"
+                  fontFamily="sans"
                   color="#333"
                   fontWeight="400"
                   marginBottom="40px"
@@ -446,7 +446,7 @@ const AboutJourneyCardLists = () => {
         <Text
           fontSize={["28px", "32px", "36px"]}
           fontWeight="700"
-          fontFamily="Raleway"
+          fontFamily="sans"
           color="black"
           marginBottom="30px"
         >
@@ -456,7 +456,7 @@ const AboutJourneyCardLists = () => {
         <Text
           fontSize={["17px", "18px", "20px"]}
           lineHeight="1.8"
-          fontFamily="Raleway"
+          fontFamily="sans"
           color="#555"
           fontWeight="400"
           maxWidth="800px"

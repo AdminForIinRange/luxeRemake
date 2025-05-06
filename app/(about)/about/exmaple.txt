@@ -120,7 +120,7 @@ const About = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -132,7 +132,7 @@ const About = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -169,7 +169,7 @@ const About = () => {
                 alignItems={"center"}
                 justifyContent={["center"]}
                 gap={"15px"}
-                fontFamily={"raleway"}
+                fontFamily={"sans"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{
@@ -237,7 +237,7 @@ const About = () => {
               alignItems={["start", "start", "start", "center", "center"]}
             >
               <Box
-                fontFamily={"raleway"}
+                fontFamily={"sans"}
                 zIndex={1}
                 bg="white"
                 borderRadius="md"
@@ -303,7 +303,7 @@ const About = () => {
             color={"white"}
             fontWeight={"700"}
             fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
-            fontFamily={"raleway"}
+            fontFamily={"sans"}
             mb={"10px"}
           >
             Our Mission
@@ -312,7 +312,7 @@ const About = () => {
             w={["90%", "90%", "90%", "50%", "50%", "50%"]}
             color={"white"}
             fontSize={["16px", "16px", "16px", "16px", "18px", "18px"]}
-            fontFamily={"raleway"}
+            fontFamily={"sans"}
           >
             At Luxe Managements, our mission is to elevate the short-term rental
             experience for both property owners and guests. We strive to
@@ -330,7 +330,7 @@ const About = () => {
             wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
             mt={"50px"}
             color={"white"}
-            fontFamily={"raleway"}
+            fontFamily={"sans"}
           >
             {" "}
             <Box p={4} rounded={"15px"} w={"285px"} bg={"#23273F"} h={"200px"}>
@@ -403,7 +403,7 @@ const About = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
               fontWeight={600}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={[
                 "center",

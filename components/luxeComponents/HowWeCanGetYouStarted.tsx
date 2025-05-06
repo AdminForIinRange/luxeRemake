@@ -61,7 +61,7 @@ const HowWeCanGetYouStarted = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={700}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               bgClip="text"
               textAlign={["center", "center", "left", "left", "left", "left"]}
               color={"black"}
@@ -73,7 +73,7 @@ const HowWeCanGetYouStarted = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}
-              fontFamily={"Raleway"}
+              fontFamily={"sans"}
               color={"black"}
               w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
               fontWeight={300}
@@ -102,7 +102,7 @@ const HowWeCanGetYouStarted = () => {
                 alignItems={"center"}
                 justifyContent={"center"}
                 gap={"15px"}
-                fontFamily={"raleway"}
+                fontFamily={"sans"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{
@@ -212,7 +212,7 @@ const HowWeCanGetYouStarted = () => {
                         ]}
                         fontWeight={500}
                         textAlign={"left"}
-                        fontFamily={"Raleway"}
+                        fontFamily={"sans"}
                         color={"black"}
                         w={"100%"} // !important
                       >
@@ -228,7 +228,7 @@ const HowWeCanGetYouStarted = () => {
                           "17px",
                         ]}
                         textAlign={"left"}
-                        fontFamily={"Raleway"}
+                        fontFamily={"sans"}
                         color={"black"}
                         w={"100%"}
                         fontWeight={300}

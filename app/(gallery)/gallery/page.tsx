@@ -346,7 +346,7 @@ const Gallery = () => {
             as="h1"
             fontSize={["42px", "48px", "56px"]}
             fontWeight="700"
-            fontFamily="raleway"
+            fontFamily="sans"
             letterSpacing="-0.02em"
             marginBottom="6px"
             color="#000"
@@ -363,7 +363,7 @@ const Gallery = () => {
           <Text
             fontSize={["16px", "18px", "20px"]}
             fontWeight="400"
-            fontFamily="raleway"
+            fontFamily="sans"
             color="#666"
             maxWidth="600px"
             lineHeight="1.6"
@@ -414,7 +414,7 @@ const Gallery = () => {
                 fontSize={["14px", "15px", "16px"]}
                 fontWeight={activeCategory === category ? "600" : "400"}
                 color={activeCategory === category ? "#fff" : "#333"}
-                fontFamily="raleway"
+                fontFamily="sans"
               >
                 {category}
               </Text>
@@ -530,13 +530,13 @@ const Gallery = () => {
                   fontWeight="600"
                   color="#000"
                   marginBottom="4px"
-                  fontFamily="raleway"
+                  fontFamily="sans"
                 >
                   {item.title}
                 </Text>
 
                 <Box display="flex" alignItems="center" marginBottom="8px">
-                  <Text fontSize="14px" color="#666" fontFamily="raleway">
+                  <Text fontSize="14px" color="#666" fontFamily="sans">
                     {item.location}
                   </Text>
                 </Box>
@@ -623,11 +623,11 @@ const Gallery = () => {
                   <Text
                     fontSize={["20px", "24px"]}
                     fontWeight="700"
-                    fontFamily="raleway"
+                    fontFamily="sans"
                   >
                     {clickedImage.title}
                   </Text>
-                  <Text fontSize="16px" color="#666" fontFamily="raleway">
+                  <Text fontSize="16px" color="#666" fontFamily="sans">
                     {clickedImage.location}
                   </Text>
                 </Box>
@@ -675,7 +675,7 @@ const Gallery = () => {
                   fontSize="16px"
                   lineHeight="1.6"
                   color="#333"
-                  fontFamily="raleway"
+                  fontFamily="sans"
                 >
                   {clickedImage.subheading}
                 </Text>

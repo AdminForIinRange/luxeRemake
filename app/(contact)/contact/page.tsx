@@ -45,7 +45,7 @@ const Contact = () => {
             mx="auto"
             mt="16px"
             px={{ base: "20px", md: "0" }}
-            fontFamily="Raleway"
+            fontFamily="sans"
           >
             Our property management experts are ready to help you maximize your
             investment potential with personalized solutions.
@@ -77,7 +77,7 @@ const Contact = () => {
             <Text
               fontSize={{ base: "28px", md: "32px" }}
               fontWeight={700}
-              fontFamily="Raleway"
+              fontFamily="sans"
               color="#0A0F29"
               mt="20px"
               mb="30px"
@@ -98,7 +98,7 @@ const Contact = () => {
                     fontWeight={600}
                     color="#0A0F29"
                     fontSize="16px"
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                     mb="4px"
                   >
                     Email
@@ -107,7 +107,7 @@ const Contact = () => {
                     fontWeight={400}
                     color="#555"
                     fontSize="16px"
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                   >
                     luxemanagements.info@gmail.com
                   </Text>
@@ -125,7 +125,7 @@ const Contact = () => {
                     fontWeight={600}
                     color="#0A0F29"
                     fontSize="16px"
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                     mb="4px"
                   >
                     Phone
@@ -134,7 +134,7 @@ const Contact = () => {
                     fontWeight={400}
                     color="#555"
                     fontSize="16px"
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                   >
                     +61 406 631 461
                   </Text>
@@ -152,7 +152,7 @@ const Contact = () => {
                     fontWeight={600}
                     color="#0A0F29"
                     fontSize="16px"
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                     mb="4px"
                   >
                     Location
@@ -161,7 +161,7 @@ const Contact = () => {
                     fontWeight={400}
                     color="#555"
                     fontSize="16px"
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                   >
                     South Australia
                   </Text>
@@ -174,7 +174,7 @@ const Contact = () => {
               <Text
                 fontSize="18px"
                 fontWeight={600}
-                fontFamily="Raleway"
+                fontFamily="sans"
                 color="#0A0F29"
                 mb="16px"
               >
@@ -186,11 +186,11 @@ const Contact = () => {
                   display="flex"
                   justifyContent={{ base: "center", md: "space-between" }}
                 >
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px">
+                  <Text fontFamily="sans" color="#555" fontSize="15px">
                     Monday - Friday
                   </Text>
                   <Text
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                     color="#555"
                     fontSize="15px"
                     fontWeight={500}
@@ -202,11 +202,11 @@ const Contact = () => {
                   display="flex"
                   justifyContent={{ base: "center", md: "space-between" }}
                 >
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px">
+                  <Text fontFamily="sans" color="#555" fontSize="15px">
                     Saturday
                   </Text>
                   <Text
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                     color="#555"
                     fontSize="15px"
                     fontWeight={500}
@@ -218,11 +218,11 @@ const Contact = () => {
                   display="flex"
                   justifyContent={{ base: "center", md: "space-between" }}
                 >
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px">
+                  <Text fontFamily="sans" color="#555" fontSize="15px">
                     Sunday
                   </Text>
                   <Text
-                    fontFamily="Raleway"
+                    fontFamily="sans"
                     color="#555"
                     fontSize="15px"
                     fontWeight={500}
@@ -264,7 +264,7 @@ const Contact = () => {
                 color="white"
                 fontWeight="700"
                 fontSize={{ base: "28px", md: "36px" }}
-                fontFamily="Raleway"
+                fontFamily="sans"
                 mb="20px"
                 lineHeight="1.2"
               >
@@ -274,7 +274,7 @@ const Contact = () => {
               <Text
                 color="rgba(255, 255, 255, 0.9)"
                 fontSize={{ base: "16px", md: "18px" }}
-                fontFamily="Raleway"
+                fontFamily="sans"
                 mb="16px"
                 maxWidth="600px"
                 lineHeight="1.6"
@@ -323,7 +323,7 @@ const Contact = () => {
                     <Text
                       color="rgba(255, 255, 255, 0.9)"
                       fontSize="15px"
-                      fontFamily="Raleway"
+                      fontFamily="sans"
                     >
                       {benefit}
                     </Text>
@@ -338,7 +338,7 @@ const Contact = () => {
                   borderRadius="30px"
                   py="18px"
                   px={{ base: "30px", md: "40px" }}
-                  fontFamily="Raleway"
+                  fontFamily="sans"
                   fontWeight="600"
                   fontSize="16px"
                   cursor="pointer"
@@ -386,7 +386,7 @@ const Contact = () => {
                 color="white"
                 fontWeight="600"
                 fontSize="20px"
-                fontFamily="raleway"
+                fontFamily="sans"
               >
                 Schedule Your Free Consultation
               </Text>
