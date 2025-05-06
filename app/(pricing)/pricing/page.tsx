@@ -241,19 +241,7 @@ const Pricing = () => {
                 Comprehensive Management
               </Text>
 
-              <Text
-                fontSize={["18px", "20px", "24px"]}
-                fontWeight={600}
-                color="#111"
-                mb="8px"
-              >
-                18% of booking profit
-              </Text>
-
-              <Text fontSize="16px" color="#555" mb="32px">
-                (profit = total revenue minus platform fees, cleaning,
-                utilities)
-              </Text>
+             
 
               <Text
                 fontSize={["18px", "20px"]}
@@ -284,8 +272,12 @@ const Pricing = () => {
               </Box>
             </Box>
 
-            <Box position="relative">
-              <Box height="300px" width="100%" bg="#f5f5f5" />
+            <Box position="relative" p={"4"}>
+              <Box     backgroundImage={`url(https://images.pexels.com/photos/7651924/pexels-photo-7651924.jpeg)`}height="365px" width="100%"  borderRadius={"18px"}    backgroundSize="cover"
+        backgroundPosition="top"
+        backgroundRepeat="no-repeat" 
+        
+        />
               <Box
                 position="absolute"
                 bottom="24px"
