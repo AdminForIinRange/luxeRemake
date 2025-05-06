@@ -261,7 +261,7 @@ const Navbar = () => {
       <Box
         w="100%"
         py="8px"
-
+        fontFamily={"arial"}
         backdropFilter="blur(10px)"
         borderBottom="1px solid #F0F0F0"
         display={{ base: "none", md: "block" }}
@@ -282,7 +282,7 @@ const Navbar = () => {
               info@luxemanagement.com
             </Text>
           </Box>
-          <Box display="flex" alignItems="center" flexWrap="wrap">
+          <Box  display="flex" alignItems="center" flexWrap="wrap">
             <Text fontSize="13px" color="#666" mr="24px" mb={{ base: "4px", sm: "0" }}>
               +1 (800) 555-1234
             </Text>
