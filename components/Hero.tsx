@@ -9,6 +9,7 @@ import { ArrowRight } from "lucide-react";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
+import LuxeAiAssistance from "./luxeComponents/LuxeAiAssistance";
 
 const HouseHeroParallax = dynamic(
   () => import("./customUI/Parallax/HouseHeroParallax"),
@@ -32,6 +33,7 @@ const Hero = () => {
 
   return (
     <>
+      <LuxeAiAssistance />
       <Stack
         overflow={"hidden"}
         mt={{ base: "25px", sm: "25px", md: "25px", lg: "100px", xl: "100px" }}
