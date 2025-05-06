@@ -256,7 +256,7 @@ const Navbar = () => {
   ]
 
   return (
-    <Box w="100%" position="sticky" top="0" zIndex="100" bg="rgba(255, 255, 255, 0.9)" backdropFilter="blur(10px)">
+    <Box w="100%" position="sticky" top="0" zIndex="100" bg={["rgba(255, 255, 255, 1)", "rgba(255, 255, 255, 0.9)", "rgba(255, 255, 255, 0.9)"]} backdropFilter="blur(10px)">
       {/* Top Bar with Contact Info */}
       <Box
         w="100%"
