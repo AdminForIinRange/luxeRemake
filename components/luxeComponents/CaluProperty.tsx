@@ -7,27 +7,16 @@ import TitleSubheading from "./Text/titleSubheading";
 
 // Simplified locations array
 const locations = [
-  "Broken Bow, OK",
+
   "Adelaide, Australia",
-  "Craigmore, SA",
+ 
   "Sydney, NSW",
   "Melbourne, VIC"
 ];
 
 // Simplified property details
 const propertyDetails = {
-  "Broken Bow, OK": {
-    revenue: "$66.8K",
-    revenueTrend: "+10%",
-    occupancy: "45%",
-    occupancyTrend: "+4%",
-    dailyRate: "$431.90",
-    dailyRateTrend: "+4%",
-    marketScore: "74",
-    expenses: "$8.7K",
-    income: "$16.7K",
-    capRate: "5.8%"
-  },
+
   "Adelaide, Australia": {
     revenue: "$30.6K",
     revenueTrend: "+1%",
