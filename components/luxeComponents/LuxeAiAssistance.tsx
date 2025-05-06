@@ -17,7 +17,13 @@ const LuxeAiAssistance = () => {
 
   useEffect(scrollToBottom, [messages])
 
-  const handleSend = async () => {
+/*************  ✨ Windsurf Command ⭐  *************/
+  /**
+   * Handle sending a message from the user input field to the AI.
+   * Post the message to the `/api/gemini` endpoint, and add the AI's response
+   * to the list of messages.
+   */
+/*******  e4d1847d-5554-45f6-b3ed-ed77d6328ce1  *******/  const handleSend = async () => {
     if (!input.trim()) return
 
     const userMessage = { role: "user", text: input }
@@ -256,6 +262,9 @@ const LuxeAiAssistance = () => {
                   whiteSpace="pre-wrap"
                   lineHeight="1.6"
                   color={msg.role === "user" ? "#2D3748" : "#1A365D"}
+                  dangerouslySetInnerHTML={{
+                    __html: msg.text.replace(/\*([^*]+)\*/g, "<strong>$1</strong>"),
+                  }}
                 >
                   {msg.text}
                 </Text>
