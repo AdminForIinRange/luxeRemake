@@ -1,0 +1,437 @@
+"use client";
+import React, { useEffect } from "react";
+import {
+  Box,
+  Text,
+} from "@chakra-ui/react";
+
+
+import Aos from "aos";
+import "aos/dist/aos.css";
+import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
+import FurnishingStylingCardLists from "@/components/luxeComponents/FurnishingStylingCardLists";
+import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
+import TopHeader from "@/components/luxeComponents/topHeader";
+const FurnishingAndStyling = () => {
+
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, []);
+
+  return (
+    <>
+
+<TopHeader
+        imgUrl={
+          "https://images.pexels.com/photos/6782574/pexels-photo-6782574.jpeg"
+        }
+        wordOne={"Furnishing"}
+        wordTwo={"Styling"}
+        and={true}
+        description={
+          "Transform your property into a stunning, magazine-worthy retreat with our expert design services."
+        }
+      />
+
+      {/* Portfolio Section - Crafted Environments */}
+      <Box py="24" px={{ base: "6", md: "10" }}>
+        <Box maxW="1200px" mx="auto">
+          <Text 
+            fontSize="sm" 
+            fontWeight="medium" 
+            color="#1A365D" 
+            textAlign="center" 
+            mb="2"
+            letterSpacing="0.5px"
+          >
+            OUR PORTFOLIO
+          </Text>
+          <Text 
+            fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }} 
+            fontWeight="bold" 
+            color="#0a0f29" 
+            textAlign="center" 
+            mb="6"
+            lineHeight="1.2"
+          >
+            Crafted Environments
+          </Text>
+          <Text 
+            fontSize={{ base: "md", md: "lg" }} 
+            color="#4a5568" 
+            textAlign="center" 
+            maxW="800px" 
+            mx="auto" 
+            mb="16"
+            lineHeight="1.7"
+          >
+            A showcase of our meticulously designed spaces, each reflecting our commitment to exceptional quality and timeless elegance.
+          </Text>
+
+          <Box 
+            display="flex" 
+            flexWrap="wrap" 
+            justifyContent="space-between" 
+            gap="8"
+          >
+            {/* Portfolio Item 1 */}
+            <Box flex="1" minW={{ base: "100%", md: "300px" }} bg="#f2f2f2" borderRadius="md" h="300px" display="flex" alignItems="center" justifyContent="center">
+              <Box w="50px" h="50px" borderRadius="full" bg="white" display="flex" alignItems="center" justifyContent="center">
+                <Text fontSize="sm" color="gray.400">IMG</Text>
+              </Box>
+            </Box>
+
+            {/* Portfolio Item 2 */}
+            <Box flex="1" minW={{ base: "100%", md: "300px" }} bg="#f2f2f2" borderRadius="md" h="300px" display="flex" alignItems="center" justifyContent="center">
+              <Box w="50px" h="50px" borderRadius="full" bg="white" display="flex" alignItems="center" justifyContent="center">
+                <Text fontSize="sm" color="gray.400">IMG</Text>
+              </Box>
+            </Box>
+
+            {/* Portfolio Item 3 */}
+            <Box flex="1" minW={{ base: "100%", md: "300px" }} bg="#f2f2f2" borderRadius="md" h="300px" display="flex" alignItems="center" justifyContent="center">
+              <Box w="50px" h="50px" borderRadius="full" bg="white" display="flex" alignItems="center" justifyContent="center">
+                <Text fontSize="sm" color="gray.400">IMG</Text>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Design Process Section */}
+      <Box bg="#0a0f29" py="24" px={{ base: "6", md: "10" }}>
+        <Box maxW="1200px" mx="auto">
+          <Text 
+            fontSize="sm" 
+            fontWeight="medium" 
+            color="#e2e8f0" 
+            textAlign="center" 
+            mb="2"
+            letterSpacing="0.5px"
+          >
+            OUR APPROACH
+          </Text>
+          <Text 
+            fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }} 
+            fontWeight="bold" 
+            color="white" 
+            textAlign="center" 
+            mb="6"
+            lineHeight="1.2"
+          >
+            The Design Process
+          </Text>
+          <Text 
+            fontSize={{ base: "md", md: "lg" }} 
+            color="white" 
+            textAlign="center" 
+            maxW="800px" 
+            mx="auto" 
+            mb="20"
+            lineHeight="1.7"
+          >
+            A refined methodology that transforms vision into reality through careful planning and expert execution.
+          </Text>
+
+          <Box 
+            display="flex" 
+            flexDirection={{ base: "column", md: "row" }}
+            flexWrap="wrap" 
+            justifyContent="space-between" 
+            gap={{ base: "12", md: "6" }}
+          >
+            {/* Process Step 1 */}
+            <Box flex="1" minW={{ base: "100%", md: "220px" }}>
+              <Text fontSize={{ base: "6xl", md: "7xl" }} fontWeight="bold" color="#2d3748" mb="2" opacity="0.3">01</Text>
+              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" color="white" mb="4">Consultation</Text>
+              <Text fontSize="md" color="gray.300" lineHeight="1.7">
+                We begin with an in-depth consultation to understand your vision, preferences, and how you use your space.
+              </Text>
+            </Box>
+
+            {/* Process Step 2 */}
+            <Box flex="1" minW={{ base: "100%", md: "220px" }}>
+              <Text fontSize={{ base: "6xl", md: "7xl" }} fontWeight="bold" color="#2d3748" mb="2" opacity="0.3">02</Text>
+              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" color="white" mb="4">Concept Development</Text>
+              <Text fontSize="md" color="gray.300" lineHeight="1.7">
+                Our designers create a tailored concept that reflects your style while optimizing your property's potential.
+              </Text>
+            </Box>
+
+            {/* Process Step 3 */}
+            <Box flex="1" minW={{ base: "100%", md: "220px" }}>
+              <Text fontSize={{ base: "6xl", md: "7xl" }} fontWeight="bold" color="#2d3748" mb="2" opacity="0.3">03</Text>
+              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" color="white" mb="4">Curation & Sourcing</Text>
+              <Text fontSize="md" color="gray.300" lineHeight="1.7">
+                We meticulously select each piece, from statement furniture to the smallest decorative elements.
+              </Text>
+            </Box>
+
+            {/* Process Step 4 */}
+            <Box flex="1" minW={{ base: "100%", md: "220px" }}>
+              <Text fontSize={{ base: "6xl", md: "7xl" }} fontWeight="bold" color="#2d3748" mb="2" opacity="0.3">04</Text>
+              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" color="white" mb="4">Installation & Styling</Text>
+              <Text fontSize="md" color="gray.300" lineHeight="1.7">
+                Our expert team handles delivery, placement, and the final styling touches that bring your space to life.
+              </Text>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Materials & Craftsmanship Section */}
+      <Box py="24" px={{ base: "6", md: "10" }}>
+        <Box maxW="1200px" mx="auto">
+          <Text 
+            fontSize="sm" 
+            fontWeight="medium" 
+            color="#1A365D" 
+            textAlign="center" 
+            mb="2"
+            letterSpacing="0.5px"
+          >
+            MATERIALS & CRAFTSMANSHIP
+          </Text>
+          <Text 
+            fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }} 
+            fontWeight="bold" 
+            color="#0a0f29" 
+            textAlign="center" 
+            mb="6"
+            lineHeight="1.2"
+          >
+            Exceptional Quality
+          </Text>
+          <Text 
+            fontSize={{ base: "md", md: "lg" }} 
+            color="#4a5568" 
+            textAlign="center" 
+            maxW="800px" 
+            mx="auto" 
+            mb="16"
+            lineHeight="1.7"
+          >
+            We source only the finest materials and work with skilled artisans to create spaces of unparalleled beauty and durability.
+          </Text>
+
+          <Box 
+            display="flex" 
+            flexWrap="wrap" 
+            justifyContent="space-between" 
+            gap="8"
+          >
+            {/* Material Item 1 */}
+            <Box flex="1" minW={{ base: "100%", md: "300px" }}>
+              <Box bg="#f2f2f2" borderRadius="md" h="300px" mb="6" display="flex" alignItems="center" justifyContent="center">
+                <Box w="50px" h="50px" borderRadius="full" bg="white" display="flex" alignItems="center" justifyContent="center">
+                  <Text fontSize="sm" color="gray.400">IMG</Text>
+                </Box>
+              </Box>
+              <Text fontSize={{ base: "lg", md: "xl" }} fontWeight="bold" color="#0a0f29" mb="2">Premium Textiles</Text>
+              <Text fontSize="md" color="#4a5568" lineHeight="1.7">Hand-selected fabrics that combine luxury with durability</Text>
+            </Box>
+
+            {/* Material Item 2 */}
+            <Box flex="1" minW={{ base: "100%", md: "300px" }}>
+              <Box bg="#f2f2f2" borderRadius="md" h="300px" mb="6" display="flex" alignItems="center" justifyContent="center">
+                <Box w="50px" h="50px" borderRadius="full" bg="white" display="flex" alignItems="center" justifyContent="center">
+                  <Text fontSize="sm" color="gray.400">IMG</Text>
+                </Box>
+              </Box>
+              <Text fontSize={{ base: "lg", md: "xl" }} fontWeight="bold" color="#0a0f29" mb="2">Artisanal Furniture</Text>
+              <Text fontSize="md" color="#4a5568" lineHeight="1.7">Bespoke pieces crafted by master artisans</Text>
+            </Box>
+
+            {/* Material Item 3 */}
+            <Box flex="1" minW={{ base: "100%", md: "300px" }}>
+              <Box bg="#f2f2f2" borderRadius="md" h="300px" mb="6" display="flex" alignItems="center" justifyContent="center">
+                <Box w="50px" h="50px" borderRadius="full" bg="white" display="flex" alignItems="center" justifyContent="center">
+                  <Text fontSize="sm" color="gray.400">IMG</Text>
+                </Box>
+              </Box>
+              <Text fontSize={{ base: "lg", md: "xl" }} fontWeight="bold" color="#0a0f29" mb="2">Curated Accessories</Text>
+              <Text fontSize="md" color="#4a5568" lineHeight="1.7">Thoughtfully sourced décor that elevates every space</Text>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Philosophy Section */}
+      <Box py="24" px={{ base: "6", md: "10" }}>
+        <Box maxW="1200px" mx="auto" display="flex" flexWrap="wrap" gap="10">
+          <Box flex="1" minW={{ base: "100%", md: "45%" }} pr={{ md: "8" }}>
+            <Text 
+              fontSize="sm" 
+              fontWeight="medium" 
+              color="#1A365D" 
+              mb="2"
+              letterSpacing="0.5px"
+            >
+              OUR PHILOSOPHY
+            </Text>
+            <Text 
+              fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} 
+              fontWeight="bold" 
+              color="#0a0f29" 
+              mb="8"
+              lineHeight="1.2"
+            >
+              The Art of Curated Living
+            </Text>
+            <Text fontSize="md" color="#4a5568" mb="6" lineHeight="1.8">
+              At Luxe Management, we believe that exceptional spaces are born from a perfect balance of aesthetics and functionality. Our furnishing and styling service transforms properties into captivating environments that resonate with discerning guests.
+            </Text>
+            <Text fontSize="md" color="#4a5568" mb="8" lineHeight="1.8">
+              Each project is approached with meticulous attention to detail, from the selection of statement furniture pieces to the curation of bespoke accessories that tell a cohesive story.
+            </Text>
+            <Box display="flex" alignItems="center" gap="3" mb="6">
+              <Box w="30px" h="2px" bg="#0a0f29"></Box>
+              <Text fontSize="md" fontWeight="medium" color="#0a0f29">Elevating spaces. Creating experiences.</Text>
+            </Box>
+          </Box>
+          
+          <Box flex="1" minW={{ base: "100%", md: "45%" }} position="relative">
+            <Box bg="#f2f2f2" borderRadius="md" h={{ base: "300px", md: "400px" }} display="flex" alignItems="center" justifyContent="center">
+              <Box w="50px" h="50px" borderRadius="full" bg="white" display="flex" alignItems="center" justifyContent="center">
+                <Text fontSize="sm" color="gray.400">IMG</Text>
+              </Box>
+            </Box>
+            <Box position="absolute" bottom="6" right="6" bg="white" p="4" borderRadius="md" boxShadow="md" maxW="250px">
+              <Text fontSize="lg" fontWeight="bold" color="#0a0f29" mb="1">Tailored Design</Text>
+              <Text fontSize="sm" color="#4a5568">Uniquely crafted for your space</Text>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Testimonials Section */}
+      <Box bg="#0a0f29" py="24" px={{ base: "6", md: "10" }}>
+        <Box maxW="1200px" mx="auto">
+          <Text 
+            fontSize="sm" 
+            fontWeight="medium" 
+            color="#e2e8f0" 
+            textAlign="center" 
+            mb="2"
+            letterSpacing="0.5px"
+          >
+            CLIENT EXPERIENCES
+          </Text>
+          <Text 
+            fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }} 
+            fontWeight="bold" 
+            color="white" 
+            textAlign="center" 
+            mb="16"
+            lineHeight="1.2"
+          >
+            Testimonials
+          </Text>
+
+          <Box 
+            display="flex" 
+            flexWrap="wrap" 
+            justifyContent="space-between" 
+            gap="8"
+          >
+            {/* Testimonial 1 */}
+            <Box flex="1" minW={{ base: "100%", md: "45%" }} bg="#f8fafc" p="8" borderRadius="md">
+              <Text fontSize="4xl" color="#cbd5e0" mb="6">"</Text>
+              <Text fontSize={{ base: "md", md: "lg" }} color="#4a5568" fontStyle="italic" mb="8" lineHeight="1.7">
+                Luxe Managements transformed our property into a sophisticated haven that perfectly balances luxury with comfort. The attention to detail is unmatched.
+              </Text>
+              <Text fontSize="md" fontWeight="bold" color="#0a0f29">Alexandra & James T.</Text>
+              <Text fontSize="sm" color="#4a5568">Oceanfront Villa, Malibu</Text>
+            </Box>
+
+            {/* Testimonial 2 */}
+            <Box flex="1" minW={{ base: "100%", md: "45%" }} bg="#f8fafc" p="8" borderRadius="md">
+              <Text fontSize="4xl" color="#cbd5e0" mb="6">"</Text>
+              <Text fontSize={{ base: "md", md: "lg" }} color="#4a5568" fontStyle="italic" mb="8" lineHeight="1.7">
+                The furnishing and styling service exceeded our expectations. Our rental bookings increased immediately, with guests specifically mentioning the interior design.
+              </Text>
+              <Text fontSize="md" fontWeight="bold" color="#0a0f29">Michael R.</Text>
+              <Text fontSize="sm" color="#4a5568">Urban Penthouse, New York</Text>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* CTA Section */}
+      <Box py="24" px={{ base: "6", md: "10" }}>
+        <Box maxW="1200px" mx="auto" display="flex" flexWrap="wrap" gap="10">
+          <Box flex="1" minW={{ base: "100%", md: "45%" }} pr={{ md: "8" }}>
+            <Text 
+              fontSize="sm" 
+              fontWeight="medium" 
+              color="#1A365D" 
+              mb="2"
+              letterSpacing="0.5px"
+            >
+              BEGIN YOUR JOURNEY
+            </Text>
+            <Text 
+              fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} 
+              fontWeight="bold" 
+              color="#0a0f29" 
+              mb="8"
+              lineHeight="1.2"
+            >
+              Transform Your Space
+            </Text>
+            <Text fontSize="md" color="#4a5568" mb="8" lineHeight="1.8" maxW="500px">
+              Our Furnishing & Styling service is included in our comprehensive property management package. Let's create a space that captivates your guests and maximizes your rental potential.
+            </Text>
+            <Box 
+              display="inline-flex" 
+              bg="#0a0f29" 
+              color="white" 
+              px="6" 
+              py="3" 
+              borderRadius="full" 
+              cursor="pointer"
+              alignItems="center"
+              _hover={{ bg: "#1A365D" }}
+            >
+              <Text fontSize="md" fontWeight="medium" mr="2">Start Your Transformation</Text>
+              <Text fontSize="lg">→</Text>
+            </Box>
+          </Box>
+          
+          <Box flex="1" minW={{ base: "100%", md: "45%" }}>
+            <Box bg="#f2f2f2" borderRadius="md" h={{ base: "300px", md: "400px" }} display="flex" alignItems="center" justifyContent="center">
+              <Box w="50px" h="50px" borderRadius="full" bg="white" display="flex" alignItems="center" justifyContent="center">
+                <Text fontSize="sm" color="gray.400">IMG</Text>
+              </Box>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Scroll to Top Button */}
+      <Box 
+        position="fixed" 
+        bottom="6" 
+        right="6" 
+        bg="#0a0f29" 
+        w="12" 
+        h="12" 
+        borderRadius="full" 
+        display="flex" 
+        alignItems="center" 
+        justifyContent="center" 
+        cursor="pointer" 
+        boxShadow="md"
+        _hover={{ bg: "#1A365D" }}
+      >
+        <Text fontSize="xl" color="white">↑</Text>
+      </Box>
+    </>
+  );
+};
+
+export default FurnishingAndStyling;
