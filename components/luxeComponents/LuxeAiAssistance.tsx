@@ -56,16 +56,19 @@ const LuxeAiAssistance = () => {
       bottom="24px"
       right="24px"
       bg="white"
-      borderRadius={open ? "20px" : "100px"}
+      borderTopRadius={open ? "40px" : "100px"}
+      borderLeftRadius={open ? "40px" : "100px"}
+      borderEndEndRadius={open ? "0px" : "20px"}
+
       boxShadow="0 8px 30px rgba(0, 0, 0, 0.12)"
-      width={open ? "380px" : "80px"}
-      height={open ? "580px" : "80px"}
+      width={open ? "380px" : "92px"}
+      height={open ? "580px" : "92px"}
       transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
       display="flex"
       flexDirection="column"
       overflow="hidden"
-      zIndex={9999}
-      border="1px solid #e6e6e6"
+      zIndex={9998}
+      border={open ? "2px solid lightgray" :"4px solid lightgray"}
     >
       {/* Chat Icon (Closed State) */}
       {!open && (
@@ -83,8 +86,8 @@ const LuxeAiAssistance = () => {
           _hover={{ transform: "scale(1.05)", transition: "transform 0.2s ease" }}
         >
           <Box
-            width="80px"
-            height="80px"
+            width="78px"
+            height="78px"
             borderRadius="full"
             backgroundImage={`url(${luxeLogo.src})`}
             backgroundSize="cover"
@@ -92,14 +95,15 @@ const LuxeAiAssistance = () => {
           />
           <Box
             position="absolute"
-            top="10px"
-            right="10px"
+            top="15px"
+            right="15px"
             width="15px"
             height="15px"
             borderRadius="full"
             bg="#38A169"
             boxShadow="0 0 0 2px white"
           />
+     
         </Box>
       )}
 
@@ -117,13 +121,13 @@ const LuxeAiAssistance = () => {
           >
             <Box display="flex" alignItems="center">
               <Box
-                width="32px"
-                height="32px"
+                width="52px"
+                height="52px"
                 borderRadius="full"
                 backgroundImage={`url(${luxeLogo.src})`}
                 backgroundSize="cover"
                 backgroundPosition="center"
-                mr="12px"
+              
               />
               <Box>
                 <Text fontWeight="700" fontSize="16px" color="#1A202C">
