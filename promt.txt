@@ -1,0 +1,29 @@
+Please improve this section further and make it more visually engaging and polished.
+I’d like you to:
+
+    Enhance the overall layout and visual appeal.
+
+    Provide more content and relevant informative details where appropriate.
+
+    Add small visual touches (within the allowed components) that make the section feel more complete and refined.
+
+Remember:
+You can only use Box and Text from @chakra-ui/react — no other components or external styling libraries.
+
+Make it look clean, modern, and compelling.
+
+
+
+
+Please look at the UI design image I’ve provided. Your task is to improve the page in the codebase below. The goal is to make the layout visually stronger, cleaner, and more polished based on the design direction shown in the image.
+Constraints:
+
+    You are only allowed to use Box and Text from @chakra-ui/react.
+
+    You can use the existing Lucide icons already in the codebase (e.g., HomeIcon, Sofa, etc.).
+
+    Do not use Tailwind CSS or any other Chakra UI components (e.g., no VStack, HStack, Image, Button, etc.).
+
+    Keep the structure flexible and responsive using only the allowed components.
+
+    Focus on layout, spacing, typography, and visual clarity.

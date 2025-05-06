@@ -93,13 +93,7 @@ const PropertyManagement = () => {
                   "Dynamic pricing and targeted marketing strategies that optimize your property's earning potential.",
               },
             ]}
-            CardDataHeader={[
-              {
-                mainTitle: "Our Methodology",
-                mainDescription:
-                  "We deliver exceptional solutions tailored to your unique needs, combining industry expertise with innovative approaches to maximize your property's potential.",
-              },
-            ]}
+       
           />
         </Box>
       </HStack>
