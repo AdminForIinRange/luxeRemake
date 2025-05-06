@@ -163,26 +163,32 @@ const LuxeAiAssistance = () => {
 
           {/* Messages Container */}
           <Box
-            flex="1"
-            p="16px"
-            overflowY="auto"
-            display="flex"
-            flexDirection="column"
-            gap="12px"
-            bg="linear-gradient(180deg, #FAFBFF 0%, #F8FAFC 100%)"
-            sx={{
-              "&::-webkit-scrollbar": {
-                width: "6px",
-              },
-              "&::-webkit-scrollbar-track": {
-                background: "rgba(240, 240, 240, 0.3)",
-              },
-              "&::-webkit-scrollbar-thumb": {
-                background: "rgba(160, 174, 192, 0.5)",
-                borderRadius: "3px",
-              },
-            }}
-          >
+ flex="1"
+ p="16px"
+ overflowY="auto"
+ display="flex"
+ flexDirection="column"
+ gap="12px"
+ bg="linear-gradient(180deg, #FAFBFF 0%, #F8FAFC 100%)"
+ maxHeight="100%"
+ tabIndex={0} // allows keyboard + mouse focus
+ _hover={{
+   overflowY: "auto",
+ }}
+ css={{
+   "&::-webkit-scrollbar": {
+     width: "6px",
+   },
+   "&::-webkit-scrollbar-track": {
+     background: "rgba(240, 240, 240, 0.3)",
+   },
+   "&::-webkit-scrollbar-thumb": {
+     background: "rgba(160, 174, 192, 0.5)",
+     borderRadius: "3px",
+   },
+ }}
+>
+
             {messages.length === 0 && (
               <Box
                 display="flex"
@@ -257,17 +263,21 @@ const LuxeAiAssistance = () => {
                     Luxe Assistant
                   </Text>
                 )}
-                <Text
-                  fontSize="14px"
-                  whiteSpace="pre-wrap"
-                  lineHeight="1.6"
-                  color={msg.role === "user" ? "#2D3748" : "#1A365D"}
-                  dangerouslySetInnerHTML={{
-                    __html: msg.text.replace(/\*([^*]+)\*/g, "<strong>$1</strong>"),
-                  }}
-                >
-                  {msg.text}
-                </Text>
+             <Text
+  fontSize="14px"
+  whiteSpace="pre-wrap"
+  lineHeight="1.6"
+  color={msg.role === "user" ? "#2D3748" : "#1A365D"}
+  dangerouslySetInnerHTML={{
+    __html: msg.text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\*{1,2}([^*]+)\*{1,2}/g, "<strong>$1</strong>")
+
+  }}
+/>
+
               </Box>
             ))}
 

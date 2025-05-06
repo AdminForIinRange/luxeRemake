@@ -13,7 +13,7 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
-
+import { useRouter } from "next/navigation"
 const faqs = [
   {
     question: "What services does your Airbnb management offer?",
@@ -143,6 +143,8 @@ const benefits = [
 ];
 
 const FAQ = ({ type }: { type: string }) => {
+
+  const router = useRouter()
   const isPricing = type === "pricing";
   const selectedFaqs = isPricing ? pricingFaqs : faqs;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -442,6 +444,7 @@ const FAQ = ({ type }: { type: string }) => {
             transition="all 0.3s"
             boxShadow="0 4px 12px rgba(10, 16, 41, 0.15)"
             whiteSpace="nowrap"
+            onClick={() => router.push("/contact")}
           >
             <Text mr={2}>Contact us</Text>
             <ArrowRight size={16} />
