@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Strong, Text } from "@chakra-ui/react";
 import { Search, DollarSign, Users, Calendar, MapPin, ChevronDown, TrendingUp, Zap } from 'lucide-react';
 import TitleSubheading from "./Text/titleSubheading";
 
@@ -100,16 +100,16 @@ const CaluProperty = () => {
   };
 
   return (
-    <Box maxWidth="1400px" my={"100px"}  mx="auto" padding="20px">
+    <Box maxWidth="1400px"  my={"100px"}  mx="auto" padding="20px">
       {/* Title */}
       <TitleSubheading
-        title={"Tetsing Property Calculator"}
-        subheading={"Calculate property investment value"}
+        title={"Luxe Property Calculator"}
+        subheading={"Analyze and calculate your property investment value"}
       />
 
       {/* Search Box */}
       <Box 
-      mt={"50px"}
+      mt={"80px"}
         position="relative" 
         marginBottom="30px" 
         border="1px solid" 
@@ -244,8 +244,8 @@ const CaluProperty = () => {
         <Box>
           {/* Header */}
           <Box marginBottom="24px">
-            <Text fontSize="24px" fontWeight="700" color="gray.800">
-              {selectedLocation || "Market"} Investment Overview
+            <Text fontSize="24px" fontWeight="500" color="gray.800">
+            <Strong> {selectedLocation || "Market"} </Strong>   - Investment Overview
             </Text>
           </Box>
 
