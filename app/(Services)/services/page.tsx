@@ -1,23 +1,7 @@
 "use client";
 import React from "react";
-import {
-  Box,
- 
-  HStack,
-
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import {
-  Camera,
-  ChevronRight,
- 
-  HomeIcon,
-
-  Sofa,
-  Sparkle,
-
-} from "lucide-react";
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
+import { Camera, ChevronRight, HomeIcon, Sofa, Sparkle } from "lucide-react";
 
 import { useRouter } from "next/navigation";
 
