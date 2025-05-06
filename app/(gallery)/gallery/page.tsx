@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Box, HStack, VStack } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import TitleSubheading from "@/components/luxeComponents/Text/titleSubheading";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -12,6 +12,7 @@ import {
   DialogRoot,
 } from "@/components/chakra-snippets/dialog";
 import DefaultSlider from "@/components/carousel/DefaultSlider";
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 import houseOneImg1 from "@/public/images/dalts/houseOne/WEB/1.jpg";
 import houseOneImg2 from "@/public/images/dalts/houseOne/WEB/2.jpg";
@@ -90,52 +91,50 @@ const Gallery = () => {
     subheading: string;
     categories: string[];
     brand: string;
-    carasoleImg?: { img1: string; img2: string; img3: string }[];
+    location?: string;
+    bedrooms?: number;
+    bathrooms?: number;
+    carasoleImg?: any;
   } | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [activeCategory, setActiveCategory] = useState("All");
 
-  // STATES FOR FILTER & SEARCH (lifted from v0 FilterSearch)
+  // STATES FOR FILTER & SEARCH
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [isExpanded, setIsExpanded] = useState(true);
 
-  // Category list (from v0)
+  // Category list
   const categories = [
-    "Cleaning",
-    "Linen",
+    "All",
     "Property Management",
-    "Furnishing",
+    "Interior Design",
     "Styling",
-    "Interior",
-    "Photography",
+    "Renovation"
   ];
 
-  // Toggle a category on/off
-  const toggleCategory = (category: string) => {
-    setSelectedCategories((prev) =>
-      prev.includes(category)
-        ? prev.filter((c) => c !== category)
-        : [...prev, category],
-    );
+  // Toggle a category
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+    if (category === "All") {
+      setSelectedCategories([]);
+    } else {
+      setSelectedCategories([category]);
+    }
   };
 
-  // Clear filters
-  const clearFilters = () => {
-    setSelectedCategories([]);
-    setSearchTerm("");
-  };
-
-  // Toggle expand/collapse for the categories list
-
-  // Gallery items (sample data)
+  // Enhanced gallery items with more details
   const galleryItems = [
     {
       img: houseOneImg10,
-      title: "Property Management",
-      subheading:
-        "Comprehensive management service including all our offerings.",
+      title: "Modern Beachside Villa",
+      subheading: "Luxury property with ocean views and premium amenities",
       categories: ["Property Management"],
-      brand: "BrandX",
+      brand: "Luxe Properties",
+      location: "Bondi Beach",
+      bedrooms: 4,
+      bathrooms: 3,
       carasoleImg: [
         {
           img1: houseOneImg10,
@@ -151,14 +150,15 @@ const Gallery = () => {
         },
       ],
     },
-
     {
       img: houseTwoImg10,
-      title: "Property Management",
-      subheading:
-        "Comprehensive management service including all our offerings.",
-      categories: ["Property Management"],
-      brand: "BrandX",
+      title: "Contemporary Apartment",
+      subheading: "Urban living with designer finishes and city views",
+      categories: ["Interior Design", "Styling"],
+      brand: "Urban Dwellings",
+      location: "CBD",
+      bedrooms: 2,
+      bathrooms: 2,
       carasoleImg: [
         {
           img1: houseTwoImg10,
@@ -176,11 +176,13 @@ const Gallery = () => {
     },
     {
       img: houseThreeImg10,
-      title: "Property Management",
-      subheading:
-        "Comprehensive management service including all our offerings.",
-      categories: ["Property Management"],
-      brand: "BrandX",
+      title: "Renovated Heritage Home",
+      subheading: "Classic architecture with modern interior updates",
+      categories: ["Renovation", "Interior Design"],
+      brand: "Heritage Renovations",
+      location: "Paddington",
+      bedrooms: 3,
+      bathrooms: 2,
       carasoleImg: [
         {
           img1: houseThreeImg10,
@@ -198,11 +200,13 @@ const Gallery = () => {
     },
     {
       img: houseFourImg10,
-      title: "Property Management",
-      subheading:
-        "Comprehensive management service including all our offerings.",
-      categories: ["Property Management"],
-      brand: "BrandX",
+      title: "Luxury Penthouse",
+      subheading: "Exclusive top-floor residence with panoramic views",
+      categories: ["Property Management", "Styling"],
+      brand: "Elite Properties",
+      location: "Darling Harbour",
+      bedrooms: 3,
+      bathrooms: 3,
       carasoleImg: [
         {
           img1: houseFourImg10,
@@ -218,14 +222,15 @@ const Gallery = () => {
         },
       ],
     },
-
     {
       img: houseFiveImg1,
-      title: "Property Management",
-      subheading:
-        "Comprehensive management service including all our offerings.",
+      title: "Waterfront Estate",
+      subheading: "Expansive property with private dock and landscaped gardens",
       categories: ["Property Management"],
-      brand: "BrandX",
+      brand: "Prestige Homes",
+      location: "Rose Bay",
+      bedrooms: 5,
+      bathrooms: 4,
       carasoleImg: [
         {
           img1: houseFiveImg1,
@@ -241,14 +246,15 @@ const Gallery = () => {
         },
       ],
     },
-
     {
       img: houseSixImg1,
-      title: "Property Management",
-      subheading:
-        "Comprehensive management service including all our offerings.",
-      categories: ["Property Management"],
-      brand: "BrandX",
+      title: "Minimalist Townhouse",
+      subheading: "Clean lines and thoughtful design in a central location",
+      categories: ["Interior Design", "Renovation"],
+      brand: "Modern Living",
+      location: "Surry Hills",
+      bedrooms: 3,
+      bathrooms: 2,
       carasoleImg: [
         {
           img1: houseSixImg1,
@@ -264,7 +270,6 @@ const Gallery = () => {
         },
       ],
     },
-    // Add more items as needed...
   ];
 
   // Filtering logic based on search term and selected categories
@@ -272,80 +277,336 @@ const Gallery = () => {
     const lowerSearch = searchTerm.toLowerCase();
     const matchesSearch =
       item.title.toLowerCase().includes(lowerSearch) ||
-      item.subheading.toLowerCase().includes(lowerSearch);
+      item.subheading.toLowerCase().includes(lowerSearch) ||
+      (item.location && item.location.toLowerCase().includes(lowerSearch));
+    
     const matchesCategory =
       selectedCategories.length === 0 ||
       selectedCategories.some((cat) => item.categories.includes(cat));
+    
     return matchesSearch && matchesCategory;
   });
 
+  // Items per page
+  const itemsPerPage = 6;
+  const totalPages = Math.ceil(filteredGalleryItems.length / itemsPerPage);
+  
+  // Get current items
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredGalleryItems.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
   return (
     <>
-      <TitleSubheading
-        title="Gallery"
-        subheading="Check out our latest work."
-      />
-
-      <HStack
-        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-        w="100%"
-        h="100%"
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        fontFamily="raleway"
-        gap="20px"
-        align="start"
-        justify="center"
-        flexWrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
+      {/* Enhanced Header Section with Decorative Elements */}
+      <Box 
+        position="relative"
+        display="flex" 
+        flexDirection="column" 
+        alignItems="center" 
+        justifyContent="center"
+        textAlign="center"
+        width="100%"
+        paddingY={["60px", "70px", "80px"]}
+        overflow="hidden"
       >
-        {/* LEFT SIDEBAR: Integrated Filter & Search (v0 style) */}
-
-        {/* RIGHT COLUMN: Gallery Grid */}
-        <HStack
-          w="100%"
-          h="100%"
-          justify="center"
-          align="center"
-          flexWrap="wrap"
-          gap={["25px", "25px", "25px", "25px", "25px", "25px"]}
+        {/* Decorative elements */}
+        <Box
+          position="absolute"
+          top="20px"
+          left="10%"
+          width="40px"
+          height="40px"
+          borderTop="2px solid #e0e0e0"
+          borderLeft="2px solid #e0e0e0"
+          opacity="0.6"
+          data-aos="fade-right"
+        />
+        <Box
+          position="absolute"
+          bottom="20px"
+          right="10%"
+          width="40px"
+          height="40px"
+          borderBottom="2px solid #e0e0e0"
+          borderRight="2px solid #e0e0e0"
+          opacity="0.6"
+          data-aos="fade-left"
+        />
+        
+        {/* Main heading with enhanced typography */}
+        <Box
+          position="relative"
+          data-aos="fade-up"
         >
-          {filteredGalleryItems.map((item, index) => (
-            <VStack key={index}>
+          <Text
+            as="h1"
+            fontSize={["42px", "48px", "56px"]}
+            fontWeight="700"
+            fontFamily="raleway"
+            letterSpacing="-0.02em"
+            marginBottom="6px"
+            color="#000"
+          >
+            Gallery
+          </Text>
+          <Box
+            width="40px"
+            height="3px"
+            backgroundColor="#000"
+            margin="0 auto"
+            marginBottom="20px"
+          />
+          <Text
+            fontSize={["16px", "18px", "20px"]}
+            fontWeight="400"
+            fontFamily="raleway"
+            color="#666"
+            maxWidth="600px"
+            lineHeight="1.6"
+          >
+            Check out our latest work showcasing premium properties and exceptional interior design.
+          </Text>
+        </Box>
+      </Box>
+
+      {/* Category Filter Tabs */}
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+        marginBottom="40px"
+        paddingX={["20px", "30px"]}
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <Box
+          display="flex"
+          flexWrap="wrap"
+          justifyContent="center"
+          gap={["10px", "15px", "20px"]}
+        >
+          {categories.map((category) => (
+            <Box
+              key={category}
+              onClick={() => handleCategoryChange(category)}
+              cursor="pointer"
+              paddingX={["12px", "16px", "20px"]}
+              paddingY={["8px", "10px", "12px"]}
+              borderRadius="30px"
+              backgroundColor={activeCategory === category ? "#000" : "transparent"}
+              border="1px solid"
+              borderColor={activeCategory === category ? "#000" : "#e0e0e0"}
+              transition="all 0.3s ease"
+              _hover={{
+                backgroundColor: activeCategory === category ? "#000" : "#f5f5f5",
+              }}
+            >
+              <Text
+                fontSize={["14px", "15px", "16px"]}
+                fontWeight={activeCategory === category ? "600" : "400"}
+                color={activeCategory === category ? "#fff" : "#333"}
+                fontFamily="raleway"
+              >
+                {category}
+              </Text>
+            </Box>
+          ))}
+        </Box>
+      </Box>
+
+      {/* Main Gallery Container with Enhanced Layout */}
+      <Box
+        width="100%"
+        maxWidth="1400px"
+        margin="0 auto"
+        paddingX={["20px", "30px", "40px", "60px"]}
+        paddingBottom="80px"
+      >
+        {/* Gallery Grid with Improved Visual Appeal */}
+        <Box
+          display="grid"
+          gridTemplateColumns={[
+            "1fr",
+            "repeat(2, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+          ]}
+          gap={["24px", "30px", "40px"]}
+          width="100%"
+        >
+          {currentItems.map((item, index) => (
+            <Box
+              key={index}
+              position="relative"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              {/* Property Image with Enhanced Hover Effects */}
               <Box
+                position="relative"
                 onClick={() => {
                   setClickedImage(item);
                   setModalOpen(true);
                 }}
-      
-                backgroundImage={`url(${item.img.src})`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-                transition="all 0.3s"
-                w={["250px", "300px", "350px"]}
-                h={["250px", "300px", "350px"]}
-                borderRadius="16px"
-                _hover={{ transform: "scale(1.01)" }}
                 cursor="pointer"
-                display="flex"
-                p="30px"
+                overflow="hidden"
+                borderRadius="16px"
+                boxShadow="0 4px 20px rgba(0, 0, 0, 0.08)"
+                height={["280px", "300px", "320px"]}
+                width="100%"
               >
-                <VStack
+                {/* Main Image */}
+                <Box
+                  backgroundImage={`url(${item.img.src})`}
+                  backgroundSize="cover"
+                  backgroundPosition="center"
+                  backgroundRepeat="no-repeat"
+                  transition="transform 0.5s ease"
+                  _hover={{
+                    transform: "scale(1.05)",
+                  }}
+                  height="100%"
+                  width="100%"
+                />
+                
+                {/* Hover Overlay with Property Details */}
+                <Box
+                  position="absolute"
+                  bottom="0"
+                  left="0"
+                  right="0"
+                  padding="20px"
+                  background="linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%)"
                   color="white"
-                  mt="20px"
-                  w="100%"
-                  h="100%"
-                  justifyContent="end"
-                  alignItems="end"
+                  opacity="0"
+                  transition="opacity 0.3s ease"
+                  _groupHover={{
+                    opacity: 1,
+                  }}
+                  borderBottomRadius="16px"
+                  height="70%"
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="flex-end"
+                  pointerEvents="none"
+                />
+                
+                {/* Category Tag */}
+                <Box
+                  position="absolute"
+                  top="16px"
+                  left="16px"
+                  paddingX="12px"
+                  paddingY="6px"
+                  backgroundColor="rgba(0,0,0,0.7)"
+                  borderRadius="20px"
+                  zIndex="1"
                 >
-                  {/* overlay text, etc. */}
-                </VStack>
+                  <Text
+                    fontSize="12px"
+                    fontWeight="600"
+                    color="white"
+                    textTransform="uppercase"
+                    letterSpacing="0.5px"
+                  >
+                    {item.categories[0]}
+                  </Text>
+                </Box>
               </Box>
-            </VStack>
+              
+              {/* Property Information Below Image */}
+              <Box
+                paddingTop="16px"
+                paddingX="4px"
+              >
+                <Text
+                  fontSize={["18px", "20px"]}
+                  fontWeight="600"
+                  color="#000"
+                  marginBottom="4px"
+                  fontFamily="raleway"
+                >
+                  {item.title}
+                </Text>
+                
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  marginBottom="8px"
+                >
+                  <Text
+                    fontSize="14px"
+                    color="#666"
+                    fontFamily="raleway"
+                  >
+                    {item.location}
+                  </Text>
+                </Box>
+                
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  gap="16px"
+                >
+                  <Box display="flex" alignItems="center">
+                    <Text
+                      fontSize="14px"
+                      fontWeight="500"
+                      color="#333"
+                    >
+                      {item.bedrooms} Beds
+                    </Text>
+                  </Box>
+                  
+                  <Box display="flex" alignItems="center">
+                    <Text
+                      fontSize="14px"
+                      fontWeight="500"
+                      color="#333"
+                    >
+                      {item.bathrooms} Baths
+                    </Text>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
           ))}
-        </HStack>
-      </HStack>
+        </Box>
+        
+        {/* Pagination Controls */}
+        {totalPages > 1 && (
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            marginTop="60px"
+            gap="8px"
+          >
+            {Array.from({ length: totalPages }).map((_, index) => (
+              <Box
+                key={index}
+                onClick={() => paginate(index + 1)}
+                cursor="pointer"
+                width="10px"
+                height="10px"
+                borderRadius="50%"
+                backgroundColor={currentPage === index + 1 ? "#000" : "#e0e0e0"}
+                transition="all 0.3s ease"
+                _hover={{
+                  backgroundColor: currentPage === index + 1 ? "#000" : "#aaa",
+                }}
+              />
+            ))}
+          </Box>
+        )}
+      </Box>
 
-      {/* Modal Dialog for Clicked Image */}
+      {/* Enhanced Modal Dialog for Clicked Image */}
       <DialogRoot
         size="full"
         open={modalOpen}
@@ -359,37 +620,214 @@ const Gallery = () => {
           h={["100%", "100%", "100%", "100%", "100%", "100%"]}
           borderRadius="10px"
         >
-          <HStack justify="center" align="center" w="100%" h="100%">
-            {clickedImage && (
-              <Box w={["95%", "95%", "95%", "100%", "100%", "100%"]}>
-                <DefaultSlider items={clickedImage.carasoleImg?.[0]} />
+          {clickedImage && (
+            <Box
+              position="relative"
+              width="100%"
+              height="100%"
+              display="flex"
+              flexDirection="column"
+            >
+              {/* Property Details Header */}
+              <Box
+                padding="20px"
+                borderBottom="1px solid #eee"
+                display="flex"
+                justifyContent="space-between"
+                alignItems="center"
+                backgroundColor="white"
+                color="black"
+              >
+                <Box>
+                  <Text
+                    fontSize={["20px", "24px"]}
+                    fontWeight="700"
+                    fontFamily="raleway"
+                  >
+                    {clickedImage.title}
+                  </Text>
+                  <Text
+                    fontSize="16px"
+                    color="#666"
+                    fontFamily="raleway"
+                  >
+                    {clickedImage.location}
+                  </Text>
+                </Box>
+                
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  gap="16px"
+                >
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    gap="4px"
+                  >
+                    <Text
+                      fontSize="14px"
+                      fontWeight="500"
+                      color="#333"
+                    >
+                      {clickedImage.bedrooms} Beds
+                    </Text>
+                  </Box>
+                  
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    gap="4px"
+                  >
+                    <Text
+                      fontSize="14px"
+                      fontWeight="500"
+                      color="#333"
+                    >
+                      {clickedImage.bathrooms} Baths
+                    </Text>
+                  </Box>
+                </Box>
               </Box>
-            )}
-          </HStack>
+              
+              {/* Slider Container */}
+              <Box 
+                flex="1"
+                display="flex" 
+                justifyContent="center" 
+                alignItems="center" 
+                width="100%" 
+                position="relative"
+                backgroundColor="#f5f5f5"
+              >
+                <Box width={["95%", "95%", "95%", "90%", "85%", "80%"]}>
+                  <DefaultSlider items={clickedImage.carasoleImg?.[0]} />
+                </Box>
+                
+                {/* Navigation Arrows */}
+                <Box
+                  position="absolute"
+                  left="20px"
+                  top="50%"
+                  transform="translateY(-50%)"
+                  width="40px"
+                  height="40px"
+                  borderRadius="50%"
+                  backgroundColor="rgba(255,255,255,0.8)"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  cursor="pointer"
+                  boxShadow="0 2px 10px rgba(0,0,0,0.1)"
+                  _hover={{
+                    backgroundColor: "white",
+                  }}
+                >
+                  <ChevronLeft size={20} color="#000" />
+                </Box>
+                
+                <Box
+                  position="absolute"
+                  right="20px"
+                  top="50%"
+                  transform="translateY(-50%)"
+                  width="40px"
+                  height="40px"
+                  borderRadius="50%"
+                  backgroundColor="rgba(255,255,255,0.8)"
+                  display="flex"
+                  justifyContent="center"
+                  alignItems="center"
+                  cursor="pointer"
+                  boxShadow="0 2px 10px rgba(0,0,0,0.1)"
+                  _hover={{
+                    backgroundColor: "white",
+                  }}
+                >
+                  <ChevronRight size={20} color="#000" />
+                </Box>
+              </Box>
+              
+              {/* Property Description Footer */}
+              <Box
+                padding="20px"
+                borderTop="1px solid #eee"
+                backgroundColor="white"
+                color="black"
+              >
+                <Text
+                  fontSize="16px"
+                  lineHeight="1.6"
+                  color="#333"
+                  fontFamily="raleway"
+                >
+                  {clickedImage.subheading}
+                </Text>
+              </Box>
+            </Box>
+          )}
+          
+          {/* Enhanced Close Button */}
           <DialogCloseTrigger
-            rounded="full"
-            color="black"
-            w="40px"
-            h="40px"
-            border="1px black solid"
+            as={Box}
             position="absolute"
-            top="10px"
-            right="10px"
+            top="16px"
+            right="16px"
+            width="40px"
+            height="40px"
+            borderRadius="50%"
+            backgroundColor="rgba(255,255,255,0.9)"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            cursor="pointer"
+            boxShadow="0 2px 10px rgba(0,0,0,0.1)"
+            zIndex="10"
             onClick={() => setModalOpen(false)}
+            _hover={{
+              backgroundColor: "white",
+            }}
             _focus={{ outline: "none" }}
-          />
+          >
+            <X size={20} color="#000" />
+          </DialogCloseTrigger>
         </DialogContent>
       </DialogRoot>
 
-      {/* Separator */}
-      <HStack
-        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
-        justify="center"
-        align="center"
-        w="100%"
+      {/* Enhanced Separator with Design Element */}
+      <Box
+        position="relative"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+        marginY={["60px", "80px", "100px"]}
+        paddingX="20px"
       >
-        <Box w="90%" borderTop="1px solid #e0e0e0" />
-      </HStack>
+        <Box width="100%" height="1px" backgroundColor="#e0e0e0" />
+        <Box
+          position="absolute"
+          backgroundColor="white"
+          paddingX="20px"
+        >
+          <Box
+            width="40px"
+            height="40px"
+            borderRadius="50%"
+            border="1px solid #e0e0e0"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Box
+              width="20px"
+              height="20px"
+              borderRadius="50%"
+              backgroundColor="#000"
+            />
+          </Box>
+        </Box>
+      </Box>
 
       <ScheduleConsultation />
     </>

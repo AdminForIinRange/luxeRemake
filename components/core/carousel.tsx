@@ -368,7 +368,7 @@ export const SliderProgress = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        '  bg-gray-500 relative rounded-2xl h-2 justify-end items-center w-96 max-w-[90%] overflow-hidden',
+        '  bg-gray-500 relative rounded-md h-2 justify-end items-center w-96 max-w-[90%] overflow-hidden',
         className
       )}
     >
@@ -429,7 +429,7 @@ export const SliderDotButton = ({
             onClick={() => onDotButtonClick(index)}
             className={`relative inline-flex  p-0 m-0 w-10 h-2 `}
           >
-            <div className=' bg-gray-500/40  h-2 rounded-full w-10 '></div>
+            <div className=' bg-gray-500/40  h-2 rounded-md w-10 '></div>
             {index === selectedIndex && (
               <AnimatePresence mode='wait'>
                 <motion.div
@@ -442,7 +442,7 @@ export const SliderDotButton = ({
                   }}
                   layoutId={`hover-${carouselId}`}
                   className={cn(
-                    'absolute z-[3] w-full h-full left-0 top-0 dark:bg-white bg-black rounded-full',
+                    'absolute z-[3] w-full h-full left-0 top-0 dark:bg-white bg-black rounded-md',
                     activeclass
                   )}
                 />
