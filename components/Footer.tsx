@@ -1,170 +1,124 @@
-import React from "react";
-import {
-  Box,
-  Stack,
-  Text,
-  Flex,
-  HStack,
-} from "@chakra-ui/react";
-import LuxeLogo from "@/public/png/LuxeLogo.png";
-import Image from "next/image";
+import { Box, Text } from "@chakra-ui/react"
+import LuxeLogo from "@/public/png/LuxeLogo.png"
+import Image from "next/image"
 
 const Footer = () => {
   return (
-    <>
-      <HStack
-        my={{ base: "20px", md: "50px" }}
-        justify="center"
-        align="center"
-        w="100%"
-      >
-        <Box w="90%" borderTop="1px solid #e0e0e0" />
-      </HStack>
+    <Box as="footer" w="100%" pb="40px">
+      {/* Top border line */}
+      <Box w="100%" display="flex" justifyContent="center" my={{ base: "40px", md: "60px" }}>
+        <Box w="90%" h="1px" bg="#e0e0e0" />
+      </Box>
 
+      {/* Main footer content */}
       <Box
-        bg="white"
-        _dark={{ bg: "gray.900" }}
         w="100%"
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        py={{ base: "20px", md: "40px" }}
+        px={{ base: "5%", md: "10%" }}
+        display="flex"
+        flexDirection={{ base: "column", md: "row" }}
+        justifyContent="space-between"
       >
-        <Flex
-          direction={{ base: "column", md: "row" }}
-          justify="space-between"
-          gap={{ base: 6, md: 12 }}
-        >
-          {/* Logo and Brand */}
-          <Box mb={{ base: "20px", md: "0" }}>
-            <HStack gap="12px">
-              <Box w={{ base: "40px", md: "70px" }} h="auto">
-                <Image src={LuxeLogo} alt="Luxe Management Logo" />
-              </Box>
+        {/* Logo section */}
+        <Box mb={{ base: "40px", md: "0" }}>
+          <Box display="flex" alignItems="center" gap="12px">
+            <Box w={{ base: "40px", md: "50px" }} h="auto" position="relative">
+              <Image src={LuxeLogo || "/placeholder.svg"} alt="Luxe Management Logo" />
+            </Box>
+            <Text fontSize={{ base: "16px", md: "18px" }} fontWeight="700" fontFamily="raleway">
+              Luxe Management
+            </Text>
+          </Box>
+        </Box>
+
+        {/* Links section */}
+        <Box display="flex" flexDirection={{ base: "column", md: "row" }} gap={{ base: "30px", md: "80px" }}>
+          {/* Resources column */}
+          <Box>
+            <Text fontSize="14px" fontWeight="600" textTransform="uppercase" mb="16px" letterSpacing="0.5px">
+              Resources
+            </Text>
+            <Box>
               <Text
-                fontSize={{ base: "12px", md: "16px" }}
-                fontWeight="700"
-                fontFamily="raleway"
+                as="a"
+                href="https://www.instagram.com/luxemanagements/"
+                fontSize="14px"
+                color="gray.600"
+                _dark={{ color: "gray.400" }}
+                display="block"
+                mb="10px"
               >
-                Luxe Management
+                Luxe Managements
               </Text>
-            </HStack>
+            </Box>
           </Box>
 
-          {/* Links */}
-          <Flex direction={{ base: "column", md: "row" }} gap={{ base: 6, md: 12 }}>
-            {/* Resources */}
-            <Box>
-              <Text
-                fontSize={{ base: "10px", md: "14px" }}
-                fontWeight="600"
-                textTransform="uppercase"
-                mb="8px"
-              >
-                Resources
-              </Text>
-              <Stack gap="6px">
-                <Box>
-                  <Text
-                    as="a"
-                    href="https://www.instagram.com/luxemanagements/"
-                    fontSize={{ base: "10px", md: "13px" }}
-                    color="gray.600"
-                    _dark={{ color: "gray.400" }}
-                    aria-label="Luxe Management Instagram"
-                  >
-                    Luxe Managements
-                  </Text>
-                </Box>
-              </Stack>
-            </Box>
-
-            {/* Follow Us */}
-            <Box>
-              <Text
-                fontSize={{ base: "10px", md: "14px" }}
-                fontWeight="600"
-                textTransform="uppercase"
-                mb="8px"
-              >
-                Follow Us
-              </Text>
-              <Stack gap="6px">
-                <Box>
-                  <Text
-                    as="a"
-                    href="https://www.instagram.com/luxemanagements/"
-                    fontSize={{ base: "10px", md: "13px" }}
-                    color="gray.600"
-                    _dark={{ color: "gray.400" }}
-                    aria-label="Follow Luxe Management on Instagram"
-                  >
-                    Instagram
-                  </Text>
-                </Box>
-              </Stack>
-            </Box>
-
-            {/* Legal */}
-            <Box>
-              <Text
-                fontSize={{ base: "10px", md: "14px" }}
-                fontWeight="600"
-                textTransform="uppercase"
-                mb="8px"
-              >
-                Legal
-              </Text>
-              <Stack gap="6px">
-                <Box>
-                  <Text
-                    as="a"
-                    href="https://abr.business.gov.au/ABN/View?id=83943962982"
-                    fontSize={{ base: "10px", md: "13px" }}
-                    color="gray.600"
-                    _dark={{ color: "gray.400" }}
-                    aria-label="Privacy Policy"
-                  >
-                    Privacy Policy
-                  </Text>
-                </Box>
-                <Box>
-                  <Text
-                    as="a"
-                    href="https://abr.business.gov.au/ABN/View?id=83943962982"
-                    fontSize={{ base: "10px", md: "13px" }}
-                    color="gray.600"
-                    _dark={{ color: "gray.400" }}
-                    aria-label="Terms & Conditions"
-                  >
-                    Terms & Conditions
-                  </Text>
-                </Box>
-              </Stack>
-            </Box>
-          </Flex>
-        </Flex>
-
-        <Box
-          mt={{ base: "20px", md: "40px" }}
-          borderTop="1px solid #e0e0e0"
-          pt={{ base: "12px", md: "20px" }}
-        >
-          <Flex justify={{ base: "center", md: "space-between" }} align="center">
-            <Text
-              fontSize={{ base: "10px", md: "12px" }}
-              color="gray.500"
-              _dark={{ color: "gray.400" }}
-            >
-              © 2023{" "}
-              <Text as="span" textDecor="underline">
-                Luxe Managements™
-              </Text>
-              . All Rights Reserved.
+          {/* Follow Us column */}
+          <Box>
+            <Text fontSize="14px" fontWeight="600" textTransform="uppercase" mb="16px" letterSpacing="0.5px">
+              Follow Us
             </Text>
-          </Flex>
+            <Box>
+              <Text
+                as="a"
+                href="https://www.instagram.com/luxemanagements/"
+                fontSize="14px"
+                color="gray.600"
+                _dark={{ color: "gray.400" }}
+                display="block"
+                mb="10px"
+              >
+                Instagram
+              </Text>
+            </Box>
+          </Box>
+
+          {/* Legal column */}
+          <Box>
+            <Text fontSize="14px" fontWeight="600" textTransform="uppercase" mb="16px" letterSpacing="0.5px">
+              Legal
+            </Text>
+            <Box>
+              <Text
+                as="a"
+                href="https://abr.business.gov.au/ABN/View?id=83943962982"
+                fontSize="14px"
+                color="gray.600"
+                _dark={{ color: "gray.400" }}
+                display="block"
+                mb="10px"
+              >
+                Privacy Policy
+              </Text>
+              <Text
+                as="a"
+                href="https://abr.business.gov.au/ABN/View?id=83943962982"
+                fontSize="14px"
+                color="gray.600"
+                _dark={{ color: "gray.400" }}
+                display="block"
+                mb="10px"
+              >
+                Terms & Conditions
+              </Text>
+            </Box>
+          </Box>
         </Box>
       </Box>
-    </>
-  );
-};
 
-export default Footer;
+      {/* Copyright section */}
+      <Box w="100%" px={{ base: "5%", md: "10%" }} mt={{ base: "40px", md: "60px" }}>
+        <Box display="flex" justifyContent={{ base: "center", md: "flex-start" }}>
+          <Text fontSize="12px" color="gray.500" _dark={{ color: "gray.400" }}>
+            © 2023{" "}
+            <Text as="span" textDecor="underline">
+              Luxe Managements™
+            </Text>
+            . All Rights Reserved.
+          </Text>
+        </Box>
+      </Box>
+    </Box>
+  )
+}
+
+export default Footer
