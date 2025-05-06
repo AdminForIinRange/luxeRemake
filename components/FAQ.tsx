@@ -166,7 +166,7 @@ const FAQ = ({ type }: { type: string }) => {
 
   // FAQ section
   return (
-    <Box maxWidth="1400px" mx="auto" px={["20px", "30px", "40px"]} pb={32}>
+    <Box maxWidth="1400px" mx="auto" px={["20px", "30px", "40px"]} mt={"100px"} pb={32}>
   
 
       {/* Decorative elements */}

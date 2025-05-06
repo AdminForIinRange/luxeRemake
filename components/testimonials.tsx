@@ -14,7 +14,7 @@ const Testimonials = () => {
     {
       text: "Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free.",
       name: "Kent Dodds",
-      rating: 5,
+      rating: 4,
       image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20glasses"
     },
     {
@@ -32,13 +32,13 @@ const Testimonials = () => {
     {
       text: "Very responsive and professional. They helped us find a great property in a short amount of time. Definitely recommend their services!",
       name: "Sophia M.",
-      rating: 5,
+      rating: 4,
       image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20woman%20business"
     },
     {
       text: "They were patient and helped us every step of the way. We appreciated their attention to detail and ability to handle any challenge that came up.",
       name: "Michael T.",
-      rating: 5,
+      rating: 4,
       image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20tie"
     },
   ]);
