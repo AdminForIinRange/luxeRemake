@@ -61,7 +61,7 @@ const LuxeAiAssistance = () => {
       borderEndEndRadius={open ? "0px" : "20px"}
 
       boxShadow="0 8px 30px rgba(0, 0, 0, 0.12)"
-      width={open ? "380px" : "92px"}
+      width={open ? "440px" : "92px"}
       height={open ? "580px" : "92px"}
       transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
       display="flex"
