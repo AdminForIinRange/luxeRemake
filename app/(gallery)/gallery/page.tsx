@@ -705,47 +705,9 @@ const Gallery = () => {
                 </Box>
                 
                 {/* Navigation Arrows */}
-                <Box
-                  position="absolute"
-                  left="20px"
-                  top="50%"
-                  transform="translateY(-50%)"
-                  width="40px"
-                  height="40px"
-                  borderRadius="50%"
-                  backgroundColor="rgba(255,255,255,0.8)"
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  cursor="pointer"
-                  boxShadow="0 2px 10px rgba(0,0,0,0.1)"
-                  _hover={{
-                    backgroundColor: "white",
-                  }}
-                >
-                  <ChevronLeft size={20} color="#000" />
-                </Box>
+          
                 
-                <Box
-                  position="absolute"
-                  right="20px"
-                  top="50%"
-                  transform="translateY(-50%)"
-                  width="40px"
-                  height="40px"
-                  borderRadius="50%"
-                  backgroundColor="rgba(255,255,255,0.8)"
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  cursor="pointer"
-                  boxShadow="0 2px 10px rgba(0,0,0,0.1)"
-                  _hover={{
-                    backgroundColor: "white",
-                  }}
-                >
-                  <ChevronRight size={20} color="#000" />
-                </Box>
+            
               </Box>
               
               {/* Property Description Footer */}
@@ -771,7 +733,7 @@ const Gallery = () => {
           <DialogCloseTrigger
             as={Box}
             position="absolute"
-            top="16px"
+            top="100px"
             right="16px"
             width="40px"
             height="40px"
