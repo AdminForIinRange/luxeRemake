@@ -54,7 +54,7 @@ const Home = () => {
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
 
-      <FAQ />
+      <FAQ type="general" />
     </>
   );
 };
