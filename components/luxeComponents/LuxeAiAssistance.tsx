@@ -53,16 +53,16 @@ const LuxeAiAssistance = () => {
   return (
     <Box
       position="fixed"
-      bottom="24px"
-      right="24px"
+      bottom={open ? ["0px", "16px", "24px", "24px", "24px", "24px"] : ["16px", "16px", "16px", "24px", "24px", "24px"]}
+      right={open ? ["0px", "16px", "24px", "24px", "24px", "24px"] : ["16px", "16px", "16px", "24px", "24px", "24px"]}
       bg="white"
       borderTopRadius={open ? "40px" : "100px"}
       borderLeftRadius={open ? "40px" : "100px"}
       borderEndEndRadius={open ? "0px" : "20px"}
 
       boxShadow="0 8px 30px rgba(0, 0, 0, 0.12)"
-      width={open ? "440px" : "92px"}
-      height={open ? "580px" : "92px"}
+      width={open ? ["380px", "380px", "460px", "500px", "540px", "580px"] : "92px"}
+      height={open ? ["580px", "580px", "580px", "580px", "580px", "680px"] : "92px"}
       transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
       display="flex"
       flexDirection="column"
