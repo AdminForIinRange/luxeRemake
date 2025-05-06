@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 
 interface CardData {
   imgUrl: string;
@@ -13,8 +13,13 @@ interface CardDataHeader {
   mainDescription: string;
 }
 
-const ServicesThreeCards = ({ cardsData, CardDataHeader }: { cardsData: CardData[]; CardDataHeader: CardDataHeader[] }) => {
-  
+const ServicesThreeCards = ({
+  cardsData,
+  CardDataHeader,
+}: {
+  cardsData: CardData[];
+  CardDataHeader: CardDataHeader[];
+}) => {
   return (
     <Box
       mt={["80px", "90px", "90px", "0px", "0px", "0px"]}
@@ -24,41 +29,46 @@ const ServicesThreeCards = ({ cardsData, CardDataHeader }: { cardsData: CardData
       position="relative"
     >
       {/* Section Header */}
-      <Box mb={["40px", "50px", "60px"]} maxWidth="800px" mx="auto" textAlign="center">
-        <Box 
-          width="40px" 
-          height="4px" 
-          bg="black" 
-          mx="auto" 
+      <Box
+        mb={["40px", "50px", "60px"]}
+        maxWidth="800px"
+        mx="auto"
+        textAlign="center"
+      >
+        <Box
+          width="40px"
+          height="4px"
+          bg="black"
+          mx="auto"
           mb="16px"
           borderRadius="2px"
         />
-        <Text 
-          fontSize={["28px", "32px", "36px", "40px"]} 
-          fontWeight="700" 
+        <Text
+          fontSize={["28px", "32px", "36px", "40px"]}
+          fontWeight="700"
           mb="16px"
           lineHeight="1.2"
         >
-         {CardDataHeader[0].mainTitle}
+          {CardDataHeader[0].mainTitle}
         </Text>
-        <Text 
-          fontSize={["16px", "17px", "18px"]} 
-          color="#4A5568" 
+        <Text
+          fontSize={["16px", "17px", "18px"]}
+          color="#4A5568"
           lineHeight="1.6"
         >
-         {CardDataHeader[0].mainDescription}
+          {CardDataHeader[0].mainDescription}
         </Text>
       </Box>
 
       {/* Decorative element */}
-      <Box 
-        position="absolute" 
-        top="-20px" 
-        right="5%" 
-        width="120px" 
-        height="120px" 
-        borderRadius="50%" 
-        bg="rgba(49, 130, 206, 0.05)" 
+      <Box
+        position="absolute"
+        top="-20px"
+        right="5%"
+        width="120px"
+        height="120px"
+        borderRadius="50%"
+        bg="rgba(49, 130, 206, 0.05)"
         zIndex="-1"
         display={["none", "none", "block"]}
       />
@@ -73,9 +83,9 @@ const ServicesThreeCards = ({ cardsData, CardDataHeader }: { cardsData: CardData
         position="relative"
       >
         {cardsData.map((card, index) => (
-          <Box 
-            key={index} 
-            width={["100%", "100%", "100%", `${100/3}%`]}
+          <Box
+            key={index}
+            width={["100%", "100%", "100%", `${100 / 3}%`]}
             display="flex"
             flexDirection="column"
             position="relative"
@@ -86,7 +96,6 @@ const ServicesThreeCards = ({ cardsData, CardDataHeader }: { cardsData: CardData
             transition="all 0.3s ease"
           >
             {/* Number indicator */}
-      
 
             {/* Card image */}
             <Box
@@ -105,7 +114,7 @@ const ServicesThreeCards = ({ cardsData, CardDataHeader }: { cardsData: CardData
               }}
             >
               {/* Accent line */}
-              
+
               <Box
                 position="absolute"
                 bottom="0"
@@ -122,7 +131,7 @@ const ServicesThreeCards = ({ cardsData, CardDataHeader }: { cardsData: CardData
                 >
                   {card.title}
                 </Text>
-                
+
                 {/* Small preview text */}
                 <Text
                   color="rgba(255,255,255,0.8)"
@@ -137,7 +146,7 @@ const ServicesThreeCards = ({ cardsData, CardDataHeader }: { cardsData: CardData
 
             {/* Card content */}
             <Box pt="20px" pb="24px" px="4px">
-              <Text 
+              <Text
                 fontSize={["15px", "16px", "16px", "17px"]}
                 color="#2D3748"
                 lineHeight="1.7"
@@ -145,27 +154,25 @@ const ServicesThreeCards = ({ cardsData, CardDataHeader }: { cardsData: CardData
               >
                 {card.description}
               </Text>
-              
+
               {/* Learn more link */}
-             
             </Box>
-            
+
             {/* Bottom accent */}
-         
           </Box>
         ))}
       </Box>
-      
+
       {/* Additional decorative element */}
-      <Box 
-        position="absolute" 
-        bottom="-60px" 
-        left="5%" 
-        width="80px" 
-        height="80px" 
-        borderRadius="12px" 
+      <Box
+        position="absolute"
+        bottom="-60px"
+        left="5%"
+        width="80px"
+        height="80px"
+        borderRadius="12px"
         transform="rotate(45deg)"
-        bg="rgba(49, 130, 206, 0.05)" 
+        bg="rgba(49, 130, 206, 0.05)"
         zIndex="-1"
         display={["none", "none", "block"]}
       />

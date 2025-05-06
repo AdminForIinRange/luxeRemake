@@ -1,12 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useTransform,
-  useScroll,
-
-  useSpring,
-} from "framer-motion";
+import { motion, useTransform, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TracingBeam = ({
@@ -47,10 +41,7 @@ export const TracingBeam = ({
   );
 
   return (
-    <motion.div
-      ref={ref}
-      className={cn("relative w-full h-full", className)}
-    >
+    <motion.div ref={ref} className={cn("relative w-full h-full", className)}>
       <div className="absolute -left-2 right-10 top-0 bottom-0">
         <motion.div
           transition={{

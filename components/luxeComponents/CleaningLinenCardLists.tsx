@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-
-  HStack,
-
-  Text,
-
-} from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
 const CleaningLinenCardLists = () => {
@@ -36,7 +29,7 @@ const CleaningLinenCardLists = () => {
       ],
     },
   ];
-  
+
   const rightImg = [
     {
       title: "Linen Service",
@@ -61,7 +54,6 @@ const CleaningLinenCardLists = () => {
       ],
     },
   ];
-  
 
   return (
     <>
@@ -1123,17 +1115,7 @@ const CleaningLinenCardLists = () => {
             </HStack>
           </Box>
         </HStack>
-        
       </HStack>
-
-
-
-
-
-
-
-
-      
     </>
   );
 };

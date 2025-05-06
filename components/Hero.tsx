@@ -2,23 +2,13 @@
 
 import dynamic from "next/dynamic";
 import React, { useEffect } from "react";
-import {
-  Box,
-  Stack,
-  HStack,
-  Icon,
-
-  Text,
-
-} from "@chakra-ui/react";
+import { Box, Stack, HStack, Icon, Text } from "@chakra-ui/react";
 
 import { FlipWords } from "@/components/ui/flip-words";
 import { ArrowRight } from "lucide-react";
 
-
 import Aos from "aos";
 import "aos/dist/aos.css";
-
 
 const HouseHeroParallax = dynamic(
   () => import("./customUI/Parallax/HouseHeroParallax"),
@@ -26,7 +16,6 @@ const HouseHeroParallax = dynamic(
 );
 
 const Hero = () => {
-
   useEffect(() => {
     Aos.init({ duration: 1000, once: false, mirror: true });
   }, []);
@@ -147,9 +136,7 @@ const Hero = () => {
       {/* Add New Pack Button */}
 
       {/* New Dialog Component */}
-     
- 
-   
+
       <HStack justify={"center"} align={"center"} w={"100%"}>
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>

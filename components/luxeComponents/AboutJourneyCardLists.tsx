@@ -1,6 +1,16 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
-import { Check, Calendar, Award, TrendingUp, Home, Zap, Users, Globe, Briefcase } from 'lucide-react';
+import {
+  Check,
+  Calendar,
+  Award,
+  TrendingUp,
+  Home,
+  Zap,
+  Users,
+  Globe,
+  Briefcase,
+} from "lucide-react";
 
 const AboutJourneyCardLists = () => {
   const journey = [
@@ -13,7 +23,7 @@ const AboutJourneyCardLists = () => {
       icon: <Calendar size={20} />,
       stats: [
         { label: "Problem Identified", value: "Hidden Hosting Costs" },
-        { label: "Market Gap", value: "Affordable Management" }
+        { label: "Market Gap", value: "Affordable Management" },
       ],
       category: "ORIGINS",
       img: "https://images.pexels.com/photos/5077042/pexels-photo-5077042.jpeg",
@@ -27,7 +37,7 @@ const AboutJourneyCardLists = () => {
       icon: <Briefcase size={20} />,
       stats: [
         { label: "Properties Managed", value: "1" },
-        { label: "Team Members", value: "2" }
+        { label: "Team Members", value: "2" },
       ],
       category: "MILESTONE",
       img: "https://images.pexels.com/photos/261679/pexels-photo-261679.jpeg",
@@ -41,7 +51,7 @@ const AboutJourneyCardLists = () => {
       icon: <Zap size={20} />,
       stats: [
         { label: "Cost Reduction", value: "50%" },
-        { label: "Process Efficiency", value: "↑ 35%" }
+        { label: "Process Efficiency", value: "↑ 35%" },
       ],
       category: "INNOVATION",
       img: "https://images.pexels.com/photos/5816299/pexels-photo-5816299.jpeg",
@@ -55,7 +65,7 @@ const AboutJourneyCardLists = () => {
       icon: <Home size={20} />,
       stats: [
         { label: "Booking Conversion", value: "↑ 28%" },
-        { label: "Design Cost Savings", value: "40%" }
+        { label: "Design Cost Savings", value: "40%" },
       ],
       category: "DESIGN",
       img: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg",
@@ -69,7 +79,7 @@ const AboutJourneyCardLists = () => {
       icon: <Users size={20} />,
       stats: [
         { label: "Guest Satisfaction", value: "98%" },
-        { label: "Nights Hosted", value: "1,000+" }
+        { label: "Nights Hosted", value: "1,000+" },
       ],
       category: "SERVICE",
       img: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
@@ -83,7 +93,7 @@ const AboutJourneyCardLists = () => {
       icon: <Award size={20} />,
       stats: [
         { label: "Vendor Reduction", value: "100%" },
-        { label: "Client Savings", value: "↑ 25%" }
+        { label: "Client Savings", value: "↑ 25%" },
       ],
       category: "GROWTH",
       img: "https://images.pexels.com/photos/4108797/pexels-photo-4108797.jpeg",
@@ -97,7 +107,7 @@ const AboutJourneyCardLists = () => {
       icon: <TrendingUp size={20} />,
       stats: [
         { label: "New Regions", value: "5" },
-        { label: "Market Position", value: "#1 Luxury" }
+        { label: "Market Position", value: "#1 Luxury" },
       ],
       category: "EXPANSION",
       img: "https://images.pexels.com/photos/31457993/pexels-photo-31457993.jpeg",
@@ -111,7 +121,7 @@ const AboutJourneyCardLists = () => {
       icon: <Globe size={20} />,
       stats: [
         { label: "New States", value: "3" },
-        { label: "Growth Projection", value: "150%" }
+        { label: "Growth Projection", value: "150%" },
       ],
       category: "VISION",
       img: "https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg",
@@ -121,10 +131,10 @@ const AboutJourneyCardLists = () => {
   return (
     <Box width="100%" position="relative" paddingY="120px">
       {/* Introduction Section */}
-      <Box 
-        width="100%" 
-        maxWidth="1200px" 
-        margin="0 auto" 
+      <Box
+        width="100%"
+        maxWidth="1200px"
+        margin="0 auto"
         paddingX={["30px", "40px", "60px"]}
         marginBottom="120px"
         textAlign="center"
@@ -139,7 +149,7 @@ const AboutJourneyCardLists = () => {
         >
           Our Journey
         </Text>
-        
+
         <Text
           fontSize={["18px", "20px", "22px"]}
           lineHeight="1.8"
@@ -149,13 +159,15 @@ const AboutJourneyCardLists = () => {
           maxWidth="900px"
           margin="0 auto"
         >
-          From a single property to a growing portfolio across Australia, follow the Luxe Managements story as we revolutionize property management through innovation, quality, and exceptional service.
+          From a single property to a growing portfolio across Australia, follow
+          the Luxe Managements story as we revolutionize property management
+          through innovation, quality, and exceptional service.
         </Text>
       </Box>
-      
+
       {/* Timeline Container with Central Line */}
-      <Box 
-        width="100%" 
+      <Box
+        width="100%"
         position="relative"
         _before={{
           content: '""',
@@ -166,7 +178,7 @@ const AboutJourneyCardLists = () => {
           width: "2px",
           backgroundColor: "#f0f0f0",
           transform: ["none", "none", "none", "translateX(-1px)"],
-          zIndex: "0"
+          zIndex: "0",
         }}
       >
         {journey.map((item, index) => (
@@ -189,7 +201,12 @@ const AboutJourneyCardLists = () => {
               borderRadius="50%"
               backgroundColor="white"
               border="2px solid #e0e0e0"
-              transform={["translateX(-50%)", "translateX(-50%)", "translateX(-50%)", "translateX(-50%)"]}
+              transform={[
+                "translateX(-50%)",
+                "translateX(-50%)",
+                "translateX(-50%)",
+                "translateX(-50%)",
+              ]}
               display="flex"
               alignItems="center"
               justifyContent="center"
@@ -197,46 +214,34 @@ const AboutJourneyCardLists = () => {
               _hover={{
                 backgroundColor: "#f8f8f8",
                 boxShadow: "0 0 0 8px rgba(0,0,0,0.03)",
-                transition: "all 0.3s ease"
+                transition: "all 0.3s ease",
               }}
             >
-              <Box color="#333">
-                {item.icon}
-              </Box>
+              <Box color="#333">{item.icon}</Box>
             </Box>
-            
+
             {/* Content Container */}
             <Box
               display="flex"
               flexDirection={[
-                "column", 
-                "column", 
-                "column", 
-                index % 2 === 0 ? "row" : "row-reverse"
+                "column",
+                "column",
+                "column",
+                index % 2 === 0 ? "row" : "row-reverse",
               ]}
               paddingLeft={["80px", "80px", "80px", "0"]}
               paddingTop={["0", "0", "0", "60px"]}
             >
               {/* Text Content */}
-              <Box 
+              <Box
                 width={["100%", "100%", "100%", "50%"]}
-                paddingRight={[
-                  "0", 
-                  "0", 
-                  "0", 
-                  index % 2 === 0 ? "120px" : "0"
-                ]}
-                paddingLeft={[
-                  "0", 
-                  "0", 
-                  "0", 
-                  index % 2 === 0 ? "0" : "120px"
-                ]}
+                paddingRight={["0", "0", "0", index % 2 === 0 ? "120px" : "0"]}
+                paddingLeft={["0", "0", "0", index % 2 === 0 ? "0" : "120px"]}
                 textAlign={[
-                  "left", 
-                  "left", 
-                  "left", 
-                  index % 2 === 0 ? "right" : "left"
+                  "left",
+                  "left",
+                  "left",
+                  index % 2 === 0 ? "right" : "left",
                 ]}
               >
                 {/* Category Tag */}
@@ -257,7 +262,7 @@ const AboutJourneyCardLists = () => {
                     {item.category}
                   </Text>
                 </Box>
-                
+
                 {/* Title */}
                 <Text
                   fontSize={["32px", "36px", "40px"]}
@@ -269,7 +274,7 @@ const AboutJourneyCardLists = () => {
                 >
                   {item.title}
                 </Text>
-                
+
                 {/* Subtitle */}
                 <Text
                   fontSize={["20px", "22px", "24px"]}
@@ -280,7 +285,7 @@ const AboutJourneyCardLists = () => {
                 >
                   {item.subtitle}
                 </Text>
-                
+
                 {/* Description */}
                 <Text
                   fontSize={["16px", "17px", "18px"]}
@@ -292,7 +297,7 @@ const AboutJourneyCardLists = () => {
                 >
                   {item.description}
                 </Text>
-                
+
                 {/* Stats */}
                 <Box
                   display="flex"
@@ -300,52 +305,49 @@ const AboutJourneyCardLists = () => {
                   flexWrap="wrap"
                   gap="20px"
                   justifyContent={[
-                    "flex-start", 
-                    "flex-start", 
-                    "flex-start", 
-                    index % 2 === 0 ? "flex-end" : "flex-start"
+                    "flex-start",
+                    "flex-start",
+                    "flex-start",
+                    index % 2 === 0 ? "flex-end" : "flex-start",
                   ]}
                 >
-                  {item.stats && item.stats.map((stat, statIndex) => (
-                    <Box
-                      key={statIndex}
-                      backgroundColor="white"
-                      border="1px solid #e0e0e0"
-                      borderRadius="12px"
-                      paddingX="24px"
-                      paddingY="20px"
-                      display="flex"
-                      flexDirection="column"
-                      alignItems="center"
-                      minWidth="150px"
-                      _hover={{
-                        boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
-                        transform: "translateY(-3px)",
-                        transition: "all 0.3s ease"
-                      }}
-                    >
-                      <Text
-                        fontSize="24px"
-                        fontWeight="700"
-                        color="#333"
-                        marginBottom="8px"
+                  {item.stats &&
+                    item.stats.map((stat, statIndex) => (
+                      <Box
+                        key={statIndex}
+                        backgroundColor="white"
+                        border="1px solid #e0e0e0"
+                        borderRadius="12px"
+                        paddingX="24px"
+                        paddingY="20px"
+                        display="flex"
+                        flexDirection="column"
+                        alignItems="center"
+                        minWidth="150px"
+                        _hover={{
+                          boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
+                          transform: "translateY(-3px)",
+                          transition: "all 0.3s ease",
+                        }}
                       >
-                        {stat.value}
-                      </Text>
-                      <Text
-                        fontSize="14px"
-                        fontWeight="500"
-                        color="#777"
-                      >
-                        {stat.label}
-                      </Text>
-                    </Box>
-                  ))}
+                        <Text
+                          fontSize="24px"
+                          fontWeight="700"
+                          color="#333"
+                          marginBottom="8px"
+                        >
+                          {stat.value}
+                        </Text>
+                        <Text fontSize="14px" fontWeight="500" color="#777">
+                          {stat.label}
+                        </Text>
+                      </Box>
+                    ))}
                 </Box>
               </Box>
-              
+
               {/* Image Container */}
-              <Box 
+              <Box
                 width={["100%", "100%", "100%", "50%"]}
                 marginTop={["50px", "50px", "50px", "0"]}
                 position="relative"
@@ -368,13 +370,14 @@ const AboutJourneyCardLists = () => {
                     left: "0",
                     right: "0",
                     bottom: "0",
-                    background: "linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%)",
-                    zIndex: "1"
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%)",
+                    zIndex: "1",
                   }}
                   _hover={{
                     transform: "scale(1.02)",
                     transition: "transform 0.5s ease",
-                    boxShadow: "0 16px 50px rgba(0, 0, 0, 0.15)"
+                    boxShadow: "0 16px 50px rgba(0, 0, 0, 0.15)",
                   }}
                 >
                   {/* Optional image overlay content */}
@@ -392,18 +395,25 @@ const AboutJourneyCardLists = () => {
                       color="white"
                       textShadow="0 1px 2px rgba(0,0,0,0.3)"
                     >
-                      {item.id === 1 ? "Where it all began" : 
-                       item.id === 2 ? "First client signing" :
-                       item.id === 3 ? "Operational innovation" :
-                       item.id === 4 ? "Property styling excellence" :
-                       item.id === 5 ? "Guest experience focus" :
-                       item.id === 6 ? "Full-service independence" :
-                       item.id === 7 ? "Regional expansion" :
-                       "National growth strategy"}
+                      {item.id === 1
+                        ? "Where it all began"
+                        : item.id === 2
+                          ? "First client signing"
+                          : item.id === 3
+                            ? "Operational innovation"
+                            : item.id === 4
+                              ? "Property styling excellence"
+                              : item.id === 5
+                                ? "Guest experience focus"
+                                : item.id === 6
+                                  ? "Full-service independence"
+                                  : item.id === 7
+                                    ? "Regional expansion"
+                                    : "National growth strategy"}
                     </Text>
                   </Box>
                 </Box>
-                
+
                 {/* Decorative elements */}
                 <Box
                   position="absolute"
@@ -423,7 +433,7 @@ const AboutJourneyCardLists = () => {
           </Box>
         ))}
       </Box>
-      
+
       {/* Footer Section */}
       <Box
         width="100%"
@@ -442,7 +452,7 @@ const AboutJourneyCardLists = () => {
         >
           Join Us on Our Journey
         </Text>
-        
+
         <Text
           fontSize={["17px", "18px", "20px"]}
           lineHeight="1.8"
@@ -453,9 +463,11 @@ const AboutJourneyCardLists = () => {
           margin="0 auto"
           marginBottom="50px"
         >
-          As we continue to grow and innovate, we're looking for property owners who share our vision for exceptional hospitality and management excellence.
+          As we continue to grow and innovate, we're looking for property owners
+          who share our vision for exceptional hospitality and management
+          excellence.
         </Text>
-        
+
         <Box
           display="inline-block"
           backgroundColor="#000"
@@ -470,7 +482,7 @@ const AboutJourneyCardLists = () => {
             backgroundColor: "#222",
             transform: "translateY(-3px)",
             boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-            transition: "all 0.3s ease"
+            transition: "all 0.3s ease",
           }}
         >
           <Text>Partner With Us</Text>

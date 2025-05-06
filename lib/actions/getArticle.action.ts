@@ -17,7 +17,7 @@ export const getArticle = async (id: string) => {
     const document = await databases.getDocument(
       appwriteConfig.databaseId,
       appwriteConfig.articlesCollectionId,
-      id
+      id,
     );
     return { success: true, data: document };
   } catch (error) {

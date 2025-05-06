@@ -1,13 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import {
-  Box,
-
-  HStack,
-
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -23,8 +16,6 @@ const PropertyManagement = () => {
       mirror: true,
     });
   }, []);
-
-
 
   const servicesBoxes = [
     {
@@ -43,8 +34,6 @@ const PropertyManagement = () => {
 
   return (
     <>
-
-
       <TopHeader
         imgUrl="https://images.pexels.com/photos/23224995/pexels-photo-23224995.jpeg"
         wordOne="Property"
@@ -52,9 +41,6 @@ const PropertyManagement = () => {
         description="Elevate your investment with our comprehensive suite of premium services designed to maximize returns and enhance guest experiences."
         and={false}
       />
-
-
-
 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
@@ -76,53 +62,47 @@ const PropertyManagement = () => {
           justifyContent={"center"}
           textAlign={"center"}
         >
-        
-         
-      <ServicesThreeCards
-
-CardDataHeader={[
-  {
-    mainTitle: "Visual Excellence",
-    mainDescription:
-      "Elevate your property's performance and reputation with Luxe Managements' comprehensive approach. We combine meticulous attention to detail with market expertise to create a distinguished destination.",
-  },
-]}
-
-        cardsData={[
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg",
-            title: "Bespoke Service",
-            description:
-              "  Tailored management solutions designed specifically for your unique property and investment goals.",
-          },
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
-            title: "Innovative Technology",
-            description:
-              "Advanced systems and tools that streamline operations and enhance guest satisfaction.",
-          },
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg",
-            title: "Revenue Maximization",
-            description:
-              "Dynamic pricing and targeted marketing strategies that optimize your property's earning potential.",
-          },
-        ]}
-        CardDataHeader={[
-          {
-            mainTitle: "Our Methodology",
-            mainDescription:
-              "We deliver exceptional solutions tailored to your unique needs, combining industry expertise with innovative approaches to maximize your property's potential.",
-          },
-        ]}
-
-      />
+          <ServicesThreeCards
+            CardDataHeader={[
+              {
+                mainTitle: "Visual Excellence",
+                mainDescription:
+                  "Elevate your property's performance and reputation with Luxe Managements' comprehensive approach. We combine meticulous attention to detail with market expertise to create a distinguished destination.",
+              },
+            ]}
+            cardsData={[
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg",
+                title: "Bespoke Service",
+                description:
+                  "  Tailored management solutions designed specifically for your unique property and investment goals.",
+              },
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
+                title: "Innovative Technology",
+                description:
+                  "Advanced systems and tools that streamline operations and enhance guest satisfaction.",
+              },
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/16282306/pexels-photo-16282306.jpeg",
+                title: "Revenue Maximization",
+                description:
+                  "Dynamic pricing and targeted marketing strategies that optimize your property's earning potential.",
+              },
+            ]}
+            CardDataHeader={[
+              {
+                mainTitle: "Our Methodology",
+                mainDescription:
+                  "We deliver exceptional solutions tailored to your unique needs, combining industry expertise with innovative approaches to maximize your property's potential.",
+              },
+            ]}
+          />
         </Box>
       </HStack>
-
 
       <VStack
         data-aos="fade-up"

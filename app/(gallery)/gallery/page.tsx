@@ -12,7 +12,7 @@ import {
   DialogRoot,
 } from "@/components/chakra-snippets/dialog";
 import DefaultSlider from "@/components/carousel/DefaultSlider";
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 import houseOneImg1 from "@/public/images/dalts/houseOne/WEB/1.jpg";
 import houseOneImg2 from "@/public/images/dalts/houseOne/WEB/2.jpg";
@@ -111,7 +111,7 @@ const Gallery = () => {
     "Property Management",
     "Interior Design",
     "Styling",
-    "Renovation"
+    "Renovation",
   ];
 
   // Toggle a category
@@ -279,22 +279,25 @@ const Gallery = () => {
       item.title.toLowerCase().includes(lowerSearch) ||
       item.subheading.toLowerCase().includes(lowerSearch) ||
       (item.location && item.location.toLowerCase().includes(lowerSearch));
-    
+
     const matchesCategory =
       selectedCategories.length === 0 ||
       selectedCategories.some((cat) => item.categories.includes(cat));
-    
+
     return matchesSearch && matchesCategory;
   });
 
   // Items per page
   const itemsPerPage = 6;
   const totalPages = Math.ceil(filteredGalleryItems.length / itemsPerPage);
-  
+
   // Get current items
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filteredGalleryItems.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = filteredGalleryItems.slice(
+    indexOfFirstItem,
+    indexOfLastItem,
+  );
 
   // Change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
@@ -302,11 +305,11 @@ const Gallery = () => {
   return (
     <>
       {/* Enhanced Header Section with Decorative Elements */}
-      <Box 
+      <Box
         position="relative"
-        display="flex" 
-        flexDirection="column" 
-        alignItems="center" 
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
         justifyContent="center"
         textAlign="center"
         width="100%"
@@ -336,12 +339,9 @@ const Gallery = () => {
           opacity="0.6"
           data-aos="fade-left"
         />
-        
+
         {/* Main heading with enhanced typography */}
-        <Box
-          position="relative"
-          data-aos="fade-up"
-        >
+        <Box position="relative" data-aos="fade-up">
           <Text
             as="h1"
             fontSize={["42px", "48px", "56px"]}
@@ -368,7 +368,8 @@ const Gallery = () => {
             maxWidth="600px"
             lineHeight="1.6"
           >
-            Check out our latest work showcasing premium properties and exceptional interior design.
+            Check out our latest work showcasing premium properties and
+            exceptional interior design.
           </Text>
         </Box>
       </Box>
@@ -398,12 +399,15 @@ const Gallery = () => {
               paddingX={["12px", "16px", "20px"]}
               paddingY={["8px", "10px", "12px"]}
               borderRadius="30px"
-              backgroundColor={activeCategory === category ? "#000" : "transparent"}
+              backgroundColor={
+                activeCategory === category ? "#000" : "transparent"
+              }
               border="1px solid"
               borderColor={activeCategory === category ? "#000" : "#e0e0e0"}
               transition="all 0.3s ease"
               _hover={{
-                backgroundColor: activeCategory === category ? "#000" : "#f5f5f5",
+                backgroundColor:
+                  activeCategory === category ? "#000" : "#f5f5f5",
               }}
             >
               <Text
@@ -473,7 +477,7 @@ const Gallery = () => {
                   height="100%"
                   width="100%"
                 />
-                
+
                 {/* Hover Overlay with Property Details */}
                 <Box
                   position="absolute"
@@ -495,7 +499,7 @@ const Gallery = () => {
                   justifyContent="flex-end"
                   pointerEvents="none"
                 />
-                
+
                 {/* Category Tag */}
                 <Box
                   position="absolute"
@@ -518,12 +522,9 @@ const Gallery = () => {
                   </Text>
                 </Box>
               </Box>
-              
+
               {/* Property Information Below Image */}
-              <Box
-                paddingTop="16px"
-                paddingX="4px"
-              >
+              <Box paddingTop="16px" paddingX="4px">
                 <Text
                   fontSize={["18px", "20px"]}
                   fontWeight="600"
@@ -533,42 +534,22 @@ const Gallery = () => {
                 >
                   {item.title}
                 </Text>
-                
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  marginBottom="8px"
-                >
-                  <Text
-                    fontSize="14px"
-                    color="#666"
-                    fontFamily="raleway"
-                  >
+
+                <Box display="flex" alignItems="center" marginBottom="8px">
+                  <Text fontSize="14px" color="#666" fontFamily="raleway">
                     {item.location}
                   </Text>
                 </Box>
-                
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  gap="16px"
-                >
+
+                <Box display="flex" alignItems="center" gap="16px">
                   <Box display="flex" alignItems="center">
-                    <Text
-                      fontSize="14px"
-                      fontWeight="500"
-                      color="#333"
-                    >
+                    <Text fontSize="14px" fontWeight="500" color="#333">
                       {item.bedrooms} Beds
                     </Text>
                   </Box>
-                  
+
                   <Box display="flex" alignItems="center">
-                    <Text
-                      fontSize="14px"
-                      fontWeight="500"
-                      color="#333"
-                    >
+                    <Text fontSize="14px" fontWeight="500" color="#333">
                       {item.bathrooms} Baths
                     </Text>
                   </Box>
@@ -577,7 +558,7 @@ const Gallery = () => {
             </Box>
           ))}
         </Box>
-        
+
         {/* Pagination Controls */}
         {totalPages > 1 && (
           <Box
@@ -646,70 +627,43 @@ const Gallery = () => {
                   >
                     {clickedImage.title}
                   </Text>
-                  <Text
-                    fontSize="16px"
-                    color="#666"
-                    fontFamily="raleway"
-                  >
+                  <Text fontSize="16px" color="#666" fontFamily="raleway">
                     {clickedImage.location}
                   </Text>
                 </Box>
-                
-                <Box
-                  display="flex"
-                  alignItems="center"
-                  gap="16px"
-                >
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    gap="4px"
-                  >
-                    <Text
-                      fontSize="14px"
-                      fontWeight="500"
-                      color="#333"
-                    >
+
+                <Box display="flex" alignItems="center" gap="16px">
+                  <Box display="flex" alignItems="center" gap="4px">
+                    <Text fontSize="14px" fontWeight="500" color="#333">
                       {clickedImage.bedrooms} Beds
                     </Text>
                   </Box>
-                  
-                  <Box
-                    display="flex"
-                    alignItems="center"
-                    gap="4px"
-                  >
-                    <Text
-                      fontSize="14px"
-                      fontWeight="500"
-                      color="#333"
-                    >
+
+                  <Box display="flex" alignItems="center" gap="4px">
+                    <Text fontSize="14px" fontWeight="500" color="#333">
                       {clickedImage.bathrooms} Baths
                     </Text>
                   </Box>
                 </Box>
               </Box>
-              
+
               {/* Slider Container */}
-              <Box 
+              <Box
                 flex="1"
-                display="flex" 
-                justifyContent="center" 
-                alignItems="center" 
-                width="100%" 
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+                width="100%"
                 position="relative"
                 backgroundColor="#f5f5f5"
               >
                 <Box width={["95%", "95%", "95%", "90%", "85%", "80%"]}>
                   <DefaultSlider items={clickedImage.carasoleImg?.[0]} />
                 </Box>
-                
+
                 {/* Navigation Arrows */}
-          
-                
-            
               </Box>
-              
+
               {/* Property Description Footer */}
               <Box
                 padding="20px"
@@ -728,7 +682,7 @@ const Gallery = () => {
               </Box>
             </Box>
           )}
-          
+
           {/* Enhanced Close Button */}
           <DialogCloseTrigger
             as={Box}
@@ -767,11 +721,7 @@ const Gallery = () => {
         paddingX="20px"
       >
         <Box width="100%" height="1px" backgroundColor="#e0e0e0" />
-        <Box
-          position="absolute"
-          backgroundColor="white"
-          paddingX="20px"
-        >
+        <Box position="absolute" backgroundColor="white" paddingX="20px">
           <Box
             width="40px"
             height="40px"

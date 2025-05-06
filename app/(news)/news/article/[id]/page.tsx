@@ -114,9 +114,7 @@ export default async function ArticlePage({ params }: Props) {
                     overflow="hidden"
                     boxShadow="lg"
                     position="relative"
-                  >
-                
-                  </Box>
+                  ></Box>
                 </Stack>
               </Box>
 

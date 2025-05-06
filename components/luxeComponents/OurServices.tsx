@@ -1,14 +1,12 @@
-import { Box, HStack } from '@chakra-ui/react'
-import React from 'react'
-import TitleSubheading from './Text/titleSubheading'
-import HeroServices from './heroServices'
+import { Box, HStack } from "@chakra-ui/react";
+import React from "react";
+import TitleSubheading from "./Text/titleSubheading";
+import HeroServices from "./heroServices";
 
 const OurServices = () => {
   return (
     <>
-    
-    
-    <HStack
+      <HStack
         mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
         justify={"center"}
         align={"center"}
@@ -24,8 +22,8 @@ const OurServices = () => {
       />
 
       <HeroServices />
-</>
-  )
-}
+    </>
+  );
+};
 
-export default OurServices
+export default OurServices;

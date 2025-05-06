@@ -11,7 +11,9 @@ import HowWeCanGetYouStarted from "@/components/luxeComponents/HowWeCanGetYouSta
 import OurServices from "@/components/luxeComponents/OurServices";
 
 // Lazy load the GalleryHeroSection component
-const GalleryHeroSection = React.lazy(() => import("@/components/luxeComponents/GalleryHeroSection"));
+const GalleryHeroSection = React.lazy(
+  () => import("@/components/luxeComponents/GalleryHeroSection"),
+);
 
 const Home = () => {
   return (

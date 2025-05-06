@@ -1,15 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import {
-  Box,
-
-  HStack,
-
-
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -29,17 +20,17 @@ const Photography = () => {
 
   return (
     <>
-<TopHeader
-  imgUrl={"https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg"}
-  wordOne={"Photography"}
-  wordTwo={""}
-  description={"Showcase your property with stunning professional photography that captures its unique essence."}
-  and={false}
-/>
-
-
-
-
+      <TopHeader
+        imgUrl={
+          "https://images.pexels.com/photos/414781/pexels-photo-414781.jpeg"
+        }
+        wordOne={"Photography"}
+        wordTwo={""}
+        description={
+          "Showcase your property with stunning professional photography that captures its unique essence."
+        }
+        and={false}
+      />
 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
@@ -61,16 +52,14 @@ const Photography = () => {
           justifyContent={"center"}
           textAlign={"center"}
         >
-    
           <ServicesThreeCards
-
-          CardDataHeader={[
-  {
-    mainTitle: "Visual Excellence",
-    mainDescription:
-      "Our photography services ensure that your property stands out from the crowd. We use high-quality equipment and expert techniques to capture the unique essence of your property, showcasing its best features and amenities in a visually stunning way."
-  },
-]}
+            CardDataHeader={[
+              {
+                mainTitle: "Visual Excellence",
+                mainDescription:
+                  "Our photography services ensure that your property stands out from the crowd. We use high-quality equipment and expert techniques to capture the unique essence of your property, showcasing its best features and amenities in a visually stunning way.",
+              },
+            ]}
             cardsData={[
               {
                 imgUrl:
@@ -93,13 +82,9 @@ const Photography = () => {
                 description:
                   "Professional imagery leads to increased views, higher booking rates, and enhanced revenue.",
               },
-
-              
             ]}
           />
         </Box>
-
-     
       </HStack>
       <HStack
         mt={["100px", "100px", "100px", "100px", "100px", "100px"]}

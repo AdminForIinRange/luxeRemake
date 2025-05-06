@@ -11,7 +11,6 @@ import {
   DialogRoot,
 } from "@/components/chakra-snippets/dialog";
 
-
 const Contact = () => {
   useEffect(() => {
     Aos.init({
@@ -20,22 +19,24 @@ const Contact = () => {
       mirror: true,
     });
   }, []);
-  
+
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-  
+
   return (
     <Box bg="white" position="relative">
       {/* Decorative elements */}
 
-
-      
       <Box maxWidth="1400px" mx="auto" position="relative" zIndex="1">
-        <Box textAlign="center" pt={{ base: "60px", md: "80px" }} data-aos="fade-up">
+        <Box
+          textAlign="center"
+          pt={{ base: "60px", md: "80px" }}
+          data-aos="fade-up"
+        >
           <TitleSubheading
             title={"Let's Get in Touch"}
             subheading={"We'd love to hear from you."}
           />
-          
+
           {/* Subtitle with more context */}
           <Text
             fontSize={{ base: "16px", md: "18px" }}
@@ -46,12 +47,12 @@ const Contact = () => {
             px={{ base: "20px", md: "0" }}
             fontFamily="Raleway"
           >
-            Our property management experts are ready to help you maximize your investment potential with personalized solutions.
+            Our property management experts are ready to help you maximize your
+            investment potential with personalized solutions.
           </Text>
         </Box>
 
         <Box
-
           display="flex"
           flexDirection={{ base: "column", md: "row" }}
           justifyContent="space-between"
@@ -62,17 +63,17 @@ const Contact = () => {
           data-aos="fade-up"
         >
           {/* Contact Info Section */}
-          <Box    
-          p={{ base: "20px", md: "40px" }}     rounded ={"2xl"}
-        bg={"gray.50"}
-        border={"1px solid lightgray"}
+          <Box
+            p={{ base: "20px", md: "40px" }}
+            rounded={"2xl"}
+            bg={"gray.50"}
+            border={"1px solid lightgray"}
             width={{ base: "100%", md: "40%" }}
             textAlign={{ base: "center", md: "left" }}
             position="relative"
           >
             {/* Accent line */}
-      
-            
+
             <Text
               fontSize={{ base: "28px", md: "32px" }}
               fontWeight={700}
@@ -93,75 +94,73 @@ const Contact = () => {
                 gap="10px"
               >
                 <Box>
-                  <Text 
-                    fontWeight={600} 
-                    color="#0A0F29" 
-                    fontSize="16px" 
+                  <Text
+                    fontWeight={600}
+                    color="#0A0F29"
+                    fontSize="16px"
                     fontFamily="Raleway"
                     mb="4px"
                   >
                     Email
                   </Text>
-                  <Text 
-                    fontWeight={400} 
-                    color="#555" 
-                    fontSize="16px" 
+                  <Text
+                    fontWeight={400}
+                    color="#555"
+                    fontSize="16px"
                     fontFamily="Raleway"
                   >
                     luxemanagements.info@gmail.com
                   </Text>
                 </Box>
               </Box>
-              
+
               <Box
                 display="flex"
                 flexDirection={{ base: "column", sm: "row" }}
                 alignItems={{ base: "center", md: "flex-start" }}
                 gap="10px"
               >
-             
                 <Box>
-                  <Text 
-                    fontWeight={600} 
-                    color="#0A0F29" 
-                    fontSize="16px" 
+                  <Text
+                    fontWeight={600}
+                    color="#0A0F29"
+                    fontSize="16px"
                     fontFamily="Raleway"
                     mb="4px"
                   >
                     Phone
                   </Text>
-                  <Text 
-                    fontWeight={400} 
-                    color="#555" 
-                    fontSize="16px" 
+                  <Text
+                    fontWeight={400}
+                    color="#555"
+                    fontSize="16px"
                     fontFamily="Raleway"
                   >
                     +61 406 631 461
                   </Text>
                 </Box>
               </Box>
-              
+
               <Box
                 display="flex"
                 flexDirection={{ base: "column", sm: "row" }}
                 alignItems={{ base: "center", md: "flex-start" }}
                 gap="10px"
               >
-               
                 <Box>
-                  <Text 
-                    fontWeight={600} 
-                    color="#0A0F29" 
-                    fontSize="16px" 
+                  <Text
+                    fontWeight={600}
+                    color="#0A0F29"
+                    fontSize="16px"
                     fontFamily="Raleway"
                     mb="4px"
                   >
                     Location
                   </Text>
-                  <Text 
-                    fontWeight={400} 
-                    color="#555" 
-                    fontSize="16px" 
+                  <Text
+                    fontWeight={400}
+                    color="#555"
+                    fontSize="16px"
                     fontFamily="Raleway"
                   >
                     South Australia
@@ -169,7 +168,7 @@ const Contact = () => {
                 </Box>
               </Box>
             </Box>
-            
+
             {/* Office hours section */}
             <Box mt="40px">
               <Text
@@ -181,37 +180,72 @@ const Contact = () => {
               >
                 Office Hours
               </Text>
-              
+
               <Box display="flex" flexDirection="column" gap="8px">
-                <Box display="flex" justifyContent={{ base: "center", md: "space-between" }}>
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px">Monday - Friday</Text>
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px" fontWeight={500}>9:00 AM - 5:00 PM</Text>
+                <Box
+                  display="flex"
+                  justifyContent={{ base: "center", md: "space-between" }}
+                >
+                  <Text fontFamily="Raleway" color="#555" fontSize="15px">
+                    Monday - Friday
+                  </Text>
+                  <Text
+                    fontFamily="Raleway"
+                    color="#555"
+                    fontSize="15px"
+                    fontWeight={500}
+                  >
+                    9:00 AM - 5:00 PM
+                  </Text>
                 </Box>
-                <Box display="flex" justifyContent={{ base: "center", md: "space-between" }}>
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px">Saturday</Text>
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px" fontWeight={500}>10:00 AM - 2:00 PM</Text>
+                <Box
+                  display="flex"
+                  justifyContent={{ base: "center", md: "space-between" }}
+                >
+                  <Text fontFamily="Raleway" color="#555" fontSize="15px">
+                    Saturday
+                  </Text>
+                  <Text
+                    fontFamily="Raleway"
+                    color="#555"
+                    fontSize="15px"
+                    fontWeight={500}
+                  >
+                    10:00 AM - 2:00 PM
+                  </Text>
                 </Box>
-                <Box display="flex" justifyContent={{ base: "center", md: "space-between" }}>
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px">Sunday</Text>
-                  <Text fontFamily="Raleway" color="#555" fontSize="15px" fontWeight={500}>Closed</Text>
+                <Box
+                  display="flex"
+                  justifyContent={{ base: "center", md: "space-between" }}
+                >
+                  <Text fontFamily="Raleway" color="#555" fontSize="15px">
+                    Sunday
+                  </Text>
+                  <Text
+                    fontFamily="Raleway"
+                    color="#555"
+                    fontSize="15px"
+                    fontWeight={500}
+                  >
+                    Closed
+                  </Text>
                 </Box>
               </Box>
             </Box>
-            
+
             {/* Social media indicators */}
-           
           </Box>
 
           {/* Contact Card */}
-          <Box 
-            width={{ base: "100%", md: "60%" }} 
+          <Box
+            width={{ base: "100%", md: "60%" }}
             data-aos="fade-up"
             display="flex"
             justifyContent="center"
             position="relative"
           >
             {/* Decorative accent */}
- 
+
             <Box
               bg="#0A0F29"
               width="100%"
@@ -236,7 +270,7 @@ const Contact = () => {
               >
                 Ready to transform your property management?
               </Text>
-              
+
               <Text
                 color="rgba(255, 255, 255, 0.9)"
                 fontSize={{ base: "16px", md: "18px" }}
@@ -245,15 +279,16 @@ const Contact = () => {
                 maxWidth="600px"
                 lineHeight="1.6"
               >
-                Get a full consultation, market analysis in under 24 hours for free
+                Get a full consultation, market analysis in under 24 hours for
+                free
               </Text>
-              
+
               {/* Benefits list */}
-              <Box 
-                display="flex" 
-                flexDirection="column" 
-                gap="12px" 
-                mb="30px" 
+              <Box
+                display="flex"
+                flexDirection="column"
+                gap="12px"
+                mb="30px"
                 mt="10px"
                 width="100%"
                 maxWidth="500px"
@@ -262,30 +297,32 @@ const Contact = () => {
                   "Personalized property management strategy",
                   "Detailed market analysis and pricing recommendations",
                   "Tenant acquisition and screening process overview",
-                  "Maintenance and property care solutions"
+                  "Maintenance and property care solutions",
                 ].map((benefit, index) => (
-                  <Box 
-                    key={index} 
-                    display="flex" 
-                    alignItems="center" 
+                  <Box
+                    key={index}
+                    display="flex"
+                    alignItems="center"
                     justifyContent={{ base: "center", sm: "flex-start" }}
                     textAlign={{ base: "center", sm: "left" }}
                     gap="10px"
                   >
-                    <Box 
-                      width="20px" 
-                      height="20px" 
-                      borderRadius="50%" 
+                    <Box
+                      width="20px"
+                      height="20px"
+                      borderRadius="50%"
                       bg="rgba(255, 255, 255, 0.2)"
                       display="flex"
                       alignItems="center"
                       justifyContent="center"
                     >
-                      <Text color="white" fontSize="12px">✓</Text>
+                      <Text color="white" fontSize="12px">
+                        ✓
+                      </Text>
                     </Box>
-                    <Text 
-                      color="rgba(255, 255, 255, 0.9)" 
-                      fontSize="15px" 
+                    <Text
+                      color="rgba(255, 255, 255, 0.9)"
+                      fontSize="15px"
                       fontFamily="Raleway"
                     >
                       {benefit}
@@ -294,11 +331,7 @@ const Contact = () => {
                 ))}
               </Box>
 
-              <Box
-                display="flex"
-                justifyContent="center"
-                width="100%"
-              >
+              <Box display="flex" justifyContent="center" width="100%">
                 <Box
                   bg="white"
                   color="#0A0F29"
@@ -313,22 +346,20 @@ const Contact = () => {
                   position="relative"
                   _hover={{
                     transform: "translateY(-3px)",
-                    boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)"
+                    boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.2)",
                   }}
                   onClick={() => setIsDialogOpen(true)}
                 >
                   <Text>Schedule a consultation</Text>
                 </Box>
               </Box>
-              
+
               {/* Testimonial snippet */}
-             
             </Box>
           </Box>
         </Box>
-        
+
         {/* FAQ Section */}
-       
       </Box>
 
       <DialogRoot
@@ -360,7 +391,7 @@ const Contact = () => {
                 Schedule Your Free Consultation
               </Text>
             </Box>
-            
+
             <iframe
               loading="lazy"
               className="calendly-frame"

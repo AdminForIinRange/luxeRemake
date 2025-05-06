@@ -16,11 +16,7 @@ export const getAllArticles = async (limit = 10, offset = 0) => {
     const res = await databases.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.articlesCollectionId,
-      [
-        Query.orderDesc("$createdAt"),
-        Query.limit(limit),
-        Query.offset(offset),
-      ]
+      [Query.orderDesc("$createdAt"), Query.limit(limit), Query.offset(offset)],
     );
 
     return { success: true, data: res.documents, total: res.total };
@@ -29,5 +25,3 @@ export const getAllArticles = async (limit = 10, offset = 0) => {
     return { success: false, error: "Could not fetch articles." };
   }
 };
-
-

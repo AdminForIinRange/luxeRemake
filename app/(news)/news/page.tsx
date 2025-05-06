@@ -27,7 +27,7 @@ const NewsPage = () => {
       setOffset((prev) => prev + LIMIT);
       setTotalCount(res.total); // 👈 Store total article count
     }
-    
+
     setLoading(false);
   };
 
@@ -61,19 +61,14 @@ const NewsPage = () => {
             estate investments can elevate your portfolio to new heights.
           </Text>
         </Box>
-        <Box flex="1" borderRadius={"md"}    objectFit="cover"     maxH="400px"> 
+        <Box flex="1" borderRadius={"md"} objectFit="cover" maxH="400px">
           <Image
             src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
             alt="Hero Real Estate"
             height={720}
             width={1400}
-          
             draggable={false}
-           
-        
-           
           />
-        
         </Box>
       </Flex>
 
@@ -87,8 +82,9 @@ const NewsPage = () => {
       </Text>
 
       <Text fontSize="md" color="gray.600" textAlign="center" mb="30px">
-  Showing {articles.length} of {totalCount} article{totalCount !== 1 ? "s" : ""}
-</Text>
+        Showing {articles.length} of {totalCount} article
+        {totalCount !== 1 ? "s" : ""}
+      </Text>
       <Stack direction="row" wrap="wrap" justify="space-between" gap="20px">
         {articles.map((article) => (
           <NewsCard key={article.$id} article={article} />

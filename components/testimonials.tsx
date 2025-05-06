@@ -9,37 +9,43 @@ const Testimonials = () => {
       text: "I highly recommend. They were attentive to our needs and worked tirelessly to find us a client for our holiday house property. We couldn't be happier with our new place!",
       name: "Dan Abrahmov",
       rating: 5,
-      image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20suit"
+      image:
+        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20suit",
     },
     {
       text: "Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free.",
       name: "Kent Dodds",
       rating: 4,
-      image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20glasses"
+      image:
+        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20glasses",
     },
     {
       text: "Fantastic service! They took the time to understand exactly what I was looking for and found the perfect match. I couldn't be happier!",
       rating: 5,
       name: "Segun Adebayo",
-      image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20smiling"
+      image:
+        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20smiling",
     },
     {
       text: "Great experience from start to finish. They kept us informed and made sure we got the best deal possible. I would recommend them to anyone!",
       rating: 5,
       name: "Christian Nwamba",
-      image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20casual"
+      image:
+        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20casual",
     },
     {
       text: "Very responsive and professional. They helped us find a great property in a short amount of time. Definitely recommend their services!",
       name: "Sophia M.",
       rating: 4,
-      image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20woman%20business"
+      image:
+        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20woman%20business",
     },
     {
       text: "They were patient and helped us every step of the way. We appreciated their attention to detail and ability to handle any challenge that came up.",
       name: "Michael T.",
       rating: 4,
-      image: "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20tie"
+      image:
+        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20tie",
     },
   ]);
 
@@ -58,14 +64,14 @@ const Testimonials = () => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
       stars.push(
-        <Box 
-          as={FaStar} 
-          key={i} 
-          color={i < rating ? "gold" : "gray.200"} 
-          display="inline-block" 
+        <Box
+          as={FaStar}
+          key={i}
+          color={i < rating ? "gold" : "gray.200"}
+          display="inline-block"
           marginRight="2px"
           fontSize={{ base: "14px", md: "16px" }}
-        />
+        />,
       );
     }
     return stars;
@@ -175,108 +181,104 @@ const Testimonials = () => {
           </Box>
 
           <Box
-          mt={["25px", "25px", "0", "0", "0", "0"]}
-          width={{ base: "100%", md: "60%" }}
-          maxWidth={{ base: "500px", md: "600px" }}
-          border="1px solid rgba(0,0,0,0.1)"
-          borderRadius="16px"
-          padding={{ base: "32px 24px", md: "40px" }}
-          backgroundColor="white"
-        
-          position="relative"
-          transition="all 0.3s ease"
-          _hover={{
-            boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
-            transform: "translateY(-5px)"
-          }}
-        >
-          {/* Quote mark */}
-          <Box
-            position="absolute"
-            top="24px"
-            right="30px"
-            fontSize="80px"
-            fontFamily="serif"
-            color="rgba(0,0,0,0.05)"
-            lineHeight="1"
-            fontWeight="bold"
+            mt={["25px", "25px", "0", "0", "0", "0"]}
+            width={{ base: "100%", md: "60%" }}
+            maxWidth={{ base: "500px", md: "600px" }}
+            border="1px solid rgba(0,0,0,0.1)"
+            borderRadius="16px"
+            padding={{ base: "32px 24px", md: "40px" }}
+            backgroundColor="white"
+            position="relative"
+            transition="all 0.3s ease"
+            _hover={{
+              boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
+              transform: "translateY(-5px)",
+            }}
           >
-            "
-          </Box>
-          
-          {/* Star rating */}
-          <Box 
-            display="flex"
-            marginBottom="20px"
-          >
-            {renderStars(reviews[currentSlide].rating)}
-          </Box>
-          
-          {/* Testimonial text */}
-          <Box 
-            minHeight={{ base: "160px", md: "180px" }}
-            display="flex"
-            alignItems="flex-start"
-          >
-            <Text
-              fontSize={{ base: "18px", md: "20px" }}
-              lineHeight="1.6"
-              color="rgba(0,0,0,0.8)"
-              fontFamily="Raleway"
-              fontStyle="italic"
-              position="relative"
-              zIndex="1"
-            >
-              {reviews[currentSlide].text}
-            </Text>
-          </Box>
-          
-          {/* Separator line */}
-          <Box 
-            height="1px" 
-            backgroundColor="rgba(0,0,0,0.1)" 
-            margin="24px 0"
-          />
-          
-          {/* Author info */}
-          <Box 
-            display="flex"
-            alignItems="center"
-            justifyContent="flex-start"
-            paddingTop="8px"
-          >
-            {/* Author image */}
+            {/* Quote mark */}
             <Box
-              width="50px"
-              height="50px"
-              borderRadius="50%"
-              marginRight="16px"
-              backgroundImage={`url(${reviews[currentSlide].image})`}
-              backgroundSize="cover"
-              backgroundPosition="center"
-              border="2px solid rgba(0,0,0,0.1)"
-            />
-            
-            {/* Author name */}
-            <Box>
+              position="absolute"
+              top="24px"
+              right="30px"
+              fontSize="80px"
+              fontFamily="serif"
+              color="rgba(0,0,0,0.05)"
+              lineHeight="1"
+              fontWeight="bold"
+            >
+              "
+            </Box>
+
+            {/* Star rating */}
+            <Box display="flex" marginBottom="20px">
+              {renderStars(reviews[currentSlide].rating)}
+            </Box>
+
+            {/* Testimonial text */}
+            <Box
+              minHeight={{ base: "160px", md: "180px" }}
+              display="flex"
+              alignItems="flex-start"
+            >
               <Text
-                fontSize={{ base: "16px", md: "18px" }}
-                fontWeight="700"
-                color="black"
+                fontSize={{ base: "18px", md: "20px" }}
+                lineHeight="1.6"
+                color="rgba(0,0,0,0.8)"
                 fontFamily="Raleway"
+                fontStyle="italic"
+                position="relative"
+                zIndex="1"
               >
-                {reviews[currentSlide].name}
-              </Text>
-              <Text
-                fontSize={{ base: "14px", md: "15px" }}
-                color="rgba(0,0,0,0.6)"
-                fontFamily="Raleway"
-              >
-                Verified Customer
+                {reviews[currentSlide].text}
               </Text>
             </Box>
+
+            {/* Separator line */}
+            <Box
+              height="1px"
+              backgroundColor="rgba(0,0,0,0.1)"
+              margin="24px 0"
+            />
+
+            {/* Author info */}
+            <Box
+              display="flex"
+              alignItems="center"
+              justifyContent="flex-start"
+              paddingTop="8px"
+            >
+              {/* Author image */}
+              <Box
+                width="50px"
+                height="50px"
+                borderRadius="50%"
+                marginRight="16px"
+                backgroundImage={`url(${reviews[currentSlide].image})`}
+                backgroundSize="cover"
+                backgroundPosition="center"
+                border="2px solid rgba(0,0,0,0.1)"
+              />
+
+              {/* Author name */}
+              <Box>
+                <Text
+                  fontSize={{ base: "16px", md: "18px" }}
+                  fontWeight="700"
+                  color="black"
+                  fontFamily="Raleway"
+                >
+                  {reviews[currentSlide].name}
+                </Text>
+                <Text
+                  fontSize={{ base: "14px", md: "15px" }}
+                  color="rgba(0,0,0,0.6)"
+                  fontFamily="Raleway"
+                >
+                  Verified Customer
+                </Text>
+              </Box>
+            </Box>
           </Box>
-        </Box>
         </HStack>
       </HStack>
     </>

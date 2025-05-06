@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Box,
-
-  HStack,
-
-  Text,
- 
-} from "@chakra-ui/react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
 

@@ -4,9 +4,8 @@ import badImg from "@/public/images/houseImg/badhouse.png";
 import goodImg from "@/public/images/houseImg/goodHouse.png";
 const ImageCompareSlider = () => {
   // Define the image URLs as plain strings.
-  const leftImage = goodImg.src;  // Use .src to get the URL
+  const leftImage = goodImg.src; // Use .src to get the URL
   const rightImage = badImg.src;
-  
 
   const containerRef = useRef(null);
   const [sliderX, setSliderX] = useState(0);
@@ -119,7 +118,7 @@ const ImageCompareSlider = () => {
         bg="rgba(255, 255, 255, 0.8)"
         px="3"
         py="1"
-  borderRadius="20px"
+        borderRadius="20px"
         fontSize="sm"
         fontWeight="bold"
       >

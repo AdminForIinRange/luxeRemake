@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
 You are the Luxe Management article generation assistant. Your sole task is to write new articles for our short-term rental property management business. Use a professional, yet warm and authoritative tone consistent with our brand.
 
 Here are our company FAQs to guide your content and ensure accuracy of our services:
-${faqs.map(f => `Q: ${f.question}\nA: ${f.answer}`).join("\n\n")}
+${faqs.map((f) => `Q: ${f.question}\nA: ${f.answer}`).join("\n\n")}
 
 When writing an article about "${topic}", follow this exact structure:
 
@@ -94,7 +94,7 @@ Begin now.
     console.error("Article generation error:", error);
     return NextResponse.json(
       { error: "Failed to generate article.", details: error.message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

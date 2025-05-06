@@ -119,11 +119,11 @@ const HowWeCanGetYouStarted = () => {
                 px={"12"}
                 fontWeight={"500"}
                 onClick={() => {
-                    const element = document.getElementById("get-started-button");
-                    if (element) {
-                      element.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }}
+                  const element = document.getElementById("get-started-button");
+                  if (element) {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
               >
                 Get in Touch
                 {/* <Icon as={ArrowRight}> </Icon> */}

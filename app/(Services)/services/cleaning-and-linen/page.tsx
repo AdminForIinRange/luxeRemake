@@ -1,14 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import {
-  Box,
-
-  HStack,
- 
-  Text,
-
-} from "@chakra-ui/react";
-
+import { Box, HStack, Text } from "@chakra-ui/react";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -27,14 +19,13 @@ const CleaningAndLinen = () => {
 
   return (
     <>
-
-<TopHeader
-  imgUrl="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg"
-  wordOne="Cleaning"
-  wordTwo="Linen"
-  description="Elevate your space with our meticulous cleaning process and premium linen service."
-  and={true}
-/>
+      <TopHeader
+        imgUrl="https://images.pexels.com/photos/1454804/pexels-photo-1454804.jpeg"
+        wordOne="Cleaning"
+        wordTwo="Linen"
+        description="Elevate your space with our meticulous cleaning process and premium linen service."
+        and={true}
+      />
 
       <HStack
         my={["50px", "50px", "50px", "50px", "50px", "100px"]}
@@ -56,41 +47,38 @@ const CleaningAndLinen = () => {
           justifyContent={"center"}
           textAlign={"center"}
         >
-       
-      
           <ServicesThreeCards
-        cardsData={[
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/8467975/pexels-photo-8467975.jpeg",
-            title: "Premium Products",
-            description:
-              "We use only the finest, eco-friendly cleaning products to protect your property and the environment.",
-          },
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/4239142/pexels-photo-4239142.jpeg",
-            title: "        Expert Team",
-            description:
-              "Our highly trained professionals bring years of experience in luxury property care.",
-          },
-          {
-            imgUrl:
-              "https://images.pexels.com/photos/4239130/pexels-photo-4239130.jpeg",
-            title: "  Impeccable Detail",
-            description:
-              "We meticulously clean every corner, ensuring no detail is overlooked.",
-          },
-        ]}
-
-        CardDataHeader={[
-          {
-            mainTitle: "Redefining Cleanliness",
-            mainDescription:
-              "From sparkling floors to spotless surfaces, we take pride in leaving your space feeling refreshed and revitalized.",
-          },
-        ]}
-      />
+            cardsData={[
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/8467975/pexels-photo-8467975.jpeg",
+                title: "Premium Products",
+                description:
+                  "We use only the finest, eco-friendly cleaning products to protect your property and the environment.",
+              },
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/4239142/pexels-photo-4239142.jpeg",
+                title: "        Expert Team",
+                description:
+                  "Our highly trained professionals bring years of experience in luxury property care.",
+              },
+              {
+                imgUrl:
+                  "https://images.pexels.com/photos/4239130/pexels-photo-4239130.jpeg",
+                title: "  Impeccable Detail",
+                description:
+                  "We meticulously clean every corner, ensuring no detail is overlooked.",
+              },
+            ]}
+            CardDataHeader={[
+              {
+                mainTitle: "Redefining Cleanliness",
+                mainDescription:
+                  "From sparkling floors to spotless surfaces, we take pride in leaving your space feeling refreshed and revitalized.",
+              },
+            ]}
+          />
         </Box>
       </HStack>
 

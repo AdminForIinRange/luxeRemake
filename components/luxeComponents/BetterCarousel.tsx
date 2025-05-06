@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Box } from "@chakra-ui/react" // Importing Cheka UI Box
-import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react";
+import Image from "next/image";
+import { Box } from "@chakra-ui/react"; // Importing Cheka UI Box
+import { motion, AnimatePresence } from "framer-motion";
 
 // Importing images
 import houseOneImg2 from "@/public/images/dalts/houseOne/WEB/2.jpg";
@@ -31,13 +31,13 @@ export default function ImageCarousel() {
     houseFourImg2,
     houseFourImg7,
     houseFourImg10,
-  ]
+  ];
 
-  const [currentImage, setCurrentImage] = useState(0)
+  const [currentImage, setCurrentImage] = useState(0);
 
   const handleThumbnailClick = (index: number) => {
-    setCurrentImage(index)
-  }
+    setCurrentImage(index);
+  };
 
   return (
     <Box
@@ -59,14 +59,9 @@ export default function ImageCarousel() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          style={{ width: '100%', height: '500px', position: 'relative' }}
+          style={{ width: "100%", height: "500px", position: "relative" }}
         >
-          <Box
-            width="100%"
-            height="100%"
-            position="relative"
-            overflow="hidden"
-          >
+          <Box width="100%" height="100%" position="relative" overflow="hidden">
             <Image
               src={images[currentImage] || "/placeholder.svg"}
               alt={`carousel-image-${currentImage}`}
@@ -89,33 +84,36 @@ export default function ImageCarousel() {
         justifyContent="center"
         zIndex="10"
         gap={2}
-
       >
         {images.map((img, index) => (
           <Box
-
             key={index}
             onClick={() => handleThumbnailClick(index)}
             cursor="pointer"
             padding="8px"
             borderRadius="4px"
             transition="all 0.3s"
-            _hover={{ transform: 'scale(1.1)' }}
-            border={currentImage === index ? '2px solid white' : '2px solid transparent'}
-            
+            _hover={{ transform: "scale(1.1)" }}
+            border={
+              currentImage === index
+                ? "2px solid white"
+                : "2px solid transparent"
+            }
           >
-            <Box >    <Image
-            style={{ borderRadius: '4px' }}
-              src={img || "/placeholder.svg"}
-              alt={`thumbnail-${index}`}
-              width={100}
-              height={50}
-              objectFit="cover"
-            /></Box>
-        
+            <Box>
+              {" "}
+              <Image
+                style={{ borderRadius: "4px" }}
+                src={img || "/placeholder.svg"}
+                alt={`thumbnail-${index}`}
+                width={100}
+                height={50}
+                objectFit="cover"
+              />
+            </Box>
           </Box>
         ))}
       </Box>
     </Box>
-  )
+  );
 }

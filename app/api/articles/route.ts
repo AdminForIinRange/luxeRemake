@@ -4,16 +4,15 @@
 import { NextResponse, NextRequest } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
-
 export async function POST(request: NextRequest) {
-    try {
-      const { topic } = await request.json();
-      if (!topic) {
-        return NextResponse.json({ error: 'Missing topic.' }, { status: 400 });
-      }
-  
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
-      const prompt = `
+  try {
+    const { topic } = await request.json();
+    if (!topic) {
+      return NextResponse.json({ error: "Missing topic." }, { status: 400 });
+    }
+
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
+    const prompt = `
       You are the Luxe Management article generation assistant.  You have at your disposal a library of high-quality reference articles that cover every facet of holiday-home hosting, including:
       
         • Getting Started: “Diving In: Your Comprehensive Guide to Getting Started with Holiday Home Hosting”  
@@ -58,20 +57,19 @@ export async function POST(request: NextRequest) {
       • About 700–800 words in total.  
       `.trim();
 
-  
-      const response = await ai.models.generateContent({
-        model: 'gemini-2.0-flash',
-        contents: prompt,
-        temperature: 0.7,
-        maxOutputTokens: 700,
-      });
-  
-      return NextResponse.json({ article: response.text });
-    } catch (error: any) {
-      console.error('Article generation error:', error);
-      return NextResponse.json(
-        { error: 'Failed to generate article.', details: error.message },
-        { status: 500 }
-      );
-    }
+    const response = await ai.models.generateContent({
+      model: "gemini-2.0-flash",
+      contents: prompt,
+      temperature: 0.7,
+      maxOutputTokens: 700,
+    });
+
+    return NextResponse.json({ article: response.text });
+  } catch (error: any) {
+    console.error("Article generation error:", error);
+    return NextResponse.json(
+      { error: "Failed to generate article.", details: error.message },
+      { status: 500 },
+    );
   }
+}

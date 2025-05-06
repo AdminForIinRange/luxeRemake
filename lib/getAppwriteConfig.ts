@@ -8,9 +8,9 @@ export function getAppwriteConfig() {
   const endpointUrl = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT;
   const projectId = process.env.NEXT_PUBLIC_APPWRITE_PROJECT;
   const databaseId = process.env.NEXT_PUBLIC_APPWRITE_DATABASE;
-  const articlesCollectionId = process.env.NEXT_PUBLIC_APPWRITE_ARTICLE_COLLECTION;
+  const articlesCollectionId =
+    process.env.NEXT_PUBLIC_APPWRITE_ARTICLE_COLLECTION;
   const apiKey = process.env.NEXT_PUBLIC_APPWRITE_API_KEY;
-
 
   if (
     !endpointUrl ||
@@ -18,9 +18,10 @@ export function getAppwriteConfig() {
     !databaseId ||
     !articlesCollectionId ||
     !apiKey
-
   ) {
-    throw new Error("One or more required Appwrite environment variables are missing.");
+    throw new Error(
+      "One or more required Appwrite environment variables are missing.",
+    );
   }
 
   return {
@@ -28,7 +29,6 @@ export function getAppwriteConfig() {
     projectId,
     databaseId,
     articlesCollectionId,
-    apiKey
-
+    apiKey,
   };
 }

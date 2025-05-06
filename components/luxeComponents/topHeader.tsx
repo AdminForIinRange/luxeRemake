@@ -1,10 +1,4 @@
-import {
-    Box,
-
-    Text,
-    VStack,
-  } from "@chakra-ui/react";
-
+import { Box, Text, VStack } from "@chakra-ui/react";
 
 interface TopHeaderProps {
   imgUrl: string;
@@ -14,7 +8,13 @@ interface TopHeaderProps {
   and: boolean;
 }
 
-const TopHeader = ({ imgUrl, wordOne, wordTwo, description, and }: TopHeaderProps) => {
+const TopHeader = ({
+  imgUrl,
+  wordOne,
+  wordTwo,
+  description,
+  and,
+}: TopHeaderProps) => {
   return (
     <>
       <Box
@@ -66,7 +66,9 @@ const TopHeader = ({ imgUrl, wordOne, wordTwo, description, and }: TopHeaderProp
                 bgGradient="linear(to-r, teal, blue)"
                 lineHeight={1}
               >
-                {wordOne} {and ? "&" : ""}<br></br>{wordTwo}
+                {wordOne} {and ? "&" : ""}
+                <br></br>
+                {wordTwo}
               </Text>
               <Text
                 w={["100%", "100%", "100%", "50%", "50%", "50%"]}

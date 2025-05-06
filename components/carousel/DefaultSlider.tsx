@@ -39,7 +39,7 @@ const DefaultSlider: React.FC<DefaultSliderProps> = ({ items }) => {
                   alt={`Slide ${idx + 1}`}
                   fill
                   style={{ objectFit: "contain" }}
-                  priority={idx === 0}  // optionally prioritize the first image
+                  priority={idx === 0} // optionally prioritize the first image
                 />
               </Box>
             </HStack>

@@ -1,9 +1,5 @@
 import React from "react";
-import {
-
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Text, VStack } from "@chakra-ui/react";
 const TitleSubheading = ({
   title,
   subheading,
@@ -14,7 +10,7 @@ const TitleSubheading = ({
   return (
     <>
       <VStack
-      data-aos="fade-up"
+        data-aos="fade-up"
         mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
         w={["100%", "100%", "100%", "100%", "100%", "100"]}
         textAlign={["center", "center", "center", "center", "center", "center"]}
@@ -22,14 +18,14 @@ const TitleSubheading = ({
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
       >
         <Text
-         fontSize={["40px", "40px", "40px", "60px", "60px", "60px"]}
+          fontSize={["40px", "40px", "40px", "60px", "60px", "60px"]}
           fontWeight={700}
           fontFamily={"Raleway"}
           bgClip="text"
           color={"black"}
           bgGradient="linear(to-r, teal, blue)"
         >
-         {title}
+          {title}
         </Text>
         <Text
           w={["90%", "90%", "90%", "50%", "50%", "50%"]}
@@ -40,7 +36,7 @@ const TitleSubheading = ({
           color={"black"}
           fontWeight={300}
         >
-        {subheading}
+          {subheading}
         </Text>
       </VStack>
     </>

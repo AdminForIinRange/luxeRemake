@@ -45,7 +45,8 @@ const Create = () => {
                 Create Your Article
               </Text>
               <Text color="#374151" fontSize={["md", "lg"]}>
-                Fill out the form below to structure your article exactly how you want.
+                Fill out the form below to structure your article exactly how
+                you want.
               </Text>
             </VStack>
           </Box>

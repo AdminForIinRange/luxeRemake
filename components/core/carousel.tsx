@@ -1,5 +1,4 @@
-
-'use client';
+"use client";
 import React, {
   ReactNode,
   createContext,
@@ -9,17 +8,17 @@ import React, {
   useId,
   useRef,
   useState,
-} from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import Autoplay from 'embla-carousel-autoplay';
+} from "react";
+import { motion, AnimatePresence } from "motion/react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   EmblaCarouselType,
   EmblaEventType,
   EmblaOptionsType,
-} from 'embla-carousel';
-import useEmblaCarousel from 'embla-carousel-react';
-import ClassNames from 'embla-carousel-class-names';
-import { cn } from '@/lib/utils';
+} from "embla-carousel";
+import useEmblaCarousel from "embla-carousel-react";
+import ClassNames from "embla-carousel-class-names";
+import { cn } from "@/lib/utils";
 type UseDotButtonType = {
   selectedIndex: number;
   scrollSnaps: number[];
@@ -58,7 +57,7 @@ interface CarouselContextType {
 }
 
 const CarouselContext = createContext<CarouselContextType | undefined>(
-  undefined
+  undefined,
 );
 const TWEEN_FACTOR_BASE = 0.52;
 
@@ -68,7 +67,7 @@ export const useCarouselContext = () => {
   const context = useContext(CarouselContext);
   if (!context) {
     throw new Error(
-      'useCarouselContext must be used within a CarouselProvider'
+      "useCarouselContext must be used within a CarouselProvider",
     );
   }
   return context;
@@ -98,13 +97,13 @@ const Carousel: React.FC<CarouselProps> = ({
         stopOnMouseEnter: true,
         jump: false,
         stopOnInteraction: false,
-      })
+      }),
     );
   }
   const [emblaRef, emblaApi] = useEmblaCarousel(options, plugins);
   const [selectedThumbIndex, setSelectedThumbIndex] = useState(0);
   const [emblaThumbsRef, emblaThumbsApi] = useEmblaCarousel({
-    containScroll: 'keepSnaps',
+    containScroll: "keepSnaps",
     dragFree: true,
   });
 
@@ -113,7 +112,7 @@ const Carousel: React.FC<CarouselProps> = ({
       if (!emblaApi || !emblaThumbsApi) return;
       emblaApi.scrollTo(index);
     },
-    [emblaApi, emblaThumbsApi]
+    [emblaApi, emblaThumbsApi],
   );
 
   const onSelect = useCallback(() => {
@@ -125,8 +124,8 @@ const Carousel: React.FC<CarouselProps> = ({
   useEffect(() => {
     if (!emblaApi) return;
     onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -147,8 +146,8 @@ const Carousel: React.FC<CarouselProps> = ({
     if (!emblaApi) return;
 
     onScroll(emblaApi);
-    emblaApi.on('reInit', onScroll);
-    emblaApi.on('scroll', onScroll);
+    emblaApi.on("reInit", onScroll);
+    emblaApi.on("scroll", onScroll);
   }, [emblaApi, onScroll]);
   const { selectedSnap, snapCount } = useSelectedSnapDisplay(emblaApi);
 
@@ -160,14 +159,14 @@ const Carousel: React.FC<CarouselProps> = ({
     (emblaApi: EmblaCarouselType): void => {
       if (!isScale) return;
       tweenNodes.current = emblaApi.slideNodes().map((slideNode, index) => {
-        const node = slideNode.querySelector('.slider_content') as HTMLElement;
+        const node = slideNode.querySelector(".slider_content") as HTMLElement;
         if (!node) {
           console.warn(`No .slider_content found for slide ${index}`);
         }
         return node;
       });
     },
-    [isScale]
+    [isScale],
   );
 
   const setTweenFactor = useCallback(
@@ -176,7 +175,7 @@ const Carousel: React.FC<CarouselProps> = ({
       tweenFactor.current =
         TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
     },
-    [isScale]
+    [isScale],
   );
 
   const tweenScale = useCallback(
@@ -185,7 +184,7 @@ const Carousel: React.FC<CarouselProps> = ({
       const engine = emblaApi.internalEngine();
       const scrollProgress = emblaApi.scrollProgress();
       const slidesInView = emblaApi.slidesInView();
-      const isScrollEvent = eventName === 'scroll';
+      const isScrollEvent = eventName === "scroll";
 
       emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
         let diffToTarget = scrollSnap - scrollProgress;
@@ -221,7 +220,7 @@ const Carousel: React.FC<CarouselProps> = ({
         });
       });
     },
-    [isScale]
+    [isScale],
   );
 
   useEffect(() => {
@@ -232,10 +231,10 @@ const Carousel: React.FC<CarouselProps> = ({
       tweenScale(emblaApi);
 
       emblaApi
-        .on('reInit', setTweenNodes)
-        .on('reInit', setTweenFactor)
-        .on('reInit', tweenScale)
-        .on('scroll', tweenScale);
+        .on("reInit", setTweenNodes)
+        .on("reInit", setTweenFactor)
+        .on("reInit", tweenScale)
+        .on("scroll", tweenScale);
     }
   }, [emblaApi, tweenScale, isScale, setTweenNodes, setTweenFactor]);
   return (
@@ -260,7 +259,7 @@ const Carousel: React.FC<CarouselProps> = ({
       }}
     >
       <div
-        className={cn(className, 'overflow-hidden  rounded-md ')}
+        className={cn(className, "overflow-hidden  rounded-md ")}
         ref={emblaRef}
       >
         {children}
@@ -284,8 +283,8 @@ export const SliderContainer = ({
 }) => {
   return (
     <div
-      className={cn('flex', className)}
-      style={{ touchAction: 'pan-y pinch-zoom' }}
+      className={cn("flex", className)}
+      style={{ touchAction: "pan-y pinch-zoom" }}
     >
       {children}
     </div>
@@ -311,10 +310,10 @@ export const Slider: React.FC<SliderProps> = ({
   }, [addImgToSlider]);
 
   return (
-    <div className={cn('min-w-0 flex-grow-0 flex-shrink-0', className)}>
+    <div className={cn("min-w-0 flex-grow-0 flex-shrink-0", className)}>
       {isScale ? (
         <>
-          <div className='slider_content'>{children}</div>
+          <div className="slider_content">{children}</div>
         </>
       ) : (
         <>{children}</>
@@ -333,8 +332,8 @@ export const SliderPrevButton = ({
   const { onPrevButtonClick, prevBtnDisabled }: any = useCarouselContext();
   return (
     <button
-      className={cn('', className)}
-      type='button'
+      className={cn("", className)}
+      type="button"
       onClick={onPrevButtonClick}
       disabled={prevBtnDisabled}
     >
@@ -353,8 +352,8 @@ export const SliderNextButton = ({
   return (
     <>
       <button
-        className={cn('', className)}
-        type='button'
+        className={cn("", className)}
+        type="button"
         onClick={onNextButtonClick}
         disabled={nextBtnDisabled}
       >
@@ -368,12 +367,12 @@ export const SliderProgress = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        '  bg-gray-500 relative rounded-md h-2 justify-end items-center w-96 max-w-[90%] overflow-hidden',
-        className
+        "  bg-gray-500 relative rounded-md h-2 justify-end items-center w-96 max-w-[90%] overflow-hidden",
+        className,
       )}
     >
       <div
-        className='dark:bg-white bg-black absolute w-full top-0 -left-[100%] bottom-0'
+        className="dark:bg-white bg-black absolute w-full top-0 -left-[100%] bottom-0"
         style={{ transform: `translate3d(${scrollProgress}%,0px,0px)` }}
       />
     </div>
@@ -393,8 +392,8 @@ export const SliderSnapDisplay = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        'mix-blend-difference overflow-hidden flex gap-1 items-center',
-        className
+        "mix-blend-difference overflow-hidden flex gap-1 items-center",
+        className,
       )}
     >
       <motion.div
@@ -420,30 +419,30 @@ export const SliderDotButton = ({
   const { selectedIndex, scrollSnaps, onDotButtonClick, carouselId }: any =
     useCarouselContext();
   return (
-    <div className={cn('flex', className)}>
-      <div className='flex gap-2'>
+    <div className={cn("flex", className)}>
+      <div className="flex gap-2">
         {scrollSnaps.map((_: any, index: React.Key | null | undefined) => (
           <button
-            type='button'
+            type="button"
             key={index}
             onClick={() => onDotButtonClick(index)}
             className={`relative inline-flex  p-0 m-0 w-10 h-2 `}
           >
-            <div className=' bg-gray-500/40  h-2 rounded-md w-10 '></div>
+            <div className=" bg-gray-500/40  h-2 rounded-md w-10 "></div>
             {index === selectedIndex && (
-              <AnimatePresence mode='wait'>
+              <AnimatePresence mode="wait">
                 <motion.div
                   transition={{
                     layout: {
                       duration: 0.4,
-                      ease: 'easeInOut',
+                      ease: "easeInOut",
                       delay: 0.04,
                     },
                   }}
                   layoutId={`hover-${carouselId}`}
                   className={cn(
-                    'absolute z-[3] w-full h-full left-0 top-0 dark:bg-white bg-black rounded-md',
-                    activeclass
+                    "absolute z-[3] w-full h-full left-0 top-0 dark:bg-white bg-black rounded-md",
+                    activeclass,
                   )}
                 />
               </AnimatePresence>
@@ -456,7 +455,7 @@ export const SliderDotButton = ({
 };
 
 export const useDotButton = (
-  emblaApi: EmblaCarouselType | undefined
+  emblaApi: EmblaCarouselType | undefined,
 ): UseDotButtonType => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
@@ -466,7 +465,7 @@ export const useDotButton = (
       if (!emblaApi) return;
       emblaApi.scrollTo(index);
     },
-    [emblaApi]
+    [emblaApi],
   );
 
   const onInit = useCallback((emblaApi: EmblaCarouselType) => {
@@ -482,9 +481,9 @@ export const useDotButton = (
 
     onInit(emblaApi);
     onSelect(emblaApi);
-    emblaApi.on('reInit', onInit);
-    emblaApi.on('reInit', onSelect);
-    emblaApi.on('select', onSelect);
+    emblaApi.on("reInit", onInit);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
   }, [emblaApi, onInit, onSelect]);
 
   return {
@@ -501,7 +500,7 @@ type UsePrevNextButtonsType = {
 };
 
 export const usePrevNextButtons = (
-  emblaApi: EmblaCarouselType | undefined
+  emblaApi: EmblaCarouselType | undefined,
 ): UsePrevNextButtonsType => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -525,8 +524,8 @@ export const usePrevNextButtons = (
     if (!emblaApi) return;
 
     onSelect(emblaApi);
-    emblaApi.on('reInit', onSelect);
-    emblaApi.on('select', onSelect);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
   }, [emblaApi, onSelect]);
 
   return {
@@ -543,7 +542,7 @@ type UseSelectedSnapDisplayType = {
 };
 
 export const useSelectedSnapDisplay = (
-  emblaApi: EmblaCarouselType | undefined
+  emblaApi: EmblaCarouselType | undefined,
 ): UseSelectedSnapDisplayType => {
   const [selectedSnap, setSelectedSnap] = useState(0);
   const [snapCount, setSnapCount] = useState(0);
@@ -557,8 +556,8 @@ export const useSelectedSnapDisplay = (
     if (!emblaApi) return;
 
     updateScrollSnapState(emblaApi);
-    emblaApi.on('select', updateScrollSnapState);
-    emblaApi.on('reInit', updateScrollSnapState);
+    emblaApi.on("select", updateScrollSnapState);
+    emblaApi.on("reInit", updateScrollSnapState);
   }, [emblaApi, updateScrollSnapState]);
 
   return {
@@ -573,22 +572,22 @@ export const ThumsSlider: React.FC = () => {
   // console.log(slidesrArr);
 
   return (
-    <div className='overflow-hidden mt-2 p-5' ref={emblaThumbsRef}>
-      <div className='flex flex-row gap-2'>
+    <div className="overflow-hidden mt-2 p-5" ref={emblaThumbsRef}>
+      <div className="flex flex-row gap-2">
         {slidesrArr.map((slide, index) => (
           <div
             key={`thumb-${index}`}
             className={`min-w-0 w-full xl:h-24 aspect-auto border-2 rounded-md ${
               index === selectedIndex
-                ? 'opacity-100'
-                : 'border-transparent opacity-30'
+                ? "opacity-100"
+                : "border-transparent opacity-30"
             }`}
-            style={{ flex: '0 0 15%' }}
+            style={{ flex: "0 0 15%" }}
             onClick={() => onThumbClick(index)}
           >
             <motion.img
               src={slide.src}
-              className='w-full h-full object-cover rounded-sm'
+              className="w-full h-full object-cover rounded-sm"
               width={400}
               height={400}
               alt={slide.alt || `Thumbnail ${index + 1}`}

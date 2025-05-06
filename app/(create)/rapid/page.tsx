@@ -46,12 +46,15 @@ export default function Rapid() {
 
     // Extract title
     const introIndex = text.search(/Introduction:/i);
-    result.articleTitle = introIndex >= 0
-      ? text.slice(0, introIndex).trim().split("\n")[0].trim()
-      : text.trim().split("\n")[0].trim();
+    result.articleTitle =
+      introIndex >= 0
+        ? text.slice(0, introIndex).trim().split("\n")[0].trim()
+        : text.trim().split("\n")[0].trim();
 
     // Split sections
-    const sections = text.split(/(Introduction:|Body paragraph 1:|Body paragraph 2:|Body paragraph 3:|Conclusion:|How Luxe Management helps:)/g);
+    const sections = text.split(
+      /(Introduction:|Body paragraph 1:|Body paragraph 2:|Body paragraph 3:|Conclusion:|How Luxe Management helps:)/g,
+    );
     for (let i = 1; i < sections.length; i += 2) {
       const key = sections[i].replace(/:$/, "").trim();
       let content = (sections[i + 1] || "").trim();
@@ -109,7 +112,7 @@ export default function Rapid() {
     return result;
   }
 
-  const handleFullArticleChange = (e: { target: { value: any; }; }) => {
+  const handleFullArticleChange = (e: { target: { value: any } }) => {
     setFormValues((prev) => ({ ...prev, fullArticle: e.target.value }));
   };
 
@@ -118,11 +121,11 @@ export default function Rapid() {
     setFormValues((prev) => ({ ...prev, ...parsed }));
   };
 
-  const handleChange = (field: string) => (e: { target: { value: any; }; }) => {
+  const handleChange = (field: string) => (e: { target: { value: any } }) => {
     setFormValues((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
-  const handleSubmit = async (e: { preventDefault: () => void; }) => {
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setLoading(true);
     try {
@@ -168,11 +171,16 @@ export default function Rapid() {
         <Box bg="white" borderRadius="xl" overflow="hidden">
           <Box p={["8", "10", "12"]} color="#0a2342">
             <VStack align="start" gap={6}>
-              <Text as="h1" fontSize={["2rem", "2.5rem", "3.25rem"]} fontWeight="800">
+              <Text
+                as="h1"
+                fontSize={["2rem", "2.5rem", "3.25rem"]}
+                fontWeight="800"
+              >
                 Rapid Create Your Article
               </Text>
               <Text fontSize={["md", "lg"]} color="#374151">
-                Fill out the form below to structure your article exactly how you want.
+                Fill out the form below to structure your article exactly how
+                you want.
               </Text>
             </VStack>
           </Box>
@@ -186,7 +194,13 @@ export default function Rapid() {
               value={formValues.fullArticle}
               onChange={handleFullArticleChange}
               placeholder="Paste full article here..."
-              style={{ width: "100%", minHeight: "300px", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+              style={{
+                width: "100%",
+                minHeight: "300px",
+                padding: "8px",
+                borderRadius: "4px",
+                border: "1px solid #CBD5E0",
+              }}
             />
             <HStack mt={4}>
               <Button onClick={handleAutoFill} colorScheme="teal">
@@ -199,15 +213,20 @@ export default function Rapid() {
             <form onSubmit={handleSubmit}>
               <VStack gap={6} align="stretch">
                 {/* Article Title */}
-                <Box>\n                  <Text mb={2}>Article Title</Text>
+                <Box>
+                  \n <Text mb={2}>Article Title</Text>
                   <input
-                    value={formValues.articleTitle}  // corrected spelling? Actually formValues.articleTitle
+                    value={formValues.articleTitle} // corrected spelling? Actually formValues.articleTitle
                     onChange={handleChange("articleTitle")}
                     placeholder="Article Title"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
-
 
                 <Box>
                   <Text mb={2}>Introduction Subheading</Text>
@@ -215,15 +234,27 @@ export default function Rapid() {
                     value={formValues.introductionSubheading}
                     onChange={handleChange("introductionSubheading")}
                     placeholder="Introduction Subheading"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
-                </Box><Box>
+                </Box>
+                <Box>
                   <Text mb={2}>Introduction Content</Text>
                   <textarea
                     value={formValues.introductionContent}
                     onChange={handleChange("introductionContent")}
                     placeholder="Introduction Content"
-                    style={{ width: "100%", minHeight: "80px", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      minHeight: "80px",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
 
@@ -233,7 +264,12 @@ export default function Rapid() {
                     value={formValues.contentOneSubheadingTitle}
                     onChange={handleChange("contentOneSubheadingTitle")}
                     placeholder="First Section Title"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
                 <Box>
@@ -242,7 +278,13 @@ export default function Rapid() {
                     value={formValues.contentOneParagraph}
                     onChange={handleChange("contentOneParagraph")}
                     placeholder="First Section Content"
-                    style={{ width: "100%", minHeight: "80px", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      minHeight: "80px",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
 
@@ -252,7 +294,12 @@ export default function Rapid() {
                     value={formValues.contentTwoSubheadingTitle}
                     onChange={handleChange("contentTwoSubheadingTitle")}
                     placeholder="Second Section Title"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
                 <Box>
@@ -261,7 +308,13 @@ export default function Rapid() {
                     value={formValues.contentTwoParagraph}
                     onChange={handleChange("contentTwoParagraph")}
                     placeholder="Second Section Content"
-                    style={{ width: "100%", minHeight: "80px", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      minHeight: "80px",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
 
@@ -271,7 +324,12 @@ export default function Rapid() {
                     value={formValues.contentThreeSubheadingTitle}
                     onChange={handleChange("contentThreeSubheadingTitle")}
                     placeholder="Third Section Title"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
                 <Box>
@@ -280,7 +338,13 @@ export default function Rapid() {
                     value={formValues.contentThreeParagraph}
                     onChange={handleChange("contentThreeParagraph")}
                     placeholder="Third Section Content"
-                    style={{ width: "100%", minHeight: "80px", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      minHeight: "80px",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
 
@@ -290,7 +354,12 @@ export default function Rapid() {
                     value={formValues.conclusionSubheading}
                     onChange={handleChange("conclusionSubheading")}
                     placeholder="Conclusion Subheading"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
                 <Box>
@@ -299,7 +368,13 @@ export default function Rapid() {
                     value={formValues.conclusionParagraph}
                     onChange={handleChange("conclusionParagraph")}
                     placeholder="Conclusion Paragraph"
-                    style={{ width: "100%", minHeight: "80px", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      minHeight: "80px",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
 
@@ -309,7 +384,12 @@ export default function Rapid() {
                     value={formValues.extraSubheading}
                     onChange={handleChange("extraSubheading")}
                     placeholder="Additional Subheading"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
                 <Box>
@@ -318,7 +398,13 @@ export default function Rapid() {
                     value={formValues.extraContentParagraph}
                     onChange={handleChange("extraContentParagraph")}
                     placeholder="Additional Paragraph"
-                    style={{ width: "100%", minHeight: "80px", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      minHeight: "80px",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
 
@@ -328,7 +414,12 @@ export default function Rapid() {
                     value={formValues.pexelImgLink}
                     onChange={handleChange("pexelImgLink")}
                     placeholder="Pexels Image URL"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
                 <Box>
@@ -337,12 +428,22 @@ export default function Rapid() {
                     value={formValues.pexelImgLink2}
                     onChange={handleChange("pexelImgLink2")}
                     placeholder="Second Pexels URL"
-                    style={{ width: "100%", padding: "8px", borderRadius: "4px", border: "1px solid #CBD5E0" }}
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      borderRadius: "4px",
+                      border: "1px solid #CBD5E0",
+                    }}
                   />
                 </Box>
 
                 <Box>
-                  <Button type="submit" colorScheme="blue" width="100%" loading={loading}>
+                  <Button
+                    type="submit"
+                    colorScheme="blue"
+                    width="100%"
+                    loading={loading}
+                  >
                     {loading ? "Creating..." : "Create Article"}
                   </Button>
                 </Box>

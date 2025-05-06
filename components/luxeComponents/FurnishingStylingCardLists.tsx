@@ -1,23 +1,14 @@
 import React from "react";
-import {
-  Box,
-
-  HStack,
-
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 
 const FurnishingStylingCardLists = () => {
-
-
   const GettingStartedSteps = [
     {
       id: 1,
       title: "Get In Touch",
       description:
-        'Connect with our team to discuss your goals, vision, and expectations for the space',
+        "Connect with our team to discuss your goals, vision, and expectations for the space",
     },
     {
       id: 2,
@@ -40,10 +31,8 @@ const FurnishingStylingCardLists = () => {
     {
       id: 5,
       title: "Furnish, Style & Shoot",
-      description:
-        "We manage everything—purchasing, delivery and installation",
+      description: "We manage everything—purchasing, delivery and installation",
     },
-   
   ];
 
   return (
@@ -81,7 +70,7 @@ const FurnishingStylingCardLists = () => {
               Our Design Process
             </Text>
             <Text
-               data-aos="fade-up"
+              data-aos="fade-up"
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "left", "left", "left", "left"]}

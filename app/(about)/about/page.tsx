@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Box, HStack, Text, VStack } from "@chakra-ui/react";
 
 import { useRouter } from "next/navigation";
@@ -12,7 +12,6 @@ import { FaAngleRight } from "react-icons/fa";
 import Aos from "aos";
 import "aos/dist/aos.css";
 const About = () => {
-
   useEffect(() => {
     Aos.init({
       duration: 1000,
@@ -27,31 +26,31 @@ const About = () => {
       name: "Habibur Rahman",
       role: "Founder & CEO",
       src: Habibi.src,
-      bio: "With over 10 years in property management, Habibur founded Luxe with a vision to transform the short-term rental industry through innovation and exceptional service."
+      bio: "With over 10 years in property management, Habibur founded Luxe with a vision to transform the short-term rental industry through innovation and exceptional service.",
     },
     {
       name: "Matthew Zaniewski",
       role: "Operations Director",
       src: Mat.src,
-      bio: "Matthew oversees day-to-day operations, ensuring every property meets our exacting standards and every guest experience exceeds expectations."
+      bio: "Matthew oversees day-to-day operations, ensuring every property meets our exacting standards and every guest experience exceeds expectations.",
     },
     {
       name: "Anjesh Bhattarai",
       role: "Lead Software Engineer",
       src: Anjesh.src,
-      bio: "Anjesh develops our proprietary technology platform that powers our data-driven approach to pricing, marketing, and guest communication."
+      bio: "Anjesh develops our proprietary technology platform that powers our data-driven approach to pricing, marketing, and guest communication.",
     },
     {
       name: "Zadeed Bhuiyan",
       role: "Executive Partner",
       src: Zazeed.src,
-      bio: "Zadeed brings extensive experience in hospitality and real estate, helping property owners maximize their investment returns."
+      bio: "Zadeed brings extensive experience in hospitality and real estate, helping property owners maximize their investment returns.",
     },
     {
       name: "Aryan Dangwal",
       role: "Executive Partner",
       src: Aryan.src,
-      bio: "Aryan specializes in market analysis and strategic growth, identifying opportunities to expand our portfolio of luxury properties."
+      bio: "Aryan specializes in market analysis and strategic growth, identifying opportunities to expand our portfolio of luxury properties.",
     },
   ]);
 
@@ -70,14 +69,13 @@ const About = () => {
     { value: "98%", label: "Guest Satisfaction" },
     { value: "35%", label: "Average Revenue Increase" },
     { value: "24/7", label: "Guest Support" },
-    { value: "100+", label: "Properties Managed" }
+    { value: "100+", label: "Properties Managed" },
   ];
 
   return (
     <>
       {/* Hero Section */}
-   
-   
+
       <HStack
         data-aos="fade-up"
         zIndex={3}
@@ -96,9 +94,7 @@ const About = () => {
           gap={["15px", "15px", "15px", "50px", "50px", "50px"]}
           wrap={["wrap", "wrap", "wrap", "nowrap", "nowrap", "nowrap"]}
         >
-           
           <Box w={["95%", "95%", "95%", "600px", "600px", "600px"]}>
-        
             <Text
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
@@ -121,8 +117,7 @@ const About = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-          
-          Luxe Managements launched in 2022 with a clear mission: to
+              Luxe Managements launched in 2022 with a clear mission: to
               redefine short-term rental management through innovation, quality,
               and care. We saw the gaps — inconsistent service, underperforming
               listings, and generic guest experiences — and built a smarter,
@@ -203,23 +198,14 @@ const About = () => {
               backgroundPosition="center"
               backgroundSize="cover"
             ></Box>
-     
           </Box>
         </HStack>
       </HStack>
 
-
-
-
-
-
-
-
-
       {/* Stats Section */}
-      <Box 
-        width="100%" 
-        py={16} 
+      <Box
+        width="100%"
+        py={16}
         px={{ base: 4, md: 8 }}
         bg="gray.50"
         borderTop="1px solid"
@@ -227,15 +213,15 @@ const About = () => {
         borderColor="gray.100"
       >
         <Box maxWidth="1200px" mx="auto">
-          <Box 
-            display="flex" 
-            flexDirection={{ base: "column", md: "row" }} 
+          <Box
+            display="flex"
+            flexDirection={{ base: "column", md: "row" }}
             gap={{ base: 8, md: 0 }}
             justifyContent="space-between"
           >
             {stats.map((stat, index) => (
-              <Box 
-                key={index} 
+              <Box
+                key={index}
                 textAlign="center"
                 flex="1"
                 py={6}
@@ -244,8 +230,8 @@ const About = () => {
                 transition="all 0.3s ease"
                 _hover={{ transform: "translateY(-5px)", boxShadow: "md" }}
               >
-                <Text 
-                  fontSize={{ base: "4xl", md: "5xl" }} 
+                <Text
+                  fontSize={{ base: "4xl", md: "5xl" }}
                   fontWeight="bold"
                   mb={2}
                   bgGradient="linear(to-r, gray.800, gray.600)"
@@ -267,41 +253,40 @@ const About = () => {
       <Box width="100%" py={20} px={{ base: 4, md: 8 }}>
         <Box maxWidth="1200px" mx="auto">
           <Box textAlign="center" mb={16}>
-            <Box 
-              width="80px" 
-              height="4px" 
-              bg="gray.900" 
-              mb={6}
-              mx="auto"
-            />
-            <Text 
-              fontSize={{ base: "3xl", md: "4xl" }} 
-              fontWeight="bold" 
+            <Box width="80px" height="4px" bg="gray.900" mb={6} mx="auto" />
+            <Text
+              fontSize={{ base: "3xl", md: "4xl" }}
+              fontWeight="bold"
               mb={4}
             >
               Our Approach
             </Text>
-            <Text 
-              fontSize={{ base: "lg", md: "xl" }} 
+            <Text
+              fontSize={{ base: "lg", md: "xl" }}
               color="gray.600"
               maxWidth="800px"
               mx="auto"
               lineHeight="tall"
             >
-              What sets Luxe apart is our comprehensive, detail-oriented approach to property management
+              What sets Luxe apart is our comprehensive, detail-oriented
+              approach to property management
             </Text>
           </Box>
 
-          <Box 
-            display="grid" 
-            gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
+          <Box
+            display="grid"
+            gridTemplateColumns={{
+              base: "1fr",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
+            }}
             gap={8}
           >
             {/* Approach Item 1 */}
-            <Box 
-              p={8} 
-              borderRadius="xl" 
-              bg="white" 
+            <Box
+              p={8}
+              borderRadius="xl"
+              bg="white"
               boxShadow="md"
               transition="all 0.3s ease"
               _hover={{ transform: "translateY(-5px)", boxShadow: "lg" }}
@@ -311,15 +296,17 @@ const About = () => {
                 Data-Driven Pricing
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
-                Our proprietary algorithm analyzes market trends, seasonal demand, and local events to optimize your property's pricing for maximum revenue.
+                Our proprietary algorithm analyzes market trends, seasonal
+                demand, and local events to optimize your property's pricing for
+                maximum revenue.
               </Text>
             </Box>
 
             {/* Approach Item 2 */}
-            <Box 
-              p={8} 
-              borderRadius="xl" 
-              bg="white" 
+            <Box
+              p={8}
+              borderRadius="xl"
+              bg="white"
               boxShadow="md"
               transition="all 0.3s ease"
               _hover={{ transform: "translateY(-5px)", boxShadow: "lg" }}
@@ -329,15 +316,17 @@ const About = () => {
                 Professional Photography
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
-                High-quality, professionally staged photos showcase your property's best features, attracting more bookings and premium rates.
+                High-quality, professionally staged photos showcase your
+                property's best features, attracting more bookings and premium
+                rates.
               </Text>
             </Box>
 
             {/* Approach Item 3 */}
-            <Box 
-              p={8} 
-              borderRadius="xl" 
-              bg="white" 
+            <Box
+              p={8}
+              borderRadius="xl"
+              bg="white"
               boxShadow="md"
               transition="all 0.3s ease"
               _hover={{ transform: "translateY(-5px)", boxShadow: "lg" }}
@@ -347,15 +336,17 @@ const About = () => {
                 Concierge Guest Service
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
-                Our 24/7 guest support ensures every stay is seamless, from personalized check-in to local recommendations and immediate assistance.
+                Our 24/7 guest support ensures every stay is seamless, from
+                personalized check-in to local recommendations and immediate
+                assistance.
               </Text>
             </Box>
 
             {/* Approach Item 4 */}
-            <Box 
-              p={8} 
-              borderRadius="xl" 
-              bg="white" 
+            <Box
+              p={8}
+              borderRadius="xl"
+              bg="white"
               boxShadow="md"
               transition="all 0.3s ease"
               _hover={{ transform: "translateY(-5px)", boxShadow: "lg" }}
@@ -365,15 +356,17 @@ const About = () => {
                 Five-Star Cleaning
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
-                Our rigorous cleaning protocol exceeds industry standards, ensuring every guest arrives to an impeccably maintained property.
+                Our rigorous cleaning protocol exceeds industry standards,
+                ensuring every guest arrives to an impeccably maintained
+                property.
               </Text>
             </Box>
 
             {/* Approach Item 5 */}
-            <Box 
-              p={8} 
-              borderRadius="xl" 
-              bg="white" 
+            <Box
+              p={8}
+              borderRadius="xl"
+              bg="white"
               boxShadow="md"
               transition="all 0.3s ease"
               _hover={{ transform: "translateY(-5px)", boxShadow: "lg" }}
@@ -383,15 +376,16 @@ const About = () => {
                 Smart Home Integration
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
-                We implement and manage smart home technology for secure, convenient access and enhanced guest experiences.
+                We implement and manage smart home technology for secure,
+                convenient access and enhanced guest experiences.
               </Text>
             </Box>
 
             {/* Approach Item 6 */}
-            <Box 
-              p={8} 
-              borderRadius="xl" 
-              bg="white" 
+            <Box
+              p={8}
+              borderRadius="xl"
+              bg="white"
               boxShadow="md"
               transition="all 0.3s ease"
               _hover={{ transform: "translateY(-5px)", boxShadow: "lg" }}
@@ -401,7 +395,8 @@ const About = () => {
                 Transparent Reporting
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
-                Detailed monthly reports provide complete visibility into your property's performance, bookings, and financial returns.
+                Detailed monthly reports provide complete visibility into your
+                property's performance, bookings, and financial returns.
               </Text>
             </Box>
           </Box>
@@ -409,149 +404,179 @@ const About = () => {
       </Box>
 
       {/* Our Mission Section */}
-      <Box width="100%" bg="#0a0e1f" color="white" py={20} px={{ base: 4, md: 8 }}>
+      <Box
+        width="100%"
+        bg="#0a0e1f"
+        color="white"
+        py={20}
+        px={{ base: 4, md: 8 }}
+      >
         <Box maxWidth="1200px" mx="auto">
-          <Box 
-            width="80px" 
-            height="4px" 
-            bg="white" 
-            mb={6}
-            mx="auto"
-          />
-          <Text 
-            fontSize={{ base: "4xl", md: "5xl" }} 
-            fontWeight="bold" 
-            textAlign="center" 
+          <Box width="80px" height="4px" bg="white" mb={6} mx="auto" />
+          <Text
+            fontSize={{ base: "4xl", md: "5xl" }}
+            fontWeight="bold"
+            textAlign="center"
             mb={6}
           >
             Our Mission
           </Text>
-          <Text 
-            fontSize={{ base: "lg", md: "xl" }} 
-            textAlign="center" 
-            maxWidth="800px" 
-            mx="auto" 
-            mb={16} 
+          <Text
+            fontSize={{ base: "lg", md: "xl" }}
+            textAlign="center"
+            maxWidth="800px"
+            mx="auto"
+            mb={16}
             lineHeight="tall"
             opacity="0.9"
           >
-            At Luxe Managements, our mission is to elevate the short-term rental experience for both property owners and guests. We strive to maximize returns for owners while ensuring each guest enjoys a five-star stay.
+            At Luxe Managements, our mission is to elevate the short-term rental
+            experience for both property owners and guests. We strive to
+            maximize returns for owners while ensuring each guest enjoys a
+            five-star stay.
           </Text>
 
-          <Box 
-            display="flex" 
-            flexDirection={{ base: "column", md: "row" }} 
-            gap={8} 
+          <Box
+            display="flex"
+            flexDirection={{ base: "column", md: "row" }}
+            gap={8}
             justifyContent="center"
           >
             {/* Excellence Card */}
-            <Box 
-              flex="1" 
-              bg="rgba(255,255,255,0.05)" 
-              p={10} 
+            <Box
+              flex="1"
+              bg="rgba(255,255,255,0.05)"
+              p={10}
               borderRadius="xl"
               display="flex"
               flexDirection="column"
               alignItems="center"
               textAlign="center"
               transition="all 0.3s ease"
-              _hover={{ transform: "translateY(-5px)", bg: "rgba(255,255,255,0.08)" }}
+              _hover={{
+                transform: "translateY(-5px)",
+                bg: "rgba(255,255,255,0.08)",
+              }}
               border="1px solid"
               borderColor="rgba(255,255,255,0.1)"
             >
-              <Box 
-                width="60px" 
-                height="60px" 
-                borderRadius="full" 
-                bg="rgba(255,255,255,0.1)" 
-                display="flex" 
-                alignItems="center" 
+              <Box
+                width="60px"
+                height="60px"
+                borderRadius="full"
+                bg="rgba(255,255,255,0.1)"
+                display="flex"
+                alignItems="center"
                 justifyContent="center"
                 mb={6}
               >
                 <Text fontSize="2xl">✨</Text>
               </Box>
-              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" mb={4}>
+              <Text
+                fontSize={{ base: "xl", md: "2xl" }}
+                fontWeight="bold"
+                mb={4}
+              >
                 Excellence
               </Text>
               <Text fontSize="md" lineHeight="tall" opacity="0.8">
-                Delivering unparalleled service quality in every interaction, from guest communications to property maintenance and owner reporting.
+                Delivering unparalleled service quality in every interaction,
+                from guest communications to property maintenance and owner
+                reporting.
               </Text>
             </Box>
 
             {/* Innovation Card */}
-            <Box 
-              flex="1" 
-              bg="rgba(255,255,255,0.05)" 
-              p={10} 
+            <Box
+              flex="1"
+              bg="rgba(255,255,255,0.05)"
+              p={10}
               borderRadius="xl"
               display="flex"
               flexDirection="column"
               alignItems="center"
               textAlign="center"
               transition="all 0.3s ease"
-              _hover={{ transform: "translateY(-5px)", bg: "rgba(255,255,255,0.08)" }}
+              _hover={{
+                transform: "translateY(-5px)",
+                bg: "rgba(255,255,255,0.08)",
+              }}
               border="1px solid"
               borderColor="rgba(255,255,255,0.1)"
             >
-              <Box 
-                width="60px" 
-                height="60px" 
-                borderRadius="full" 
-                bg="rgba(255,255,255,0.1)" 
-                display="flex" 
-                alignItems="center" 
+              <Box
+                width="60px"
+                height="60px"
+                borderRadius="full"
+                bg="rgba(255,255,255,0.1)"
+                display="flex"
+                alignItems="center"
                 justifyContent="center"
                 mb={6}
               >
                 <Text fontSize="2xl">💡</Text>
               </Box>
-              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" mb={4}>
+              <Text
+                fontSize={{ base: "xl", md: "2xl" }}
+                fontWeight="bold"
+                mb={4}
+              >
                 Innovation
               </Text>
               <Text fontSize="md" lineHeight="tall" opacity="0.8">
-                Leveraging cutting-edge technology to streamline operations, optimize pricing, and create seamless experiences for both owners and guests.
+                Leveraging cutting-edge technology to streamline operations,
+                optimize pricing, and create seamless experiences for both
+                owners and guests.
               </Text>
             </Box>
 
             {/* Integrity Card */}
-            <Box 
-              flex="1" 
-              bg="rgba(255,255,255,0.05)" 
-              p={10} 
+            <Box
+              flex="1"
+              bg="rgba(255,255,255,0.05)"
+              p={10}
               borderRadius="xl"
               display="flex"
               flexDirection="column"
               alignItems="center"
               textAlign="center"
               transition="all 0.3s ease"
-              _hover={{ transform: "translateY(-5px)", bg: "rgba(255,255,255,0.08)" }}
+              _hover={{
+                transform: "translateY(-5px)",
+                bg: "rgba(255,255,255,0.08)",
+              }}
               border="1px solid"
               borderColor="rgba(255,255,255,0.1)"
             >
-              <Box 
-                width="60px" 
-                height="60px" 
-                borderRadius="full" 
-                bg="rgba(255,255,255,0.1)" 
-                display="flex" 
-                alignItems="center" 
+              <Box
+                width="60px"
+                height="60px"
+                borderRadius="full"
+                bg="rgba(255,255,255,0.1)"
+                display="flex"
+                alignItems="center"
                 justifyContent="center"
                 mb={6}
               >
                 <Text fontSize="2xl">🤝</Text>
               </Box>
-              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" mb={4}>
+              <Text
+                fontSize={{ base: "xl", md: "2xl" }}
+                fontWeight="bold"
+                mb={4}
+              >
                 Integrity
               </Text>
               <Text fontSize="md" lineHeight="tall" opacity="0.8">
-                Building trust through transparency and ethical practices, providing honest communication and fair pricing to all stakeholders.
+                Building trust through transparency and ethical practices,
+                providing honest communication and fair pricing to all
+                stakeholders.
               </Text>
             </Box>
           </Box>
         </Box>
       </Box>
-        
+
       <HStack
         zIndex={3}
         px={["4%", "4%", "6%", "6%", "6%", "10%"]}
@@ -647,10 +672,7 @@ const About = () => {
                 backgroundSize="cover"
                 backgroundPosition="center"
                 backgroundRepeat="no-repeat"
-              >
-
-           
-              </Box>
+              ></Box>
 
               <HStack
                 display={["none", "none", "none", "flex", "flex", "flex"]}
@@ -718,7 +740,6 @@ const About = () => {
                 >
                   {members[currentSlide].role}
                 </Text>
-     
               </VStack>
               <HStack
                 display={["flex", "flex", "flex", "none", "none", "none"]}
@@ -749,7 +770,6 @@ const About = () => {
         </VStack>
       </HStack>
       {/* Call to Action */}
-      
     </>
   );
 };

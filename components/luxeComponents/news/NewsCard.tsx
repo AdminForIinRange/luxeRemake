@@ -3,7 +3,6 @@
 import React from "react";
 import { Box, Stack, HStack, Text, Icon } from "@chakra-ui/react";
 
-
 import { useRouter } from "next/navigation";
 import { Article } from "@/lib/types/article";
 // import { deleteArticle } from "@/lib/actions/deleetArticle.action";

@@ -32,11 +32,9 @@ const Journey = () => {
 
   return (
     <>
-    
-        <Box w={"100%"}>
-          <AboutJourneyCardLists />{" "}
-        </Box>
-      
+      <Box w={"100%"}>
+        <AboutJourneyCardLists />{" "}
+      </Box>
     </>
   );
 };

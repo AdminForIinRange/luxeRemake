@@ -100,7 +100,7 @@
 //             <Input
 //               label="Listing Title"
 //               variant="outlined"
-              
+
 //               value={listingTitle}
 //               onChange={(e) => setListingTitle(e.target.value)}
 //               style={{ marginBottom: "10px" }}
@@ -108,7 +108,7 @@
 //             <Input
 //               label="Subheading"
 //               variant="outlined"
-              
+
 //               value={subheading}
 //               onChange={(e) => setSubheading(e.target.value)}
 //               style={{ marginBottom: "10px" }}
@@ -116,7 +116,7 @@
 //             <Input
 //               label="Location"
 //               variant="outlined"
-              
+
 //               value={location}
 //               onChange={(e) => setLocation(e.target.value)}
 //               style={{ marginBottom: "10px" }}
@@ -124,7 +124,7 @@
 //             <Input
 //               label="Pricing"
 //               variant="outlined"
-              
+
 //               value={pricing}
 //               onChange={(e) => setPricing(e.target.value)}
 //               style={{ marginBottom: "10px" }}

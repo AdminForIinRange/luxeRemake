@@ -156,18 +156,14 @@ const FurnishingAndStyling = () => {
           justifyContent={"center"}
           textAlign={"center"}
         >
-     
-
           <ServicesThreeCards
-
-CardDataHeader={[
-  {
-    mainTitle: "The Luxe Distinction",
-    mainDescription:
-      "Experience the Luxe distinction: expertly curated spaces that captivate guests and exceed their expectations. ",
-  },
-]}
-
+            CardDataHeader={[
+              {
+                mainTitle: "The Luxe Distinction",
+                mainDescription:
+                  "Experience the Luxe distinction: expertly curated spaces that captivate guests and exceed their expectations. ",
+              },
+            ]}
             cardsData={[
               {
                 imgUrl:
@@ -335,7 +331,7 @@ CardDataHeader={[
         </HStack>
       </HStack>
 
-      <Box bg="#0a0f29" py="24" px={{ base: "6", md: "10" }}  data-aos="fade-up">
+      <Box bg="#0a0f29" py="24" px={{ base: "6", md: "10" }} data-aos="fade-up">
         <Box maxW="1200px" mx="auto">
           <Text
             fontSize="sm"
@@ -487,7 +483,7 @@ CardDataHeader={[
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
-      <Box py="24" px={{ base: "6", md: "10" }}  data-aos="fade-up">
+      <Box py="24" px={{ base: "6", md: "10" }} data-aos="fade-up">
         <Box maxW="1200px" mx="auto">
           <Text
             fontSize="sm"
@@ -686,7 +682,8 @@ CardDataHeader={[
         </Box>
       </Box>
 
-      <Box  data-aos="fade-up"
+      <Box
+        data-aos="fade-up"
         py="24"
         px={{ base: "6", md: "10" }}
         display={"flex"}

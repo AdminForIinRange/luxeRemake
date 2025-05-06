@@ -1,10 +1,9 @@
 {
-    "ignorePatterns": [
-      "app/**/*",     // all routing files
-      "lib/appwrite/**",
-      "next.config.ts",
-      "tailwind.config.ts",
-      "next-sitemap.config.ts"
-    ]
-  }
-  
+  "ignorePatterns": [
+    "app/**/*", // all routing files
+    "lib/appwrite/**",
+    "next.config.ts",
+    "tailwind.config.ts",
+    "next-sitemap.config.ts"
+  ]
+}

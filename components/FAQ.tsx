@@ -1,8 +1,18 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Box, Text } from "@chakra-ui/react"
-import { ChevronDown, ChevronUp, Calendar, Star, Shield, Clock, Award, CheckCircle, ArrowRight } from "lucide-react"
+import { useState, useEffect } from "react";
+import { Box, Text } from "@chakra-ui/react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Calendar,
+  Star,
+  Shield,
+  Clock,
+  Award,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
 const faqs = [
   {
@@ -54,7 +64,7 @@ const faqs = [
     category: "services",
     icon: Star,
   },
-]
+];
 
 const pricingFaqs = [
   {
@@ -106,7 +116,7 @@ const pricingFaqs = [
     category: "pricing",
     icon: Calendar,
   },
-]
+];
 
 // Benefits data
 const benefits = [
@@ -130,45 +140,55 @@ const benefits = [
     title: "Time Saving",
     description: "Completely hands-off management solution",
   },
-]
+];
 
 const FAQ = ({ type }: { type: string }) => {
-  const isPricing = type === "pricing"
-  const selectedFaqs = isPricing ? pricingFaqs : faqs
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const [activeCategory, setActiveCategory] = useState<string>("all")
-  const [animatedItems, setAnimatedItems] = useState<boolean[]>(Array(selectedFaqs.length).fill(false))
+  const isPricing = type === "pricing";
+  const selectedFaqs = isPricing ? pricingFaqs : faqs;
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [animatedItems, setAnimatedItems] = useState<boolean[]>(
+    Array(selectedFaqs.length).fill(false),
+  );
 
   // Staggered animation for FAQ items
   useEffect(() => {
     const timer = setTimeout(() => {
-      const newAnimatedItems = [...animatedItems]
+      const newAnimatedItems = [...animatedItems];
       for (let i = 0; i < selectedFaqs.length; i++) {
         setTimeout(() => {
-          newAnimatedItems[i] = true
-          setAnimatedItems([...newAnimatedItems])
-        }, i * 100)
+          newAnimatedItems[i] = true;
+          setAnimatedItems([...newAnimatedItems]);
+        }, i * 100);
       }
-    }, 300)
+    }, 300);
 
-    return () => clearTimeout(timer)
-  }, [selectedFaqs])
+    return () => clearTimeout(timer);
+  }, [selectedFaqs]);
 
   // Get unique categories
-  const categories = ["all", ...Array.from(new Set(selectedFaqs.map((faq) => faq.category)))]
+  const categories = [
+    "all",
+    ...Array.from(new Set(selectedFaqs.map((faq) => faq.category))),
+  ];
 
   // Filter FAQs by category
   const filteredFaqs =
-    activeCategory === "all" ? selectedFaqs : selectedFaqs.filter((faq) => faq.category === activeCategory)
+    activeCategory === "all"
+      ? selectedFaqs
+      : selectedFaqs.filter((faq) => faq.category === activeCategory);
 
   // Header section with consultation button and benefits
-  
 
   // FAQ section
   return (
-    <Box maxWidth="1400px" mx="auto" px={["20px", "30px", "40px"]} mt={"100px"} pb={32}>
-  
-
+    <Box
+      maxWidth="1400px"
+      mx="auto"
+      px={["20px", "30px", "40px"]}
+      mt={"100px"}
+      pb={32}
+    >
       {/* Decorative elements */}
       <Box
         position="relative"
@@ -234,17 +254,26 @@ const FAQ = ({ type }: { type: string }) => {
             fontSize={["18px", "20px", "22px"]}
             color="#4B5563"
             fontWeight="400"
-      maxWidth="1200px"
+            maxWidth="1200px"
             mx="auto"
             mt={6}
             lineHeight="1.6"
           >
-            Frequently Asked Questions about our premium Airbnb management services
+            Frequently Asked Questions about our premium Airbnb management
+            services
           </Text>
         </Box>
 
         {/* Category filters */}
-        <Box display="flex" justifyContent="center" flexWrap="wrap" gap={3} mb={12} mx="auto"    maxWidth="1200px">
+        <Box
+          display="flex"
+          justifyContent="center"
+          flexWrap="wrap"
+          gap={3}
+          mb={12}
+          mx="auto"
+          maxWidth="1200px"
+        >
           {categories.map((category, index) => (
             <Box
               key={index}
@@ -257,7 +286,10 @@ const FAQ = ({ type }: { type: string }) => {
               borderColor={activeCategory === category ? "#0A1029" : "#E5E7EB"}
               cursor="pointer"
               onClick={() => setActiveCategory(category)}
-              _hover={{ borderColor: "#0A1029", color: activeCategory === category ? "white" : "#0A1029" }}
+              _hover={{
+                borderColor: "#0A1029",
+                color: activeCategory === category ? "white" : "#0A1029",
+              }}
               transition="all 0.2s"
               textTransform="capitalize"
               fontWeight={activeCategory === category ? "600" : "400"}
@@ -274,10 +306,9 @@ const FAQ = ({ type }: { type: string }) => {
           mx="auto"
           px={["0", "20px", "40px"]}
           position="relative"
-         
         >
           {filteredFaqs.map((faq, index) => {
-            const IconComponent = faq.icon || CheckCircle
+            const IconComponent = faq.icon || CheckCircle;
 
             return (
               <Box
@@ -285,7 +316,9 @@ const FAQ = ({ type }: { type: string }) => {
                 borderBottom="1px solid #E5E7EB"
                 py={5}
                 opacity={animatedItems[index] ? 1 : 0}
-                transform={animatedItems[index] ? "translateY(0)" : "translateY(20px)"}
+                transform={
+                  animatedItems[index] ? "translateY(0)" : "translateY(20px)"
+                }
                 transition="all 0.4s"
               >
                 <Box
@@ -293,7 +326,9 @@ const FAQ = ({ type }: { type: string }) => {
                   justifyContent="space-between"
                   alignItems="flex-start"
                   cursor="pointer"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
                   py={3}
                   px={4}
                   _hover={{ bg: "#F9FAFB" }}
@@ -313,11 +348,14 @@ const FAQ = ({ type }: { type: string }) => {
                     width="40px"
                     height="40px"
                     borderRadius="full"
-                   
                     border="1px solid"
                     borderColor={openIndex === index ? "#0A1029" : "#E5E7EB"}
                     transition="all 0.3s"
-                    boxShadow={openIndex === index ? "0 4px 12px rgba(10, 16, 41, 0.1)" : "none"}
+                    boxShadow={
+                      openIndex === index
+                        ? "0 4px 12px rgba(10, 16, 41, 0.1)"
+                        : "none"
+                    }
                     zIndex="1"
                   >
                     <IconComponent size={18} />
@@ -340,7 +378,11 @@ const FAQ = ({ type }: { type: string }) => {
                     borderRadius="full"
                     transition="all 0.2s"
                   >
-                    {openIndex === index ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    {openIndex === index ? (
+                      <ChevronUp size={20} />
+                    ) : (
+                      <ChevronDown size={20} />
+                    )}
                   </Box>
                 </Box>
 
@@ -376,7 +418,7 @@ const FAQ = ({ type }: { type: string }) => {
                   </Text>
                 </Box>
               </Box>
-            )
+            );
           })}
         </Box>
 
@@ -386,7 +428,7 @@ const FAQ = ({ type }: { type: string }) => {
           bg="#F9FAFB"
           p={8}
           borderRadius="16px"
-                maxWidth="1200px"
+          maxWidth="1200px"
           mx="auto"
           display="flex"
           flexDirection={["column", "column", "row"]}
@@ -401,8 +443,9 @@ const FAQ = ({ type }: { type: string }) => {
               Still have questions?
             </Text>
             <Text fontSize="16px" color="#4B5563" lineHeight="1.6">
-              Our team is ready to provide personalized answers to all your questions about Airbnb management and how we
-              can help maximize your property's potential.
+              Our team is ready to provide personalized answers to all your
+              questions about Airbnb management and how we can help maximize
+              your property's potential.
             </Text>
           </Box>
           <Box
@@ -428,10 +471,9 @@ const FAQ = ({ type }: { type: string }) => {
         </Box>
 
         {/* Stats section */}
-        
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQ;

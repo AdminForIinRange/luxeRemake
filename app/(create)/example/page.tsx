@@ -32,7 +32,12 @@ export default async function ArticlePage({ params }: Props) {
               >
                 {article.articleTitle}
               </Text>
-              <HStack gap="4" flexWrap="wrap" opacity="0.9" fontSize={["sm", "md"]}>
+              <HStack
+                gap="4"
+                flexWrap="wrap"
+                opacity="0.9"
+                fontSize={["sm", "md"]}
+              >
                 <HStack gap="2">
                   <CalendarIcon size={16} />
                   <Text>April 11, 2025</Text>
@@ -50,7 +55,12 @@ export default async function ArticlePage({ params }: Props) {
               </HStack>
               {/* Use Introduction Subheading from database */}
               {article.introductionSubheading && (
-                <Text as="h2" fontSize={["lg", "xl"]} fontWeight="600" color="#374151">
+                <Text
+                  as="h2"
+                  fontSize={["lg", "xl"]}
+                  fontWeight="600"
+                  color="#374151"
+                >
                   {article.introductionSubheading}
                 </Text>
               )}
@@ -75,18 +85,24 @@ export default async function ArticlePage({ params }: Props) {
                 >
                   Introduction
                 </Text>
-                <Stack direction={["column", "column", "row"]} gap="8" align="center">
+                <Stack
+                  direction={["column", "column", "row"]}
+                  gap="8"
+                  align="center"
+                >
                   <Box flex="1">
-                    <Text fontSize={["lg", "xl"]} mb="4" color="#374151" lineHeight="1.7">
+                    <Text
+                      fontSize={["lg", "xl"]}
+                      mb="4"
+                      color="#374151"
+                      lineHeight="1.7"
+                    >
                       {article.introductionContent}
                     </Text>
                   </Box>
                   <Box
                     flex="1"
-                    backgroundImage={
-                   
-                      `url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`
-                  }
+                    backgroundImage={`url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`}
                     backgroundSize="cover"
                     backgroundPosition="center"
                     backgroundRepeat="no-repeat"
@@ -131,10 +147,15 @@ export default async function ArticlePage({ params }: Props) {
                   borderColor="#e2e8f0"
                   pb="2"
                 >
-                  {article.contentOneSubheadingTitle || "End-to-End Management That Delivers"}
+                  {article.contentOneSubheadingTitle ||
+                    "End-to-End Management That Delivers"}
                 </Text>
                 <Box p="6" bg="#f8fafc" borderRadius="md">
-                  <Text fontSize={["lg", "xl"]} color="#374151" lineHeight="1.7">
+                  <Text
+                    fontSize={["lg", "xl"]}
+                    color="#374151"
+                    lineHeight="1.7"
+                  >
                     {article.contentOneParagraph}
                   </Text>
                 </Box>
@@ -155,13 +176,14 @@ export default async function ArticlePage({ params }: Props) {
                 >
                   {article.contentTwoSubheadingTitle || "The Luxe Advantage"}
                 </Text>
-                <Stack direction={["column", "column", "row"]} gap="8" align="center">
+                <Stack
+                  direction={["column", "column", "row"]}
+                  gap="8"
+                  align="center"
+                >
                   <Box
                     flex="1"
-                   backgroundImage={
-                   
-                        `url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`
-                    }
+                    backgroundImage={`url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`}
                     backgroundSize="cover"
                     backgroundPosition="center"
                     backgroundRepeat="no-repeat"
@@ -172,7 +194,11 @@ export default async function ArticlePage({ params }: Props) {
                     boxShadow="lg"
                   ></Box>
                   <Box flex="1">
-                    <Text fontSize={["lg", "xl"]} color="#374151" lineHeight="1.7">
+                    <Text
+                      fontSize={["lg", "xl"]}
+                      color="#374151"
+                      lineHeight="1.7"
+                    >
                       {article.contentTwoParagraph}
                     </Text>
                   </Box>
@@ -180,28 +206,33 @@ export default async function ArticlePage({ params }: Props) {
               </Box>
 
               {/* Optional Content Three Section */}
-              {article.contentThreeSubheadingTitle && article.contentThreeParagraph && (
-                <Box id="content-three" mb="16" scrollMarginTop="5rem">
-                  <Text
-                    as="h2"
-                    fontSize={["1.5rem", "1.75rem", "2rem"]}
-                    fontWeight="700"
-                    color="#0a2342"
-                    mb="6"
-                    lineHeight="1.2"
-                    borderBottom="2px solid"
-                    borderColor="#e2e8f0"
-                    pb="2"
-                  >
-                    {article.contentThreeSubheadingTitle}
-                  </Text>
-                  <Box p="6" bg="#f8fafc" borderRadius="md">
-                    <Text fontSize={["lg", "xl"]} color="#374151" lineHeight="1.7">
-                      {article.contentThreeParagraph}
+              {article.contentThreeSubheadingTitle &&
+                article.contentThreeParagraph && (
+                  <Box id="content-three" mb="16" scrollMarginTop="5rem">
+                    <Text
+                      as="h2"
+                      fontSize={["1.5rem", "1.75rem", "2rem"]}
+                      fontWeight="700"
+                      color="#0a2342"
+                      mb="6"
+                      lineHeight="1.2"
+                      borderBottom="2px solid"
+                      borderColor="#e2e8f0"
+                      pb="2"
+                    >
+                      {article.contentThreeSubheadingTitle}
                     </Text>
+                    <Box p="6" bg="#f8fafc" borderRadius="md">
+                      <Text
+                        fontSize={["lg", "xl"]}
+                        color="#374151"
+                        lineHeight="1.7"
+                      >
+                        {article.contentThreeParagraph}
+                      </Text>
+                    </Box>
                   </Box>
-                </Box>
-              )}
+                )}
 
               {/* Conclusion Section */}
               <Box id="conclusion" mb="16" scrollMarginTop="5rem">
@@ -218,7 +249,12 @@ export default async function ArticlePage({ params }: Props) {
                 >
                   {article.conclusionSubheading || "Conclusion"}
                 </Text>
-                <Text fontSize={["lg", "xl"]} mb="8" color="#374151" lineHeight="1.7">
+                <Text
+                  fontSize={["lg", "xl"]}
+                  mb="8"
+                  color="#374151"
+                  lineHeight="1.7"
+                >
                   {article.conclusionParagraph}
                 </Text>
               </Box>
@@ -239,7 +275,12 @@ export default async function ArticlePage({ params }: Props) {
                   >
                     {article.extraSubheading || "Why Choose Luxe Managements"}
                   </Text>
-                  <Text fontSize={["lg", "xl"]} mb="8" color="#374151" lineHeight="1.7">
+                  <Text
+                    fontSize={["lg", "xl"]}
+                    mb="8"
+                    color="#374151"
+                    lineHeight="1.7"
+                  >
                     {article.extraContentParagraph}
                   </Text>
                 </Box>

@@ -1,14 +1,11 @@
-import {
-  Box,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import {
   DialogContent,
   DialogCloseTrigger,
   DialogRoot,
 } from "@/components/chakra-snippets/dialog";
 import React, { useState } from "react";
-import { Calendar } from 'lucide-react';
+import { Calendar } from "lucide-react";
 
 const ScheduleConsultation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -61,14 +58,9 @@ const ScheduleConsultation = () => {
             bg="rgba(255, 255, 255, 0.02)"
             zIndex={0}
           />
-          
+
           {/* Content container */}
-          <Box
-            width="100%"
-            maxWidth="1000px"
-            zIndex={1}
-            textAlign="center"
-          >
+          <Box width="100%" maxWidth="1000px" zIndex={1} textAlign="center">
             {/* Heading */}
             <Text
               color="white"
@@ -81,7 +73,7 @@ const ScheduleConsultation = () => {
             >
               Ready to transform your property management?
             </Text>
-            
+
             {/* Subtitle */}
             <Text
               color="rgba(255, 255, 255, 0.9)"
@@ -92,9 +84,10 @@ const ScheduleConsultation = () => {
               lineHeight="1.5"
               mb={["30px", "35px", "40px"]}
             >
-              Get a full consultation, market analysis in under 24 hours for free
+              Get a full consultation, market analysis in under 24 hours for
+              free
             </Text>
-            
+
             {/* Button */}
             <Box
               display="flex"
@@ -117,23 +110,22 @@ const ScheduleConsultation = () => {
                 justifyContent="center"
                 transition="all 0.3s ease"
                 cursor="pointer"
-                boxShadow={isHovered ? "0px 6px 20px rgba(0, 0, 0, 0.2)" : "0px 4px 12px rgba(0, 0, 0, 0.1)"}
+                boxShadow={
+                  isHovered
+                    ? "0px 6px 20px rgba(0, 0, 0, 0.2)"
+                    : "0px 4px 12px rgba(0, 0, 0, 0.1)"
+                }
                 transform={isHovered ? "translateY(-2px)" : "none"}
                 onClick={() => setIsDialogOpen(true)}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 _focus={{ outline: "none" }}
               >
-                <Box 
-                  as={Calendar} 
-                  size={18} 
-                  mr="10px" 
-                  display="inline-block"
-                />
+                <Box as={Calendar} size={18} mr="10px" display="inline-block" />
                 <Text>Schedule a consultation</Text>
               </Box>
             </Box>
-            
+
             {/* Additional benefits list */}
             <Box
               display="flex"
@@ -149,13 +141,9 @@ const ScheduleConsultation = () => {
               {[
                 "Personalized property assessment",
                 "Market rate analysis",
-                "ROI optimization strategies"
+                "ROI optimization strategies",
               ].map((benefit, index) => (
-                <Box 
-                  key={index}
-                  display="flex"
-                  alignItems="center"
-                >
+                <Box key={index} display="flex" alignItems="center">
                   <Box
                     width="6px"
                     height="6px"
@@ -206,7 +194,7 @@ const ScheduleConsultation = () => {
                 Schedule Your Free Consultation
               </Text>
             </Box>
-            
+
             <iframe
               loading="lazy"
               className="calendly-frame"
