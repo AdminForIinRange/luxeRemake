@@ -76,49 +76,18 @@ const PropertyManagement = () => {
           justifyContent={"center"}
           textAlign={"center"}
         >
-          <HStack
-            justify={"center"}
-            align={"center"}
-            w={"100%"}
-            transition={"all 0.2s ease-in-out"}
-            zIndex={3}
-            id="get-started-button"
-          >
-            <Box
-              w={"90%"}
-              h={"100%"}
-              borderRadius={"30px"}
-              p={"25px"}
-              display={"flex"}
-              flexDir={"column"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              textAlign={"center"}
-            >
-              <Text
-                w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-                mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-                fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
-                fontWeight={600}
-                fontFamily={"Raleway"}
-                bgClip="text"
-                textAlign={[
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                ]}
-                color={"black"}
-                bgGradient="linear(to-r, teal, blue)"
-              >
-                Our Methodology
-              </Text>
-            </Box>
-          </HStack>
+        
          
       <ServicesThreeCards
+
+CardDataHeader={[
+  {
+    mainTitle: "Visual Excellence",
+    mainDescription:
+      "Elevate your property's performance and reputation with Luxe Managements' comprehensive approach. We combine meticulous attention to detail with market expertise to create a distinguished destination.",
+  },
+]}
+
         cardsData={[
           {
             imgUrl:
@@ -142,6 +111,14 @@ const PropertyManagement = () => {
               "Dynamic pricing and targeted marketing strategies that optimize your property's earning potential.",
           },
         ]}
+        CardDataHeader={[
+          {
+            mainTitle: "Our Methodology",
+            mainDescription:
+              "We deliver exceptional solutions tailored to your unique needs, combining industry expertise with innovative approaches to maximize your property's potential.",
+          },
+        ]}
+
       />
         </Box>
       </HStack>

@@ -56,69 +56,7 @@ const CleaningAndLinen = () => {
           justifyContent={"center"}
           textAlign={"center"}
         >
-          <HStack
-            justify={"center"}
-            align={"center"}
-            w={"100%"}
-            transition={"all 0.2s ease-in-out"}
-            zIndex={3}
-            id="get-started-button"
-          >
-            <Box
-              w={"90%"}
-              h={"100%"}
-              borderRadius={"30px"}
-              p={"25px"}
-              display={"flex"}
-              flexDir={"column"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              textAlign={"center"}
-            >
-              <Text
-                w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-                mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-                fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
-                fontWeight={600}
-                fontFamily={"Raleway"}
-                bgClip="text"
-                textAlign={[
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                ]}
-                color={"black"}
-                bgGradient="linear(to-r, teal, blue)"
-              >
-                Redefining Cleanliness
-              </Text>
-
-              <Text
-                fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
-                mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-                textAlign={[
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                ]}
-                fontFamily={"Raleway"}
-                color={"black"}
-                w={["90%", "90%", "90%", "50%", "50%", "50%"]}
-                fontWeight={300}
-              >
-                Elevate your property's performance and reputation with Luxe
-                Managements' comprehensive approach. We combine meticulous
-                attention to detail with market expertise to create a
-                distinguished destination.
-              </Text>
-            </Box>
-          </HStack>
+       
       
           <ServicesThreeCards
         cardsData={[
@@ -142,6 +80,14 @@ const CleaningAndLinen = () => {
             title: "  Impeccable Detail",
             description:
               "We meticulously clean every corner, ensuring no detail is overlooked.",
+          },
+        ]}
+
+        CardDataHeader={[
+          {
+            mainTitle: "Redefining Cleanliness",
+            mainDescription:
+              "Elevate your property's performance and reputation with Luxe Managements' comprehensive approach. We combine meticulous attention to detail with market expertise to create a distinguished destination.",
           },
         ]}
       />

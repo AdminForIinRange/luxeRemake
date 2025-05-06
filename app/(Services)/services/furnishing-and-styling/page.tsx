@@ -156,59 +156,18 @@ const FurnishingAndStyling = () => {
           justifyContent={"center"}
           textAlign={"center"}
         >
-          <HStack
-            justify={"center"}
-            align={"center"}
-            w={"100%"}
-            transition={"all 0.2s ease-in-out"}
-            zIndex={3}
-            id="get-started-button"
-          >
-            <Box
-              w={"90%"}
-              h={"100%"}
-              borderRadius={"30px"}
-              p={"25px"}
-              display={"flex"}
-              flexDir={"column"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              textAlign={"center"}
-            >
-              <Text
-                fontSize="sm"
-                fontWeight="medium"
-                color="#1A365D"
-                textAlign="center"
-                mb="2"
-                letterSpacing="0.5px"
-              >
-                Luxe Management
-              </Text>
-
-              <Text
-                w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-                fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
-                fontWeight={600}
-                fontFamily={"Raleway"}
-                bgClip="text"
-                textAlign={[
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                  "center",
-                ]}
-                color={"black"}
-                bgGradient="linear(to-r, teal, blue)"
-              >
-                The Luxe Distinction
-              </Text>
-            </Box>
-          </HStack>
+     
 
           <ServicesThreeCards
+
+CardDataHeader={[
+  {
+    mainTitle: "The Luxe Distinction",
+    mainDescription:
+      "Elevate your property's performance and reputation with Luxe Managements' comprehensive approach. We combine meticulous attention to detail with market expertise to create a distinguished destination.",
+  },
+]}
+
             cardsData={[
               {
                 imgUrl:
