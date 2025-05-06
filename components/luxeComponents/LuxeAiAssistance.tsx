@@ -74,7 +74,7 @@ const LuxeAiAssistance = () => {
       flexDirection="column"
       overflow="hidden"
       zIndex={9998}
-      border={open ? "2px solid lightgray" :"4px solid lightgray"}
+      border={open ? "2px solid lightgray" :"2px solid lightgray"}
     >
       {/* Chat Icon (Closed State) */}
       {!open && (
