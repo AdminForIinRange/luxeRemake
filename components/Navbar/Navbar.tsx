@@ -1,66 +1,103 @@
 "use client";
 
 import React, { useState, useRef, useCallback, memo } from "react";
-import { Box, Stack, Text, Flex, HStack } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import luxeLogo from "@/public/png/LuxeLogo.png";
 
 const Navbar = () => {
   const router = useRouter();
-
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const timeoutRef = useRef<any>(null);
-
   
-  const Dropdown = memo(({ items }: { items: { label: string; link: string }[] }) => (
+  // Simulate active page for demo purposes
+  const activePage = `/`;
+
+  const Dropdown = memo(({ items, category }: { items: { label: string; link: string; description?: string }[]; category: string }) => (
     <Box
-      borderRadius="4px"
       position="absolute"
-      top="100%"
+      top="calc(100% + 16px)"
       left="50%"
       transform="translateX(-50%)"
       bg="white"
-      border="1px solid #e0e0e0"
-      mt="2"
-      w="150px"
+      boxShadow="0 8px 24px rgba(0, 0, 0, 0.08)"
+      border={"1px solid #F5F5F5"}
+      borderRadius="8px"
+      w="320px"
       zIndex={10}
-      opacity={activeDropdown ? 1 : 0}
-      h={activeDropdown ? "auto" : "0px"}
+      opacity={activeDropdown === category ? 1 : 0}
+      visibility={activeDropdown === category ? "visible" : "hidden"}
+      transition="all 0.25s ease-in-out"
       overflow="hidden"
-      transition="all 0.3s ease-in-out"
-      pointerEvents={activeDropdown ? "auto" : "none"}
       onMouseEnter={() => clearTimeout(timeoutRef.current)}
-      onMouseLeave={() => setTimeout(() => setActiveDropdown(null), 300)}
+      onMouseLeave={() => {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => setActiveDropdown(null), 300);
+      }}
+      
     >
-      <Stack>
+      
+      <Box maxH="320px" overflowY="auto">
         {items.map((item, index) => (
           <Box
             key={index}
-            p="2"
+            p="16px 20px"
             cursor="pointer"
-            _hover={{ bg: "#f0f0f0" }}
-            fontSize="14px"
+            transition="all 0.2s ease"
+            _hover={{ bg: "#F9F9F9" }}
             onClick={() => router.push(item.link)}
+            borderBottom={index !== items.length - 1 ? "1px solid #F5F5F5" : "none"}
           >
-            <Text>{item.label}</Text>
+            <Text fontSize="15px" fontWeight="500" mb="4px">
+              {item.label}
+            </Text>
+            {item.description && (
+              <Text fontSize="13px" color="#666" lineHeight="1.4">
+                {item.description}
+              </Text>
+            )}
           </Box>
         ))}
-      </Stack>
+      </Box>
+      <Box p="12px 20px" bg="#F9F9F9" borderTop="1px solid #F5F5F5">
+        <Text 
+          fontSize="13px" 
+          fontWeight="500" 
+          color="#555"
+          cursor="pointer"
+          _hover={{ color: "#000" }}
+          onClick={() => router.push(`/${category}`)}
+        >
+          View all {category} →
+        </Text>
+      </Box>
     </Box>
   ));
   Dropdown.displayName = "Dropdown";
 
-  // Use useCallback to avoid creating a new function on every render
   const handleEnter = useCallback((name: string) => {
     clearTimeout(timeoutRef.current);
     setActiveDropdown(name);
+    setHoveredItem(name);
   }, []);
 
   const handleLeave = useCallback(() => {
+    clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(() => {
       setActiveDropdown(null);
+      setHoveredItem(null);
     }, 300);
+  }, []);
+
+
+  const handleItemHover = useCallback((name: string) => {
+    setHoveredItem(name);
+  }, []);
+
+  const handleItemLeave = useCallback(() => {
+    setHoveredItem(null);
   }, []);
 
   const handleNavigate = useCallback((path: string) => {
@@ -68,151 +105,239 @@ const Navbar = () => {
   }, [router]);
 
   return (
-    <Box w="100%" p={4} fontFamily="raleway">
-      <HStack borderBottom="1px solid #e0e0e0" pb={4}>
-        <Flex
-          direction={{ base: "column", lg: "row" }}
-          w="100%"
-          justify="center"
-          align="center"
-          gap={{ base: "25px", lg: "200px", xl: "500px" }}
+    <Box 
+      w="100%" 
+      position="sticky"
+      top="0"
+      zIndex="100"
+      bg="rgba(255, 255, 255, 0.9)"
+      backdropBlur="md"
+backdropFilter={"blur(10px)"}
+
+    >
+      {/* Top Bar with Contact Info */}
+      <Box 
+        w="100%" 
+        py="8px" 
+            bg="rgba(255, 255, 255, 0.9)"
+      backdropBlur="md"
+        borderBottom="1px solid #F0F0F0"
+        display={{ base: "none", md: "block" }}
+      >
+        <Box 
+          display="flex" 
+          justifyContent="space-between" 
+          alignItems="center" 
+          maxW="1400px" 
+          mx="auto"
+          px="40px"
         >
-          {/* Logo */}
-          <Stack
-            justify="center"
-            align="center"
-            direction={{ base: "column", md: "row" }}
-            cursor="pointer"
-            onClick={() => handleNavigate("/")}
-            gap="0px"
-          >
-            <Box w="70px" h="100%">
-              <Image src={luxeLogo} alt="Luxe Management Logo" priority />
-            </Box>
-            <Text fontSize="20px" fontWeight="700">
-              Luxe Management
+          <Box display="flex" alignItems="center">
+            <Text fontSize="13px" color="#666" mr="24px">
+              Luxury Property Management
             </Text>
-          </Stack>
+            <Text fontSize="13px" color="#666">
+              info@luxemanagement.com
+            </Text>
+          </Box>
+          <Box display="flex" alignItems="center">
+            <Text fontSize="13px" color="#666" mr="24px">
+              +1 (800) 555-1234
+            </Text>
+            <Text 
+              fontSize="13px" 
+              fontWeight="500" 
+              color="#333"
+              cursor="pointer"
+              _hover={{ color: "#000" }}
+              onClick={() => handleNavigate("/contact")}
+            >
+              Request a Quote
+            </Text>
+          </Box>
+        </Box>
+      </Box>
+      
+      {/* Main Navigation */}
+      <Box 
+        w="100%" 
+        py="10px" 
+        px="40px" 
+       
+        borderBottom="1px solid #F0F0F0"
 
-          {/* Nav Items */}
-          <HStack
-            fontSize="16px"
-            gap={["12px", "12px", "12px", "36px", "36px", "36px"]}
-            fontWeight="500"
-            wrap={["wrap", "nowrap", "nowrap", "nowrap", "nowrap", "nowrap"]}
-            justify={"center"}
-            
+
+
+        transition="all 0.3s ease"
+      >
+        <Box 
+          display="flex" 
+          justifyContent="space-between" 
+          alignItems="center" 
+          maxW="1400px" 
+          mx="auto"
+        >
+          {/* Logo Section */}
+          <Box 
+            display="flex" 
+            alignItems="center" 
+            cursor="pointer" 
+            onClick={() => handleNavigate("/")}
+            position="relative"
           >
-            {/* About */}
-            <Box
+            <Box 
+              w="66px" 
+              h="66px" 
+              mr="0px"
               position="relative"
-              onMouseEnter={() => handleEnter("about")}
-              onMouseLeave={handleLeave}
+              overflow="hidden"
             >
-              <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px"]}
-                cursor="pointer"
-                _hover={{ scale: 1.1, fontWeight: "700" }}
-                transition="all 0.2s ease-in-out"
-                onClick={() => handleNavigate("/about")}
-              >
-                About
-              </Box>
+              <Image src={luxeLogo || "/placeholder.svg"} alt="Luxe Management Logo" priority />
             </Box>
-
-            {/* News */}
-            <Box position="relative">
-              <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px"]}
-                cursor="pointer"
-                _hover={{ scale: 1.1, fontWeight: "700" }}
-                transition="all 0.2s ease-in-out"
-                onClick={() => handleNavigate("/news")}
+            <Box>
+              <Text 
+                fontSize="20px" 
+                fontWeight="600" 
+                letterSpacing="0.2px"
+                fontFamily="raleway"
+                color="#222222"
+                lineHeight="1.1"
               >
-                News
-              </Box>
+                Luxe Management
+              </Text>
+              <Text
+                fontSize="12px"
+                color="#777777"
+                letterSpacing="0.5px"
+                fontFamily="raleway"
+                textTransform="uppercase"
+              >
+                Premium Property Services
+              </Text>
             </Box>
+          </Box>
 
-            {/* Services Dropdown */}
+          {/* Navigation Items */}
+          <Box 
+            display="flex" 
+            alignItems="center" 
+            justifyContent="flex-end"
+          >
+            {[
+              { name: "About", path: "/about", hasDropdown: true, items: [
+                { label: "Our Story", link: "/about/#story", description: "Learn about our journey and values" },
+                { label: "Our Team", link: "/about/#team", description: "Meet the experts behind Luxe Management" },
+                { label: "Testimonials", link: "/about/#testimonials", description: "What our clients say about us" },
+                { label: "Our Journey", link: "/about/journey", description: "See how Luxe Management has evolved" },
+              ]},
+              { name: "News", path: "/news", hasDropdown: false },
+              { name: "Services", path: "/services", hasDropdown: true, items: [
+                { label: "Property Management", link: "/services/property-management", description: "Full-service management for luxury properties" },
+                { label: "Cleaning & Linen", link: "/services/cleaning-and-linen", description: "Premium cleaning and linen services" },
+                { label: "Furnishing & Styling", link: "/services/furnishing-and-styling", description: "Expert interior design and furnishing" },
+                { label: "Photography", link: "/services/photography", description: "Professional property photography" },
+              ]},
+              { name: "Pricing", path: "/pricing", hasDropdown: false },
+              { name: "Gallery", path: "/gallery", hasDropdown: false },
+              { name: "Contact", path: "/contact", hasDropdown: false },
+            ].map((item) => (
+              <Box
+                key={item.name}
+                position="relative"
+                mx="18px"
+                onMouseEnter={() => {
+                  handleItemHover(item.name.toLowerCase());
+                  if (item.hasDropdown) handleEnter(item.name.toLowerCase());
+                }}
+                onMouseLeave={() => {
+                  handleItemLeave();
+                  if (item.hasDropdown) handleLeave();
+                }}
+              >
+                <Box
+                  cursor="pointer"
+                  onClick={() => handleNavigate(item.path)}
+                  position="relative"
+                  pb="4px"
+                  role="group"
+                >
+                  <Text
+                    fontSize="16px"
+                    fontWeight={activePage === item.path ? "600" : "500"}
+                    fontFamily="raleway"
+                    transition="all 0.2s ease"
+                    color={activePage === item.path ? "#000000" : 
+                          hoveredItem === item.name.toLowerCase() ? "#000000" : "#444444"}
+                    letterSpacing="0.3px"
+                  >
+                    {item.name}
+                  </Text>
+                  <Box
+                    position="absolute"
+                    bottom="0"
+                    left="0"
+                    width={activePage === item.path ? "100%" : 
+                          hoveredItem === item.name.toLowerCase() ? "70%" : "0%"}
+                    height="2px"
+                    bg={activePage === item.path ? "#000000" : "#555555"}
+                    transition="all 0.3s ease"
+                  />
+                </Box>
+                {item.hasDropdown && (
+                  <Box
+                    position="absolute"
+                    top="100%"
+                    left="50%"
+                    transform="translateX(-50%)"
+                    width="16px"
+                    height="16px"
+                    pointerEvents="none"
+                    opacity={activeDropdown === item.name.toLowerCase() ? 1 : 0}
+                    visibility={activeDropdown === item.name.toLowerCase() ? "visible" : "hidden"}
+                    transition="all 0.25s ease-in-out"
+                    zIndex="101"
+                  >
+                    <Box
+                      position="absolute"
+                      top="8px"
+                      left="0"
+                      width="16px"
+                      height="16px"
+                      bg="white"
+                      transform="rotate(45deg)"
+                      boxShadow="0 0 10px rgba(0, 0, 0, 0.05)"
+                    />
+                  </Box>
+                )}
+                {item.hasDropdown && (
+                  <Dropdown 
+                    items={item.items || []} 
+                    category={item.name.toLowerCase()} 
+                  />
+                )}
+              </Box>
+            ))}
+            
+            {/* Call to Action Button */}
             <Box
-              position="relative"
-              onMouseEnter={() => handleEnter("services")}
-              onMouseLeave={handleLeave}
+              ml="24px"
+              bg="#222"
+              color="white"
+              px="20px"
+              py="10px"
+              borderRadius="4px"
+              cursor="pointer"
+              transition="all 0.2s ease"
+              _hover={{ bg: "#000" }}
+              onClick={() => handleNavigate("/contact")}
             >
-              <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px"]}
-                cursor="pointer"
-                _hover={{ scale: 1.1, fontWeight: "700" }}
-                transition="all 0.2s ease-in-out"
-                onClick={() => handleNavigate("/services")}
-              >
-                Services
-              </Box>
-              {activeDropdown === "services" && (
-                <Dropdown
-                  items={[
-                    { label: "Property Management", link: "/services/property-management" },
-                    { label: "Cleaning & Linen", link: "/services/cleaning-and-linen" },
-                    { label: "Furnishing & Styling", link: "/services/furnishing-and-styling" },
-                    { label: "Photography", link: "/services/photography" },
-                  ]}
-                />
-              )}
+              <Text fontSize="14px" fontWeight="500">
+                Get a Quote
+              </Text>
             </Box>
-
-            {/* Pricing */}
-            <Box
-              position="relative"
-              onMouseEnter={() => handleEnter("pricing")}
-              onMouseLeave={handleLeave}
-            >
-              <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px"]}
-                cursor="pointer"
-                _hover={{ scale: 1.1, fontWeight: "700" }}
-                transition="all 0.2s ease-in-out"
-                onClick={() => handleNavigate("/pricing")}
-              >
-                Pricing
-              </Box>
-            </Box>
-
-            {/* Gallery */}
-            <Box
-              position="relative"
-              onMouseEnter={() => handleEnter("gallery")}
-              onMouseLeave={handleLeave}
-            >
-              <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px"]}
-                cursor="pointer"
-                _hover={{ scale: 1.1, fontWeight: "700" }}
-                transition="all 0.2s ease-in-out"
-                onClick={() => handleNavigate("/gallery")}
-              >
-                Gallery
-              </Box>
-            </Box>
-
-            {/* Contact */}
-            <Box
-              position="relative"
-              onMouseEnter={() => handleEnter("contact")}
-              onMouseLeave={handleLeave}
-            >
-              <Box
-                fontSize={["16px", "16px", "16px", "18px", "18px"]}
-                cursor="pointer"
-                _hover={{ scale: 1.1, fontWeight: "700" }}
-                transition="all 0.2s ease-in-out"
-                onClick={() => handleNavigate("/contact")}
-              >
-                Contact
-              </Box>
-            </Box>
-          </HStack>
-        </Flex>
-      </HStack>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 };
