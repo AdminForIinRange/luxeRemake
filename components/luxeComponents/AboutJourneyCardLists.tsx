@@ -11,6 +11,7 @@ import {
   Globe,
   Briefcase,
 } from "lucide-react";
+import { useRouter } from "next/navigation"
 
 const AboutJourneyCardLists = () => {
   const journey = [
@@ -127,6 +128,7 @@ const AboutJourneyCardLists = () => {
       img: "https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg",
     },
   ];
+ const router = useRouter()
 
   return (
     <Box width="100%" position="relative" paddingY="120px">
@@ -483,6 +485,9 @@ const AboutJourneyCardLists = () => {
             transform: "translateY(-3px)",
             boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
             transition: "all 0.3s ease",
+          }}
+          onClick={() => {
+            router.push("/contact");
           }}
         >
           <Text>Partner With Us</Text>
