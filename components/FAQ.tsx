@@ -337,29 +337,7 @@ const FAQ = ({ type }: { type: string }) => {
                   position="relative"
                 >
                   {/* Icon indicator */}
-                  <Box
-                    position="absolute"
-                    left={["-10px", "-10px", "-52px"]}
-                    top="50%"
-                    transform="translateY(-50%)"
-                    display="flex"
-                    alignItems="center"
-                    justifyContent="center"
-                    width="40px"
-                    height="40px"
-                    borderRadius="full"
-                    border="1px solid"
-                    borderColor={openIndex === index ? "#0A1029" : "#E5E7EB"}
-                    transition="all 0.3s"
-                    boxShadow={
-                      openIndex === index
-                        ? "0 4px 12px rgba(10, 16, 41, 0.1)"
-                        : "none"
-                    }
-                    zIndex="1"
-                  >
-                    <IconComponent size={18} />
-                  </Box>
+         
 
                   <Text
                     fontSize={["17px", "18px", "19px"]}
