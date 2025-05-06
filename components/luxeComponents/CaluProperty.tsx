@@ -100,7 +100,7 @@ const CaluProperty = () => {
   };
 
   return (
-    <Box maxWidth="1400px" margin="0 auto" padding="20px">
+    <Box maxWidth="1400px" my={"100px"}  mx="auto" padding="20px">
       {/* Title */}
       <TitleSubheading
         title={"Tetsing Property Calculator"}

@@ -34,8 +34,8 @@ const Home = () => {
       <CaluProperty />
 
 
-      <HowWeCanGetYouStarted />
       <OurServices />
+      <HowWeCanGetYouStarted />
 
       {/* Use Suspense to lazy-load GalleryHeroSection */}
       <Suspense fallback={<div>Loading gallery...</div>}>
