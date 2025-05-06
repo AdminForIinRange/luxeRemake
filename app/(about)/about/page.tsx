@@ -11,6 +11,7 @@ import Zazeed from "@/public/images/compnayPFP/Zazeed.jpeg";
 import { FaAngleRight } from "react-icons/fa";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
 const About = () => {
   useEffect(() => {
     Aos.init({
@@ -770,6 +771,9 @@ const About = () => {
         </VStack>
       </HStack>
       {/* Call to Action */}
+
+
+      <ScheduleConsultation />
     </>
   );
 };

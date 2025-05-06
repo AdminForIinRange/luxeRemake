@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useRouter } from "next/navigation"
+import ScheduleConsultation from "./luxeComponents/scheduleConsultation";
 const faqs = [
   {
     question: "What services does your Airbnb management offer?",
@@ -453,6 +454,7 @@ const FAQ = ({ type }: { type: string }) => {
 
         {/* Stats section */}
       </Box>
+
     </Box>
   );
 };
