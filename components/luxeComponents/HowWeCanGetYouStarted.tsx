@@ -314,20 +314,18 @@ const HowWeCanGetYouStarted = () => {
                       textShadow="0 1px 2px rgba(0,0,0,0.3)"
                     >
                       {item.id === 1
-                        ? "Where it all began"
+                        ? "Feel free to contact"
                         : item.id === 2
-                          ? "First client signing"
+                          ? "Lets discuss startegy"
                           : item.id === 3
-                            ? "Operational innovation"
+                            ? "Open to the public"
                             : item.id === 4
-                              ? "Property styling excellence"
+                              ? "Relax and enjoy"
                               : item.id === 5
-                                ? "Guest experience focus"
+                                ? "Track Growth"
                                 : item.id === 6
                                   ? "Full-service independence"
-                                  : item.id === 7
-                                    ? "Regional expansion"
-                                    : "National growth strategy"}
+                                  : ""}
                     </Text>
                   </Box>
                 </Box>
