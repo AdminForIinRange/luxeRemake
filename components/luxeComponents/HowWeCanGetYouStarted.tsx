@@ -28,7 +28,7 @@ const HowWeCanGetYouStarted = () => {
       icon: <Phone size={20} />,
       stats: [],
       category: "Step 1",
-      img: "https://images.pexels.com/photos/5077042/pexels-photo-5077042.jpeg"
+      img: "https://images.pexels.com/photos/5292227/pexels-photo-5292227.jpeg"
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ const HowWeCanGetYouStarted = () => {
       icon: <User size={20} />,
       stats: [],
       category: "Step 2",
-      img: "https://images.pexels.com/photos/261679/pexels-photo-261679.jpeg"
+      img: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ const HowWeCanGetYouStarted = () => {
       icon: <Camera size={20} />,
       stats: [],
       category: "Step 3",
-      img: "https://images.pexels.com/photos/5816299/pexels-photo-5816299.jpeg"
+      img: "https://images.pexels.com/photos/5082576/pexels-photo-5082576.jpeg"
     },
     {
       id: 4,
@@ -55,7 +55,7 @@ const HowWeCanGetYouStarted = () => {
       icon: <Cog size={20} />,
       stats: [],
       category: "Step 4",
-      img: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg"
+      img: "https://images.pexels.com/photos/7513208/pexels-photo-7513208.jpeg"
     },
     {
       id: 5,
@@ -64,7 +64,7 @@ const HowWeCanGetYouStarted = () => {
       icon: <ChartArea size={20} />,
       stats: [],
       category: "Step 5",
-      img: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg"
+      img: "https://images.pexels.com/photos/6483619/pexels-photo-6483619.jpeg"
     },
   
   ]
@@ -351,7 +351,62 @@ const HowWeCanGetYouStarted = () => {
           </Box>
         ))}
       </Box>
+  <Box
+        width="100%"
+        maxWidth="1200px"
+        margin="0 auto"
+        marginTop="160px"
+        paddingX={["30px", "40px", "60px"]}
+        textAlign="center"
+      >
+        <Text
+          fontSize={["28px", "32px", "36px"]}
+          fontWeight="700"
+          fontFamily="arial"
+          color="black"
+          marginBottom="30px"
+        >
+          Join Us on Our Journey
+        </Text>
 
+        <Text
+          fontSize={["17px", "18px", "20px"]}
+          lineHeight="1.8"
+          fontFamily="arial"
+          color="#555"
+          fontWeight="400"
+          maxWidth="800px"
+          margin="0 auto"
+          marginBottom="50px"
+        >
+          As we continue to grow and innovate, we're looking for property owners
+          who share our vision for exceptional hospitality and management
+          excellence.
+        </Text>
+
+        <Box
+          display="inline-block"
+          backgroundColor="#000"
+          color="white"
+          paddingX="40px"
+          paddingY="20px"
+          borderRadius="12px"
+          fontWeight="600"
+          fontSize="18px"
+          cursor="pointer"
+          _hover={{
+            backgroundColor: "#222",
+            transform: "translateY(-3px)",
+            boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+            transition: "all 0.3s ease",
+          }}
+          onClick={() => {
+            router.push("/contact");
+          }}
+        >
+          <Text>Partner With Us</Text>
+        </Box>
+      </Box>
       {/* Footer Section */}
        <HStack
              my={["50px", "50px", "50px", "50px", "50px", "50px"]}
