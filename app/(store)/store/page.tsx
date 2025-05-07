@@ -282,10 +282,10 @@ const Store = () => {
 
           <Box display="flex" flexWrap="wrap" gap="24px">
             {[
-              { name: "Hypoallergenic Pillow Set", price: "$59", rating: 4.8 },
-              { name: "Digital Keypad Safe", price: "$79", rating: 4.7 },
-              { name: "Welcome Basket Essentials", price: "$49", rating: 4.9 },
-              { name: "Eco-Friendly Cleaning Bundle", price: "$65", rating: 4.6 },
+              { name: "Hypoallergenic Pillow Set", price: "$59" },
+              { name: "Digital Keypad Safe", price: "$79" },
+              { name: "Welcome Basket Essentials", price: "$49"  },
+              { name: "Eco-Friendly Cleaning Bundle", price: "$65"},
             ].map((product, index) => (
               <Box
                 key={index}
@@ -303,14 +303,7 @@ const Store = () => {
                     {product.price}
                   </Text>
                 </Box>
-                <Box display="flex" alignItems="center">
-                  <Box display="flex" alignItems="center" mr="6px">
-                    <Star size={14} fill="currentColor" color="orange" />
-                  </Box>
-                  <Text fontSize="14px" color="gray.600">
-                    {product.rating}
-                  </Text>
-                </Box>
+               
               </Box>
             ))}
           </Box>
