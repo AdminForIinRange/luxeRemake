@@ -243,7 +243,7 @@ const AboutJourneyCardLists = () => {
                   "left",
                   "left",
                   "left",
-                  index % 2 === 0 ? "right" : "left",
+                  index % 2 === 0 ? "left" : "left",
                 ]}
               >
                 {/* Category Tag */}

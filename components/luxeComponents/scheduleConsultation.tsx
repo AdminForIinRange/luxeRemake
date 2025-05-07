@@ -7,12 +7,14 @@ import {
 import React, { useState } from "react";
 import { Calendar } from "lucide-react";
 
+
 const ScheduleConsultation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <>
+
       <Box
         my={["60px", "70px", "80px", "90px", "100px"]}
         width="100%"
@@ -47,7 +49,7 @@ const ScheduleConsultation = () => {
               color="white"
               fontWeight="700"
               fontSize={["28px", "32px", "40px", "48px", "56px"]}
-              fontFamily="arial"
+              fontFamily="sans"
               lineHeight={["1.2", "1.1"]}
               letterSpacing="-0.02em"
               mb={["16px", "20px"]}
@@ -59,7 +61,7 @@ const ScheduleConsultation = () => {
             <Text
               color="rgba(255, 255, 255, 0.9)"
               fontSize={["14px", "16px", "18px", "20px", "22px"]}
-              fontFamily="arial"
+              fontFamily="sans"
               maxWidth="800px"
               mx="auto"
               lineHeight="1.5"
@@ -83,7 +85,7 @@ const ScheduleConsultation = () => {
                 py={["12px", "14px", "16px"]}
                 px={["24px", "32px", "40px"]}
                 borderRadius="full"
-                fontFamily="arial"
+                fontFamily="sans"
                 fontSize={["14px", "15px", "16px"]}
                 fontWeight={isHovered ? "600" : "500"}
                 display="flex"
@@ -135,7 +137,7 @@ const ScheduleConsultation = () => {
                   <Text
                     color="rgba(255, 255, 255, 0.8)"
                     fontSize={["12px", "13px", "14px"]}
-                    fontFamily="arial"
+                    fontFamily="sans"
                   >
                     {benefit}
                   </Text>
@@ -170,7 +172,7 @@ const ScheduleConsultation = () => {
                 color="white"
                 fontWeight="600"
                 fontSize="20px"
-                fontFamily="arial"
+                fontFamily="sans"
               >
                 Schedule Your Free Consultation
               </Text>

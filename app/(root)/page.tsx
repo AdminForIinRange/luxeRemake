@@ -11,11 +11,14 @@ import HowWeCanGetYouStarted from "@/components/luxeComponents/HowWeCanGetYouSta
 import OurServices from "@/components/luxeComponents/OurServices";
 import CaluProperty from "@/components/luxeComponents/CaluProperty";
 import StickyGallery from "@/components/houseScrollDown/StickyGallery";
+import { BoxScrollMoveDown } from "@/components/luxeComponents/BoxScrollMoveDown";
 
 // Lazy load the GalleryHeroSection component
 const GalleryHeroSection = React.lazy(
   () => import("@/components/luxeComponents/GalleryHeroSection"),
 );
+
+
 
 const Home = () => {
   return (
@@ -35,8 +38,11 @@ const Home = () => {
       <CaluProperty />
 
 
+
       <OurServices />
+
       <HowWeCanGetYouStarted />
+      
       <StickyGallery />
 
       {/* Use Suspense to lazy-load GalleryHeroSection */}

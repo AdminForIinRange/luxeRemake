@@ -1,250 +1,367 @@
 import React from "react";
+import { Box, HStack, Text } from "@chakra-ui/react";
 import {
-  Box,
-  Stack,
-  HStack,
-  Icon,
-  DialogCloseTrigger,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+  Check,
+  Calendar,
+  Award,
+  TrendingUp,
+  Home,
+  Zap,
+  Users,
+  Globe,
+  Briefcase,
+  Camera,
+  Cog,
+  Phone,
+  User,
+  ChartArea,
+} from "lucide-react";
+import { useRouter } from "next/navigation"
+import { BoxScrollMoveDown } from "./BoxScrollMoveDown";
+
 const HowWeCanGetYouStarted = () => {
-  const GettingStartedSteps = [
+  const gettingStarted = [
     {
       id: 1,
-      title: "Get Started",
-      description:
-        'Click "Get In Touch" with our team to discuss your property.',
+      title: "Get In Touch with Our Team",
+      description: "Click 'Get In Touch' to discuss your property’s needs. We'll guide you through the next steps and answer any questions.",
+      icon: <Phone size={20} />,
+      stats: [],
+      category: "Step 1",
+      img: "https://images.pexels.com/photos/5077042/pexels-photo-5077042.jpeg"
     },
     {
       id: 2,
       title: "Meet Your Local Hosting Partner",
-      description:
-        "Meet at your property for an inspection. We'll gather details and start our partnership.",
+      description: "We'll visit your property for an inspection to gather key details, personalizing our management approach for a seamless partnership.",
+      icon: <User size={20} />,
+      stats: [],
+      category: "Step 2",
+      img: "https://images.pexels.com/photos/261679/pexels-photo-261679.jpeg"
     },
     {
       id: 3,
       title: "Onboarding and Listing Creation",
-      description:
-        "We handle photos and listing creation. Your property will shine on Airbnb and Booking.com.",
+      description: "We’ll take care of professional photos and create detailed listings on platforms like Airbnb, ensuring your property attracts the right guests.",
+      icon: <Camera size={20} />,
+      stats: [],
+      category: "Step 3",
+      img: "https://images.pexels.com/photos/5816299/pexels-photo-5816299.jpeg"
     },
     {
       id: 4,
       title: "Enjoy Hassle-Free Management",
-      description:
-        "Relax while we manage everything. Bookings, pricing, guest management, and cleaning are all covered.",
+      description: "Sit back and relax while we handle bookings, pricing, guest communication, cleaning, and maintenance to ensure smooth operations.",
+      icon: <Cog size={20} />,
+      stats: [],
+      category: "Step 4",
+      img: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg"
     },
-  ];
+    {
+      id: 5,
+      title: "Track Your Property’s Progress",
+      description: "Get real-time updates on booking rates, revenue, and guest feedback to ensure your goals are being met.",
+      icon: <ChartArea size={20} />,
+      stats: [],
+      category: "Step 5",
+      img: "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg"
+    },
+  
+  ]
+  
+ const router = useRouter()
+
   return (
-    <>
-      <HStack
-        zIndex={3}
-        px={["4%", "4%", "6%", "6%", "6%", "10%"]}
-        justify={"center"} // !!
-        align={"center"}
-        w={"100%"}
-        h={"100%"}
-        my={["155px", "155px", "155px", "155px", "155px", "155px"]}
-      >
-        <HStack
-          justify={["center", "center", "center", "center", "center", "center"]}
-          align={["center", "center", "start", "start", "start", "start"]}
+    <Box width="100%" position="relative" my={"50px"} >
+      {/* Introduction Section */}
+    <HStack
+          mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
+          justify={"center"}
+          align={"center"}
           w={"100%"}
-          h={"100%"}
-          gap={["5px", "5px", "5px", "5px", "5px", "5px"]}
-          wrap={["wrap", "wrap", "nowrap", "nowrap", "nowrap", "nowrap"]}
         >
-          <Box w={["100%", "100%", "100%", "60%", "50%", "50%"]}>
-            <Text
-              data-aos="fade-up"
-              w={["100%", "100%", "80%", "80%", "80%", "80%"]}
-              mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
-              fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
-              fontWeight={700}
-              fontFamily={"arial"}
-              bgClip="text"
-              textAlign={["center", "center", "left", "left", "left", "left"]}
-              color={"black"}
-              bgGradient="linear(to-r, teal, blue)"
-            >
-              How We Can Get You Get Started
-            </Text>
-            <Text
-              fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
-              mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
-              textAlign={["center", "center", "left", "left", "left", "left"]}
-              fontFamily={"arial"}
-              color={"black"}
-              w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
-              fontWeight={300}
-            >
-              Learn how we can help you get started with personalized guidance
-              and expert support every step of the way.
-            </Text>
-            <HStack
-              data-aos="fade-up"
-              justify={[
-                "center",
-                "center",
-                "center",
-                "start",
-                "start",
-                "start",
-              ]}
-              align={"start"}
-              w={"100%"}
-              transition={"all 0.2s ease-in-out"}
-              zIndex={3}
-            >
-              <Box
-                mt={"50px"}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={"center"}
-                gap={"15px"}
-                fontFamily={"arial"}
-                transition={"all 0.2s ease-in-out"}
-                cursor={"pointer"}
-                _hover={{
-                  transition: "all 0.2s ease-in-out",
-                  scale: 1.1,
-                  fontWeight: "700",
-                  px: "80px",
-                  bg: "black",
-                }}
-                p={4}
-                bg={"black"}
-                color={"white"}
-                rounded={"30px"}
-                px={"12"}
-                fontWeight={"500"}
-                onClick={() => {
-                  const element = document.getElementById("get-started-button");
-                  if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
-              >
-                Get in Touch
-                {/* <Icon as={ArrowRight}> </Icon> */}
-              </Box>
-            </HStack>
-          </Box>
-
-          <Box
-            mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
-            display={["block", "block", "block", "block", "block", "block"]}
-            // border={"1px solid rgb(0, 0, 0,0.25)"}
-            h={["500px", "500px", "500px", "500px", "500px", "500px"]}
-            w={["100%", "100%", "100%", "450px", "550px", "550px"]}
-            backdropFilter="blur(1.5px)"
-            borderRadius={"30px"}
-            bgPos={"center"}
-            bgSize={"cover"}
-          >
-            {" "}
-            {GettingStartedSteps.slice(0, 4).map(
-              ({ id, title, description }, index) => (
-                <VStack
-                  data-aos="fade-up"
-                  key={id}
-                  w={"100%"}
-                  align={"center"}
-                  justify={"start"}
-                >
-                  <HStack
-                    w={"100%"}
-                    h={"100%"}
-                    justify={"start"}
-                    align={"start"}
-                    gap={2}
-                  >
-                    <VStack justify={"center"} gap={0}>
-                      <Box
-                        w={"50px"}
-                        h={"50px"}
-                        borderRadius={"15px"}
-                        bg={"white"}
-                        border={"1px solid rgb(0, 0,0,0.25)"}
-                      >
-                        <HStack
-                          w={"100%"}
-                          justify={"center"}
-                          h={"100%"}
-                          align={"center"}
-                        >
-                          <Text
-                            fontSize={[
-                              "14px",
-                              "18px",
-                              "16px",
-                              "16px",
-                              "18px",
-                              "18px",
-                            ]}
-                            fontWeight={500}
-                            color={"black"}
-                          >
-                            {id}
-                          </Text>
-                        </HStack>
-                      </Box>
-                      {index < 3 && (
-                        <Box
-                          transition={"transform 0.3s ease"}
-                          zIndex={-1}
-                          w={"5px"}
-                          h={"100px"}
-                          bg={"#BFBFBF"}
-                        ></Box>
-                      )}
-                    </VStack>
-
-                    <Box>
-                      <Text
-                        fontSize={[
-                          "14px",
-                          "14px",
-                          "16px",
-                          "16px",
-                          "18px",
-                          "18px",
-                        ]}
-                        fontWeight={500}
-                        textAlign={"left"}
-                        fontFamily={"arial"}
-                        color={"black"}
-                        w={"100%"} // !important
-                      >
-                        {title}
-                      </Text>
-                      <Text
-                        fontSize={[
-                          "13px",
-                          "13px",
-                          "15px",
-                          "15px",
-                          "17px",
-                          "17px",
-                        ]}
-                        textAlign={"left"}
-                        fontFamily={"arial"}
-                        color={"black"}
-                        w={"100%"}
-                        fontWeight={300}
-                      >
-                        {description}
-                      </Text>
-                    </Box>
-                  </HStack>
-                </VStack>
-              ),
-            )}
-            {/* <Image src={collage} />   //!cool */}
-          </Box>
+          <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
         </HStack>
-      </HStack>
-    </>
+<BoxScrollMoveDown />
+      {/* Timeline Container with Central Line */}
+      <Box
+        width="100%"
+        position="relative"
+        _before={{
+          content: '""',
+          position: "absolute",
+          top: "0",
+          bottom: "0",
+          left: ["30px", "30px", "30px", "50%"],
+          width: "2px",
+          backgroundColor: "#f0f0f0",
+          transform: ["none", "none", "none", "translateX(-1px)"],
+          zIndex: "0",
+        }}
+      >
+        {gettingStarted.map((item, index) => (
+          <Box
+            key={index}
+            data-aos="fade-up"
+            position="relative"
+            width="100%"
+            maxWidth="1600px"
+            margin="0 auto"
+            paddingBottom={index === gettingStarted.length - 1 ? "0" : "180px"}
+          >
+            {/* Timeline Node */}
+            <Box
+              position="absolute"
+              left={["30px", "30px", "30px", "50%"]}
+              top="0"
+              width="50px"
+              height="50px"
+              borderRadius="50%"
+              backgroundColor="white"
+              border="2px solid #e0e0e0"
+              transform={[
+                "translateX(-50%)",
+                "translateX(-50%)",
+                "translateX(-50%)",
+                "translateX(-50%)",
+              ]}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              zIndex="2"
+              _hover={{
+                backgroundColor: "#f8f8f8",
+                boxShadow: "0 0 0 8px rgba(0,0,0,0.03)",
+                transition: "all 0.3s ease",
+              }}
+            >
+              <Box color="#333">{item.icon}</Box>
+            </Box>
+
+            {/* Content Container */}
+            <Box
+              display="flex"
+              flexDirection={[
+                "column",
+                "column",
+                "column",
+                index % 2 === 0 ? "row" : "row-reverse",
+              ]}
+              paddingLeft={["80px", "80px", "80px", "0"]}
+              paddingTop={["0", "0", "0", "60px"]}
+            >
+              {/* Text Content */}
+              <Box
+                width={["100%", "100%", "100%", "50%"]}
+                paddingRight={["0", "0", "0", index % 2 === 0 ? "120px" : "0"]}
+                paddingLeft={["0", "0", "0", index % 2 === 0 ? "0" : "120px"]}
+                textAlign={[
+                  "left",
+                  "left",
+                  "left",
+                  index % 2 === 0 ? "left" : "left",
+                ]}
+              >
+                {/* Category Tag */}
+                <Box
+                  display="inline-block"
+                  backgroundColor="#f5f5f5"
+                  paddingX="16px"
+                  paddingY="8px"
+                  borderRadius="6px"
+                  marginBottom="24px"
+                >
+                  <Text
+                    fontSize="14px"
+                    fontWeight="600"
+                    letterSpacing="1px"
+                    color="#555"
+                  >
+                    {item.category}
+                  </Text>
+                </Box>
+
+                {/* Title */}
+                <Text
+                  fontSize={["32px", "36px", "40px"]}
+                  fontWeight="700"
+                  fontFamily="arial"
+                  color="black"
+                  lineHeight="1.2"
+                  marginBottom="16px"
+                >
+                  {item.title}
+                </Text>
+
+                {/* Subtitle */}
+                <Text
+                  fontSize={["20px", "22px", "24px"]}
+                  fontWeight="500"
+                  fontFamily="arial"
+                  color="#555"
+                  marginBottom="30px"
+                >
+                  {item.subtitle}
+                </Text>
+
+                {/* Description */}
+                <Text
+                  fontSize={["16px", "17px", "18px"]}
+                  lineHeight="1.8"
+                  fontFamily="arial"
+                  color="#333"
+                  fontWeight="400"
+                  marginBottom="40px"
+                >
+                  {item.description}
+                </Text>
+
+                {/* Stats */}
+                <Box
+                  display="flex"
+                  flexDirection="row"
+                  flexWrap="wrap"
+                  gap="20px"
+                  justifyContent={[
+                    "flex-start",
+                    "flex-start",
+                    "flex-start",
+                    index % 2 === 0 ? "flex-end" : "flex-start",
+                  ]}
+                >
+                  {item.stats &&
+                    item.stats.map((stat, statIndex) => (
+                      <Box
+                        key={statIndex}
+                        backgroundColor="white"
+                        border="1px solid #e0e0e0"
+                        borderRadius="12px"
+                        paddingX="24px"
+                        paddingY="20px"
+                        display="flex"
+                        flexDirection="column"
+                        alignItems="center"
+                        minWidth="150px"
+                        _hover={{
+                          boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
+                          transform: "translateY(-3px)",
+                          transition: "all 0.3s ease",
+                        }}
+                      >
+                        <Text
+                          fontSize="24px"
+                          fontWeight="700"
+                          color="#333"
+                          marginBottom="8px"
+                        >
+                          {stat.value}
+                        </Text>
+                        <Text fontSize="14px" fontWeight="500" color="#777">
+                          {stat.label}
+                        </Text>
+                      </Box>
+                    ))}
+                </Box>
+              </Box>
+
+              {/* Image Container */}
+              <Box
+                width={["100%", "100%", "100%", "50%"]}
+                marginTop={["50px", "50px", "50px", "0"]}
+                position="relative"
+                paddingX={["0", "0", "0", "30px"]}
+              >
+                <Box
+                  width="100%"
+                  height={["300px", "350px", "400px"]}
+                  borderRadius="20px"
+                  overflow="hidden"
+                  position="relative"
+                  backgroundImage={`url(${item.img})`}
+                  backgroundSize="cover"
+                  backgroundPosition="center"
+                  boxShadow="0 12px 40px rgba(0, 0, 0, 0.12)"
+                  _before={{
+                    content: '""',
+                    position: "absolute",
+                    top: "0",
+                    left: "0",
+                    right: "0",
+                    bottom: "0",
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%)",
+                    zIndex: "1",
+                  }}
+                  _hover={{
+                    transform: "scale(1.02)",
+                    transition: "transform 0.5s ease",
+                    boxShadow: "0 16px 50px rgba(0, 0, 0, 0.15)",
+                  }}
+                >
+                  {/* Optional image overlay content */}
+                  <Box
+                    position="absolute"
+                    bottom="0"
+                    left="0"
+                    padding="30px"
+                    zIndex="2"
+                    width="100%"
+                  >
+                    <Text
+                      fontSize="16px"
+                      fontWeight="600"
+                      color="white"
+                      textShadow="0 1px 2px rgba(0,0,0,0.3)"
+                    >
+                      {item.id === 1
+                        ? "Where it all began"
+                        : item.id === 2
+                          ? "First client signing"
+                          : item.id === 3
+                            ? "Operational innovation"
+                            : item.id === 4
+                              ? "Property styling excellence"
+                              : item.id === 5
+                                ? "Guest experience focus"
+                                : item.id === 6
+                                  ? "Full-service independence"
+                                  : item.id === 7
+                                    ? "Regional expansion"
+                                    : "National growth strategy"}
+                    </Text>
+                  </Box>
+                </Box>
+
+                {/* Decorative elements */}
+                <Box
+                  position="absolute"
+                  top="-20px"
+                  right={index % 2 === 0 ? "-20px" : "auto"}
+                  left={index % 2 === 0 ? "auto" : "-20px"}
+                  width="100px"
+                  height="100px"
+                  borderRadius="16px"
+                  border="2px solid #f0f0f0"
+                  backgroundColor="rgba(255,255,255,0.8)"
+                  display={["none", "none", "none", "block"]}
+                  zIndex="-1"
+                />
+              </Box>
+            </Box>
+          </Box>
+        ))}
+      </Box>
+
+      {/* Footer Section */}
+       <HStack
+             my={["50px", "50px", "50px", "50px", "50px", "50px"]}
+             justify={"center"}
+             align={"center"}
+             w={"100%"}
+           >
+             <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+           </HStack>
+    </Box>
   );
 };
 

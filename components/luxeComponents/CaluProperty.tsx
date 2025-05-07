@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box, Strong, Text } from "@chakra-ui/react";
+import { Box, HStack, Strong, Text } from "@chakra-ui/react";
 import { Search, DollarSign, Users, Calendar, MapPin, ChevronDown, TrendingUp, Zap } from 'lucide-react';
 import TitleSubheading from "./Text/titleSubheading";
 
@@ -124,7 +124,20 @@ const CaluProperty = () => {
   );
 
   return (
+
+    <>
+   
+    <HStack
+             my={["50px", "50px", "100px", "100px", "100px", "100px"]}
+             justify={"center"}
+             align={"center"}
+             w={"100%"}
+           >
+             <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+           </HStack>
     <Box maxWidth="1400px" my="100px" mx="auto" padding="20px">
+
+  
       <TitleSubheading
         title={"Luxe Property Calculator"}
         subheading={"Analyze and calculate your property investment value"}
@@ -255,6 +268,8 @@ const CaluProperty = () => {
         </Box>
       )}
     </Box>
+  
+    </>
   );
 };
 

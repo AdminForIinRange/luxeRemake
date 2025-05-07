@@ -4,7 +4,7 @@ import { ReactLenis } from 'lenis/react';
 export default function StickyGallery(): JSX.Element {
   return (
     <ReactLenis root>
-      <main className='p-8 ' >
+      <main className='p-8 my-16 ' >
        
 
         <section className='text-white   w-full  '>
