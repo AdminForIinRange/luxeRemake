@@ -7,45 +7,45 @@ const Testimonials = () => {
   const [reviews, setReviews] = useState([
     {
       text: "I highly recommend. They were attentive to our needs and worked tirelessly to find us a client for our holiday house property. We couldn't be happier with our new place!",
-      name: "Dan Abrahmov",
+      name: "Danny L.",
       rating: 5,
       image:
-        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20suit",
+       "https://images.pexels.com/photos/31966004/pexels-photo-31966004.jpeg",
     },
     {
       text: "Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free.",
-      name: "Kent Dodds",
+      name: "Cristy D.",
       rating: 4,
       image:
-        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20glasses",
+      "https://images.pexels.com/photos/31971996/pexels-photo-31971996.jpeg",
     },
     {
       text: "Fantastic service! They took the time to understand exactly what I was looking for and found the perfect match. I couldn't be happier!",
       rating: 5,
-      name: "Segun Adebayo",
+      name: "Sam B.",
       image:
-        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20smiling",
+        "https://images.pexels.com/photos/31968521/pexels-photo-31968521.jpeg",
     },
     {
       text: "Great experience from start to finish. They kept us informed and made sure we got the best deal possible. I would recommend them to anyone!",
       rating: 5,
-      name: "Christian Nwamba",
+      name: "Christian R.",
       image:
-        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20casual",
+    "https://images.pexels.com/photos/31934179/pexels-photo-31934179.jpeg",
     },
     {
       text: "Very responsive and professional. They helped us find a great property in a short amount of time. Definitely recommend their services!",
-      name: "Sophia M.",
+      name: "John M.",
       rating: 4,
       image:
-        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20woman%20business",
+        "https://images.pexels.com/photos/19512726/pexels-photo-19512726.jpeg",
     },
     {
       text: "They were patient and helped us every step of the way. We appreciated their attention to detail and ability to handle any challenge that came up.",
       name: "Michael T.",
       rating: 4,
       image:
-        "/placeholder.svg?height=80&width=80&query=professional%20headshot%20man%20tie",
+        "https://images.pexels.com/photos/31921683/pexels-photo-31921683.jpeg",
     },
   ]);
 
@@ -255,7 +255,7 @@ const Testimonials = () => {
                 marginRight="16px"
                 backgroundImage={`url(${reviews[currentSlide].image})`}
                 backgroundSize="cover"
-                backgroundPosition="center"
+                backgroundPosition="top"
                 border="2px solid rgba(0,0,0,0.1)"
               />
 
