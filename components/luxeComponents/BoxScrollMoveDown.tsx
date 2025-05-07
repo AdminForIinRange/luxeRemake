@@ -5,8 +5,9 @@ import { ContainerScroll } from "@/components/ScrollBoxMove/container-scroll-ani
 import Image from "next/image";
 import GalleryImgScreenShot from "@/public/images/webImages/GalleryImgScreenShot.png";
 import { Box, HStack, Text } from "@chakra-ui/react";
-
+import { useRouter } from "next/navigation"
 export function BoxScrollMoveDown() {
+    const router = useRouter()
   return (
     <div className="flex flex-col overflow-hidden">
       <ContainerScroll
@@ -77,10 +78,9 @@ export function BoxScrollMoveDown() {
                           px={"12"}
                           fontWeight={"500"}
                           onClick={() => {
-                            const element = document.getElementById("get-started-button");
-                            if (element) {
-                              element.scrollIntoView({ behavior: "smooth" });
-                            }
+                            
+                            router.push("/contact")
+
                           }}
                         >
                           Get in Touch

@@ -10,6 +10,7 @@ import {
   DialogCloseTrigger,
   DialogRoot,
 } from "@/components/chakra-snippets/dialog";
+import HowWeCanGetYouStarted from "@/components/luxeComponents/HowWeCanGetYouStarted";
 
 const Contact = () => {
   useEffect(() => {
@@ -427,6 +428,9 @@ const Contact = () => {
           border-radius: 0 0 16px 16px;
         }
       `}</style>
+
+<HowWeCanGetYouStarted />
+
     </Box>
   );
 };
