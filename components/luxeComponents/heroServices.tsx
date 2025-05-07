@@ -165,7 +165,6 @@ const HeroServices = () => {
                     fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
                     fontWeight={"700"}
                     color={"black"}
-
                   >
                     40%
                   </Text>

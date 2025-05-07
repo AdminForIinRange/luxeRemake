@@ -18,8 +18,6 @@ const GalleryHeroSection = React.lazy(
   () => import("@/components/luxeComponents/GalleryHeroSection"),
 );
 
-
-
 const Home = () => {
   return (
     <>
@@ -34,24 +32,18 @@ const Home = () => {
       {/* Render Hero and other components normally */}
       <Hero />
 
-
       <CaluProperty />
-
-
 
       <OurServices />
 
       <HowWeCanGetYouStarted />
-      
+
       <StickyGallery />
 
       {/* Use Suspense to lazy-load GalleryHeroSection */}
       <Suspense fallback={<div>Loading gallery...</div>}>
         <GalleryHeroSection />
       </Suspense>
-
-
-
 
       <Testimonials />
 

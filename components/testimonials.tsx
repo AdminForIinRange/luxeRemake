@@ -10,14 +10,14 @@ const Testimonials = () => {
       name: "Danny L.",
       rating: 5,
       image:
-       "https://images.pexels.com/photos/31966004/pexels-photo-31966004.jpeg",
+        "https://images.pexels.com/photos/31966004/pexels-photo-31966004.jpeg",
     },
     {
       text: "Their professionalism and dedication were truly exceptional. They made the entire process seamless and stress-free.",
       name: "Cristy D.",
       rating: 4,
       image:
-      "https://images.pexels.com/photos/31971996/pexels-photo-31971996.jpeg",
+        "https://images.pexels.com/photos/31971996/pexels-photo-31971996.jpeg",
     },
     {
       text: "Fantastic service! They took the time to understand exactly what I was looking for and found the perfect match. I couldn't be happier!",
@@ -31,7 +31,7 @@ const Testimonials = () => {
       rating: 5,
       name: "Christian R.",
       image:
-    "https://images.pexels.com/photos/31934179/pexels-photo-31934179.jpeg",
+        "https://images.pexels.com/photos/31934179/pexels-photo-31934179.jpeg",
     },
     {
       text: "Very responsive and professional. They helped us find a great property in a short amount of time. Definitely recommend their services!",
@@ -78,7 +78,12 @@ const Testimonials = () => {
   };
   return (
     <>
-      <HStack         my={["50px", "50px", "100px", "100px", "100px", "100px"]} justify={"center"} align={"center"} w={"100%"}>
+      <HStack
+        my={["50px", "50px", "100px", "100px", "100px", "100px"]}
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+      >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
       <HStack

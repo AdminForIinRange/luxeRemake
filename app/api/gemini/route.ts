@@ -8,7 +8,10 @@ export async function POST(request: NextRequest) {
     const { topic } = await request.json();
 
     if (!topic || typeof topic !== "string") {
-      return NextResponse.json({ error: "Missing or invalid topic." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Missing or invalid topic." },
+        { status: 400 },
+      );
     }
 
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
@@ -147,7 +150,7 @@ Now answer the following user query in the voice of Luxe Management:
     console.error("BACKEND ERROR:", error.message);
     return NextResponse.json(
       { error: "Failed to generate content.", details: error.message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

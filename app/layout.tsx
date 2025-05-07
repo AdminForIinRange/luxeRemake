@@ -20,7 +20,6 @@ const ClientProviderWithFallback = dynamic(
 
 // Load the arial font with specific weights (optimized)
 
-
 export default function RootLayout({ children }) {
   return (
     <html
@@ -45,8 +44,9 @@ export default function RootLayout({ children }) {
         <SpeedInsights />
         <Suspense fallback={<Loading />}>
           <ClientProviderWithFallback>
-          <LuxeAiAssistance />
-            {children}</ClientProviderWithFallback>
+            <LuxeAiAssistance />
+            {children}
+          </ClientProviderWithFallback>
         </Suspense>
       </body>
     </html>

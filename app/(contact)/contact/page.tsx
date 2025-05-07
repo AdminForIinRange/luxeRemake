@@ -429,8 +429,7 @@ const Contact = () => {
         }
       `}</style>
 
-<HowWeCanGetYouStarted />
-
+      <HowWeCanGetYouStarted />
     </Box>
   );
 };

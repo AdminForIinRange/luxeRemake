@@ -16,7 +16,7 @@ import {
   User,
   ChartArea,
 } from "lucide-react";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 import { BoxScrollMoveDown } from "./BoxScrollMoveDown";
 
 const HowWeCanGetYouStarted = () => {
@@ -24,65 +24,69 @@ const HowWeCanGetYouStarted = () => {
     {
       id: 1,
       title: "Get In Touch with Our Team",
-      description: "Click 'Get In Touch' to discuss your property’s needs. We'll guide you through the next steps and answer any questions.",
+      description:
+        "Click 'Get In Touch' to discuss your property’s needs. We'll guide you through the next steps and answer any questions.",
       icon: <Phone size={20} />,
       stats: [],
       category: "Step 1",
-      img: "https://images.pexels.com/photos/5292227/pexels-photo-5292227.jpeg"
+      img: "https://images.pexels.com/photos/5292227/pexels-photo-5292227.jpeg",
     },
     {
       id: 2,
       title: "Meet Your Local Hosting Partner",
-      description: "We'll visit your property for an inspection to gather key details, personalizing our management approach for a seamless partnership.",
+      description:
+        "We'll visit your property for an inspection to gather key details, personalizing our management approach for a seamless partnership.",
       icon: <User size={20} />,
       stats: [],
       category: "Step 2",
-      img: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+      img: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
     },
     {
       id: 3,
       title: "Onboarding and Listing Creation",
-      description: "We’ll take care of professional photos and create detailed listings on platforms like Airbnb, ensuring your property attracts the right guests.",
+      description:
+        "We’ll take care of professional photos and create detailed listings on platforms like Airbnb, ensuring your property attracts the right guests.",
       icon: <Camera size={20} />,
       stats: [],
       category: "Step 3",
-      img: "https://images.pexels.com/photos/5082576/pexels-photo-5082576.jpeg"
+      img: "https://images.pexels.com/photos/5082576/pexels-photo-5082576.jpeg",
     },
     {
       id: 4,
       title: "Enjoy Hassle-Free Management",
-      description: "Sit back and relax while we handle bookings, pricing, guest communication, cleaning, and maintenance to ensure smooth operations.",
+      description:
+        "Sit back and relax while we handle bookings, pricing, guest communication, cleaning, and maintenance to ensure smooth operations.",
       icon: <Cog size={20} />,
       stats: [],
       category: "Step 4",
-      img: "https://images.pexels.com/photos/7513208/pexels-photo-7513208.jpeg"
+      img: "https://images.pexels.com/photos/7513208/pexels-photo-7513208.jpeg",
     },
     {
       id: 5,
       title: "Track Your Property’s Progress",
-      description: "Get real-time updates on booking rates, revenue, and guest feedback to ensure your goals are being met.",
+      description:
+        "Get real-time updates on booking rates, revenue, and guest feedback to ensure your goals are being met.",
       icon: <ChartArea size={20} />,
       stats: [],
       category: "Step 5",
-      img: "https://images.pexels.com/photos/6483619/pexels-photo-6483619.jpeg"
+      img: "https://images.pexels.com/photos/6483619/pexels-photo-6483619.jpeg",
     },
-  
-  ]
-  
- const router = useRouter()
+  ];
+
+  const router = useRouter();
 
   return (
-    <Box width="100%" position="relative" my={"50px"} >
+    <Box width="100%" position="relative" my={"50px"}>
       {/* Introduction Section */}
-    <HStack
-                 my={["50px", "50px", "100px", "100px", "100px", "100px"]}
-          justify={"center"}
-          align={"center"}
-          w={"100%"}
-        >
-          <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
-        </HStack>
-<BoxScrollMoveDown />
+      <HStack
+        my={["50px", "50px", "100px", "100px", "100px", "100px"]}
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+      >
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      </HStack>
+      <BoxScrollMoveDown />
       {/* Timeline Container with Central Line */}
       <Box
         width="100%"
@@ -349,7 +353,7 @@ const HowWeCanGetYouStarted = () => {
           </Box>
         ))}
       </Box>
-  <Box
+      <Box
         width="100%"
         maxWidth="1200px"
         margin="0 auto"
@@ -406,14 +410,14 @@ const HowWeCanGetYouStarted = () => {
         </Box>
       </Box>
       {/* Footer Section */}
-       <HStack
-                   my={["50px", "50px", "100px", "100px", "100px", "100px"]}
-             justify={"center"}
-             align={"center"}
-             w={"100%"}
-           >
-             <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
-           </HStack>
+      <HStack
+        my={["50px", "50px", "100px", "100px", "100px", "100px"]}
+        justify={"center"}
+        align={"center"}
+        w={"100%"}
+      >
+        <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
+      </HStack>
     </Box>
   );
 };

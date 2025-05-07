@@ -1,11 +1,24 @@
-import { Box, Text } from "@chakra-ui/react"
-import { Search, ShoppingBag, User, Menu, ChevronRight, Heart, Star } from "lucide-react"
+import { Box, Text } from "@chakra-ui/react";
+import {
+  Search,
+  ShoppingBag,
+  User,
+  Menu,
+  ChevronRight,
+  Heart,
+  Star,
+} from "lucide-react";
 
 const Store = () => {
   return (
     <>
       {/* Main Container */}
-      <Box width="100%" maxWidth="1200px" mx="auto" px={{ base: "16px", md: "24px" }}>
+      <Box
+        width="100%"
+        maxWidth="1200px"
+        mx="auto"
+        px={{ base: "16px", md: "24px" }}
+      >
         {/* Header */}
         <Box
           display="flex"
@@ -24,8 +37,21 @@ const Store = () => {
 
           {/* Navigation - Desktop */}
           <Box display={{ base: "none", md: "flex" }} gap="32px">
-            {["Home", "Bedding", "Linens", "Furniture", "Cleaning", "Guest Amenities"].map((item) => (
-              <Text key={item} fontSize="15px" fontWeight="500" cursor="pointer" _hover={{ color: "blue.500" }}>
+            {[
+              "Home",
+              "Bedding",
+              "Linens",
+              "Furniture",
+              "Cleaning",
+              "Guest Amenities",
+            ].map((item) => (
+              <Text
+                key={item}
+                fontSize="15px"
+                fontWeight="500"
+                cursor="pointer"
+                _hover={{ color: "blue.500" }}
+              >
                 {item}
               </Text>
             ))}
@@ -85,7 +111,12 @@ const Store = () => {
         </Box>
 
         {/* Hero Section */}
-        <Box mt="40px" display="flex" flexDirection={{ base: "column", md: "row" }} gap="24px">
+        <Box
+          mt="40px"
+          display="flex"
+          flexDirection={{ base: "column", md: "row" }}
+          gap="24px"
+        >
           {/* Main Feature */}
           <Box
             flex="2"
@@ -96,11 +127,20 @@ const Store = () => {
             overflow="hidden"
           >
             <Box position="absolute" bottom="0" left="0" p="32px" width="100%">
-              <Text fontSize={{ base: "24px", md: "32px" }} fontWeight="700" mb="8px">
+              <Text
+                fontSize={{ base: "24px", md: "32px" }}
+                fontWeight="700"
+                mb="8px"
+              >
                 Premium Bedding Collection
               </Text>
-              <Text fontSize={{ base: "14px", md: "16px" }} mb="16px" maxWidth="80%">
-                Luxury quilts and linens that will delight your guests and earn you 5-star reviews
+              <Text
+                fontSize={{ base: "14px", md: "16px" }}
+                mb="16px"
+                maxWidth="80%"
+              >
+                Luxury quilts and linens that will delight your guests and earn
+                you 5-star reviews
               </Text>
               <Box
                 display="flex"
@@ -175,11 +215,21 @@ const Store = () => {
 
         {/* Categories Section */}
         <Box mt="64px">
-          <Box display="flex" justifyContent="space-between" alignItems="center" mb="24px">
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            mb="24px"
+          >
             <Text fontSize="22px" fontWeight="700">
               Shop by Category
             </Text>
-            <Box display="flex" alignItems="center" cursor="pointer" _hover={{ color: "blue.500" }}>
+            <Box
+              display="flex"
+              alignItems="center"
+              cursor="pointer"
+              _hover={{ color: "blue.500" }}
+            >
               <Text fontWeight="500" fontSize="14px" mr="4px">
                 View All
               </Text>
@@ -200,7 +250,10 @@ const Store = () => {
             ].map((category) => (
               <Box
                 key={category}
-                flex={{ base: "1 0 calc(50% - 8px)", md: "1 0 calc(25% - 12px)" }}
+                flex={{
+                  base: "1 0 calc(50% - 8px)",
+                  md: "1 0 calc(25% - 12px)",
+                }}
                 height="180px"
                 bg="gray.100"
                 borderRadius="12px"
@@ -222,11 +275,21 @@ const Store = () => {
 
         {/* Featured Products */}
         <Box mt="64px">
-          <Box display="flex" justifyContent="space-between" alignItems="center" mb="24px">
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            mb="24px"
+          >
             <Text fontSize="22px" fontWeight="700">
               Bestselling Products
             </Text>
-            <Box display="flex" alignItems="center" cursor="pointer" _hover={{ color: "blue.500" }}>
+            <Box
+              display="flex"
+              alignItems="center"
+              cursor="pointer"
+              _hover={{ color: "blue.500" }}
+            >
               <Text fontWeight="500" fontSize="14px" mr="4px">
                 View All
               </Text>
@@ -236,19 +299,27 @@ const Store = () => {
 
           <Box display="flex" flexWrap="wrap" gap="24px">
             {[
-              { name: "Premium Cotton Quilt Set", price: "$129", },
-              { name: "Luxury Bath Towel Bundle", price: "$89", },
-              { name: "Smart Lock for Rentals", price: "$199",},
-              { name: "Professional Cleaning Kit", price: "$79", },
+              { name: "Premium Cotton Quilt Set", price: "$129" },
+              { name: "Luxury Bath Towel Bundle", price: "$89" },
+              { name: "Smart Lock for Rentals", price: "$199" },
+              { name: "Professional Cleaning Kit", price: "$79" },
             ].map((product, index) => (
               <Box
                 key={index}
-                flex={{ base: "1 0 calc(50% - 12px)", md: "1 0 calc(25% - 18px)" }}
+                flex={{
+                  base: "1 0 calc(50% - 12px)",
+                  md: "1 0 calc(25% - 18px)",
+                }}
                 cursor="pointer"
                 transition="transform 0.2s"
                 _hover={{ transform: "translateY(-4px)" }}
               >
-                <Box height={{ base: "200px", md: "280px" }} bg="gray.100" borderRadius="12px" mb="12px" />
+                <Box
+                  height={{ base: "200px", md: "280px" }}
+                  bg="gray.100"
+                  borderRadius="12px"
+                  mb="12px"
+                />
                 <Box display="flex" justifyContent="space-between" mb="4px">
                   <Text fontSize="15px" fontWeight="600">
                     {product.name}
@@ -257,10 +328,7 @@ const Store = () => {
                     {product.price}
                   </Text>
                 </Box>
-                <Box display="flex" alignItems="center">
-                  
-                
-                </Box>
+                <Box display="flex" alignItems="center"></Box>
               </Box>
             ))}
           </Box>
@@ -268,11 +336,21 @@ const Store = () => {
 
         {/* Host Favorites Section */}
         <Box mt="64px">
-          <Box display="flex" justifyContent="space-between" alignItems="center" mb="24px">
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            mb="24px"
+          >
             <Text fontSize="22px" fontWeight="700">
               Host Favorites
             </Text>
-            <Box display="flex" alignItems="center" cursor="pointer" _hover={{ color: "blue.500" }}>
+            <Box
+              display="flex"
+              alignItems="center"
+              cursor="pointer"
+              _hover={{ color: "blue.500" }}
+            >
               <Text fontWeight="500" fontSize="14px" mr="4px">
                 View All
               </Text>
@@ -284,17 +362,25 @@ const Store = () => {
             {[
               { name: "Hypoallergenic Pillow Set", price: "$59" },
               { name: "Digital Keypad Safe", price: "$79" },
-              { name: "Welcome Basket Essentials", price: "$49"  },
-              { name: "Eco-Friendly Cleaning Bundle", price: "$65"},
+              { name: "Welcome Basket Essentials", price: "$49" },
+              { name: "Eco-Friendly Cleaning Bundle", price: "$65" },
             ].map((product, index) => (
               <Box
                 key={index}
-                flex={{ base: "1 0 calc(50% - 12px)", md: "1 0 calc(25% - 18px)" }}
+                flex={{
+                  base: "1 0 calc(50% - 12px)",
+                  md: "1 0 calc(25% - 18px)",
+                }}
                 cursor="pointer"
                 transition="transform 0.2s"
                 _hover={{ transform: "translateY(-4px)" }}
               >
-                <Box height={{ base: "200px", md: "280px" }} bg="gray.100" borderRadius="12px" mb="12px" />
+                <Box
+                  height={{ base: "200px", md: "280px" }}
+                  bg="gray.100"
+                  borderRadius="12px"
+                  mb="12px"
+                />
                 <Box display="flex" justifyContent="space-between" mb="4px">
                   <Text fontSize="15px" fontWeight="600">
                     {product.name}
@@ -303,23 +389,38 @@ const Store = () => {
                     {product.price}
                   </Text>
                 </Box>
-               
               </Box>
             ))}
           </Box>
         </Box>
 
         {/* Host Tips Section */}
-        <Box mt="80px" mb="40px" bg="gray.100" borderRadius="16px" p={{ base: "32px", md: "48px" }}>
-          <Text fontSize={{ base: "24px", md: "28px" }} fontWeight="700" mb="24px">
+        <Box
+          mt="80px"
+          mb="40px"
+          bg="gray.100"
+          borderRadius="16px"
+          p={{ base: "32px", md: "48px" }}
+        >
+          <Text
+            fontSize={{ base: "24px", md: "28px" }}
+            fontWeight="700"
+            mb="24px"
+          >
             Hosting Tips & Guides
           </Text>
 
           <Box display="flex" flexWrap="wrap" gap="24px">
             {[
-              { title: "Essential Amenities Every Airbnb Should Have", type: "Guide" },
+              {
+                title: "Essential Amenities Every Airbnb Should Have",
+                type: "Guide",
+              },
               { title: "Quick Turnover Cleaning Checklist", type: "Checklist" },
-              { title: "How to Earn Consistent 5-Star Reviews", type: "Article" },
+              {
+                title: "How to Earn Consistent 5-Star Reviews",
+                type: "Article",
+              },
             ].map((item, index) => (
               <Box
                 key={index}
@@ -354,14 +455,26 @@ const Store = () => {
           alignItems="center"
           textAlign="center"
         >
-          <Text fontSize={{ base: "24px", md: "28px" }} fontWeight="700" mb="16px">
+          <Text
+            fontSize={{ base: "24px", md: "28px" }}
+            fontWeight="700"
+            mb="16px"
+          >
             Join Our Host Community
           </Text>
           <Text fontSize="16px" maxWidth="500px" mb="24px">
-            Subscribe to get special offers, hosting tips, and early access to new products for your rental property.
+            Subscribe to get special offers, hosting tips, and early access to
+            new products for your rental property.
           </Text>
           <Box display="flex" width="100%" maxWidth="480px" height="48px">
-            <Box flex="1" bg="white" borderRadius="8px 0 0 8px" px="16px" display="flex" alignItems="center">
+            <Box
+              flex="1"
+              bg="white"
+              borderRadius="8px 0 0 8px"
+              px="16px"
+              display="flex"
+              alignItems="center"
+            >
               <Text color="gray.400">Your email address</Text>
             </Box>
             <Box
@@ -381,7 +494,7 @@ const Store = () => {
         </Box>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Store
+export default Store;

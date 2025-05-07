@@ -229,7 +229,6 @@ const About = () => {
                 px={4}
                 borderRadius="lg"
                 transition="all 0.3s ease"
-               
               >
                 <Text
                   fontSize={{ base: "4xl", md: "5xl" }}
@@ -771,7 +770,6 @@ const About = () => {
         </VStack>
       </HStack>
       {/* Call to Action */}
-
 
       <ScheduleConsultation />
     </>

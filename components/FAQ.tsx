@@ -13,7 +13,7 @@ import {
   CheckCircle,
   ArrowRight,
 } from "lucide-react";
-import { useRouter } from "next/navigation"
+import { useRouter } from "next/navigation";
 import ScheduleConsultation from "./luxeComponents/scheduleConsultation";
 const faqs = [
   {
@@ -144,8 +144,7 @@ const benefits = [
 ];
 
 const FAQ = ({ type }: { type: string }) => {
-
-  const router = useRouter()
+  const router = useRouter();
   const isPricing = type === "pricing";
   const selectedFaqs = isPricing ? pricingFaqs : faqs;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -340,7 +339,6 @@ const FAQ = ({ type }: { type: string }) => {
                   position="relative"
                 >
                   {/* Icon indicator */}
-         
 
                   <Text
                     fontSize={["17px", "18px", "19px"]}
@@ -454,7 +452,6 @@ const FAQ = ({ type }: { type: string }) => {
 
         {/* Stats section */}
       </Box>
-
     </Box>
   );
 };

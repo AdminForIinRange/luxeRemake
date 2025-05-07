@@ -33,14 +33,13 @@ const Hero = () => {
 
   return (
     <>
-   
       <Stack
         overflow={"hidden"}
         mt={{ base: "25px", sm: "25px", md: "25px", lg: "100px", xl: "100px" }}
         mb={{ base: "25px", sm: "25px", md: "25px", lg: "25px", xl: "25px" }}
         textAlign={"center"}
         width={"100%"}
-        flexDirection={"row"}
+        flexDirection={"column"}
         justifyContent={"center"}
         alignItems={"center"}
         fontSize={{
@@ -53,6 +52,16 @@ const Hero = () => {
         fontWeight={{ base: "400", sm: "400", md: "400", lg: "400", xl: "400" }}
         fontFamily={"arial"}
       >
+        <Box
+          color={"#222222"}
+          fontWeight={"600"}
+          width={"90%"}
+          fontSize={"40px"}
+        >
+          We provide comprehensive Airbnb management services, designed to
+          deliver a hassle-free hosting experience and maximize your rental
+          income.
+        </Box>
         <Box color={"#222222"} fontWeight={"600"} width={"90%"}>
           Luxe Managements <br />
           <Box fontWeight={"400"}>
@@ -61,15 +70,9 @@ const Hero = () => {
         </Box>
       </Stack>
 
-      <HStack
-        justify={"center"}
-        align={"center"}
-        w={"100%"}
-
-        zIndex={3}
-      >
+      <HStack justify={"center"} align={"center"} w={"100%"} zIndex={3}>
         <Box
-                transition={"all 0.2s ease-in-out"}
+          transition={"all 0.2s ease-in-out"}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -139,8 +142,6 @@ const Hero = () => {
       {/* Add New Pack Button */}
 
       {/* New Dialog Component */}
-
-      
     </>
   );
 };

@@ -93,7 +93,6 @@ const PropertyManagement = () => {
                   "Dynamic pricing and targeted marketing strategies that optimize your property's earning potential.",
               },
             ]}
-       
           />
         </Box>
       </HStack>
@@ -290,7 +289,7 @@ const PropertyManagement = () => {
       <PropertyManagementCardLists />
 
       <HStack
-              my={["50px", "50px", "100px", "100px", "100px", "100px"]}
+        my={["50px", "50px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}

@@ -7,14 +7,12 @@ import {
 import React, { useState } from "react";
 import { Calendar } from "lucide-react";
 
-
 const ScheduleConsultation = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <>
-
       <Box
         my={["60px", "70px", "80px", "90px", "100px"]}
         width="100%"
@@ -40,7 +38,6 @@ const ScheduleConsultation = () => {
           overflow="hidden"
         >
           {/* Background accent elements for visual interest */}
-     
 
           {/* Content container */}
           <Box width="100%" maxWidth="1000px" zIndex={1} textAlign="center">

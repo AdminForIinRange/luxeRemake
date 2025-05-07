@@ -16,7 +16,7 @@ const GalleryHeroSection = () => {
   return (
     <>
       <HStack
-              my={["50px", "50px", "100px", "100px", "100px", "100px"]}
+        my={["50px", "50px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}

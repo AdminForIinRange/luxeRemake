@@ -241,8 +241,6 @@ const Pricing = () => {
                 Comprehensive Management
               </Text>
 
-             
-
               <Text
                 fontSize={["18px", "20px"]}
                 fontWeight={600}
@@ -273,11 +271,15 @@ const Pricing = () => {
             </Box>
 
             <Box position="relative" p={"4"}>
-              <Box     backgroundImage={`url(https://images.pexels.com/photos/7651924/pexels-photo-7651924.jpeg)`}height="365px" width="100%"  borderRadius={"18px"}    backgroundSize="cover"
-        backgroundPosition="top"
-        backgroundRepeat="no-repeat" 
-        
-        />
+              <Box
+                backgroundImage={`url(https://images.pexels.com/photos/7651924/pexels-photo-7651924.jpeg)`}
+                height="365px"
+                width="100%"
+                borderRadius={"18px"}
+                backgroundSize="cover"
+                backgroundPosition="top"
+                backgroundRepeat="no-repeat"
+              />
               <Box
                 position="absolute"
                 bottom="24px"

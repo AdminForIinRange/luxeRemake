@@ -8,7 +8,6 @@ import Carousel, {
 import Image, { StaticImageData } from "next/image";
 import { Box, HStack } from "@chakra-ui/react";
 
-
 import houseOneImg2 from "@/public/images/dalts/houseOne/WEB/2.jpg";
 import houseOneImg3 from "@/public/images/dalts/houseOne/WEB/3.jpg";
 
@@ -39,8 +38,6 @@ import houseFourImg7 from "@/public/images/dalts/houseFour/WEB/7.jpg";
 
 import houseFourImg9 from "@/public/images/dalts/houseFour/WEB/9.jpg";
 import houseFourImg10 from "@/public/images/dalts/houseFour/WEB/10.jpg";
-
-
 
 type ImgPreview = {
   [key: string]: StaticImageData;

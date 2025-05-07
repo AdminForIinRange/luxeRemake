@@ -19,7 +19,11 @@ const TopHeader = ({
   const badges = {
     Property: ["Luxury Service", "Comprehensive Care", "24/7 Support"],
     Cleaning: ["Premium Quality", "Eco-Friendly", "Fast & Reliable"],
-    Furnishing: ["Creative Designs", "Custom Interiors", "Stylish & Functional"],
+    Furnishing: [
+      "Creative Designs",
+      "Custom Interiors",
+      "Stylish & Functional",
+    ],
     Photography: ["High Resolution", "Expertly Framed", "Perfect Lighting"],
   };
 
@@ -68,13 +72,8 @@ const TopHeader = ({
         boxShadow="0 10px 30px rgba(0,0,0,0.2)"
       >
         {/* Decorative elements */}
-    
-        
-      
 
         {/* Aperture icon simulation using nested boxes */}
-     
-       
 
         {/* Content Container */}
         <Box
@@ -137,10 +136,14 @@ const TopHeader = ({
               zIndex="1"
               textShadow="0 2px 10px rgba(0,0,0,0.2)"
             >
-              {and && <Box as="span" color="rgba(255,255,255,0.9)" mr="8px">{"&"}</Box>}
+              {and && (
+                <Box as="span" color="rgba(255,255,255,0.9)" mr="8px">
+                  {"&"}
+                </Box>
+              )}
               {wordTwo}
             </Text>
-            
+
             {/* Accent element behind text */}
             <Box
               position="absolute"
@@ -154,7 +157,7 @@ const TopHeader = ({
               zIndex="0"
             />
           </Box>
-          
+
           {/* Description */}
           <Box mb="30px">
             <Text
@@ -170,24 +173,24 @@ const TopHeader = ({
           </Box>
 
           {/* Badges */}
-          <Box 
-            display="flex" 
-            flexWrap="wrap" 
-            gap={["10px", "12px", "15px"]} 
+          <Box
+            display="flex"
+            flexWrap="wrap"
+            gap={["10px", "12px", "15px"]}
             mt="10px"
           >
             {currentBadges.map((badge, index) => (
-              <Box 
+              <Box
                 key={index}
-                bg="rgba(255,255,255,0.1)" 
-                borderRadius="full" 
-                px={["12px", "14px", "16px"]} 
+                bg="rgba(255,255,255,0.1)"
+                borderRadius="full"
+                px={["12px", "14px", "16px"]}
                 py={["6px", "7px", "8px"]}
                 border="1px solid rgba(255,255,255,0.15)"
               >
-                <Text 
-                  fontSize={["12px", "13px", "14px"]} 
-                  color="white" 
+                <Text
+                  fontSize={["12px", "13px", "14px"]}
+                  color="white"
                   fontWeight="500"
                 >
                   {badge}
