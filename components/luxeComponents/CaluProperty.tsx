@@ -235,7 +235,7 @@ const CaluProperty = () => {
               alignItems="center"
               padding="12px 18px"
               borderRadius="8px"
-              bg="blue.500"
+              bg="#0A0F29"
               onClick={handleSearch}
               cursor="pointer"
             >

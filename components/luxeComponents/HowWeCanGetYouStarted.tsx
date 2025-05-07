@@ -388,7 +388,7 @@ const HowWeCanGetYouStarted = () => {
 
         <Box
           display="inline-block"
-          backgroundColor="#000"
+                  backgroundColor=" #0A0F29"
           color="white"
           paddingX="40px"
           paddingY="20px"

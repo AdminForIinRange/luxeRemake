@@ -497,7 +497,7 @@ const Navbar = () => {
             {/* Desktop Call to Action Button */}
             <Box
               ml={{ md: "16px", lg: "24px" }}
-              bg="#222"
+               bg="#0A0F29"
               color="white"
               px={{ md: "16px", lg: "20px" }}
               py="10px"
@@ -586,7 +586,7 @@ const Navbar = () => {
           {/* Mobile Call to Action Button */}
           <Box
             mt="24px"
-            bg="#222"
+            bg="#0A0F29"
             color="white"
             py="12px"
             borderRadius="4px"
