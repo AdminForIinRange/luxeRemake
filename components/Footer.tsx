@@ -35,7 +35,7 @@ const Footer = () => {
             <Text
               fontSize={{ base: "16px", md: "18px" }}
               fontWeight="700"
-              fontFamily="sans"
+              fontFamily="arial"
             >
               Luxe Management
             </Text>

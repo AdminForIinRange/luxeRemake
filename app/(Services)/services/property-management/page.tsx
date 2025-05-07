@@ -117,7 +117,7 @@ const PropertyManagement = () => {
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
             fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
             fontWeight={600}
-            fontFamily={"sans"}
+            fontFamily={"arial"}
             bgClip="text"
             textAlign={[
               "center",
@@ -143,7 +143,7 @@ const PropertyManagement = () => {
               "center",
               "center",
             ]}
-            fontFamily={"sans"}
+            fontFamily={"arial"}
             color={"black"}
             w={["100%", "100%", "100%", "100%", "100%", "100%"]}
             fontWeight={300}
@@ -200,7 +200,7 @@ const PropertyManagement = () => {
             alignItems={["start", "start", "start", "center", "center"]}
           >
             <Box
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               zIndex={1}
               bg="white"
               borderRadius="md"
@@ -266,7 +266,7 @@ const PropertyManagement = () => {
                   textAlign="center"
                   color="gray.800"
                   fontSize={["24px", "26px", "26px", "28px", "28px", "28px"]}
-                  fontFamily="sans"
+                  fontFamily="arial"
                   fontWeight="700"
                   mb={1}
                 >
@@ -276,7 +276,7 @@ const PropertyManagement = () => {
                   textAlign="center"
                   color="gray.600"
                   fontSize={["16px", "18px", "18px", "20px", "20px", "20px"]}
-                  fontFamily="sans"
+                  fontFamily="arial"
                   fontWeight="500"
                 >
                   {title}

@@ -79,7 +79,7 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["sans", "sans-serif"], // Define the font family here
+        arial: ["arial", "arial-serif"], // Define the font family here
       },
       boxShadow: {
         "drop-1": "0px 10px 30px 0px rgba(66, 71, 97, 0.1)",

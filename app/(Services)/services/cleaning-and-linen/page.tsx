@@ -107,7 +107,7 @@ const CleaningAndLinen = () => {
             mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
             fontSize={["30px", "30px", "30px", "50px", "50px", "50px"]}
             fontWeight={600}
-            fontFamily={"sans"}
+            fontFamily={"arial"}
             bgClip="text"
             textAlign={[
               "center",

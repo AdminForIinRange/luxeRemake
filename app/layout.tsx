@@ -1,4 +1,4 @@
-import { sans } from "next/font/google"; // Import the sans font from next/font
+import { arial } from "next/font/google"; // Import the arial font from next/font
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import Loading from "./loading";
@@ -18,7 +18,7 @@ const ClientProviderWithFallback = dynamic(
   { loading: () => <Loading /> },
 );
 
-// Load the sans font with specific weights (optimized)
+// Load the arial font with specific weights (optimized)
 
 
 export default function RootLayout({ children }) {
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         {/* Preload fonts */}
         <link
           rel="preload"
-          href="https://fonts.googleapis.com/css2?family=sans:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=arial:wght@400;500;600;700&display=swap"
           as="style"
         />
       </head>

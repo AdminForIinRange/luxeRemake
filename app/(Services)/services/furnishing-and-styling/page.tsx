@@ -231,7 +231,7 @@ const FurnishingAndStyling = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -277,7 +277,7 @@ const FurnishingAndStyling = () => {
                 alignItems={"center"}
                 justifyContent={["center"]}
                 gap={"15px"}
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{
@@ -579,7 +579,7 @@ const FurnishingAndStyling = () => {
             mb="16"
             lineHeight="1.7"
           >
-            We source only the finest materials and work with skilled artisans
+            We source only the finest materials and work with skilled artiarial
             to create spaces of unparalleled beauty and durability.
           </Text>
 
@@ -645,7 +645,7 @@ const FurnishingAndStyling = () => {
                 Artisanal Furniture
               </Text>
               <Text fontSize="md" color="#4a5568" lineHeight="1.7">
-                Bespoke pieces crafted by master artisans
+                Bespoke pieces crafted by master artiarial
               </Text>
             </Box>
 

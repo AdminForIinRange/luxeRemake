@@ -101,7 +101,7 @@ const About = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -113,7 +113,7 @@ const About = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -149,7 +149,7 @@ const About = () => {
                 alignItems={"center"}
                 justifyContent={["center"]}
                 gap={"15px"}
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{
@@ -601,7 +601,7 @@ const About = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["30px", "30px", "35px", "35px", "35px", "40px"]}
               fontWeight={600}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               bgClip="text"
               textAlign={[
                 "center",

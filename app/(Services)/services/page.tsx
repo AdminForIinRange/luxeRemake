@@ -145,7 +145,7 @@ const Services = () => {
             <Text
               fontSize={["36px", "48px", "56px"]}
               fontWeight={700}
-              fontFamily="sans"
+              fontFamily="arial"
               color="#111"
               mb="24px"
               lineHeight="1.1"
@@ -154,7 +154,7 @@ const Services = () => {
             </Text>
             <Text
               fontSize={["16px", "18px", "20px"]}
-              fontFamily="sans"
+              fontFamily="arial"
               color="#555"
               fontWeight={400}
               maxWidth="700px"
@@ -243,7 +243,7 @@ const Services = () => {
                     <Text
                       color="white"
                       fontSize={["22px", "24px", "28px"]}
-                      fontFamily="sans"
+                      fontFamily="arial"
                       fontWeight={600}
                       lineHeight="1.2"
                     >

@@ -31,7 +31,7 @@ const HeroServices = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -43,7 +43,7 @@ const HeroServices = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -71,7 +71,7 @@ const HeroServices = () => {
                 alignItems={"center"}
                 justifyContent={["center"]}
                 gap={"15px"}
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{
@@ -144,7 +144,7 @@ const HeroServices = () => {
               alignItems={["start", "start", "start", "center", "center"]}
             >
               <Box
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 zIndex={1}
                 bg="white"
                 borderRadius="md"
@@ -209,7 +209,7 @@ const HeroServices = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -221,7 +221,7 @@ const HeroServices = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -249,7 +249,7 @@ const HeroServices = () => {
                 alignItems={"center"}
                 justifyContent={["center"]}
                 gap={"15px"}
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{
@@ -316,7 +316,7 @@ const HeroServices = () => {
             >
               {" "}
               <Box
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 zIndex={1}
                 bottom={["20px", "20px", "20px", "80px", "10px", "80px"]}
                 right={["0px", "0px", "0px", "10px", "10px", "10px"]}
@@ -361,7 +361,7 @@ const HeroServices = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -373,7 +373,7 @@ const HeroServices = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -401,7 +401,7 @@ const HeroServices = () => {
                 alignItems={"center"}
                 justifyContent={["center"]}
                 gap={"15px"}
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{
@@ -451,7 +451,7 @@ const HeroServices = () => {
               mt={["15px", "15px", "15px", "15px", "15px", "15px"]}
               fontSize={["25px", "25px", "25px", "50px", "50px", "50px"]}
               fontWeight={600}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               bgClip="text"
               textAlign={["center", "center", "center", "left", "left", "left"]}
               color={"black"}
@@ -463,7 +463,7 @@ const HeroServices = () => {
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
               mt={["20px", "20px", "20px", "20px", "20px", "20px"]}
               textAlign={["center", "center", "center", "left", "left", "left"]}
-              fontFamily={"sans"}
+              fontFamily={"arial"}
               color={"black"}
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
@@ -491,7 +491,7 @@ const HeroServices = () => {
                 alignItems={"center"}
                 justifyContent={["center"]}
                 gap={"15px"}
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 transition={"all 0.2s ease-in-out"}
                 cursor={"pointer"}
                 _hover={{
@@ -563,7 +563,7 @@ const HeroServices = () => {
               alignItems={["start", "start", "start", "center", "center"]}
             >
               <Box
-                fontFamily={"sans"}
+                fontFamily={"arial"}
                 zIndex={1}
                 bg="white"
                 borderRadius="md"

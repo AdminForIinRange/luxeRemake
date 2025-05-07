@@ -261,7 +261,7 @@ const Navbar = () => {
       <Box
         w="100%"
         py="8px"
-        fontFamily={"sans"}
+        fontFamily={"arial"}
         backdropFilter="blur(10px)"
         borderBottom="1px solid #F0F0F0"
         display={{ base: "none", md: "block" }}
@@ -332,7 +332,7 @@ const Navbar = () => {
                 fontSize={{ base: "16px", md: "20px" }}
                 fontWeight="600"
                 letterSpacing="0.2px"
-                fontFamily="sans"
+                fontFamily="arial"
                 color="#222222"
                 lineHeight="1.1"
               >
@@ -342,7 +342,7 @@ const Navbar = () => {
                 fontSize={{ base: "10px", md: "12px" }}
                 color="#777777"
                 letterSpacing="0.5px"
-                fontFamily="sans"
+                fontFamily="arial"
                 textTransform="uppercase"
               >
                 Premium Property Services
@@ -385,7 +385,7 @@ const Navbar = () => {
                   <Text
                     fontSize={{ md: "14px", lg: "16px" }}
                     fontWeight={activePage === item.path ? "600" : "500"}
-                    fontFamily="sans"
+                    fontFamily="arial"
                     transition="all 0.2s ease"
                     color={
                       activePage === item.path
