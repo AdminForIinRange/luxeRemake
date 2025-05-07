@@ -61,7 +61,7 @@ const Home = () => {
         align={"center"}
         w={"100%"}
         id="get-started-button"
-        my={["50px", "50px", "50px", "50px", "50px", "50px"]}
+        my={["50px", "50px", "100px", "100px", "100px", "100px"]}
       >
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>

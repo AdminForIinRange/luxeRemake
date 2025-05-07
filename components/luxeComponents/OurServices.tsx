@@ -7,7 +7,7 @@ const OurServices = () => {
   return (
     <>
       <HStack
-        mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
+               my={["50px", "50px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}

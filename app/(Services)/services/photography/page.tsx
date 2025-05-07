@@ -87,7 +87,7 @@ const Photography = () => {
         </Box>
       </HStack>
       <HStack
-        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
+             my={["50px", "50px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}
@@ -172,7 +172,7 @@ const Photography = () => {
       <PhotographyCardLists />
 
       <HStack
-        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
+        my={["50px", "50px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}

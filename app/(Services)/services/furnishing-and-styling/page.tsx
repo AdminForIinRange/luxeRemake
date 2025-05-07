@@ -191,7 +191,7 @@ const FurnishingAndStyling = () => {
         </Box>
       </HStack>
       <HStack
-        my={["100px", "100px", "100px", "100px", "100px", "100px"]}
+              my={["50px", "50px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}
@@ -476,7 +476,7 @@ const FurnishingAndStyling = () => {
         </Box>
       </Box>
       <HStack
-        my={["100px", "100px", "100px", "100px", "100px", "100px"]}
+        my={["50px", "50px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}
@@ -551,7 +551,7 @@ const FurnishingAndStyling = () => {
           </Box>
 
           <HStack
-            my={["100px", "100px", "100px", "100px", "100px", "100px"]}
+                  my={["50px", "50px", "100px", "100px", "100px", "100px"]}
             justify={"center"}
             align={"center"}
             w={"100%"}
@@ -791,7 +791,7 @@ const FurnishingAndStyling = () => {
       </Box>
 
       <HStack
-        mt={["100px", "100px", "100px", "100px", "100px", "100px"]}
+              my={["50px", "50px", "100px", "100px", "100px", "100px"]}
         justify={"center"}
         align={"center"}
         w={"100%"}

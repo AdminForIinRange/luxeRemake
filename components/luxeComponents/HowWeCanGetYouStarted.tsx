@@ -75,7 +75,7 @@ const HowWeCanGetYouStarted = () => {
     <Box width="100%" position="relative" my={"50px"} >
       {/* Introduction Section */}
     <HStack
-          mt={["50px", "50px", "50px", "50px", "50px", "50px"]}
+                 my={["50px", "50px", "100px", "100px", "100px", "100px"]}
           justify={"center"}
           align={"center"}
           w={"100%"}
@@ -407,7 +407,7 @@ const HowWeCanGetYouStarted = () => {
       </Box>
       {/* Footer Section */}
        <HStack
-             my={["50px", "50px", "50px", "50px", "50px", "50px"]}
+                   my={["50px", "50px", "100px", "100px", "100px", "100px"]}
              justify={"center"}
              align={"center"}
              w={"100%"}
