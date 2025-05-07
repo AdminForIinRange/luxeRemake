@@ -36,7 +36,7 @@ const Hero = () => {
       <Stack
         overflow={"hidden"}
         mt={{ base: "25px", sm: "25px", md: "25px", lg: "100px", xl: "100px" }}
-        mb={{ base: "25px", sm: "25px", md: "25px", lg: "25px", xl: "25px" }}
+        mb={{ base: "25px", sm: "25px", md: "50px", lg: "50px", xl: "50px" }}
         textAlign={"center"}
         width={"100%"}
         flexDirection={"column"}
@@ -51,16 +51,22 @@ const Hero = () => {
         }}
         fontWeight={{ base: "400", sm: "400", md: "400", lg: "400", xl: "400" }}
         fontFamily={"arial"}
+     
       >
         <Box
-          color={"#222222"}
-          fontWeight={"600"}
-          width={"90%"}
-          fontSize={"40px"}
+          bg={"rgb(35, 51, 133)"}
+          color={"white"}
+        
+          px={5}
+          py={3}
+          borderRadius={"full"}
+          fontSize={"16px"}
+          fontWeight={"500"}
+          width={"fit-content"}
+          mb={"50px"}
+
         >
-          We provide comprehensive Airbnb management services, designed to
-          deliver a hassle-free hosting experience and maximize your rental
-          income.
+          Hassle-free Airbnb management services.
         </Box>
         <Box color={"#222222"} fontWeight={"600"} width={"90%"}>
           Luxe Managements <br />
@@ -70,7 +76,7 @@ const Hero = () => {
         </Box>
       </Stack>
 
-      <HStack justify={"center"} align={"center"} w={"100%"} zIndex={3}>
+      <HStack justify={"center"} align={"center"} w={"100%"}  zIndex={3}>
         <Box
           transition={"all 0.2s ease-in-out"}
           display="flex"
@@ -142,6 +148,8 @@ const Hero = () => {
       {/* Add New Pack Button */}
 
       {/* New Dialog Component */}
+
+      
     </>
   );
 };
