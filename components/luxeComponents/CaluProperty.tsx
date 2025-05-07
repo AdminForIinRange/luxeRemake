@@ -82,8 +82,8 @@ const CaluProperty = () => {
     
     return (
       <Box display="flex" alignItems="center" gap="4px">
-        <TrendingUp size="12px" color={color} style={!isPositive ? { transform: "rotate(180deg)" } : {}} />
-        <Text fontSize="12px" color={color}>{value}</Text>
+        <TrendingUp size="16px" color={color} style={!isPositive ? { transform: "rotate(180deg)" } : {}} />
+        <Text fontSize="16px" color={color}>{value}</Text>
       </Box>
     );
   };
@@ -284,11 +284,11 @@ const CaluProperty = () => {
 
               <Box display="flex" alignItems="center" justifyContent="space-between">
                 <TrendIndicator value={details.revenueTrend} />
-                <Text fontSize="13px" color="gray.500">Year over year</Text>
+                <Text fontSize="14px" color="gray.500">Year over year</Text>
               </Box>
 
               <Box marginTop="16px">
-                <Text fontSize="13px" color="gray.500" marginBottom="6px">
+                <Text fontSize="14px" color="gray.500" marginBottom="6px">
                   Revenue Potential
                 </Text>
                 <ProgressBar value={75} color="#3182CE" bgColor="#EDF2F7" />
@@ -330,11 +330,11 @@ const CaluProperty = () => {
 
               <Box display="flex" alignItems="center" justifyContent="space-between">
                 <TrendIndicator value={details.occupancyTrend} />
-                <Text fontSize="13px" color="gray.500">Year over year</Text>
+                <Text fontSize="14px" color="gray.500">Year over year</Text>
               </Box>
 
               <Box marginTop="16px">
-                <Text fontSize="13px" color="gray.500" marginBottom="6px">
+                <Text fontSize="14px" color="gray.500" marginBottom="6px">
                   Market Average: 62%
                 </Text>
                 <ProgressBar 
@@ -380,11 +380,11 @@ const CaluProperty = () => {
 
               <Box display="flex" alignItems="center" justifyContent="space-between">
                 <TrendIndicator value={details.dailyRateTrend} />
-                <Text fontSize="13px" color="gray.500">Year over year</Text>
+                <Text fontSize="14px" color="gray.500">Year over year</Text>
               </Box>
 
               <Box marginTop="16px">
-                <Text fontSize="13px" color="gray.500" marginBottom="6px">
+                <Text fontSize="14px" color="gray.500" marginBottom="6px">
                   Pricing Competitiveness
                 </Text>
                 <ProgressBar value={85} color="#805AD5" bgColor="#FAF5FF" />
