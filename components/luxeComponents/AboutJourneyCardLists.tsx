@@ -310,7 +310,7 @@ const AboutJourneyCardLists = () => {
                     "flex-start",
                     "flex-start",
                     "flex-start",
-                    index % 2 === 0 ? "flex-end" : "flex-start",
+                    index % 2 === 0 ? "flex-start" : "flex-start",
                   ]}
                 >
                   {item.stats &&
