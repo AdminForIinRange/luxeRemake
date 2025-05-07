@@ -54,7 +54,7 @@ const Hero = () => {
      
       >
         <Box
-          bg={"rgb(35, 51, 133)"}
+          bg={"rgb(24, 34, 82)"}
           color={"white"}
         
           px={5}
