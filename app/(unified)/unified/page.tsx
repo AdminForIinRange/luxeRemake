@@ -3,8 +3,8 @@
 import type React from "react"
 
 import { useEffect, useState } from "react"
-import { Box, Button, Text } from "@chakra-ui/react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Box, Button, Text, Select} from "@chakra-ui/react"
+import { ArrowDown, ChevronLeft, ChevronRight, User } from "lucide-react"
 
 // Import moment-timezone for consistent timezone handling
 import moment from "moment-timezone"
@@ -43,6 +43,13 @@ const formatDate = (year: number, month: number, day: number) => {
   return moment.tz([year, month, day], "Australia/Sydney").format("YYYY-MM-DD")
 }
 
+interface GuestInfo {
+  name: string
+  count?: number
+  total?: number
+  bookingId?: string
+}
+
 interface Event {
   uid: string
   summary: string
@@ -53,6 +60,9 @@ interface Event {
   type: string
   allDay: boolean
   timezone?: string
+  checkInTime?: string
+  checkOutTime?: string
+  guestInfo?: GuestInfo
 }
 
 const AvailabilityCalendar = () => {
@@ -114,6 +124,9 @@ const AvailabilityCalendar = () => {
 
       const airbnbData = await airbnbRes.json()
       const bookingcomData = await bookingRes.json()
+
+      console.log("Airbnb data:", airbnbData.events)
+      console.log("Booking.com data:", bookingcomData.events)
 
       setAirbnbData(airbnbData.events || [])
       setBookingcomData(bookingcomData.events || [])
@@ -281,27 +294,43 @@ const AvailabilityCalendar = () => {
       </Text>
 
       {/* House Selector */}
-      <Box
-        as="select"
+      <select
+      key={selectedHouse}
         value={selectedHouse}
-        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedHouse(e.target.value)}
-        width="100%"
-        mb={4}
-        p="0.5rem"
-        borderRadius="md"
-        borderColor="gray.300"
-        bg="white"
-        _focus={{
-          borderColor: "teal.500",
-          boxShadow: "0 0 0 1px teal.500",
+        onChange={(event) => setSelectedHouse(event.currentTarget.value)}
+        style={{
+          width: "100%",
+          marginBottom: "16px",
+          padding: "16px",
+          paddingLeft: "10px",
+          borderRadius: "8px",
+          borderColor: "gray.300",
+          outline: "none",
+          appearance: "none",
+          transition: "border-color 0.2s ease, box-shadow 0.2s ease",
+        }}
+        onFocus={(event) => {
+          event.currentTarget.style.borderColor = "teal.500";
+          event.currentTarget.style.boxShadow = "0 0 0 1px teal.500";
+        }}
+        onBlur={(event) => {
+          event.currentTarget.style.borderColor = "gray.300";
+          event.currentTarget.style.boxShadow = "none";
+        }}
+        onMouseOver={(event) => {
+          event.currentTarget.style.cursor = "pointer";
         }}
       >
-        {houseList.map((house) => (
-          <Box as="option" key={house.name} value={house.name}>
-            {house.displayName}
-          </Box>
+
+          {houseList.map((house) => (
+            <><option key={house.name} value={house.name}>
+              {house.displayName}
+            </option></>
+    
         ))}
-      </Box>
+
+      </select>
+  
 
       {/* Loading and Error States */}
       {isLoading && (
@@ -320,7 +349,7 @@ const AvailabilityCalendar = () => {
       <Box display="flex" gap={4} mb={4} flexWrap="wrap">
         <Box display="flex" alignItems="center">
           <Box position="relative" w="40px" h="16px" mr={2}>
-            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="green.500" borderRadius="full"></Box>
+            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="gray.200" borderRadius="full"></Box>
           </Box>
           <Text fontSize="xs" color="gray.600">
             Available
@@ -339,7 +368,7 @@ const AvailabilityCalendar = () => {
             <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="blue.500" borderRadius="full"></Box>
           </Box>
           <Text fontSize="xs" color="gray.600">
-            Booking.com
+           Booking.com
           </Text>
         </Box>
         <Box display="flex" alignItems="center">
@@ -443,14 +472,7 @@ const AvailabilityCalendar = () => {
                 </Box>
 
                 {/* Price (for available dates) */}
-                {!isAirbnb && !isBookingCom && (
-                  <Box position="absolute" top="40%" left="50%" transform="translate(-50%, -50%)" textAlign="center">
-                    <Text fontSize="sm" fontWeight="bold" color="green.600">
-                      $199 AUD
-                    </Text>
-                  </Box>
-                )}
-
+             
                 {/* Airbnb Booking Bar */}
                 {isAirbnb && (
                   <Box
@@ -497,6 +519,31 @@ const AvailabilityCalendar = () => {
                       >
                         <Text fontSize="8px" color="white" fontWeight="bold">
                           OUT
+                        </Text>
+                      </Box>
+                    )}
+
+                    {/* Guest info for Airbnb */}
+                    {airbnbBooking?.guestInfo && isAirbnbStart && (
+                      <Box
+                        position="absolute"
+                        top="-20px"
+                        left="0"
+                        right="0"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        bg="orange.100"
+                        p="1px"
+                        borderRadius="sm"
+                        zIndex={2}
+                      >
+                        <User size={10} />
+                        <Text fontSize="9px" ml="2px" color="orange.800" fontWeight="medium" noOfLines={1}>
+                          {airbnbBooking.guestInfo.name}
+                          {airbnbBooking.guestInfo.total && airbnbBooking.guestInfo.total > 1
+                            ? ` + ${airbnbBooking.guestInfo.total - 1}`
+                            : ""}
                         </Text>
                       </Box>
                     )}
@@ -549,6 +596,31 @@ const AvailabilityCalendar = () => {
                       >
                         <Text fontSize="8px" color="white" fontWeight="bold">
                           OUT
+                        </Text>
+                      </Box>
+                    )}
+
+                    {/* Guest info for Booking.com */}
+                    {bookingComBooking?.guestInfo && isBookingComStart && (
+                      <Box
+                        position="absolute"
+                        top="-20px"
+                        left="0"
+                        right="0"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        bg="blue.100"
+                        p="1px"
+                        borderRadius="sm"
+                        zIndex={2}
+                      >
+                        <User size={10} />
+                        <Text fontSize="9px" ml="2px" color="blue.800" fontWeight="medium" noOfLines={1}>
+                          {bookingComBooking.guestInfo.name}
+                          {bookingComBooking.guestInfo.total && bookingComBooking.guestInfo.total > 1
+                            ? ` + ${bookingComBooking.guestInfo.total - 1}`
+                            : ""}
                         </Text>
                       </Box>
                     )}

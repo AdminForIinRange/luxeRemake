@@ -9,6 +9,7 @@ moment.tz.setDefault("Australia/Sydney")
 // Function to fetch and parse iCal data with timeout and retries
 const fetchIcalData = async (url: string, retries = 2, timeout = 10000) => {
   try {
+    console.log(`Fetching iCal data from: ${url}`)
     const icsData = await axios.get(url, {
       timeout,
       headers: {
@@ -20,6 +21,9 @@ const fetchIcalData = async (url: string, retries = 2, timeout = 10000) => {
     if (!icsData.data || typeof icsData.data !== "string") {
       throw new Error("Invalid iCal data format received")
     }
+
+    // Log the first 200 characters of the iCal data for debugging
+    console.log(`iCal data sample: ${icsData.data.substring(0, 200)}...`)
 
     return ical.parseICS(icsData.data)
   } catch (error) {
@@ -73,16 +77,88 @@ const processEvent = (event: any, platform: string): any => {
     return null
   }
 
-  // Determine if this is a reservation or a blocked period
-  const isReservation =
-    platform === "airbnb" ? event.summary === "Reserved" : event.summary && event.summary.includes("CLOSED")
+  // Platform-specific processing logic
+  let isReservation = false
+  let guestInfo = null
+
+  if (platform === "airbnb") {
+    // Airbnb specific processing
+    isReservation = event.summary === "Reserved"
+
+    // Try to extract guest info from description if available
+    if (event.description) {
+      const guestMatch = event.description.match(/([A-Za-z]+)(\s+and\s+\d+\s+guests?)?/i)
+      const guestCountMatch = event.description.match(/and\s+(\d+)\s+guests?/i)
+
+      if (guestMatch) {
+        const guestName = guestMatch[1]
+        const guestCount = guestCountMatch ? Number.parseInt(guestCountMatch[1], 10) : 0
+        guestInfo = {
+          name: guestName,
+          count: guestCount,
+          total: guestCount + 1, // +1 for the main guest
+        }
+      }
+    }
+  } else if (platform === "bookingcom") {
+    // Booking.com specific processing
+    isReservation =
+      event.summary &&
+      (event.summary.includes("CLOSED") ||
+        event.summary.includes("BOOKED") ||
+        event.summary.includes("Reservation") ||
+        event.summary.includes("Not available"))
+
+    // Try to extract guest info from Booking.com format
+    if (event.description) {
+      const bookingIdMatch = event.description.match(/Booking ID:\s*([A-Z0-9]+)/i)
+      const guestNameMatch = event.description.match(/Guest name:\s*([A-Za-z\s]+)/i)
+      const guestCountMatch = event.description.match(/Number of guests:\s*(\d+)/i)
+
+      if (guestNameMatch || bookingIdMatch) {
+        guestInfo = {
+          name: guestNameMatch ? guestNameMatch[1].trim() : "Booking.com Guest",
+          bookingId: bookingIdMatch ? bookingIdMatch[1] : null,
+          count: guestCountMatch ? Number.parseInt(guestCountMatch[1], 10) - 1 : 0,
+          total: guestCountMatch ? Number.parseInt(guestCountMatch[1], 10) : 1,
+        }
+      }
+    } else {
+      // For Booking.com entries without description (like "CLOSED - Not available")
+      guestInfo = {
+        name: "Booking.com",
+        total: 0,
+      }
+    }
+  }
 
   // Convert dates to Sydney timezone
   const startDate = convertToSydneyTime(event.start)
   const endDate = convertToSydneyTime(event.end)
 
-  // Shift the date by 1 day forward
-  const newStartDate = moment(startDate).format("YYYY-MM-DDTHH:mm:ss")
+  // Extract check-in/check-out times
+  let checkInTime = "14:00" // Default check-in time (2 PM)
+  let checkOutTime = "10:00" // Default check-out time (10 AM)
+
+  // Try to extract check-in/check-out times from description if available
+  if (event.description) {
+    const checkInMatch = event.description.match(/check[\s-]*in:?\s*(\d{1,2}:\d{2})/i)
+    const checkOutMatch = event.description.match(/check[\s-]*out:?\s*(\d{1,2}:\d{2})/i)
+
+    if (checkInMatch && checkInMatch[1]) {
+      checkInTime = checkInMatch[1]
+    }
+
+    if (checkOutMatch && checkOutMatch[1]) {
+      checkOutTime = checkOutMatch[1]
+    }
+  }
+
+  // Shift the date by 1 day forward for Airbnb to match Booking.com format
+  // This is a common adjustment needed for Airbnb iCal feeds
+  const newStartDate = moment(startDate)
+    .subtract(platform === "airbnb" ? 0 : 0, "day")
+    .format("YYYY-MM-DDTHH:mm:ss")
   const newEndDate = moment(endDate).format("YYYY-MM-DDTHH:mm:ss")
 
   return {
@@ -90,10 +166,13 @@ const processEvent = (event: any, platform: string): any => {
     summary: event.summary || "",
     start: newStartDate,
     end: newEndDate,
+    checkInTime,
+    checkOutTime,
     description: event.description || "",
     platform: platform,
-    type: isReservation ? "reservation" : "blocked",
+    type: isReservation ? "reservation" : "Booking.com",
     allDay: true, // iCal events from Airbnb and Booking.com are typically all-day events
+    guestInfo,
     // Include timezone info for clarity
     timezone: "Australia/Sydney",
   }
@@ -134,6 +213,12 @@ export async function GET(req: NextRequest) {
   try {
     console.log(`Fetching iCal data from URL: ${icalUrl}`)
     const parsedData = await fetchIcalData(icalUrl)
+
+    // Log a sample of the parsed data for debugging
+    if (Object.values(parsedData).length > 0) {
+      const sampleEvent = Object.values(parsedData)[0]
+      console.log(`Sample event from ${platform}:`, JSON.stringify(sampleEvent, null, 2))
+    }
 
     // Filter for VEVENT type and process events
     const events = Object.values(parsedData)
