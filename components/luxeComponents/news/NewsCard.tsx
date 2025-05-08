@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { Article } from "@/lib/types/article";
 // import { deleteArticle } from "@/lib/actions/deleetArticle.action";
 import { X } from "lucide-react";
+import Image from "next/image";
 
 type NewsCardProps = {
   article: Article;
@@ -31,7 +32,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   //     alert(res.error);
   //   }
   // };
-
+const src = `https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg`
   return (
     <Box
       w={["100%", "48%", "31%"]}
@@ -57,17 +58,24 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
         _hover={{ backgroundColor: "red.600" }}
       />
 
-      <Box
-        as="img"
-        backgroundImage={`url(https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg)`}
-        backgroundSize="cover"
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        transition="all 0.3s"
-        w="100%"
-        h="200px"
-        objectFit="cover"
+<Box
+      position="relative"
+      w="100%"
+      h="200px"
+      overflow="hidden"            // clip the image to the container
+      transition="all 0.3s"        // preserve your transition
+    >
+      <Image
+        src={src}
+        alt={article.title || ''}
+        fill                        // makes the image fill the Box
+        style={{
+          objectFit: 'cover',       // replicates backgroundSize="cover"
+          objectPosition: 'center', // replicates backgroundPosition="center"
+        }}
       />
+    </Box>
+    
       <Stack gap="10px" p="20px">
         <Text fontSize="lg" fontWeight="semibold">
           {article.articleTitle}

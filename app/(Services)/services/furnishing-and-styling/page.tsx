@@ -316,17 +316,24 @@ const FurnishingAndStyling = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-              position="relative"
-              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              borderRadius="30px"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="cover"
-            ></Box>
+      position="relative"
+      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+      borderRadius="30px"
+      bg="gray.200"          // fallback background color
+      overflow="hidden"      // clip the Image to the rounded corners
+    >
+      <Image
+        src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
+        alt=""
+        fill                   // makes the image fill the Box completely
+        style={{
+          objectFit: 'cover',  // replicates background-size: cover
+          objectPosition: 'center', // replicates background-position: center
+        }}
+        priority               // optional: preload if above the fold
+      />
+    </Box>
           </Box>
         </HStack>
       </HStack>
@@ -591,21 +598,28 @@ const FurnishingAndStyling = () => {
           >
             {/* Material Item 1 */}
             <Box flex="1" minW={{ base: "100%", md: "300px" }}>
-              <Box
-                bg="#f2f2f2"
-                borderRadius="md"
-                h="300px"
-                mb="6"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                backgroundImage={
-                  "url(https://images.pexels.com/photos/31902663/pexels-photo-31902663.jpeg)"
-                }
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-              ></Box>
+            <Box
+      position="relative"       // establish containing block for the Image
+      bg="#f2f2f2"               // fallback background color
+      borderRadius="md"
+      h="300px"
+      mb="6"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      overflow="hidden"          // clip the Image to the Box bounds
+    >
+      <Image
+        src="https://images.pexels.com/photos/31902663/pexels-photo-31902663.jpeg"
+        alt=""
+        fill                      // makes the image fill the Box
+        style={{
+          objectFit: 'cover',     // replicates background-size: cover
+          objectPosition: 'center'// replicates background-position: center
+        }}
+      />
+      {/* Any overlaid content goes here */}
+    </Box>
               <Text
                 fontSize={{ base: "lg", md: "xl" }}
                 fontWeight="bold"
@@ -621,21 +635,28 @@ const FurnishingAndStyling = () => {
 
             {/* Material Item 2 */}
             <Box flex="1" minW={{ base: "100%", md: "300px" }}>
-              <Box
-                bg="#f2f2f2"
-                borderRadius="md"
-                h="300px"
-                mb="6"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                backgroundImage={
-                  "url(https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg)"
-                }
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-              ></Box>
+            <Box
+      position="relative"       // establish containing block for the Image
+      bg="#f2f2f2"               // fallback background color
+      borderRadius="md"
+      h="300px"
+      mb="6"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      overflow="hidden"          // clip the Image to the Box bounds
+    >
+      <Image
+        src="https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg"
+        alt=""
+        fill                      // makes the image fill the Box
+        style={{
+          objectFit: 'cover',     // replicates background-size: cover
+          objectPosition: 'center'// replicates background-position: center
+        }}
+      />
+      {/* Any overlaid content goes here */}
+    </Box>
               <Text
                 fontSize={{ base: "lg", md: "xl" }}
                 fontWeight="bold"
@@ -651,21 +672,28 @@ const FurnishingAndStyling = () => {
 
             {/* Material Item 3 */}
             <Box flex="1" minW={{ base: "100%", md: "300px" }}>
-              <Box
-                bg="#f2f2f2"
-                borderRadius="md"
-                h="300px"
-                mb="6"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                backgroundImage={
-                  "url(https://images.pexels.com/photos/7303902/pexels-photo-7303902.jpeg)"
-                }
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-              ></Box>
+            <Box
+      position="relative"       // establish containing block for the Image
+      bg="#f2f2f2"               // fallback background color
+      borderRadius="md"
+      h="300px"
+      mb="6"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      overflow="hidden"          // clip the Image to the Box bounds
+    >
+      <Image
+        src="https://images.pexels.com/photos/7303902/pexels-photo-7303902.jpeg"
+        alt=""
+        fill                      // makes the image fill the Box
+        style={{
+          objectFit: 'cover',     // replicates background-size: cover
+          objectPosition: 'center'// replicates background-position: center
+        }}
+      />
+      {/* Any centered overlay content can go here */}
+    </Box>
               <Text
                 fontSize={{ base: "lg", md: "xl" }}
                 fontWeight="bold"

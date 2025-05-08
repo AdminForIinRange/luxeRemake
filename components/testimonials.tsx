@@ -1,5 +1,6 @@
 "use client";
 import { Box, HStack, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 import React, { useState } from "react";
 import { FaAngleRight, FaStar } from "react-icons/fa";
 
@@ -254,15 +255,25 @@ const Testimonials = () => {
             >
               {/* Author image */}
               <Box
-                width="50px"
-                height="50px"
-                borderRadius="50%"
-                marginRight="16px"
-                backgroundImage={`url(${reviews[currentSlide].image})`}
-                backgroundSize="cover"
-                backgroundPosition="top"
-                border="2px solid rgba(0,0,0,0.1)"
-              />
+      position="relative"            // establish containing block for the Image
+      width="50px"
+      height="50px"
+      borderRadius="50%"             // circle
+      marginRight="16px"
+      overflow="hidden"              // clip the Image to the circle
+      border="2px solid rgba(0,0,0,0.1)"
+    >
+      <Image
+        src={reviews[currentSlide].image}
+        alt=""                       // you can add a meaningful alt if needed
+        fill                         // makes the img fill the Box
+        style={{
+          objectFit: 'cover',        // replicates background-size: cover
+          objectPosition: 'top'      // replicates background-position: top
+        }}
+      />
+    </Box>
+    
 
               {/* Author name */}
               <Box>

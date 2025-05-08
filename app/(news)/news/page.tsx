@@ -5,6 +5,7 @@ import { Box, Text } from "@chakra-ui/react";
 import { getAllArticles } from "@/lib/actions/getAllArticles.action";
 import NewsCard from "@/components/luxeComponents/news/NewsCard";
 import { Article } from "@/lib/types/article";
+import Image from "next/image";
 
 const NewsPage = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -198,15 +199,25 @@ const NewsPage = () => {
             >
               {/* Image container with overlay */}
               <Box
-                position="absolute"
-                top="0"
-                left="0"
-                right="0"
-                bottom="0"
-                backgroundImage="url('https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg')"
-                backgroundSize="cover"
-                backgroundPosition="center"
-              />
+      position="absolute"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      overflow="hidden"  // ensure any oversize stays clipped
+    >
+      <Image
+        src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
+        alt=""
+        fill               // makes the img absolutely fill this Box
+        style={{
+          objectFit: 'cover',    // background-size: cover
+          objectPosition: 'center' // background-position: center
+        }}
+        priority           // optional: load immediately if above the fold
+      />
+      
+    </Box>
             </Box>
           </Box>
         </Box>
@@ -330,16 +341,25 @@ const NewsPage = () => {
                 backgroundColor="gray.200"
                 position="relative"
               >
-                <Box
-                  position="absolute"
-                  top="0"
-                  left="0"
-                  right="0"
-                  bottom="0"
-                  backgroundImage={`url('${articles[0]?.featuredImage || "https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg"}')`}
-                  backgroundSize="cover"
-                  backgroundPosition="center"
-                />
+             <Box
+      position="absolute"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      overflow="hidden"  // clip overflow just like background-image
+    >
+      <Image
+        src={articles[0]?.featuredImage || "https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg"}
+        alt={articles[0]?.title || ''}
+        fill                     // in Next.js 13+; for older versions use layout="fill"
+        style={{
+          objectFit: 'cover',    // replicates background-size: cover
+          objectPosition: 'center' // replicates background-position: center
+        }}
+        priority                 // optional: load right away if this is above the fold
+      />
+    </Box>
 
                 <Box
                   position="absolute"
@@ -470,16 +490,30 @@ const NewsPage = () => {
                 backgroundColor="gray.200"
                 position="relative"
               >
-                <Box
-                  position="absolute"
-                  top="0"
-                  left="0"
-                  right="0"
-                  bottom="0"
-                  backgroundImage={`url('${article.featuredImage || `https://images.pexels.com/photos/${1546168 + index * 10}/pexels-photo-${1546168 + index * 10}.jpeg`}')`}
-                  backgroundSize="cover"
-                  backgroundPosition="center"
-                />
+              <Box
+      position="absolute"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      overflow="hidden"  // ensure the image is clipped exactly like a background
+    >
+      <Image
+        src={
+          article.featuredImage ||
+          `https://images.pexels.com/photos/${1546168 + index * 10}/pexels-photo-${
+            1546168 + index * 10
+          }.jpeg`
+        }
+        alt={article.title || ''}
+        fill                   // in Next.js 13+, for older versions use layout="fill"
+        style={{
+          objectFit: 'cover',    // replicates background-size: cover
+          objectPosition: 'center' // replicates background-position: center
+        }}
+        priority               // optional: preload if this is critical
+      />
+    </Box>
 
                 {/* Category tag */}
                 <Box

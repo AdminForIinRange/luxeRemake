@@ -78,6 +78,7 @@ import houseSixImg6 from "@/public/images/dalts/houseSix/WEB/6.jpg";
 import houseSixImg7 from "@/public/images/dalts/houseSix/WEB/7.jpg";
 import houseSixImg8 from "@/public/images/dalts/houseSix/WEB/8.jpg";
 import houseSixImg9 from "@/public/images/dalts/houseSix/WEB/9.jpg";
+import Image from "next/image";
 
 const Gallery = () => {
   useEffect(() => {
@@ -466,17 +467,26 @@ const Gallery = () => {
               >
                 {/* Main Image */}
                 <Box
-                  backgroundImage={`url(${item.img.src})`}
-                  backgroundSize="cover"
-                  backgroundPosition="center"
-                  backgroundRepeat="no-repeat"
-                  transition="transform 0.5s ease"
-                  _hover={{
-                    transform: "scale(1.05)",
-                  }}
-                  height="100%"
-                  width="100%"
-                />
+      position="relative"               // establish containing block for the Image
+      overflow="hidden"                 // crop image when scaling
+      height="100%"
+      width="100%"
+      transition="transform 0.5s ease"
+      _hover={{ transform: 'scale(1.05)' }}
+    >
+      <Image
+        src={item.img.src}
+        alt={item.img.alt ?? ''}
+        fill                             // makes the image cover the Box entirely
+        style={{
+          objectFit: 'cover',           // replicate background-size: cover
+          objectPosition: 'center',     // replicate background-position: center
+        }}
+        sizes="(max-width: 768px) 100vw, 100vw" // adjust as needed for responsiveness
+      />
+    </Box>
+
+  
 
                 {/* Hover Overlay with Property Details */}
                 <Box

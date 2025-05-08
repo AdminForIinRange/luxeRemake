@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Box, Text } from "@chakra-ui/react";
 import luxeLogo from "@/public/png/LuxeLogo.png";
+import Image from "next/image";
 
 const LuxeAiAssistance = () => {
   const [open, setOpen] = useState(false);
@@ -117,14 +118,24 @@ const LuxeAiAssistance = () => {
             transition: "transform 0.2s ease",
           }}
         >
-          <Box
-            width="68px"
-            height="68px"
-            borderRadius="full"
-            backgroundImage={`url(${luxeLogo.src})`}
-            backgroundSize="cover"
-            backgroundPosition="center"
-          />
+      <Box
+      position="relative"      // establish containing block for the Image
+      width="68px"
+      height="68px"
+      borderRadius="full"      // circle
+      overflow="hidden"        // clip the Image to the circle
+    >
+      <Image
+        src={luxeLogo.src}     // original src expression untouched
+        alt={luxeLogo.alt || ''} 
+        fill                   // makes the image fill the Box
+        style={{
+          objectFit: 'cover',  // replicates background-size: cover
+          objectPosition: 'center' // replicates background-position: center
+        }}
+      />
+    </Box>
+  
           <Box
             position="absolute"
             top="15px"
@@ -151,14 +162,23 @@ const LuxeAiAssistance = () => {
             bg={"white"}
           >
             <Box display="flex" alignItems="center">
-              <Box
-                width="52px"
-                height="52px"
-                borderRadius="full"
-                backgroundImage={`url(${luxeLogo.src})`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-              />
+            <Box
+      position="relative"       // establish containing block for the Image
+      width="52px"
+      height="52px"
+      borderRadius="full"       // circle
+      overflow="hidden"         // clip the Image to the circle
+    >
+      <Image
+        src={luxeLogo.src}      // original src expression untouched
+        alt={luxeLogo.alt || ''}
+        fill                    // Next.js 13+ API; use layout="fill" if on older Next.js
+        style={{
+          objectFit: 'cover',   // replicates background-size: cover
+          objectPosition: 'center', // replicates background-position: center
+        }}
+      />
+    </Box>
               <Box>
                 <Text fontWeight="700" fontSize="16px" color="#1A202C">
                   Luxe AI Assistant
@@ -221,16 +241,25 @@ const LuxeAiAssistance = () => {
                 height="100%"
                 p="20px"
               >
-                <Box
-                  width="60px"
-                  height="60px"
-                  borderRadius="full"
-                  backgroundImage={`url(${luxeLogo.src})`}
-                  backgroundSize="cover"
-                  backgroundPosition="center"
-                  mb="16px"
-                  boxShadow="0 4px 12px rgba(0, 0, 0, 0.08)"
-                />
+         <Box
+      position="relative"           // establish containing block for the Image
+      width="60px"
+      height="60px"
+      borderRadius="full"           // circle
+      overflow="hidden"             // clip the Image to the circle
+      mb="16px"
+      boxShadow="0 4px 12px rgba(0, 0, 0, 0.08)"
+    >
+      <Image
+        src={luxeLogo.src}          // original src expression untouched
+        alt={luxeLogo.alt || ''}
+        fill                        // makes the image fill the Box
+        style={{
+          objectFit: 'cover',       // replicates background-size: cover
+          objectPosition: 'center', // replicates background-position: center
+        }}
+      />
+    </Box>
                 <Text
                   color="#2D3748"
                   fontSize="16px"

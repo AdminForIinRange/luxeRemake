@@ -18,6 +18,7 @@ import {
 
 import { useRouter } from "next/navigation";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
+import Image from "next/image";
 
 const Services = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -192,20 +193,27 @@ const Services = () => {
                 >
                   {/* Background Image */}
                   <Box
-                    position="absolute"
-                    top="0"
-                    left="0"
-                    right="0"
-                    bottom="0"
-                    backgroundImage={`url(${service.img})`}
-                    backgroundSize="cover"
-                    backgroundPosition="center"
-                    zIndex="0"
-                    transition="transform 0.8s ease"
-                    _hover={{
-                      transform: "scale(1.05)",
-                    }}
-                  />
+      position="absolute"
+      top="0"
+      left="0"
+      right="0"
+      bottom="0"
+      zIndex="0"
+      overflow="hidden"                // clip the image on scale
+      transition="transform 0.8s ease"
+      _hover={{ transform: 'scale(1.05)' }}
+    >
+      <Image
+        src={service.img}             // your original src left untouched
+        alt={service.alt ?? ''}
+        fill                          // makes the image fill its container
+        style={{
+          objectFit: 'cover',         // replicates background-size: cover
+          objectPosition: 'center'    // replicates background-position: center
+        }}
+      />
+    </Box>
+    
 
                   {/* Gradient Overlay */}
                   <Box

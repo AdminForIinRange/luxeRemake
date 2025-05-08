@@ -2,6 +2,7 @@ import React from "react";
 import { Box, HStack, Text } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { Check } from "lucide-react";
+import Image from "next/image";
 const CleaningLinenCardLists = () => {
   const router = useRouter();
 
@@ -212,17 +213,25 @@ const CleaningLinenCardLists = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-              position="relative"
-              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              borderRadius="30px"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
-              backgroundImage={`  url(https://images.pexels.com/photos/6474494/pexels-photo-6474494.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="cover"
-            ></Box>
+      position="relative"
+      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+      borderRadius="30px"
+      bg="gray.200"       // fallback color
+      overflow="hidden"   // clip the Image to the container
+    >
+      <Image
+        src="https://images.pexels.com/photos/6474494/pexels-photo-6474494.jpeg"
+        alt=""
+        fill                // makes the image fill the Box entirely
+        style={{
+          objectFit: 'cover',     // replicates background-size: cover
+          objectPosition: 'center',// replicates background-position: center
+        }}
+        priority             // optional: preload above-the-fold image
+      />
+    </Box>
+    
             {/* Bottom-right label */}
             {/* <Box
               p={"4"}
@@ -422,17 +431,24 @@ const CleaningLinenCardLists = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-              position="relative"
-              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              borderRadius="30px"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/31472229/pexels-photo-31472229.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="cover"
-            ></Box>
+      position="relative"
+      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+      borderRadius="30px"
+      bg="gray.200"       // fallback color
+      overflow="hidden"   // clip the Image to the container
+    >
+      <Image
+        src="https://images.pexels.com/photos/31472229/pexels-photo-31472229.jpeg"
+        alt=""
+        fill                // makes the image fill the Box entirely
+        style={{
+          objectFit: 'cover',     // replicates background-size: cover
+          objectPosition: 'center',// replicates background-position: center
+        }}
+        priority             // optional: preload above-the-fold image
+      />
+    </Box>
             {/* Bottom-right label */}
 
             {/* <Box
@@ -735,17 +751,24 @@ const CleaningLinenCardLists = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-              position="relative"
-              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              borderRadius="30px"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="cover"
-            ></Box>
+      position="relative"
+      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+      borderRadius="30px"
+      bg="gray.200"       // fallback background color
+      overflow="hidden"   // clip the Image to the container
+    >
+      <Image
+        src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg"
+        alt=""
+        fill                // makes the image fill the Box entirely
+        style={{
+          objectFit: 'cover',     // replicates background-size: cover
+          objectPosition: 'center'// replicates background-position: center
+        }}
+        priority             // optional: preload above-the-fold image
+      />
+    </Box>
             {/* Bottom-right label */}
             {/* <Box
               p={"4"}
@@ -944,17 +967,24 @@ const CleaningLinenCardLists = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-              position="relative"
-              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              borderRadius="30px"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/8293667/pexels-photo-8293667.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="cover"
-            ></Box>
+      position="relative"
+      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+      borderRadius="30px"
+      bg="gray.200"       // fallback background color
+      overflow="hidden"   // clip the Image to the container
+    >
+      <Image
+        src="https://images.pexels.com/photos/8293667/pexels-photo-8293667.jpeg"
+        alt=""
+        fill                // makes the image fill the Box entirely
+        style={{
+          objectFit: 'cover',      // replicates background-size: cover
+          objectPosition: 'center' // replicates background-position: center
+        }}
+        priority             // optional: preload above-the-fold image
+      />
+    </Box>
             {/* Bottom-right label */}
 
             {/* <Box

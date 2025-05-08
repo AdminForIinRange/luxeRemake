@@ -12,6 +12,7 @@ import { FaAngleRight } from "react-icons/fa";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
+import Image from "next/image";
 const About = () => {
   useEffect(() => {
     Aos.init({
@@ -174,32 +175,36 @@ const About = () => {
           </Box>
 
           <Box
-            position="relative"
-            h={["350px", "350px", "350px", "500px", "500px", "600px"]}
-            w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-            borderRadius="30px"
-            bgPos="center"
-            bgSize="cover"
-            // Change this to any background you want
-            // Change this to any background you want
-            overflow="hidden"
-            display={"flex"}
-            justifyContent={"end"}
-          >
-            {/* Horizontal line for crosshair */}
-            <Box
-              position="relative"
-              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-              borderRadius="30px"
-              bg="gray.200" // Change this to any background you want
-              overflow="hidden"
-              backgroundImage={` url(https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg)`}
-              backgroundRepeat="no-repeat"
-              backgroundPosition="center"
-              backgroundSize="cover"
-            ></Box>
-          </Box>
+      position="relative"
+      h={["350px", "350px", "350px", "500px", "500px", "600px"]}
+      w={["95%", "95%", "95%", "600px", "600px", "600px"]}
+      borderRadius="30px"
+      overflow="hidden"
+      display="flex"
+      justifyContent="flex-end"
+    >
+      {/* replace inner Box’s background-image with Next/Image */}
+      <Box
+        position="relative"
+        h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+        w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+        borderRadius="30px"
+        overflow="hidden"
+        bg="gray.200"               // fallback color
+      >
+        <Image
+          src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
+          alt="Scenic background"
+          fill                       // in Next.js 13+, use `fill`; for older versions use `layout="fill"`
+          style={{
+            objectFit: 'cover',      // replicate `background-size: cover`
+            objectPosition: 'center' // replicate `background-position: center`
+          }}
+          priority                   // optional: if you want to preload it
+        />
+        
+      </Box>
+    </Box>
         </HStack>
       </HStack>
 
@@ -658,21 +663,25 @@ const About = () => {
                 </Text>
               </HStack>
               <Box
-                // border={"1px solid rgb(0, 0,0,0.25)"}
-                mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
-                display={["block", "block", "block", "block", "block", "block"]}
-                // data-aos="fade-right" // chnage dir
-                // border={"1px solid rgb(0, 0, 0,0.25)"}
-                h={["300px", "300px", "300px", "500px", "500px", "500px"]}
-                w={["300px", "300px", "300px", "500px", "500px", "500px"]}
-                borderRadius={"full"}
-                bgPos={"center"}
-                bgSize={"cover"}
-                backgroundImage={`url(${members[currentSlide].src})`}
-                backgroundSize="cover"
-                backgroundPosition="center"
-                backgroundRepeat="no-repeat"
-              ></Box>
+      position="relative"                       // make room for Image fill
+      mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
+      display="block"
+      h={["300px", "300px", "300px", "500px", "500px", "500px"]}
+      w={["300px", "300px", "300px", "500px", "500px", "500px"]}
+      borderRadius="full"                        // circle
+      overflow="hidden"                          // clip to circle
+    >
+      <Image
+        src={members[currentSlide].src}
+        alt={`Slide ${currentSlide + 1}`}
+        fill                                     // in Next.js 13+, for older use layout="fill"
+        style={{
+          objectFit: 'cover',                    // cover & center just like bg-size/bg-pos
+          objectPosition: 'center',
+        }}
+        priority                                 // optional: preload current slide
+      />
+    </Box>
 
               <HStack
                 display={["none", "none", "none", "flex", "flex", "flex"]}

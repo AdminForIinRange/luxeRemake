@@ -1,4 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
+import Image from "next/image";
 
 interface TopHeaderProps {
   imgUrl: string;
@@ -54,23 +55,36 @@ const TopHeader = ({
 
       {/* Main container */}
       <Box
-        backgroundImage={`linear-gradient(135deg, rgba(0,0,0,0.52), rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.1)), url(${imgUrl})`}
-        backgroundSize="cover"
-        backgroundPosition="center"
-        backgroundRepeat="no-repeat"
-        w="95%"
-        h={["380px", "420px", "480px", "520px", "580px"]}
-        borderRadius="20px"
-        overflow="hidden"
-        position="relative"
-        transition="transform 0.4s ease, box-shadow 0.4s ease"
-        _hover={{
-          transform: "scale(1.01)",
-          boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+      position="relative"
+      w="95%"
+      h={["380px", "420px", "480px", "520px", "580px"]}
+      borderRadius="20px"
+      overflow="hidden"
+      boxShadow="0 10px 30px rgba(0,0,0,0.2)"
+      transition="transform 0.4s ease, box-shadow 0.4s ease"
+      cursor="pointer"
+      _hover={{
+        transform: "scale(1.01)",
+        boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+      }}
+      _before={{
+        content: '""',
+        position: "absolute",
+        inset: 0,
+        background: "linear-gradient(135deg, rgba(0,0,0,0.52), rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.1))",
+        zIndex: 1,
+      }}
+    >
+      <Image
+        src={imgUrl}
+        alt=""
+        fill
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
         }}
-        cursor="pointer"
-        boxShadow="0 10px 30px rgba(0,0,0,0.2)"
-      >
+      />
+      
         {/* Decorative elements */}
 
         {/* Aperture icon simulation using nested boxes */}

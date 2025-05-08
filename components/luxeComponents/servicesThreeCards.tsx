@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 interface CardData {
   imgUrl: string;
@@ -99,20 +100,36 @@ const ServicesThreeCards = ({
 
             {/* Card image */}
             <Box
-              backgroundImage={`linear-gradient(to top, rgba(23,25,35,0.7) 0%, rgba(23,25,35,0.5) 40%, rgba(23,25,35,0.2) 80%, rgba(23,25,35,0.1) 100%), url(${card.imgUrl})`}
-              backgroundSize="cover"
-              backgroundPosition="center"
-              backgroundRepeat="no-repeat"
-              height={["240px", "260px", "280px", "300px"]}
-              borderRadius="16px"
-              cursor="pointer"
-              position="relative"
-              overflow="hidden"
-              boxShadow="0 4px 20px rgba(0,0,0,0.08)"
-              _hover={{
-                boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-              }}
-            >
+      position="relative"
+      height={["240px", "260px", "280px", "300px"]}
+      borderRadius="16px"
+      cursor="pointer"
+      overflow="hidden"
+      boxShadow="0 4px 20px rgba(0,0,0,0.08)"
+      _hover={{
+        boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+      }}
+      _before={{
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        bgGradient: "linear(to-t, rgba(23,25,35,0.7) 0%, rgba(23,25,35,0.5) 40%, rgba(23,25,35,0.2) 80%, rgba(23,25,35,0.1) 100%)",
+        zIndex: 1,
+      }}
+    >
+      <Image
+        src={card.imgUrl}
+        alt=""
+        fill
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center',
+        }}
+      />
+      
               {/* Accent line */}
 
               <Box
