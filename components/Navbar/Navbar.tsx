@@ -497,7 +497,7 @@ const Navbar = () => {
             {/* Desktop Call to Action Button */}
             <Box
               ml={{ md: "16px", lg: "24px" }}
-               bg="#0A0F29"
+              bg="#0A0F29"
               color="white"
               px={{ md: "16px", lg: "20px" }}
               py="10px"

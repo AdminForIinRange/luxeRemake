@@ -87,11 +87,11 @@ const HowWeCanGetYouStarted = () => {
         <Box w={"90%"} borderTop={"1px solid #e0e0e0"} />
       </HStack>
 
-                 {/* The image box scroll move down ----------------------------- */}
-                 <BoxScrollMoveDown />
+      {/* The image box scroll move down ----------------------------- */}
+      <BoxScrollMoveDown />
       {/* The image box scroll move down ----------------------------- */}
       <Box
-      mt={["-100px", "-100px", "-150px", "-150px", "-150px", "-150px"]}
+        mt={["-100px", "-100px", "-150px", "-150px", "-150px", "-150px"]}
         width="100%"
         position="relative"
         _before={{
@@ -106,7 +106,6 @@ const HowWeCanGetYouStarted = () => {
           zIndex: "0",
         }}
       >
-   
         {gettingStarted.map((item, index) => (
           <Box
             key={index}
@@ -339,7 +338,6 @@ const HowWeCanGetYouStarted = () => {
                 </Box>
 
                 {/* Decorative elements */}
-    
               </Box>
             </Box>
           </Box>
@@ -380,7 +378,7 @@ const HowWeCanGetYouStarted = () => {
 
         <Box
           display="inline-block"
-                  backgroundColor=" #0A0F29"
+          backgroundColor=" #0A0F29"
           color="white"
           paddingX="40px"
           paddingY="20px"

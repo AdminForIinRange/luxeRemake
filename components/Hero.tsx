@@ -51,12 +51,10 @@ const Hero = () => {
         }}
         fontWeight={{ base: "400", sm: "400", md: "400", lg: "400", xl: "400" }}
         fontFamily={"arial"}
-     
       >
         <Box
           bg={"rgb(24, 34, 82)"}
           color={"white"}
-        
           px={5}
           py={3}
           borderRadius={"full"}
@@ -64,7 +62,6 @@ const Hero = () => {
           fontWeight={"500"}
           width={"fit-content"}
           mb={"50px"}
-
         >
           Hassle-free Airbnb management services.
         </Box>
@@ -76,7 +73,7 @@ const Hero = () => {
         </Box>
       </Stack>
 
-      <HStack justify={"center"} align={"center"} w={"100%"}  zIndex={3}>
+      <HStack justify={"center"} align={"center"} w={"100%"} zIndex={3}>
         <Box
           transition={"all 0.2s ease-in-out"}
           display="flex"
@@ -148,8 +145,6 @@ const Hero = () => {
       {/* Add New Pack Button */}
 
       {/* New Dialog Component */}
-
-      
     </>
   );
 };
