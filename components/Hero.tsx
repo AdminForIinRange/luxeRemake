@@ -52,19 +52,7 @@ const Hero = () => {
         fontWeight={{ base: "400", sm: "400", md: "400", lg: "400", xl: "400" }}
         fontFamily={"arial"}
       >
-        <Box
-          bg={"rgb(24, 34, 82)"}
-          color={"white"}
-          px={5}
-          py={3}
-          borderRadius={"full"}
-          fontSize={"16px"}
-          fontWeight={"500"}
-          width={"fit-content"}
-          mb={"50px"}
-        >
-          Hassle-free Airbnb management services.
-        </Box>
+       
         <Box color={"#222222"} fontWeight={"600"} width={"90%"}>
           Luxe Managements <br />
           <Box fontWeight={"400"}>
