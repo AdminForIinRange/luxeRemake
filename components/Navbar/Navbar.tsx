@@ -307,7 +307,7 @@ const Navbar = () => {
               mr="24px"
               mb={{ base: "4px", sm: "0" }}
             >
-              +1 (800) 555-1234
+              +61 406 631 461
             </Text>
             <Text
               fontSize="13px"
@@ -607,7 +607,7 @@ const Navbar = () => {
               info@luxemanagement.com
             </Text>
             <Text fontSize="14px" color="#666" mb="12px">
-              +1 (800) 555-1234
+              +61 406 631 461
             </Text>
             <Text
               fontSize="14px"

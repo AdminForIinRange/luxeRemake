@@ -329,7 +329,7 @@ const HowWeCanGetYouStarted = () => {
                             : item.id === 4
                               ? "Relax and enjoy"
                               : item.id === 5
-                                ? "Track Growth"
+                                ? "Track growth"
                                 : item.id === 6
                                   ? "Full-service independence"
                                   : ""}

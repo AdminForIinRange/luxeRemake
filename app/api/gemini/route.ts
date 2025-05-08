@@ -35,7 +35,7 @@ Mission: Redefine short-term rental management through quality, transparency, an
 
 📌 Contact:
 - Email: info@luxemanagement.com / luxemanagements.info@gmail.com
-- Phone: +1 (800) 555-1234 / +61 406 631 461
+- Phone: +61 406 631 461 / +61 406 631 461
 - Office Hours: Mon–Fri: 9AM–5PM, Sat: 10AM–2PM, Sun: Closed
 
 📌 Core Services:
