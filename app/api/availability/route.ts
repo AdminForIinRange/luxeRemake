@@ -82,8 +82,8 @@ const processEvent = (event: any, platform: string): any => {
   const endDate = convertToSydneyTime(event.end)
 
   // Shift the date by 1 day forward
-  const newStartDate = moment(startDate).subtract(1, 'days').format("YYYY-MM-DDTHH:mm:ss")
-  const newEndDate = moment(endDate).subtract(1, 'days').format("YYYY-MM-DDTHH:mm:ss")
+  const newStartDate = moment(startDate).format("YYYY-MM-DDTHH:mm:ss")
+  const newEndDate = moment(endDate).format("YYYY-MM-DDTHH:mm:ss")
 
   return {
     uid: event.uid || "",

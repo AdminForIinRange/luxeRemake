@@ -43,11 +43,6 @@ const formatDate = (year: number, month: number, day: number) => {
   return moment.tz([year, month, day], "Australia/Sydney").format("YYYY-MM-DD")
 }
 
-// Parse a date string to a moment object in Sydney timezone
-const parseSydneyDate = (dateStr: string) => {
-  return moment.tz(dateStr, "Australia/Sydney")
-}
-
 interface Event {
   uid: string
   summary: string
@@ -142,22 +137,22 @@ const AvailabilityCalendar = () => {
 
     // For each Airbnb event, check if it overlaps with any Booking.com event
     airbnbEvents.forEach((airbnbEvent) => {
-      const airbnbStart = parseSydneyDate(airbnbEvent.start)
-      const airbnbEnd = parseSydneyDate(airbnbEvent.end)
+      const airbnbStart = moment(airbnbEvent.start).format("YYYY-MM-DD")
+      const airbnbEnd = moment(airbnbEvent.end).format("YYYY-MM-DD")
 
       bookingcomEvents.forEach((bookingEvent) => {
-        const bookingStart = parseSydneyDate(bookingEvent.start)
-        const bookingEnd = parseSydneyDate(bookingEvent.end)
+        const bookingStart = moment(bookingEvent.start).format("YYYY-MM-DD")
+        const bookingEnd = moment(bookingEvent.end).format("YYYY-MM-DD")
 
         // Check if the dates overlap
-        if (airbnbStart.isBefore(bookingEnd) && airbnbEnd.isAfter(bookingStart)) {
+        if (moment(airbnbStart).isSameOrBefore(bookingEnd) && moment(airbnbEnd).isSameOrAfter(bookingStart)) {
           // Calculate the overlap period
-          const overlapStart = moment.max(airbnbStart, bookingStart)
-          const overlapEnd = moment.min(airbnbEnd, bookingEnd)
+          const overlapStart = moment.max(moment(airbnbStart), moment(bookingStart))
+          const overlapEnd = moment.min(moment(airbnbEnd), moment(bookingEnd))
 
           // Add each day in the overlap period to the clash set
           const currentDate = overlapStart.clone()
-          while (currentDate.isBefore(overlapEnd)) {
+          while (currentDate.isSameOrBefore(overlapEnd)) {
             clashDates.add(currentDate.format("YYYY-MM-DD"))
             currentDate.add(1, "day")
           }
@@ -171,24 +166,22 @@ const AvailabilityCalendar = () => {
   // Check if a specific date is booked on Airbnb
   const isAirbnbBooked = (year: number, month: number, day: number) => {
     const dateStr = formatDate(year, month, day)
-    const date = parseSydneyDate(dateStr)
 
     return airbnbData.some((event) => {
-      const eventStart = parseSydneyDate(event.start)
-      const eventEnd = parseSydneyDate(event.end)
-      return date.isSameOrAfter(eventStart) && date.isBefore(eventEnd)
+      const eventStart = moment(event.start).format("YYYY-MM-DD")
+      const eventEnd = moment(event.end).format("YYYY-MM-DD")
+      return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
     })
   }
 
   // Check if a specific date is booked on Booking.com
   const isBookingComBooked = (year: number, month: number, day: number) => {
     const dateStr = formatDate(year, month, day)
-    const date = parseSydneyDate(dateStr)
 
     return bookingcomData.some((event) => {
-      const eventStart = parseSydneyDate(event.start)
-      const eventEnd = parseSydneyDate(event.end)
-      return date.isSameOrAfter(eventStart) && date.isBefore(eventEnd)
+      const eventStart = moment(event.start).format("YYYY-MM-DD")
+      const eventEnd = moment(event.end).format("YYYY-MM-DD")
+      return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
     })
   }
 
@@ -326,41 +319,33 @@ const AvailabilityCalendar = () => {
       {/* Legend */}
       <Box display="flex" gap={4} mb={4} flexWrap="wrap">
         <Box display="flex" alignItems="center">
-          <Box
-            w="12px"
-            h="12px"
-            bg="green.50"
-            borderRadius="sm"
-            border="1px solid"
-            borderColor="green.200"
-            mr={2}
-          ></Box>
+          <Box position="relative" w="40px" h="16px" mr={2}>
+            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="green.500" borderRadius="full"></Box>
+          </Box>
           <Text fontSize="xs" color="gray.600">
             Available
           </Text>
         </Box>
         <Box display="flex" alignItems="center">
-          <Box
-            w="12px"
-            h="12px"
-            bg="orange.50"
-            borderRadius="sm"
-            border="1px solid"
-            borderColor="orange.300"
-            mr={2}
-          ></Box>
+          <Box position="relative" w="40px" h="16px" mr={2}>
+            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="orange.500" borderRadius="full"></Box>
+          </Box>
           <Text fontSize="xs" color="gray.600">
             Airbnb
           </Text>
         </Box>
         <Box display="flex" alignItems="center">
-          <Box w="12px" h="12px" bg="blue.50" borderRadius="sm" border="1px solid" borderColor="blue.300" mr={2}></Box>
+          <Box position="relative" w="40px" h="16px" mr={2}>
+            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="blue.500" borderRadius="full"></Box>
+          </Box>
           <Text fontSize="xs" color="gray.600">
             Booking.com
           </Text>
         </Box>
         <Box display="flex" alignItems="center">
-          <Box w="12px" h="12px" bg="red.50" borderRadius="sm" border="1px solid" borderColor="red.300" mr={2}></Box>
+          <Box position="relative" w="40px" h="16px" mr={2}>
+            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="red.500" borderRadius="full"></Box>
+          </Box>
           <Text fontSize="xs" color="gray.600">
             Booking Clash
           </Text>
@@ -397,44 +382,38 @@ const AvailabilityCalendar = () => {
           {/* Actual days of the month */}
           {Array.from({ length: getDaysInMonth(currentYear, currentMonth) }, (_, index) => {
             const day = index + 1
+            const dateStr = formatDate(currentYear, currentMonth, day)
             const isAirbnb = isAirbnbBooked(currentYear, currentMonth, day)
             const isBookingCom = isBookingComBooked(currentYear, currentMonth, day)
             const isClashed = hasClash(currentYear, currentMonth, day)
 
-            // Determine background color based on booking status
-            let bgColor = "white"
-            let borderColor = "gray.200"
-            let statusText = ""
+            // Find booking details for this date
+            const airbnbBooking = airbnbData.find((event) => {
+              const eventStart = moment(event.start).format("YYYY-MM-DD")
+              const eventEnd = moment(event.end).format("YYYY-MM-DD")
+              return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
+            })
 
-            if (isClashed) {
-              bgColor = "red.50"
-              borderColor = "red.300"
-              statusText = "Clash"
-            } else if (isAirbnb && isBookingCom) {
-              bgColor = "purple.50"
-              borderColor = "purple.300"
-              statusText = "Both"
-            } else if (isAirbnb) {
-              bgColor = "orange.50"
-              borderColor = "orange.300"
-              statusText = "Airbnb"
-            } else if (isBookingCom) {
-              bgColor = "blue.50"
-              borderColor = "blue.300"
-              statusText = "Booking"
-            } else {
-              bgColor = "green.50"
-              borderColor = "green.200"
-              statusText = "Available"
-            }
+            const bookingComBooking = bookingcomData.find((event) => {
+              const eventStart = moment(event.start).format("YYYY-MM-DD")
+              const eventEnd = moment(event.end).format("YYYY-MM-DD")
+              return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
+            })
+
+            // Check if this is the first or last day of a booking
+            const isAirbnbStart = airbnbBooking && moment(airbnbBooking.start).format("YYYY-MM-DD") === dateStr
+            const isAirbnbEnd = airbnbBooking && moment(airbnbBooking.end).format("YYYY-MM-DD") === dateStr
+            const isBookingComStart =
+              bookingComBooking && moment(bookingComBooking.start).format("YYYY-MM-DD") === dateStr
+            const isBookingComEnd = bookingComBooking && moment(bookingComBooking.end).format("YYYY-MM-DD") === dateStr
 
             return (
               <Box
                 key={day}
                 height="110px"
                 border="1px solid"
-                borderColor={borderColor}
-                bg={bgColor}
+                borderColor="gray.200"
+                bg="white"
                 position="relative"
                 transition="all 0.2s"
                 _hover={{
@@ -463,30 +442,124 @@ const AvailabilityCalendar = () => {
                   {day}
                 </Box>
 
-                {/* Status Indicator */}
-                <Box
-                  position="absolute"
-                  bottom={0}
-                  left={0}
-                  right={0}
-                  p={1}
-                  bg={isClashed ? "red.400" : isAirbnb || isBookingCom ? "gray.100" : "transparent"}
-                  textAlign="center"
-                >
-                  <Text
-                    fontSize="xs"
-                    fontWeight={isClashed ? "bold" : "normal"}
-                    color={isClashed ? "white" : "gray.600"}
-                  >
-                    {statusText}
-                  </Text>
-                </Box>
-
-                {/* Price Indicator (Only shown for available dates) */}
-                {!isAirbnb && !isBookingCom && !isClashed && (
-                  <Box position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" textAlign="center">
+                {/* Price (for available dates) */}
+                {!isAirbnb && !isBookingCom && (
+                  <Box position="absolute" top="40%" left="50%" transform="translate(-50%, -50%)" textAlign="center">
                     <Text fontSize="sm" fontWeight="bold" color="green.600">
-                      Available
+                      $199 AUD
+                    </Text>
+                  </Box>
+                )}
+
+                {/* Airbnb Booking Bar */}
+                {isAirbnb && (
+                  <Box
+                    position="absolute"
+                    top="40%"
+                    left={isAirbnbStart ? "50%" : "0"}
+                    right={isAirbnbEnd ? "50%" : "0"}
+                    height="8px"
+                    bg="orange.500"
+                    zIndex={1}
+                    borderLeftRadius={isAirbnbStart ? "full" : "none"}
+                    borderRightRadius={isAirbnbEnd ? "full" : "none"}
+                  >
+                    {isAirbnbStart && (
+                      <Box
+                        position="absolute"
+                        left="-12px"
+                        top="-4px"
+                        width="16px"
+                        height="16px"
+                        borderRadius="full"
+                        bg="orange.500"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                      >
+                        <Text fontSize="8px" color="white" fontWeight="bold">
+                          IN
+                        </Text>
+                      </Box>
+                    )}
+                    {isAirbnbEnd && (
+                      <Box
+                        position="absolute"
+                        right="-12px"
+                        top="-4px"
+                        width="16px"
+                        height="16px"
+                        borderRadius="full"
+                        bg="orange.500"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                      >
+                        <Text fontSize="8px" color="white" fontWeight="bold">
+                          OUT
+                        </Text>
+                      </Box>
+                    )}
+                  </Box>
+                )}
+
+                {/* Booking.com Booking Bar */}
+                {isBookingCom && (
+                  <Box
+                    position="absolute"
+                    top="60%"
+                    left={isBookingComStart ? "50%" : "0"}
+                    right={isBookingComEnd ? "50%" : "0"}
+                    height="8px"
+                    bg="blue.500"
+                    zIndex={1}
+                    borderLeftRadius={isBookingComStart ? "full" : "none"}
+                    borderRightRadius={isBookingComEnd ? "full" : "none"}
+                  >
+                    {isBookingComStart && (
+                      <Box
+                        position="absolute"
+                        left="-12px"
+                        top="-4px"
+                        width="16px"
+                        height="16px"
+                        borderRadius="full"
+                        bg="blue.500"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                      >
+                        <Text fontSize="8px" color="white" fontWeight="bold">
+                          IN
+                        </Text>
+                      </Box>
+                    )}
+                    {isBookingComEnd && (
+                      <Box
+                        position="absolute"
+                        right="-12px"
+                        top="-4px"
+                        width="16px"
+                        height="16px"
+                        borderRadius="full"
+                        bg="blue.500"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                      >
+                        <Text fontSize="8px" color="white" fontWeight="bold">
+                          OUT
+                        </Text>
+                      </Box>
+                    )}
+                  </Box>
+                )}
+
+                {/* Clash Indicator */}
+                {isClashed && (
+                  <Box position="absolute" bottom={2} left={0} right={0} textAlign="center">
+                    <Text fontSize="xs" fontWeight="bold" color="red.600">
+                      CLASH
                     </Text>
                   </Box>
                 )}
