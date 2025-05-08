@@ -60,3 +60,31 @@ Please conduct a thorough search on publicly available property data sources suc
     Cap Rate: The capitalization rate, a measure of the return on the property investment.
 
 Please ensure that you gather the information strictly related to the categories above and refrain from providing any additional information beyond the scope outlined in this request.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Please improve this section further and make it more visually engaging and polished.
+I’d like you to:
+
+Do not touhc the logic or anything only modifky teh JSX retun ()
+
+    Enhance the overall layout and visual appeal.
+
+    Provide more content and relevant informative details where appropriate.
+
+    Add small visual touches (within the allowed components) that make the section feel more complete and refined.
+
+Remember:
+You can only use Box and Text from @chakra-ui/react — no other components or external styling libraries.
+
+Make it look clean, modern, and compelling.
