@@ -74,6 +74,7 @@ const TopHeader = ({
         background: "linear-gradient(135deg, rgba(0,0,0,0.52), rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.1))",
         zIndex: 1,
       }}
+      
     >
       <Image
         src={imgUrl}
@@ -100,6 +101,8 @@ const TopHeader = ({
           flexDirection="column"
           justifyContent="flex-end"
           p={["30px", "40px", "50px", "60px", "70px"]}
+          zIndex="3"
+        
         >
           {/* Subtle label */}
           <Box mb="16px">
@@ -120,6 +123,8 @@ const TopHeader = ({
                 height: "2px",
                 bg: "rgba(255,255,255,0.5)",
               }}
+              zIndex={3}
+              
             >
               Premium Service
             </Text>
@@ -173,14 +178,16 @@ const TopHeader = ({
           </Box>
 
           {/* Description */}
-          <Box mb="30px">
+          <Box mb="30px" >
             <Text
               fontSize={["16px", "17px", "18px", "20px", "22px"]}
               fontWeight="300"
               color="white"
               maxW={["100%", "90%", "80%", "60%", "50%"]}
               lineHeight={["1.6", "1.6", "1.5"]}
-              opacity="0.9"
+          opacity={0.9}
+
+ 
             >
               {description}
             </Text>
