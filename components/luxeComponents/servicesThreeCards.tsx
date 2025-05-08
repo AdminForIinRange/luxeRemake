@@ -119,12 +119,14 @@ const ServicesThreeCards = ({
         bgGradient: "linear(to-t, rgba(23,25,35,0.7) 0%, rgba(23,25,35,0.5) 40%, rgba(23,25,35,0.2) 80%, rgba(23,25,35,0.1) 100%)",
         zIndex: 1,
       }}
+      
     >
       <Image
         src={card.imgUrl}
         alt=""
         fill
         style={{
+          
           objectFit: 'cover',
           objectPosition: 'center',
         }}
@@ -133,41 +135,41 @@ const ServicesThreeCards = ({
               {/* Accent line */}
 
               <Box
+  
                 position="absolute"
                 bottom="0"
                 left="0"
                 p={["20px", "24px", "28px"]}
                 width="100%"
               >
-                <Text
-                  color="white"
-                  fontSize={["24px", "26px", "28px", "30px"]}
-                  fontWeight="700"
-                  lineHeight="1.2"
-                  mb="8px"
-                >
-                  {card.title}
-                </Text>
+              
 
                 {/* Small preview text */}
-                <Text
-                  color="rgba(255,255,255,0.8)"
-                  fontSize="15px"
-                  fontWeight="500"
-                  display={["none", "none", "block"]}
-                >
-                  Discover our approach
-                </Text>
+           
               </Box>
             </Box>
 
             {/* Card content */}
             <Box pt="20px" pb="24px" px="4px">
+
+            <Text
+                textAlign={"center"}
+                  color="black"
+                  fontSize={["24px", "26px", "28px", "28px"]}
+                  fontWeight="700"
+                  lineHeight="1.2"
+                  mb="8px"
+
+
+                >
+                  {card.title}
+                </Text>
               <Text
                 fontSize={["15px", "16px", "16px", "17px"]}
                 color="#2D3748"
                 lineHeight="1.7"
                 mb="16px"
+                textAlign={"center"}
               >
                 {card.description}
               </Text>

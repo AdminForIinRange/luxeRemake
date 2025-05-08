@@ -115,6 +115,7 @@ const HowWeCanGetYouStarted = () => {
             width="100%"
             maxWidth="1600px"
             margin="0 auto"
+            px={[4, 4, 4, 4]}
             paddingBottom={index === gettingStarted.length - 1 ? "0" : "180px"}
           >
             {/* Timeline Node */}
@@ -155,7 +156,7 @@ const HowWeCanGetYouStarted = () => {
                 "column",
                 index % 2 === 0 ? "row" : "row-reverse",
               ]}
-              paddingLeft={["80px", "80px", "80px", "0"]}
+              paddingLeft={["50px", "50px", "80px", "0"]}
               paddingTop={["0", "0", "0", "60px"]}
             >
               {/* Text Content */}

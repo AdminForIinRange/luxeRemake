@@ -193,6 +193,7 @@ const AboutJourneyCardLists = () => {
             maxWidth="1600px"
             margin="0 auto"
             paddingBottom={index === journey.length - 1 ? "0" : "180px"}
+            px={[4, 4, 4, 4]}
           >
             {/* Timeline Node */}
             <Box
@@ -232,7 +233,7 @@ const AboutJourneyCardLists = () => {
                 "column",
                 index % 2 === 0 ? "row" : "row-reverse",
               ]}
-              paddingLeft={["80px", "80px", "80px", "0"]}
+              paddingLeft={["50px", "50px", "80px", "0"]}
               paddingTop={["0", "0", "0", "60px"]}
             >
               {/* Text Content */}
