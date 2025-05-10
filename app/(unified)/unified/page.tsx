@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useEffect, useState } from "react"
-import { Box, Button, Text, Select} from "@chakra-ui/react"
+import { Box, Button, Text} from "@chakra-ui/react"
 import { ArrowDown, ChevronLeft, ChevronRight, User } from "lucide-react"
 
 // Import moment-timezone for consistent timezone handling
@@ -135,7 +135,7 @@ const AvailabilityCalendar = () => {
       setLastUpdated(moment().tz("Australia/Sydney").format("DD MMM YYYY, h:mm A"))
 
       // Check for clashes between the two platforms
-      findClashes(airbnbData.events || [], bookingcomData.events || [])
+      // findClashes(airbnbData.events || [], bookingcomData.events || [])
     } catch (error: any) {
       console.error("Error fetching availability data:", error)
       setError(`Failed to load availability data: ${error.message}`)
@@ -145,36 +145,36 @@ const AvailabilityCalendar = () => {
   }
 
   // Function to find clashes between Airbnb and Booking.com bookings
-  const findClashes = (airbnbEvents: Event[], bookingcomEvents: Event[]) => {
-    const clashDates = new Set<string>()
+  // const findClashes = (airbnbEvents: Event[], bookingcomEvents: Event[]) => {
+  //   const clashDates = new Set<string>()
 
-    // For each Airbnb event, check if it overlaps with any Booking.com event
-    airbnbEvents.forEach((airbnbEvent) => {
-      const airbnbStart = moment(airbnbEvent.start).format("YYYY-MM-DD")
-      const airbnbEnd = moment(airbnbEvent.end).format("YYYY-MM-DD")
+  //   // For each Airbnb event, check if it overlaps with any Booking.com event
+  //   airbnbEvents.forEach((airbnbEvent) => {
+  //     const airbnbStart = moment(airbnbEvent.start).format("YYYY-MM-DD")
+  //     const airbnbEnd = moment(airbnbEvent.end).format("YYYY-MM-DD")
 
-      bookingcomEvents.forEach((bookingEvent) => {
-        const bookingStart = moment(bookingEvent.start).format("YYYY-MM-DD")
-        const bookingEnd = moment(bookingEvent.end).format("YYYY-MM-DD")
+  //     bookingcomEvents.forEach((bookingEvent) => {
+  //       const bookingStart = moment(bookingEvent.start).format("YYYY-MM-DD")
+  //       const bookingEnd = moment(bookingEvent.end).format("YYYY-MM-DD")
 
-        // Check if the dates overlap
-        if (moment(airbnbStart).isSameOrBefore(bookingEnd) && moment(airbnbEnd).isSameOrAfter(bookingStart)) {
-          // Calculate the overlap period
-          const overlapStart = moment.max(moment(airbnbStart), moment(bookingStart))
-          const overlapEnd = moment.min(moment(airbnbEnd), moment(bookingEnd))
+  //       // Check if the dates overlap
+  //       if (moment(airbnbStart).isSameOrBefore(bookingEnd) && moment(airbnbEnd).isSameOrAfter(bookingStart)) {
+  //         // Calculate the overlap period
+  //         const overlapStart = moment.max(moment(airbnbStart), moment(bookingStart))
+  //         const overlapEnd = moment.min(moment(airbnbEnd), moment(bookingEnd))
 
-          // Add each day in the overlap period to the clash set
-          const currentDate = overlapStart.clone()
-          while (currentDate.isSameOrBefore(overlapEnd)) {
-            clashDates.add(currentDate.format("YYYY-MM-DD"))
-            currentDate.add(1, "day")
-          }
-        }
-      })
-    })
+  //         // Add each day in the overlap period to the clash set
+  //         const currentDate = overlapStart.clone()
+  //         while (currentDate.isSameOrBefore(overlapEnd)) {
+  //           clashDates.add(currentDate.format("YYYY-MM-DD"))
+  //           currentDate.add(1, "day")
+  //         }
+  //       }
+  //     })
+  //   })
 
-    setClashes(clashDates)
-  }
+  //   setClashes(clashDates)
+  // }
 
   // Check if a specific date is booked on Airbnb
   const isAirbnbBooked = (year: number, month: number, day: number) => {
@@ -294,42 +294,37 @@ const AvailabilityCalendar = () => {
       </Text>
 
       {/* House Selector */}
-      <select
-      key={selectedHouse}
-        value={selectedHouse}
-        onChange={(event) => setSelectedHouse(event.currentTarget.value)}
-        style={{
-          width: "100%",
-          marginBottom: "16px",
-          padding: "16px",
-          paddingLeft: "10px",
-          borderRadius: "8px",
-          borderColor: "gray.300",
-          outline: "none",
-          appearance: "none",
-          transition: "border-color 0.2s ease, box-shadow 0.2s ease",
-        }}
-        onFocus={(event) => {
-          event.currentTarget.style.borderColor = "teal.500";
-          event.currentTarget.style.boxShadow = "0 0 0 1px teal.500";
-        }}
-        onBlur={(event) => {
-          event.currentTarget.style.borderColor = "gray.300";
-          event.currentTarget.style.boxShadow = "none";
-        }}
-        onMouseOver={(event) => {
-          event.currentTarget.style.cursor = "pointer";
-        }}
-      >
+      <Box display="flex" gap={2} mb={4}>
+      {houseList.map((h) => (
+  <Box
+    key={h.name}
+    as="button"
+    onClick={() => setSelectedHouse(h.name)}
+    bg={selectedHouse === h.name ? "teal.500" : "gray.100"}
+    color={selectedHouse === h.name ? "white" : "gray.800"}
+    borderRadius="full"
+    px={4}
+    py={1.5}
+    fontWeight="medium"
+    fontSize="sm"
+    boxShadow={selectedHouse === h.name ? "md" : "none"}
+    transition="all 0.2s"
+    _hover={{
+      bg: selectedHouse === h.name ? "teal.600" : "gray.200",
+      boxShadow: "sm",
+    }}
+    _active={{
+      transform: "scale(0.98)",
+    }}
+    _focus={{ boxShadow: "outline" }}
+    mx={1}
+    my={1}
+  >
+    {h.displayName}
+  </Box>
+))}
 
-          {houseList.map((house) => (
-            <><option key={house.name} value={house.name}>
-              {house.displayName}
-            </option></>
-    
-        ))}
-
-      </select>
+      </Box>
   
 
       {/* Loading and Error States */}
@@ -628,13 +623,13 @@ const AvailabilityCalendar = () => {
                 )}
 
                 {/* Clash Indicator */}
-                {isClashed && (
+                {/* {isClashed && (
                   <Box position="absolute" bottom={2} left={0} right={0} textAlign="center">
                     <Text fontSize="xs" fontWeight="bold" color="red.600">
                       CLASH
                     </Text>
                   </Box>
-                )}
+                )} */}
               </Box>
             )
           })}
