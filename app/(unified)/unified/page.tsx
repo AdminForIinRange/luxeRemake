@@ -939,70 +939,7 @@ const isLastColumn = cellIndex % 7 === 6
                   </Box>
 
                   {/* Safe Double Booking Indicator */}
-                  {isSafeDoubleBooking && (
-
-                    <> <Box
-  position="absolute"
-  top="50%"
-  /* for normal cells: start at 50% when isStart, end at 50% when isEnd;
-     but on the last column we flip that logic */
-  right={
-    isLastColumn
-      ? (bookingDetails.isEnd ? "0%" : "50%")
-      : (bookingDetails.isStart ? "50%" : "0")
-  }
-  left={
-    isLastColumn
-      ? (bookingDetails.isStart ? "50%" : "50%")
-      : (bookingDetails.isEnd ? "50%" : "0%")
-  }
-  height="32px"
-  bg={
-    bookingDetails.platform === "airbnb"
-      ? "rgba(255, 90, 95, 0.15)"
-      : "rgba(0, 166, 153, 0.15)"
-  }
-  transform="translateY(-50%)"
-  /* on a normal cell we round left when isStart, right when isEnd;
-     on the last column we round the opposite corners instead */
-  borderRightRadius={
-    isLastColumn
-      ? (bookingDetails.isEnd ? "none" : "none")
-      : (bookingDetails.isStart ? "md" : "none")
-  }
-  borderLeftRadius={
-    isLastColumn
-      ? (bookingDetails.isStart ? "md" : "md")
-      : (bookingDetails.isEnd ? "md" : "none")
-  }
-  border="2px solid"
-  borderColor={
-    bookingDetails.platform === "airbnb"
-      ? "#FF5A5F"
-      : "#00A699"
-  }
-  display="flex"
-  alignItems="center"
-  justifyContent="center"
->
-  {bookingDetails.isStart && (
-    <Box display="flex" alignItems="center" mr={1}>
-      <Box as={Clock} size={10} color={
-        bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"
-      } />
-    </Box>
-  )}
-  {bookingDetails.isEnd && (
-    <Box display="flex" alignItems="center" ml={1}>
-      <Box as={Clock} size={10} color={
-        bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"
-      } />
-    </Box>
-  )}
-</Box>
-</>
-                    
-                  )}
+            
 
                   {/* Clash Indicator */}
                   {isClash && (
@@ -1028,7 +965,7 @@ const isLastColumn = cellIndex % 7 === 6
                   {bookingDetails && (
                     <>
                       {/* Booking Bar - Improved Airbnb-style visualization */}
-                      {!isClash && (
+                      {!isClash && !isSafeDoubleBooking && (
                         <Box
                           position="absolute"
                           top="50%"
@@ -1058,36 +995,40 @@ const isLastColumn = cellIndex % 7 === 6
                           justifyContent="center"
                         >
                           {/* Show check-in/check-out times for start/end dates */}
-                          {bookingDetails.isStart && (
-                            <Box display="flex" alignItems="center">
-                              <Box
-                                as={Clock}
-                                size={10}
-                                color={
-                                  bookingDetails.platform === "airbnb"
-                                    ? "#FF5A5F"
-                                    : "#00A699"
-                                }
-                                mr={1}
-                              />
-                             
-                            </Box>
-                          )}
-                          {bookingDetails.isEnd && (
-                            <Box display="flex" alignItems="center">
-                              <Box
-                                as={Clock}
-                                size={10}
-                                color={
-                                  bookingDetails.platform === "airbnb"
-                                    ? "#FF5A5F"
-                                    : "#00A699"
-                                }
-                                mr={1}
-                              />
-                             
-                            </Box>
-                          )}
+                         
+                            <>
+                              {bookingDetails.isStart && (
+                                <Box display="flex" alignItems="center">
+                                  <Box
+                                    as={Clock}
+                                    size={10}
+                                    color={
+                                      bookingDetails.platform === "airbnb"
+                                        ? "#FF5A5F"
+                                        : "#00A699"
+                                    }
+                                    mr={1}
+                                  />
+                                 
+                                </Box>
+                              )}
+                              {bookingDetails.isEnd && (
+                                <Box display="flex" alignItems="center">
+                                  <Box
+                                    as={Clock}
+                                    size={10}
+                                    color={
+                                      bookingDetails.platform === "airbnb"
+                                        ? "#FF5A5F"
+                                        : "#00A699"
+                                    }
+                                    mr={1}
+                                  />
+                                 
+                                </Box>
+                              )}
+                            </>
+                          
                         </Box>
                       )}
 
@@ -1197,23 +1138,102 @@ const isLastColumn = cellIndex % 7 === 6
                   )}
 
                   {/* Safe Double Booking Banner */}
-                  {isSafeDoubleBooking && (
-                    <Box
-                      position="absolute"
-                      bottom={0}
-                      left={0}
-                      right={0}
-                      bg="#4CAF50"
-                      color="white"
-                      p={2}
-                      borderTopLeftRadius="md"
-                      borderTopRightRadius="md"
-                    >
-                      <Text  fontSize={["0", "0", "0", "xs"]} fontWeight="bold">
-                        SAFE DOUBLE BOOKING
-                      </Text>
-                    </Box>
-                  )}
+              {isSafeDoubleBooking && (
+  <>
+    {/* checkmark & SAFE DOUBLE BOOKING banner */}
+    <Box
+      position="absolute"
+      top={2}
+      right={2}
+      width="20px"
+      height="20px"
+      borderRadius="full"
+      bg="#4CAF50"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      boxShadow="0 2px 4px rgba(0,0,0,0.1)"
+    >
+      <Box as={Check} size={12} color="white" />
+    </Box>
+    <Box
+      position="absolute"
+      bottom={0}
+      left={0}
+      right={0}
+      bg="#4CAF50"
+      color="white"
+      p={2}
+      borderTopLeftRadius="md"
+      borderTopRightRadius="md"
+    >
+      <Text fontSize="xs" fontWeight="bold">
+        SAFE DOUBLE BOOKING
+      </Text>
+    </Box>
+
+    {/* here’s the new bit — draw one bar per booking */}
+    {bookings.map((b, idx) => {
+      const isStart = b.isStart;
+      const isEnd   = b.isEnd;
+      // decide flip logic if it’s the last column:
+      const normalLeft  = isStart ? "50%" : "0";
+      const normalRight = isEnd   ? "50%" : "0";
+      const flippedLeft  = normalRight;
+      const flippedRight = normalLeft;
+      const left  = isLastColumn ? flippedLeft  : normalLeft;
+      const right = isLastColumn ? flippedRight : normalRight;
+
+      const bgColor     = b.platform === "airbnb"
+        ? "rgba(255, 90, 95, 0.15)"
+        : "rgba(0, 166, 153, 0.15)";
+      const borderColor = b.platform === "airbnb" ? "#FF5A5F" : "#00A699";
+
+      const normalBLR = isStart ? "md" : "none";
+      const normalBRR = isEnd   ? "md" : "none";
+      const flippedBLR = isEnd   ? "md" : "none";
+      const flippedBRR = isStart ? "md" : "none";
+      const borderLeftRadius  = isLastColumn ? flippedBLR : normalBLR;
+      const borderRightRadius = isLastColumn ? flippedBRR : normalBRR;
+
+      return (
+        <Box
+          key={idx}
+          position="absolute"
+          top="50%"
+          left={left}
+          right={right}
+          height="32px"
+          bg={bgColor}
+          transform="translateY(-50%)"
+          borderLeftRadius={borderLeftRadius}
+          borderRightRadius={borderRightRadius}
+          border="2px solid"
+          borderColor={borderColor}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          {/* show check-in clock at start */}
+          {isStart && (
+            <Box display="flex" alignItems="center" mr={1}>
+              <Box as={Clock} size={12} color={borderColor} />
+            </Box>
+          )}
+
+  {isEnd && (
+            <Box display="flex" alignItems="center" mr={1}>
+              <Box as={Clock} size={12} color={borderColor} />
+            </Box>
+          )}
+
+          {/* show check-out clock at end */}
+        
+        </Box>
+      );
+    })}
+  </>
+)}
 
                   {/* Clash Banner */}
                   {isClash && (
