@@ -1,10 +1,8 @@
 "use client"
 
-import type React from "react"
-
 import { useEffect, useState } from "react"
-import { Box, Button, Text} from "@chakra-ui/react"
-import { ArrowDown, ChevronLeft, ChevronRight, User } from "lucide-react"
+import { Box, Text } from "@chakra-ui/react"
+import { ArrowDown, ChevronLeft, ChevronRight, User, Clock, Check, AlertTriangle } from "lucide-react"
 
 // Import moment-timezone for consistent timezone handling
 import moment from "moment-timezone"
@@ -65,7 +63,11 @@ interface Event {
   guestInfo?: GuestInfo
 }
 
-const AvailabilityCalendar = () => {
+// Default check-in/check-out times if not specified
+
+const BUFFER_HOURS = 0 // Buffer time between bookings in hours
+
+const AirbnbCalendar = () => {
   // Get current date in Sydney timezone
   const sydneyNow = moment().tz("Australia/Sydney")
   const [airbnbData, setAirbnbData] = useState<Event[]>([])
@@ -73,6 +75,8 @@ const AvailabilityCalendar = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true)
   const [error, setError] = useState<string | null>(null)
   const [clashes, setClashes] = useState<Set<string>>(new Set())
+  const [clashDetails, setClashDetails] = useState<Record<string, { reason: string; events: string[] }>>({})
+  const [safeDoubleBookings, setSafeDoubleBookings] = useState<Set<string>>(new Set())
   const [currentYear, setCurrentYear] = useState(sydneyNow.year())
   const [currentMonth, setCurrentMonth] = useState(sydneyNow.month())
   const [selectedHouse, setSelectedHouse] = useState("ultimate-luxury-beachside-escape")
@@ -128,14 +132,18 @@ const AvailabilityCalendar = () => {
       console.log("Airbnb data:", airbnbData.events)
       console.log("Booking.com data:", bookingcomData.events)
 
-      setAirbnbData(airbnbData.events || [])
-      setBookingcomData(bookingcomData.events || [])
+      // Process the events to ensure they have check-in/check-out times
+      const processedAirbnbEvents = processEvents(airbnbData.events || [])
+      const processedBookingcomEvents = processEvents(bookingcomData.events || [])
+
+      setAirbnbData(processedAirbnbEvents)
+      setBookingcomData(processedBookingcomEvents)
 
       // Update last updated time in Sydney timezone
       setLastUpdated(moment().tz("Australia/Sydney").format("DD MMM YYYY, h:mm A"))
 
-      // Check for clashes between the two platforms
-      // findClashes(airbnbData.events || [], bookingcomData.events || [])
+      // Check for clashes and safe double bookings between the two platforms
+      findBookingOverlaps(processedAirbnbEvents, processedBookingcomEvents)
     } catch (error: any) {
       console.error("Error fetching availability data:", error)
       setError(`Failed to load availability data: ${error.message}`)
@@ -144,37 +152,131 @@ const AvailabilityCalendar = () => {
     }
   }
 
-  // Function to find clashes between Airbnb and Booking.com bookings
-  // const findClashes = (airbnbEvents: Event[], bookingcomEvents: Event[]) => {
-  //   const clashDates = new Set<string>()
+  // Process events to ensure they have check-in/check-out times
+  const processEvents = (events: Event[]): Event[] => {
+    return events.map((event) => {
+      // Create a copy of the event to avoid mutating the original
+      const processedEvent = { ...event }
 
-  //   // For each Airbnb event, check if it overlaps with any Booking.com event
-  //   airbnbEvents.forEach((airbnbEvent) => {
-  //     const airbnbStart = moment(airbnbEvent.start).format("YYYY-MM-DD")
-  //     const airbnbEnd = moment(airbnbEvent.end).format("YYYY-MM-DD")
+      // If check-in time is not specified, use default
+      if (!processedEvent.checkInTime) {
+        processedEvent.checkInTime = DEFAULT_CHECK_IN_TIME
+      }
 
-  //     bookingcomEvents.forEach((bookingEvent) => {
-  //       const bookingStart = moment(bookingEvent.start).format("YYYY-MM-DD")
-  //       const bookingEnd = moment(bookingEvent.end).format("YYYY-MM-DD")
+      // If check-out time is not specified, use default
+      if (!processedEvent.checkOutTime) {
+        processedEvent.checkOutTime = DEFAULT_CHECK_OUT_TIME
+      }
 
-  //       // Check if the dates overlap
-  //       if (moment(airbnbStart).isSameOrBefore(bookingEnd) && moment(airbnbEnd).isSameOrAfter(bookingStart)) {
-  //         // Calculate the overlap period
-  //         const overlapStart = moment.max(moment(airbnbStart), moment(bookingStart))
-  //         const overlapEnd = moment.min(moment(airbnbEnd), moment(bookingEnd))
+      return processedEvent
+    })
+  }
 
-  //         // Add each day in the overlap period to the clash set
-  //         const currentDate = overlapStart.clone()
-  //         while (currentDate.isSameOrBefore(overlapEnd)) {
-  //           clashDates.add(currentDate.format("YYYY-MM-DD"))
-  //           currentDate.add(1, "day")
-  //         }
-  //       }
-  //     })
-  //   })
+  // Function to find clashes and safe double bookings between Airbnb and Booking.com bookings
+  const findBookingOverlaps = (airbnbEvents: Event[], bookingcomEvents: Event[]) => {
+    const clashDates = new Set<string>()
+    const safeDoubleBookingDates = new Set<string>()
+    const clashDetailsMap: Record<string, { reason: string; events: string[] }> = {}
 
-  //   setClashes(clashDates)
-  // }
+    // Combine all events for easier processing
+    const allEvents = [...airbnbEvents, ...bookingcomEvents]
+
+    // For each date that has bookings, check if there are overlaps
+    const dateBookings: Record<string, Event[]> = {}
+
+    // Group bookings by date
+    allEvents.forEach((event) => {
+      const startDate = moment(event.start).format("YYYY-MM-DD")
+      const endDate = moment(event.end).format("YYYY-MM-DD")
+
+      // Add each day of the booking to the dateBookings map
+      const currentDate = moment(startDate)
+      while (currentDate.isSameOrBefore(endDate)) {
+        const dateStr = currentDate.format("YYYY-MM-DD")
+        if (!dateBookings[dateStr]) {
+          dateBookings[dateStr] = []
+        }
+        dateBookings[dateStr].push(event)
+        currentDate.add(1, "day")
+      }
+    })
+
+    // Check each date for overlaps
+    Object.entries(dateBookings).forEach(([dateStr, events]) => {
+      if (events.length > 1) {
+        // Sort events by start time on this date
+        const sortedEvents = [...events].sort((a, b) => {
+          const aIsStart = moment(a.start).format("YYYY-MM-DD") === dateStr
+          const bIsStart = moment(b.start).format("YYYY-MM-DD") === dateStr
+
+          // If both are start dates, compare check-in times
+          if (aIsStart && bIsStart) {
+            return a.checkInTime!.localeCompare(b.checkInTime!)
+          }
+
+          // If only one is a start date, the other is continuing from previous day
+          if (aIsStart) return 1 // b comes first (it's continuing)
+          if (bIsStart) return -1 // a comes first (it's continuing)
+
+          // If neither are start dates, they're both continuing from previous days
+          return 0
+        })
+
+        // Check for time overlaps
+        let hasClash = false
+
+        for (let i = 0; i < sortedEvents.length - 1; i++) {
+          const currentEvent = sortedEvents[i]
+          const nextEvent = sortedEvents[i + 1]
+
+          const currentIsEnd = moment(currentEvent.end).format("YYYY-MM-DD") === dateStr
+          const nextIsStart = moment(nextEvent.start).format("YYYY-MM-DD") === dateStr
+
+          // If current event ends today and next event starts today, check times
+          if (currentIsEnd && nextIsStart) {
+            const currentEndTime = `${dateStr}T${currentEvent.checkOutTime}`
+            const nextStartTime = `${dateStr}T${nextEvent.checkInTime}`
+
+            const currentEnd = moment.tz(currentEndTime, "YYYY-MM-DDThh:mm", "Australia/Sydney")
+            const nextStart = moment.tz(nextStartTime, "YYYY-MM-DDThh:mm", "Australia/Sydney")
+
+            // Check if there's enough buffer time
+            const hasEnoughBuffer = nextStart.diff(currentEnd, "hours") >= BUFFER_HOURS
+
+            if (!hasEnoughBuffer) {
+              hasClash = true
+              clashDetailsMap[dateStr] = {
+                reason: `Insufficient buffer between bookings: ${formatTime(
+                  currentEvent.checkOutTime!,
+                )} to ${formatTime(nextEvent.checkInTime!)}`,
+                events: [currentEvent.uid, nextEvent.uid],
+              }
+              break
+            }
+          } else {
+            // If one event continues through the day and another starts/ends, it's a clash
+            hasClash = true
+            clashDetailsMap[dateStr] = {
+              reason: "Overlapping bookings on same day",
+              events: [currentEvent.uid, nextEvent.uid],
+            }
+            break
+          }
+        }
+
+        if (hasClash) {
+          clashDates.add(dateStr)
+        } else if (events.length > 1) {
+          // If there's no clash but multiple bookings, it's a safe double booking
+          safeDoubleBookingDates.add(dateStr)
+        }
+      }
+    })
+
+    setClashes(clashDates)
+    setSafeDoubleBookings(safeDoubleBookingDates)
+    setClashDetails(clashDetailsMap)
+  }
 
   // Check if a specific date is booked on Airbnb
   const isAirbnbBooked = (year: number, month: number, day: number) => {
@@ -201,6 +303,92 @@ const AvailabilityCalendar = () => {
   // Check if a specific date has a booking clash
   const hasClash = (year: number, month: number, day: number) => {
     return clashes.has(formatDate(year, month, day))
+  }
+
+  // Check if a specific date has a safe double booking
+  const hasSafeDoubleBooking = (year: number, month: number, day: number) => {
+    return safeDoubleBookings.has(formatDate(year, month, day))
+  }
+
+  // Get clash details for a specific date
+  const getClashDetails = (year: number, month: number, day: number) => {
+    const dateStr = formatDate(year, month, day)
+    return clashDetails[dateStr]
+  }
+
+  // Get booking details for a specific date
+  const getBookingDetails = (year: number, month: number, day: number) => {
+    const dateStr = formatDate(year, month, day)
+
+    // Check Airbnb first
+    const airbnbBooking = airbnbData.find((event) => {
+      const eventStart = moment(event.start).format("YYYY-MM-DD")
+      const eventEnd = moment(event.end).format("YYYY-MM-DD")
+      return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
+    })
+
+    if (airbnbBooking) {
+      return {
+        platform: "airbnb",
+        booking: airbnbBooking,
+        isStart: moment(airbnbBooking.start).format("YYYY-MM-DD") === dateStr,
+        isEnd: moment(airbnbBooking.end).format("YYYY-MM-DD") === dateStr,
+      }
+    }
+
+    // Then check Booking.com
+    const bookingComBooking = bookingcomData.find((event) => {
+      const eventStart = moment(event.start).format("YYYY-MM-DD")
+      const eventEnd = moment(event.end).format("YYYY-MM-DD")
+      return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
+    })
+
+    if (bookingComBooking) {
+      return {
+        platform: "bookingcom",
+        booking: bookingComBooking,
+        isStart: moment(bookingComBooking.start).format("YYYY-MM-DD") === dateStr,
+        isEnd: moment(bookingComBooking.end).format("YYYY-MM-DD") === dateStr,
+      }
+    }
+
+    return null
+  }
+
+  // Get all bookings for a specific date (could be multiple if there are same-day bookings)
+  const getAllBookingsForDate = (year: number, month: number, day: number) => {
+    const dateStr = formatDate(year, month, day)
+    const bookings = []
+
+    // Check Airbnb bookings
+    const airbnbBookings = airbnbData
+      .filter((event) => {
+        const eventStart = moment(event.start).format("YYYY-MM-DD")
+        const eventEnd = moment(event.end).format("YYYY-MM-DD")
+        return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
+      })
+      .map((booking) => ({
+        platform: "airbnb",
+        booking,
+        isStart: moment(booking.start).format("YYYY-MM-DD") === dateStr,
+        isEnd: moment(booking.end).format("YYYY-MM-DD") === dateStr,
+      }))
+
+    // Check Booking.com bookings
+    const bookingComBookings = bookingcomData
+      .filter((event) => {
+        const eventStart = moment(event.start).format("YYYY-MM-DD")
+        const eventEnd = moment(event.end).format("YYYY-MM-DD")
+        return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
+      })
+      .map((booking) => ({
+        platform: "bookingcom",
+        booking,
+        isStart: moment(booking.start).format("YYYY-MM-DD") === dateStr,
+        isEnd: moment(booking.end).format("YYYY-MM-DD") === dateStr,
+      }))
+
+    return [...airbnbBookings, ...bookingComBookings]
   }
 
   // Fetch availability when the component mounts or when the month/year/house changes
@@ -236,160 +424,231 @@ const AvailabilityCalendar = () => {
   const firstDay = getFirstDayOfMonth(currentYear, currentMonth)
   const emptyDays = Array(firstDay).fill(null)
 
+  // Format time for display
+  const formatTime = (timeString: string) => {
+    return moment(timeString, "HH:mm").format("h:mm A")
+  }
+
   return (
     <Box
-      rounded="xl"
-      p={6}
-      mb={8}
-      textAlign="start"
-      boxShadow="0 4px 12px rgba(0,0,0,0.05)"
-      bg="white"
-      border="1px solid"
-      borderColor="gray.100"
+      width="100%"
+      maxWidth="1200px"
+      mx="auto"
+      fontFamily="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
     >
-      {/* Calendar Header with Title and Navigation */}
-      <Box display="flex" justifyContent="space-between" alignItems="center" mb={4}>
-        <Box>
-          <Text fontSize="28px" fontWeight="bold" color="teal.700">
+      {/* Header Section */}
+      <Box
+        display="flex"
+        flexDirection={{ base: "column", md: "row" }}
+        justifyContent="space-between"
+        alignItems={{ base: "flex-start", md: "center" }}
+        mb={6}
+        px={4}
+      >
+        {/* Month and Year */}
+        <Box mb={{ base: 4, md: 0 }}>
+          <Text fontSize="2xl" fontWeight="bold" color="#222222">
             {months[currentMonth]} {currentYear}
           </Text>
-          <Text fontSize="sm" color="gray.500" mt={1}>
+          <Text fontSize="sm" color="#717171" mt={1}>
             {selectedHouseDetails.displayName}
           </Text>
         </Box>
-        <Box display="flex" gap={2}>
-          <Button
-            variant="outline"
-            onClick={prevMonth}
+
+        {/* Controls */}
+        <Box display="flex" alignItems="center" gap={3}>
+          {/* Property Selector */}
+          <Box
+            display="flex"
+            alignItems="center"
+            bg="white"
+            border="1px solid"
+            borderColor="#DDDDDD"
             borderRadius="full"
-            size="sm"
-            borderColor="teal.400"
-            _hover={{ bg: "teal.50" }}
+            px={3}
+            py={2}
+            cursor="pointer"
+            _hover={{ borderColor: "#000000" }}
+            transition="all 0.2s"
           >
-            <ChevronLeft />
-          </Button>
-          <Button
-            variant="outline"
-            onClick={nextMonth}
-            borderRadius="full"
-            size="sm"
-            borderColor="teal.400"
-            _hover={{ bg: "teal.50" }}
-          >
-            <ChevronRight />
-          </Button>
+            <Box
+              width="24px"
+              height="24px"
+              borderRadius="full"
+              bg="#F0F0F0"
+              mr={2}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Text fontSize="xs">🏠</Text>
+            </Box>
+            <Text fontSize="sm" fontWeight="medium" mr={2}>
+              Property
+            </Text>
+            <Box as={ArrowDown} size={14} color="#717171" />
+          </Box>
+
+          {/* Month Navigation */}
+          <Box display="flex" gap={2}>
+            <Box
+              as="button"
+              onClick={prevMonth}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              width="36px"
+              height="36px"
+              borderRadius="full"
+              border="1px solid"
+              borderColor="#DDDDDD"
+              _hover={{ borderColor: "#000000" }}
+              transition="all 0.2s"
+            >
+              <Box as={ChevronLeft} size={18} color="#222222" />
+            </Box>
+            <Box
+              as="button"
+              onClick={nextMonth}
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              width="36px"
+              height="36px"
+              borderRadius="full"
+              border="1px solid"
+              borderColor="#DDDDDD"
+              _hover={{ borderColor: "#000000" }}
+              transition="all 0.2s"
+            >
+              <Box as={ChevronRight} size={18} color="#222222" />
+            </Box>
+          </Box>
         </Box>
       </Box>
 
-      {/* Timezone Indicator */}
-      <Box bg="blue.50" p={2} borderRadius="md" mb={4} display="flex" justifyContent="center">
-        <Text fontSize="sm" color="blue.700">
-          All times shown in Australia/Sydney timezone
-        </Text>
+      {/* Property Selector Pills */}
+      <Box display="flex" flexWrap="wrap" gap={2} mb={6} px={4}>
+        {houseList.map((house) => (
+          <Box
+            key={house.name}
+            as="button"
+            onClick={() => setSelectedHouse(house.name)}
+            px={4}
+            py={2}
+            borderRadius="full"
+            bg={selectedHouse === house.name ? "#222222" : "white"}
+            color={selectedHouse === house.name ? "white" : "#222222"}
+            border="1px solid"
+            borderColor={selectedHouse === house.name ? "#222222" : "#DDDDDD"}
+            fontWeight="medium"
+            fontSize="sm"
+            _hover={{
+              borderColor: "#222222",
+              transform: "translateY(-1px)",
+            }}
+            transition="all 0.2s"
+          >
+            {house.displayName}
+          </Box>
+        ))}
       </Box>
 
       {/* Property Description */}
-      <Text fontSize="sm" color="gray.600" mb={4}>
-        {selectedHouseDetails.description}
-      </Text>
-
-      {/* House Selector */}
-      <Box display="flex" gap={2} mb={4}>
-      {houseList.map((h) => (
-  <Box
-    key={h.name}
-    as="button"
-    onClick={() => setSelectedHouse(h.name)}
-    bg={selectedHouse === h.name ? "teal.500" : "gray.100"}
-    color={selectedHouse === h.name ? "white" : "gray.800"}
-    borderRadius="full"
-    px={4}
-    py={1.5}
-    fontWeight="medium"
-    fontSize="sm"
-    boxShadow={selectedHouse === h.name ? "md" : "none"}
-    transition="all 0.2s"
-    _hover={{
-      bg: selectedHouse === h.name ? "teal.600" : "gray.200",
-      boxShadow: "sm",
-    }}
-    _active={{
-      transform: "scale(0.98)",
-    }}
-    _focus={{ boxShadow: "outline" }}
-    mx={1}
-    my={1}
-  >
-    {h.displayName}
-  </Box>
-))}
-
+      <Box bg="#F7F7F7" p={4} borderRadius="lg" mb={6} mx={4} border="1px solid" borderColor="#EEEEEE">
+        <Text fontSize="sm" color="#717171">
+          {selectedHouseDetails.description}
+        </Text>
       </Box>
-  
 
-      {/* Loading and Error States */}
+      {/* Loading State */}
       {isLoading && (
-        <Box textAlign="center" py={8} color="gray.500">
-          <Text>Loading availability data...</Text>
-        </Box>
-      )}
-
-      {error && (
-        <Box bg="red.50" p={4} borderRadius="md" color="red.600" mb={4}>
-          <Text fontWeight="medium">{error}</Text>
-        </Box>
-      )}
-
-      {/* Legend */}
-      <Box display="flex" gap={4} mb={4} flexWrap="wrap">
-        <Box display="flex" alignItems="center">
-          <Box position="relative" w="40px" h="16px" mr={2}>
-            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="gray.200" borderRadius="full"></Box>
-          </Box>
-          <Text fontSize="xs" color="gray.600">
-            Available
+        <Box
+          textAlign="center"
+          py={10}
+          px={4}
+          bg="white"
+          borderRadius="lg"
+          border="1px solid"
+          borderColor="#EEEEEE"
+          mx={4}
+          mb={6}
+        >
+          <Text fontSize="md" color="#717171" fontWeight="medium">
+            Loading availability data...
+          </Text>
+          <Text fontSize="sm" color="#717171" mt={2}>
+            Fetching bookings from Airbnb and Booking.com
           </Text>
         </Box>
+      )}
+
+      {/* Error State */}
+      {error && (
+        <Box bg="#FEE2E2" p={4} borderRadius="lg" mb={6} mx={4} border="1px solid" borderColor="#FECACA">
+          <Text fontSize="md" fontWeight="medium" color="#B91C1C">
+            {error}
+          </Text>
+          <Text fontSize="sm" color="#B91C1C" mt={2}>
+            Please try refreshing the page or contact support if the issue persists.
+          </Text>
+        </Box>
+      )}
+
+      {/* Calendar Legend */}
+      <Box display="flex" flexWrap="wrap" gap={4} mb={4} px={4} justifyContent={{ base: "center", md: "flex-start" }}>
         <Box display="flex" alignItems="center">
-          <Box position="relative" w="40px" h="16px" mr={2}>
-            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="orange.500" borderRadius="full"></Box>
-          </Box>
-          <Text fontSize="xs" color="gray.600">
+          <Box width="12px" height="12px" borderRadius="full" bg="#FF5A5F" mr={2} />
+          <Text fontSize="sm" color="#717171">
             Airbnb
           </Text>
         </Box>
         <Box display="flex" alignItems="center">
-          <Box position="relative" w="40px" h="16px" mr={2}>
-            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="blue.500" borderRadius="full"></Box>
-          </Box>
-          <Text fontSize="xs" color="gray.600">
-           Booking.com
+          <Box width="12px" height="12px" borderRadius="full" bg="#00A699" mr={2} />
+          <Text fontSize="sm" color="#717171">
+            Booking.com
           </Text>
         </Box>
         <Box display="flex" alignItems="center">
-          <Box position="relative" w="40px" h="16px" mr={2}>
-            <Box position="absolute" top="50%" left="0" right="0" h="4px" bg="red.500" borderRadius="full"></Box>
-          </Box>
-          <Text fontSize="xs" color="gray.600">
+          <Box width="12px" height="12px" borderRadius="full" bg="#FFB400" mr={2} />
+          <Text fontSize="sm" color="#717171">
             Booking Clash
+          </Text>
+        </Box>
+        <Box display="flex" alignItems="center">
+          <Box width="12px" height="12px" borderRadius="full" bg="#4CAF50" mr={2} />
+          <Text fontSize="sm" color="#717171">
+            Safe Double Booking
+          </Text>
+        </Box>
+        <Box display="flex" alignItems="center">
+          <Box width="12px" height="12px" borderRadius="full" bg="#DDDDDD" mr={2} />
+          <Text fontSize="sm" color="#717171">
+            Available
           </Text>
         </Box>
       </Box>
 
       {/* Calendar Grid */}
-      <Box borderRadius="lg" overflow="hidden" border="1px solid" borderColor="gray.200" boxShadow="sm">
+      <Box
+        border="1px solid"
+        borderColor="#DDDDDD"
+        borderRadius="lg"
+        overflow="hidden"
+        mx={4}
+        boxShadow="0 1px 2px rgba(0,0,0,0.08)"
+      >
         {/* Days of Week Header */}
         <Box
           display="grid"
           gridTemplateColumns="repeat(7, 1fr)"
-          bg="gray.50"
+          bg="#F7F7F7"
           borderBottom="1px solid"
-          borderColor="gray.200"
-          p={2}
+          borderColor="#EEEEEE"
         >
-          {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
-            <Box key={day} textAlign="center">
-              <Text fontWeight="bold" fontSize="sm" color="gray.700">
+          {["S", "M", "T", "W", "T", "F", "S"].map((day, index) => (
+            <Box key={index} p={3} textAlign="center">
+              <Text fontSize="sm" fontWeight="medium" color="#717171">
                 {day}
               </Text>
             </Box>
@@ -397,239 +656,296 @@ const AvailabilityCalendar = () => {
         </Box>
 
         {/* Calendar Days */}
-        <Box display="grid" gridTemplateColumns="repeat(7, 1fr)" gap={0}>
+        <Box display="grid" gridTemplateColumns="repeat(7, 1fr)">
           {/* Empty cells for days before the first day of the month */}
           {emptyDays.map((_, index) => (
-            <Box key={`empty-${index}`} height="110px" border="1px solid" borderColor="gray.100" bg="gray.50"></Box>
+            <Box
+              key={`empty-${index}`}
+              height={{ base: "100px", md: "120px" }}
+              borderRight={index % 7 === 6 ? "none" : "1px solid #EEEEEE"}
+              borderBottom="1px solid #EEEEEE"
+              bg="#F7F7F7"
+            />
           ))}
 
           {/* Actual days of the month */}
-          {Array.from({ length: getDaysInMonth(currentYear, currentMonth) }, (_, index) => {
-            const day = index + 1
-            const dateStr = formatDate(currentYear, currentMonth, day)
+          {Array.from({ length: getDaysInMonth(currentYear, currentMonth) }, (_, i) => {
+            const day = i + 1
             const isAirbnb = isAirbnbBooked(currentYear, currentMonth, day)
             const isBookingCom = isBookingComBooked(currentYear, currentMonth, day)
-            const isClashed = hasClash(currentYear, currentMonth, day)
+            const isClash = hasClash(currentYear, currentMonth, day)
+            const isSafeDoubleBooking = hasSafeDoubleBooking(currentYear, currentMonth, day)
+            const clashDetail = getClashDetails(currentYear, currentMonth, day)
+            const bookings = getAllBookingsForDate(currentYear, currentMonth, day)
+            const hasMultipleBookings = bookings.length > 1
 
-            // Find booking details for this date
-            const airbnbBooking = airbnbData.find((event) => {
-              const eventStart = moment(event.start).format("YYYY-MM-DD")
-              const eventEnd = moment(event.end).format("YYYY-MM-DD")
-              return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
-            })
+            // Get the primary booking to display (prioritize the one with clash if exists)
+            const bookingDetails =
+              bookings.find((b) => clashDetail && clashDetail.events.includes(b.booking.uid)) || bookings[0]
 
-            const bookingComBooking = bookingcomData.find((event) => {
-              const eventStart = moment(event.start).format("YYYY-MM-DD")
-              const eventEnd = moment(event.end).format("YYYY-MM-DD")
-              return moment(dateStr).isSameOrAfter(eventStart) && moment(dateStr).isSameOrBefore(eventEnd)
-            })
+            const cellIndex = i + firstDay
+            const isLastRow =
+              Math.floor(cellIndex / 7) === Math.floor((firstDay + getDaysInMonth(currentYear, currentMonth) - 1) / 7)
 
-            // Check if this is the first or last day of a booking
-            const isAirbnbStart = airbnbBooking && moment(airbnbBooking.start).format("YYYY-MM-DD") === dateStr
-            const isAirbnbEnd = airbnbBooking && moment(airbnbBooking.end).format("YYYY-MM-DD") === dateStr
-            const isBookingComStart =
-              bookingComBooking && moment(bookingComBooking.start).format("YYYY-MM-DD") === dateStr
-            const isBookingComEnd = bookingComBooking && moment(bookingComBooking.end).format("YYYY-MM-DD") === dateStr
+            // Determine cell background color
+            let cellBgColor = "white"
+            if (isClash)
+              cellBgColor = "#FFF7E6" // Light yellow for clash
+            else if (isSafeDoubleBooking) cellBgColor = "#F0FDF4" // Light green for safe double booking
 
             return (
               <Box
-                key={day}
-                height="110px"
-                border="1px solid"
-                borderColor="gray.200"
-                bg="white"
+                key={`day-${day}`}
+                height={{ base: "100px", md: "120px" }}
+                borderRight={cellIndex % 7 === 6 ? "none" : "1px solid #EEEEEE"}
+                borderBottom={isLastRow ? "none" : "1px solid #EEEEEE"}
+                bg={cellBgColor}
                 position="relative"
                 transition="all 0.2s"
                 _hover={{
-                  transform: "scale(1.02)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
                   zIndex: 1,
-                  boxShadow: "md",
                 }}
-                cursor="pointer"
               >
                 {/* Day Number */}
-                <Box
-                  position="absolute"
-                  top={1}
-                  left={1}
-                  bg={isClashed ? "red.400" : "gray.100"}
-                  color={isClashed ? "white" : "gray.700"}
-                  borderRadius="full"
-                  w="24px"
-                  h="24px"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  fontSize="xs"
-                  fontWeight="bold"
-                >
-                  {day}
+                <Box position="absolute" top={2} left={2}>
+                  <Text
+                    fontSize="sm"
+                    fontWeight="medium"
+                    color={
+                      isClash
+                        ? "#FFB400"
+                        : isSafeDoubleBooking
+                          ? "#4CAF50"
+                          : isAirbnb
+                            ? "#FF5A5F"
+                            : isBookingCom
+                              ? "#00A699"
+                              : "#717171"
+                    }
+                  >
+                    {day}
+                  </Text>
                 </Box>
 
-                {/* Price (for available dates) */}
-             
-                {/* Airbnb Booking Bar */}
-                {isAirbnb && (
+                {/* Safe Double Booking Indicator */}
+                {isSafeDoubleBooking && (
                   <Box
                     position="absolute"
-                    top="40%"
-                    left={isAirbnbStart ? "50%" : "0"}
-                    right={isAirbnbEnd ? "50%" : "0"}
-                    height="8px"
-                    bg="orange.500"
-                    zIndex={1}
-                    borderLeftRadius={isAirbnbStart ? "full" : "none"}
-                    borderRightRadius={isAirbnbEnd ? "full" : "none"}
+                    top={2}
+                    right={2}
+                    width="20px"
+                    height="20px"
+                    borderRadius="full"
+                    bg="#4CAF50"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    boxShadow="0 2px 4px rgba(0,0,0,0.1)"
                   >
-                    {isAirbnbStart && (
-                      <Box
-                        position="absolute"
-                        left="-12px"
-                        top="-4px"
-                        width="16px"
-                        height="16px"
-                        borderRadius="full"
-                        bg="orange.500"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                      >
-                        <Text fontSize="8px" color="white" fontWeight="bold">
-                          IN
-                        </Text>
-                      </Box>
-                    )}
-                    {isAirbnbEnd && (
-                      <Box
-                        position="absolute"
-                        right="-12px"
-                        top="-4px"
-                        width="16px"
-                        height="16px"
-                        borderRadius="full"
-                        bg="orange.500"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                      >
-                        <Text fontSize="8px" color="white" fontWeight="bold">
-                          OUT
-                        </Text>
-                      </Box>
-                    )}
-
-                    {/* Guest info for Airbnb */}
-                    {airbnbBooking?.guestInfo && isAirbnbStart && (
-                      <Box
-                        position="absolute"
-                        top="-20px"
-                        left="0"
-                        right="0"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        bg="orange.100"
-                        p="1px"
-                        borderRadius="sm"
-                        zIndex={2}
-                      >
-                        <User size={10} />
-                        <Text fontSize="9px" ml="2px" color="orange.800" fontWeight="medium" noOfLines={1}>
-                          {airbnbBooking.guestInfo.name}
-                          {airbnbBooking.guestInfo.total && airbnbBooking.guestInfo.total > 1
-                            ? ` + ${airbnbBooking.guestInfo.total - 1}`
-                            : ""}
-                        </Text>
-                      </Box>
-                    )}
-                  </Box>
-                )}
-
-                {/* Booking.com Booking Bar */}
-                {isBookingCom && (
-                  <Box
-                    position="absolute"
-                    top="60%"
-                    left={isBookingComStart ? "50%" : "0"}
-                    right={isBookingComEnd ? "50%" : "0"}
-                    height="8px"
-                    bg="blue.500"
-                    zIndex={1}
-                    borderLeftRadius={isBookingComStart ? "full" : "none"}
-                    borderRightRadius={isBookingComEnd ? "full" : "none"}
-                  >
-                    {isBookingComStart && (
-                      <Box
-                        position="absolute"
-                        left="-12px"
-                        top="-4px"
-                        width="16px"
-                        height="16px"
-                        borderRadius="full"
-                        bg="blue.500"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                      >
-                        <Text fontSize="8px" color="white" fontWeight="bold">
-                          IN
-                        </Text>
-                      </Box>
-                    )}
-                    {isBookingComEnd && (
-                      <Box
-                        position="absolute"
-                        right="-12px"
-                        top="-4px"
-                        width="16px"
-                        height="16px"
-                        borderRadius="full"
-                        bg="blue.500"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                      >
-                        <Text fontSize="8px" color="white" fontWeight="bold">
-                          OUT
-                        </Text>
-                      </Box>
-                    )}
-
-                    {/* Guest info for Booking.com */}
-                    {bookingComBooking?.guestInfo && isBookingComStart && (
-                      <Box
-                        position="absolute"
-                        top="-20px"
-                        left="0"
-                        right="0"
-                        display="flex"
-                        alignItems="center"
-                        justifyContent="center"
-                        bg="blue.100"
-                        p="1px"
-                        borderRadius="sm"
-                        zIndex={2}
-                      >
-                        <User size={10} />
-                        <Text fontSize="9px" ml="2px" color="blue.800" fontWeight="medium" noOfLines={1}>
-                          {bookingComBooking.guestInfo.name}
-                          {bookingComBooking.guestInfo.total && bookingComBooking.guestInfo.total > 1
-                            ? ` + ${bookingComBooking.guestInfo.total - 1}`
-                            : ""}
-                        </Text>
-                      </Box>
-                    )}
+                    <Box as={Check} size={12} color="white" />
                   </Box>
                 )}
 
                 {/* Clash Indicator */}
-                {/* {isClashed && (
-                  <Box position="absolute" bottom={2} left={0} right={0} textAlign="center">
-                    <Text fontSize="xs" fontWeight="bold" color="red.600">
-                      CLASH
+                {isClash && (
+                  <Box
+                    position="absolute"
+                    top={2}
+                    right={2}
+                    width="20px"
+                    height="20px"
+                    borderRadius="full"
+                    bg="#FFB400"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    boxShadow="0 2px 4px rgba(0,0,0,0.1)"
+                  >
+                    <Box as={AlertTriangle} size={12} color="white" />
+                  </Box>
+                )}
+
+                {/* Booking Information */}
+                {bookingDetails && (
+                  <>
+                    {/* Booking Bar - Improved Airbnb-style visualization */}
+                    <Box
+                      position="absolute"
+                      top="50%"
+                      left={bookingDetails.isStart ? "50%" : 0}
+                      right={bookingDetails.isEnd ? "50%" : 0}
+                      height="32px"
+                      bg={bookingDetails.platform === "airbnb" ? "rgba(255, 90, 95, 0.15)" : "rgba(0, 166, 153, 0.15)"}
+                      transform="translateY(-50%)"
+                      borderLeftRadius={bookingDetails.isStart ? "md" : "none"}
+                      borderRightRadius={bookingDetails.isEnd ? "md" : "none"}
+                      border="2px solid"
+                      borderColor={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
+                    >
+                      {/* Show check-in/check-out times for start/end dates */}
+                      {bookingDetails.isStart && (
+                        <Box display="flex" alignItems="center">
+                          <Box
+                            as={Clock}
+                            size={10}
+                            color={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                            mr={1}
+                          />
+                          <Text
+                            fontSize="xs"
+                            fontWeight="bold"
+                            color={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                          >
+                            {formatTime(bookingDetails.booking.checkInTime || DEFAULT_CHECK_IN_TIME)}
+                          </Text>
+                        </Box>
+                      )}
+                      {bookingDetails.isEnd && (
+                        <Box display="flex" alignItems="center">
+                          <Box
+                            as={Clock}
+                            size={10}
+                            color={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                            mr={1}
+                          />
+                          <Text
+                            fontSize="xs"
+                            fontWeight="bold"
+                            color={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                          >
+                            {formatTime(bookingDetails.booking.checkOutTime || DEFAULT_CHECK_OUT_TIME)}
+                          </Text>
+                        </Box>
+                      )}
+                    </Box>
+
+                    {/* Start/End Indicators - Improved */}
+                    {bookingDetails.isStart && (
+                      <Box
+                        position="absolute"
+                        left="calc(50% - 2px)"
+                        top="50%"
+                        height="32px"
+                        width="4px"
+                        bg={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                        transform="translateY(-50%)"
+                        borderRadius="full"
+                        zIndex={2}
+                      />
+                    )}
+
+                    {bookingDetails.isEnd && (
+                      <Box
+                        position="absolute"
+                        right="calc(50% - 2px)"
+                        top="50%"
+                        height="32px"
+                        width="4px"
+                        bg={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                        transform="translateY(-50%)"
+                        borderRadius="full"
+                        zIndex={2}
+                      />
+                    )}
+
+                    {/* Guest Information (only on start date) */}
+                    {bookingDetails.isStart && bookingDetails.booking.guestInfo && (
+                      <Box
+                        position="absolute"
+                        bottom={0}
+                        left={0}
+                        right={0}
+                        bg={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                        color="white"
+                        p={2}
+                        borderTopLeftRadius="md"
+                        borderTopRightRadius="md"
+                      >
+                        <Box display="flex" alignItems="center" mb={1}>
+                          <Box
+                            as="span"
+                            display="flex"
+                            alignItems="center"
+                            justifyContent="center"
+                            bg="white"
+                            color={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
+                            borderRadius="full"
+                            width="20px"
+                            height="20px"
+                            mr={2}
+                          >
+                            <Box as={User} size={12} />
+                          </Box>
+                          <Text fontSize="xs" fontWeight="medium">
+                            {bookingDetails.booking.guestInfo.name}
+                            {bookingDetails.booking.guestInfo.count && bookingDetails.booking.guestInfo.count > 1
+                              ? ` + ${bookingDetails.booking.guestInfo.count - 1}`
+                              : ""}
+                          </Text>
+                        </Box>
+                        {bookingDetails.booking.guestInfo.total && (
+                          <Text fontSize="xs" fontWeight="bold">
+                            ${bookingDetails.booking.guestInfo.total}
+                          </Text>
+                        )}
+                      </Box>
+                    )}
+                  </>
+                )}
+
+                {/* Safe Double Booking Banner */}
+                {isSafeDoubleBooking && (
+                  <Box
+                    position="absolute"
+                    bottom={0}
+                    left={0}
+                    right={0}
+                    bg="#4CAF50"
+                    color="white"
+                    p={2}
+                    borderTopLeftRadius="md"
+                    borderTopRightRadius="md"
+                  >
+                    <Text fontSize="xs" fontWeight="bold">
+                      SAFE DOUBLE BOOKING
                     </Text>
                   </Box>
-                )} */}
+                )}
+
+                {/* Clash Banner */}
+                {isClash && (
+                  <Box
+                    position="absolute"
+                    bottom={0}
+                    left={0}
+                    right={0}
+                    bg="#FFB400"
+                    color="white"
+                    p={2}
+                    borderTopLeftRadius="md"
+                    borderTopRightRadius="md"
+                  >
+                    <Text fontSize="xs" fontWeight="bold">
+                      BOOKING CLASH
+                    </Text>
+                  </Box>
+                )}
+
+                {/* Price for available dates */}
+                {!bookingDetails && (
+                  <Box position="absolute" bottom={4} left={0} right={0} textAlign="center">
+                    <Text fontSize="sm" fontWeight="medium" color="#222222">
+                      $199 AUD
+                    </Text>
+                    <Text fontSize="xs" color="#717171">
+                      ✈
+                    </Text>
+                  </Box>
+                )}
               </Box>
             )
           })}
@@ -637,28 +953,91 @@ const AvailabilityCalendar = () => {
       </Box>
 
       {/* Calendar Footer */}
-      <Box mt={4} display="flex" justifyContent="space-between" alignItems="center">
-        <Text fontSize="xs" color="gray.500">
+      <Box
+        display="flex"
+        flexDirection={{ base: "column", md: "row" }}
+        justifyContent="space-between"
+        alignItems={{ base: "flex-start", md: "center" }}
+        mt={4}
+        mb={4}
+        px={4}
+        gap={4}
+      >
+        <Text fontSize="xs" color="#717171">
           Last updated: {lastUpdated} (Sydney time)
         </Text>
-        <Box
-          display="flex"
-          alignItems="center"
-          bg="teal.50"
-          p={2}
-          borderRadius="md"
-          border="1px dashed"
-          borderColor="teal.200"
-        >
-          <Text fontSize="xs" color="teal.700" fontWeight="medium">
-            {clashes.size > 0
-              ? `⚠️ ${clashes.size} booking conflicts detected this month`
-              : "✓ No booking conflicts this month"}
-          </Text>
+
+        <Box display="flex" flexDirection={{ base: "column", md: "row" }} gap={2}>
+          {safeDoubleBookings.size > 0 && (
+            <Box
+              display="flex"
+              alignItems="center"
+              bg="#F0FDF4"
+              p={2}
+              px={4}
+              borderRadius="full"
+              border="1px solid"
+              borderColor="#DCFCE7"
+            >
+              <Box as={Check} size={12} color="#166534" mr={2} />
+              <Text fontSize="xs" fontWeight="medium" color="#166534">
+                {safeDoubleBookings.size} safe double bookings this month
+              </Text>
+            </Box>
+          )}
+
+          <Box
+            display="flex"
+            alignItems="center"
+            bg={clashes.size > 0 ? "#FFF7E6" : "#F0FDF4"}
+            p={2}
+            px={4}
+            borderRadius="full"
+            border="1px solid"
+            borderColor={clashes.size > 0 ? "#FED7AA" : "#DCFCE7"}
+          >
+            {clashes.size > 0 ? (
+              <Box as={AlertTriangle} size={12} color="#B54708" mr={2} />
+            ) : (
+              <Box as={Check} size={12} color="#166534" mr={2} />
+            )}
+            <Text fontSize="xs" fontWeight="medium" color={clashes.size > 0 ? "#B54708" : "#166534"}>
+              {clashes.size > 0 ? `${clashes.size} booking conflicts detected` : "No booking conflicts this month"}
+            </Text>
+          </Box>
         </Box>
+      </Box>
+
+      {/* Double Booking Information */}
+      <Box bg="#F0FDF4" p={4} borderRadius="lg" mb={6} mx={4} border="1px solid" borderColor="#DCFCE7">
+        <Text fontSize="sm" fontWeight="medium" color="#166534" mb={2}>
+          About Double Bookings
+        </Text>
+        <Text fontSize="xs" color="#166534">
+          <strong>Safe Double Bookings:</strong> Multiple bookings on the same day with at least {BUFFER_HOURS} hours
+          between check-out and check-in times.
+        </Text>
+        <Text fontSize="xs" color="#166534" mt={1}>
+          <strong>Booking Clashes:</strong> Multiple bookings on the same day with insufficient buffer time between
+          them.
+        </Text>
+      </Box>
+
+      {/* Buffer Time Information */}
+      <Box textAlign="center" mb={2}>
+        <Text fontSize="xs" color="#717171">
+          Required buffer between bookings: {BUFFER_HOURS} hours
+        </Text>
+      </Box>
+
+      {/* Timezone Information */}
+      <Box textAlign="center" mb={8}>
+        <Text fontSize="xs" color="#717171">
+          All times shown in Australia/Sydney timezone
+        </Text>
       </Box>
     </Box>
   )
 }
 
-export default AvailabilityCalendar
+export default AirbnbCalendar

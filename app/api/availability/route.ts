@@ -2,6 +2,7 @@ import { type NextRequest, NextResponse } from "next/server"
 import axios from "axios"
 import ical from "node-ical"
 import moment from "moment-timezone"
+import { time } from "console"
 
 // Set default timezone to Australia/Sydney
 moment.tz.setDefault("Australia/Sydney")
@@ -91,12 +92,13 @@ const processEvent = (event: any, platform: string): any => {
       const guestCountMatch = event.description.match(/and\s+(\d+)\s+guests?/i)
 
       if (guestMatch) {
-        const guestName = guestMatch[1]
+
         const guestCount = guestCountMatch ? Number.parseInt(guestCountMatch[1], 10) : 0
         guestInfo = {
-          name: guestName,
-          count: guestCount,
-          total: guestCount + 1, // +1 for the main guest
+          name: "Airbnb",
+        
+    
+
         }
       }
     }
@@ -127,7 +129,10 @@ const processEvent = (event: any, platform: string): any => {
       // For Booking.com entries without description (like "CLOSED - Not available")
       guestInfo = {
         name: "Booking.com",
-        total: 0,
+                
+
+     
+         
       }
     }
   }
@@ -137,8 +142,8 @@ const processEvent = (event: any, platform: string): any => {
   const endDate = convertToSydneyTime(event.end)
 
   // Extract check-in/check-out times
-  let checkInTime = "14:00" // Default check-in time (2 PM)
-  let checkOutTime = "10:00" // Default check-out time (10 AM)
+  let checkInTime = "14:00" // Default check-in time (2 PM)  // <------ FIX 
+  let checkOutTime = "10:00" // Default check-out time (10 AM) // <------ FIX 
 
   // Try to extract check-in/check-out times from description if available
   if (event.description) {
