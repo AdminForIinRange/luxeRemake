@@ -1177,8 +1177,8 @@ const isLastColumn = cellIndex % 7 === 6
       const isStart = b.isStart;
       const isEnd   = b.isEnd;
       // decide flip logic if it’s the last column:
-      const normalLeft  = isStart ? "50%" : "0";
-      const normalRight = isEnd   ? "50%" : "0";
+      const normalLeft  = isStart ? "55%" : "0";
+      const normalRight = isEnd   ? "55%" : "0";
       const flippedLeft  = normalRight;
       const flippedRight = normalLeft;
       const left  = isLastColumn ? flippedLeft  : normalLeft;
