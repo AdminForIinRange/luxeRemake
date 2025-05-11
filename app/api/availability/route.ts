@@ -142,8 +142,8 @@ const processEvent = (event: any, platform: string): any => {
   const endDate = convertToSydneyTime(event.end)
 
   // Extract check-in/check-out times
-  let checkInTime = "14:00" // Default check-in time (2 PM)  // <------ FIX 
-  let checkOutTime = "10:00" // Default check-out time (10 AM) // <------ FIX 
+  let checkInTime = "12:00" // Default check-in time (2 PM)  // <------ FIX 
+  let checkOutTime = "12:00" // Default check-out time (10 AM) // <------ FIX 
 
   // Try to extract check-in/check-out times from description if available
   if (event.description) {

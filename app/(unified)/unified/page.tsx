@@ -800,7 +800,7 @@ const AirbnbCalendar = () => {
                             fontWeight="bold"
                             color={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
                           >
-                            {formatTime(bookingDetails.booking.checkInTime || DEFAULT_CHECK_IN_TIME)}
+                            
                           </Text>
                         </Box>
                       )}
@@ -817,7 +817,7 @@ const AirbnbCalendar = () => {
                             fontWeight="bold"
                             color={bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"}
                           >
-                            {formatTime(bookingDetails.booking.checkOutTime || DEFAULT_CHECK_OUT_TIME)}
+                           
                           </Text>
                         </Box>
                       )}
