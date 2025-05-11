@@ -500,7 +500,6 @@ const [selectedDisplayName, setSelectedDisplayName] = useState(houseList[0]?.dis
 const dropdownRef = useRef(null);
 
 // Close dropdown when clicking outside
-/*************  ✨ Windsurf Command 🌟  *************/
 useEffect(() => {
   function handleClickOutside(event: MouseEvent) {
     if (
@@ -514,7 +513,6 @@ useEffect(() => {
   document.addEventListener("mousedown", handleClickOutside);
   return () => document.removeEventListener("mousedown", handleClickOutside);
 }, [dropdownRef]);
-/*******  d82372ee-c703-4a66-ba36-32260fc0961a  *******/
 
   return (
     <Box
@@ -587,7 +585,7 @@ useEffect(() => {
 
 <Box mb={6} px={4} position="relative" ref={dropdownRef}>
   {/* Custom Select Trigger */}
-  <Box
+  <Box 
     onClick={() => setIsOpen(!isOpen)}
     width="100%"
     py={2}
@@ -617,11 +615,12 @@ useEffect(() => {
 
   {/* Dropdown Options */}
   {isOpen && (
-    <Box
+    <Box 
       position="absolute"
    
-      w={"97.5%"}
+ 
 mt={2}
+
      
       zIndex={10}
       bg="white"
@@ -895,7 +894,7 @@ mt={2}
                   (firstDay + getDaysInMonth(currentYear, currentMonth) - 1) /
                     7,
                 );
-
+const isLastColumn = cellIndex % 7 === 6
               // Determine cell background color
               let cellBgColor = "white";
               if (isClash)
@@ -943,80 +942,65 @@ mt={2}
                   {isSafeDoubleBooking && (
 
                     <> <Box
-                      position="absolute"
-                      top={2}
-                      right={2}
-                      width="20px"
-                      height="20px"
-                      borderRadius="full"
-                      bg="#4CAF50"
-                      display="flex"
-                      alignItems="center"
-                      justifyContent="center"
-                      boxShadow="0 2px 4px rgba(0,0,0,0.1)"
-                    >
-                      <Box as={Check} size={12} color="white" />
-                    </Box> 
-                    
-                          <Box
-                          position="absolute"
-                          top="50%"
-                   width="74px"
-                      height="20px"
-                          left={"55%" }
-                          height="32px"
-                          bg={
-                            bookingDetails.platform === "airbnb"
-                              ? "rgba(255, 90, 95, 0.15)"
-                              : "rgba(0, 166, 153, 0.15)"
-                          }
-                          transform="translateY(-50%)"
-                          
-                          borderLeftRadius={
-                       "md" 
-                          }
-                          border="2px solid"
-                          borderColor={
-                            bookingDetails.platform === "airbnb"
-                              ? "#FF5A5F"
-                              : "#00A699"
-                          }
-                          display="flex"
-                          alignItems="center"
-                          justifyContent="center"
-                        >
-                          {/* Show check-in/check-out times for start/end dates */}
-                          {bookingDetails.isStart && (
-                            <Box display="flex" alignItems="center">
-                              <Box
-                                as={Clock}
-                                size={10}
-                                color={
-                                  bookingDetails.platform === "airbnb"
-                                    ? "#FF5A5F"
-                                    : "#00A699"
-                                }
-                                mr={1}
-                              />
-                             
-                            </Box>
-                          )}
-                          {bookingDetails.isEnd && (
-                            <Box display="flex" alignItems="center">
-                              <Box
-                                as={Clock}
-                                size={10}
-                                color={
-                                  bookingDetails.platform === "airbnb"
-                                    ? "#FF5A5F"
-                                    : "#00A699"
-                                }
-                                mr={1}
-                              />
-                             
-                            </Box>
-                          )}
-                        </Box></>
+  position="absolute"
+  top="50%"
+  /* for normal cells: start at 50% when isStart, end at 50% when isEnd;
+     but on the last column we flip that logic */
+  right={
+    isLastColumn
+      ? (bookingDetails.isEnd ? "0%" : "50%")
+      : (bookingDetails.isStart ? "50%" : "0")
+  }
+  left={
+    isLastColumn
+      ? (bookingDetails.isStart ? "50%" : "50%")
+      : (bookingDetails.isEnd ? "50%" : "0%")
+  }
+  height="32px"
+  bg={
+    bookingDetails.platform === "airbnb"
+      ? "rgba(255, 90, 95, 0.15)"
+      : "rgba(0, 166, 153, 0.15)"
+  }
+  transform="translateY(-50%)"
+  /* on a normal cell we round left when isStart, right when isEnd;
+     on the last column we round the opposite corners instead */
+  borderRightRadius={
+    isLastColumn
+      ? (bookingDetails.isEnd ? "none" : "none")
+      : (bookingDetails.isStart ? "md" : "none")
+  }
+  borderLeftRadius={
+    isLastColumn
+      ? (bookingDetails.isStart ? "md" : "md")
+      : (bookingDetails.isEnd ? "md" : "none")
+  }
+  border="2px solid"
+  borderColor={
+    bookingDetails.platform === "airbnb"
+      ? "#FF5A5F"
+      : "#00A699"
+  }
+  display="flex"
+  alignItems="center"
+  justifyContent="center"
+>
+  {bookingDetails.isStart && (
+    <Box display="flex" alignItems="center" mr={1}>
+      <Box as={Clock} size={10} color={
+        bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"
+      } />
+    </Box>
+  )}
+  {bookingDetails.isEnd && (
+    <Box display="flex" alignItems="center" ml={1}>
+      <Box as={Clock} size={10} color={
+        bookingDetails.platform === "airbnb" ? "#FF5A5F" : "#00A699"
+      } />
+    </Box>
+  )}
+</Box>
+</>
                     
                   )}
 
@@ -1225,7 +1209,7 @@ mt={2}
                       borderTopLeftRadius="md"
                       borderTopRightRadius="md"
                     >
-                      <Text fontSize="xs" fontWeight="bold">
+                      <Text  fontSize={["0", "0", "0", "xs"]} fontWeight="bold">
                         SAFE DOUBLE BOOKING
                       </Text>
                     </Box>
