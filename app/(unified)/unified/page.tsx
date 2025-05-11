@@ -522,36 +522,7 @@ const AirbnbCalendar = () => {
         {/* Controls */}
         <Box display="flex" alignItems="center" gap={3}>
           {/* Property Selector */}
-          <Box
-            display="flex"
-            alignItems="center"
-            bg="white"
-            border="1px solid"
-            borderColor="#DDDDDD"
-            borderRadius="full"
-            px={3}
-            py={2}
-            cursor="pointer"
-            _hover={{ borderColor: "#000000" }}
-            transition="all 0.2s"
-          >
-            <Box
-              width="24px"
-              height="24px"
-              borderRadius="full"
-              bg="#F0F0F0"
-              mr={2}
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Text fontSize="xs">🏠</Text>
-            </Box>
-            <Text fontSize="sm" fontWeight="medium" mr={2}>
-              Property
-            </Text>
-            <Box as={ArrowDown} size={14} color="#717171" />
-          </Box>
+          
 
           {/* Month Navigation */}
           <Box display="flex" gap={2}>
