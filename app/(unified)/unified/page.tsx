@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Box, Text } from "@chakra-ui/react";
 import {
   ArrowDown,
@@ -10,6 +10,7 @@ import {
   Clock,
   Check,
   AlertTriangle,
+  ChevronDown,
 } from "lucide-react";
 
 // Import moment-timezone for consistent timezone handling
@@ -493,6 +494,28 @@ const AirbnbCalendar = () => {
     return moment(timeString, "HH:mm").format("h:mm A");
   };
 
+const [isOpen, setIsOpen] = useState(false);
+
+const [selectedDisplayName, setSelectedDisplayName] = useState(houseList[0]?.displayName || "Select a house");
+const dropdownRef = useRef(null);
+
+// Close dropdown when clicking outside
+/*************  ✨ Windsurf Command 🌟  *************/
+useEffect(() => {
+  function handleClickOutside(event: MouseEvent) {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  }
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => document.removeEventListener("mousedown", handleClickOutside);
+}, [dropdownRef]);
+/*******  d82372ee-c703-4a66-ba36-32260fc0961a  *******/
+
   return (
     <Box
       width="100%"
@@ -562,33 +585,105 @@ const AirbnbCalendar = () => {
         </Box>
       </Box>
 
-      {/* Property Selector Pills */}
-      <Box display="flex" flexWrap="wrap" gap={2} mb={6} px={4}>
-        {houseList.map((house) => (
-          <Box
-            key={house.name}
-            as="button"
-            onClick={() => setSelectedHouse(house.name)}
-            px={4}
-            py={2}
-            borderRadius="full"
-            bg={selectedHouse === house.name ? "#222222" : "white"}
-            color={selectedHouse === house.name ? "white" : "#222222"}
-            border="1px solid"
-            borderColor={selectedHouse === house.name ? "#222222" : "#DDDDDD"}
-            fontWeight="medium"
-            fontSize="sm"
-            _hover={{
-              borderColor: "#222222",
-              transform: "translateY(-1px)",
-            }}
-            transition="all 0.2s"
-          >
-            {house.displayName}
-          </Box>
-        ))}
-      </Box>
+<Box mb={6} px={4} position="relative" ref={dropdownRef}>
+  {/* Custom Select Trigger */}
+  <Box
+    onClick={() => setIsOpen(!isOpen)}
+    width="100%"
+    py={2}
+    px={5}
+    borderRadius="md"
+    border="1px solid"
+    borderColor="#DDDDDD"
+    fontSize="sm"
+    fontWeight="medium"
+    bg="white"
+    color="#222222"
+    cursor="pointer"
+    display="flex"
+    justifyContent="space-between"
+    alignItems="center"
+    _hover={{ borderColor: "#AAAAAA" }}
+  >
+    <Box>{selectedDisplayName}</Box>
+    <Box 
+      as="span" 
+      transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+      transition="transform 0.2s"
+    >
+    <ChevronDown />
+    </Box>
+  </Box>
 
+  {/* Dropdown Options */}
+  {isOpen && (
+    <Box
+      position="absolute"
+   
+      w={"97.5%"}
+mt={2}
+     
+      zIndex={10}
+      bg="white"
+      borderRadius="md"
+      boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
+      border="1px solid"
+      borderColor="#DDDDDD"
+      maxHeight="200px"
+      overflowY="auto"
+    >
+      {houseList.map((house) => (
+        <Box
+          key={house.name}
+          py={2}
+          px={3}
+          cursor="pointer"
+          bg={selectedHouse === house.name ? "#F5F5F5" : "white"}
+          _hover={{ bg: "#F5F5F5" }}
+          onClick={() => {
+            setSelectedHouse(house.name);
+            setSelectedDisplayName(house.displayName);
+            setIsOpen(false);
+            // This assumes you have a setSelectedHouse function in your parent code
+            // If you have a different function name, replace it accordingly
+          }}
+          fontSize="sm"
+        >
+          {house.displayName}
+        </Box>
+      ))}
+    </Box>
+  )}
+
+  {/* Hidden native select for accessibility */}
+   <select
+  value={selectedHouse}
+  onChange={(e) => {
+    const house = houseList.find(h => h.name === e.target.value);
+    if (house) {
+      setSelectedHouse(house.name);
+      setSelectedDisplayName(house.displayName);
+      setIsOpen(false);
+    }
+  }}
+  style={{
+    position: 'absolute',
+    width: '1px',
+    height: '1px',
+    overflow: 'hidden',
+    clip: 'rect(0 0 0 0)',
+    margin: '-1px',
+    padding: 0,
+    border: 'none',
+  }}
+>
+  {houseList.map((house) => (
+    <option key={house.name} value={house.name}>
+      {house.displayName}
+    </option>
+  ))}
+</select>
+</Box>
       {/* Property Description */}
       <Box
         bg="#F7F7F7"
