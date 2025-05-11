@@ -846,7 +846,8 @@ const AirbnbCalendar = () => {
 
                   {/* Safe Double Booking Indicator */}
                   {isSafeDoubleBooking && (
-                    <Box
+
+                    <> <Box
                       position="absolute"
                       top={2}
                       right={2}
@@ -860,11 +861,73 @@ const AirbnbCalendar = () => {
                       boxShadow="0 2px 4px rgba(0,0,0,0.1)"
                     >
                       <Box as={Check} size={12} color="white" />
-                    </Box>
+                    </Box> 
+                    
+                          <Box
+                          position="absolute"
+                          top="50%"
+                   width="74px"
+                      height="20px"
+                          left={"55%" }
+                          height="32px"
+                          bg={
+                            bookingDetails.platform === "airbnb"
+                              ? "rgba(255, 90, 95, 0.15)"
+                              : "rgba(0, 166, 153, 0.15)"
+                          }
+                          transform="translateY(-50%)"
+                          
+                          borderLeftRadius={
+                       "md" 
+                          }
+                          border="2px solid"
+                          borderColor={
+                            bookingDetails.platform === "airbnb"
+                              ? "#FF5A5F"
+                              : "#00A699"
+                          }
+                          display="flex"
+                          alignItems="center"
+                          justifyContent="center"
+                        >
+                          {/* Show check-in/check-out times for start/end dates */}
+                          {bookingDetails.isStart && (
+                            <Box display="flex" alignItems="center">
+                              <Box
+                                as={Clock}
+                                size={10}
+                                color={
+                                  bookingDetails.platform === "airbnb"
+                                    ? "#FF5A5F"
+                                    : "#00A699"
+                                }
+                                mr={1}
+                              />
+                             
+                            </Box>
+                          )}
+                          {bookingDetails.isEnd && (
+                            <Box display="flex" alignItems="center">
+                              <Box
+                                as={Clock}
+                                size={10}
+                                color={
+                                  bookingDetails.platform === "airbnb"
+                                    ? "#FF5A5F"
+                                    : "#00A699"
+                                }
+                                mr={1}
+                              />
+                             
+                            </Box>
+                          )}
+                        </Box></>
+                    
                   )}
 
                   {/* Clash Indicator */}
                   {isClash && (
+                    
                     <Box
                       position="absolute"
                       top={2}
@@ -928,19 +991,7 @@ const AirbnbCalendar = () => {
                                 }
                                 mr={1}
                               />
-                              <Text
-                                fontSize="xs"
-                                fontWeight="bold"
-                                color={
-                                  bookingDetails.platform === "airbnb"
-                                    ? "#FF5A5F"
-                                    : "#00A699"
-                                }
-                              >
-                                {formatTime(
-                                  bookingDetails.booking.checkInTime!,
-                                )}
-                              </Text>
+                             
                             </Box>
                           )}
                           {bookingDetails.isEnd && (
@@ -955,23 +1006,15 @@ const AirbnbCalendar = () => {
                                 }
                                 mr={1}
                               />
-                              <Text
-                                fontSize="xs"
-                                fontWeight="bold"
-                                color={
-                                  bookingDetails.platform === "airbnb"
-                                    ? "#FF5A5F"
-                                    : "#00A699"
-                                }
-                              >
-                                {formatTime(
-                                  bookingDetails.booking.checkOutTime!,
-                                )}
-                              </Text>
+                             
                             </Box>
                           )}
                         </Box>
                       )}
+
+
+
+
 
                       {/* Start/End Indicators - Improved */}
 
