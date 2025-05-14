@@ -61,38 +61,7 @@ const Hero = () => {
         </Box>
       </Stack>
 
-      <HStack justify={"center"} align={"center"} w={"100%"} zIndex={3}>
-        <Box
-          transition={"all 0.2s ease-in-out"}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          gap="15px"
-          fontFamily="arial"
-          cursor="pointer"
-          _hover={{
-            scale: 1.1,
-            fontWeight: "700",
-            px: "80px",
-            bg: "#0A0F29",
-          }}
-          p={4}
-          bg="#0A0F29"
-          color="white"
-          rounded="30px"
-          px="8"
-          fontWeight="500"
-          onClick={() => {
-            const element = document.getElementById("get-started-button");
-            if (element) {
-              element.scrollIntoView({ behavior: "smooth" });
-            }
-          }}
-        >
-          Get Started
-          <Icon as={ArrowRight}> </Icon>
-        </Box>
-      </HStack>
+
 
       <Box overflowX={"hidden"} mt={"350px"}>
         <Box
