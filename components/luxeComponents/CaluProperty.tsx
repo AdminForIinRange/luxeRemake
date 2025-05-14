@@ -13,6 +13,7 @@ import {
   Zap,
 } from "lucide-react";
 import TitleSubheading from "./Text/titleSubheading";
+import GptLuxeCalc from "./GptLuxeCalc";
 
 // Locations and property details
 const locations = ["Adelaide, Australia", "Sydney, NSW", "Melbourne, VIC"];
@@ -77,6 +78,15 @@ const CaluProperty = () => {
       <Box width={`${value}%`} height="100%" bg={color} borderRadius="full" />
     </Box>
   );
+
+
+
+
+
+
+
+
+
 
   // Reusable TrendIndicator component
   const TrendIndicator = ({ value }) => {
@@ -168,6 +178,40 @@ const CaluProperty = () => {
     <>
 
       <Box maxWidth="1400px" my="50px" mx="auto" padding="20px">
+
+<Box 
+
+  display="flex" 
+  alignItems="center" 
+  justifyContent="center" 
+
+>
+<GptLuxeCalc />
+
+
+<Box   
+ display="flex" 
+  alignItems="center" 
+  justifyContent="center" 
+
+  borderRadius="2xl" 
+ p={2}textAlign={"center"} 
+ px={4}
+  boxShadow="md" 
+  
+w={"auto"}
+gap={"8px"}
+ > 
+  <Text  ml="8px" fontSize="14px" fontWeight="bold" color="gray.700">
+    AI Powered
+  </Text>
+  <Zap size="20px" color="#E53E3E" />
+  </Box>
+
+
+ 
+</Box>
+
         <TitleSubheading
           title={"Luxe Property Calculator"}
           subheading={"Analyze and calculate your property investment value"}
