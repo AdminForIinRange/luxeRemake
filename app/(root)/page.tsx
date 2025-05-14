@@ -31,9 +31,6 @@ const Home = () => {
 
       {/* Render Hero and other components normally */}
       <Hero />
-
-      <CaluProperty />
-
       <OurServices />
 
       <HowWeCanGetYouStarted />
