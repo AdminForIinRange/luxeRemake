@@ -186,7 +186,7 @@ const CaluProperty = () => {
   justifyContent="center" 
 
 >
-<GptLuxeCalc />
+{/* <GptLuxeCalc /> */}
 
 
 <Box   
