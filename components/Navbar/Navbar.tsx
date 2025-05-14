@@ -252,6 +252,7 @@ const Navbar = () => {
         },
       ],
     },
+      { name: "Calculate", path: "/calculate", hasDropdown: false },
     { name: "Pricing", path: "/pricing", hasDropdown: false },
     { name: "Gallery", path: "/gallery", hasDropdown: false },
     { name: "Contact", path: "/contact", hasDropdown: false },
@@ -309,16 +310,7 @@ const Navbar = () => {
             >
               +61 406 631 461
             </Text>
-            <Text
-              fontSize="13px"
-              fontWeight="500"
-              color="#333"
-              cursor="pointer"
-              _hover={{ color: "#000" }}
-              onClick={() => handleNavigate("/contact")}
-            >
-              Request a Quote
-            </Text>
+            
           </Box>
         </Box>
       </Box>

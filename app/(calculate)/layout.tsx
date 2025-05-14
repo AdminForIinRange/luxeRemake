@@ -9,8 +9,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Navbar />
       <div>{children}</div>
-      <FAQ type="general" />
-      <Footer />
+      {/* <FAQ type="general" />
+      <Footer /> */}
     </>
   );
 };
