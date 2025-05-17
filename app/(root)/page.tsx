@@ -3,7 +3,7 @@
 import React, { Suspense } from "react";
 import Hero from "@/components/Hero";
 import FAQ from "@/components/FAQ";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Icon } from "@chakra-ui/react";
 import ReactLenis from "lenis/react";
 import Testimonials from "@/components/testimonials";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
@@ -12,6 +12,8 @@ import OurServices from "@/components/luxeComponents/OurServices";
 import CaluProperty from "@/components/luxeComponents/CaluProperty";
 import StickyGallery from "@/components/houseScrollDown/StickyGallery";
 import { BoxScrollMoveDown } from "@/components/luxeComponents/BoxScrollMoveDown";
+import { ArrowRight } from "lucide-react";
+import FollowingScrollButton from "@/components/luxeComponents/followingScrollButton";
 
 // Lazy load the GalleryHeroSection component
 const GalleryHeroSection = React.lazy(
@@ -29,11 +31,10 @@ const Home = () => {
         }}
       />
 
+
+<FollowingScrollButton />
       {/* Render Hero and other components normally */}
       <Hero />
-
-      <CaluProperty />
-
       <OurServices />
 
       <HowWeCanGetYouStarted />
