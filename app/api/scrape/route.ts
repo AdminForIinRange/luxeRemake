@@ -4,6 +4,7 @@ import puppeteer from "puppeteer";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
+
 const scrapeProperty = async (address: string) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
