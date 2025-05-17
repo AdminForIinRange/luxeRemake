@@ -862,6 +862,16 @@ mt={2}
                 currentMonth,
                 day,
               );
+              const bookings = getAllBookingsForDate(
+                currentYear,
+                currentMonth,
+                day,
+              );
+
+              // 1) detect any “Not available” placeholder events
+              const isBlocked = bookings.some(
+                ({ booking }) => booking.summary === "Airbnb (Not available)"
+              );
               const isClash = hasClash(currentYear, currentMonth, day);
               const isSafeDoubleBooking = hasSafeDoubleBooking(
                 currentYear,
@@ -873,12 +883,7 @@ mt={2}
                 currentMonth,
                 day,
               );
-              const bookings = getAllBookingsForDate(
-                currentYear,
-                currentMonth,
-                day,
-              );
-              const hasMultipleBookings = bookings.length > 1;
+           
 
               // Get the primary booking to display (prioritize the one with clash if exists)
               const bookingDetails =
@@ -896,11 +901,14 @@ mt={2}
                 );
 const isLastColumn = cellIndex % 7 === 6
               // Determine cell background color
-              let cellBgColor = "white";
-              if (isClash)
-                cellBgColor = "#FFF7E6"; // Light yellow for clash
-              else if (isSafeDoubleBooking) cellBgColor = "#F0FDF4"; // Light green for safe double booking
-
+   
+              const cellBgColor = isBlocked
+              ? "#DDDDDD"
+              : isClash
+              ? "#FFF7E6"
+              : isSafeDoubleBooking
+              ? "#F0FDF4"
+              : "white";
               return (
                 <Box
                   key={`day-${day}`}
@@ -917,6 +925,8 @@ const isLastColumn = cellIndex % 7 === 6
                     zIndex: 1,
                   }}
                 >
+
+
                   {/* Day Number */}
                   <Box position="absolute" top={2} left={2}>
                     <Text
@@ -1012,6 +1022,7 @@ const isLastColumn = cellIndex % 7 === 6
                                  
                                 </Box>
                               )}
+                                  {bookingDetails.booking.summary}
                               {bookingDetails.isEnd && (
                                 <Box display="flex" alignItems="center">
                                   <Box
@@ -1077,17 +1088,11 @@ const isLastColumn = cellIndex % 7 === 6
                               </Box>
                               <Text fontSize="xs" fontWeight="medium">
                                 {bookingDetails.booking.guestInfo.name}
-                                {bookingDetails.booking.guestInfo.count &&
-                                bookingDetails.booking.guestInfo.count > 1
-                                  ? ` + ${bookingDetails.booking.guestInfo.count - 1}`
-                                  : ""}
+                            
+                       
                               </Text>
                             </Box>
-                            {bookingDetails.booking.guestInfo.total && (
-                              <Text fontSize="xs" fontWeight="bold">
-                                ${bookingDetails.booking.guestInfo.total}
-                              </Text>
-                            )}
+                        
                           </Box>
                         )}
                     </>
@@ -1220,7 +1225,7 @@ const isLastColumn = cellIndex % 7 === 6
               <Box as={Clock} size={12} color={borderColor} />
             </Box>
           )}
-
+  {bookingDetails.booking.summary}
   {isEnd && (
             <Box display="flex" alignItems="center" mr={1}>
               <Box as={Clock} size={12} color={borderColor} />

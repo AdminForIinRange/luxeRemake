@@ -84,7 +84,13 @@ const processEvent = (event: any, platform: string): any => {
 
   if (platform === "airbnb") {
     // Airbnb specific processing
-    isReservation = event.summary === "Reserved"
+    isReservation =
+    event.summary &&
+    (event.summary.includes("CLOSED") ||
+      event.summary.includes("BOOKED") ||
+      event.summary.includes("Reservation") ||
+      event.summary.includes("Airbnb") ||
+      event.summary.includes("Not available"))
 
     // Try to extract guest info from description if available
     if (event.description) {
@@ -95,7 +101,10 @@ const processEvent = (event: any, platform: string): any => {
 
         const guestCount = guestCountMatch ? Number.parseInt(guestCountMatch[1], 10) : 0
         guestInfo = {
+
+          
           name: "Airbnb",
+          
         
     
 
