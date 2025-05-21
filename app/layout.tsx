@@ -7,7 +7,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import LuxeAiAssistance from "@/components/luxeComponents/LuxeAiAssistance";
 
 export const metadata = {
-  title: "Luxe Management",
+  title:
+    "Luxe Management - Expert Airbnb Property Management in Adelaide | Short Term Rental Management | Holiday Rental Management | Property Management Services",
   description:
     "We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience and maximize your rental income.",
 };
