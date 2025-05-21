@@ -80,7 +80,7 @@ const Hero = () => {
             color={"black"}
             bgGradient="linear(to-r, teal, blue)"
           >
-            AirBnB Property Management - Serving Adelaide
+            Luxe Managements - Luxury AirBnBs, Simplified.
           </Text>
           <Text
             fontSize={["18px", "18px", "24px", "24px", "24px", "24px"]}
@@ -91,7 +91,7 @@ const Hero = () => {
             w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
             fontWeight={300}
           >
-            We're a top-tier AirBnB Property Management company in Adelaide
+            We're Luxe, Adelaide's only AirBnB property management company that services the gap between luxury and affordability.
           </Text>
         </Box>
 

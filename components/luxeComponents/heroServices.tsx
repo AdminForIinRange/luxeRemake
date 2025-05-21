@@ -37,7 +37,7 @@ const HeroServices = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-              Maximize Your Rental Income
+              Maximize Your AirBnB Earnings
             </Text>
             <Text
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
@@ -48,7 +48,7 @@ const HeroServices = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Optimize your income and ease your mind with our experienced
+              Optimize your earnings and ease your mind with our Adelaide-based experienced
               Airbnb Management team.
             </Text>
             <HStack
@@ -214,7 +214,7 @@ const HeroServices = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-              Professional Property Management
+              Professional AirBnB Management
             </Text>
             <Text
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
@@ -225,7 +225,7 @@ const HeroServices = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Experience stress-free property management with our dedicated team
+              Experience stress-free AirBnB management with our dedicated Adelaide-based team gcg
               of professionals.
             </Text>
             <HStack
@@ -366,7 +366,7 @@ const HeroServices = () => {
               color={"black"}
               bgGradient="linear(to-r, teal, blue)"
             >
-              Professional Property Management
+              Professional AirBnB Property Management
             </Text>
             <Text
               fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
@@ -377,7 +377,7 @@ const HeroServices = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Experience stress-free property management with our dedicated team
+              Experience stress-free AirBnB management with our dedicated Adelaide-based team
               of professionals.
             </Text>
             <HStack
@@ -467,7 +467,7 @@ const HeroServices = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              From seamless check-ins to personalized experiences, we ensure
+              From seamless check-ins to bespoke services, we ensure
               guest satisfaction at every step.
             </Text>
             <HStack

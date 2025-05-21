@@ -120,7 +120,7 @@ const About = () => {
               fontWeight={300}
             >
               Luxe Managements launched in 2022 with a clear mission: to
-              redefine short-term rental management through innovation, quality,
+              redefine AirBnB management through innovation, quality,
               and care. We saw the gaps — inconsistent service, underperforming
               listings, and generic guest experiences — and built a smarter,
               more elevated alternative. <br></br>
