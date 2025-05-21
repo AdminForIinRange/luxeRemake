@@ -80,7 +80,7 @@ const Hero = () => {
             color={"black"}
             bgGradient="linear(to-r, teal, blue)"
           >
-            The Future of Real Estate
+            AirBnB Property Management - Serving Adelaide
           </Text>
           <Text
             fontSize={["18px", "18px", "24px", "24px", "24px", "24px"]}
@@ -91,8 +91,7 @@ const Hero = () => {
             w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
             fontWeight={300}
           >
-            We're transforming the way people interact with real estate. Check
-            out some of our stuff.
+            We're a top-tier AirBnB Property Management company in Adelaide
           </Text>
         </Box>
 
