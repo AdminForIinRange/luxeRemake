@@ -13,8 +13,7 @@ const ClientProviderWithFallback = dynamic(
 
 // Export metadata for SEO
 export const metadata = {
-  title:
-    "Luxe Management - Expert Airbnb Property Management in Adelaide | Short Term Rental Management | Holiday Rental Management | Property Management Services",
+   title: "Luxe Management | Airbnb Property Management in Adelaide",
   description:
     "We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience and maximize your rental income.",
 };
