@@ -1,17 +1,33 @@
-// app/head.tsx
 export default function Head() {
   return (
     <>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      {/* Primary Meta Description */}
       <meta
         name="description"
-        content="We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience and maximize your rental income."
+        content="Expert Airbnb property management in Adelaide. Luxe Management maximizes your rental income with full-service hosting, cleaning, styling, and guest care."
       />
+
+      {/* Open Graph (Facebook, LinkedIn) */}
+      <meta property="og:title" content="Luxe Management | Airbnb Property Management Adelaide" />
+      <meta property="og:description" content="Expert Airbnb property management in Adelaide. Luxe Management maximizes your rental income with full-service hosting, cleaning, styling, and guest care." />
+      <meta property="og:url" content="https://www.luxemanagements.com" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image" content="https://www.luxemanagements.com/og-image.jpg" />
+
+      {/* Twitter Cards */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Luxe Management | Airbnb Property Management Adelaide" />
+      <meta name="twitter:description" content="Expert Airbnb property management in Adelaide. Luxe Management maximizes your rental income with full-service hosting, cleaning, styling, and guest care." />
+      <meta name="twitter:image" content="https://www.luxemanagements.com/og-image.jpg" />
+
+      {/* Favicon */}
       <link rel="icon" href="/favicon.ico" />
-      <title>
-        Luxe Management - Expert Airbnb Property Management in Adelaide | Short Term Rental Management | Holiday Rental Management | Property Management Services
-      </title>
+
+      {/* Page Title */}
+      <title>Luxe Management | Airbnb Property Management Adelaide</title>
     </>
   );
 }
