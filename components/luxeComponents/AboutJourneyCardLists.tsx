@@ -21,7 +21,7 @@ const AboutJourneyCardLists = () => {
       title: "Early 2023",
       subtitle: "The Beginning",
       description:
-        "Founder Habibur started his own Airbnb, experiencing firsthand the frustrations and hidden costs of hosting. Unable to find an affordable, effective management solution, he identified a major gap in the market—and Luxe Managements was born.",
+        "Our founder Habibur started his own AirBnb, experiencing firsthand the frustrations and hidden costs of hosting. Unable to find an affordable, effective management solution, he identified a major gap in the market—and Luxe Managements was concieved.",
       icon: <Calendar size={20} />,
       stats: [
         { label: "Problem Identified", value: "Hidden Hosting Costs" },
@@ -35,7 +35,7 @@ const AboutJourneyCardLists = () => {
       title: "December 2023 – Official Launch",
       subtitle: "First Steps",
       description:
-        "Luxe Managements officially opened and secured its first client, beginning the journey toward a better, smarter hosting experience. This milestone marked the transition from concept to reality, validating our business model and approach to property management.",
+        "Luxe Managements was officially established and secured its first client, beginning the journey toward a better, smarter hosting experience. This milestone marked the transition from concept to reality, validating our business model and approach to AirBnB management.",
       icon: <Briefcase size={20} />,
       stats: [
         { label: "Properties Managed", value: "1" },
@@ -49,7 +49,7 @@ const AboutJourneyCardLists = () => {
       title: "February 2024 – Innovation in Operations",
       subtitle: "Operational Excellence",
       description:
-        "After recognizing inefficiencies in cleaning and turnover management, Luxe developed a proprietary amenity and bedding system, cutting maintenance costs by over 50%. This innovation allowed us to deliver higher quality service while maintaining competitive pricing for our clients.",
+        "After recognizing inefficiencies in cleaning and turnover management, Luxe developed a proprietary amenity and bedding system, cutting maintenance costs by over 50%. This innovation allowed Luxe to deliver higher quality service while maintaining competitive pricing for our clients.",
       icon: <Zap size={20} />,
       stats: [
         { label: "Cost Reduction", value: "50%" },
@@ -63,7 +63,7 @@ const AboutJourneyCardLists = () => {
       title: "April 2024 – Elevating Property Presentation",
       subtitle: "Visual Excellence",
       description:
-        "Luxe built an in-house system for styling, photography, and furnishing, delivering higher-quality, cost-effective setups compared to external providers. Our dedicated design team now creates bespoke interiors that maximize appeal and booking rates for each unique property.",
+        "Luxe built an in-house system for styling, photography, and furnishing, delivering higher-quality, cost-effective services compared to external providers. Our dedicated design team now creates bespoke interiors that maximize appeal and booking rates for each unique property.",
       icon: <Home size={20} />,
       stats: [
         { label: "Booking Conversion", value: "↑ 28%" },
@@ -77,7 +77,7 @@ const AboutJourneyCardLists = () => {
       title: "June 2024 – Proven Guest Excellence",
       subtitle: "Customer Satisfaction",
       description:
-        "Through the introduction of a leading guest satisfaction system, Luxe achieved an average review score of 4.98 stars and hosted over 1,000 nights across their portfolio. Our commitment to exceptional guest experiences has become our hallmark, driving repeat bookings and referrals.",
+        "Through the introduction of a leading guest satisfaction system, Luxe achieved an average review score of 4.98 out of 5 stars and hosted over 1,000 nights across their portfolio. Our commitment to exceptional guest experiences has become our hallmark, driving repeat bookings and referrals.",
       icon: <Users size={20} />,
       stats: [
         { label: "Guest Satisfaction", value: "98%" },
@@ -91,7 +91,7 @@ const AboutJourneyCardLists = () => {
       title: "Mid-2024 – Full Independence",
       subtitle: "Vertical Integration",
       description:
-        "Luxe became fully independent of third-party vendors, offering clients a 100% bespoke, better-quality, and more affordable management solution. By bringing all services in-house, we've created a seamless end-to-end experience that maximizes property performance while minimizing owner hassle.",
+        "Luxe became fully independent of third-party vendors, offering clients a 100% bespoke, better-quality, and more affordable management solutions and services. By bringing all services in-house, we've created a seamless end-to-end experience that maximizes property performance while minimizing owner hassle.",
       icon: <Award size={20} />,
       stats: [
         { label: "Vendor Reduction", value: "100%" },
@@ -105,7 +105,7 @@ const AboutJourneyCardLists = () => {
       title: "September 2024 – Expansion Beyond Adelaide",
       subtitle: "Regional Growth",
       description:
-        "Luxe expanded services to suburbs outside Adelaide, bringing its premium offering to more homeowners. This strategic expansion allowed us to serve a broader market while maintaining our high standards of personalized service and local expertise in each new area.",
+        "Luxe expanded services to suburbs outside Adelaide, bringing its premium offering to more homeowners. This strategic expansion allowed us to serve a broader market while maintaining our high standards of personalized services and local expertise in each new area.",
       icon: <TrendingUp size={20} />,
       stats: [
         { label: "New Regions", value: "5" },

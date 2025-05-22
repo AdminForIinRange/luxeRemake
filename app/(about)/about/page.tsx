@@ -121,13 +121,13 @@ const About = () => {
             >
               Luxe Managements launched in 2022 with a clear mission: to
               redefine AirBnB management through innovation, quality,
-              and care. We saw the gaps — inconsistent service, underperforming
+              and care. We saw the gaps — inconsistent AirBnB management service, underperforming
               listings, and generic guest experiences — and built a smarter,
               more elevated alternative. <br></br>
               <br></br>From data-driven pricing to five-star cleaning and 24/7
               guest support, every detail is designed to maximise returns and
               create unforgettable stays. Today, Luxe is the go-to choice for
-              property owners across Adelaide who want hassle-free hosting and
+              property owners across Adelaide who want hassle-free hosting, effortless managements services for their AirBnBs, and
               hotel-quality results.
             </Text>
             <HStack
@@ -274,7 +274,7 @@ const About = () => {
               lineHeight="tall"
             >
               What sets Luxe apart is our comprehensive, detail-oriented
-              approach to property management
+              approach to AirBnB management
             </Text>
           </Box>
 
@@ -302,7 +302,7 @@ const About = () => {
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
                 Our proprietary algorithm analyzes market trends, seasonal
-                demand, and local events to optimize your property's pricing for
+                demand, and local events to optimize your AirBnB's pricing for
                 maximum revenue.
               </Text>
             </Box>
@@ -322,7 +322,7 @@ const About = () => {
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
                 High-quality, professionally staged photos showcase your
-                property's best features, attracting more bookings and premium
+                AirBnBs's best features, attracting more bookings and premium
                 rates.
               </Text>
             </Box>
@@ -363,7 +363,7 @@ const About = () => {
               <Text fontSize="md" color="gray.600" lineHeight="tall">
                 Our rigorous cleaning protocol exceeds industry standards,
                 ensuring every guest arrives to an impeccably maintained
-                property.
+                AirBnB.
               </Text>
             </Box>
 
@@ -401,7 +401,7 @@ const About = () => {
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
                 Detailed monthly reports provide complete visibility into your
-                property's performance, bookings, and financial returns.
+                AirBnB's performance, bookings, and financial returns.
               </Text>
             </Box>
           </Box>
@@ -435,7 +435,7 @@ const About = () => {
             lineHeight="tall"
             opacity="0.9"
           >
-            At Luxe Managements, our mission is to elevate the short-term rental
+            At Luxe Managements, our mission is to elevate the AirBnBs'
             experience for both property owners and guests. We strive to
             maximize returns for owners while ensuring each guest enjoys a
             five-star stay.
@@ -486,7 +486,7 @@ const About = () => {
               </Text>
               <Text fontSize="md" lineHeight="tall" opacity="0.8">
                 Delivering unparalleled service quality in every interaction,
-                from guest communications to property maintenance and owner
+                from guest communications to AirBnB maintenance and owner
                 reporting.
               </Text>
             </Box>

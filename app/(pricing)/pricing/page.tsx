@@ -75,7 +75,7 @@ const Pricing = () => {
               lineHeight="1.6"
             >
               No hidden fees. Just smart, simple pricing designed to maximize
-              your rental income. Get a Custom Quote.
+              your AirBnB income. Get a Custom Quote.
             </Text>
             <Box
               display="flex"
@@ -254,7 +254,7 @@ const Pricing = () => {
               <Box mb="32px">
                 <ServiceItem
                   icon={<Sofa size={20} />}
-                  text="Complete property management"
+                  text="Complete AirBnB management"
                 />
                 <ServiceItem
                   icon={<Home size={20} />}
