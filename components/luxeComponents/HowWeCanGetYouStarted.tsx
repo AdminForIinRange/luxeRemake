@@ -77,7 +77,7 @@ const HowWeCanGetYouStarted = () => {
   const router = useRouter();
 
   return (
-    <Box width="100%" position="relative" my={"50px"}>
+    <Box width="100%" position="relative" my={"50px"}       px={["8%", "8%", "6%", "0%", "0%", "0%"]}>
       {/* Introduction Section */}
       <HStack
         my={["50px", "50px", "100px", "100px", "100px", "100px"]}
@@ -92,6 +92,7 @@ const HowWeCanGetYouStarted = () => {
       <BoxScrollMoveDown />
       {/* The image box scroll move down ----------------------------- */}
       <Box
+      
         mt={["-100px", "-100px", "-150px", "-150px", "-150px", "-150px"]}
         width="100%"
         position="relative"
@@ -112,10 +113,11 @@ const HowWeCanGetYouStarted = () => {
             key={index}
             data-aos="fade-up"
             position="relative"
-            width="100%"
-            maxWidth="1600px"
+            width={["100%", "100%", "100%", "100%", "100%", "100%"]}
+           
+     px={["4%", "4%", "6%", "6%", "6%", "10%"]}
             margin="0 auto"
-            px={[4, 4, 4, 4]}
+              
             paddingBottom={index === gettingStarted.length - 1 ? "0" : "180px"}
           >
             {/* Timeline Node */}
@@ -173,9 +175,10 @@ const HowWeCanGetYouStarted = () => {
               >
                 {/* Category Tag */}
                 <Box
+                ml={["16px", "16px", "0", "0"]}
                   display="inline-block"
                   backgroundColor="#f5f5f5"
-                  paddingX="16px"
+                  paddingX="18px"
                   paddingY="8px"
                   borderRadius="6px"
                   marginBottom="24px"
@@ -280,40 +283,40 @@ const HowWeCanGetYouStarted = () => {
                 position="relative"
                 paddingX={["0", "0", "0", "30px"]}
               >
-                  <Box
-      position="relative"                       // establish containing block for the Image
-      width="100%"
-      height={["300px", "350px", "400px"]}
-      borderRadius="20px"
-      overflow="hidden"                         // clip the Image and overlay
-      boxShadow="0 12px 40px rgba(0, 0, 0, 0.12)"
-      _before={{
-        content: '""',
-        position: "absolute",
-        top: "0",
-        left: "0",
-        right: "0",
-        bottom: "0",
-        background:
-          "linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%)",
-        zIndex: "1",
-      }}
-      _hover={{
-        transform: "scale(1.02)",
-        transition: "transform 0.5s ease",
-        boxShadow: "0 16px 50px rgba(0, 0, 0, 0.15)",
-      }}
-    >
-      <Image
-        src={item.img}                          // your original src untouched
-        alt={item.alt ?? ""}                   // or provide a meaningful alt
-        fill                                    // makes the img fill the Box
-        style={{
-          objectFit: 'cover',                   // replicates background-size: cover
-          objectPosition: 'center',             // replicates background-position: center
-        }}
-      />
-    
+                <Box
+                  position="relative" // establish containing block for the Image
+                  width="100%"
+                  height={["300px", "350px", "400px"]}
+                  borderRadius="20px"
+                  overflow="hidden" // clip the Image and overlay
+                  boxShadow="0 12px 40px rgba(0, 0, 0, 0.12)"
+                  _before={{
+                    content: '""',
+                    position: "absolute",
+                    top: "0",
+                    left: "0",
+                    right: "0",
+                    bottom: "0",
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%)",
+                    zIndex: "1",
+                  }}
+                  _hover={{
+                    transform: "scale(1.02)",
+                    transition: "transform 0.5s ease",
+                    boxShadow: "0 16px 50px rgba(0, 0, 0, 0.15)",
+                  }}
+                >
+                  <Image
+                    src={item.img} // your original src untouched
+                    alt={item.alt ?? ""} // or provide a meaningful alt
+                    fill // makes the img fill the Box
+                    style={{
+                      objectFit: "cover", // replicates background-size: cover
+                      objectPosition: "center", // replicates background-position: center
+                    }}
+                  />
+
                   {/* Optional image overlay content */}
                   <Box
                     position="absolute"
