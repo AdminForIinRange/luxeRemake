@@ -186,7 +186,8 @@ const PropertyManagement = () => {
           objectFit: 'cover',     // replicates background-size: cover
           objectPosition: 'center'// replicates background-position: center
         }}
-        priority             // optional: preload above-the-fold image
+         priority={true}
+quality={75}              // optional: preload above-the-fold image
       />
     </Box>
     

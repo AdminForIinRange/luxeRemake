@@ -226,7 +226,8 @@ const PropertyManagementCardLists = () => {
           objectFit: 'cover',      // replicates background-size: cover
           objectPosition: 'center' // replicates background-position: center
         }}
-        priority             // optional: preload if above the fold
+               priority={true}
+quality={75}               // optional: preload if above the fold
       />
     </Box>
     
@@ -444,7 +445,8 @@ const PropertyManagementCardLists = () => {
           objectFit: 'cover',      // replicates background-size: cover
           objectPosition: 'center' // replicates background-position: center
         }}
-        priority             // optional: preload if above the fold
+               priority={true}
+quality={75}               // optional: preload if above the fold
       />
     </Box>
             {/* Bottom-right label */}
@@ -764,7 +766,8 @@ const PropertyManagementCardLists = () => {
           objectFit: 'cover',      // replicates background-size: cover
           objectPosition: 'center' // replicates background-position: center
         }}
-        priority             // optional: preload if above the fold
+               priority={true}
+quality={75}               // optional: preload if above the fold
       />
     </Box>
             {/* Bottom-right label */}
@@ -980,7 +983,8 @@ const PropertyManagementCardLists = () => {
           objectFit: 'cover',      // replicates background-size: cover
           objectPosition: 'center' // replicates background-position: center
         }}
-        priority             // optional: preload if this is above the fold
+               priority={true}
+quality={75}         // optional: preload if this is above the fold
       />
     </Box>
             {/* Bottom-right label */}

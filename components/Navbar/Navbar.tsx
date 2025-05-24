@@ -348,8 +348,8 @@ const Navbar = () => {
               <Image
                 src={luxeLogo || "/placeholder.svg"}
                 alt="Luxe Management Logo"
-                priority
-              />
+                priority={true}
+quality={75}               />
             </Box>
             <Box>
               <Text

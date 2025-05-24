@@ -176,7 +176,8 @@ export default function HouseHeroParallax() {
                     layout="fill"
                     objectFit="cover"
                     quality={75} // Smaller file, still sharp
-                    priority={idx === 0 && i < 2} // only first 2 images preload
+                    priority={true}
+
                   />
                 </Box>
               ))}

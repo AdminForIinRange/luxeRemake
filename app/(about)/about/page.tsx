@@ -200,7 +200,8 @@ const About = () => {
             objectFit: 'cover',      // replicate `background-size: cover`
             objectPosition: 'center' // replicate `background-position: center`
           }}
-          priority                   // optional: if you want to preload it
+                 priority={true}
+quality={75}                     // optional: if you want to preload it
         />
         
       </Box>
@@ -679,7 +680,8 @@ const About = () => {
           objectFit: 'cover',                    // cover & center just like bg-size/bg-pos
           objectPosition: 'center',
         }}
-        priority                                 // optional: preload current slide
+               priority={true}
+quality={75}                                   // optional: preload current slide
       />
     </Box>
 
