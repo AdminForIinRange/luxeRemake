@@ -17,16 +17,17 @@ const inter = Inter({
 
 const ClientProviderWithFallback = dynamic(
   () => import("@/components/chakra-snippets/ClientProvider"),
-  { loading: () => <Loading />, ssr: false },
+  { loading: () => <Loading />, ssr: false }
 );
 
-// eslint-disable-next-line import/no-unused-modules
 export const metadata: Metadata = {
-  
   title: "Luxe Management | The Best Airbnb Property Management in Adelaide",
   description:
     "Comprehensive Airbnb management services designed to maximize your rental income in Adelaide.",
   metadataBase: new URL("https://www.luxemanagements.com"),
+  alternates: {
+    canonical: "https://www.luxemanagements.com",
+  },
   robots: {
     index: true,
     follow: true,
@@ -62,9 +63,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-   alternates: {
-    canonical: "https://www.luxemanagements.com"
-  },
 };
 
 // eslint-disable-next-line import/no-unused-modules
@@ -76,59 +74,57 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       suppressHydrationWarning
     >
       <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Preconnect & Preload for fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossOrigin="anonymous"
-/>
+        {/* Character set & mobile viewport */}
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<Script id="ld-navigation" type="application/ld+json" strategy="beforeInteractive">
-  {`
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "url":"https://www.luxemanagements.com/",
-    "name":"Luxe Management",
-      "hasPart": [
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "Home",
-                      "url": "https://www.luxemanagements.com/",
-                    },
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "Services",
-                      "url": "https://www.luxemanagements.com/services",
-                    },
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "About Us",
-                      "url": "https://www.luxemanagements.com/about",
-                    },
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "Testimonials",
-                      "url": "https://www.luxemanagements.com/testimonials",
-                    },
-                    {
-                      "@type": "SiteNavigationElement",
-                      "name": "Contact",
-                      "url": "https://www.luxemanagements.com/contact",
-                    },
-                  ],
-    ]
-  }
-  `}
-</Script>
-
-{/* Structured Data: LocalBusiness & BreadcrumbList */}
+        {/* === Schema.org: Site Navigation === */}
         <Script
-          id="ld-json"
+          id="ld-navigation"
           type="application/ld+json"
-strategy="beforeInteractive"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              url: "https://www.luxemanagements.com/",
+              name: "Luxe Management",
+              hasPart: [
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "Home",
+                  url: "https://www.luxemanagements.com/",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "Services",
+                  url: "https://www.luxemanagements.com/services",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "About Us",
+                  url: "https://www.luxemanagements.com/about",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "Testimonials",
+                  url: "https://www.luxemanagements.com/testimonials",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  name: "Contact",
+                  url: "https://www.luxemanagements.com/contact",
+                },
+              ],
+            }),
+          }}
+        />
+
+        {/* === Schema.org: LocalBusiness + BreadcrumbList === */}
+        <Script
+          id="ld-business-and-breadcrumbs"
+          type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -136,33 +132,6 @@ strategy="beforeInteractive"
                 {
                   "@type": "LocalBusiness",
                   name: "Luxe Management",
-                  // hasPart: [
-                  //   {
-                  //     "@type": "SiteNavigationElement",
-                  //     name: "Home",
-                  //     url: "https://www.luxemanagements.com/",
-                  //   },
-                  //   {
-                  //     "@type": "SiteNavigationElement",
-                  //     name: "Services",
-                  //     url: "https://www.luxemanagements.com/services",
-                  //   },
-                  //   {
-                  //     "@type": "SiteNavigationElement",
-                  //     name: "About Us",
-                  //     url: "https://www.luxemanagements.com/about",
-                  //   },
-                  //   {
-                  //     "@type": "SiteNavigationElement",
-                  //     name: "Testimonials",
-                  //     url: "https://www.luxemanagements.com/testimonials",
-                  //   },
-                  //   {
-                  //     "@type": "SiteNavigationElement",
-                  //     name: "Contact",
-                  //     url: "https://www.luxemanagements.com/contact",
-                  //   },
-                  // ],
                   image: "https://www.luxemanagements.com/logo.png",
                   "@id": "https://www.luxemanagements.com",
                   url: "https://www.luxemanagements.com",
@@ -217,25 +186,29 @@ strategy="beforeInteractive"
                       "@type": "ListItem",
                       position: 3,
                       name: "Furnishing & Styling",
-                      item: "https://www.luxemanagements.com/services/furnishing-and-styling",
+                      item:
+                        "https://www.luxemanagements.com/services/furnishing-and-styling",
                     },
                     {
                       "@type": "ListItem",
                       position: 4,
                       name: "Property Management",
-                      item: "https://www.luxemanagements.com/services/property-management",
+                      item:
+                        "https://www.luxemanagements.com/services/property-management",
                     },
                     {
                       "@type": "ListItem",
                       position: 5,
                       name: "Photography",
-                      item: "https://www.luxemanagements.com/services/photography",
+                      item:
+                        "https://www.luxemanagements.com/services/photography",
                     },
                     {
                       "@type": "ListItem",
                       position: 6,
-                      name: "cleaning & linen",
-                      item: "https://www.luxemanagements.com/services/cleaning-and-linen",
+                      name: "Cleaning & Linen",
+                      item:
+                        "https://www.luxemanagements.com/services/cleaning-and-linen",
                     },
                     {
                       "@type": "ListItem",
@@ -268,12 +241,25 @@ strategy="beforeInteractive"
           }}
         />
       </head>
+
       <body>
+        {/* Accessibility: Skip‐to‐Content */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only"
+        >
+          Skip to content
+        </a>
+
+        {/* Performance: load non‐critical analytics after hydration */}
         <Analytics />
         <SpeedInsights />
+
         <ClientProviderWithFallback>
           <LuxeAiAssistance />
-          {children}
+
+          {/* Semantic & a11y: main landmark */}
+          <main id="main-content">{children}</main>
         </ClientProviderWithFallback>
       </body>
     </html>
