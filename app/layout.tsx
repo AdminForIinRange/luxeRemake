@@ -7,8 +7,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Loading from './loading';
 import LuxeAiAssistance from '@/components/luxeComponents/LuxeAiAssistance';
 
-
-
 const ClientProviderWithFallback = dynamic(
   () => import('@/components/chakra-snippets/ClientProvider'),
   { loading: () => <Loading /> },
@@ -26,7 +24,7 @@ export const metadata = {
     siteName: 'Luxe Management',
     images: [
       {
-        url: '/og-image.jpg', // ✅ fixed
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Luxe Management',
@@ -38,27 +36,53 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Luxe Management | The Best Airbnb Property Management In Adelaide',
     description: 'The Best Airbnb property management services in Adelaide.',
-    images: ['/og-image.jpg'], // ✅ fixed
+    images: ['/og-image.jpg'],
   },
 };
-
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" data-theme="light" style={{ scrollBehavior: 'smooth' }} suppressHydrationWarning>
       <head>
         <Script
-          id="ld-json"
+          id="localbusiness-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'Luxe Management',
-              url: 'https://www.luxemanagements.com',
-              description:
-                'The Best Airbnb Property Management In Adelaide. Short-term and holiday rental services tailored to maximize your income.',
-              logo: 'https://www.luxemanagements.com/logo.png',
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "Luxe Management",
+              image: "https://www.luxemanagements.com/logo.png",
+              "@id": "https://www.luxemanagements.com",
+              url: "https://www.luxemanagements.com",
+              telephone: "+61 123 456 789",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Adelaide",
+                addressRegion: "SA",
+                addressCountry: "AU"
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: -34.9285,
+                longitude: 138.6007
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                opens: "09:00",
+                closes: "17:00"
+              },
+              sameAs: [
+                "https://www.facebook.com/luxemanagements",
+                "https://www.instagram.com/luxemanagements"
+              ]
             }),
           }}
         />
