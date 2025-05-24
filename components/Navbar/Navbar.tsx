@@ -346,10 +346,10 @@ const Navbar = () => {
               overflow="hidden"
             >
               <Image
-          src={luxeLogo || "/placeholder.svg"}
+quality={70}          src={luxeLogo || "/placeholder.svg"}
                 alt="Luxe Management Logo"
                 
-quality={75}               />
+              />
             </Box>
             <Box>
               <Text

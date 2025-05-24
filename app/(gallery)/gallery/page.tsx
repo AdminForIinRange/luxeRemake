@@ -475,7 +475,7 @@ const Gallery = () => {
       _hover={{ transform: 'scale(1.05)' }}
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src={item.img.src}
         alt={item.img.alt ?? ''}
         fill                             // makes the image cover the Box entirely

@@ -574,7 +574,7 @@ const About = () => {
             </HStack>
           </VStack>
           {/* <Image
-loading="lazy" src={collage} width={500} /> */}
+quality={70} loading="lazy" src={collage} width={500} /> */}
         </VStack>
       </HStack>
 

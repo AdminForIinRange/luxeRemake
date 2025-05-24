@@ -232,7 +232,7 @@ const FurnishingStylingCardLists = () => {
               ),
             )}
             {/* <Image
-loading="lazy" src={collage} />   //!cool */}
+quality={70} loading="lazy" src={collage} />   //!cool */}
           </Box>
         </HStack>
       </HStack>

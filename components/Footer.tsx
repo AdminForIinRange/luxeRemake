@@ -28,7 +28,7 @@ const Footer = () => {
           <Box display="flex" alignItems="center" gap="12px">
             <Box w={{ base: "40px", md: "50px" }} h="auto" position="relative">
               <Image
-loading="lazy"
+quality={70} loading="lazy"
                 src={LuxeLogo || "/placeholder.svg"}
                 alt="Luxe Management Logo"
               />

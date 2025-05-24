@@ -264,7 +264,7 @@ const Testimonials = () => {
       border="2px solid rgba(0,0,0,0.1)"
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src={reviews[currentSlide].image}
         alt=""                       // you can add a meaningful alt if needed
         fill                         // makes the img fill the Box

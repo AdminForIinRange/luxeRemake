@@ -219,7 +219,7 @@ const PropertyManagementCardLists = () => {
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -228,7 +228,7 @@ loading="lazy"
           objectPosition: 'center' // replicates background-position: center
         }}
                
-quality={75}               // optional: preload if above the fold
+              // optional: preload if above the fold
       />
     </Box>
     
@@ -439,7 +439,7 @@ quality={75}               // optional: preload if above the fold
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/5667613/pexels-photo-5667613.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -448,7 +448,7 @@ loading="lazy"
           objectPosition: 'center' // replicates background-position: center
         }}
                
-quality={75}               // optional: preload if above the fold
+            // optional: preload if above the fold
       />
     </Box>
             {/* Bottom-right label */}
@@ -761,7 +761,7 @@ quality={75}               // optional: preload if above the fold
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/6195131/pexels-photo-6195131.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -770,7 +770,7 @@ loading="lazy"
           objectPosition: 'center' // replicates background-position: center
         }}
                
-quality={75}               // optional: preload if above the fold
+             // optional: preload if above the fold
       />
     </Box>
             {/* Bottom-right label */}
@@ -979,7 +979,7 @@ quality={75}               // optional: preload if above the fold
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/669621/pexels-photo-669621.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -988,7 +988,7 @@ loading="lazy"
           objectPosition: 'center' // replicates background-position: center
         }}
                
-quality={75}         // optional: preload if this is above the fold
+      // optional: preload if this is above the fold
       />
     </Box>
             {/* Bottom-right label */}

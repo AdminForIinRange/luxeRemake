@@ -221,7 +221,7 @@ const PhotographyCardLists = () => {
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/776908/pexels-photo-776908.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -230,7 +230,7 @@ loading="lazy"
           objectPosition: 'center' // replicates backgroundPosition="center"
         }}
                
-quality={75}               // optional: preload if this is above the fold
+           // optional: preload if this is above the fold
       />
     </Box>
     
@@ -391,7 +391,7 @@ quality={75}               // optional: preload if this is above the fold
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/1336858/pexels-photo-1336858.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -400,7 +400,7 @@ loading="lazy"
           objectPosition: 'center' // replicates backgroundPosition="center"
         }}
                
-quality={75}               // optional: preload if this is above the fold
+             // optional: preload if this is above the fold
       />
     </Box>
             {/* Bottom-right label */}
@@ -666,7 +666,7 @@ quality={75}               // optional: preload if this is above the fold
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/9125753/pexels-photo-9125753.jpeg"
         alt=""
         fill                // makes the image absolutely fill the Box
@@ -675,7 +675,7 @@ loading="lazy"
           objectPosition: 'center' // replicates background-position: center
         }}
                
-quality={75}               // optional: preload if this is above the fold
+              // optional: preload if this is above the fold
       />
     </Box>
             {/* Bottom-right label */}
@@ -834,7 +834,7 @@ quality={75}               // optional: preload if this is above the fold
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/8408537/pexels-photo-8408537.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -843,7 +843,7 @@ loading="lazy"
           objectPosition: 'center' // replicates background-position: center
         }}
                
-quality={75}               // optional: preload if above the fold
+             // optional: preload if above the fold
       />
     </Box>
             {/* Bottom-right label */}

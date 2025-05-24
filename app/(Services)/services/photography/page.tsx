@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
 import { Box, HStack, Text, VStack } from "@chakra-ui/react";
-
 import Aos from "aos";
 import "aos/dist/aos.css";
 import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultation";
@@ -9,6 +8,7 @@ import PhotographyCardLists from "@/components/luxeComponents/PhotographyCardLis
 import ImageCompareSlider from "@/components/luxeComponents/ImageCompareSlider";
 import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
 import TopHeader from "@/components/luxeComponents/topHeader";
+import Image from "next/image";
 const Photography = () => {
   useEffect(() => {
     Aos.init({
@@ -166,8 +166,7 @@ const Photography = () => {
         >
           {/* Horizontal line for crosshair */}
 
-          <Image
-loading="lazy"CompareSlider />
+            <ImageCompareSlider />
         </Box>
       </VStack>
       <PhotographyCardLists />

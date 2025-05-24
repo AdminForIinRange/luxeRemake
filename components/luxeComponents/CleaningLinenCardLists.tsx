@@ -221,7 +221,7 @@ const CleaningLinenCardLists = () => {
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/6474494/pexels-photo-6474494.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -230,7 +230,7 @@ loading="lazy"
           objectPosition: 'center',// replicates background-position: center
         }}
                
-quality={75}               // optional: preload above-the-fold image
+              // optional: preload above-the-fold image
       />
     </Box>
     
@@ -441,7 +441,7 @@ quality={75}               // optional: preload above-the-fold image
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/31472229/pexels-photo-31472229.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -450,7 +450,7 @@ loading="lazy"
           objectPosition: 'center',// replicates background-position: center
         }}
                
-quality={75}               // optional: preload above-the-fold image
+            // optional: preload above-the-fold image
       />
     </Box>
             {/* Bottom-right label */}
@@ -763,7 +763,7 @@ quality={75}               // optional: preload above-the-fold image
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -772,7 +772,7 @@ loading="lazy"
           objectPosition: 'center'// replicates background-position: center
         }}
                
-quality={75}               // optional: preload above-the-fold image
+            // optional: preload above-the-fold image
       />
     </Box>
             {/* Bottom-right label */}
@@ -981,7 +981,7 @@ quality={75}               // optional: preload above-the-fold image
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/8293667/pexels-photo-8293667.jpeg"
         alt=""
         fill                // makes the image fill the Box entirely
@@ -990,7 +990,7 @@ loading="lazy"
           objectPosition: 'center' // replicates background-position: center
         }}
                
-quality={75}               // optional: preload above-the-fold image
+             // optional: preload above-the-fold image
       />
     </Box>
             {/* Bottom-right label */}

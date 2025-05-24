@@ -193,7 +193,7 @@ const About = () => {
         bg="gray.200"               // fallback color
       >
         <Image
-loading="lazy"
+quality={70} loading="lazy"
           src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
           alt="Scenic background"
           fill                       // in Next.js 13+, use `fill`; for older versions use `layout="fill"`
@@ -202,7 +202,7 @@ loading="lazy"
             objectPosition: 'center' // replicate `background-position: center`
           }}
                  
-quality={75}                     // optional: if you want to preload it
+             // optional: if you want to preload it
         />
         
       </Box>
@@ -674,7 +674,7 @@ quality={75}                     // optional: if you want to preload it
       overflow="hidden"                          // clip to circle
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src={members[currentSlide].src}
         alt={`Slide ${currentSlide + 1}`}
         fill                                     // in Next.js 13+, for older use layout="fill"
@@ -683,7 +683,7 @@ loading="lazy"
           objectPosition: 'center',
         }}
                
-quality={75}                                   // optional: preload current slide
+                                // optional: preload current slide
       />
     </Box>
 
@@ -780,7 +780,7 @@ quality={75}                                   // optional: preload current slid
             </HStack>
           </VStack>
           {/* <Image
-loading="lazy" src={collage} width={500} /> */}
+quality={70} loading="lazy" src={collage} width={500} /> */}
         </VStack>
       </HStack>
       {/* Call to Action */}

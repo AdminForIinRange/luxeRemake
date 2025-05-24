@@ -324,7 +324,7 @@ const FurnishingAndStyling = () => {
       overflow="hidden"      // clip the Image to the rounded corners
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
         alt=""
         fill                   // makes the image fill the Box completely
@@ -333,7 +333,7 @@ loading="lazy"
           objectPosition: 'center', // replicates background-position: center
         }}
          
-quality={75}                // optional: preload if above the fold
+            // optional: preload if above the fold
       />
     </Box>
           </Box>
@@ -546,7 +546,7 @@ quality={75}                // optional: preload if above the fold
                 overflow="hidden" // ensures image stays within rounded corners
               >
                 <Image
-loading="lazy"
+quality={70} loading="lazy"
                   src={box.img}
                   alt={box.title}
                   fill
@@ -613,7 +613,7 @@ loading="lazy"
       overflow="hidden"          // clip the Image to the Box bounds
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/31902663/pexels-photo-31902663.jpeg"
         alt=""
         fill                      // makes the image fill the Box
@@ -651,7 +651,7 @@ loading="lazy"
       overflow="hidden"          // clip the Image to the Box bounds
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg"
         alt=""
         fill                      // makes the image fill the Box
@@ -689,7 +689,7 @@ loading="lazy"
       overflow="hidden"          // clip the Image to the Box bounds
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/7303902/pexels-photo-7303902.jpeg"
         alt=""
         fill                      // makes the image fill the Box

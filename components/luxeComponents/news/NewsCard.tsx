@@ -66,7 +66,7 @@ const src = `https://images.pexels.com/photos/${article.pexelImgLink}/pexels-pho
       transition="all 0.3s"        // preserve your transition
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src={src}
         alt={article.title || ''}
         fill                        // makes the image fill the Box

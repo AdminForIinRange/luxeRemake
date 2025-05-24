@@ -204,7 +204,7 @@ const Services = () => {
       _hover={{ transform: 'scale(1.05)' }}
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src={service.img}             // your original src left untouched
         alt={service.alt ?? ''}
         fill                          // makes the image fill its container

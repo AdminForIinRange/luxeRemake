@@ -73,7 +73,7 @@ function ThumnailSlider() {
     return (
       <div ref={imgRef}>
         <Image
-          quality={70}
+quality={70}          
           src={isVisible ? src : placeholder} // Use placeholder until image is visible
           alt={alt}
           width={width}

@@ -308,9 +308,9 @@ const HowWeCanGetYouStarted = () => {
                   }}
                 >
                   <Image
-loading="lazy"
+quality={70} loading="lazy"
                   
-quality={75}                     src={item.img} // your original src untouched
+                 src={item.img} // your original src untouched
                     alt={item.alt ?? ""} // or provide a meaningful alt
                     fill // makes the img fill the Box
                     style={{

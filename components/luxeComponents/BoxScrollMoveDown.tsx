@@ -106,7 +106,7 @@ export function BoxScrollMoveDown() {
         }
       >
         <Image
-loading="lazy"
+quality={70} loading="lazy"
           src={GalleryImgScreenShot}
           alt="hero"
           height={720}

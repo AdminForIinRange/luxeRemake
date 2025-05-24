@@ -119,9 +119,9 @@ const HeroServices = () => {
             >
               {" "}
               <Image
-loading="lazy"
+quality={70} loading="lazy"
               
-quality={75}                 src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg"
+                src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg"
                 alt="Property"
                 layout="fill"
                 objectFit="cover"
@@ -297,9 +297,9 @@ quality={75}                 src="https://images.pexels.com/photos/2724749/pexel
               overflow="hidden"
             >
               <Image
-loading="lazy"
+quality={70} loading="lazy"
               
-quality={75}                 src="https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg"
+                src="https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg"
                 alt="Property"
                 layout="fill"
                 objectFit="cover"
@@ -541,9 +541,9 @@ quality={75}                 src="https://images.pexels.com/photos/2826787/pexel
               overflow="hidden"
             >
               <Image
-loading="lazy"
+quality={70} loading="lazy"
               
-quality={75}                 src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg"
+                src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg"
                 alt="Property"
                 layout="fill"
                 objectFit="cover"

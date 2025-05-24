@@ -179,7 +179,7 @@ const PropertyManagement = () => {
       overflow="hidden"   // clip the Image to the container
     >
       <Image
-loading="lazy"
+quality={70} loading="lazy"
         src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg"
         alt=""
         fill                // Next.js 13+ API; for older versions use layout="fill"
@@ -188,7 +188,7 @@ loading="lazy"
           objectPosition: 'center'// replicates background-position: center
         }}
          
-quality={75}              // optional: preload above-the-fold image
+          // optional: preload above-the-fold image
       />
     </Box>
     
