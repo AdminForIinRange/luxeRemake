@@ -7,6 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Loading from "./loading";
 import LuxeAiAssistance from "@/components/luxeComponents/LuxeAiAssistance";
+
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -15,7 +16,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const ClientProviderWithFallback = dynamic(
+const ClientProvider = dynamic(
   () => import("@/components/chakra-snippets/ClientProvider"),
   { ssr: false, loading: () => <Loading /> }
 );
@@ -256,12 +257,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Analytics />
         <SpeedInsights />
 
-        <ClientProviderWithFallback>
+        <ClientProvider>
           <LuxeAiAssistance />
 
           {/* Semantic & a11y: main landmark */}
           <main id="main-content">{children}</main>
-        </ClientProviderWithFallback>
+        </ClientProvider>
       </body>
     </html>
   );
