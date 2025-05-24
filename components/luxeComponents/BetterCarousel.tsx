@@ -67,8 +67,8 @@ export default function ImageCarousel() {
               alt={`carousel-image-${currentImage}`}
               fill
               className="object-cover"
-              priority
-            />
+              priority={true}
+quality={75}             />
           </Box>
         </motion.div>
       </AnimatePresence>

@@ -214,7 +214,8 @@ const NewsPage = () => {
           objectFit: 'cover',    // background-size: cover
           objectPosition: 'center' // background-position: center
         }}
-        priority           // optional: load immediately if above the fold
+               priority={true}
+quality={75}             // optional: load immediately if above the fold
       />
       
     </Box>
@@ -357,7 +358,8 @@ const NewsPage = () => {
           objectFit: 'cover',    // replicates background-size: cover
           objectPosition: 'center' // replicates background-position: center
         }}
-        priority                 // optional: load right away if this is above the fold
+               priority={true}
+quality={75}                   // optional: load right away if this is above the fold
       />
     </Box>
 
@@ -511,7 +513,8 @@ const NewsPage = () => {
           objectFit: 'cover',    // replicates background-size: cover
           objectPosition: 'center' // replicates background-position: center
         }}
-        priority               // optional: preload if this is critical
+               priority={true}
+quality={75}                 // optional: preload if this is critical
       />
     </Box>
 
