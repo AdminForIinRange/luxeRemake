@@ -35,6 +35,7 @@ const DefaultSlider: React.FC<DefaultSliderProps> = ({ items }) => {
                 overflow="hidden"
               >
                 <Image
+loading="lazy"
                   src={imgData}
                   alt={`Slide ${idx + 1}`}
                   fill

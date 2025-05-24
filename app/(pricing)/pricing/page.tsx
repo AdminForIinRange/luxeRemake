@@ -280,6 +280,7 @@ const Pricing = () => {
       overflow="hidden"        // clip the Image to the rounded corners
     >
       <Image
+loading="lazy"
         src="https://images.pexels.com/photos/7651924/pexels-photo-7651924.jpeg"
         alt=""
         fill                     // makes the img fill the Box

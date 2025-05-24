@@ -77,6 +77,7 @@ const TopHeader = ({
       
     >
       <Image
+loading="lazy"
         src={imgUrl}
         alt=""
         fill

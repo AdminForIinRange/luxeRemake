@@ -166,7 +166,8 @@ const Photography = () => {
         >
           {/* Horizontal line for crosshair */}
 
-          <ImageCompareSlider />
+          <Image
+loading="lazy"CompareSlider />
         </Box>
       </VStack>
       <PhotographyCardLists />

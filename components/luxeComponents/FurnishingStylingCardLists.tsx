@@ -231,7 +231,8 @@ const FurnishingStylingCardLists = () => {
                 </VStack>
               ),
             )}
-            {/* <Image src={collage} />   //!cool */}
+            {/* <Image
+loading="lazy" src={collage} />   //!cool */}
           </Box>
         </HStack>
       </HStack>

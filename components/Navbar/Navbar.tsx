@@ -346,6 +346,7 @@ const Navbar = () => {
               overflow="hidden"
             >
               <Image
+loading="lazy"
                 src={luxeLogo || "/placeholder.svg"}
                 alt="Luxe Management Logo"
                 priority={true}

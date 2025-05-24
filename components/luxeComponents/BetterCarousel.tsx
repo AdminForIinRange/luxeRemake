@@ -63,6 +63,7 @@ export default function ImageCarousel() {
         >
           <Box width="100%" height="100%" position="relative" overflow="hidden">
             <Image
+loading="lazy"
               src={images[currentImage] || "/placeholder.svg"}
               alt={`carousel-image-${currentImage}`}
               fill
@@ -103,6 +104,7 @@ quality={75}             />
             <Box>
               {" "}
               <Image
+loading="lazy"
                 style={{ borderRadius: "4px" }}
                 src={img || "/placeholder.svg"}
                 alt={`thumbnail-${index}`}

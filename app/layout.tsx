@@ -2,42 +2,68 @@
 import { ReactNode } from "react";
 import dynamic from "next/dynamic";
 import Script from "next/script";
+import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Loading from "./loading";
 import LuxeAiAssistance from "@/components/luxeComponents/LuxeAiAssistance";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const ClientProviderWithFallback = dynamic(
   () => import("@/components/chakra-snippets/ClientProvider"),
-  { loading: () => <Loading /> },
+  { loading: () => <Loading />, ssr: false },
 );
 
 // eslint-disable-next-line import/no-unused-modules
-export const metadata = {
-  title: "Luxe Management | The Best Airbnb Property Management In Adelaide",
+export const metadata: Metadata = {
+  
+  title: "Luxe Management | The Best Airbnb Property Management in Adelaide",
   description:
-    "We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience and maximize your rental income.",
+    "Comprehensive Airbnb management services designed to maximize your rental income in Adelaide.",
   metadataBase: new URL("https://www.luxemanagements.com"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
-    title: "Luxe Management | The Best Airbnb Property Management In Adelaide",
-    description: "Expert Airbnb property management services in Adelaide.",
+    title: "Luxe Management | Airbnb Property Management Adelaide",
+    description:
+      "Expert Airbnb property management services in Adelaide – full hosting, cleaning, styling, and guest care.",
     url: "https://www.luxemanagements.com",
     siteName: "Luxe Management",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://www.luxemanagements.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Luxe Management",
+        alt: "Luxe Management Airbnb property management",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luxe Management | The Best Airbnb Property Management In Adelaide",
-    description: "The Best Airbnb property management services in Adelaide.",
-    images: ["/og-image.jpg"],
+    title: "Luxe Management | Airbnb Property Management Adelaide",
+    description: "Expert Airbnb management – cleaning, styling & guest care.",
+    images: ["https://www.luxemanagements.com/og-image.jpg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+   alternates: {
+    canonical: "https://www.luxemanagements.com"
   },
 };
 
@@ -46,70 +72,203 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      data-theme="light"
-      style={{ scrollBehavior: "smooth" }}
+      className={`${inter.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Preconnect & Preload for fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossOrigin="anonymous"
+/>
 
-        {/* Primary Meta Description */}
+<Script id="ld-navigation" type="application/ld+json" strategy="beforeInteractive">
+  {`
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "url":"https://www.luxemanagements.com/",
+    "name":"Luxe Management",
+      "hasPart": [
+                    {
+                      "@type": "SiteNavigationElement",
+                      "name": "Home",
+                      "url": "https://www.luxemanagements.com/",
+                    },
+                    {
+                      "@type": "SiteNavigationElement",
+                      "name": "Services",
+                      "url": "https://www.luxemanagements.com/services",
+                    },
+                    {
+                      "@type": "SiteNavigationElement",
+                      "name": "About Us",
+                      "url": "https://www.luxemanagements.com/about",
+                    },
+                    {
+                      "@type": "SiteNavigationElement",
+                      "name": "Testimonials",
+                      "url": "https://www.luxemanagements.com/testimonials",
+                    },
+                    {
+                      "@type": "SiteNavigationElement",
+                      "name": "Contact",
+                      "url": "https://www.luxemanagements.com/contact",
+                    },
+                  ],
+    ]
+  }
+  `}
+</Script>
 
-        {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-
+{/* Structured Data: LocalBusiness & BreadcrumbList */}
         <Script
-          id="localbusiness-schema"
+          id="ld-json"
           type="application/ld+json"
+strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              name: "Luxe Management",
-              logo: "https://www.luxemanagements.com/logo.png",
-              image: "https://www.luxemanagements.com/logo.png",
-              "@id": "https://www.luxemanagements.com",
-              url: "https://www.luxemanagements.com",
-              telephone: "+61 123 456 789",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Adelaide",
-                addressRegion: "SA",
-                addressCountry: "AU",
-              },
-              description:
-                "The Best Airbnb Property Management In Adelaide. Luxe Management maximizes your rental income with full-service hosting, cleaning, styling, and guest care.",
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: -34.9285,
-                longitude: 138.6007,
-              },
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: [
-                  "Monday",
-                  "Tuesday",
-                  "Wednesday",
-                  "Thursday",
-                  "Friday",
-                ],
-                opens: "09:00",
-                closes: "17:00",
-              },
-              sameAs: [
-                "https://www.facebook.com/luxemanagements",
-                "https://www.instagram.com/luxemanagements",
+              "@graph": [
+                {
+                  "@type": "LocalBusiness",
+                  name: "Luxe Management",
+                  // hasPart: [
+                  //   {
+                  //     "@type": "SiteNavigationElement",
+                  //     name: "Home",
+                  //     url: "https://www.luxemanagements.com/",
+                  //   },
+                  //   {
+                  //     "@type": "SiteNavigationElement",
+                  //     name: "Services",
+                  //     url: "https://www.luxemanagements.com/services",
+                  //   },
+                  //   {
+                  //     "@type": "SiteNavigationElement",
+                  //     name: "About Us",
+                  //     url: "https://www.luxemanagements.com/about",
+                  //   },
+                  //   {
+                  //     "@type": "SiteNavigationElement",
+                  //     name: "Testimonials",
+                  //     url: "https://www.luxemanagements.com/testimonials",
+                  //   },
+                  //   {
+                  //     "@type": "SiteNavigationElement",
+                  //     name: "Contact",
+                  //     url: "https://www.luxemanagements.com/contact",
+                  //   },
+                  // ],
+                  image: "https://www.luxemanagements.com/logo.png",
+                  "@id": "https://www.luxemanagements.com",
+                  url: "https://www.luxemanagements.com",
+                  telephone: "+61 123 456 789",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressLocality: "Adelaide",
+                    addressRegion: "SA",
+                    addressCountry: "AU",
+                  },
+                  geo: {
+                    "@type": "GeoCoordinates",
+                    latitude: -34.9285,
+                    longitude: 138.6007,
+                  },
+                  openingHoursSpecification: [
+                    {
+                      "@type": "OpeningHoursSpecification",
+                      dayOfWeek: [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                      ],
+                      opens: "09:00",
+                      closes: "17:00",
+                    },
+                  ],
+                  sameAs: [
+                    "https://www.facebook.com/luxemanagements",
+                    "https://www.instagram.com/luxemanagements",
+                    "https://www.tiktok.com/@luxe_managements",
+                  ],
+                },
+                {
+                  "@type": "BreadcrumbList",
+                  itemListElement: [
+                    {
+                      "@type": "ListItem",
+                      position: 1,
+                      name: "Home",
+                      item: "https://www.luxemanagements.com/",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 2,
+                      name: "Services",
+                      item: "https://www.luxemanagements.com/services",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 3,
+                      name: "Furnishing & Styling",
+                      item: "https://www.luxemanagements.com/services/furnishing-and-styling",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 4,
+                      name: "Property Management",
+                      item: "https://www.luxemanagements.com/services/property-management",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 5,
+                      name: "Photography",
+                      item: "https://www.luxemanagements.com/services/photography",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 6,
+                      name: "cleaning & linen",
+                      item: "https://www.luxemanagements.com/services/cleaning-and-linen",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 7,
+                      name: "About",
+                      item: "https://www.luxemanagements.com/about",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 8,
+                      name: "Testimonials",
+                      item: "https://www.luxemanagements.com/testimonials",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 9,
+                      name: "FAQ",
+                      item: "https://www.luxemanagements.com/faq",
+                    },
+                    {
+                      "@type": "ListItem",
+                      position: 10,
+                      name: "Contact",
+                      item: "https://www.luxemanagements.com/contact",
+                    },
+                  ],
+                },
               ],
             }),
           }}
         />
       </head>
-
-      <body
-        className="antialiased"
-        style={{ background: "#fff", scrollBehavior: "smooth" }}
-      >
+      <body>
         <Analytics />
         <SpeedInsights />
         <ClientProviderWithFallback>

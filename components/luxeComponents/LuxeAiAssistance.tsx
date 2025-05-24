@@ -126,6 +126,7 @@ const LuxeAiAssistance = () => {
       overflow="hidden"        // clip the Image to the circle
     >
       <Image
+loading="lazy"
         src={luxeLogo.src}     // original src expression untouched
         alt={luxeLogo.alt || ''} 
         fill                   // makes the image fill the Box
@@ -170,6 +171,7 @@ const LuxeAiAssistance = () => {
       overflow="hidden"         // clip the Image to the circle
     >
       <Image
+loading="lazy"
         src={luxeLogo.src}      // original src expression untouched
         alt={luxeLogo.alt || ''}
         fill                    // Next.js 13+ API; use layout="fill" if on older Next.js
@@ -251,6 +253,7 @@ const LuxeAiAssistance = () => {
       boxShadow="0 4px 12px rgba(0, 0, 0, 0.08)"
     >
       <Image
+loading="lazy"
         src={luxeLogo.src}          // original src expression untouched
         alt={luxeLogo.alt || ''}
         fill                        // makes the image fill the Box

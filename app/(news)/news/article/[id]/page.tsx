@@ -113,6 +113,7 @@ export default async function ArticlePage({ params }: Props) {
       transition="all 0.3s"
     >
       <Image
+loading="lazy"
         src={`https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg`}
         alt={article.title ?? ''}
         fill                    // makes the img fill the Box
@@ -182,6 +183,7 @@ export default async function ArticlePage({ params }: Props) {
       transition="all 0.3s"
     >
       <Image
+loading="lazy"
         src={`https://images.pexels.com/photos/${article.pexelImgLink2}/pexels-photo-${article.pexelImgLink2}.jpeg`}
         alt={article.title ?? ''}
         fill                    // makes the img fill the Box

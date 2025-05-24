@@ -170,6 +170,7 @@ export default function HouseHeroParallax() {
                   transition="all 0.5s ease"
                 >
                   <Image
+loading="lazy"
                     loader={pexelsLoader}
                     src={product.link}
                     alt={product.title || ""}

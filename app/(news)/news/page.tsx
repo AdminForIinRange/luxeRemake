@@ -207,6 +207,7 @@ const NewsPage = () => {
       overflow="hidden"  // ensure any oversize stays clipped
     >
       <Image
+loading="lazy"
         src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
         alt=""
         fill               // makes the img absolutely fill this Box
@@ -351,6 +352,7 @@ quality={75}             // optional: load immediately if above the fold
       overflow="hidden"  // clip overflow just like background-image
     >
       <Image
+loading="lazy"
         src={articles[0]?.featuredImage || "https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg"}
         alt={articles[0]?.title || ''}
         fill                     // in Next.js 13+; for older versions use layout="fill"
@@ -501,6 +503,7 @@ quality={75}                   // optional: load right away if this is above the
       overflow="hidden"  // ensure the image is clipped exactly like a background
     >
       <Image
+loading="lazy"
         src={
           article.featuredImage ||
           `https://images.pexels.com/photos/${1546168 + index * 10}/pexels-photo-${

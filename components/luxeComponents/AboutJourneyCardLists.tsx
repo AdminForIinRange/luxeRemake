@@ -382,6 +382,7 @@ const AboutJourneyCardLists = () => {
       }}
     >
       <Image
+loading="lazy"
         src={item.img}                          // original src untouched
         alt={item.alt ?? ""}
         fill                                    // makes the image fill the Box

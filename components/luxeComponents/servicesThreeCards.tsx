@@ -122,6 +122,7 @@ const ServicesThreeCards = ({
       
     >
       <Image
+loading="lazy"
         src={card.imgUrl}
         alt=""
         fill
