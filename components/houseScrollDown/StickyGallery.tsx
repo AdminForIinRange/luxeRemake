@@ -17,9 +17,7 @@ quality={75}
                   src="https://images.unsplash.com/photo-1718838541476-d04e71caa347?w=500&auto=format&fit=crop"
                   alt=""
                   className="transition-all duration-300 w-full h-96  align-bottom object-cover rounded-md "
-                  priority={true}
-quality={75} 
-                />
+  />
               </figure>
               <figure className=" w-full">
                 <Image
@@ -37,8 +35,7 @@ quality={75}
                   src="https://images.unsplash.com/photo-1718601980986-0ce75101d52d?w=500&auto=format&fit=crop"
                   alt=""
                   className="transition-all duration-300 w-full h-96  align-bottom object-cover rounded-md "
-                  priority={true}
-quality={75} 
+
                 />
               </figure>
               <figure className="w-full">

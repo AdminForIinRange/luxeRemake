@@ -124,7 +124,7 @@ quality={75}                 src="https://images.pexels.com/photos/2724749/pexel
                 alt="Property"
                 layout="fill"
                 objectFit="cover"
-                quality={75} // Adjust quality for performance
+  
               />
             </Box>
             {/* Bottom-right label */}
@@ -301,7 +301,7 @@ quality={75}                 src="https://images.pexels.com/photos/2826787/pexel
                 alt="Property"
                 layout="fill"
                 objectFit="cover"
-                quality={75} // Adjust quality for performance
+             
               />
             </Box>
             {/* Bottom-right label */}
@@ -544,7 +544,7 @@ quality={75}                 src="https://images.pexels.com/photos/1457842/pexel
                 alt="Property"
                 layout="fill"
                 objectFit="cover"
-                quality={75} // Adjust quality for performance
+             
               />
             </Box>
             {/* Bottom-right label */}
