@@ -21,13 +21,12 @@ export const metadata = {
   metadataBase: new URL('https://www.luxemanagements.com'),
   openGraph: {
     title: 'Luxe Management | The Best Airbnb Property Management In Adelaide',
-    description:
-      'Expert Airbnb property management services in Adelaide.',
+    description: 'Expert Airbnb property management services in Adelaide.',
     url: 'https://www.luxemanagements.com',
     siteName: 'Luxe Management',
     images: [
       {
-        url: 'https://www.luxemanagements.com/og-image.jpg',
+        url: '/og-image.jpg', // ✅ fixed
         width: 1200,
         height: 630,
         alt: 'Luxe Management',
@@ -38,11 +37,11 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Luxe Management | The Best Airbnb Property Management In Adelaide',
-    description:
-      'The Best Airbnb property management services in Adelaide.',
-    images: ['https://www.luxemanagements.com/og-image.jpg',],
+    description: 'The Best Airbnb property management services in Adelaide.',
+    images: ['/og-image.jpg'], // ✅ fixed
   },
 };
+
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
