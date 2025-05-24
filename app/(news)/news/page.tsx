@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Text } from "@chakra-ui/react";
 import { getAllArticles } from "@/lib/actions/getAllArticles.action";
-import NewsCard from "@/components/luxeComponents/news/NewsCard";
 import { Article } from "@/lib/types/article";
 import Image from "next/image";
 

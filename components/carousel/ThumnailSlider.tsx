@@ -9,32 +9,23 @@ import Image, { StaticImageData } from "next/image";
 import { Box, HStack } from "@chakra-ui/react";
 
 import houseOneImg2 from "@/public/images/dalts/houseOne/WEB/2.jpg";
-import houseOneImg3 from "@/public/images/dalts/houseOne/WEB/3.jpg";
 
-import houseOneImg5 from "@/public/images/dalts/houseOne/WEB/5.jpg";
 
 import houseOneImg10 from "@/public/images/dalts/houseOne/WEB/10.jpg";
 
 import houseTwoImg1 from "@/public/images/dalts/houseTwo/WEB/1.jpg";
-import houseTwoImg2 from "@/public/images/dalts/houseTwo/WEB/2.jpg";
 
 import houseTwoImg4 from "@/public/images/dalts/houseTwo/WEB/4.jpg";
 
-import houseTwoImg10 from "@/public/images/dalts/houseTwo/WEB/10.jpg";
 
 import houseThreeImg1 from "@/public/images/dalts/houseThree/WEB/1.jpg";
 import houseThreeImg2 from "@/public/images/dalts/houseThree/WEB/2.jpg";
 
 import houseThreeImg5 from "@/public/images/dalts/houseThree/WEB/5.jpg";
 
-import houseThreeImg7 from "@/public/images/dalts/houseThree/WEB/7.jpg";
 
-import houseFourImg1 from "@/public/images/dalts/houseFour/WEB/1.jpg";
-import houseFourImg2 from "@/public/images/dalts/houseFour/WEB/2.jpg";
 
-import houseFourImg5 from "@/public/images/dalts/houseFour/WEB/5.jpg";
 
-import houseFourImg7 from "@/public/images/dalts/houseFour/WEB/7.jpg";
 
 import houseFourImg9 from "@/public/images/dalts/houseFour/WEB/9.jpg";
 

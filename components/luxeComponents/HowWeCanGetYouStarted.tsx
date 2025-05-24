@@ -1,15 +1,6 @@
 import React from "react";
 import { Box, HStack, Text } from "@chakra-ui/react";
 import {
-  Check,
-  Calendar,
-  Award,
-  TrendingUp,
-  Home,
-  Zap,
-  Users,
-  Globe,
-  Briefcase,
   Camera,
   Cog,
   Phone,

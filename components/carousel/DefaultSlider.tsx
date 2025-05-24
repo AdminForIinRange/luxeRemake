@@ -48,15 +48,15 @@ quality={70}
         ))}
       </SliderContainer>
 
-      <SliderPrevButton className="absolute top-[50%] left-4 p-2 border-2 rounded-full bg-white/25 backdrop-blur-sm dark:bg-black/25 dark:border-white text-primary disabled:opacity-20">
-        <ChevronLeft className="w-8 h-8" />
+      <SliderPrevButton className="absolute left-4 top-[50%] rounded-full border-2 bg-white/25 p-2 text-primary backdrop-blur-sm disabled:opacity-20 dark:border-white dark:bg-black/25">
+        <ChevronLeft className="h-8 w-8" />
       </SliderPrevButton>
 
-      <SliderNextButton className="absolute top-[50%] right-4 p-2 border-2 rounded-full bg-white/25 backdrop-blur-sm dark:bg-black/25 dark:border-white text-primary disabled:opacity-20">
-        <ChevronRight className="w-8 h-8" />
+      <SliderNextButton className="absolute right-4 top-[50%] rounded-full border-2 bg-white/25 p-2 text-primary backdrop-blur-sm disabled:opacity-20 dark:border-white dark:bg-black/25">
+        <ChevronRight className="h-8 w-8" />
       </SliderNextButton>
 
-      <div className="flex justify-center py-8 mb-[50px]">
+      <div className="mb-[50px] flex justify-center py-8">
         <SliderDotButton />
       </div>
     </Carousel>
