@@ -332,7 +332,7 @@ loading="lazy"
           objectFit: 'cover',  // replicates background-size: cover
           objectPosition: 'center', // replicates background-position: center
         }}
-         priority={true}
+         
 quality={75}                // optional: preload if above the fold
       />
     </Box>

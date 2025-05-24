@@ -101,7 +101,6 @@ function ThumnailSlider() {
     return (
       <div ref={imgRef}>
         <Image
-loading="lazy"
           src={isVisible ? src : placeholder} // Use placeholder until image is visible
           alt={alt}
           width={width}
@@ -141,8 +140,7 @@ loading="lazy"
               thumnailSrc={imgPreview[key as keyof ImgPreview]}
             >
               <HStack justify="center" align="center" h="100%" w="100%">
-                <Image
-loading="lazy"WithLazyLoading
+                <ImageWithLazyLoading
                   src={imgPreview[key as keyof ImgPreview]}
                   alt={`image ${key}`}
                   width={1400}

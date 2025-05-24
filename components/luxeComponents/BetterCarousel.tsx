@@ -68,7 +68,7 @@ loading="lazy"
               alt={`carousel-image-${currentImage}`}
               fill
               className="object-cover"
-              priority={true}
+              
 quality={75}             />
           </Box>
         </motion.div>

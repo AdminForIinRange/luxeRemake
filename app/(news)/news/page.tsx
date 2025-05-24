@@ -215,7 +215,7 @@ loading="lazy"
           objectFit: 'cover',    // background-size: cover
           objectPosition: 'center' // background-position: center
         }}
-               priority={true}
+               
 quality={75}             // optional: load immediately if above the fold
       />
       
@@ -360,7 +360,7 @@ loading="lazy"
           objectFit: 'cover',    // replicates background-size: cover
           objectPosition: 'center' // replicates background-position: center
         }}
-               priority={true}
+               
 quality={75}                   // optional: load right away if this is above the fold
       />
     </Box>
@@ -516,7 +516,7 @@ loading="lazy"
           objectFit: 'cover',    // replicates background-size: cover
           objectPosition: 'center' // replicates background-position: center
         }}
-               priority={true}
+               
 quality={75}                 // optional: preload if this is critical
       />
     </Box>

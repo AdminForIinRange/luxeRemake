@@ -194,42 +194,11 @@ const FAQ = ({ type }: { type: string }) => {
       {/* Decorative elements */}
       <Box
         position="relative"
-        _before={{
-          content: '""',
-          position: "absolute",
-          top: "40px",
-          left: "5%",
-          width: "180px",
-          height: "180px",
-          borderRadius: "full",
-          background: "rgba(10, 16, 41, 0.02)",
-          zIndex: "-1",
-        }}
-        _after={{
-          content: '""',
-          position: "absolute",
-          bottom: "10%",
-          right: "8%",
-          width: "250px",
-          height: "250px",
-          borderRadius: "full",
-          background: "rgba(10, 16, 41, 0.03)",
-          zIndex: "-1",
-        }}
+   
       >
         {/* FAQ Title Section */}
         <Box textAlign="center" mb={16} position="relative">
-          <Box
-            position="absolute"
-            top="50%"
-            left="50%"
-            transform="translate(-50%, -50%)"
-            width="120px"
-            height="120px"
-            borderRadius="full"
-            bg="rgba(10, 16, 41, 0.03)"
-            zIndex="-1"
-          />
+   
           <Text
             fontSize={["42px", "48px", "56px"]}
             fontWeight="800"

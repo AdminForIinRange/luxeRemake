@@ -201,7 +201,7 @@ loading="lazy"
             objectFit: 'cover',      // replicate `background-size: cover`
             objectPosition: 'center' // replicate `background-position: center`
           }}
-                 priority={true}
+                 
 quality={75}                     // optional: if you want to preload it
         />
         
@@ -682,7 +682,7 @@ loading="lazy"
           objectFit: 'cover',                    // cover & center just like bg-size/bg-pos
           objectPosition: 'center',
         }}
-               priority={true}
+               
 quality={75}                                   // optional: preload current slide
       />
     </Box>

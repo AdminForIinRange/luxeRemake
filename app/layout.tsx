@@ -247,12 +247,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
       <body>
         {/* Accessibility: Skip‐to‐Content */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only"
-        >
-          Skip to content
-        </a>
+      
 
         {/* Performance: load non‐critical analytics after hydration */}
         <Analytics />

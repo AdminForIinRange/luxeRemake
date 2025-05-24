@@ -79,10 +79,11 @@ const ScheduleConsultation = () => {
               color="white"
               fontWeight="700"
               fontSize={["28px", "32px", "40px", "48px", "56px"]}
-              fontFamily="sans"
+             fontFamily="arial"
               lineHeight={["1.2", "1.1"]}
               letterSpacing="-0.02em"
               mb={["16px", "20px"]}
+        
             >
               Ready to transform your AirBnB management?
             </Text>
