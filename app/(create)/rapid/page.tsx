@@ -53,7 +53,7 @@
 
 //     // Split sections
 //     const sections = text.split(
-//       /(Introduction:|Body paragraph 1:|Body paragraph 2:|Body paragraph 3:|Conclusion:|How Luxe Management helps:)/g,
+//       /(Introduction:|Body paragraph 1:|Body paragraph 2:|Body paragraph 3:|Conclusion:|How Luxe Managements helps:)/g,
 //     );
 //     for (let i = 1; i < sections.length; i += 2) {
 //       const key = sections[i].replace(/:$/, "").trim();
@@ -88,8 +88,8 @@
 //           result.conclusionSubheading = "Conclusion";
 //           result.conclusionParagraph = content;
 //           break;
-//         case "How Luxe Management helps":
-//           result.extraSubheading = "How Luxe Management helps";
+//         case "How Luxe Managements helps":
+//           result.extraSubheading = "How Luxe Managements helps";
 //           // Remove any URLs from the extra content paragraph
 //           result.extraContentParagraph = content
 //             .replace(/https?:\/\/\S+/g, "")

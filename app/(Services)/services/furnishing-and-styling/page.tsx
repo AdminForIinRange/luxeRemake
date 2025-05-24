@@ -185,7 +185,7 @@ const FurnishingAndStyling = () => {
             </Text>
 
             <Text fontSize="md" color="#4a5568" mb="6" lineHeight="1.8">
-              At Luxe Management, we believe that exceptional spaces are born
+              At Luxe Managements, we believe that exceptional spaces are born
               from a perfect balance of aesthetics and functionality. Our
               furnishing and styling service transforms properties into
               captivating environments that resonate with discerning guests.

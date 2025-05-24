@@ -273,7 +273,7 @@ const LuxeAiAssistance = () => {
                   textAlign="center"
                   mb="8px"
                 >
-                  Welcome to Luxe Management
+                  Welcome to Luxe Managements
                 </Text>
                 <Text
                   color="#4A5568"
@@ -513,7 +513,7 @@ const LuxeAiAssistance = () => {
               </Box>
             </Box>
             <Text fontSize="11px" color="#A0AEC0" textAlign="center" mt="8px">
-              Powered by Luxe Management • Adelaide's Premier Property Service
+              Powered by Luxe Managements • Adelaide's Premier Property Service
             </Text>
           </Box>
         </>

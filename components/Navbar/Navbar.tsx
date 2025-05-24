@@ -210,7 +210,7 @@ const Navbar = () => {
         {
           label: "Our Team",
           link: "/about/#team",
-          description: "Meet the experts behind Luxe Management",
+          description: "Meet the experts behind Luxe Managements",
         },
         {
           label: "Testimonials",
@@ -220,7 +220,7 @@ const Navbar = () => {
         {
           label: "Our Journey",
           link: "/about/journey",
-          description: "See how Luxe Management has evolved",
+          description: "See how Luxe Managements has evolved",
         },
       ],
     },
@@ -347,7 +347,7 @@ const Navbar = () => {
               <Image
                 quality={70}
                 src={luxeLogo || "/placeholder.svg"}
-                alt="Luxe Management Logo"
+                alt="Luxe Managements Logo"
               />
             </Box>
             <Box>
@@ -359,7 +359,7 @@ const Navbar = () => {
                 color="#222222"
                 lineHeight="1.1"
               >
-                Luxe Management
+                Luxe Managements
               </Text>
               <Text
                 fontSize={{ base: "10px", md: "12px" }}

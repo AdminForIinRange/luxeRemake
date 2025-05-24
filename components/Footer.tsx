@@ -31,7 +31,7 @@ const Footer = () => {
                 quality={70}
                 loading="lazy"
                 src={LuxeLogo || "/placeholder.svg"}
-                alt="Luxe Management Logo"
+                alt="Luxe Managements Logo"
               />
             </Box>
             <Text
@@ -39,7 +39,7 @@ const Footer = () => {
               fontWeight="700"
               fontFamily="arial"
             >
-              Luxe Management
+              Luxe Managements
             </Text>
           </Box>
         </Box>

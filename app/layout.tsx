@@ -23,7 +23,7 @@ const ClientProviderWithFallback = dynamic(
 
 // eslint-disable-next-line import/no-unused-modules
 export const metadata: Metadata = {
-  title: "Luxe Management | The Best Airbnb Property Management in Adelaide",
+  title: "Luxe Managements | The Best Airbnb Property Management in Adelaide",
   description:
     "Comprehensive Airbnb management services designed to maximize your rental income in Adelaide.",
   metadataBase: new URL("https://www.luxemanagements.com"),
@@ -39,24 +39,24 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Luxe Management | Airbnb Property Management Adelaide",
+    title: "Luxe Managements | Airbnb Property Management Adelaide",
     description:
       "Expert Airbnb property management services in Adelaide – full hosting, cleaning, styling, and guest care.",
     url: "https://www.luxemanagements.com",
-    siteName: "Luxe Management",
+    siteName: "Luxe Managements",
     images: [
       {
         url: "https://www.luxemanagements.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Luxe Management Airbnb property management",
+        alt: "Luxe Managements Airbnb property management",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luxe Management | Airbnb Property Management Adelaide",
+    title: "Luxe Managements | Airbnb Property Management Adelaide",
     description: "Expert Airbnb management – cleaning, styling & guest care.",
     images: ["https://www.luxemanagements.com/og-image.jpg"],
   },
@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               url: "https://www.luxemanagements.com/",
-              name: "Luxe Management",
+              name: "Luxe Managements",
               hasPart: [
                 {
                   "@type": "SiteNavigationElement",
@@ -133,7 +133,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@graph": [
                 {
                   "@type": "LocalBusiness",
-                  name: "Luxe Management",
+                  name: "Luxe Managements",
                   image: "https://www.luxemanagements.com/logo.png",
                   "@id": "https://www.luxemanagements.com",
                   url: "https://www.luxemanagements.com",

@@ -145,7 +145,7 @@ const Photography = () => {
             w={["100%", "100%", "100%", "100%", "100%", "100%"]}
             fontWeight={300}
           >
-            Showcase your property with Luxe Management's professional
+            Showcase your property with Luxe Managements's professional
             photography services, capturing its unique essence to create a
             lasting impression.
           </Text>
