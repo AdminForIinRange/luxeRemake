@@ -16,9 +16,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const ClientProvider = dynamic(
+
+const ClientProviderWithFallback = dynamic(
   () => import("@/components/chakra-snippets/ClientProvider"),
-  { ssr: false, loading: () => <Loading /> }
+  { loading: () => <Loading /> },
 );
 
 // eslint-disable-next-line import/no-unused-modules
@@ -257,12 +258,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Analytics />
         <SpeedInsights />
 
-        <ClientProvider>
+        <ClientProviderWithFallback>
           <LuxeAiAssistance />
 
           {/* Semantic & a11y: main landmark */}
           <main id="main-content">{children}</main>
-        </ClientProvider>
+        </ClientProviderWithFallback>
       </body>
     </html>
   );
