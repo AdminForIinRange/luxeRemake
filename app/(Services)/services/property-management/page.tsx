@@ -171,27 +171,28 @@ const PropertyManagement = () => {
         >
           {/* Horizontal line for crosshair */}
           <Box
-      position="relative"
-      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-      w={["100%", "100%", "100%", "100%", "100%", "100%"]}
-      borderRadius="30px"
-      bg="gray.200"       // fallback color
-      overflow="hidden"   // clip the Image to the container
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg"
-        alt=""
-        fill                // Next.js 13+ API; for older versions use layout="fill"
-        style={{
-          objectFit: 'cover',     // replicates background-size: cover
-          objectPosition: 'center'// replicates background-position: center
-        }}
-         
-          // optional: preload above-the-fold image
-      />
-    </Box>
-    
+            position="relative"
+            h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+            w={["100%", "100%", "100%", "100%", "100%", "100%"]}
+            borderRadius="30px"
+            bg="gray.200" // fallback color
+            overflow="hidden" // clip the Image to the container
+          >
+            <Image
+              quality={70}
+              loading="lazy"
+              src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg"
+              alt=""
+              fill // Next.js 13+ API; for older versions use layout="fill"
+              style={{
+                objectFit: "cover", // replicates background-size: cover
+                objectPosition: "center", // replicates background-position: center
+              }}
+
+              // optional: preload above-the-fold image
+            />
+          </Box>
+
           {/* Bottom-right label */}
           {/* <Box
             p={"4"}

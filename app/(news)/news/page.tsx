@@ -124,10 +124,11 @@ const NewsPage = () => {
                 maxWidth={{ base: "100%", md: "540px" }}
                 marginBottom={{ base: "24px", md: "32px" }}
               >
-                Discover how our innovative approach to property/AirBnB management and
-                real estate investments can elevate your portfolio to new
-                heights. Our data-driven strategies have helped clients achieve
-                remarkable results in today's competitive market.
+                Discover how our innovative approach to property/AirBnB
+                management and real estate investments can elevate your
+                portfolio to new heights. Our data-driven strategies have helped
+                clients achieve remarkable results in today's competitive
+                market.
               </Text>
 
               {/* Statistics row with improved responsive layout */}
@@ -198,27 +199,27 @@ const NewsPage = () => {
             >
               {/* Image container with overlay */}
               <Box
-      position="absolute"
-      top="0"
-      left="0"
-      right="0"
-      bottom="0"
-      overflow="hidden"  // ensure any oversize stays clipped
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
-        alt=""
-        fill               // makes the img absolutely fill this Box
-        style={{
-          objectFit: 'cover',    // background-size: cover
-          objectPosition: 'center' // background-position: center
-        }}
-               
-          // optional: load immediately if above the fold
-      />
-      
-    </Box>
+                position="absolute"
+                top="0"
+                left="0"
+                right="0"
+                bottom="0"
+                overflow="hidden" // ensure any oversize stays clipped
+              >
+                <Image
+                  quality={70}
+                  loading="lazy"
+                  src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg"
+                  alt=""
+                  fill // makes the img absolutely fill this Box
+                  style={{
+                    objectFit: "cover", // background-size: cover
+                    objectPosition: "center", // background-position: center
+                  }}
+
+                  // optional: load immediately if above the fold
+                />
+              </Box>
             </Box>
           </Box>
         </Box>
@@ -342,27 +343,31 @@ quality={70} loading="lazy"
                 backgroundColor="gray.200"
                 position="relative"
               >
-             <Box
-      position="absolute"
-      top="0"
-      left="0"
-      right="0"
-      bottom="0"
-      overflow="hidden"  // clip overflow just like background-image
-    >
-      <Image
-quality={70} loading="lazy"
-        src={articles[0]?.featuredImage || "https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg"}
-        alt={articles[0]?.title || ''}
-        fill                     // in Next.js 13+; for older versions use layout="fill"
-        style={{
-          objectFit: 'cover',    // replicates background-size: cover
-          objectPosition: 'center' // replicates background-position: center
-        }}
-               
-                  // optional: load right away if this is above the fold
-      />
-    </Box>
+                <Box
+                  position="absolute"
+                  top="0"
+                  left="0"
+                  right="0"
+                  bottom="0"
+                  overflow="hidden" // clip overflow just like background-image
+                >
+                  <Image
+                    quality={70}
+                    loading="lazy"
+                    src={
+                      articles[0]?.featuredImage ||
+                      "https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg"
+                    }
+                    alt={articles[0]?.title || ""}
+                    fill // in Next.js 13+; for older versions use layout="fill"
+                    style={{
+                      objectFit: "cover", // replicates background-size: cover
+                      objectPosition: "center", // replicates background-position: center
+                    }}
+
+                    // optional: load right away if this is above the fold
+                  />
+                </Box>
 
                 <Box
                   position="absolute"
@@ -493,32 +498,33 @@ quality={70} loading="lazy"
                 backgroundColor="gray.200"
                 position="relative"
               >
-              <Box
-      position="absolute"
-      top="0"
-      left="0"
-      right="0"
-      bottom="0"
-      overflow="hidden"  // ensure the image is clipped exactly like a background
-    >
-      <Image
-quality={70} loading="lazy"
-        src={
-          article.featuredImage ||
-          `https://images.pexels.com/photos/${1546168 + index * 10}/pexels-photo-${
-            1546168 + index * 10
-          }.jpeg`
-        }
-        alt={article.title || ''}
-        fill                   // in Next.js 13+, for older versions use layout="fill"
-        style={{
-          objectFit: 'cover',    // replicates background-size: cover
-          objectPosition: 'center' // replicates background-position: center
-        }}
-               
-         // optional: preload if this is critical
-      />
-    </Box>
+                <Box
+                  position="absolute"
+                  top="0"
+                  left="0"
+                  right="0"
+                  bottom="0"
+                  overflow="hidden" // ensure the image is clipped exactly like a background
+                >
+                  <Image
+                    quality={70}
+                    loading="lazy"
+                    src={
+                      article.featuredImage ||
+                      `https://images.pexels.com/photos/${1546168 + index * 10}/pexels-photo-${
+                        1546168 + index * 10
+                      }.jpeg`
+                    }
+                    alt={article.title || ""}
+                    fill // in Next.js 13+, for older versions use layout="fill"
+                    style={{
+                      objectFit: "cover", // replicates background-size: cover
+                      objectPosition: "center", // replicates background-position: center
+                    }}
+
+                    // optional: preload if this is critical
+                  />
+                </Box>
 
                 {/* Category tag */}
                 <Box

@@ -104,26 +104,26 @@ export default async function ArticlePage({ params }: Props) {
                     </Text>
                   </Box>
                   <Box
-      flex="1"
-      position="relative"      // establish containing block for the Image
-      minH="320px"
-      w="100%"
-      overflow="hidden"        // clip the Image to the Box bounds
-      boxShadow="lg"
-      transition="all 0.3s"
-    >
-      <Image
-quality={70} loading="lazy"
-        src={`https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg`}
-        alt={article.title ?? ''}
-        fill                    // makes the img fill the Box
-        style={{
-          objectFit: 'cover',   // replicates background-size: cover
-          objectPosition: 'center', // replicates background-position: center
-        }}
-      />
-    </Box>
-    
+                    flex="1"
+                    position="relative" // establish containing block for the Image
+                    minH="320px"
+                    w="100%"
+                    overflow="hidden" // clip the Image to the Box bounds
+                    boxShadow="lg"
+                    transition="all 0.3s"
+                  >
+                    <Image
+                      quality={70}
+                      loading="lazy"
+                      src={`https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg`}
+                      alt={article.title ?? ""}
+                      fill // makes the img fill the Box
+                      style={{
+                        objectFit: "cover", // replicates background-size: cover
+                        objectPosition: "center", // replicates background-position: center
+                      }}
+                    />
+                  </Box>
                 </Stack>
               </Box>
 
@@ -173,26 +173,27 @@ quality={70} loading="lazy"
                   gap="8"
                   align="center"
                 >
-                 <Box
-      flex="1"
-      position="relative"      // establish containing block for the Image
-      minH="320px"
-      w="100%"
-      overflow="hidden"        // clip the Image to the Box bounds
-      boxShadow="lg"
-      transition="all 0.3s"
-    >
-      <Image
-quality={70} loading="lazy"
-        src={`https://images.pexels.com/photos/${article.pexelImgLink2}/pexels-photo-${article.pexelImgLink2}.jpeg`}
-        alt={article.title ?? ''}
-        fill                    // makes the img fill the Box
-        style={{
-          objectFit: 'cover',   // replicates background-size: cover
-          objectPosition: 'center', // replicates background-position: center
-        }}
-      />
-    </Box>
+                  <Box
+                    flex="1"
+                    position="relative" // establish containing block for the Image
+                    minH="320px"
+                    w="100%"
+                    overflow="hidden" // clip the Image to the Box bounds
+                    boxShadow="lg"
+                    transition="all 0.3s"
+                  >
+                    <Image
+                      quality={70}
+                      loading="lazy"
+                      src={`https://images.pexels.com/photos/${article.pexelImgLink2}/pexels-photo-${article.pexelImgLink2}.jpeg`}
+                      alt={article.title ?? ""}
+                      fill // makes the img fill the Box
+                      style={{
+                        objectFit: "cover", // replicates background-size: cover
+                        objectPosition: "center", // replicates background-position: center
+                      }}
+                    />
+                  </Box>
                   <Box flex="1">
                     <Text
                       fontSize={["lg", "xl"]}

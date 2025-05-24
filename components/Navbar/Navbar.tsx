@@ -252,7 +252,7 @@ const Navbar = () => {
         },
       ],
     },
-      { name: "Calculate", path: "/calculate", hasDropdown: false },
+    { name: "Calculate", path: "/calculate", hasDropdown: false },
     { name: "Pricing", path: "/pricing", hasDropdown: false },
     { name: "Gallery", path: "/gallery", hasDropdown: false },
     { name: "Contact", path: "/contact", hasDropdown: false },
@@ -310,7 +310,6 @@ const Navbar = () => {
             >
               +61 406 631 461
             </Text>
-            
           </Box>
         </Box>
       </Box>
@@ -346,9 +345,9 @@ const Navbar = () => {
               overflow="hidden"
             >
               <Image
-quality={70}          src={luxeLogo || "/placeholder.svg"}
+                quality={70}
+                src={luxeLogo || "/placeholder.svg"}
                 alt="Luxe Management Logo"
-                
               />
             </Box>
             <Box>

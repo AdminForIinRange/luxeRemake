@@ -120,14 +120,15 @@ const About = () => {
               fontWeight={300}
             >
               Luxe Managements launched in 2022 with a clear mission: to
-              redefine AirBnB management through innovation, quality,
-              and care. We saw the gaps — inconsistent AirBnB management service, underperforming
-              listings, and generic guest experiences — and built a smarter,
-              more elevated alternative. <br></br>
+              redefine AirBnB management through innovation, quality, and care.
+              We saw the gaps — inconsistent AirBnB management service,
+              underperforming listings, and generic guest experiences — and
+              built a smarter, more elevated alternative. <br></br>
               <br></br>From data-driven pricing to five-star cleaning and 24/7
               guest support, every detail is designed to maximise returns and
               create unforgettable stays. Today, Luxe is the go-to choice for
-              property owners across Adelaide who want hassle-free hosting, effortless managements services for their AirBnBs, and
+              property owners across Adelaide who want hassle-free hosting,
+              effortless managements services for their AirBnBs, and
               hotel-quality results.
             </Text>
             <HStack
@@ -175,38 +176,38 @@ const About = () => {
           </Box>
 
           <Box
-      position="relative"
-      h={["350px", "350px", "350px", "500px", "500px", "600px"]}
-      w={["95%", "95%", "95%", "600px", "600px", "600px"]}
-      borderRadius="30px"
-      overflow="hidden"
-      display="flex"
-      justifyContent="flex-end"
-    >
-      {/* replace inner Box’s background-image with Next/Image */}
-      <Box
-        position="relative"
-        h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-        w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-        borderRadius="30px"
-        overflow="hidden"
-        bg="gray.200"               // fallback color
-      >
-        <Image
-quality={70} loading="lazy"
-          src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
-          alt="Scenic background"
-          fill                       // in Next.js 13+, use `fill`; for older versions use `layout="fill"`
-          style={{
-            objectFit: 'cover',      // replicate `background-size: cover`
-            objectPosition: 'center' // replicate `background-position: center`
-          }}
-                 
-             // optional: if you want to preload it
-        />
-        
-      </Box>
-    </Box>
+            position="relative"
+            h={["350px", "350px", "350px", "500px", "500px", "600px"]}
+            w={["95%", "95%", "95%", "600px", "600px", "600px"]}
+            borderRadius="30px"
+            overflow="hidden"
+            display="flex"
+            justifyContent="flex-end"
+          >
+            {/* replace inner Box’s background-image with Next/Image */}
+            <Box
+              position="relative"
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              borderRadius="30px"
+              overflow="hidden"
+              bg="gray.200" // fallback color
+            >
+              <Image
+                quality={70}
+                loading="lazy"
+                src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
+                alt="Scenic background"
+                fill // in Next.js 13+, use `fill`; for older versions use `layout="fill"`
+                style={{
+                  objectFit: "cover", // replicate `background-size: cover`
+                  objectPosition: "center", // replicate `background-position: center`
+                }}
+
+                // optional: if you want to preload it
+              />
+            </Box>
+          </Box>
         </HStack>
       </HStack>
 
@@ -364,8 +365,7 @@ quality={70} loading="lazy"
               </Text>
               <Text fontSize="md" color="gray.600" lineHeight="tall">
                 Our rigorous cleaning protocol exceeds industry standards,
-                ensuring every guest arrives to an impeccably maintained
-                AirBnB.
+                ensuring every guest arrives to an impeccably maintained AirBnB.
               </Text>
             </Box>
 
@@ -665,27 +665,28 @@ quality={70} loading="lazy"
                 </Text>
               </HStack>
               <Box
-      position="relative"                       // make room for Image fill
-      mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
-      display="block"
-      h={["300px", "300px", "300px", "500px", "500px", "500px"]}
-      w={["300px", "300px", "300px", "500px", "500px", "500px"]}
-      borderRadius="full"                        // circle
-      overflow="hidden"                          // clip to circle
-    >
-      <Image
-quality={70} loading="lazy"
-        src={members[currentSlide].src}
-        alt={`Slide ${currentSlide + 1}`}
-        fill                                     // in Next.js 13+, for older use layout="fill"
-        style={{
-          objectFit: 'cover',                    // cover & center just like bg-size/bg-pos
-          objectPosition: 'center',
-        }}
-               
-                                // optional: preload current slide
-      />
-    </Box>
+                position="relative" // make room for Image fill
+                mt={["80px", "80px", "50px", "50px", "50px", "50px"]}
+                display="block"
+                h={["300px", "300px", "300px", "500px", "500px", "500px"]}
+                w={["300px", "300px", "300px", "500px", "500px", "500px"]}
+                borderRadius="full" // circle
+                overflow="hidden" // clip to circle
+              >
+                <Image
+                  quality={70}
+                  loading="lazy"
+                  src={members[currentSlide].src}
+                  alt={`Slide ${currentSlide + 1}`}
+                  fill // in Next.js 13+, for older use layout="fill"
+                  style={{
+                    objectFit: "cover", // cover & center just like bg-size/bg-pos
+                    objectPosition: "center",
+                  }}
+
+                  // optional: preload current slide
+                />
+              </Box>
 
               <HStack
                 display={["none", "none", "none", "flex", "flex", "flex"]}

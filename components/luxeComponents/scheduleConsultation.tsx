@@ -39,51 +39,47 @@ const ScheduleConsultation = () => {
         >
           {/* Background accent elements for visual interest */}
           <Box
-              display="flex"
-              flexDirection={["column", "column", "row"]}
-              justifyContent="center"
-              alignItems="center"
-              mb={["30px", "40px"]}
-              width="100%"
-              maxWidth="800px"
-              mx="auto"
-              gap={["16px", "20px", "40px"]}
-            >
-              {[
-                "Personalized property assessment",
-                "Market rate analysis",
-                "ROI optimization strategies",
-              ].map((benefit, index) => (
-                <Badge
+            display="flex"
+            flexDirection={["column", "column", "row"]}
+            justifyContent="center"
+            alignItems="center"
+            mb={["30px", "40px"]}
+            width="100%"
+            maxWidth="800px"
+            mx="auto"
+            gap={["16px", "20px", "40px"]}
+          >
+            {[
+              "Personalized property assessment",
+              "Market rate analysis",
+              "ROI optimization strategies",
+            ].map((benefit, index) => (
+              <Badge
                 color={"white"}
-                  key={index}
-                  variant="subtle"
-                  bg={"rgba(255, 255, 255, 0.1)"}
-                  px="4"
-                  py="3"
-                  borderRadius="full"
-                  fontSize={["13px", "14px", "16px"]}
-                >
-                  <Box as="span" mr="1" display="inline-block" />
-                  {benefit}
-                </Badge>
-              ))}
-            </Box>
+                key={index}
+                variant="subtle"
+                bg={"rgba(255, 255, 255, 0.1)"}
+                px="4"
+                py="3"
+                borderRadius="full"
+                fontSize={["13px", "14px", "16px"]}
+              >
+                <Box as="span" mr="1" display="inline-block" />
+                {benefit}
+              </Badge>
+            ))}
+          </Box>
           {/* Content container */}
           <Box width="100%" maxWidth="1000px" zIndex={1} textAlign="center">
-
-
-            
             {/* Heading */}
             <Text
               color="white"
               fontWeight="700"
               fontSize={["28px", "32px", "40px", "48px", "56px"]}
-             fontFamily="arial"
+              fontFamily="arial"
               lineHeight={["1.2", "1.1"]}
               letterSpacing="-0.02em"
               mb={["16px", "20px"]}
-        
             >
               Ready to transform your AirBnB management?
             </Text>
@@ -109,9 +105,6 @@ const ScheduleConsultation = () => {
               width="100%"
               mt={["10px", "15px"]}
             >
-
-
-              
               <Box
                 as="button"
                 bg="white"
@@ -144,7 +137,6 @@ const ScheduleConsultation = () => {
             </Box>
 
             {/* Additional benefits list */}
-       
           </Box>
         </Box>
       </Box>

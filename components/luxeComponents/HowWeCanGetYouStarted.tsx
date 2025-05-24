@@ -1,12 +1,6 @@
 import React from "react";
 import { Box, HStack, Text } from "@chakra-ui/react";
-import {
-  Camera,
-  Cog,
-  Phone,
-  User,
-  ChartArea,
-} from "lucide-react";
+import { Camera, Cog, Phone, User, ChartArea } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { BoxScrollMoveDown } from "./BoxScrollMoveDown";
 import Image from "next/image";
@@ -68,7 +62,12 @@ const HowWeCanGetYouStarted = () => {
   const router = useRouter();
 
   return (
-    <Box width="100%" position="relative" my={"50px"}       px={["8%", "8%", "6%", "0%", "0%", "0%"]}>
+    <Box
+      width="100%"
+      position="relative"
+      my={"50px"}
+      px={["8%", "8%", "6%", "0%", "0%", "0%"]}
+    >
       {/* Introduction Section */}
       <HStack
         my={["50px", "50px", "100px", "100px", "100px", "100px"]}
@@ -83,7 +82,6 @@ const HowWeCanGetYouStarted = () => {
       <BoxScrollMoveDown />
       {/* The image box scroll move down ----------------------------- */}
       <Box
-      
         mt={["-100px", "-100px", "-150px", "-150px", "-150px", "-150px"]}
         width="100%"
         position="relative"
@@ -105,10 +103,8 @@ const HowWeCanGetYouStarted = () => {
             data-aos="fade-up"
             position="relative"
             width={["100%", "100%", "100%", "100%", "100%", "100%"]}
-           
-     px={["4%", "4%", "6%", "6%", "6%", "10%"]}
+            px={["4%", "4%", "6%", "6%", "6%", "10%"]}
             margin="0 auto"
-              
             paddingBottom={index === gettingStarted.length - 1 ? "0" : "180px"}
           >
             {/* Timeline Node */}
@@ -166,7 +162,7 @@ const HowWeCanGetYouStarted = () => {
               >
                 {/* Category Tag */}
                 <Box
-                ml={["16px", "16px", "0", "0"]}
+                  ml={["16px", "16px", "0", "0"]}
                   display="inline-block"
                   backgroundColor="#f5f5f5"
                   paddingX="18px"
@@ -299,9 +295,9 @@ const HowWeCanGetYouStarted = () => {
                   }}
                 >
                   <Image
-quality={70} loading="lazy"
-                  
-                 src={item.img} // your original src untouched
+                    quality={70}
+                    loading="lazy"
+                    src={item.img} // your original src untouched
                     alt={item.alt ?? ""} // or provide a meaningful alt
                     fill // makes the img fill the Box
                     style={{

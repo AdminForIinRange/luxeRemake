@@ -100,71 +100,64 @@ const ServicesThreeCards = ({
 
             {/* Card image */}
             <Box
-      position="relative"
-      height={["240px", "260px", "280px", "300px"]}
-      borderRadius="16px"
-      cursor="pointer"
-      overflow="hidden"
-      boxShadow="0 4px 20px rgba(0,0,0,0.08)"
-      _hover={{
-        boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-      }}
-      _before={{
-        content: '""',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        bgGradient: "linear(to-t, rgba(23,25,35,0.7) 0%, rgba(23,25,35,0.5) 40%, rgba(23,25,35,0.2) 80%, rgba(23,25,35,0.1) 100%)",
-        zIndex: 1,
-      }}
-      
-    >
-      <Image
-quality={70} loading="lazy"
-        src={card.imgUrl}
-        alt=""
-        fill
-        style={{
-          
-          objectFit: 'cover',
-          objectPosition: 'center',
-        }}
-      />
-      
+              position="relative"
+              height={["240px", "260px", "280px", "300px"]}
+              borderRadius="16px"
+              cursor="pointer"
+              overflow="hidden"
+              boxShadow="0 4px 20px rgba(0,0,0,0.08)"
+              _hover={{
+                boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
+              }}
+              _before={{
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                bgGradient:
+                  "linear(to-t, rgba(23,25,35,0.7) 0%, rgba(23,25,35,0.5) 40%, rgba(23,25,35,0.2) 80%, rgba(23,25,35,0.1) 100%)",
+                zIndex: 1,
+              }}
+            >
+              <Image
+                quality={70}
+                loading="lazy"
+                src={card.imgUrl}
+                alt=""
+                fill
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+
               {/* Accent line */}
 
               <Box
-  
                 position="absolute"
                 bottom="0"
                 left="0"
                 p={["20px", "24px", "28px"]}
                 width="100%"
               >
-              
-
                 {/* Small preview text */}
-           
               </Box>
             </Box>
 
             {/* Card content */}
             <Box pt="20px" pb="24px" px="4px">
-
-            <Text
+              <Text
                 textAlign={"center"}
-                  color="black"
-                  fontSize={["24px", "26px", "28px", "28px"]}
-                  fontWeight="700"
-                  lineHeight="1.2"
-                  mb="8px"
-
-
-                >
-                  {card.title}
-                </Text>
+                color="black"
+                fontSize={["24px", "26px", "28px", "28px"]}
+                fontWeight="700"
+                lineHeight="1.2"
+                mb="8px"
+              >
+                {card.title}
+              </Text>
               <Text
                 fontSize={["15px", "16px", "16px", "17px"]}
                 color="#2D3748"

@@ -192,13 +192,9 @@ const FAQ = ({ type }: { type: string }) => {
       pb={32}
     >
       {/* Decorative elements */}
-      <Box
-        position="relative"
-   
-      >
+      <Box position="relative">
         {/* FAQ Title Section */}
         <Box textAlign="center" mb={16} position="relative">
-   
           <Text
             fontSize={["42px", "48px", "56px"]}
             fontWeight="800"

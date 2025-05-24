@@ -9,9 +9,7 @@ import ScheduleConsultation from "@/components/luxeComponents/scheduleConsultati
 import ServicesThreeCards from "@/components/luxeComponents/servicesThreeCards";
 import TopHeader from "@/components/luxeComponents/topHeader";
 
-
 import houseTwoImg4 from "@/public/images/dalts/houseTwo/WEB/4.jpg";
-
 
 import houseFourImg5 from "@/public/images/dalts/houseFour/WEB/5.jpg";
 
@@ -262,26 +260,27 @@ const FurnishingAndStyling = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-      position="relative"
-      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-      borderRadius="30px"
-      bg="gray.200"          // fallback background color
-      overflow="hidden"      // clip the Image to the rounded corners
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
-        alt=""
-        fill                   // makes the image fill the Box completely
-        style={{
-          objectFit: 'cover',  // replicates background-size: cover
-          objectPosition: 'center', // replicates background-position: center
-        }}
-         
-            // optional: preload if above the fold
-      />
-    </Box>
+              position="relative"
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              borderRadius="30px"
+              bg="gray.200" // fallback background color
+              overflow="hidden" // clip the Image to the rounded corners
+            >
+              <Image
+                quality={70}
+                loading="lazy"
+                src="https://images.pexels.com/photos/7213549/pexels-photo-7213549.jpeg"
+                alt=""
+                fill // makes the image fill the Box completely
+                style={{
+                  objectFit: "cover", // replicates background-size: cover
+                  objectPosition: "center", // replicates background-position: center
+                }}
+
+                // optional: preload if above the fold
+              />
+            </Box>
           </Box>
         </HStack>
       </HStack>
@@ -492,7 +491,8 @@ quality={70} loading="lazy"
                 overflow="hidden" // ensures image stays within rounded corners
               >
                 <Image
-quality={70} loading="lazy"
+                  quality={70}
+                  loading="lazy"
                   src={box.img}
                   alt={box.title}
                   fill
@@ -547,29 +547,30 @@ quality={70} loading="lazy"
           >
             {/* Material Item 1 */}
             <Box flex="1" minW={{ base: "100%", md: "300px" }}>
-            <Box
-      position="relative"       // establish containing block for the Image
-      bg="#f2f2f2"               // fallback background color
-      borderRadius="md"
-      h="300px"
-      mb="6"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      overflow="hidden"          // clip the Image to the Box bounds
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/31902663/pexels-photo-31902663.jpeg"
-        alt=""
-        fill                      // makes the image fill the Box
-        style={{
-          objectFit: 'cover',     // replicates background-size: cover
-          objectPosition: 'center'// replicates background-position: center
-        }}
-      />
-      {/* Any overlaid content goes here */}
-    </Box>
+              <Box
+                position="relative" // establish containing block for the Image
+                bg="#f2f2f2" // fallback background color
+                borderRadius="md"
+                h="300px"
+                mb="6"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                overflow="hidden" // clip the Image to the Box bounds
+              >
+                <Image
+                  quality={70}
+                  loading="lazy"
+                  src="https://images.pexels.com/photos/31902663/pexels-photo-31902663.jpeg"
+                  alt=""
+                  fill // makes the image fill the Box
+                  style={{
+                    objectFit: "cover", // replicates background-size: cover
+                    objectPosition: "center", // replicates background-position: center
+                  }}
+                />
+                {/* Any overlaid content goes here */}
+              </Box>
               <Text
                 fontSize={{ base: "lg", md: "xl" }}
                 fontWeight="bold"
@@ -585,29 +586,30 @@ quality={70} loading="lazy"
 
             {/* Material Item 2 */}
             <Box flex="1" minW={{ base: "100%", md: "300px" }}>
-            <Box
-      position="relative"       // establish containing block for the Image
-      bg="#f2f2f2"               // fallback background color
-      borderRadius="md"
-      h="300px"
-      mb="6"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      overflow="hidden"          // clip the Image to the Box bounds
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg"
-        alt=""
-        fill                      // makes the image fill the Box
-        style={{
-          objectFit: 'cover',     // replicates background-size: cover
-          objectPosition: 'center'// replicates background-position: center
-        }}
-      />
-      {/* Any overlaid content goes here */}
-    </Box>
+              <Box
+                position="relative" // establish containing block for the Image
+                bg="#f2f2f2" // fallback background color
+                borderRadius="md"
+                h="300px"
+                mb="6"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                overflow="hidden" // clip the Image to the Box bounds
+              >
+                <Image
+                  quality={70}
+                  loading="lazy"
+                  src="https://images.pexels.com/photos/4352247/pexels-photo-4352247.jpeg"
+                  alt=""
+                  fill // makes the image fill the Box
+                  style={{
+                    objectFit: "cover", // replicates background-size: cover
+                    objectPosition: "center", // replicates background-position: center
+                  }}
+                />
+                {/* Any overlaid content goes here */}
+              </Box>
               <Text
                 fontSize={{ base: "lg", md: "xl" }}
                 fontWeight="bold"
@@ -623,29 +625,30 @@ quality={70} loading="lazy"
 
             {/* Material Item 3 */}
             <Box flex="1" minW={{ base: "100%", md: "300px" }}>
-            <Box
-      position="relative"       // establish containing block for the Image
-      bg="#f2f2f2"               // fallback background color
-      borderRadius="md"
-      h="300px"
-      mb="6"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      overflow="hidden"          // clip the Image to the Box bounds
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/7303902/pexels-photo-7303902.jpeg"
-        alt=""
-        fill                      // makes the image fill the Box
-        style={{
-          objectFit: 'cover',     // replicates background-size: cover
-          objectPosition: 'center'// replicates background-position: center
-        }}
-      />
-      {/* Any centered overlay content can go here */}
-    </Box>
+              <Box
+                position="relative" // establish containing block for the Image
+                bg="#f2f2f2" // fallback background color
+                borderRadius="md"
+                h="300px"
+                mb="6"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                overflow="hidden" // clip the Image to the Box bounds
+              >
+                <Image
+                  quality={70}
+                  loading="lazy"
+                  src="https://images.pexels.com/photos/7303902/pexels-photo-7303902.jpeg"
+                  alt=""
+                  fill // makes the image fill the Box
+                  style={{
+                    objectFit: "cover", // replicates background-size: cover
+                    objectPosition: "center", // replicates background-position: center
+                  }}
+                />
+                {/* Any centered overlay content can go here */}
+              </Box>
               <Text
                 fontSize={{ base: "lg", md: "xl" }}
                 fontWeight="bold"

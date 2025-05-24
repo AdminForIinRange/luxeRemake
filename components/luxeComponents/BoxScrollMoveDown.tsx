@@ -53,8 +53,9 @@ export function BoxScrollMoveDown() {
                 w={["100%", "100%", "100%", "100%", "100%", "100%"]} // !important
                 fontWeight={300}
               >
-                Learn how our Adelaide-based consultants can help you get started with personalized services, advice
-                and expert consultation every step of the way.
+                Learn how our Adelaide-based consultants can help you get
+                started with personalized services, advice and expert
+                consultation every step of the way.
               </Text>
               <HStack
                 data-aos="fade-up"
@@ -106,7 +107,8 @@ export function BoxScrollMoveDown() {
         }
       >
         <Image
-quality={70} loading="lazy"
+          quality={70}
+          loading="lazy"
           src={GalleryImgScreenShot}
           alt="hero"
           height={720}

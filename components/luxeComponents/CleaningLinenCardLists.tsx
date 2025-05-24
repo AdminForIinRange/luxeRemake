@@ -213,27 +213,28 @@ const CleaningLinenCardLists = () => {
           >
             {/* Horizontal line for crosshair */}
             <Box
-      position="relative"
-      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-      borderRadius="30px"
-      bg="gray.200"       // fallback color
-      overflow="hidden"   // clip the Image to the container
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/6474494/pexels-photo-6474494.jpeg"
-        alt=""
-        fill                // makes the image fill the Box entirely
-        style={{
-          objectFit: 'cover',     // replicates background-size: cover
-          objectPosition: 'center',// replicates background-position: center
-        }}
-               
-              // optional: preload above-the-fold image
-      />
-    </Box>
-    
+              position="relative"
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              borderRadius="30px"
+              bg="gray.200" // fallback color
+              overflow="hidden" // clip the Image to the container
+            >
+              <Image
+                quality={70}
+                loading="lazy"
+                src="https://images.pexels.com/photos/6474494/pexels-photo-6474494.jpeg"
+                alt=""
+                fill // makes the image fill the Box entirely
+                style={{
+                  objectFit: "cover", // replicates background-size: cover
+                  objectPosition: "center", // replicates background-position: center
+                }}
+
+                // optional: preload above-the-fold image
+              />
+            </Box>
+
             {/* Bottom-right label */}
             {/* <Box
               p={"4"}
@@ -433,26 +434,27 @@ quality={70} loading="lazy"
           >
             {/* Horizontal line for crosshair */}
             <Box
-      position="relative"
-      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-      borderRadius="30px"
-      bg="gray.200"       // fallback color
-      overflow="hidden"   // clip the Image to the container
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/31472229/pexels-photo-31472229.jpeg"
-        alt=""
-        fill                // makes the image fill the Box entirely
-        style={{
-          objectFit: 'cover',     // replicates background-size: cover
-          objectPosition: 'center',// replicates background-position: center
-        }}
-               
-            // optional: preload above-the-fold image
-      />
-    </Box>
+              position="relative"
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              borderRadius="30px"
+              bg="gray.200" // fallback color
+              overflow="hidden" // clip the Image to the container
+            >
+              <Image
+                quality={70}
+                loading="lazy"
+                src="https://images.pexels.com/photos/31472229/pexels-photo-31472229.jpeg"
+                alt=""
+                fill // makes the image fill the Box entirely
+                style={{
+                  objectFit: "cover", // replicates background-size: cover
+                  objectPosition: "center", // replicates background-position: center
+                }}
+
+                // optional: preload above-the-fold image
+              />
+            </Box>
             {/* Bottom-right label */}
 
             {/* <Box
@@ -755,26 +757,27 @@ quality={70} loading="lazy"
           >
             {/* Horizontal line for crosshair */}
             <Box
-      position="relative"
-      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-      borderRadius="30px"
-      bg="gray.200"       // fallback background color
-      overflow="hidden"   // clip the Image to the container
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg"
-        alt=""
-        fill                // makes the image fill the Box entirely
-        style={{
-          objectFit: 'cover',     // replicates background-size: cover
-          objectPosition: 'center'// replicates background-position: center
-        }}
-               
-            // optional: preload above-the-fold image
-      />
-    </Box>
+              position="relative"
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              borderRadius="30px"
+              bg="gray.200" // fallback background color
+              overflow="hidden" // clip the Image to the container
+            >
+              <Image
+                quality={70}
+                loading="lazy"
+                src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg"
+                alt=""
+                fill // makes the image fill the Box entirely
+                style={{
+                  objectFit: "cover", // replicates background-size: cover
+                  objectPosition: "center", // replicates background-position: center
+                }}
+
+                // optional: preload above-the-fold image
+              />
+            </Box>
             {/* Bottom-right label */}
             {/* <Box
               p={"4"}
@@ -973,26 +976,27 @@ quality={70} loading="lazy"
           >
             {/* Horizontal line for crosshair */}
             <Box
-      position="relative"
-      h={["350px", "350px", "350px", "500px", "500px", "500px"]}
-      w={["100%", "100%", "100%", "550px", "550px", "550px"]}
-      borderRadius="30px"
-      bg="gray.200"       // fallback background color
-      overflow="hidden"   // clip the Image to the container
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/8293667/pexels-photo-8293667.jpeg"
-        alt=""
-        fill                // makes the image fill the Box entirely
-        style={{
-          objectFit: 'cover',      // replicates background-size: cover
-          objectPosition: 'center' // replicates background-position: center
-        }}
-               
-             // optional: preload above-the-fold image
-      />
-    </Box>
+              position="relative"
+              h={["350px", "350px", "350px", "500px", "500px", "500px"]}
+              w={["100%", "100%", "100%", "550px", "550px", "550px"]}
+              borderRadius="30px"
+              bg="gray.200" // fallback background color
+              overflow="hidden" // clip the Image to the container
+            >
+              <Image
+                quality={70}
+                loading="lazy"
+                src="https://images.pexels.com/photos/8293667/pexels-photo-8293667.jpeg"
+                alt=""
+                fill // makes the image fill the Box entirely
+                style={{
+                  objectFit: "cover", // replicates background-size: cover
+                  objectPosition: "center", // replicates background-position: center
+                }}
+
+                // optional: preload above-the-fold image
+              />
+            </Box>
             {/* Bottom-right label */}
 
             {/* <Box

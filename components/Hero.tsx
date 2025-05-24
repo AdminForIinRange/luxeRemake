@@ -52,7 +52,6 @@ const Hero = () => {
         fontWeight={{ base: "400", sm: "400", md: "400", lg: "400", xl: "400" }}
         fontFamily={"arial"}
       >
-       
         <Box color={"#222222"} fontWeight={"600"} width={"90%"}>
           Luxe Managements <br />
           <Box fontWeight={"400"}>
@@ -60,8 +59,6 @@ const Hero = () => {
           </Box>
         </Box>
       </Stack>
-
-
 
       <Box overflowX={"hidden"} mt={"350px"}>
         <Box
@@ -91,7 +88,8 @@ const Hero = () => {
             w={["100%", "100%", "80%", "80%", "80%", "80%"]} // !important
             fontWeight={300}
           >
-            We're Luxe, Adelaide's only AirBnB property management company that services the gap between luxury and affordability.
+            We're Luxe, Adelaide's only AirBnB property management company that
+            services the gap between luxury and affordability.
           </Text>
         </Box>
 

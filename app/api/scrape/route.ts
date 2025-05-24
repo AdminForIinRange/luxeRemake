@@ -4,13 +4,14 @@ import puppeteer from "puppeteer";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
 
-
 const scrapeProperty = async (address: string) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   // 1) Go to DuckDuckGo
-  await page.goto(`https://www.duckduckgo.com`, { waitUntil: "domcontentloaded" });
+  await page.goto(`https://www.duckduckgo.com`, {
+    waitUntil: "domcontentloaded",
+  });
 
   // 2) Type the address into the search box
   await page.waitForSelector('input[name="q"]', { visible: true });
@@ -38,33 +39,43 @@ const scrapeProperty = async (address: string) => {
 
   // 6) Wait for the main property section to render
   await page.waitForSelector(
-    'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section',
-    { visible: true }
+    "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section",
+    { visible: true },
   );
 
   // 7) Extract exactly the three fields you care about:
   const propertyData = await page.evaluate(() => {
     // original three:
-    const sel1 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)';
-    const sel2 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2)';
-    const sel3 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(2)';
+    const sel1 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)";
+    const sel2 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(2)";
+    const sel3 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(5) > div:nth-of-type(2)";
 
     // new title spans:
-    const titlePart1 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h1 > span:nth-of-type(1)';
-    const titlePart2 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h1 > span:nth-of-type(2) > span';
+    const titlePart1 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h1 > span:nth-of-type(1)";
+    const titlePart2 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > h1 > span:nth-of-type(2) > span";
 
     // the four numeric spans under that same div[2]:
-    const numSpan1 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) > span';
-    const numSpan2 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2) > span';
-    const numSpan3 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(3) > span';
-    const numSpan4 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(4) > span';
-        const numSpan5 = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span';
+    const numSpan1 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1) > span";
+    const numSpan2 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2) > span";
+    const numSpan3 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(3) > span";
+    const numSpan4 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(4) > span";
+    const numSpan5 =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(2) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > span";
 
     // the extra single-span in div:nth-of-type(2) > div:nth-of-type(2)
 
-
     // the first image under the main button>picture>img:
-    const imgSel = 'div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(1) > button > picture > img';
+    const imgSel =
+      "div#__next > div:nth-of-type(1) > main > div > div > div:nth-of-type(1) > button > picture > img";
 
     const getText = (s: string) => {
       const el = document.querySelector<HTMLElement>(s);
@@ -85,25 +96,25 @@ const scrapeProperty = async (address: string) => {
       bathroom: getText(numSpan2),
       carSpace: getText(numSpan3),
       landSize: getText(numSpan4),
-       typeOfProperty: getText(numSpan5),
+      typeOfProperty: getText(numSpan5),
 
-      imageUrl: getAttr(imgSel, 'src'),
+      imageUrl: getAttr(imgSel, "src"),
     };
   });
 
   await browser.close();
   console.log(propertyData);
   return propertyData;
-}
+};
 
 export async function POST(request: NextRequest) {
   try {
     const { address } = await request.json();
-    
+
     if (!address || typeof address !== "string") {
       return NextResponse.json(
         { error: "Missing or invalid address." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -129,7 +140,7 @@ export async function POST(request: NextRequest) {
     console.error("BACKEND ERROR:", error.message);
     return NextResponse.json(
       { error: "Failed to generate content.", details: error.message },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

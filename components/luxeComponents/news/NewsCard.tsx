@@ -32,7 +32,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   //     alert(res.error);
   //   }
   // };
-const src = `https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg`
+  const src = `https://images.pexels.com/photos/${article.pexelImgLink}/pexels-photo-${article.pexelImgLink}.jpeg`;
   return (
     <Box
       w={["100%", "48%", "31%"]}
@@ -58,25 +58,26 @@ const src = `https://images.pexels.com/photos/${article.pexelImgLink}/pexels-pho
         _hover={{ backgroundColor: "red.600" }}
       />
 
-<Box
-      position="relative"
-      w="100%"
-      h="200px"
-      overflow="hidden"            // clip the image to the container
-      transition="all 0.3s"        // preserve your transition
-    >
-      <Image
-quality={70} loading="lazy"
-        src={src}
-        alt={article.title || ''}
-        fill                        // makes the image fill the Box
-        style={{
-          objectFit: 'cover',       // replicates backgroundSize="cover"
-          objectPosition: 'center', // replicates backgroundPosition="center"
-        }}
-      />
-    </Box>
-    
+      <Box
+        position="relative"
+        w="100%"
+        h="200px"
+        overflow="hidden" // clip the image to the container
+        transition="all 0.3s" // preserve your transition
+      >
+        <Image
+          quality={70}
+          loading="lazy"
+          src={src}
+          alt={article.title || ""}
+          fill // makes the image fill the Box
+          style={{
+            objectFit: "cover", // replicates backgroundSize="cover"
+            objectPosition: "center", // replicates backgroundPosition="center"
+          }}
+        />
+      </Box>
+
       <Stack gap="10px" p="20px">
         <Text fontSize="lg" fontWeight="semibold">
           {article.articleTitle}

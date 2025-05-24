@@ -170,12 +170,12 @@ export default function HouseHeroParallax() {
                   transition="all 0.5s ease"
                 >
                   <Image
-quality={70}                    loader={pexelsLoader}
+                    quality={70}
+                    loader={pexelsLoader}
                     src={product.link}
                     alt={product.title || ""}
                     layout="fill"
                     objectFit="cover"
-                
                   />
                 </Box>
               ))}

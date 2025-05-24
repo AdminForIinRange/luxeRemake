@@ -63,13 +63,13 @@ export default function ImageCarousel() {
         >
           <Box width="100%" height="100%" position="relative" overflow="hidden">
             <Image
-quality={70} loading="lazy"
+              quality={70}
+              loading="lazy"
               src={images[currentImage] || "/placeholder.svg"}
               alt={`carousel-image-${currentImage}`}
               fill
               className="object-cover"
-              
-           />
+            />
           </Box>
         </motion.div>
       </AnimatePresence>
@@ -104,7 +104,8 @@ quality={70} loading="lazy"
             <Box>
               {" "}
               <Image
-quality={70} loading="lazy"
+                quality={70}
+                loading="lazy"
                 style={{ borderRadius: "4px" }}
                 src={img || "/placeholder.svg"}
                 alt={`thumbnail-${index}`}

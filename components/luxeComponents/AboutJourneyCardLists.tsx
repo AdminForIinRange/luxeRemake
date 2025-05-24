@@ -358,40 +358,41 @@ const AboutJourneyCardLists = () => {
                 paddingX={["0", "0", "0", "30px"]}
               >
                 <Box
-      position="relative"                       // establish containing block for the Image
-      width="100%"
-      height={["300px", "350px", "400px"]}
-      borderRadius="20px"
-      overflow="hidden"                         // clip the Image and overlay to the rounded corners
-      boxShadow="0 12px 40px rgba(0, 0, 0, 0.12)"
-      _before={{
-        content: '""',
-        position: "absolute",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background:
-          "linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%)",
-        zIndex: 1,
-      }}
-      _hover={{
-        transform: "scale(1.02)",
-        transition: "transform 0.5s ease",
-        boxShadow: "0 16px 50px rgba(0, 0, 0, 0.15)",
-      }}
-    >
-      <Image
-quality={70} loading="lazy"
-        src={item.img}                          // original src untouched
-        alt={item.alt ?? ""}
-        fill                                    // makes the image fill the Box
-        style={{
-          objectFit: 'cover',                   // replicates background-size: cover
-          objectPosition: 'center',             // replicates background-position: center
-        }}
-      />
-      
+                  position="relative" // establish containing block for the Image
+                  width="100%"
+                  height={["300px", "350px", "400px"]}
+                  borderRadius="20px"
+                  overflow="hidden" // clip the Image and overlay to the rounded corners
+                  boxShadow="0 12px 40px rgba(0, 0, 0, 0.12)"
+                  _before={{
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,0.4) 100%)",
+                    zIndex: 1,
+                  }}
+                  _hover={{
+                    transform: "scale(1.02)",
+                    transition: "transform 0.5s ease",
+                    boxShadow: "0 16px 50px rgba(0, 0, 0, 0.15)",
+                  }}
+                >
+                  <Image
+                    quality={70}
+                    loading="lazy"
+                    src={item.img} // original src untouched
+                    alt={item.alt ?? ""}
+                    fill // makes the image fill the Box
+                    style={{
+                      objectFit: "cover", // replicates background-size: cover
+                      objectPosition: "center", // replicates background-position: center
+                    }}
+                  />
+
                   {/* Optional image overlay content */}
                   <Box
                     position="absolute"

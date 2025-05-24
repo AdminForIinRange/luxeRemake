@@ -272,25 +272,25 @@ const Pricing = () => {
             </Box>
 
             <Box position="relative" p={"4"}>
-            <Box
-      position="relative"      // establish containing block for the Image
-      height="365px"
-      width="100%"
-      borderRadius="18px"
-      overflow="hidden"        // clip the Image to the rounded corners
-    >
-      <Image
-quality={70} loading="lazy"
-        src="https://images.pexels.com/photos/7651924/pexels-photo-7651924.jpeg"
-        alt=""
-        fill                     // makes the img fill the Box
-        style={{
-          objectFit: 'cover',    // replicates background-size: cover
-          objectPosition: 'top', // replicates background-position: top
-        }}
-      />
-      
-    </Box>
+              <Box
+                position="relative" // establish containing block for the Image
+                height="365px"
+                width="100%"
+                borderRadius="18px"
+                overflow="hidden" // clip the Image to the rounded corners
+              >
+                <Image
+                  quality={70}
+                  loading="lazy"
+                  src="https://images.pexels.com/photos/7651924/pexels-photo-7651924.jpeg"
+                  alt=""
+                  fill // makes the img fill the Box
+                  style={{
+                    objectFit: "cover", // replicates background-size: cover
+                    objectPosition: "top", // replicates background-position: top
+                  }}
+                />
+              </Box>
               <Box
                 position="absolute"
                 bottom="24px"

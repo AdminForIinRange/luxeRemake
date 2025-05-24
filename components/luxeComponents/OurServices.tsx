@@ -16,8 +16,8 @@ const OurServices = () => {
       </HStack>
       <TitleSubheading
         title={"Our Services"}
-        subheading={        "Effortless AirBnB management. Premium services. Adelaide's trusted experts."
-
+        subheading={
+          "Effortless AirBnB management. Premium services. Adelaide's trusted experts."
         }
       />
 

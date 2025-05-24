@@ -1,4 +1,4 @@
-import React, from "react";
+import React from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";

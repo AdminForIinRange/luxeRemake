@@ -16,7 +16,6 @@ const inter = Inter({
   display: "swap",
 });
 
-
 const ClientProviderWithFallback = dynamic(
   () => import("@/components/chakra-snippets/ClientProvider"),
   { loading: () => <Loading /> },
@@ -189,29 +188,25 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                       "@type": "ListItem",
                       position: 3,
                       name: "Furnishing & Styling",
-                      item:
-                        "https://www.luxemanagements.com/services/furnishing-and-styling",
+                      item: "https://www.luxemanagements.com/services/furnishing-and-styling",
                     },
                     {
                       "@type": "ListItem",
                       position: 4,
                       name: "Property Management",
-                      item:
-                        "https://www.luxemanagements.com/services/property-management",
+                      item: "https://www.luxemanagements.com/services/property-management",
                     },
                     {
                       "@type": "ListItem",
                       position: 5,
                       name: "Photography",
-                      item:
-                        "https://www.luxemanagements.com/services/photography",
+                      item: "https://www.luxemanagements.com/services/photography",
                     },
                     {
                       "@type": "ListItem",
                       position: 6,
                       name: "Cleaning & Linen",
-                      item:
-                        "https://www.luxemanagements.com/services/cleaning-and-linen",
+                      item: "https://www.luxemanagements.com/services/cleaning-and-linen",
                     },
                     {
                       "@type": "ListItem",
@@ -247,7 +242,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
       <body>
         {/* Accessibility: Skip‐to‐Content */}
-      
 
         {/* Performance: load non‐critical analytics after hydration */}
         <Analytics />

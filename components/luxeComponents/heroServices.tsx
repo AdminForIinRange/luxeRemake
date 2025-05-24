@@ -48,8 +48,8 @@ const HeroServices = () => {
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Optimize your earnings and ease your mind with our Adelaide-based experienced
-              Airbnb Management team.
+              Optimize your earnings and ease your mind with our Adelaide-based
+              experienced Airbnb Management team.
             </Text>
             <HStack
               justify={[
@@ -119,13 +119,12 @@ const HeroServices = () => {
             >
               {" "}
               <Image
-quality={70} loading="lazy"
-              
+                quality={70}
+                loading="lazy"
                 src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg"
                 alt="Property"
                 layout="fill"
                 objectFit="cover"
-  
               />
             </Box>
             {/* Bottom-right label */}
@@ -227,8 +226,8 @@ quality={70} loading="lazy"
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Experience stress-free AirBnB management with our dedicated Adelaide-based team gcg
-              of professionals.
+              Experience stress-free AirBnB management with our dedicated
+              Adelaide-based team gcg of professionals.
             </Text>
             <HStack
               justify={[
@@ -297,13 +296,12 @@ quality={70} loading="lazy"
               overflow="hidden"
             >
               <Image
-quality={70} loading="lazy"
-              
+                quality={70}
+                loading="lazy"
                 src="https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg"
                 alt="Property"
                 layout="fill"
                 objectFit="cover"
-             
               />
             </Box>
             {/* Bottom-right label */}
@@ -381,8 +379,8 @@ quality={70} loading="lazy"
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              Experience stress-free AirBnB management with our dedicated Adelaide-based team
-              of professionals.
+              Experience stress-free AirBnB management with our dedicated
+              Adelaide-based team of professionals.
             </Text>
             <HStack
               justify={[
@@ -471,8 +469,8 @@ quality={70} loading="lazy"
               w={["100%", "100%", "100%", "100%", "100%", "100%"]}
               fontWeight={300}
             >
-              From seamless check-ins to bespoke services, we ensure
-              guest satisfaction at every step.
+              From seamless check-ins to bespoke services, we ensure guest
+              satisfaction at every step.
             </Text>
             <HStack
               justify={[
@@ -541,13 +539,12 @@ quality={70} loading="lazy"
               overflow="hidden"
             >
               <Image
-quality={70} loading="lazy"
-              
+                quality={70}
+                loading="lazy"
                 src="https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg"
                 alt="Property"
                 layout="fill"
                 objectFit="cover"
-             
               />
             </Box>
             {/* Bottom-right label */}

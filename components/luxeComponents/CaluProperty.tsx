@@ -79,15 +79,6 @@ const CaluProperty = () => {
     </Box>
   );
 
-
-
-
-
-
-
-
-
-
   // Reusable TrendIndicator component
   const TrendIndicator = ({ value }) => {
     const isPositive = value.startsWith("+");
@@ -176,41 +167,28 @@ const CaluProperty = () => {
 
   return (
     <>
-
       <Box maxWidth="1400px" my="50px" mx="auto" padding="20px">
+        <Box display="flex" alignItems="center" justifyContent="center">
+          {/* <GptLuxeCalc /> */}
 
-<Box 
-
-  display="flex" 
-  alignItems="center" 
-  justifyContent="center" 
-
->
-{/* <GptLuxeCalc /> */}
-
-
-<Box   
- display="flex" 
-  alignItems="center" 
-  justifyContent="center" 
-
-  borderRadius="2xl" 
- p={2}textAlign={"center"} 
- px={4}
-  boxShadow="md" 
-  
-w={"auto"}
-gap={"8px"}
- > 
-  <Text  ml="8px" fontSize="14px" fontWeight="bold" color="gray.700">
-    AI Powered
-  </Text>
-  <Zap size="20px" color="#E53E3E" />
-  </Box>
-
-
- 
-</Box>
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            borderRadius="2xl"
+            p={2}
+            textAlign={"center"}
+            px={4}
+            boxShadow="md"
+            w={"auto"}
+            gap={"8px"}
+          >
+            <Text ml="8px" fontSize="14px" fontWeight="bold" color="gray.700">
+              AI Powered
+            </Text>
+            <Zap size="20px" color="#E53E3E" />
+          </Box>
+        </Box>
 
         <TitleSubheading
           title={"Luxe Property Calculator"}

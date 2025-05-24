@@ -118,25 +118,26 @@ const LuxeAiAssistance = () => {
             transition: "transform 0.2s ease",
           }}
         >
-      <Box
-      position="relative"      // establish containing block for the Image
-      width="68px"
-      height="68px"
-      borderRadius="full"      // circle
-      overflow="hidden"        // clip the Image to the circle
-    >
-      <Image
-quality={70} loading="lazy"
-        src={luxeLogo.src}     // original src expression untouched
-        alt={luxeLogo.alt || ''} 
-        fill                   // makes the image fill the Box
-        style={{
-          objectFit: 'cover',  // replicates background-size: cover
-          objectPosition: 'center' // replicates background-position: center
-        }}
-      />
-    </Box>
-  
+          <Box
+            position="relative" // establish containing block for the Image
+            width="68px"
+            height="68px"
+            borderRadius="full" // circle
+            overflow="hidden" // clip the Image to the circle
+          >
+            <Image
+              quality={70}
+              loading="lazy"
+              src={luxeLogo.src} // original src expression untouched
+              alt={luxeLogo.alt || ""}
+              fill // makes the image fill the Box
+              style={{
+                objectFit: "cover", // replicates background-size: cover
+                objectPosition: "center", // replicates background-position: center
+              }}
+            />
+          </Box>
+
           <Box
             position="absolute"
             top="15px"
@@ -163,24 +164,25 @@ quality={70} loading="lazy"
             bg={"white"}
           >
             <Box display="flex" alignItems="center">
-            <Box
-      position="relative"       // establish containing block for the Image
-      width="52px"
-      height="52px"
-      borderRadius="full"       // circle
-      overflow="hidden"         // clip the Image to the circle
-    >
-      <Image
-quality={70} loading="lazy"
-        src={luxeLogo.src}      // original src expression untouched
-        alt={luxeLogo.alt || ''}
-        fill                    // Next.js 13+ API; use layout="fill" if on older Next.js
-        style={{
-          objectFit: 'cover',   // replicates background-size: cover
-          objectPosition: 'center', // replicates background-position: center
-        }}
-      />
-    </Box>
+              <Box
+                position="relative" // establish containing block for the Image
+                width="52px"
+                height="52px"
+                borderRadius="full" // circle
+                overflow="hidden" // clip the Image to the circle
+              >
+                <Image
+                  quality={70}
+                  loading="lazy"
+                  src={luxeLogo.src} // original src expression untouched
+                  alt={luxeLogo.alt || ""}
+                  fill // Next.js 13+ API; use layout="fill" if on older Next.js
+                  style={{
+                    objectFit: "cover", // replicates background-size: cover
+                    objectPosition: "center", // replicates background-position: center
+                  }}
+                />
+              </Box>
               <Box>
                 <Text fontWeight="700" fontSize="16px" color="#1A202C">
                   Luxe AI Assistant
@@ -243,26 +245,27 @@ quality={70} loading="lazy"
                 height="100%"
                 p="20px"
               >
-         <Box
-      position="relative"           // establish containing block for the Image
-      width="60px"
-      height="60px"
-      borderRadius="full"           // circle
-      overflow="hidden"             // clip the Image to the circle
-      mb="16px"
-      boxShadow="0 4px 12px rgba(0, 0, 0, 0.08)"
-    >
-      <Image
-quality={70} loading="lazy"
-        src={luxeLogo.src}          // original src expression untouched
-        alt={luxeLogo.alt || ''}
-        fill                        // makes the image fill the Box
-        style={{
-          objectFit: 'cover',       // replicates background-size: cover
-          objectPosition: 'center', // replicates background-position: center
-        }}
-      />
-    </Box>
+                <Box
+                  position="relative" // establish containing block for the Image
+                  width="60px"
+                  height="60px"
+                  borderRadius="full" // circle
+                  overflow="hidden" // clip the Image to the circle
+                  mb="16px"
+                  boxShadow="0 4px 12px rgba(0, 0, 0, 0.08)"
+                >
+                  <Image
+                    quality={70}
+                    loading="lazy"
+                    src={luxeLogo.src} // original src expression untouched
+                    alt={luxeLogo.alt || ""}
+                    fill // makes the image fill the Box
+                    style={{
+                      objectFit: "cover", // replicates background-size: cover
+                      objectPosition: "center", // replicates background-position: center
+                    }}
+                  />
+                </Box>
                 <Text
                   color="#2D3748"
                   fontSize="16px"

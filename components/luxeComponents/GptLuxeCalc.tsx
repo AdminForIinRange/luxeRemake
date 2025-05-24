@@ -1,8 +1,8 @@
-"use client"
-import { useState } from "react"
-import type React from "react"
+"use client";
+import { useState } from "react";
+import type React from "react";
 
-import { Box, Text } from "@chakra-ui/react"
+import { Box, Text } from "@chakra-ui/react";
 import {
   Search,
   DollarSign,
@@ -16,27 +16,30 @@ import {
   Car,
   Ruler,
   Building,
-} from "lucide-react"
+} from "lucide-react";
 
 export default function PropertyScrapeForm() {
-  const [address, setAddress] = useState("")
-  const [loading, setLoading] = useState(false)
-  const [analysis, setAnalysis] = useState("")
-  const [error, setError] = useState("")
-  const [propertyData, setPropertyData] = useState<Record<string, string | null> | null>(null)
-  const [showDropdown, setShowDropdown] = useState(false)
-  const [debugInfo, setDebugInfo] = useState<any>(null)
+  const [address, setAddress] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [analysis, setAnalysis] = useState("");
+  const [error, setError] = useState("");
+  const [propertyData, setPropertyData] = useState<Record<
+    string,
+    string | null
+  > | null>(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [debugInfo, setDebugInfo] = useState<any>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
-    setError("")
-    setAnalysis("")
-    setPropertyData(null)
-    setDebugInfo(null)
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setAnalysis("");
+    setPropertyData(null);
+    setDebugInfo(null);
 
     try {
-      console.log("Submitting search for:", address)
+      console.log("Submitting search for:", address);
 
       const response = await fetch("/api/scrape", {
         method: "POST",
@@ -44,30 +47,33 @@ export default function PropertyScrapeForm() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ address }),
-      })
+      });
 
-      const data = await response.json()
-      console.log("API Response:", data)
-      setDebugInfo(data) // Store the raw response for debugging
+      const data = await response.json();
+      console.log("API Response:", data);
+      setDebugInfo(data); // Store the raw response for debugging
 
       if (response.ok) {
         // Make sure we're setting the analysis text correctly
         if (data.text) {
-          setAnalysis(data.text)
-          console.log("Analysis text set:", data.text.substring(0, 100) + "...")
+          setAnalysis(data.text);
+          console.log(
+            "Analysis text set:",
+            data.text.substring(0, 100) + "...",
+          );
         } else {
-          console.warn("No analysis text in response")
-          setAnalysis("No analysis available for this property.")
+          console.warn("No analysis text in response");
+          setAnalysis("No analysis available for this property.");
         }
 
         // Make sure we're setting the property data correctly
-        let propertyDataObj
+        let propertyDataObj;
         if (data.data) {
-          propertyDataObj = data.data
-          console.log("Property data set:", data.data)
+          propertyDataObj = data.data;
+          console.log("Property data set:", data.data);
         } else {
           // If data.data is missing but we have the text, create a minimal property object
-          console.warn("No property data in response, creating minimal object")
+          console.warn("No property data in response, creating minimal object");
           propertyDataObj = {
             location: address.split(",")[0] || "Property",
             suburb: address.split(",")[1] || "",
@@ -80,94 +86,124 @@ export default function PropertyScrapeForm() {
             lowPriceRange: null,
             midPriceRange: null,
             highPriceRange: null,
-          }
+          };
         }
 
         // Try to extract missing property details from the analysis text
         if (data.text) {
-          propertyDataObj = extractPropertyDetailsFromAnalysis(data.text, propertyDataObj)
+          propertyDataObj = extractPropertyDetailsFromAnalysis(
+            data.text,
+            propertyDataObj,
+          );
         }
 
         // Add default values for missing fields
-        if (!propertyDataObj.beds || propertyDataObj.beds === "—") propertyDataObj.beds = "3"
-        if (!propertyDataObj.bathroom || propertyDataObj.bathroom === "—") propertyDataObj.bathroom = "2"
-        if (!propertyDataObj.carSpace || propertyDataObj.carSpace === "—") propertyDataObj.carSpace = "1"
-        if (!propertyDataObj.landSize || propertyDataObj.landSize === "—") propertyDataObj.landSize = "450m²"
-        if (!propertyDataObj.typeOfProperty || propertyDataObj.typeOfProperty === "—")
-          propertyDataObj.typeOfProperty = "House"
+        if (!propertyDataObj.beds || propertyDataObj.beds === "—")
+          propertyDataObj.beds = "3";
+        if (!propertyDataObj.bathroom || propertyDataObj.bathroom === "—")
+          propertyDataObj.bathroom = "2";
+        if (!propertyDataObj.carSpace || propertyDataObj.carSpace === "—")
+          propertyDataObj.carSpace = "1";
+        if (!propertyDataObj.landSize || propertyDataObj.landSize === "—")
+          propertyDataObj.landSize = "450m²";
+        if (
+          !propertyDataObj.typeOfProperty ||
+          propertyDataObj.typeOfProperty === "—"
+        )
+          propertyDataObj.typeOfProperty = "House";
 
-        setPropertyData(propertyDataObj)
+        setPropertyData(propertyDataObj);
       } else {
-        setError(data.error || "An error occurred.")
+        setError(data.error || "An error occurred.");
       }
     } catch (err) {
-      console.error("Error during fetch:", err)
-      setError("Failed to fetch data.")
+      console.error("Error during fetch:", err);
+      setError("Failed to fetch data.");
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   // Function to extract property details from analysis text
-  const extractPropertyDetailsFromAnalysis = (text: string, propertyData: Record<string, string | null> | null) => {
-    if (!text || !propertyData) return propertyData
+  const extractPropertyDetailsFromAnalysis = (
+    text: string,
+    propertyData: Record<string, string | null> | null,
+  ) => {
+    if (!text || !propertyData) return propertyData;
 
-    const updatedData = { ...propertyData }
+    const updatedData = { ...propertyData };
 
     // Extract bedrooms
     if (!updatedData.beds || updatedData.beds === "—") {
-      const bedroomMatch = text.match(/(\d+)\s*bed/i) || text.match(/(\d+)\s*bedroom/i)
-      if (bedroomMatch) updatedData.beds = bedroomMatch[1]
+      const bedroomMatch =
+        text.match(/(\d+)\s*bed/i) || text.match(/(\d+)\s*bedroom/i);
+      if (bedroomMatch) updatedData.beds = bedroomMatch[1];
     }
 
     // Extract bathrooms
     if (!updatedData.bathroom || updatedData.bathroom === "—") {
-      const bathroomMatch = text.match(/(\d+)\s*bath/i) || text.match(/(\d+)\s*bathroom/i)
-      if (bathroomMatch) updatedData.bathroom = bathroomMatch[1]
+      const bathroomMatch =
+        text.match(/(\d+)\s*bath/i) || text.match(/(\d+)\s*bathroom/i);
+      if (bathroomMatch) updatedData.bathroom = bathroomMatch[1];
     }
 
     // Extract parking/car spaces
     if (!updatedData.carSpace || updatedData.carSpace === "—") {
-      const parkingMatch = text.match(/(\d+)\s*car/i) || text.match(/(\d+)\s*parking/i) || text.match(/(\d+)\s*garage/i)
-      if (parkingMatch) updatedData.carSpace = parkingMatch[1]
+      const parkingMatch =
+        text.match(/(\d+)\s*car/i) ||
+        text.match(/(\d+)\s*parking/i) ||
+        text.match(/(\d+)\s*garage/i);
+      if (parkingMatch) updatedData.carSpace = parkingMatch[1];
     }
 
     // Extract land size
     if (!updatedData.landSize || updatedData.landSize === "—") {
       const landSizeMatch =
-        text.match(/(\d+\s*m²)/i) || text.match(/(\d+\s*sqm)/i) || text.match(/(\d+\s*square meters)/i)
-      if (landSizeMatch) updatedData.landSize = landSizeMatch[1]
+        text.match(/(\d+\s*m²)/i) ||
+        text.match(/(\d+\s*sqm)/i) ||
+        text.match(/(\d+\s*square meters)/i);
+      if (landSizeMatch) updatedData.landSize = landSizeMatch[1];
     }
 
     // Extract property type
     if (!updatedData.typeOfProperty || updatedData.typeOfProperty === "—") {
-      const propertyTypes = ["house", "apartment", "unit", "townhouse", "villa", "land", "acreage"]
+      const propertyTypes = [
+        "house",
+        "apartment",
+        "unit",
+        "townhouse",
+        "villa",
+        "land",
+        "acreage",
+      ];
       for (const type of propertyTypes) {
         if (text.toLowerCase().includes(type)) {
-          updatedData.typeOfProperty = type.charAt(0).toUpperCase() + type.slice(1)
-          break
+          updatedData.typeOfProperty =
+            type.charAt(0).toUpperCase() + type.slice(1);
+          break;
         }
       }
     }
 
-    return updatedData
-  }
+    return updatedData;
+  };
 
   // Function to format property type with icon
   const getPropertyTypeIcon = (type: string | null) => {
-    if (!type) return <Home size={18} />
+    if (!type) return <Home size={18} />;
 
-    const typeLC = (type || "").toLowerCase()
-    if (typeLC.includes("house")) return <Home size={18} />
-    if (typeLC.includes("apartment") || typeLC.includes("unit")) return <Building size={18} />
-    if (typeLC.includes("townhouse")) return <Building size={18} />
-    if (typeLC.includes("land")) return <MapPin size={18} />
-    return <Home size={18} />
-  }
+    const typeLC = (type || "").toLowerCase();
+    if (typeLC.includes("house")) return <Home size={18} />;
+    if (typeLC.includes("apartment") || typeLC.includes("unit"))
+      return <Building size={18} />;
+    if (typeLC.includes("townhouse")) return <Building size={18} />;
+    if (typeLC.includes("land")) return <MapPin size={18} />;
+    return <Home size={18} />;
+  };
 
   // Function to extract rental value from analysis text
   const extractRentalValue = (text: string) => {
-    if (!text) return null
+    if (!text) return null;
 
     // Try to match different rental value patterns
     const patterns = [
@@ -177,28 +213,30 @@ export default function PropertyScrapeForm() {
       /weekly\s*rent\s*of\s*\$\d+[\s-]*\$\d+/i,
       /rental\s*value.*?\$\d+[\s-]*\$\d+/i,
       /\$\d+\s*per\s*week/i,
-    ]
+    ];
 
     for (const pattern of patterns) {
-      const match = text.match(pattern)
-      if (match) return match[0]
+      const match = text.match(pattern);
+      if (match) return match[0];
     }
 
-    return "$500/wk" // Fallback value if no match found
-  }
+    return "$500/wk"; // Fallback value if no match found
+  };
 
   // Extract yield from analysis
   const extractYield = (text: string) => {
-    if (!text) return "3-4%"
+    if (!text) return "3-4%";
 
     const yieldMatch =
-      text.match(/yield.*?(\d+[-–]\d+%)/i) || text.match(/(\d+[-–]\d+%).*?yield/i) || text.match(/(\d+%).*?yield/i)
-    return yieldMatch ? yieldMatch[1] : "3-4%"
-  }
+      text.match(/yield.*?(\d+[-–]\d+%)/i) ||
+      text.match(/(\d+[-–]\d+%).*?yield/i) ||
+      text.match(/(\d+%).*?yield/i);
+    return yieldMatch ? yieldMatch[1] : "3-4%";
+  };
 
   // Function to format analysis text with HTML
   const formatAnalysisText = (text: string) => {
-    if (!text) return ""
+    if (!text) return "";
 
     return text
       .replace(/&/g, "&amp;")
@@ -211,29 +249,44 @@ export default function PropertyScrapeForm() {
       .replace(/<\/li>/g, "</li></ul>")
       .replace(/<\/ul><ul>/g, "")
       .replace(/\n\n/g, "<br><br>")
-      .replace(/\n/g, "<br>")
-  }
+      .replace(/\n/g, "<br>");
+  };
 
   // Reusable ProgressBar component
   const ProgressBar = ({ value, color = "#3182CE", bgColor = "#EDF2F7" }) => (
-    <Box width="100%" height="8px" bg={bgColor} borderRadius="full" overflow="hidden">
-      <Box width={`${Math.min(Math.max(value, 10), 90)}%`} height="100%" bg={color} borderRadius="full" />
+    <Box
+      width="100%"
+      height="8px"
+      bg={bgColor}
+      borderRadius="full"
+      overflow="hidden"
+    >
+      <Box
+        width={`${Math.min(Math.max(value, 10), 90)}%`}
+        height="100%"
+        bg={color}
+        borderRadius="full"
+      />
     </Box>
-  )
+  );
 
   // Reusable TrendIndicator component
   const TrendIndicator = ({ value }: { value: string }) => {
-    const isPositive = value.startsWith("+")
-    const color = isPositive ? "#38A169" : "#E53E3E"
+    const isPositive = value.startsWith("+");
+    const color = isPositive ? "#38A169" : "#E53E3E";
     return (
       <Box display="flex" alignItems="center" gap="4px">
-        <TrendingUp size="16px" color={color} style={!isPositive ? { transform: "rotate(180deg)" } : {}} />
+        <TrendingUp
+          size="16px"
+          color={color}
+          style={!isPositive ? { transform: "rotate(180deg)" } : {}}
+        />
         <Text fontSize="16px" color={color}>
           {value}
         </Text>
       </Box>
-    )
-  }
+    );
+  };
 
   // Reusable StatBox component
   const StatBox = ({
@@ -245,23 +298,26 @@ export default function PropertyScrapeForm() {
     bgColor,
     color,
   }: {
-    icon: React.ReactNode
-    label: string
-    value: string
-    trend: string
-    progressValue: string
-    bgColor: string
-    color: string
+    icon: React.ReactNode;
+    label: string;
+    value: string;
+    trend: string;
+    progressValue: string;
+    bgColor: string;
+    color: string;
   }) => {
     // Extract numeric value for progress bar
-    let progressBarValue = 50 // Default value
+    let progressBarValue = 50; // Default value
     try {
-      const numericValue = value.replace(/[^0-9.]/g, "")
+      const numericValue = value.replace(/[^0-9.]/g, "");
       if (numericValue) {
-        progressBarValue = Math.min(Math.max(Number.parseInt(numericValue, 10), 10), 90)
+        progressBarValue = Math.min(
+          Math.max(Number.parseInt(numericValue, 10), 10),
+          90,
+        );
       }
     } catch (e) {
-      console.warn("Could not parse value for progress bar:", value)
+      console.warn("Could not parse value for progress bar:", value);
     }
 
     return (
@@ -293,7 +349,12 @@ export default function PropertyScrapeForm() {
           </Text>
         </Box>
 
-        <Text fontSize="32px" fontWeight="700" color="gray.800" marginBottom="8px">
+        <Text
+          fontSize="32px"
+          fontWeight="700"
+          color="gray.800"
+          marginBottom="8px"
+        >
           {value}
         </Text>
 
@@ -308,11 +369,15 @@ export default function PropertyScrapeForm() {
           <Text fontSize="14px" color="gray.500" marginBottom="6px">
             {progressValue}
           </Text>
-          <ProgressBar value={progressBarValue} color={color} bgColor={bgColor} />
+          <ProgressBar
+            value={progressBarValue}
+            color={color}
+            bgColor={bgColor}
+          />
         </Box>
       </Box>
-    )
-  }
+    );
+  };
 
   // Reusable PropertyFeatureBox component
   const PropertyFeatureBox = ({
@@ -321,10 +386,10 @@ export default function PropertyScrapeForm() {
     value,
     bgColor,
   }: {
-    icon: React.ReactNode
-    label: string
-    value: string | null
-    bgColor: string
+    icon: React.ReactNode;
+    label: string;
+    value: string | null;
+    bgColor: string;
   }) => (
     <Box
       bg="white"
@@ -357,25 +422,30 @@ export default function PropertyScrapeForm() {
         </Text>
       </Box>
     </Box>
-  )
+  );
 
   // Title and Subheading component
   const TitleSubheading = ({
     title,
     subheading,
   }: {
-    title: string
-    subheading: string
+    title: string;
+    subheading: string;
   }) => (
     <Box textAlign="center" marginBottom="40px">
-      <Text fontSize="36px" fontWeight="700" color="gray.800" marginBottom="12px">
+      <Text
+        fontSize="36px"
+        fontWeight="700"
+        color="gray.800"
+        marginBottom="12px"
+      >
         {title}
       </Text>
       <Text fontSize="18px" color="gray.600">
         {subheading}
       </Text>
     </Box>
-  )
+  );
 
   return (
     <Box maxWidth="1400px" my="50px" mx="auto" padding="20px">
@@ -462,7 +532,12 @@ export default function PropertyScrapeForm() {
             cursor="pointer"
             disabled={loading}
           >
-            <Text fontSize="14px" fontWeight="600" color="white" marginRight="8px">
+            <Text
+              fontSize="14px"
+              fontWeight="600"
+              color="white"
+              marginRight="8px"
+            >
               {loading ? "Analyzing..." : "Analyze"}
             </Text>
             <ChevronDown size={16} color="white" />
@@ -486,21 +561,27 @@ export default function PropertyScrapeForm() {
             Analyzing property data...
           </Text>
           <Text fontSize="14px" color="gray.500">
-            This may take up to 30 seconds as we gather comprehensive information
+            This may take up to 30 seconds as we gather comprehensive
+            information
           </Text>
         </Box>
       )}
 
       {/* Error Message */}
       {error && (
-        <Box bg="red.50" border="1px solid" borderColor="red.200" p={4} borderRadius="12px" mb={6}>
+        <Box
+          bg="red.50"
+          border="1px solid"
+          borderColor="red.200"
+          p={4}
+          borderRadius="12px"
+          mb={6}
+        >
           <Text color="red.600" fontWeight="medium">
             {error}
           </Text>
         </Box>
       )}
-
-  
 
       {/* Results Section - Show if either analysis or propertyData exists */}
       {(analysis || propertyData) && (
@@ -595,7 +676,11 @@ export default function PropertyScrapeForm() {
             <StatBox
               icon={<DollarSign size={18} color="#3182CE" />}
               label="Estimated Price"
-              value={propertyData?.midPriceRange || propertyData?.lowPriceRange || "$850,000"}
+              value={
+                propertyData?.midPriceRange ||
+                propertyData?.lowPriceRange ||
+                "$850,000"
+              }
               trend={"+3%"}
               progressValue="Price Range"
               bgColor="blue.50"
@@ -604,7 +689,10 @@ export default function PropertyScrapeForm() {
             <StatBox
               icon={<Calendar size={18} color="#38A169" />}
               label="Rental Income"
-              value={extractRentalValue(analysis)?.replace("per week", "/wk") || "$500/wk"}
+              value={
+                extractRentalValue(analysis)?.replace("per week", "/wk") ||
+                "$500/wk"
+              }
               trend={"+2%"}
               progressValue="Rental Potential"
               bgColor="green.50"
@@ -701,7 +789,8 @@ export default function PropertyScrapeForm() {
           >
             <iframe
               src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                address || `${propertyData?.location || ""} ${propertyData?.suburb || ""}`,
+                address ||
+                  `${propertyData?.location || ""} ${propertyData?.suburb || ""}`,
               )}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
               width="100%"
               height="100%"
@@ -713,25 +802,40 @@ export default function PropertyScrapeForm() {
           </Box>
 
           {/* Disclaimer */}
-          <Box bg="gray.50" borderRadius="12px" padding="16px" fontSize="14px" color="gray.600" marginBottom="16px">
+          <Box
+            bg="gray.50"
+            borderRadius="12px"
+            padding="16px"
+            fontSize="14px"
+            color="gray.600"
+            marginBottom="16px"
+          >
             <Text fontWeight="600" mb={1}>
               Disclaimer:
             </Text>
             <Text>
-              This analysis is based on available data and market estimates. Actual rental values and investment
-              performance may vary. We recommend consulting with a licensed real estate professional before making
-              investment decisions.
+              This analysis is based on available data and market estimates.
+              Actual rental values and investment performance may vary. We
+              recommend consulting with a licensed real estate professional
+              before making investment decisions.
             </Text>
           </Box>
         </Box>
       )}
 
       {/* Footer */}
-      <Box mt={8} pt={4} borderTop="1px solid" borderColor="gray.200" textAlign="center">
+      <Box
+        mt={8}
+        pt={4}
+        borderTop="1px solid"
+        borderColor="gray.200"
+        textAlign="center"
+      >
         <Text fontSize="14px" color="gray.500">
-          Property data sourced from Domain.com.au • Analysis powered by Gemini AI
+          Property data sourced from Domain.com.au • Analysis powered by Gemini
+          AI
         </Text>
       </Box>
     </Box>
-  )
+  );
 }

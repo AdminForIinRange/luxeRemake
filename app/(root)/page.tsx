@@ -28,8 +28,7 @@ const Home = () => {
         }}
       />
 
-
-<FollowingScrollButton />
+      <FollowingScrollButton />
       {/* Render Hero and other components normally */}
       <Hero />
       <OurServices />

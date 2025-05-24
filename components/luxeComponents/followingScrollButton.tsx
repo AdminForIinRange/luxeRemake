@@ -1,6 +1,6 @@
-import { Box, HStack, Icon } from '@chakra-ui/react';
-import { ArrowRight } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
+import { Box, HStack, Icon } from "@chakra-ui/react";
+import { ArrowRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
 
 const FollowingScrollButton = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,7 +15,7 @@ const FollowingScrollButton = () => {
 
         // Check if 'get-started-button' is within the viewport
         // If it is, hide the button entirely
-        if (rect.top <= window.innerHeight ) {
+        if (rect.top <= window.innerHeight) {
           setIsVisible(false); // Hide button once the 'get-started-button' is in view
         } else {
           setIsVisible(true); // Show button when it's not in view
@@ -30,16 +30,16 @@ const FollowingScrollButton = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <>
-      {isVisible && (  // Button will only be rendered if isVisible is true
+      {isVisible && ( // Button will only be rendered if isVisible is true
         <HStack
           justify={"center"}
           align={"center"}
@@ -77,7 +77,8 @@ const FollowingScrollButton = () => {
               }
             }}
           >
-            {!isScrolled && "Get Started"} {/* Only show text when not scrolled */}
+            {!isScrolled && "Get Started"}{" "}
+            {/* Only show text when not scrolled */}
             <Icon
               as={ArrowRight}
               transform={isScrolled ? "rotate(90deg)" : "rotate(0deg)"} // Rotate the icon

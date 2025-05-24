@@ -55,38 +55,39 @@ const TopHeader = ({
 
       {/* Main container */}
       <Box
-      position="relative"
-      w="95%"
-      h={["380px", "420px", "480px", "520px", "580px"]}
-      borderRadius="20px"
-      overflow="hidden"
-      boxShadow="0 10px 30px rgba(0,0,0,0.2)"
-      transition="transform 0.4s ease, box-shadow 0.4s ease"
-      cursor="pointer"
-      _hover={{
-        transform: "scale(1.01)",
-        boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-      }}
-      _before={{
-        content: '""',
-        position: "absolute",
-        inset: 0,
-        background: "linear-gradient(135deg, rgba(0,0,0,0.52), rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.1))",
-        zIndex: 1,
-      }}
-      
-    >
-      <Image
-quality={70} loading="lazy"
-        src={imgUrl}
-        alt=""
-        fill
-        style={{
-          objectFit: 'cover',
-          objectPosition: 'center',
+        position="relative"
+        w="95%"
+        h={["380px", "420px", "480px", "520px", "580px"]}
+        borderRadius="20px"
+        overflow="hidden"
+        boxShadow="0 10px 30px rgba(0,0,0,0.2)"
+        transition="transform 0.4s ease, box-shadow 0.4s ease"
+        cursor="pointer"
+        _hover={{
+          transform: "scale(1.01)",
+          boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
         }}
-      />
-      
+        _before={{
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(135deg, rgba(0,0,0,0.52), rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.1))",
+          zIndex: 1,
+        }}
+      >
+        <Image
+          quality={70}
+          loading="lazy"
+          src={imgUrl}
+          alt=""
+          fill
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+
         {/* Decorative elements */}
 
         {/* Aperture icon simulation using nested boxes */}
@@ -103,7 +104,6 @@ quality={70} loading="lazy"
           justifyContent="flex-end"
           p={["30px", "40px", "50px", "60px", "70px"]}
           zIndex="3"
-        
         >
           {/* Subtle label */}
           <Box mb="16px">
@@ -125,7 +125,6 @@ quality={70} loading="lazy"
                 bg: "rgba(255,255,255,0.5)",
               }}
               zIndex={3}
-              
             >
               Premium Service
             </Text>
@@ -179,16 +178,14 @@ quality={70} loading="lazy"
           </Box>
 
           {/* Description */}
-          <Box mb="30px" >
+          <Box mb="30px">
             <Text
               fontSize={["16px", "17px", "18px", "20px", "22px"]}
               fontWeight="300"
               color="white"
               maxW={["100%", "90%", "80%", "60%", "50%"]}
               lineHeight={["1.6", "1.6", "1.5"]}
-          opacity={0.9}
-
- 
+              opacity={0.9}
             >
               {description}
             </Text>
