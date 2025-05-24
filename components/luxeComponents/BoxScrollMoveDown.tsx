@@ -35,7 +35,7 @@ export function BoxScrollMoveDown() {
                 color={"black"}
                 bgGradient="linear(to-r, teal, blue)"
               >
-                How We Can Get You Get Started
+                How our Service Gets You Started
               </Text>
               <Text
                 fontSize={["16px", "16px", "16px", "18px", "18px", "18px"]}
@@ -53,8 +53,8 @@ export function BoxScrollMoveDown() {
                 w={["100%", "100%", "100%", "100%", "100%", "100%"]} // !important
                 fontWeight={300}
               >
-                Learn how we can help you get started with personalized guidance
-                and expert support every step of the way.
+                Learn how our Adelaide-based consultants can help you get started with personalized services, advice
+                and expert consultation every step of the way.
               </Text>
               <HStack
                 data-aos="fade-up"

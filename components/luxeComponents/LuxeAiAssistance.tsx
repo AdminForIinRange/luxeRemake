@@ -275,7 +275,7 @@ const LuxeAiAssistance = () => {
                   textAlign="center"
                   lineHeight="1.5"
                 >
-                  I can help you with property management, bookings, maintenance
+                  I can help you with your AirBnB, bookings, maintenance
                   requests, and maximizing your rental income in the Adelaide
                   area.
                 </Text>

@@ -269,7 +269,7 @@ const Contact = () => {
                 mb="20px"
                 lineHeight="1.2"
               >
-                Ready to transform your property management?
+                Ready to transform your AirBnB management?
               </Text>
 
               <Text
@@ -295,7 +295,7 @@ const Contact = () => {
                 maxWidth="500px"
               >
                 {[
-                  "Personalized property management strategy",
+                  "Personalized AirBnB management strategies",
                   "Detailed market analysis and pricing recommendations",
                   "Tenant acquisition and screening process overview",
                   "Maintenance and property care solutions",

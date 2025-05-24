@@ -369,7 +369,7 @@ const Navbar = () => {
                 fontFamily="arial"
                 textTransform="uppercase"
               >
-                Premium Property Services
+                Premium AirBnB Services
               </Text>
             </Box>
           </Box>

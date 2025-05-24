@@ -84,7 +84,7 @@ const ScheduleConsultation = () => {
               letterSpacing="-0.02em"
               mb={["16px", "20px"]}
             >
-              Ready to transform your property management?
+              Ready to transform your AirBnB management?
             </Text>
 
             {/* Subtitle */}

@@ -125,7 +125,7 @@ const NewsPage = () => {
                 maxWidth={{ base: "100%", md: "540px" }}
                 marginBottom={{ base: "24px", md: "32px" }}
               >
-                Discover how our innovative approach to property management and
+                Discover how our innovative approach to property/AirBnB management and
                 real estate investments can elevate your portfolio to new
                 heights. Our data-driven strategies have helped clients achieve
                 remarkable results in today's competitive market.
