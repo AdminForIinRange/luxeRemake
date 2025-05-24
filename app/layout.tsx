@@ -1,49 +1,64 @@
 // app/layout.tsx
-import { ReactNode } from 'react';
-import dynamic from 'next/dynamic';
-import Script from 'next/script';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import Loading from './loading';
-import LuxeAiAssistance from '@/components/luxeComponents/LuxeAiAssistance';
+import { ReactNode } from "react";
+import dynamic from "next/dynamic";
+import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import Loading from "./loading";
+import LuxeAiAssistance from "@/components/luxeComponents/LuxeAiAssistance";
 
 const ClientProviderWithFallback = dynamic(
-  () => import('@/components/chakra-snippets/ClientProvider'),
+  () => import("@/components/chakra-snippets/ClientProvider"),
   { loading: () => <Loading /> },
 );
 
+// eslint-disable-next-line import/no-unused-modules
 export const metadata = {
-  title: 'Luxe Management | The Best Airbnb Property Management In Adelaide',
+  title: "Luxe Management | The Best Airbnb Property Management In Adelaide",
   description:
-    'We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience and maximize your rental income.',
-  metadataBase: new URL('https://www.luxemanagements.com'),
+    "We provide comprehensive Airbnb management services, designed to deliver a hassle-free hosting experience and maximize your rental income.",
+  metadataBase: new URL("https://www.luxemanagements.com"),
   openGraph: {
-    title: 'Luxe Management | The Best Airbnb Property Management In Adelaide',
-    description: 'Expert Airbnb property management services in Adelaide.',
-    url: 'https://www.luxemanagements.com',
-    siteName: 'Luxe Management',
+    title: "Luxe Management | The Best Airbnb Property Management In Adelaide",
+    description: "Expert Airbnb property management services in Adelaide.",
+    url: "https://www.luxemanagements.com",
+    siteName: "Luxe Management",
     images: [
       {
-        url: '/og-image.jpg',
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: 'Luxe Management',
+        alt: "Luxe Management",
       },
     ],
-    type: 'website',
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Luxe Management | The Best Airbnb Property Management In Adelaide',
-    description: 'The Best Airbnb property management services in Adelaide.',
-    images: ['/og-image.jpg'],
+    card: "summary_large_image",
+    title: "Luxe Management | The Best Airbnb Property Management In Adelaide",
+    description: "The Best Airbnb property management services in Adelaide.",
+    images: ["/og-image.jpg"],
   },
 };
 
+// eslint-disable-next-line import/no-unused-modules
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" data-theme="light" style={{ scrollBehavior: 'smooth' }} suppressHydrationWarning>
+    <html
+      lang="en"
+      data-theme="light"
+      style={{ scrollBehavior: "smooth" }}
+      suppressHydrationWarning
+    >
       <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Primary Meta Description */}
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.ico" />
+
         <Script
           id="localbusiness-schema"
           type="application/ld+json"
@@ -52,6 +67,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Luxe Management",
+              logo: "https://www.luxemanagements.com/logo.png",
               image: "https://www.luxemanagements.com/logo.png",
               "@id": "https://www.luxemanagements.com",
               url: "https://www.luxemanagements.com",
@@ -60,12 +76,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 "@type": "PostalAddress",
                 addressLocality: "Adelaide",
                 addressRegion: "SA",
-                addressCountry: "AU"
+                addressCountry: "AU",
               },
+              description:
+                "The Best Airbnb Property Management In Adelaide. Luxe Management maximizes your rental income with full-service hosting, cleaning, styling, and guest care.",
               geo: {
                 "@type": "GeoCoordinates",
                 latitude: -34.9285,
-                longitude: 138.6007
+                longitude: 138.6007,
               },
               openingHoursSpecification: {
                 "@type": "OpeningHoursSpecification",
@@ -74,20 +92,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   "Tuesday",
                   "Wednesday",
                   "Thursday",
-                  "Friday"
+                  "Friday",
                 ],
                 opens: "09:00",
-                closes: "17:00"
+                closes: "17:00",
               },
               sameAs: [
                 "https://www.facebook.com/luxemanagements",
-                "https://www.instagram.com/luxemanagements"
-              ]
+                "https://www.instagram.com/luxemanagements",
+              ],
             }),
           }}
         />
       </head>
-      <body className="antialiased" style={{ background: '#fff', scrollBehavior: 'smooth' }}>
+
+      <body
+        className="antialiased"
+        style={{ background: "#fff", scrollBehavior: "smooth" }}
+      >
         <Analytics />
         <SpeedInsights />
         <ClientProviderWithFallback>
