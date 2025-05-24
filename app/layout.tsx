@@ -17,9 +17,10 @@ const inter = Inter({
 
 const ClientProviderWithFallback = dynamic(
   () => import("@/components/chakra-snippets/ClientProvider"),
-  { loading: () => <Loading />, ssr: false }
+  { ssr: false, loading: () => <Loading /> }
 );
 
+// eslint-disable-next-line import/no-unused-modules
 export const metadata: Metadata = {
   title: "Luxe Management | The Best Airbnb Property Management in Adelaide",
   description:
